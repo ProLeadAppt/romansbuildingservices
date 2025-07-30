@@ -21,7 +21,7 @@ export const HeroSection = () => {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/20">
             <CheckCircle className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium">Licensed & Insured • 15+ Years Experience</span>
+            <span className="text-sm font-medium">Licensed & Insured • 24+ Years Experience • Est. 1995</span>
           </div>
 
           {/* Main Headline */}
@@ -29,14 +29,27 @@ export const HeroSection = () => {
             Cracked Walls? 
             <span className="block text-secondary">Foundation Issues?</span>
             <span className="block text-2xl md:text-3xl lg:text-4xl font-normal mt-2">
-              Get Expert Masonry & Restoration Services
+              Get Expert Building Solutions Now
             </span>
           </h1>
 
           {/* Value Proposition */}
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
-            Don't let structural damage destroy your property value. Our certified experts restore your building's integrity and beauty with guaranteed results.
+            24+ years restoring structural integrity for Sydney properties. Our certified experts provide masonry, restoration & remedial building solutions with guaranteed results.
           </p>
+
+          {/* Irresistible Offer */}
+          <div className="bg-secondary/90 backdrop-blur-sm rounded-lg p-6 mb-6 border border-secondary/20 max-w-2xl mx-auto">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-white mb-2">🎯 LIMITED TIME OFFER</h3>
+              <p className="text-lg text-white font-semibold">
+                FREE Structural Assessment + 10% Off First Project
+              </p>
+              <p className="text-sm text-white/90 mt-1">
+                Professional inspection worth $300 - completely free, no obligation
+              </p>
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -45,30 +58,30 @@ export const HeroSection = () => {
               className="bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold px-8 py-6 text-lg cta-shadow transition-smooth"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Get Free Estimate Now
+              Get FREE Assessment
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-6 text-lg transition-smooth"
             >
-              View Our Work
+              Call (02) 9XXX-XXXX
             </Button>
           </div>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="w-5 h-5 text-secondary" />
-              <span className="text-sm">Same Day Response</span>
+              <span className="text-sm">24+ Years Experience</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="w-5 h-5 text-secondary" />
-              <span className="text-sm">Lifetime Warranty</span>
+              <span className="text-sm">1000+ Sydney Properties</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="w-5 h-5 text-secondary" />
-              <span className="text-sm">Free Consultations</span>
+              <span className="text-sm">Quality Guarantee</span>
             </div>
           </div>
         </div>
