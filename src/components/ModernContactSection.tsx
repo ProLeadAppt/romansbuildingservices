@@ -95,9 +95,9 @@ export const ModernContactSection = () => {
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-12">
+      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
         {/* Contact Form */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-6 sm:space-y-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -105,7 +105,7 @@ export const ModernContactSection = () => {
             viewport={{ once: true }}
           >
             <Card className="floating-shadow">
-              <CardContent className="p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">Request Your Free Assessment</h3>
@@ -114,16 +114,16 @@ export const ModernContactSection = () => {
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     {/* Personal Info */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4">
                       <motion.div whileFocus={{ scale: 1.02 }}>
                         <Input
                           placeholder="Full Name *"
                           value={formData.name}
                           onChange={(e) => setFormData({...formData, name: e.target.value})}
                           required
-                          className="transition-smooth"
+                          className="transition-smooth h-10 sm:h-12"
                         />
                       </motion.div>
                       <motion.div whileFocus={{ scale: 1.02 }}>
@@ -132,7 +132,7 @@ export const ModernContactSection = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                           required
-                          className="transition-smooth"
+                          className="transition-smooth h-10 sm:h-12"
                         />
                       </motion.div>
                     </div>
@@ -144,14 +144,14 @@ export const ModernContactSection = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         required
-                        className="transition-smooth"
+                        className="transition-smooth h-10 sm:h-12"
                       />
                     </motion.div>
 
                     {/* Service & Urgency */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4">
                       <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                        <SelectTrigger>
+                        <SelectTrigger className="h-10 sm:h-12">
                           <SelectValue placeholder="Service Needed *" />
                         </SelectTrigger>
                         <SelectContent>
@@ -166,7 +166,7 @@ export const ModernContactSection = () => {
                       </Select>
 
                       <Select value={formData.urgency} onValueChange={(value) => setFormData({...formData, urgency: value})}>
-                        <SelectTrigger>
+                        <SelectTrigger className="h-10 sm:h-12">
                           <SelectValue placeholder="Project Urgency" />
                         </SelectTrigger>
                         <SelectContent>
@@ -179,15 +179,15 @@ export const ModernContactSection = () => {
                     </div>
 
                     {/* Preferred Contact Method */}
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       <label className="text-sm font-medium">Preferred Contact Method</label>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex gap-2">
                         {['phone', 'email'].map((method) => (
                           <button
                             key={method}
                             type="button"
                             onClick={() => setFormData({...formData, preferredContact: method})}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                            className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                               formData.preferredContact === method
                                 ? 'bg-primary text-primary-foreground'
                                 : 'bg-muted hover:bg-muted-foreground/10'
@@ -210,8 +210,8 @@ export const ModernContactSection = () => {
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button type="submit" size="lg" className="w-full text-lg py-6 cta-shadow">
-                        <Send className="w-5 h-5 mr-2" />
+                      <Button type="submit" size="lg" className="w-full text-base sm:text-lg py-4 sm:py-6 cta-shadow">
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                         Send Request
                       </Button>
                     </motion.div>
@@ -220,7 +220,7 @@ export const ModernContactSection = () => {
                   {/* What's Included */}
                   <div className="bg-muted/50 rounded-xl p-6 space-y-4">
                     <h4 className="font-semibold text-primary">Your Free Assessment Includes:</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {[
                         'Professional site inspection',
                         'Detailed written report',
@@ -230,8 +230,8 @@ export const ModernContactSection = () => {
                         'No-obligation consultation'
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm">{item}</span>
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
+                          <span className="text-xs sm:text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -243,7 +243,7 @@ export const ModernContactSection = () => {
 
           {/* Contact Methods Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 gap-4 sm:gap-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -259,17 +259,17 @@ export const ModernContactSection = () => {
                   className="cursor-pointer hover-lift transition-smooth"
                   onClick={() => window.open(method.action)}
                 >
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex items-start space-x-4">
-                      <div className={`p-3 rounded-xl ${method.bgColor}`}>
-                        <method.icon className={`w-6 h-6 ${method.color}`} />
+                  <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+                      <div className={`p-2 sm:p-3 rounded-xl ${method.bgColor}`}>
+                        <method.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${method.color}`} />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold mb-1">{method.title}</h4>
-                        <div className={`font-medium ${method.color} mb-2`}>
+                        <h4 className="text-sm sm:text-base font-semibold mb-1">{method.title}</h4>
+                        <div className={`text-sm sm:text-base font-medium ${method.color} mb-1 sm:mb-2`}>
                           {method.content}
                         </div>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           {method.description}
                         </p>
                       </div>
@@ -282,7 +282,7 @@ export const ModernContactSection = () => {
         </div>
 
         {/* Contact Info Sidebar */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Business Hours */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -291,22 +291,22 @@ export const ModernContactSection = () => {
             viewport={{ once: true }}
           >
             <Card className="floating-shadow">
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Business Hours</h3>
+              <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <h3 className="text-lg sm:text-xl font-semibold">Business Hours</h3>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {businessHours.map((schedule, idx) => (
                     <div key={idx} className="flex justify-between items-center">
-                      <span className="font-medium">{schedule.day}</span>
-                      <span className="text-muted-foreground">{schedule.hours}</span>
+                      <span className="text-sm sm:text-base font-medium">{schedule.day}</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
-                <div className="pt-4 border-t">
-                  <Badge variant="destructive" className="w-full justify-center py-2">
-                    <Phone className="w-4 h-4 mr-2" />
+                <div className="pt-3 sm:pt-4 border-t">
+                  <Badge variant="destructive" className="w-full justify-center py-2 text-xs sm:text-sm">
+                    <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                     24/7 Emergency Service
                   </Badge>
                 </div>

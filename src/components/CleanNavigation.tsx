@@ -52,14 +52,13 @@ export const CleanNavigation = () => {
   return (
     <>
       {/* Emergency Call Button */}
-      <div className="fixed bottom-6 right-6 z-50 lg:hidden">
+      <div className="fixed bottom-4 right-4 z-50 lg:hidden">
         <Button
-          size="lg"
-          className="rounded-full shadow-lg bg-primary hover:bg-primary/90 px-4"
+          size="sm"
+          className="rounded-full shadow-lg bg-primary hover:bg-primary/90 px-3 py-2 h-12 w-12 min-w-0"
           onClick={() => window.open('tel:0414922276', '_self')}
         >
-          <Phone className="h-5 w-5 mr-2" />
-          Call
+          <Phone className="h-4 w-4" />
         </Button>
       </div>
 
@@ -71,18 +70,18 @@ export const CleanNavigation = () => {
             : 'bg-white/95 backdrop-blur-md shadow-md'
         }`}
       >
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Professional Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <img 
                 src="/src/assets/romans-logo.png" 
                 alt="Roman's Building Services" 
-                className="w-10 h-10 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
               />
               <div>
-                <h1 className="text-xl font-bold text-foreground">Roman's Building</h1>
-                <p className="text-xs text-muted-foreground">Since 1995</p>
+                <h1 className="text-lg sm:text-xl font-bold text-foreground">Roman's Building</h1>
+                <p className="text-xs text-muted-foreground hidden sm:block">Since 1995</p>
               </div>
             </div>
 
@@ -145,8 +144,8 @@ export const CleanNavigation = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-30 md:hidden">
           <div className="absolute inset-0 bg-black/20" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="absolute top-20 right-4 left-4 bg-background border rounded-lg card-shadow p-4">
-            <nav className="space-y-2">
+          <div className="absolute top-16 sm:top-20 right-4 left-4 bg-background border rounded-lg card-shadow p-3 sm:p-4 max-h-[80vh] overflow-y-auto">
+            <nav className="space-y-1 sm:space-y-2">
               {sections.map((section) => {
                 const Icon = section.icon;
                 const isActive = activeSection === section.id;
@@ -154,22 +153,22 @@ export const CleanNavigation = () => {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-smooth ${
+                    className={`flex items-center space-x-3 w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-smooth text-left ${
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
                         : 'hover:bg-muted text-foreground'
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{section.label}</span>
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                    <span className="text-sm sm:text-base font-medium">{section.label}</span>
                   </button>
                 );
               })}
             </nav>
-            <div className="mt-4 pt-4 border-t text-center">
+            <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
               <Button
                 onClick={() => window.open('tel:0414922276')}
-                className="w-full"
+                className="w-full text-sm sm:text-base py-2.5 sm:py-3"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now: 0414 922 276

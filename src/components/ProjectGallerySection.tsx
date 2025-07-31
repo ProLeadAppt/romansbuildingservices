@@ -113,7 +113,7 @@ export const ProjectGallerySection = () => {
 
       {/* Category Filter */}
       <motion.div
-        className="flex flex-wrap justify-center gap-2 mb-12"
+        className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -125,7 +125,7 @@ export const ProjectGallerySection = () => {
             variant={activeCategory === category ? "default" : "outline"}
             size="sm"
             onClick={() => setActiveCategory(category)}
-            className="hover-lift"
+            className="hover-lift text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 sm:py-2"
           >
             {category}
           </Button>
@@ -133,7 +133,7 @@ export const ProjectGallerySection = () => {
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -188,15 +188,15 @@ export const ProjectGallerySection = () => {
                 </div>
               </div>
 
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3">
                     {project.description}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.features.slice(0, 2).map((feature, idx) => (
                     <Badge key={idx} variant="outline" className="text-xs">
                       {feature}
@@ -210,7 +210,7 @@ export const ProjectGallerySection = () => {
                 </div>
 
                 <Button 
-                  className="w-full"
+                  className="w-full text-sm sm:text-base py-2.5 sm:py-3"
                   onClick={() => {
                     setSelectedProject(project.id);
                     setCurrentImageIndex(0);
@@ -235,7 +235,7 @@ export const ProjectGallerySection = () => {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              className="bg-background rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-background rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto m-2 sm:m-4"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -246,7 +246,7 @@ export const ProjectGallerySection = () => {
                 if (!project) return null;
 
                 return (
-                  <div className="p-8 space-y-6">
+                  <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
                     {/* Image Gallery */}
                     <div className="relative">
                       <img 
@@ -317,30 +317,30 @@ export const ProjectGallerySection = () => {
                       </div>
 
                       {/* Project Stats */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="bg-muted/50 rounded-xl p-4 text-center">
-                          <div className="text-2xl font-bold text-primary">{project.budget}</div>
-                          <div className="text-sm text-muted-foreground">Project Value</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                        <div className="bg-muted/50 rounded-xl p-3 sm:p-4 text-center">
+                          <div className="text-lg sm:text-2xl font-bold text-primary">{project.budget}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">Project Value</div>
                         </div>
-                        <div className="bg-muted/50 rounded-xl p-4 text-center">
-                          <div className="text-2xl font-bold text-primary">{project.duration}</div>
-                          <div className="text-sm text-muted-foreground">Duration</div>
+                        <div className="bg-muted/50 rounded-xl p-3 sm:p-4 text-center">
+                          <div className="text-lg sm:text-2xl font-bold text-primary">{project.duration}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">Duration</div>
                         </div>
-                        <div className="bg-muted/50 rounded-xl p-4 text-center">
-                          <div className="text-2xl font-bold text-primary">{project.features.length}</div>
-                          <div className="text-sm text-muted-foreground">Key Features</div>
+                        <div className="bg-muted/50 rounded-xl p-3 sm:p-4 text-center">
+                          <div className="text-lg sm:text-2xl font-bold text-primary">{project.features.length}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">Key Features</div>
                         </div>
                       </div>
 
                       {/* Challenge & Solution */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-3">
+                      <div className="grid grid-cols-1 gap-4 sm:gap-6">
+                        <div className="space-y-2 sm:space-y-3">
                           <h4 className="font-semibold text-destructive">Challenge</h4>
-                          <p className="text-sm text-muted-foreground">{project.challenge}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{project.challenge}</p>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-2 sm:space-y-3">
                           <h4 className="font-semibold text-green-600">Solution</h4>
-                          <p className="text-sm text-muted-foreground">{project.solution}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{project.solution}</p>
                         </div>
                       </div>
 

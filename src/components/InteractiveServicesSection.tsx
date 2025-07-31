@@ -86,9 +86,9 @@ export const InteractiveServicesSection = () => {
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Service Cards */}
-        <div className="lg:col-span-1 space-y-4">
+        <div className="lg:col-span-1 space-y-3 sm:space-y-4">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -105,20 +105,20 @@ export const InteractiveServicesSection = () => {
                 }`}
                 onClick={() => setActiveService(index)}
               >
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-lg transition-colors ${
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className={`p-2 sm:p-3 rounded-lg transition-colors ${
                       activeService === index 
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-muted'
                     }`}>
-                      <service.icon className="w-6 h-6" />
+                      <service.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div className="flex-1 space-y-2">
-                      <h3 className="font-semibold text-lg">{service.title}</h3>
-                      <p className="text-sm text-muted-foreground">{service.shortDesc}</p>
+                    <div className="flex-1 space-y-1 sm:space-y-2">
+                      <h3 className="font-semibold text-base sm:text-lg">{service.title}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{service.shortDesc}</p>
                     </div>
-                    <ArrowRight className={`w-5 h-5 transition-all ${
+                    <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 transition-all ${
                       activeService === index 
                         ? 'text-primary translate-x-1' 
                         : 'text-muted-foreground'
@@ -158,26 +158,26 @@ export const InteractiveServicesSection = () => {
                   </div>
 
                   {/* Features Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {services[activeService].features.map((feature, index) => (
                       <motion.div
                         key={index}
-                        className="flex items-center space-x-3"
+                        className="flex items-center space-x-2 sm:space-x-3"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                       >
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* CTA */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t">
+                  <div className="flex flex-col gap-3 sm:gap-4 pt-4 border-t">
                     <Button 
                       size="lg" 
-                      className="flex-1 hover-lift"
+                      className="w-full hover-lift"
                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Get Free Quote
@@ -186,7 +186,7 @@ export const InteractiveServicesSection = () => {
                     <Button 
                       variant="outline" 
                       size="lg" 
-                      className="flex-1 hover-lift"
+                      className="w-full hover-lift"
                       onClick={() => window.open('tel:0414922276')}
                     >
                       Call Expert: 0414 922 276
@@ -196,17 +196,17 @@ export const InteractiveServicesSection = () => {
                   {/* Service Promise */}
                   <div className="bg-muted/50 rounded-xl p-4 space-y-2">
                     <h4 className="font-semibold text-primary">Our Service Promise</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-muted-foreground">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs sm:text-sm text-muted-foreground">
                       <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                         <span>Fixed-price quotes</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                         <span>Quality guarantee</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                         <span>On-time completion</span>
                       </div>
                     </div>

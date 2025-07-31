@@ -52,12 +52,12 @@ export const ProfessionalHeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
       {/* Streamlined Content */}
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="relative z-10 container mx-auto px-4 py-8 sm:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Left Column - Focused Content */}
           <motion.div 
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8 order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -86,7 +86,7 @@ export const ProfessionalHeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white" style={{
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white" style={{
                 textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
                 WebkitTextStroke: '1px rgba(0,0,0,0.3)'
               }}>
@@ -98,7 +98,7 @@ export const ProfessionalHeroSection = () => {
                 }}>Building Experts</span>
               </h1>
               
-              <p className="text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
+              <p className="text-lg sm:text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
                 textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
               }}>
                 Professional masonry, restoration & structural solutions. 
@@ -108,28 +108,28 @@ export const ProfessionalHeroSection = () => {
 
             {/* Key Stats - Simplified */}
             <motion.div 
-              className="flex items-center space-x-8"
+              className="flex items-center justify-between sm:justify-start sm:space-x-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">1000+</div>
-                <div className="text-sm text-white/80">Projects</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">1000+</div>
+                <div className="text-xs sm:text-sm text-white/80">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">100%</div>
-                <div className="text-sm text-white/80">Satisfaction</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">100%</div>
+                <div className="text-xs sm:text-sm text-white/80">Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">24/7</div>
-                <div className="text-sm text-white/80">Emergency</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">24/7</div>
+                <div className="text-xs sm:text-sm text-white/80">Emergency</div>
               </div>
             </motion.div>
 
             {/* Enhanced CTAs with Review Option */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -137,7 +137,7 @@ export const ProfessionalHeroSection = () => {
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button 
                   size="lg" 
-                  className="text-lg px-12 py-8 button-shadow bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold"
+                  className="w-full text-base sm:text-lg px-6 sm:px-12 py-6 sm:py-8 button-shadow bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold"
                   onClick={() => setShowAssessmentPopup(true)}
                 >
                   Get FREE $500 Assessment
@@ -149,7 +149,7 @@ export const ProfessionalHeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-8 py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
+                  className="w-full text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
                   onClick={() => window.open('tel:0414922276')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -189,39 +189,39 @@ export const ProfessionalHeroSection = () => {
 
           {/* Right Column - Streamlined Form */}
           <motion.div 
-            className="lg:pl-8"
+            className="lg:pl-8 order-1 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Card className="card-shadow border-secondary/30 bg-white/95 backdrop-blur-sm">
-              <CardContent className="p-8 space-y-6">
-                <div className="text-center space-y-3">
-                  <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-4 py-2 text-secondary">
-                    <Star className="w-5 h-5 fill-current" />
-                    <span className="font-semibold">FREE Assessment</span>
+              <CardContent className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
+                <div className="text-center space-y-2 sm:space-y-3">
+                  <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-secondary">
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+                    <span className="text-sm sm:text-base font-semibold">FREE Assessment</span>
                   </div>
-                  <h3 className="text-2xl font-bold">Worth $500 - Completely Free</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Worth $500 - Completely Free</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     Get your professional quote within 24 hours
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4">
                     <Input
                       placeholder="Full Name *"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
-                      className="h-12"
+                      className="h-10 sm:h-12"
                     />
                     <Input
                       placeholder="Phone Number *"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
-                      className="h-12"
+                      className="h-10 sm:h-12"
                     />
                   </div>
 
@@ -231,11 +231,11 @@ export const ProfessionalHeroSection = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
-                    className="h-12"
+                    className="h-10 sm:h-12"
                   />
 
                   <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                    <SelectTrigger className="h-12">
+                    <SelectTrigger className="h-10 sm:h-12">
                       <SelectValue placeholder="Service Needed *" />
                     </SelectTrigger>
                     <SelectContent>
@@ -257,9 +257,9 @@ export const ProfessionalHeroSection = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full text-lg py-6 button-shadow bg-gradient-to-r from-primary to-primary/90"
+                    className="w-full text-base sm:text-lg py-4 sm:py-6 button-shadow bg-gradient-to-r from-primary to-primary/90"
                   >
-                    <CheckCircle className="w-5 h-5 mr-2" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Get My FREE Assessment
                   </Button>
                 </form>
