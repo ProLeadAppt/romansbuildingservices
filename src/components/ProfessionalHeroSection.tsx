@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -46,23 +47,40 @@ export const ProfessionalHeroSection = () => {
           backgroundImage: 'url(/src/assets/hero-background.jpg)',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-background/98 via-background/95 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
       {/* Premium Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
           
           {/* Left Column - Premium Content */}
-          <div className="space-y-10">
+          <motion.div 
+            className="space-y-10"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Trust Badges */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <motion.div 
+              className="grid grid-cols-2 lg:grid-cols-4 gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {trustBadges.map((badge, index) => (
-                <div key={index} className="flex flex-col items-center space-y-2 bg-background/60 backdrop-blur-sm border rounded-xl p-3 card-shadow">
+                <motion.div 
+                  key={index} 
+                  className="flex flex-col items-center space-y-2 bg-white/90 backdrop-blur-sm border rounded-xl p-3 card-shadow hover-lift"
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
                   <badge.icon className={`w-6 h-6 ${badge.color}`} />
-                  <span className="text-xs font-medium text-center leading-tight">{badge.text}</span>
-                </div>
+                  <span className="text-xs font-medium text-center leading-tight text-foreground">{badge.text}</span>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Premium Headline */}
             <div className="space-y-6">
@@ -72,22 +90,38 @@ export const ProfessionalHeroSection = () => {
                   Sydney's #1 Building Specialists
                 </Badge>
                 
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                <motion.h1 
+                  className="text-4xl md:text-5xl font-bold leading-tight text-white"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
                   <span className="gradient-text">Premium Building</span>
                   <br />
-                  <span className="text-foreground">Solutions</span>
-                </h1>
+                  <span className="text-white">Solutions</span>
+                </motion.h1>
                 
-                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+                <motion.p 
+                  className="text-xl text-white/90 max-w-lg leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
                   Expert masonry, restoration & structural solutions with 
-                  <span className="text-primary font-semibold"> 25+ years of unmatched expertise.</span>
+                  <span className="text-secondary font-semibold"> 25+ years of unmatched expertise.</span>
                   Licensed, insured & trusted across Sydney.
-                </p>
+                </motion.p>
               </div>
             </div>
 
             {/* Premium Offer Box */}
-            <div className="bg-gradient-to-r from-secondary/5 to-primary/5 border border-secondary/20 rounded-2xl p-8 space-y-6 floating-shadow">
+            <motion.div 
+              className="bg-white/95 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 space-y-6 floating-shadow"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              whileHover={{ scale: 1.02 }}
+            >
               <div className="flex items-center space-x-3">
                 <Badge className="bg-secondary text-secondary-foreground px-4 py-2 text-sm font-bold">
                   EXCLUSIVE OFFER
@@ -103,13 +137,13 @@ export const ProfessionalHeroSection = () => {
                 <h3 className="text-3xl font-bold text-secondary mb-2">
                   FREE $500 Assessment + 20% Off
                 </h3>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-foreground text-lg">
                   Professional site evaluation and detailed report worth $500 - absolutely free. 
                   Plus save 20% on your project when you book this month.
                 </p>
               </div>
               
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-4 text-sm text-foreground/70">
                 <div className="flex items-center space-x-1">
                   <Clock className="w-4 h-4" />
                   <span>Valid until month end</span>
@@ -119,62 +153,94 @@ export const ProfessionalHeroSection = () => {
                   <span>No obligation</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Premium Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
               {stats.map((stat, index) => (
-                <div key={index} className="text-center space-y-3 group">
-                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <stat.icon className="w-6 h-6 text-primary" />
+                <motion.div 
+                  key={index} 
+                  className="text-center space-y-3 group"
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+                >
+                  <div className="mx-auto w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <stat.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+                    <div className="text-3xl font-bold text-white">{stat.number}</div>
+                    <div className="text-sm text-white/80 font-medium">{stat.label}</div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="text-lg px-10 py-8 button-shadow hover-lift bg-gradient-to-r from-primary to-primary/90"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Get Free $500 Assessment
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  size="lg" 
+                  className="text-lg px-10 py-8 button-shadow hover-lift bg-gradient-to-r from-primary to-primary/90"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get Free $500 Assessment
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </motion.div>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-10 py-8 hover-lift border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => window.open('tel:0280000000')}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                (02) 8000 0000
-              </Button>
-            </div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-lg px-10 py-8 hover-lift border-2 border-white text-white hover:bg-white hover:text-primary"
+                  onClick={() => window.open('tel:0280000000')}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  (02) 8000 0000
+                </Button>
+              </motion.div>
+            </motion.div>
 
             {/* Emergency Service Box */}
-            <div className="bg-destructive/10 border-2 border-destructive/30 rounded-xl p-6 space-y-3 hover-glow">
+            <motion.div 
+              className="bg-destructive/90 border-2 border-destructive rounded-xl p-6 space-y-3 hover-glow"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+              whileHover={{ scale: 1.02 }}
+            >
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-destructive/20 rounded-full flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-destructive" />
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-bold text-destructive text-lg">24/7 Emergency Response</span>
+                <span className="font-bold text-white text-lg">24/7 Emergency Response</span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-white/90">
                 Structural damage? Water ingress? Foundation issues? We respond within 2 hours for all emergencies across Sydney.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Premium Lead Capture Form */}
-          <div className="lg:pl-8">
-            <Card className="card-shadow border-primary/30 bg-background/95 backdrop-blur-sm">
+          <motion.div 
+            className="lg:pl-8"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Card className="card-shadow border-primary/30 bg-white/95 backdrop-blur-sm">
               <CardContent className="p-10 space-y-8">
                 <div className="text-center space-y-4">
                   <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 text-primary">
@@ -284,7 +350,7 @@ export const ProfessionalHeroSection = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

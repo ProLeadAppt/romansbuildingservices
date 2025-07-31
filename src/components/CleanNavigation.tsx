@@ -109,9 +109,6 @@ export const CleanNavigation = () => {
             {/* Contact Info & Mobile Menu */}
             <div className="flex items-center space-x-4">
               <div className="hidden lg:flex items-center space-x-6">
-                <div className="flex items-center space-x-1 text-sm">
-                  <span>Sydney Wide Service</span>
-                </div>
                 <Button size="sm" className="bg-primary hover:bg-primary/90">
                   <Phone className="h-4 w-4 mr-2" />
                   (02) 8000 0000
@@ -169,11 +166,11 @@ export const CleanNavigation = () => {
             </nav>
             <div className="mt-4 pt-4 border-t text-center">
               <Button
-                onClick={() => window.open('tel:0412345678')}
+                onClick={() => window.open('tel:0280000000')}
                 className="w-full"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now: 0412 345 678
+                Call Now: (02) 8000 0000
               </Button>
             </div>
           </div>
