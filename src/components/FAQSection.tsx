@@ -37,7 +37,7 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-br from-muted/50 via-background to-accent/30 section-bg-pattern">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -51,7 +51,7 @@ export const FAQSection = () => {
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-lg trust-shadow px-6">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card/95 backdrop-blur-sm rounded-lg trust-shadow border-0 hover:elevated-card transition-smooth px-6">
                 <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>

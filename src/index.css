@@ -171,4 +171,91 @@ All colors MUST be HSL.
   .text-shadow-medium {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
   }
+
+  /* Section Background Effects */
+  .section-bg-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-bg-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--primary) / 0.85));
+    z-index: 0;
+  }
+
+  .section-bg-overlay > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-bg-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .section-bg-pattern {
+    position: relative;
+  }
+
+  .section-bg-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.1) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .section-bg-pattern > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Advanced shadows and depth */
+  .trust-shadow {
+    box-shadow: 
+      0 4px 16px hsl(var(--foreground) / 0.1),
+      0 8px 32px hsl(var(--primary) / 0.08);
+  }
+
+  .cta-shadow {
+    box-shadow: 
+      0 4px 20px hsl(var(--secondary) / 0.4),
+      0 8px 32px hsl(var(--secondary) / 0.2);
+  }
+
+  .elevated-card {
+    box-shadow: 
+      0 8px 32px hsl(var(--foreground) / 0.12),
+      0 16px 64px hsl(var(--primary) / 0.08);
+    transform: translateY(-4px);
+  }
+
+  .geometric-accent {
+    position: relative;
+  }
+
+  .geometric-accent::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, hsl(var(--secondary) / 0.1), transparent);
+    border-radius: 50%;
+    z-index: -1;
+  }
 }

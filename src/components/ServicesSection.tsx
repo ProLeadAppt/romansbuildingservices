@@ -42,7 +42,7 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-br from-background via-muted/30 to-accent section-bg-pattern">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -55,9 +55,9 @@ export const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <div key={index} className="bg-card p-6 rounded-lg trust-shadow hover:shadow-xl transition-smooth">
-              <div className="bg-primary/10 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-primary" />
+            <div key={index} className="bg-card p-6 rounded-lg trust-shadow hover:elevated-card transition-smooth geometric-accent group">
+              <div className="bg-primary/10 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-smooth">
+                <service.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-smooth" />
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-muted-foreground mb-4">{service.description}</p>

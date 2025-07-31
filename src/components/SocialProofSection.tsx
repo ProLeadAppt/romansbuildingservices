@@ -47,7 +47,9 @@ const testimonials = [
 
 export const SocialProofSection = () => {
   return (
-    <section className="py-20 bg-accent">
+    <section className="py-20 section-bg-image bg-gradient-to-br from-accent via-muted/50 to-background" style={{backgroundImage: `url(${teamImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-accent/95"></div>
+      <div className="relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -62,7 +64,7 @@ export const SocialProofSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="bg-card rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-4 trust-shadow">
+              <div className="bg-card rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-4 trust-shadow hover:elevated-card transition-smooth">
                 <stat.icon className="w-8 h-8 text-primary" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
@@ -83,7 +85,7 @@ export const SocialProofSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-card p-6 rounded-lg trust-shadow">
+            <div key={index} className="bg-card/95 backdrop-blur-sm p-6 rounded-lg trust-shadow hover:elevated-card transition-smooth geometric-accent">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
@@ -101,7 +103,7 @@ export const SocialProofSection = () => {
         </div>
 
         {/* Team Section */}
-        <div className="bg-card rounded-lg p-8 trust-shadow">
+        <div className="bg-card/95 backdrop-blur-sm rounded-lg p-8 trust-shadow elevated-card">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="max-w-2xl">
               <h3 className="text-2xl font-bold text-primary mb-4">Romans Building Services Team</h3>
@@ -136,6 +138,7 @@ export const SocialProofSection = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

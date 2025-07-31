@@ -49,7 +49,7 @@ const solutions = [
 
 export const ProblemSolutionSection = () => {
   return (
-    <section className="py-20 bg-accent">
+    <section className="py-20 section-bg-pattern bg-gradient-to-br from-accent via-background to-muted/50">
       <div className="container mx-auto px-4">
         {/* Problem Section */}
         <div className="text-center mb-12">
@@ -63,7 +63,7 @@ export const ProblemSolutionSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {problems.map((problem, index) => (
-            <div key={index} className="bg-card p-6 rounded-lg trust-shadow text-center">
+            <div key={index} className="bg-card p-6 rounded-lg trust-shadow text-center hover:elevated-card transition-smooth geometric-accent">
               <div className="bg-destructive/10 rounded-full p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
                 <problem.icon className="w-7 h-7 text-destructive" />
               </div>
@@ -105,7 +105,7 @@ export const ProblemSolutionSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => (
-            <div key={index} className="bg-card p-6 rounded-lg trust-shadow text-center">
+            <div key={index} className="bg-card p-6 rounded-lg trust-shadow text-center hover:elevated-card transition-smooth geometric-accent">
               <div className="bg-primary/10 rounded-full p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
                 <solution.icon className="w-7 h-7 text-primary" />
               </div>
