@@ -49,153 +49,88 @@ export const ProfessionalHeroSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
-      {/* Premium Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+      {/* Streamlined Content */}
+      <div className="relative z-10 container mx-auto px-4 py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           
-          {/* Left Column - Premium Content */}
+          {/* Left Column - Focused Content */}
           <motion.div 
-            className="space-y-10"
+            className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Trust Badges */}
+            {/* Core Trust Elements */}
             <motion.div 
-              className="grid grid-cols-2 lg:grid-cols-4 gap-3"
+              className="flex items-center space-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {trustBadges.map((badge, index) => (
-                <motion.div 
-                  key={index} 
-                  className="flex flex-col items-center space-y-2 bg-white/90 backdrop-blur-sm border rounded-xl p-3 card-shadow hover-lift"
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <badge.icon className={`w-6 h-6 ${badge.color}`} />
-                  <span className="text-xs font-medium text-center leading-tight text-foreground">{badge.text}</span>
-                </motion.div>
-              ))}
+              <Badge className="bg-secondary text-secondary-foreground px-3 py-1">
+                <Shield className="w-4 h-4 mr-2" />
+                Licensed & Insured
+              </Badge>
+              <Badge className="bg-white/20 text-white border-white/30 px-3 py-1">
+                <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
+                25+ Years Experience
+              </Badge>
             </motion.div>
 
-            {/* Premium Headline */}
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 px-4 py-1">
-                  <Zap className="w-4 h-4 mr-2" />
-                  Sydney's #1 Building Specialists
-                </Badge>
-                
-                <motion.h1 
-                  className="text-4xl md:text-5xl font-bold leading-tight text-white"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <span className="gradient-text">Premium Building</span>
-                  <br />
-                  <span className="text-white">Solutions</span>
-                </motion.h1>
-                
-                <motion.p 
-                  className="text-xl text-white/90 max-w-lg leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  Expert masonry, restoration & structural solutions with 
-                  <span className="text-secondary font-semibold"> 25+ years of unmatched expertise.</span>
-                  Licensed, insured & trusted across Sydney.
-                </motion.p>
-              </div>
-            </div>
-
-            {/* Premium Offer Box */}
+            {/* Powerful Headline */}
             <motion.div 
-              className="bg-white/95 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 space-y-6 floating-shadow"
+              className="space-y-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="flex items-center space-x-3">
-                <Badge className="bg-secondary text-secondary-foreground px-4 py-2 text-sm font-bold">
-                  EXCLUSIVE OFFER
-                </Badge>
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                  ))}
-                </div>
-              </div>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
+                Sydney's #1
+                <br />
+                <span className="gradient-text">Building Experts</span>
+              </h1>
               
-              <div>
-                <h3 className="text-3xl font-bold text-secondary mb-2">
-                  FREE $500 Assessment + 20% Off
-                </h3>
-                <p className="text-foreground text-lg">
-                  Professional site evaluation and detailed report worth $500 - absolutely free. 
-                  Plus save 20% on your project when you book this month.
-                </p>
-              </div>
-              
-              <div className="flex items-center space-x-4 text-sm text-foreground/70">
-                <div className="flex items-center space-x-1">
-                  <Clock className="w-4 h-4" />
-                  <span>Valid until month end</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span>No obligation</span>
-                </div>
-              </div>
+              <p className="text-xl text-white/90 max-w-lg leading-relaxed">
+                Professional masonry, restoration & structural solutions. 
+                <span className="text-secondary font-semibold"> Get your FREE $500 assessment today.</span>
+              </p>
             </motion.div>
 
-            {/* Premium Stats */}
+            {/* Key Stats - Simplified */}
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
-              initial={{ opacity: 0, y: 30 }}
+              className="flex items-center space-x-8"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-center space-y-3 group"
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                >
-                  <div className="mx-auto w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                    <stat.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-white">{stat.number}</div>
-                    <div className="text-sm text-white/80 font-medium">{stat.label}</div>
-                  </div>
-                </motion.div>
-              ))}
+              <div className="text-center">
+                <div className="text-3xl font-bold text-secondary">1000+</div>
+                <div className="text-sm text-white/80">Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-secondary">100%</div>
+                <div className="text-sm text-white/80">Satisfaction</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-secondary">24/7</div>
+                <div className="text-sm text-white/80">Emergency</div>
+              </div>
             </motion.div>
 
-            {/* Premium CTA Buttons */}
+            {/* Single Strong CTA */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button 
                   size="lg" 
-                  className="text-lg px-10 py-8 button-shadow hover-lift bg-gradient-to-r from-primary to-primary/90"
+                  className="text-lg px-12 py-8 button-shadow bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Get Free $500 Assessment
+                  Get FREE $500 Assessment
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </motion.div>
@@ -204,7 +139,7 @@ export const ProfessionalHeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-10 py-8 hover-lift border-2 border-white text-white hover:bg-white hover:text-primary"
+                  className="text-lg px-8 py-8 border-2 border-white text-white hover:bg-white hover:text-primary"
                   onClick={() => window.open('tel:0280000000')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -213,61 +148,53 @@ export const ProfessionalHeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Emergency Service Box */}
+            {/* Emergency Note - Simplified */}
             <motion.div 
-              className="bg-destructive/90 border-2 border-destructive rounded-xl p-6 space-y-3 hover-glow"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-3 bg-destructive/20 rounded-lg p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1 }}
             >
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <span className="font-bold text-white text-lg">24/7 Emergency Response</span>
-              </div>
-              <p className="text-white/90">
-                Structural damage? Water ingress? Foundation issues? We respond within 2 hours for all emergencies across Sydney.
-              </p>
+              <Zap className="w-5 h-5 text-yellow-400" />
+              <span className="text-white font-medium">24/7 Emergency Response - 2 Hour Response Time</span>
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Premium Lead Capture Form */}
+          {/* Right Column - Streamlined Form */}
           <motion.div 
             className="lg:pl-8"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card className="card-shadow border-primary/30 bg-white/95 backdrop-blur-sm">
-              <CardContent className="p-10 space-y-8">
-                <div className="text-center space-y-4">
-                  <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 text-primary">
+            <Card className="card-shadow border-secondary/30 bg-white/95 backdrop-blur-sm">
+              <CardContent className="p-8 space-y-6">
+                <div className="text-center space-y-3">
+                  <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-4 py-2 text-secondary">
                     <Star className="w-5 h-5 fill-current" />
-                    <span className="font-semibold">Get Your FREE Assessment</span>
+                    <span className="font-semibold">FREE Assessment</span>
                   </div>
-                  <h3 className="text-3xl font-bold">Worth $500 - Completely Free</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Professional evaluation + detailed quote within 24 hours
+                  <h3 className="text-2xl font-bold">Worth $500 - Completely Free</h3>
+                  <p className="text-muted-foreground">
+                    Get your professional quote within 24 hours
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input
                       placeholder="Full Name *"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
-                      className="h-12 transition-smooth border-primary/20 focus:border-primary"
+                      className="h-12"
                     />
                     <Input
                       placeholder="Phone Number *"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
-                      className="h-12 transition-smooth border-primary/20 focus:border-primary"
+                      className="h-12"
                     />
                   </div>
 
@@ -277,29 +204,27 @@ export const ProfessionalHeroSection = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
-                    className="h-12 transition-smooth border-primary/20 focus:border-primary"
+                    className="h-12"
                   />
 
                   <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                    <SelectTrigger className="h-12 transition-smooth border-primary/20">
+                    <SelectTrigger className="h-12">
                       <SelectValue placeholder="Service Needed *" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="masonry">Premium Masonry & Brickwork</SelectItem>
-                      <SelectItem value="restoration">Heritage Building Restoration</SelectItem>
-                      <SelectItem value="structural">Structural Repairs & Reinforcement</SelectItem>
-                      <SelectItem value="waterproofing">Advanced Waterproofing</SelectItem>
-                      <SelectItem value="assessment">Professional Building Assessment</SelectItem>
-                      <SelectItem value="emergency">Emergency Structural Repairs</SelectItem>
+                      <SelectItem value="masonry">Masonry & Brickwork</SelectItem>
+                      <SelectItem value="restoration">Building Restoration</SelectItem>
+                      <SelectItem value="structural">Structural Repairs</SelectItem>
+                      <SelectItem value="waterproofing">Waterproofing</SelectItem>
+                      <SelectItem value="assessment">Building Assessment</SelectItem>
                     </SelectContent>
                   </Select>
 
                   <Textarea
-                    placeholder="Describe your project or issue..."
+                    placeholder="Brief description of your project..."
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    rows={4}
-                    className="transition-smooth border-primary/20 focus:border-primary"
+                    rows={3}
                   />
 
                   <Button 
@@ -308,43 +233,20 @@ export const ProfessionalHeroSection = () => {
                     className="w-full text-lg py-6 button-shadow bg-gradient-to-r from-primary to-primary/90"
                   >
                     <CheckCircle className="w-5 h-5 mr-2" />
-                    Get My FREE $500 Assessment
+                    Get My FREE Assessment
                   </Button>
                 </form>
 
-                <div className="space-y-6 pt-6 border-t">
-                  <div className="text-center space-y-4">
-                    <p className="text-sm font-semibold text-primary">What's Included in Your FREE Assessment:</p>
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        'Comprehensive professional site inspection',
-                        'Detailed written assessment report',
-                        'No-obligation fixed-price quote',
-                        'Expert recommendations & solutions',
-                        'Priority booking for approved projects'
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{item}</span>
-                        </div>
-                      ))}
+                <div className="text-center pt-4 border-t space-y-3">
+                  <p className="text-sm font-semibold text-primary">✓ No obligation ✓ 2-hour response ✓ Licensed professionals</p>
+                  <div className="flex items-center justify-center space-x-4 text-sm">
+                    <div className="flex items-center space-x-1">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="font-semibold">(02) 8000 0000</span>
                     </div>
-                  </div>
-
-                  <div className="text-center space-y-3 pt-6 border-t">
-                    <div className="flex items-center justify-center space-x-6 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Phone className="w-4 h-4 text-primary" />
-                        <span className="font-semibold">(02) 8000 0000</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Mail className="w-4 h-4 text-primary" />
-                        <span>info@romansbuildingservices.com.au</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                    <div className="flex items-center space-x-1">
                       <MapPin className="w-4 h-4" />
-                      <span>Serving Greater Sydney & Surrounding Areas</span>
+                      <span>Sydney Wide</span>
                     </div>
                   </div>
                 </div>
