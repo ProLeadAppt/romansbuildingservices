@@ -60,7 +60,7 @@ export const SmoothScrollNavigation = () => {
         <Button
           size="lg"
           className="rounded-full w-14 h-14 floating-shadow hover-glow animate-glow"
-          onClick={() => window.open('tel:0280000000')}
+          onClick={() => window.open('tel:0414922276')}
         >
           <Phone className="w-6 h-6" />
         </Button>
@@ -119,7 +119,7 @@ export const SmoothScrollNavigation = () => {
             <div className="hidden lg:flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="font-semibold">(02) 8000 0000</span>
+                <span className="font-semibold">0414 922 276</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary" />

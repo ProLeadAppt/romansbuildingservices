@@ -126,9 +126,9 @@ export const Navigation = () => {
 
           {/* CTA Section */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:0280000000" className="flex items-center space-x-2 text-primary font-semibold">
+            <a href="tel:0414922276" className="flex items-center space-x-2 text-primary font-semibold">
               <Phone className="h-4 w-4" />
-              <span>(02) 8000 0000</span>
+              <span>0414 922 276</span>
             </a>
             <Button size="sm">Get Free Assessment</Button>
           </div>
@@ -191,9 +191,9 @@ export const Navigation = () => {
               </Link>
 
               <div className="px-3 py-2 space-y-2">
-                <a href="tel:0280000000" className="flex items-center space-x-2 text-primary font-semibold">
+                <a href="tel:0414922276" className="flex items-center space-x-2 text-primary font-semibold">
                   <Phone className="h-4 w-4" />
-                  <span>(02) 8000 0000</span>
+                  <span>0414 922 276</span>
                 </a>
                 <Button size="sm" className="w-full">Get Free Assessment</Button>
               </div>

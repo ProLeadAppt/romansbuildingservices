@@ -176,9 +176,9 @@ export const InteractiveServicesSection = () => {
                       variant="outline" 
                       size="lg" 
                       className="flex-1 hover-lift"
-                      onClick={() => window.open('tel:0280000000')}
+                      onClick={() => window.open('tel:0414922276')}
                     >
-                      Call Expert: (02) 8000 0000
+                      Call Expert: 0414 922 276
                     </Button>
                   </div>
 

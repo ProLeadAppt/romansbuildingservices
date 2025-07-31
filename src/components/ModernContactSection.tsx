@@ -42,8 +42,8 @@ export const ModernContactSection = () => {
     {
       icon: Phone,
       title: 'Professional Service Line',
-      content: '(02) 8000 0000',
-      action: 'tel:0280000000',
+      content: '0414 922 276',
+      action: 'tel:0414922276',
       description: 'All inquiries, quotes and emergency responses',
       color: 'text-primary',
       bgColor: 'bg-primary/10'
@@ -339,10 +339,10 @@ export const ModernContactSection = () => {
                   variant="destructive" 
                   size="lg" 
                   className="w-full mt-4"
-                  onClick={() => window.open('tel:0280000000')}
+                  onClick={() => window.open('tel:0414922276')}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Emergency: (02) 8000 0000
+                  Emergency: 0414 922 276
                 </Button>
               </CardContent>
             </Card>
@@ -393,7 +393,7 @@ export const ModernContactSection = () => {
             <Button 
               size="lg" 
               className="w-full hover-lift"
-              onClick={() => window.open('tel:0280000000')}
+              onClick={() => window.open('tel:0414922276')}
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Now for Instant Quote

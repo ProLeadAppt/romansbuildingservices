@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 export const ProfessionalHeroSection = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ export const ProfessionalHeroSection = () => {
     service: '',
     message: ''
   });
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,13 +86,15 @@ export const ProfessionalHeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-2xl" style={{
-                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white" style={{
+                textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
+                WebkitTextStroke: '1px rgba(0,0,0,0.3)'
               }}>
                 Sydney's #1
                 <br />
-                <span className="bg-gradient-to-r from-secondary via-yellow-400 to-secondary bg-clip-text text-transparent drop-shadow-2xl" style={{
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'
+                <span className="text-secondary font-bold" style={{
+                  textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
+                  WebkitTextStroke: '1px rgba(0,0,0,0.3)'
                 }}>Building Experts</span>
               </h1>
               
@@ -134,7 +138,7 @@ export const ProfessionalHeroSection = () => {
                 <Button 
                   size="lg" 
                   className="text-lg px-12 py-8 button-shadow bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => setShowAssessmentPopup(true)}
                 >
                   Get FREE $500 Assessment
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -146,10 +150,10 @@ export const ProfessionalHeroSection = () => {
                   variant="outline" 
                   size="lg" 
                   className="text-lg px-8 py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
-                  onClick={() => window.open('tel:0280000000')}
+                  onClick={() => window.open('tel:0414922276')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (02) 8000 0000
+                  0414 922 276
                 </Button>
               </motion.div>
             </motion.div>
@@ -265,7 +269,7 @@ export const ProfessionalHeroSection = () => {
                   <div className="flex items-center justify-center space-x-4 text-sm">
                     <div className="flex items-center space-x-1">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="font-semibold">(02) 8000 0000</span>
+                      <span className="font-semibold">0414 922 276</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <MapPin className="w-4 h-4" />
@@ -278,6 +282,12 @@ export const ProfessionalHeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Assessment Popup */}
+      <AssessmentPopup 
+        isOpen={showAssessmentPopup} 
+        onClose={() => setShowAssessmentPopup(false)} 
+      />
     </div>
   );
 };

@@ -69,10 +69,10 @@ export const FAQSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:0280000000" 
+                href="tel:0414922276" 
                 className="inline-flex items-center justify-center bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold px-6 py-3 rounded-md transition-smooth"
               >
-                Call Now: (02) 8000 0000
+                Call Now: 0414 922 276
               </a>
               <a 
                 href="mailto:info@romansbuildingservices.com"

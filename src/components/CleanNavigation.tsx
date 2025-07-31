@@ -56,7 +56,7 @@ export const CleanNavigation = () => {
         <Button
           size="lg"
           className="rounded-full shadow-lg bg-primary hover:bg-primary/90 px-4"
-          onClick={() => window.open('tel:0280000000', '_self')}
+          onClick={() => window.open('tel:0414922276', '_self')}
         >
           <Phone className="h-5 w-5 mr-2" />
           Call
@@ -113,7 +113,7 @@ export const CleanNavigation = () => {
               <div className="hidden lg:flex items-center space-x-6">
                 <Button size="sm" className="bg-primary hover:bg-primary/90">
                   <Phone className="h-4 w-4 mr-2" />
-                  (02) 8000 0000
+              0414 922 276
                 </Button>
               </div>
               
@@ -168,11 +168,11 @@ export const CleanNavigation = () => {
             </nav>
             <div className="mt-4 pt-4 border-t text-center">
               <Button
-                onClick={() => window.open('tel:0280000000')}
+                onClick={() => window.open('tel:0414922276')}
                 className="w-full"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now: (02) 8000 0000
+                Call Now: 0414 922 276
               </Button>
             </div>
           </div>
