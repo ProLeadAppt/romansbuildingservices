@@ -50,22 +50,6 @@ export const SmoothScrollNavigation = () => {
 
   return (
     <>
-      {/* Floating Phone Button */}
-      <motion.div
-        className="fixed top-4 right-4 z-50"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <Button
-          size="lg"
-          className="rounded-full w-14 h-14 floating-shadow hover-glow animate-glow"
-          onClick={() => window.open('tel:0414922276')}
-        >
-          <Phone className="w-6 h-6" />
-        </Button>
-      </motion.div>
-
       {/* Glassmorphism Navigation Header */}
       <motion.header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${

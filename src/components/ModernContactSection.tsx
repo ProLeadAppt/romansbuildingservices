@@ -12,6 +12,7 @@ import {
   Car, Shield, Award, Calendar 
 } from 'lucide-react';
 import { toast } from 'sonner';
+import minasPhoto from '@/assets/professional-team.jpg';
 
 export const ModernContactSection = () => {
   const [formData, setFormData] = useState({
@@ -382,31 +383,54 @@ export const ModernContactSection = () => {
             </Card>
           </motion.div>
 
-          {/* Quick Actions */}
+          {/* Personal Availability with Minas Photo */}
           <motion.div
-            className="space-y-4"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Button 
-              size="lg" 
-              className="w-full hover-lift"
-              onClick={() => window.open('tel:0414922276')}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now for Instant Quote
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full hover-lift"
-              onClick={() => window.open('https://calendly.com/romansbuildingservices')}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Online Consultation
-            </Button>
+            <Card className="floating-shadow">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                      <img 
+                        src={minasPhoto} 
+                        alt="Minas - Romans Building Services Owner" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">Speak Directly with Minas</h3>
+                      <p className="text-sm text-muted-foreground">Owner & Licensed Builder</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    "I personally handle all consultations to ensure you get the best service and honest advice."
+                  </p>
+                  <div className="grid grid-cols-1 gap-3">
+                    <Button 
+                      size="lg" 
+                      className="w-full hover-lift"
+                      onClick={() => window.open('tel:0414922276')}
+                    >
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now for Instant Quote
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full hover-lift"
+                      onClick={() => window.open('https://calendly.com/romansbuildingservices')}
+                    >
+                      <Calendar className="w-4 h-4 mr-2" />
+                      Book Online Consultation
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>

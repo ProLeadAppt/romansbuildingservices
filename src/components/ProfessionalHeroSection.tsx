@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
+import minasPhoto from '@/assets/professional-team.jpg';
 
 export const ProfessionalHeroSection = () => {
   const [formData, setFormData] = useState({
@@ -264,16 +265,35 @@ export const ProfessionalHeroSection = () => {
                   </Button>
                 </form>
 
-                <div className="text-center pt-4 border-t space-y-3">
-                  <p className="text-sm font-semibold text-primary">✓ No obligation ✓ 2-hour response ✓ Licensed professionals</p>
-                  <div className="flex items-center justify-center space-x-4 text-sm">
-                    <div className="flex items-center space-x-1">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <span className="font-semibold">0414 922 276</span>
+                <div className="space-y-4">
+                  <div className="text-center pt-4 border-t space-y-3">
+                    <p className="text-sm font-semibold text-primary">✓ No obligation ✓ 2-hour response ✓ Licensed professionals</p>
+                    <div className="flex items-center justify-center space-x-4 text-sm">
+                      <div className="flex items-center space-x-1">
+                        <Phone className="w-4 h-4 text-primary" />
+                        <span className="font-semibold">0414 922 276</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>Sydney Wide</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>Sydney Wide</span>
+                  </div>
+
+                  {/* Personal Guarantee with Minas Photo */}
+                  <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                        <img 
+                          src={minasPhoto} 
+                          alt="Minas - Romans Building Services Owner" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Personal Guarantee</p>
+                        <p className="text-xs text-muted-foreground">"I personally oversee every project to ensure exceptional quality." - Minas</p>
+                      </div>
                     </div>
                   </div>
                 </div>

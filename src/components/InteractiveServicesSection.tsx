@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle } from 'lucide-react';
+import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle, Phone } from 'lucide-react';
+import minasPhoto from '@/assets/professional-team.jpg';
 
 export const InteractiveServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
@@ -217,6 +218,61 @@ export const InteractiveServicesSection = () => {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Call to Action with Minas Photo */}
+      <motion.div
+        className="text-center mt-12 md:mt-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <div className="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl text-white">
+          <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
+            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+              <img 
+                src={minasPhoto} 
+                alt="Minas - Romans Building Services Owner" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                Ready to Transform Your Space?
+              </h3>
+              <p className="text-lg opacity-90">
+                "I personally guarantee exceptional results on every project." - Minas
+              </p>
+            </div>
+          </div>
+          <p className="text-lg mb-6 opacity-90">
+            Get a free assessment and discover how we can help you achieve your vision.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              variant="secondary"
+              className="min-w-[200px] bg-white text-primary hover:bg-white/90"
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Get Free Assessment
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="min-w-[200px] border-white text-white hover:bg-white/10"
+              onClick={() => window.open('tel:0414922276')}
+            >
+              <Phone className="mr-2 w-5 h-5" />
+              Call Now
+            </Button>
+          </div>
+        </div>
+      </motion.div>
     </div>
     </div>
   );
