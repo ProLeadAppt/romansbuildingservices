@@ -66,7 +66,9 @@ export const CleanNavigation = () => {
       {/* Clean Navigation Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-smooth ${
-          isScrolled ? 'glass-nav' : 'bg-transparent'
+          isScrolled 
+            ? 'glass-nav shadow-lg' 
+            : 'bg-white/95 backdrop-blur-md shadow-md'
         }`}
       >
         <div className="container mx-auto px-4 py-4">
@@ -79,7 +81,7 @@ export const CleanNavigation = () => {
                 className="w-10 h-10 object-contain"
               />
               <div>
-                <h1 className="text-xl font-bold">Roman's Building</h1>
+                <h1 className="text-xl font-bold text-foreground">Roman's Building</h1>
                 <p className="text-xs text-muted-foreground">Since 1995</p>
               </div>
             </div>

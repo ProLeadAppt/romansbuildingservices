@@ -132,13 +132,14 @@ All colors MUST be HSL.
 
   /* Simple Glassmorphism */
   .glass-nav {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid hsl(var(--border));
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   }
 
   .dark .glass-nav {
-    background: rgba(34, 34, 34, 0.95);
+    background: rgba(34, 34, 34, 0.98);
   }
 
   /* Clean Transitions */
