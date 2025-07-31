@@ -7,45 +7,62 @@ import { ProjectGallerySection } from '@/components/ProjectGallerySection';
 import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
 import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 const SinglePageApp = () => {
   return (
     <div className="min-h-screen scroll-smooth">
-      <CleanNavigation />
+      <ErrorBoundary>
+        <CleanNavigation />
+      </ErrorBoundary>
       
       {/* Hero Section */}
       <section id="hero" className="min-h-screen">
-        <ProfessionalHeroSection />
+        <ErrorBoundary>
+          <ProfessionalHeroSection />
+        </ErrorBoundary>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-muted/30">
-        <AnimatedAboutSection />
+      <section id="about" className="py-16 md:py-20 bg-muted/30">
+        <ErrorBoundary>
+          <AnimatedAboutSection />
+        </ErrorBoundary>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20">
-        <InteractiveServicesSection />
+      <section id="services" className="py-16 md:py-20">
+        <ErrorBoundary>
+          <InteractiveServicesSection />
+        </ErrorBoundary>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-muted/30">
-        <ProjectGallerySection />
+      <section id="projects" className="py-16 md:py-20 bg-muted/30">
+        <ErrorBoundary>
+          <ProjectGallerySection />
+        </ErrorBoundary>
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20">
-        <ProcessTimelineSection />
+      <section id="process" className="py-16 md:py-20">
+        <ErrorBoundary>
+          <ProcessTimelineSection />
+        </ErrorBoundary>
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-muted/30">
-        <ReviewsCarouselSection />
+      <section id="reviews" className="py-16 md:py-20 bg-muted/30">
+        <ErrorBoundary>
+          <ReviewsCarouselSection />
+        </ErrorBoundary>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <ModernContactSection />
+      <section id="contact" className="py-16 md:py-20">
+        <ErrorBoundary>
+          <ModernContactSection />
+        </ErrorBoundary>
       </section>
     </div>
   );

@@ -222,32 +222,35 @@ export const ReviewsCarouselSection = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Arrows */}
+        {/* Enhanced Navigation Arrows */}
         <button
           onClick={prevReview}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-background border rounded-full shadow-lg hover:bg-muted transition-colors z-10"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-3 md:p-4 bg-background/90 border rounded-full shadow-lg hover:bg-muted transition-all hover-lift z-10 touch-target backdrop-blur-sm"
+          aria-label="Previous review"
         >
-          <ArrowLeft className="w-5 h-5" />
+          <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
         </button>
         
         <button
           onClick={nextReview}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-background border rounded-full shadow-lg hover:bg-muted transition-colors z-10"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-3 md:p-4 bg-background/90 border rounded-full shadow-lg hover:bg-muted transition-all hover-lift z-10 touch-target backdrop-blur-sm"
+          aria-label="Next review"
         >
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
         </button>
 
-        {/* Dots Indicator */}
+        {/* Optimized Dots Indicator */}
         <div className="flex justify-center space-x-2 mt-8">
           {reviews.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentReview(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 touch-target ${
                 index === currentReview 
-                  ? 'bg-primary scale-125' 
-                  : 'bg-muted hover:bg-muted-foreground/30'
+                  ? 'bg-primary transform scale-125' 
+                  : 'bg-muted hover:bg-muted-foreground/30 hover:scale-110'
               }`}
+              aria-label={`Go to review ${index + 1}`}
             />
           ))}
         </div>

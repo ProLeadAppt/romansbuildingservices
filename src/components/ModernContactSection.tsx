@@ -95,9 +95,9 @@ export const ModernContactSection = () => {
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
         {/* Contact Form */}
-        <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+        <div className="lg:col-span-2 space-y-4 md:space-y-6 lg:space-y-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -116,23 +116,23 @@ export const ModernContactSection = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     {/* Personal Info */}
-                    <div className="grid grid-cols-1 gap-4">
-                      <motion.div whileFocus={{ scale: 1.02 }}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                      <motion.div whileFocus={{ scale: 1.02 }} className="md:col-span-1">
                         <Input
                           placeholder="Full Name *"
                           value={formData.name}
                           onChange={(e) => setFormData({...formData, name: e.target.value})}
                           required
-                          className="transition-smooth h-10 sm:h-12"
+                          className="transition-smooth h-11 md:h-12 touch-target"
                         />
                       </motion.div>
-                      <motion.div whileFocus={{ scale: 1.02 }}>
+                      <motion.div whileFocus={{ scale: 1.02 }} className="md:col-span-1">
                         <Input
                           placeholder="Phone Number *"
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                           required
-                          className="transition-smooth h-10 sm:h-12"
+                          className="transition-smooth h-11 md:h-12 touch-target"
                         />
                       </motion.div>
                     </div>
@@ -144,14 +144,14 @@ export const ModernContactSection = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         required
-                        className="transition-smooth h-10 sm:h-12"
+                        className="transition-smooth h-11 md:h-12 touch-target"
                       />
                     </motion.div>
 
                     {/* Service & Urgency */}
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                       <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                        <SelectTrigger className="h-10 sm:h-12">
+                        <SelectTrigger className="h-11 md:h-12 touch-target">
                           <SelectValue placeholder="Service Needed *" />
                         </SelectTrigger>
                         <SelectContent>
@@ -166,7 +166,7 @@ export const ModernContactSection = () => {
                       </Select>
 
                       <Select value={formData.urgency} onValueChange={(value) => setFormData({...formData, urgency: value})}>
-                        <SelectTrigger className="h-10 sm:h-12">
+                        <SelectTrigger className="h-11 md:h-12 touch-target">
                           <SelectValue placeholder="Project Urgency" />
                         </SelectTrigger>
                         <SelectContent>
@@ -187,7 +187,7 @@ export const ModernContactSection = () => {
                             key={method}
                             type="button"
                             onClick={() => setFormData({...formData, preferredContact: method})}
-                            className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                            className={`flex-1 px-4 py-3 rounded-lg text-sm font-medium transition-all touch-target ${
                               formData.preferredContact === method
                                 ? 'bg-primary text-primary-foreground'
                                 : 'bg-muted hover:bg-muted-foreground/10'
@@ -210,8 +210,8 @@ export const ModernContactSection = () => {
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button type="submit" size="lg" className="w-full text-base sm:text-lg py-4 sm:py-6 cta-shadow">
-                        <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      <Button type="submit" size="lg" className="w-full text-base md:text-lg py-4 md:py-6 cta-shadow touch-target">
+                        <Send className="w-5 h-5 mr-2" />
                         Send Request
                       </Button>
                     </motion.div>
@@ -282,7 +282,7 @@ export const ModernContactSection = () => {
         </div>
 
         {/* Contact Info Sidebar */}
-        <div className="space-y-6 sm:space-y-8">
+        <div className="space-y-4 md:space-y-6 lg:space-y-8">
           {/* Business Hours */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
