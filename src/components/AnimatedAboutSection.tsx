@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
-import teamImage from '@/assets/team.jpg';
+import minasWorkingImage from '@/assets/minas-working.jpg';
 
 export const AnimatedAboutSection = () => {
   const achievements = [
@@ -13,12 +13,12 @@ export const AnimatedAboutSection = () => {
   ];
 
   const values = [
-    'Quality craftsmanship guaranteed',
-    'Transparent pricing & timelines',
-    '24/7 emergency response',
-    'Eco-friendly building solutions',
-    'Local Sydney expertise',
-    'Family-owned & operated'
+    'Personal inspection of every project',
+    'Direct communication with the owner',
+    '25-year reputation for excellence', 
+    'Family business values & integrity',
+    'Hands-on quality control',
+    'Lifetime craftsmanship guarantee'
   ];
 
   return (
@@ -45,18 +45,31 @@ export const AnimatedAboutSection = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Building <span className="gradient-text">Excellence</span> Since 1995
+              Meet <span className="gradient-text">Minas Romanakis</span>, Our Founder
             </motion.h2>
             
             <motion.p
-              className="text-lg text-muted-foreground"
+              className="text-lg text-muted-foreground mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Romans Building Services has been Sydney's trusted partner for premium masonry, restoration, and structural solutions. We combine traditional craftsmanship with modern techniques to deliver exceptional results.
+              For over 25 years, Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
             </motion.p>
+
+            <motion.div
+              className="glass-morphism rounded-xl p-6 border-l-4 border-primary"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-foreground italic font-medium">
+                "Quality isn't just our promise—it's my personal guarantee. Every project receives my direct attention because your satisfaction and the integrity of my family business depends on it."
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 font-semibold">— Minas Romanakis, Founder & Owner</p>
+            </motion.div>
           </div>
 
           {/* Achievements Grid */}
@@ -92,7 +105,7 @@ export const AnimatedAboutSection = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold mb-4">Why Choose Romans Building Services?</h3>
+            <h3 className="text-xl font-semibold mb-4">Minas's Personal Commitment to You:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {values.map((value, index) => (
                 <motion.div
@@ -121,8 +134,8 @@ export const AnimatedAboutSection = () => {
         >
           <div className="relative overflow-hidden rounded-2xl floating-shadow">
             <motion.img
-              src="/src/assets/professional-team.jpg"
-              alt="Romans Building Services Professional Team"
+              src={minasWorkingImage}
+              alt="Minas Romanakis working hands-on with masonry"
               className="w-full h-[500px] object-cover"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}
@@ -151,8 +164,8 @@ export const AnimatedAboutSection = () => {
               viewport={{ once: true }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold">1000+</div>
-                <div className="text-sm opacity-90">Projects</div>
+                <div className="text-2xl font-bold">Personal</div>
+                <div className="text-sm opacity-90">Guarantee</div>
               </div>
             </motion.div>
           </div>
