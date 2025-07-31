@@ -41,7 +41,7 @@ export const ProfessionalHeroSection = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center">
+    <div className="relative min-h-screen flex items-center pt-20 md:pt-24">
       {/* Premium Background with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -189,12 +189,12 @@ export const ProfessionalHeroSection = () => {
 
           {/* Right Column - Streamlined Form */}
           <motion.div 
-            className="lg:pl-8 order-1 lg:order-2"
+            className="lg:pl-8 order-1 lg:order-2 relative z-50"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card className="card-shadow border-secondary/30 bg-white/95 backdrop-blur-sm">
+            <Card className="card-shadow border-secondary/30 bg-white/95 backdrop-blur-sm relative z-50">
               <CardContent className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
                 <div className="text-center space-y-2 sm:space-y-3">
                   <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-secondary">
