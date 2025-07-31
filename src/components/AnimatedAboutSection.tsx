@@ -22,8 +22,13 @@ export const AnimatedAboutSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 construction-pattern opacity-5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Column - Content */}
         <motion.div
           className="space-y-8"
@@ -153,6 +158,7 @@ export const AnimatedAboutSection = () => {
           </div>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 };

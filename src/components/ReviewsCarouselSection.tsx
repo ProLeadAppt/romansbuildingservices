@@ -109,7 +109,20 @@ export const ReviewsCarouselSection = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="relative overflow-hidden">
+      {/* Testimonial Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
+      <div className="absolute inset-0 trust-pattern opacity-10" />
+      
+      {/* Floating Trust Elements */}
+      <div className="absolute top-10 right-20 opacity-20">
+        <Star className="w-16 h-16 text-yellow-400 animate-pulse" />
+      </div>
+      <div className="absolute bottom-20 left-20 opacity-20">
+        <Quote className="w-12 h-12 text-primary animate-pulse delay-500" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -290,6 +303,7 @@ export const ReviewsCarouselSection = () => {
           </p>
         </motion.div>
       </motion.div>
+    </div>
     </div>
   );
 };

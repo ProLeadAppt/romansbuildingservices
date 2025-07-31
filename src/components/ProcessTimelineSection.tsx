@@ -70,7 +70,16 @@ export const ProcessTimelineSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="relative overflow-hidden">
+      {/* Construction Process Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
+      <div className="absolute inset-0 blueprint-pattern opacity-5" />
+      
+      {/* Progressive Visual Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      
+      <div className="container mx-auto px-4 relative">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -237,6 +246,7 @@ export const ProcessTimelineSection = () => {
           </p>
         </motion.div>
       </motion.div>
+    </div>
     </div>
   );
 };

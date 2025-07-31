@@ -59,7 +59,18 @@ export const InteractiveServicesSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="relative overflow-hidden">
+      {/* Dynamic Background Based on Active Service */}
+      <div className="absolute inset-0 transition-all duration-1000">
+        <div className={`absolute inset-0 service-bg-${activeService} opacity-20`} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background/90" />
+      </div>
+      
+      {/* Geometric Patterns */}
+      <div className="absolute top-0 right-0 w-96 h-96 geometric-pattern opacity-10 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 geometric-pattern opacity-5 rotate-180" />
+      
+      <div className="container mx-auto px-4 relative">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -206,6 +217,7 @@ export const InteractiveServicesSection = () => {
           </AnimatePresence>
         </div>
       </div>
+    </div>
     </div>
   );
 };
