@@ -139,7 +139,7 @@ export const ProfessionalHeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-8 py-8 border-2 border-white text-white hover:bg-white hover:text-primary"
+                  className="text-lg px-8 py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
                   onClick={() => window.open('tel:0280000000')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
