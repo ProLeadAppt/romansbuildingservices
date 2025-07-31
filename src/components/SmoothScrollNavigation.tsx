@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Home, Users, Wrench, Image, CheckCircle, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Home, Users, Wrench, Image, CheckCircle, Star, ArrowUp } from 'lucide-react';
 
 const sections = [
   { id: 'hero', label: 'Home', icon: Home },
@@ -16,10 +16,13 @@ const sections = [
 export const SmoothScrollNavigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+      setShowScrollTop(scrollY > 300); // Show scroll to top after scrolling 300px
       
       // Find active section
       const sectionElements = sections.map(section => 
@@ -46,6 +49,10 @@ export const SmoothScrollNavigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -151,6 +158,27 @@ export const SmoothScrollNavigation = () => {
           })}
         </div>
       </motion.nav>
+
+      {/* Scroll to Top Button - Positioned to leave space for webchat */}
+      <motion.div
+        className="fixed bottom-4 right-4 z-40"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ 
+          opacity: showScrollTop ? 1 : 0, 
+          scale: showScrollTop ? 1 : 0 
+        }}
+        transition={{ duration: 0.3 }}
+        style={{ marginRight: '80px' }} // Leave space for webchat widget
+      >
+        <Button
+          size="sm"
+          className="rounded-full w-12 h-12 shadow-lg bg-primary hover:bg-primary/90"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      </motion.div>
     </>
   );
 };
