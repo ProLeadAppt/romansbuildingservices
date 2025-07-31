@@ -51,16 +51,6 @@ export const CleanNavigation = () => {
 
   return (
     <>
-      {/* Emergency Call Button */}
-      <div className="fixed bottom-4 right-4 z-50 lg:hidden">
-        <Button
-          size="sm"
-          className="rounded-full shadow-lg bg-primary hover:bg-primary/90 px-3 py-2 h-12 w-12 min-w-0"
-          onClick={() => window.open('tel:0414922276', '_self')}
-        >
-          <Phone className="h-4 w-4" />
-        </Button>
-      </div>
 
       {/* Clean Navigation Header */}
       <header
