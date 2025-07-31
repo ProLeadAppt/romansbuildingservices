@@ -96,8 +96,8 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <a href="tel:0299999999" className="text-2xl font-bold text-primary hover:underline">
-                    (02) 9999-9999
+                  <a href="tel:0280000000" className="text-2xl font-bold text-primary hover:underline">
+                    (02) 8000 0000
                   </a>
                   <p className="text-muted-foreground mt-2">
                     Available 24/7 for emergency services

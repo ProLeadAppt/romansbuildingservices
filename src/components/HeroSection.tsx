@@ -56,8 +56,8 @@ export const HeroSection = () => {
               {/* Phone Number - Prominent */}
               <div className="flex items-center justify-center sm:justify-start space-x-3">
                 <Phone className="h-6 w-6 text-yellow-400" />
-                <a href="tel:0299999999" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
-                  (02) 9999-9999
+                <a href="tel:0280000000" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
+                  (02) 8000 0000
                 </a>
                 <span className="text-sm text-gray-300">24/7 Emergency</span>
               </div>

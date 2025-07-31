@@ -41,21 +41,12 @@ export const ModernContactSection = () => {
   const contactMethods = [
     {
       icon: Phone,
-      title: '24/7 Emergency Line',
-      content: '0412 345 678',
-      action: 'tel:0412345678',
-      description: 'Immediate response for urgent structural issues',
-      color: 'text-red-600',
-      bgColor: 'bg-red-50'
-    },
-    {
-      icon: Phone,
-      title: 'Main Office',
-      content: '(02) 8765 4321',
-      action: 'tel:0287654321',
-      description: 'General inquiries and project consultations',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      title: 'Professional Service Line',
+      content: '(02) 8000 0000',
+      action: 'tel:0280000000',
+      description: 'All inquiries, quotes and emergency responses',
+      color: 'text-primary',
+      bgColor: 'bg-primary/10'
     },
     {
       icon: Mail,
@@ -66,15 +57,6 @@ export const ModernContactSection = () => {
       color: 'text-green-600',
       bgColor: 'bg-green-50'
     },
-    {
-      icon: MessageSquare,
-      title: 'WhatsApp Business',
-      content: 'Message us instantly',
-      action: 'https://wa.me/61412345678',
-      description: 'Quick questions and photo sharing',
-      color: 'text-emerald-600',
-      bgColor: 'bg-emerald-50'
-    }
   ];
 
   const serviceAreas = [
@@ -200,7 +182,7 @@ export const ModernContactSection = () => {
                     <div className="space-y-3">
                       <label className="text-sm font-medium">Preferred Contact Method</label>
                       <div className="flex flex-wrap gap-2">
-                        {['phone', 'email', 'whatsapp'].map((method) => (
+                        {['phone', 'email'].map((method) => (
                           <button
                             key={method}
                             type="button"
@@ -357,10 +339,10 @@ export const ModernContactSection = () => {
                   variant="destructive" 
                   size="lg" 
                   className="w-full mt-4"
-                  onClick={() => window.open('tel:0412345678')}
+                  onClick={() => window.open('tel:0280000000')}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Emergency: 0412 345 678
+                  Emergency: (02) 8000 0000
                 </Button>
               </CardContent>
             </Card>
@@ -411,7 +393,7 @@ export const ModernContactSection = () => {
             <Button 
               size="lg" 
               className="w-full hover-lift"
-              onClick={() => window.open('tel:0412345678')}
+              onClick={() => window.open('tel:0280000000')}
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Now for Instant Quote

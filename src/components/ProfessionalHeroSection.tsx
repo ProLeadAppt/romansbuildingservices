@@ -84,13 +84,19 @@ export const ProfessionalHeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-2xl" style={{
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'
+              }}>
                 Sydney's #1
                 <br />
-                <span className="gradient-text">Building Experts</span>
+                <span className="bg-gradient-to-r from-secondary via-yellow-400 to-secondary bg-clip-text text-transparent drop-shadow-2xl" style={{
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'
+                }}>Building Experts</span>
               </h1>
               
-              <p className="text-xl text-white/90 max-w-lg leading-relaxed">
+              <p className="text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
+                textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
+              }}>
                 Professional masonry, restoration & structural solutions. 
                 <span className="text-secondary font-semibold"> Get your FREE $500 assessment today.</span>
               </p>
@@ -117,7 +123,7 @@ export const ProfessionalHeroSection = () => {
               </div>
             </motion.div>
 
-            {/* Single Strong CTA */}
+            {/* Enhanced CTAs with Review Option */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 30 }}
@@ -146,6 +152,23 @@ export const ProfessionalHeroSection = () => {
                   (02) 8000 0000
                 </Button>
               </motion.div>
+            </motion.div>
+
+            {/* Review CTA */}
+            <motion.div 
+              className="flex justify-center sm:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <Button 
+                variant="ghost" 
+                className="text-white hover:bg-white/20 backdrop-blur-sm border border-white/30"
+                onClick={() => window.open('/review', '_blank')}
+              >
+                <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
+                Leave a Review
+              </Button>
             </motion.div>
 
             {/* Emergency Note - Simplified */}

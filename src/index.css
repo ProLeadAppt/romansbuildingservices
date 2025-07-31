@@ -162,4 +162,13 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Enhanced text shadows for better readability */
+  .text-shadow-strong {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
+  }
+
+  .text-shadow-medium {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  }
 }
