@@ -30,8 +30,17 @@ export const CleanHeroSection = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center bg-gradient-to-br from-background to-muted/30 py-20">
-      <div className="container mx-auto px-4">
+    <div className="relative min-h-screen flex items-center py-20">
+      {/* Professional Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/src/assets/hero-background.jpg)',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+      
+      <div className="relative z-10 container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">

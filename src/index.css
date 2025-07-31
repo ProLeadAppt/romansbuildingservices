@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Romans Building Services Clean Brand Colors */
-    --primary: 210 100% 20%; /* Deep professional blue */
+    /* Romans Building Services Professional Brand Colors */
+    --primary: 220 85% 25%; /* Deep professional navy blue */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 25 95% 55%; /* Construction orange accent */
+    --secondary: 35 85% 55%; /* Premium construction gold accent */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
@@ -63,10 +63,10 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 45%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 85% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 95% 65%;
+    --secondary: 35 85% 65%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -107,13 +107,27 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Clean Shadows */
+  /* Professional Shadows */
   .card-shadow {
     box-shadow: var(--card-shadow);
   }
   
   .button-shadow {
     box-shadow: var(--button-shadow);
+  }
+
+  .floating-shadow {
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.12);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.2);
+  }
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   /* Simple Glassmorphism */

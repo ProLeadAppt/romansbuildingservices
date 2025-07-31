@@ -1,6 +1,6 @@
 import React from 'react';
 import { CleanNavigation } from '@/components/CleanNavigation';
-import { CleanHeroSection } from '@/components/CleanHeroSection';
+import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
 import { AnimatedAboutSection } from '@/components/AnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
 import { ProjectGallerySection } from '@/components/ProjectGallerySection';
@@ -15,7 +15,7 @@ const SinglePageApp = () => {
       
       {/* Hero Section */}
       <section id="hero" className="min-h-screen">
-        <CleanHeroSection />
+        <ProfessionalHeroSection />
       </section>
 
       {/* About Section */}

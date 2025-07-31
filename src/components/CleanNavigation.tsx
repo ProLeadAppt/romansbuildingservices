@@ -51,14 +51,15 @@ export const CleanNavigation = () => {
 
   return (
     <>
-      {/* Call Button - Clean Design */}
-      <div className="fixed top-4 right-4 z-50">
+      {/* Emergency Call Button */}
+      <div className="fixed bottom-6 right-6 z-50 lg:hidden">
         <Button
           size="lg"
-          className="rounded-full w-12 h-12 button-shadow"
-          onClick={() => window.open('tel:0412345678')}
+          className="rounded-full shadow-lg bg-primary hover:bg-primary/90 px-4"
+          onClick={() => window.open('tel:0280000000', '_self')}
         >
-          <Phone className="w-5 h-5" />
+          <Phone className="h-5 w-5 mr-2" />
+          Call
         </Button>
       </div>
 
@@ -70,13 +71,15 @@ export const CleanNavigation = () => {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            {/* Clean Logo */}
+            {/* Professional Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">R</span>
-              </div>
+              <img 
+                src="/src/assets/romans-logo.png" 
+                alt="Roman's Building Services" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
-                <h1 className="text-xl font-bold">Romans Building</h1>
+                <h1 className="text-xl font-bold">Roman's Building</h1>
                 <p className="text-xs text-muted-foreground">Since 1995</p>
               </div>
             </div>
@@ -105,11 +108,14 @@ export const CleanNavigation = () => {
 
             {/* Contact Info & Mobile Menu */}
             <div className="flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-4 text-sm">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span className="font-semibold">0412 345 678</span>
+              <div className="hidden lg:flex items-center space-x-6">
+                <div className="flex items-center space-x-1 text-sm">
+                  <span>Sydney Wide Service</span>
                 </div>
+                <Button size="sm" className="bg-primary hover:bg-primary/90">
+                  <Phone className="h-4 w-4 mr-2" />
+                  (02) 8000 0000
+                </Button>
               </div>
               
               {/* Mobile Menu Button */}

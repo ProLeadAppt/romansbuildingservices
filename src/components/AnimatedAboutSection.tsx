@@ -116,8 +116,8 @@ export const AnimatedAboutSection = () => {
         >
           <div className="relative overflow-hidden rounded-2xl floating-shadow">
             <motion.img
-              src={teamImage}
-              alt="Romans Building Services Team"
+              src="/src/assets/professional-team.jpg"
+              alt="Romans Building Services Professional Team"
               className="w-full h-[500px] object-cover"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}
