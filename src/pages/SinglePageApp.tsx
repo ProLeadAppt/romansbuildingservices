@@ -9,6 +9,7 @@ import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
 import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ReadabilityControls } from '@/components/ReadabilityControls';
 import { EnhancedSkipNavigation, RouteChangeFocusManager, FocusAnnouncement } from '@/components/FocusManagement';
 
 const SinglePageApp = () => {
@@ -25,6 +26,7 @@ const SinglePageApp = () => {
         <CleanNavigation />
       </ErrorBoundary>
       <KeyboardNavigationGuide />
+      <ReadabilityControls />
       
       {/* Hero Section */}
       <main id="hero" className="min-h-screen" tabIndex={-1}>
