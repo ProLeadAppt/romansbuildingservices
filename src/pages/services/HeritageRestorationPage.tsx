@@ -130,7 +130,7 @@ export default function HeritageRestorationPage() {
             Expert heritage assessment and conservation planning
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8">
+            <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">
               Get Heritage Consultation
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
