@@ -132,8 +132,11 @@ export const SocialProofSection = () => {
             <div>
               <img 
                 src={teamImage} 
-                alt="Romans Building Services professional team"
+                alt="Romans Building Services professional team of skilled masonry contractors and building restoration specialists in Sydney"
                 className="w-full rounded-lg trust-shadow"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </div>
           </div>

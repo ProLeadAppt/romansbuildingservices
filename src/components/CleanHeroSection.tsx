@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import heroBackgroundImage from '@/assets/hero-background.jpg';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -35,7 +36,7 @@ export const CleanHeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/src/assets/hero-background.jpg)',
+          backgroundImage: `url(${heroBackgroundImage})`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />

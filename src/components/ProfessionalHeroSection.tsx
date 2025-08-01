@@ -11,9 +11,19 @@ import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
+import { addPreloadLinks } from '@/utils/imagePreloader';
+import heroBackgroundImage from '@/assets/hero-background.jpg';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 export const ProfessionalHeroSection = () => {
   const navigate = useNavigate();
+  
+  // Preload critical images for better performance
+  React.useEffect(() => {
+    addPreloadLinks([
+      { src: heroBackgroundImage },
+      { src: minasPhoto }
+    ]);
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -90,9 +100,14 @@ export const ProfessionalHeroSection = () => {
   }];
   return <div className="relative min-h-screen flex items-center">
       {/* Premium Background with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: 'url(/src/assets/hero-background.jpg)'
-    }} />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`
+        }}
+      >
+        <link rel="preload" href={heroBackgroundImage} as="image" />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
       {/* Streamlined Content */}
@@ -337,7 +352,14 @@ export const ProfessionalHeroSection = () => {
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0">
-                        <img src={minasPhoto} alt="Minas Romanakis working hands-on with masonry restoration" className="w-full h-full object-cover" />
+                        <img 
+                          src={minasPhoto} 
+                          alt="Minas Romanakis, Master Builder and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" 
+                          className="w-full h-full object-cover" 
+                          loading="eager"
+                          width="80"
+                          height="80"
+                        />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-foreground">Personal Guarantee</p>

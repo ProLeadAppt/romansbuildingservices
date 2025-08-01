@@ -4,7 +4,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Eye, ArrowLeft, ArrowRight, MapPin, Calendar, DollarSign } from 'lucide-react';
+import { ImageSEOStructuredData } from '@/components/ImageSEOStructuredData';
+import { PerformantImage } from '@/components/PerformantImage';
+import beforeAfterShowcase from '@/assets/before-after-showcase.jpg';
 import beforeAfterImage from '@/assets/before-after.jpg';
+import professionalTeam from '@/assets/professional-team.jpg';
+import heroBackground from '@/assets/hero-background.jpg';
+import teamImage from '@/assets/team.jpg';
+import heroMasonry from '@/assets/hero-masonry.jpg';
 
 export const ProjectGallerySection = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -19,7 +26,7 @@ export const ProjectGallerySection = () => {
       budget: '$85,000',
       category: 'Restoration',
       description: 'Complete restoration of a 1890s heritage terrace including facade renewal, structural repairs, and period-appropriate materials.',
-      images: ["/src/assets/before-after-showcase.jpg", "/src/assets/before-after.jpg", "/src/assets/professional-team.jpg"],
+      images: [beforeAfterShowcase, beforeAfterImage, professionalTeam],
       features: ['Heritage facade restoration', 'Structural reinforcement', 'Period sandstone work', 'Council heritage approval'],
       duration: '8 weeks',
       challenge: 'Maintaining heritage character while ensuring modern structural standards',
@@ -33,7 +40,7 @@ export const ProjectGallerySection = () => {
       budget: '$150,000',
       category: 'Commercial',
       description: 'New commercial masonry construction with contemporary design elements and earthquake-resistant features.',
-      images: ["/src/assets/hero-background.jpg", "/src/assets/team.jpg", "/src/assets/hero-masonry.jpg"],
+      images: [heroBackground, teamImage, heroMasonry],
       features: ['Earthquake-resistant design', 'Modern architectural brickwork', 'Commercial-grade materials', 'Fast-track construction'],
       duration: '12 weeks',
       challenge: 'Meeting tight construction deadlines while ensuring premium quality',
@@ -47,7 +54,7 @@ export const ProjectGallerySection = () => {
       budget: '$65,000',
       category: 'Repairs',
       description: 'Emergency structural repairs and waterproofing for a luxury waterfront apartment building.',
-      images: ["/src/assets/before-after.jpg", "/src/assets/before-after-showcase.jpg", "/src/assets/professional-team.jpg"],
+      images: [beforeAfterImage, beforeAfterShowcase, professionalTeam],
       features: ['Emergency crack repairs', 'Advanced waterproofing', 'Balcony restoration', 'Ocean-resistant materials'],
       duration: '6 weeks',
       challenge: 'Working in occupied building with saltwater exposure challenges',
@@ -61,7 +68,7 @@ export const ProjectGallerySection = () => {
       budget: '$120,000',
       category: 'Extension',
       description: 'Seamless brick extension to a Federation home, perfectly matching existing heritage character.',
-      images: ["/src/assets/team.jpg", "/src/assets/hero-masonry.jpg", "/src/assets/hero-background.jpg"],
+      images: [teamImage, heroMasonry, heroBackground],
       features: ['Heritage brick matching', 'Foundation work', 'Structural integration', 'Period detailing'],
       duration: '10 weeks',
       challenge: 'Perfectly matching 100-year-old heritage brickwork',
@@ -94,8 +101,22 @@ export const ProjectGallerySection = () => {
     }
   };
 
+  // Generate structured data for all project images
+  const allProjectImages = projects.flatMap(project => 
+    project.images.map(img => ({
+      url: img,
+      description: `${project.title} - Professional masonry and building restoration work in ${project.location}`,
+      caption: project.description,
+      width: 1200,
+      height: 800,
+      contentLocation: project.location
+    }))
+  );
+
   return (
     <div className="container mx-auto mobile-container overflow-safe">
+      {/* SEO Structured Data for Images */}
+      <ImageSEOStructuredData images={allProjectImages} />
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -146,8 +167,11 @@ export const ProjectGallerySection = () => {
               <div className="relative overflow-hidden">
                 <img 
                   src={project.images[0]} 
-                  alt={project.title}
+                  alt={`${project.title} - Professional masonry and building restoration work in ${project.location}`}
                   className="responsive-image w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="400"
+                  height="256"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -251,8 +275,11 @@ export const ProjectGallerySection = () => {
                     <div className="relative">
                       <img 
                         src={project.images[currentImageIndex]}
-                        alt={project.title}
+                        alt={`${project.title} - Detailed view of masonry restoration project in ${project.location}`}
                         className="w-full h-80 object-cover rounded-xl"
+                        loading="lazy"
+                        width="800"
+                        height="320"
                       />
                       
                       {project.images.length > 1 && (
