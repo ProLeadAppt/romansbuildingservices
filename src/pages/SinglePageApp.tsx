@@ -1,6 +1,5 @@
 import React from 'react';
 import { CleanNavigation } from '@/components/CleanNavigation';
-import { KeyboardNavigationGuide } from '@/components/KeyboardNavigationGuide';
 import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
 import { AnimatedAboutSection } from '@/components/AnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
@@ -10,8 +9,7 @@ import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { ReadabilityControls } from '@/components/ReadabilityControls';
-import { 
+import {
   LandmarkSkipNavigation, 
   MainLandmark, 
   RegionLandmark, 
@@ -27,8 +25,6 @@ const SinglePageApp = () => {
         <ErrorBoundary>
           <CleanNavigation />
         </ErrorBoundary>
-        <KeyboardNavigationGuide />
-        <ReadabilityControls />
         
         {/* Main Content Area */}
         <MainLandmark id="main-content" label="Main page content">
