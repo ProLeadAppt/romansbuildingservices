@@ -123,10 +123,10 @@ export default function FoundationRepairsPage() {
             Free foundation assessment and structural engineering consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
               Book Foundation Assessment
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
               <Phone className="mr-2 h-5 w-5" />
               Emergency Foundation Repairs
             </Button>
