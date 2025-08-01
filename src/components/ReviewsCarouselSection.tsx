@@ -14,9 +14,9 @@ export const ReviewsCarouselSection = () => {
       location: 'Paddington, Sydney',
       date: 'March 2024',
       rating: 5,
-      title: 'Saved Us $45,000 in Major Repairs',
-      content: 'Romans Building Services caught structural issues early that could have cost us $45,000+ if left untreated. Their early intervention saved our heritage terrace and our budget. The quality and attention to heritage details was outstanding.',
-      project: 'Heritage Terrace Restoration - Cost Savings',
+      title: 'Exceptional Heritage Restoration',
+      content: 'Romans Building Services transformed our 1890s terrace house beautifully. Their attention to detail and respect for heritage features was outstanding. The team was professional, punctual, and the quality exceeded our expectations.',
+      project: 'Heritage Terrace Restoration',
       avatar: '/api/placeholder/60/60'
     },
     {
@@ -25,9 +25,9 @@ export const ReviewsCarouselSection = () => {
       location: 'North Sydney',
       date: 'February 2024',
       rating: 5,
-      title: 'Prevented $80,000 Structural Collapse',
-      content: 'Romans Building Services identified critical structural issues that our previous contractor missed. Their immediate action prevented a potential $80,000 collapse and saved our business from closure. Professional, thorough, and genuinely life-saving work.',
-      project: 'Emergency Commercial Structural Prevention',
+      title: 'Professional Commercial Work',
+      content: 'Outstanding work on our office building. The team delivered on time and within budget. The structural repairs were completed with minimal disruption to our business operations. Highly recommend their commercial services.',
+      project: 'Commercial Building Repairs',
       avatar: '/api/placeholder/60/60'
     },
     {
@@ -36,9 +36,9 @@ export const ReviewsCarouselSection = () => {
       location: 'Manly, Sydney',
       date: 'January 2024',
       rating: 5,
-      title: 'Storm Response Saved $120,000 in Damage',
-      content: 'When storms damaged our home, Romans Building Services responded within 2 hours. Their immediate action prevented $120,000 in water and structural damage. Without their rapid response, we could have lost everything. True lifesavers!',
-      project: 'Emergency Storm Damage Prevention',
+      title: 'Emergency Response Excellence',
+      content: 'When we had structural damage from storms, Romans Building Services responded within hours. Their emergency repair work was swift and thorough. They really saved our property from further damage.',
+      project: 'Emergency Structural Repairs',
       avatar: '/api/placeholder/60/60'
     },
     {
@@ -133,9 +133,8 @@ export const ReviewsCarouselSection = () => {
         <h2 className="text-4xl font-bold">
           What Our <span className="gradient-text">Clients Say</span>
         </h2>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-full sm:max-w-3xl mx-auto overflow-safe">
-          <span className="hidden sm:inline">See how we've saved our clients hundreds of thousands in avoided damage costs and property value protection.</span>
-          <span className="sm:hidden">See how we've saved clients hundreds of thousands in damage costs.</span>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Don't just take our word for it. Here's what our satisfied clients have to say about our building services.
         </p>
       </motion.div>
 

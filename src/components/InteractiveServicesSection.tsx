@@ -82,9 +82,8 @@ export const InteractiveServicesSection = () => {
         <h2 className="text-4xl font-bold">
           Expert <span className="gradient-text">Building Solutions</span>
         </h2>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-full sm:max-w-3xl mx-auto overflow-safe">
-          <span className="hidden sm:inline">Don't let building problems cost you thousands more! Our expert solutions prevent 30% annual cost increases and protect your property value.</span>
-          <span className="sm:hidden">Expert solutions prevent 30% cost increases and protect property value.</span>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          From heritage restoration to modern construction, we deliver exceptional results across all building disciplines.
         </p>
       </motion.div>
 
@@ -195,21 +194,21 @@ export const InteractiveServicesSection = () => {
                     </Button>
                   </div>
 
-                  {/* Service Promise with Cost Savings */}
+                  {/* Service Promise */}
                   <div className="bg-muted/50 rounded-xl p-4 space-y-2">
-                    <h4 className="font-semibold text-primary">Cost-Saving Guarantee</h4>
+                    <h4 className="font-semibold text-primary">Our Service Promise</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 text-sm text-muted-foreground">
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Prevent 30% cost increases</span>
+                        <span>Fixed-price quotes</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Save $15,000+ annually</span>
+                        <span>Quality guarantee</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Protect property value</span>
+                        <span>On-time completion</span>
                       </div>
                     </div>
                   </div>

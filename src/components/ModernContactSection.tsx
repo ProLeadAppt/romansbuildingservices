@@ -116,10 +116,10 @@ export const ModernContactSection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold">
-          URGENT: <span className="gradient-text">Save $15,000+ Today</span>
+          Get Your <span className="gradient-text">Free Assessment</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Don't wait! Every day costs you more. Get your FREE emergency assessment now and prevent 30% cost increases before it's too late.
+          Ready to start your project? Contact Sydney's most trusted building specialists for your free consultation and detailed quote.
         </p>
       </motion.div>
 
@@ -136,9 +136,9 @@ export const ModernContactSection = () => {
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold">URGENT: Prevent Major Damage</h3>
+                    <h3 className="text-2xl font-bold">Request Your Free Assessment</h3>
                     <p className="text-muted-foreground">
-                      Act now! Save $15,000+ with immediate action - FREE emergency assessment
+                      Get expert evaluation and detailed quote within 24 hours
                     </p>
                   </div>
 
@@ -254,17 +254,17 @@ export const ModernContactSection = () => {
                     </motion.div>
                   </form>
 
-                  {/* What's Included - Cost Savings Focus */}
+                  {/* What's Included */}
                   <div className="bg-muted/50 rounded-xl p-6 space-y-4">
-                    <h4 className="font-semibold text-primary">Your FREE $500 Emergency Assessment Includes:</h4>
+                    <h4 className="font-semibold text-primary">Your Free Assessment Includes:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {[
-                        'Identify costly problems early',
-                        'Calculate potential savings',
-                        'Prevent 30% cost increases',
-                        'Emergency response plan',
-                        'Property value protection',
-                        'Save $15,000+ guaranteed'
+                        'Professional site inspection',
+                        'Detailed written report',
+                        'Fixed-price quote',
+                        'Timeline & methodology',
+                        'Material recommendations',
+                        'No-obligation consultation'
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
