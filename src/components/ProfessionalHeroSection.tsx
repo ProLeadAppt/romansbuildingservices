@@ -80,7 +80,7 @@ export const ProfessionalHeroSection = () => {
               </Badge>
             </motion.div>
 
-            {/* Powerful Headline */}
+            {/* Powerful Headline with Premium Animation */}
             <motion.div 
               className="space-y-4"
               initial={{ opacity: 0, y: 30 }}
@@ -93,7 +93,7 @@ export const ProfessionalHeroSection = () => {
               }}>
                 Sydney's #1
                 <br />
-                <span className="text-secondary font-bold" style={{
+                <span className="morphing-text font-bold" style={{
                   textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
                   WebkitTextStroke: '1px rgba(0,0,0,0.3)'
                 }}>Building Experts</span>
@@ -138,7 +138,7 @@ export const ProfessionalHeroSection = () => {
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button 
                   size="lg" 
-                  className="w-full text-base sm:text-lg px-6 sm:px-12 py-6 sm:py-8 button-shadow bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold"
+                  className="w-full text-base sm:text-lg px-6 sm:px-12 py-6 sm:py-8 hover-glow-strong bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold micro-interaction"
                   onClick={() => setShowAssessmentPopup(true)}
                 >
                   Get FREE $500 Assessment

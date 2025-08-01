@@ -8,6 +8,10 @@ import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
+import { LiveSocialProof } from '@/components/LiveSocialProof';
+import { FloatingCTA } from '@/components/FloatingCTA';
+import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen';
 import {
   LandmarkSkipNavigation, 
   MainLandmark, 
@@ -63,9 +67,13 @@ const SinglePageApp = () => {
           regionLabel="Projects gallery showcasing completed work"
           className="py-16 md:py-20 bg-muted/30"
         >
-          <ErrorBoundary>
-            <ProjectGallerySection />
-          </ErrorBoundary>
+        <ErrorBoundary>
+          <ProjectGallerySection />
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+          <EnhancedShowcaseSection />
+        </ErrorBoundary>
         </RegionLandmark>
 
         {/* Process Section */}
@@ -106,6 +114,15 @@ const SinglePageApp = () => {
           <Footer />
         </ErrorBoundary>
       </div>
+
+      {/* Live Social Proof */}
+      <LiveSocialProof />
+      
+      {/* Floating CTA */}
+      <FloatingCTA />
+      
+      {/* Premium Loading Screen */}
+      <PremiumLoadingScreen />
     </PageStructureManager>
   );
 };

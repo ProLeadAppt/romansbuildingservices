@@ -142,7 +142,7 @@ export const ProjectGallerySection = () => {
             transition={{ delay: index * 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="group hover-lift overflow-hidden floating-shadow">
+            <Card className="group hover-lift overflow-hidden floating-shadow micro-interaction">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.images[0]} 
