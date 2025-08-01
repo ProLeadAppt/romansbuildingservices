@@ -42,7 +42,7 @@ export const ProfessionalHeroSection = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center pt-20 md:pt-24">
+    <div className="relative min-h-screen flex items-center pt-4 md:pt-6">
       {/* Premium Background with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
