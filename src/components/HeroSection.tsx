@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-masonry.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -20,7 +20,7 @@ export const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           
           {/* Left Side - Main Content */}
-          <div className="text-white space-y-8">
+          <div className="text-white space-y-8 order-1 lg:order-1">
             {/* Trust Badge */}
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
               <Shield className="mr-2 h-4 w-4" />
@@ -85,7 +85,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Side - Lead Capture Form */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl order-2 lg:order-2">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Your FREE Assessment</h2>
               <p className="text-gray-600">Complete the form below for immediate response</p>

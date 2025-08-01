@@ -103,11 +103,11 @@ export const ModernHeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 pt-20 sm:pt-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 order-1 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -241,7 +241,7 @@ export const ModernHeroSection = () => {
 
           {/* Right Column - Lead Capture Form */}
           <motion.div
-            className="lg:pl-8"
+            className="lg:pl-8 order-2 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

@@ -76,12 +76,12 @@ export const ProfessionalHeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
       {/* Streamlined Content */}
-      <div className="relative z-10 container mx-auto px-4 py-8 sm:py-16">
+      <div className="relative z-10 container mx-auto px-4 pt-20 sm:pt-24 pb-8 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Left Column - Focused Content */}
           <motion.div 
-            className="space-y-6 sm:space-y-8 order-2 lg:order-1"
+            className="space-y-6 sm:space-y-8 order-1 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -212,7 +212,7 @@ export const ProfessionalHeroSection = () => {
 
           {/* Right Column - Streamlined Form */}
           <motion.div 
-            className="lg:pl-8 order-1 lg:order-2 relative z-50"
+            className="lg:pl-8 order-2 lg:order-2 relative z-50"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
