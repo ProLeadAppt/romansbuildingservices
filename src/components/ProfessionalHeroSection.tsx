@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 import minasPhoto from '@/assets/professional-team.jpg';
 
 export const ProfessionalHeroSection = () => {
@@ -20,11 +21,33 @@ export const ProfessionalHeroSection = () => {
     message: ''
   });
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
-    setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Send to Zapier webhook
+      const result = await sendFormToZapier('hero_contact', {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        source: 'Hero Section Contact Form',
+        url: window.location.href
+      });
+
+      if (result.success) {
+        toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
+        setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+      } else {
+        toast.error('Failed to submit request. Please try calling us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Failed to submit request. Please try calling us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const stats = [
@@ -257,10 +280,11 @@ export const ProfessionalHeroSection = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
+                    disabled={isSubmitting}
                     className="w-full text-base sm:text-lg py-4 sm:py-6 button-shadow bg-gradient-to-r from-primary to-primary/90"
                   >
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Get My FREE Assessment
+                    {isSubmitting ? 'Submitting...' : 'Get My FREE Assessment'}
                   </Button>
                 </form>
 
