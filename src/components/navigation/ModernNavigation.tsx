@@ -65,7 +65,7 @@ export const ModernNavigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-16 lg:h-16 bg-gray-900 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform p-2">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gray-900 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform p-2">
               <img 
                 src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png" 
                 alt="Roman's Building Services" 
