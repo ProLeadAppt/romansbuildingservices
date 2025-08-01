@@ -16,6 +16,7 @@ import {
   emergencyServices,
   quickActions 
 } from '@/utils/navigationData';
+import { useBackgroundDetection } from '@/hooks/useBackgroundDetection';
 
 const iconMap = {
   Building,
@@ -29,6 +30,13 @@ export const ModernNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const navRef = useRef<HTMLElement>(null);
+  
+  // Detect background theme for dynamic styling
+  const backgroundTheme = useBackgroundDetection({ 
+    targetRef: navRef,
+    debounceMs: 50 
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,13 +65,43 @@ export const ModernNavigation = () => {
     return location.pathname.startsWith(href);
   };
 
+  // Dynamic navigation styling based on background
+  const getNavClasses = () => {
+    const baseClasses = "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out";
+    
+    if (backgroundTheme === 'light') {
+      // Light theme - dark nav for light backgrounds
+      return isScrolled 
+        ? `${baseClasses} bg-gray-900/95 backdrop-blur-md shadow-xl border-b border-gray-800/20`
+        : `${baseClasses} bg-gray-900/90 shadow-lg border-b border-gray-800/10`;
+    } else {
+      // Dark theme - light nav for dark backgrounds  
+      return isScrolled 
+        ? `${baseClasses} bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200/20`
+        : `${baseClasses} bg-white/90 shadow-lg border-b border-gray-200/10`;
+    }
+  };
+
+  const getTextClasses = (isActive: boolean = false) => {
+    if (backgroundTheme === 'light') {
+      return isActive 
+        ? "text-blue-400 bg-blue-400/10" 
+        : "text-gray-100 hover:text-white hover:bg-white/10";
+    } else {
+      return isActive 
+        ? "text-primary bg-primary/10" 
+        : "text-muted-foreground hover:text-foreground hover:bg-muted/50";
+    }
+  };
+
+  const getLogoClasses = () => {
+    return backgroundTheme === 'light' 
+      ? "text-white" 
+      : "text-foreground";
+  };
+
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled 
-        ? "bg-white/95 backdrop-blur-md shadow-lg border-b" 
-        : "bg-white shadow-sm border-b border-border"
-    )}>
+    <nav ref={navRef} className={getNavClasses()}>
       <div className="container mx-auto px-4">
         {/* Main Navigation Bar */}
         <div className="flex items-center justify-between h-16 lg:h-18">
@@ -73,8 +111,8 @@ export const ModernNavigation = () => {
               <Building className="w-6 h-6 text-primary-foreground" />
             </div>
             <div className="hidden sm:block">
-              <div className="text-xl font-bold text-foreground">Romans Building</div>
-              <div className="text-xs text-muted-foreground">Services Since 1995</div>
+              <div className={`text-xl font-bold transition-colors ${getLogoClasses()}`}>Romans Building</div>
+              <div className={`text-xs transition-colors ${backgroundTheme === 'light' ? 'text-gray-300' : 'text-muted-foreground'}`}>Services Since 1995</div>
             </div>
           </Link>
 
@@ -91,9 +129,7 @@ export const ModernNavigation = () => {
                   to={item.href}
                   className={cn(
                     "flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium transition-all",
-                    isActivePage(item.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    getTextClasses(isActivePage(item.href))
                   )}
                 >
                   <span>{item.label}</span>
@@ -210,7 +246,12 @@ export const ModernNavigation = () => {
             <div className="hidden md:flex items-center space-x-3">
               <a 
                 href={`tel:${emergencyServices.phone}`}
-                className="flex items-center space-x-2 text-primary font-semibold hover:text-primary/80 transition-colors"
+                className={cn(
+                  "flex items-center space-x-2 font-semibold transition-colors",
+                  backgroundTheme === 'light' 
+                    ? "text-blue-400 hover:text-blue-300" 
+                    : "text-primary hover:text-primary/80"
+                )}
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-sm">{emergencyServices.phone}</span>
