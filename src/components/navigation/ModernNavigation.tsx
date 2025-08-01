@@ -31,11 +31,19 @@ export const ModernNavigation = () => {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 100);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -57,17 +65,31 @@ export const ModernNavigation = () => {
     return location.pathname.startsWith(href);
   };
 
-  // Modern white navigation with floating effect
-  const getNavClasses = () => {
-    const baseClasses = "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out";
-    
-    return isScrolled 
-      ? `${baseClasses} bg-white/95 backdrop-blur-lg shadow-2xl border-b border-gray-100/50 rounded-b-xl mx-4 mt-2`
-      : `${baseClasses} bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100/30`;
-  };
-
   return (
-    <nav ref={navRef} className={getNavClasses()}>
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6">
+      <motion.nav 
+        ref={navRef}
+        className={cn(
+          "w-full max-w-7xl mx-auto transition-all duration-500 ease-out will-change-transform",
+          isScrolled 
+            ? "mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl scale-[0.98] transform" 
+            : "mt-0 bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100/30"
+        )}
+        initial={false}
+        animate={{ 
+          scale: isScrolled ? 0.98 : 1,
+          y: isScrolled ? 0 : 0
+        }}
+        transition={{ 
+          duration: 0.4, 
+          ease: [0.25, 0.46, 0.45, 0.94] 
+        }}
+        style={{
+          background: isScrolled 
+            ? 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)'
+            : 'rgba(255,255,255,0.95)'
+        }}
+      >
       <div className="container mx-auto px-4">
         {/* Main Navigation Bar */}
         <div className="flex items-center justify-between h-16 lg:h-18">
@@ -296,6 +318,7 @@ export const ModernNavigation = () => {
           )}
         </AnimatePresence>
       </div>
-    </nav>
+      </motion.nav>
+    </div>
   );
 };
