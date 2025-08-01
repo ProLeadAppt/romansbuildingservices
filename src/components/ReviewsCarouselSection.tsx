@@ -122,7 +122,7 @@ export const ReviewsCarouselSection = () => {
         <Quote className="w-12 h-12 text-primary animate-pulse delay-500" />
       </div>
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto mobile-container relative overflow-safe">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -140,7 +140,7 @@ export const ReviewsCarouselSection = () => {
 
       {/* Stats */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+        className="mobile-grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -152,8 +152,8 @@ export const ReviewsCarouselSection = () => {
             className="text-center space-y-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="text-3xl font-bold text-primary">{stat.number}</div>
-            <div className="text-sm text-muted-foreground">{stat.label}</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary">{stat.number}</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
           </motion.div>
         ))}
       </motion.div>
@@ -168,8 +168,8 @@ export const ReviewsCarouselSection = () => {
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="floating-shadow hover-glow">
-              <CardContent className="p-8 lg:p-12">
+            <Card className="floating-shadow hover-glow overflow-safe">
+              <CardContent className="p-4 sm:p-8 lg:p-12">
                 <div className="space-y-6">
                   {/* Quote Icon */}
                   <Quote className="w-12 h-12 text-primary/20" />
@@ -180,15 +180,15 @@ export const ReviewsCarouselSection = () => {
                       {renderStars(reviews[currentReview].rating)}
                     </div>
                     
-                    <h3 className="text-2xl font-bold">{reviews[currentReview].title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">{reviews[currentReview].title}</h3>
                     
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                       "{reviews[currentReview].content}"
                     </p>
                   </div>
 
                   {/* Review Footer */}
-                  <div className="flex items-center justify-between pt-6 border-t">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0 pt-6 border-t">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                         <span className="text-lg font-semibold text-primary">
@@ -197,21 +197,21 @@ export const ReviewsCarouselSection = () => {
                       </div>
                       <div>
                         <div className="font-semibold">{reviews[currentReview].name}</div>
-                        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 text-xs sm:text-sm text-muted-foreground">
                           <div className="flex items-center space-x-1">
-                            <MapPin className="w-4 h-4" />
+                            <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                             <span>{reviews[currentReview].location}</span>
                           </div>
                           <div className="flex items-center space-x-1">
-                            <Calendar className="w-4 h-4" />
+                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                             <span>{reviews[currentReview].date}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="text-right">
-                      <div className="text-sm font-medium text-primary">
+                    <div className="text-left sm:text-right">
+                      <div className="text-xs sm:text-sm font-medium text-primary">
                         {reviews[currentReview].project}
                       </div>
                     </div>
@@ -271,17 +271,17 @@ export const ReviewsCarouselSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          <Button variant="outline" size="lg" className="hover-lift">
-            <Star className="w-5 h-5 mr-2 text-yellow-400" />
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+          <Button variant="outline" size="sm" className="hover-lift mobile-button sm:w-auto">
+            <Star className="w-4 h-4 mr-2 text-yellow-400" />
             Google Reviews (4.9★)
           </Button>
-          <Button variant="outline" size="lg" className="hover-lift">
-            <Star className="w-5 h-5 mr-2 text-yellow-400" />
+          <Button variant="outline" size="sm" className="hover-lift mobile-button sm:w-auto">
+            <Star className="w-4 h-4 mr-2 text-yellow-400" />
             TrustPilot (4.8★)
           </Button>
-          <Button variant="outline" size="lg" className="hover-lift">
-            <Star className="w-5 h-5 mr-2 text-yellow-400" />
+          <Button variant="outline" size="sm" className="hover-lift mobile-button sm:w-auto">
+            <Star className="w-4 h-4 mr-2 text-yellow-400" />
             HiPages (4.9★)
           </Button>
         </div>
@@ -296,7 +296,7 @@ export const ReviewsCarouselSection = () => {
         >
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 cta-shadow hover-lift"
+            className="mobile-button sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 cta-shadow hover-lift"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Join Our Happy Clients

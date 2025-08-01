@@ -118,11 +118,19 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   /* Enhanced focus styles for better keyboard navigation */
@@ -490,6 +498,86 @@ All colors MUST be HSL.
 
   .will-change-opacity {
     will-change: opacity;
+  }
+
+  /* Mobile Responsiveness Utilities */
+  .mobile-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .mobile-safe-padding {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .mobile-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .mobile-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .mobile-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Image Responsiveness */
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+  }
+
+  /* Form Field Mobile Fix */
+  .mobile-input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Button Mobile Fix */
+  .mobile-button {
+    min-width: 44px;
+    min-height: 44px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .mobile-button {
+      width: auto;
+    }
+  }
+
+  /* Container overflow fix */
+  .overflow-safe {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Smooth Scroll Fix */

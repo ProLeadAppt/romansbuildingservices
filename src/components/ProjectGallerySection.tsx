@@ -95,7 +95,7 @@ export const ProjectGallerySection = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto mobile-container overflow-safe">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -133,7 +133,7 @@ export const ProjectGallerySection = () => {
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+      <div className="mobile-grid mb-12 sm:mb-16">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -147,7 +147,7 @@ export const ProjectGallerySection = () => {
                 <img 
                   src={project.images[0]} 
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="responsive-image w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -210,7 +210,7 @@ export const ProjectGallerySection = () => {
                 </div>
 
                 <Button 
-                  className="w-full text-sm sm:text-base py-2.5 sm:py-3"
+                  className="mobile-button text-sm sm:text-base py-2.5 sm:py-3"
                   onClick={() => {
                     setSelectedProject(project.id);
                     setCurrentImageIndex(0);
@@ -235,7 +235,7 @@ export const ProjectGallerySection = () => {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              className="bg-background rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto m-2 sm:m-4"
+              className="bg-background rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto overflow-x-hidden m-2 sm:m-4"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}

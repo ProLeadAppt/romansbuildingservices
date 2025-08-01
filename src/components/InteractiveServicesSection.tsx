@@ -227,7 +227,7 @@ export const InteractiveServicesSection = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <div className="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl text-white">
+        <div className="bg-gradient-to-r from-primary to-secondary p-6 sm:p-8 rounded-2xl text-white overflow-safe">
           <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
             <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
               <img 
@@ -237,22 +237,22 @@ export const InteractiveServicesSection = () => {
               />
             </div>
             <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
                 Ready to Transform Your Space?
               </h3>
-              <p className="text-lg opacity-90">
+              <p className="text-base sm:text-lg opacity-90">
                 "I personally guarantee exceptional results on every project." - Minas
               </p>
             </div>
           </div>
-          <p className="text-lg mb-6 opacity-90">
+          <p className="text-base sm:text-lg mb-6 opacity-90">
             Get a free assessment and discover how we can help you achieve your vision.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
               variant="secondary"
-              className="min-w-[200px] bg-white text-primary hover:bg-white/90"
+              className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
               onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -264,7 +264,7 @@ export const InteractiveServicesSection = () => {
             <Button 
               size="lg" 
               variant="secondary"
-              className="min-w-[200px]"
+              className="mobile-button sm:min-w-[200px]"
               onClick={() => window.open('tel:0414922276')}
             >
               <Phone className="mr-2 w-5 h-5" />

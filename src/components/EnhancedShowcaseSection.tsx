@@ -42,8 +42,8 @@ export const EnhancedShowcaseSection = () => {
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-b from-background via-muted/5 to-background construction-pattern">
-      <div className="container mx-auto px-4 space-y-20">
+    <div className="py-12 sm:py-20 bg-gradient-to-b from-background via-muted/5 to-background construction-pattern overflow-safe">
+      <div className="container mx-auto mobile-container space-y-12 sm:space-y-20">
         
         {/* Premium Stats Section */}
         <motion.div
@@ -71,7 +71,7 @@ export const EnhancedShowcaseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center overflow-safe"
         >
           <div className="space-y-6">
             <div className="space-y-4">
@@ -161,7 +161,7 @@ export const EnhancedShowcaseSection = () => {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div className="text-center space-y-2">
                   <div className="w-12 h-12 mx-auto bg-green-100 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-green-600" />
