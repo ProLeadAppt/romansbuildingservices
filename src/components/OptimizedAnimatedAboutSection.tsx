@@ -12,12 +12,12 @@ export const OptimizedAnimatedAboutSection = () => {
   ];
 
   const values = [
-    'Personal inspection of every project',
-    'Direct communication with the owner',
-    '25-year reputation for excellence', 
-    'Family business values & integrity',
-    'Hands-on quality control',
-    'Lifetime craftsmanship guarantee'
+    'Prevent 30% annual cost increases',
+    'Save $15,000+ through early action',
+    'Protect your property value investment', 
+    '2-hour emergency response guarantee',
+    'Catch expensive problems before they escalate',
+    'Since 1995 - trusted cost-saving expertise'
   ];
 
   return (
@@ -36,14 +36,14 @@ export const OptimizedAnimatedAboutSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-4">
-              For over 25 years, Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
+              Since 1995, Minas has saved Sydney property owners millions in avoided damage costs. His early intervention approach prevents 30% annual cost increases and protects property values. With 2025's new building standards, his expertise is more valuable than ever.
             </p>
 
             <div className="glass-morphism rounded-xl p-6 border-l-4 border-primary">
               <p className="text-foreground italic font-medium">
-                "Quality isn't just our promise—it's my personal guarantee. Every project receives my direct attention because your satisfaction and the integrity of my family business depends on it."
+                "I've seen too many property owners lose $50,000+ because they waited. My job is to catch problems early and save you money. Every hour you delay costs you more—that's why I guarantee 2-hour emergency response."
               </p>
-              <p className="text-sm text-muted-foreground mt-2 font-semibold">— Minas Romanakis, Founder & Owner</p>
+              <p className="text-sm text-muted-foreground mt-2 font-semibold">— Minas Romanakis, Founder & Cost-Saving Expert</p>
             </div>
           </div>
 

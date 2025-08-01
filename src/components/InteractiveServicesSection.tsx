@@ -83,7 +83,7 @@ export const InteractiveServicesSection = () => {
           Expert <span className="gradient-text">Building Solutions</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          From heritage restoration to modern construction, we deliver exceptional results across all building disciplines.
+          Don't let building problems cost you thousands more! Our expert solutions prevent 30% annual cost increases and protect your property value.
         </p>
       </motion.div>
 
@@ -194,21 +194,21 @@ export const InteractiveServicesSection = () => {
                     </Button>
                   </div>
 
-                  {/* Service Promise */}
+                  {/* Service Promise with Cost Savings */}
                   <div className="bg-muted/50 rounded-xl p-4 space-y-2">
-                    <h4 className="font-semibold text-primary">Our Service Promise</h4>
+                    <h4 className="font-semibold text-primary">Cost-Saving Guarantee</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 text-sm text-muted-foreground">
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Fixed-price quotes</span>
+                        <span>Prevent 30% cost increases</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Quality guarantee</span>
+                        <span>Save $15,000+ annually</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>On-time completion</span>
+                        <span>Protect property value</span>
                       </div>
                     </div>
                   </div>
