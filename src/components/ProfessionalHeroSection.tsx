@@ -53,7 +53,7 @@ export const ProfessionalHeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
       {/* Streamlined Content */}
-      <div className="relative z-10 container mx-auto px-4 py-8 sm:py-16">
+      <div className="relative z-10 container mx-auto px-4 pt-2 pb-8 sm:pt-4 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Left Column - Focused Content */}
