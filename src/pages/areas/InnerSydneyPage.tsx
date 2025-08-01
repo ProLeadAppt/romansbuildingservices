@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -30,8 +29,7 @@ export default function InnerSydneyPage() {
   ];
 
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -174,6 +172,5 @@ export default function InnerSydneyPage() {
           </div>
         </section>
       </div>
-    </Layout>
   );
 }

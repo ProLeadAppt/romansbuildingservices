@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -24,7 +23,7 @@ const NorthShorePage = () => {
   ];
 
   return (
-    <Layout>
+    <div>
       <LocalBusinessSchema />
       
       {/* Hero Section */}
@@ -203,7 +202,7 @@ const NorthShorePage = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 
