@@ -120,13 +120,13 @@ export const SmartQuoteCalculator = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-background via-muted/20 to-background p-4 sm:p-6 rounded-2xl overflow-safe">
+    <div className="bg-gradient-to-br from-background via-muted/20 to-background p-4 sm:p-6 rounded-2xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Card className="max-w-2xl mx-auto floating-shadow overflow-safe">
+        <Card className="max-w-2xl mx-auto shadow-2xl">
           <CardHeader className="text-center space-y-4">
             <motion.div
               className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center"
@@ -173,7 +173,7 @@ export const SmartQuoteCalculator = () => {
                 ].map((type) => (
                   <motion.button
                     key={type.key}
-                    className={`p-2 sm:p-4 rounded-lg border-2 transition-all micro-interaction ${
+                    className={`p-2 sm:p-4 rounded-lg border-2 transition-all hover:scale-105 ${
                       formData.propertyType === type.key 
                         ? 'border-primary bg-primary/10' 
                         : 'border-muted hover:border-primary/50'
@@ -269,7 +269,7 @@ export const SmartQuoteCalculator = () => {
 
                     <Button 
                       size="lg" 
-                      className="w-full hover-glow-strong"
+                      className="w-full"
                       onClick={() => setShowContactForm(true)}
                     >
                       <CheckCircle className="w-5 h-5 mr-2" />
@@ -287,14 +287,14 @@ export const SmartQuoteCalculator = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-safe"
+                  className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
                   onClick={() => setShowContactForm(false)}
                 >
                   <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.9, opacity: 0 }}
-                    className="bg-background rounded-xl p-4 sm:p-6 max-w-md w-full mx-2 overflow-safe"
+                    className="bg-background rounded-xl p-4 sm:p-6 max-w-md w-full mx-2"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <h3 className="text-xl font-bold mb-4">Get Your Detailed Quote</h3>
@@ -303,14 +303,14 @@ export const SmartQuoteCalculator = () => {
                         placeholder="Full Name"
                         value={contactData.name}
                         onChange={(e) => setContactData({...contactData, name: e.target.value})}
-                        className="mobile-input"
+                        className="h-12"
                         required
                       />
                       <Input
                         placeholder="Phone Number"
                         value={contactData.phone}
                         onChange={(e) => setContactData({...contactData, phone: e.target.value})}
-                        className="mobile-input"
+                        className="h-12"
                         required
                       />
                       <Input
@@ -318,17 +318,18 @@ export const SmartQuoteCalculator = () => {
                         placeholder="Email Address"
                         value={contactData.email}
                         onChange={(e) => setContactData({...contactData, email: e.target.value})}
-                        className="mobile-input"
+                        className="h-12"
                         required
                       />
                       <div className="flex flex-col sm:flex-row gap-3">
-                        <Button type="submit" className="mobile-button sm:flex-1" disabled={isSubmitting}>
+                        <Button type="submit" size="lg" className="sm:flex-1" disabled={isSubmitting}>
                           {isSubmitting ? 'Sending...' : 'Send Quote Request'}
                         </Button>
                         <Button 
                           type="button" 
                           variant="outline"
-                          className="mobile-button sm:flex-1"
+                          size="lg"
+                          className="sm:flex-1"
                           onClick={() => window.open('tel:0414922276')}
                         >
                           <Phone className="w-4 h-4 mr-2" />
