@@ -68,25 +68,84 @@ TableRow.displayName = "TableRow"
 
 const TableHead = React.forwardRef<
   HTMLTableCellElement,
-  React.ThHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
-  <th
-    ref={ref}
-    className={cn(
-      "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
-      className
-    )}
-    {...props}
-  />
-))
+  React.ThHTMLAttributes<HTMLTableCellElement> & {
+    scope?: 'col' | 'row' | 'colgroup' | 'rowgroup';
+    sortable?: boolean;
+    sortDirection?: 'asc' | 'desc' | 'none';
+    onSort?: () => void;
+  }
+>(({ className, scope = 'col', sortable = false, sortDirection = 'none', onSort, children, ...props }, ref) => {
+  // Convert our sort direction to valid aria-sort values
+  const ariaSortValue = sortable 
+    ? sortDirection === 'asc' 
+      ? 'ascending' as const
+      : sortDirection === 'desc' 
+        ? 'descending' as const
+        : 'none' as const
+    : undefined;
+
+  return (
+    <th
+      ref={ref}
+      scope={scope}
+      role={sortable ? 'columnheader' : undefined}
+      tabIndex={sortable ? 0 : undefined}
+      aria-sort={ariaSortValue}
+      className={cn(
+        "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
+        sortable && "cursor-pointer select-none hover:bg-muted/50 focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+        className
+      )}
+      onClick={sortable ? onSort : undefined}
+      onKeyDown={sortable ? (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onSort?.();
+        }
+      } : undefined}
+      {...props}
+    >
+      <div className="flex items-center gap-2">
+        {children}
+        {sortable && (
+          <span className="ml-auto flex flex-col">
+            <svg
+              className={cn(
+                "h-3 w-3 transition-colors",
+                sortDirection === 'asc' ? "text-foreground" : "text-muted-foreground/50"
+              )}
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M7 14l5-5 5 5z" />
+            </svg>
+            <svg
+              className={cn(
+                "h-3 w-3 transition-colors -mt-1",
+                sortDirection === 'desc' ? "text-foreground" : "text-muted-foreground/50"
+              )}
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </span>
+        )}
+      </div>
+    </th>
+  );
+})
 TableHead.displayName = "TableHead"
 
 const TableCell = React.forwardRef<
   HTMLTableCellElement,
-  React.TdHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
+  React.TdHTMLAttributes<HTMLTableCellElement> & {
+    scope?: 'row';
+  }
+>(({ className, scope, ...props }, ref) => (
   <td
     ref={ref}
+    scope={scope}
     className={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)}
     {...props}
   />
