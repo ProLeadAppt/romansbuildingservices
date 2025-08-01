@@ -1,11 +1,20 @@
 import React, { useEffect, useRef } from 'react';
+import { useFocusManager } from '@/hooks/useFocusManager';
 
-// Skip Navigation Component
+// Skip Navigation Component (legacy - use EnhancedSkipNavigation instead)
 export const SkipNavigation = () => {
+  const { focusElement } = useFocusManager();
+  
+  const handleSkipToMain = (e: React.MouseEvent) => {
+    e.preventDefault();
+    focusElement('#hero');
+  };
+
   return (
     <div className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50">
       <a
-        href="#main-content"
+        href="#hero"
+        onClick={handleSkipToMain}
         className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       >
         Skip to main content
@@ -14,10 +23,10 @@ export const SkipNavigation = () => {
   );
 };
 
-// Enhanced Focus Trap Hook
+// Enhanced Focus Trap Hook (legacy - use useContainerFocus instead)
 export const useFocusTrap = (isActive: boolean) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const { storeFocus, returnFocus } = useFocusManager();
 
   useEffect(() => {
     if (!isActive) return;
@@ -26,7 +35,7 @@ export const useFocusTrap = (isActive: boolean) => {
     if (!container) return;
 
     // Store the previously focused element
-    previousFocusRef.current = document.activeElement as HTMLElement;
+    storeFocus();
 
     // Get all focusable elements
     const getFocusableElements = () => {
@@ -37,7 +46,6 @@ export const useFocusTrap = (isActive: boolean) => {
 
     const focusableElements = getFocusableElements();
     const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
 
     // Focus the first element
     if (firstElement) {
@@ -80,12 +88,10 @@ export const useFocusTrap = (isActive: boolean) => {
       document.removeEventListener('keydown', handleTabKey);
       document.removeEventListener('keydown', handleEscapeKey);
       
-      // Restore focus to the previously focused element
-      if (previousFocusRef.current) {
-        previousFocusRef.current.focus();
-      }
+      // Restore focus to the previously focused element when deactivating
+      returnFocus();
     };
-  }, [isActive]);
+  }, [isActive, storeFocus, returnFocus]);
 
   return containerRef;
 };

@@ -9,20 +9,29 @@ import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
 import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { EnhancedSkipNavigation, RouteChangeFocusManager, FocusAnnouncement } from '@/components/FocusManagement';
 
 const SinglePageApp = () => {
   return (
     <div className="min-h-screen scroll-smooth">
+      <EnhancedSkipNavigation />
+      <RouteChangeFocusManager routeName="Romans Building Services" focusTarget="h1" />
+      <FocusAnnouncement 
+        message="Page loaded successfully. Use Tab to navigate or access the keyboard help guide."
+        priority="polite"
+        id="page-load-announcement"
+      />
       <ErrorBoundary>
         <CleanNavigation />
       </ErrorBoundary>
+      <KeyboardNavigationGuide />
       
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen">
+      <main id="hero" className="min-h-screen" tabIndex={-1}>
         <ErrorBoundary>
           <ProfessionalHeroSection />
         </ErrorBoundary>
-      </section>
+      </main>
 
       {/* About Section */}
       <section id="about" className="py-16 md:py-20 bg-muted/30">
