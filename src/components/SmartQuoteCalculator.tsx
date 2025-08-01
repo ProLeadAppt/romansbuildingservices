@@ -8,6 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Calculator, Home, Zap, Clock, DollarSign, Phone, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 export const SmartQuoteCalculator = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ export const SmartQuoteCalculator = () => {
   
   const [estimate, setEstimate] = useState<number | null>(null);
   const [showContactForm, setShowContactForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [contactData, setContactData] = useState({
     name: '',
     phone: '',
@@ -78,11 +80,43 @@ export const SmartQuoteCalculator = () => {
     setEstimate(total);
   };
 
-  const handleGetQuote = (e: React.FormEvent) => {
+  const handleGetQuote = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Quote request submitted! We\'ll contact you within 2 hours with a detailed assessment.');
+
+    if (!contactData.name || !contactData.phone || !contactData.email) {
+      toast.error('Please fill in all contact details');
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('quote_calculator', {
+      ...contactData,
+      estimatedCost: estimate,
+      projectDetails: {
+        serviceType: formData.serviceType,
+        propertyType: formData.propertyType,
+        propertySize: formData.propertySize[0],
+        urgency: formData.urgency,
+        location: formData.location
+      },
+      formName: 'Smart Quote Calculator'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    toast.success('Quote request submitted! We\'ll contact you within 2 hours with your detailed quote.');
+    
+    // Reset
     setShowContactForm(false);
     setContactData({ name: '', phone: '', email: '' });
+    setIsSubmitting(false);
   };
 
   return (
@@ -285,8 +319,8 @@ export const SmartQuoteCalculator = () => {
                         required
                       />
                       <div className="flex gap-3">
-                        <Button type="submit" className="flex-1">
-                          Send Quote Request
+                        <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                          {isSubmitting ? 'Sending...' : 'Send Quote Request'}
                         </Button>
                         <Button 
                           type="button" 

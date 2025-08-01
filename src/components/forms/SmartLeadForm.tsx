@@ -8,6 +8,7 @@ import { CheckCircle, Phone, ArrowRight, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
 import { useSmartDefaults } from '@/hooks/useSmartDefaults';
 import { useFormValidation } from '@/hooks/useFormValidation';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 interface SmartLeadFormProps {
   onSuccess?: (data: any) => void;
@@ -82,6 +83,18 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
 
     setIsSubmitting(true);
     
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('smart_lead', {
+      ...formData,
+      formName: 'Smart Lead Form',
+      variant: variant,
+      completedSteps: step + 1
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
@@ -110,6 +123,19 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
     if (!formData.phone || !isFieldValid('phone', formData.phone)) return;
     
     setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('smart_lead', {
+      phone: formData.phone,
+      formName: 'Smart Lead Form - Quick Submit',
+      variant: 'minimal',
+      submissionType: 'quick'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
     await new Promise(resolve => setTimeout(resolve, 500));
     
     toast.success('Thanks! We\'ll call you within 30 minutes.');

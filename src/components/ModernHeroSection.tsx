@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 import heroImage from '@/assets/hero-masonry.jpg';
 
 export const ModernHeroSection = () => {
@@ -17,11 +18,43 @@ export const ModernHeroSection = () => {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
-    setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    
+    if (!formData.name || !formData.phone || !formData.email) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('hero_contact', {
+      ...formData,
+      formName: 'Modern Hero Section Contact'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast.success('Request submitted! We\'ll contact you within 2 hours for your free assessment.');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      service: '',
+      message: ''
+    });
+    
+    setIsSubmitting(false);
   };
 
   const trustBadges = [
@@ -286,9 +319,19 @@ export const ModernHeroSection = () => {
                       type="submit" 
                       size="lg" 
                       className="w-full text-lg py-6 cta-shadow"
+                      disabled={isSubmitting}
                     >
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Get Free Assessment
+                      {isSubmitting ? (
+                        <div className="flex items-center">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                          Submitting...
+                        </div>
+                      ) : (
+                        <>
+                          <CheckCircle className="w-5 h-5 mr-2" />
+                          Get Free Assessment
+                        </>
+                      )}
                     </Button>
                   </motion.div>
                 </form>

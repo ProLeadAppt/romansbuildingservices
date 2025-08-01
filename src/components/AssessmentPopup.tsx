@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { Star, CheckCircle, X, Phone, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 import { useFocusTrap } from './AccessibilityEnhancements';
 
 interface AssessmentPopupProps {
@@ -30,11 +31,29 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('assessment_popup', {
+      ...formData,
+      formName: 'Assessment Popup'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast.success('Assessment request submitted! We\'ll contact you within 2 hours.');
-    setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    
+    // Reset form and close
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      service: '',
+      message: ''
+    });
     setIsSubmitting(false);
     onClose();
   };

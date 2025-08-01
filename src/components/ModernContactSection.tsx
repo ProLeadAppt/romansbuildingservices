@@ -12,6 +12,7 @@ import {
   Car, Shield, Award, Calendar 
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 import minasPhoto from '@/assets/professional-team.jpg';
 
 export const ModernContactSection = () => {
@@ -20,23 +21,49 @@ export const ModernContactSection = () => {
     phone: '',
     email: '',
     service: '',
-    urgency: '',
+    urgency: 'normal',
     message: '',
     preferredContact: 'phone'
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent! We\'ll respond within 2 hours during business hours.');
+    
+    if (!formData.name || !formData.phone || !formData.email) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('modern_contact', {
+      ...formData,
+      formName: 'Modern Contact Section'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast.success('Message sent successfully! We\'ll get back to you within 2 hours.');
+    
+    // Reset form
     setFormData({
       name: '',
       phone: '',
       email: '',
       service: '',
-      urgency: '',
+      urgency: 'normal',
       message: '',
       preferredContact: 'phone'
     });
+    
+    setIsSubmitting(false);
   };
 
   const contactMethods = [
@@ -211,9 +238,18 @@ export const ModernContactSection = () => {
                     </motion.div>
 
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button type="submit" size="lg" className="w-full text-base md:text-lg py-4 md:py-6 cta-shadow touch-target">
-                        <Send className="w-5 h-5 mr-2" />
-                        Send Request
+                      <Button type="submit" size="lg" className="w-full text-base md:text-lg py-4 md:py-6 cta-shadow touch-target" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <div className="flex items-center">
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                            Sending...
+                          </div>
+                        ) : (
+                          <>
+                            <Send className="w-5 h-5 mr-2" />
+                            Send Request
+                          </>
+                        )}
                       </Button>
                     </motion.div>
                   </form>

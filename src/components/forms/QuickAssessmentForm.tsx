@@ -8,6 +8,7 @@ import { CheckCircle, Phone, Clock, Star } from 'lucide-react';
 import { toast } from 'sonner';
 import { useFormValidation } from '@/hooks/useFormValidation';
 import { formatPhoneNumber, getSmartPlaceholder } from '@/utils/formHelpers';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 interface QuickAssessmentFormProps {
   onSuccess?: (data: any) => void;
@@ -32,6 +33,18 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
     if (!formData.phone || !isFieldValid('phone', formData.phone)) return;
     
     setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('quick_assessment', {
+      ...formData,
+      submissionType: 'quick',
+      formName: 'Quick Assessment Form'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
     await new Promise(resolve => setTimeout(resolve, 800));
     
     toast.success('Request submitted! We\'ll call you within 2 hours to discuss your free assessment.');
@@ -50,6 +63,18 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
     if (!formData.phone || !formData.name || !isFieldValid('phone', formData.phone)) return;
     
     setIsSubmitting(true);
+    
+    // Send to Zapier
+    const zapierResult = await sendFormToZapier('quick_assessment', {
+      ...formData,
+      submissionType: 'full',
+      formName: 'Quick Assessment Form - Full Details'
+    });
+    
+    if (!zapierResult.success) {
+      console.warn('Failed to send to Zapier:', zapierResult.error);
+    }
+    
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast.success('Assessment request submitted! We\'ll contact you within 2 hours with next steps.');

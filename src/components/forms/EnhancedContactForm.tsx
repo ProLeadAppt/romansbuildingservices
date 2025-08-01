@@ -24,6 +24,7 @@ import {
 } from '@/utils/validationErrors';
 import { apiClient } from '@/utils/apiClient';
 import { cn } from '@/lib/utils';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 interface ContactFormData {
   name: string;
@@ -140,6 +141,17 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
         });
         
         return;
+      }
+
+      // Send to Zapier first
+      const zapierResult = await sendFormToZapier('enhanced_contact', {
+        ...formData,
+        formName: 'Enhanced Contact Form',
+        submitAttempt: submitCount + 1
+      });
+      
+      if (!zapierResult.success) {
+        console.warn('Failed to send to Zapier:', zapierResult.error);
       }
 
       // Online submission
