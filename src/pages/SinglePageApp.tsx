@@ -9,7 +9,7 @@ import { ModernContactSection } from '@/components/ModernContactSection';
 import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
-import { LiveSocialProof } from '@/components/LiveSocialProof';
+
 
 import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen';
 import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
@@ -116,8 +116,6 @@ const SinglePageApp = () => {
         </ErrorBoundary>
       </div>
 
-      {/* Live Social Proof */}
-      <LiveSocialProof />
 
       {/* Dynamic Scroll to Top */}
       <DynamicScrollToTop />
