@@ -120,13 +120,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* LeadConnector Chat Widget */}
-      <script 
-        src="https://widgets.leadconnectorhq.com/loader.js"  
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-        data-widget-id="688bdf6506c967693ee27c64"
-      />
     </ContentInfoLandmark>
   );
 };
