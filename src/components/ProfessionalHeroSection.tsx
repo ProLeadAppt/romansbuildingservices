@@ -98,17 +98,17 @@ export const ProfessionalHeroSection = () => {
     text: '5-Star Google Rating',
     color: 'text-yellow-600'
   }];
-  return <div className="relative min-h-screen flex items-center">
-      {/* Premium Background with Overlay */}
+  return <div className="relative min-h-screen -mt-24 flex items-center">
+      {/* Premium Background with Overlay - Extended to top */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat z-0" 
         style={{
           backgroundImage: `url(${heroBackgroundImage})`
         }}
       >
         <link rel="preload" href={heroBackgroundImage} as="image" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
+      <div className="absolute inset-0 -top-24 bg-gradient-to-br from-black/60 via-black/40 to-black/60 z-0" />
       
       {/* Streamlined Content */}
       <div className="relative z-10 container mx-auto px-4 pt-20 sm:pt-24 pb-8 sm:pb-16">
