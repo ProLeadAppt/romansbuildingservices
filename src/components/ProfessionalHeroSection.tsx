@@ -105,7 +105,7 @@ export const ProfessionalHeroSection = () => {
           x: 0
         }} transition={{
           duration: 0.6
-        }} className="space-y-6 sm:space-y-8 order-1 lg:order-1 py-0">
+        }} className="space-y-6 sm:space-y-8 order-1 lg:order-1 px-0 mx-0 py-px my-0">
             {/* Core Trust Elements */}
             <motion.div className="flex items-center space-x-4" initial={{
             opacity: 0,
