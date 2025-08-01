@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -49,15 +48,14 @@ export const ModernNavigation = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[70] px-4 lg:px-6">
-      <motion.nav 
+      <nav 
         ref={navRef}
-        className="w-full max-w-7xl mx-auto mt-4 mb-2 bg-white/98 backdrop-blur-xl shadow-2xl border border-white/30 rounded-2xl transition-all duration-300 ease-out"
-        initial={false}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="w-full max-w-7xl mx-auto mt-4 mb-2 rounded-2xl transition-all duration-300 ease-out"
         style={{
           background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2)'
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2)',
+          willChange: 'transform',
+          border: '1px solid rgba(255, 255, 255, 0.3)'
         }}
       >
       <div className="container mx-auto px-4">
@@ -102,14 +100,11 @@ export const ModernNavigation = () => {
 
                 {/* Mega Menu for Services */}
                 {item.id === 'services' && activeDropdown === 'services' && (
-                  <AnimatePresence>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-xl shadow-xl border p-6 z-[80]"
+                    <div
+                      className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-xl shadow-xl border p-6 z-[80] animate-fade-in"
                       onMouseEnter={() => handleMouseEnter('services')}
                       onMouseLeave={handleMouseLeave}
+                      style={{ willChange: 'opacity, transform' }}
                     >
                       <div className="grid grid-cols-3 gap-6">
                         {serviceCategories.map((category) => {
@@ -158,20 +153,16 @@ export const ModernNavigation = () => {
                           Call Expert
                         </Button>
                       </div>
-                    </motion.div>
-                  </AnimatePresence>
+                    </div>
                 )}
 
                 {/* Areas Dropdown */}
                 {item.id === 'areas' && activeDropdown === 'areas' && (
-                  <AnimatePresence>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-[400px] bg-white rounded-xl shadow-xl border p-6 z-[80]"
+                    <div
+                      className="absolute top-full left-0 mt-2 w-[400px] bg-white rounded-xl shadow-xl border p-6 z-[80] animate-fade-in"
                       onMouseEnter={() => handleMouseEnter('areas')}
                       onMouseLeave={handleMouseLeave}
+                      style={{ willChange: 'opacity, transform' }}
                     >
                       <div className="grid grid-cols-2 gap-4">
                         {serviceAreas.map((area) => (
@@ -197,8 +188,7 @@ export const ModernNavigation = () => {
                           </Link>
                         ))}
                       </div>
-                    </motion.div>
-                  </AnimatePresence>
+                    </div>
                 )}
               </div>
             ))}
@@ -235,13 +225,10 @@ export const ModernNavigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t bg-white"
+            <div
+              className="lg:hidden border-t bg-white animate-fade-in"
+              style={{ willChange: 'opacity, height' }}
             >
               <div className="py-4 space-y-2">
                 {/* Quick Actions */}
@@ -288,11 +275,10 @@ export const ModernNavigation = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </div>
-      </motion.nav>
+      </nav>
     </div>
   );
 };

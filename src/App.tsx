@@ -4,12 +4,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "@/components/Layout";
 import SinglePageApp from "./pages/SinglePageApp";
+import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <PerformanceMonitor />
       <Toaster />
       <Sonner />
       <Layout showBreadcrumbs={false}>

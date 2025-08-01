@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
-import { AnimatedAboutSection } from '@/components/AnimatedAboutSection';
+import { OptimizedAnimatedAboutSection } from '@/components/OptimizedAnimatedAboutSection';
+import { LazySection } from '@/components/LazySection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
 import { ProjectGallerySection } from '@/components/ProjectGallerySection';
 import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
@@ -11,7 +12,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
 
 
-import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen';
+// import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen'; // Removed for performance
 import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
 import {
   LandmarkSkipNavigation, 
@@ -47,7 +48,9 @@ const SinglePageApp = () => {
           className="py-16 md:py-20 bg-muted/30"
         >
           <ErrorBoundary>
-            <AnimatedAboutSection />
+            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+              <OptimizedAnimatedAboutSection />
+            </LazySection>
           </ErrorBoundary>
         </RegionLandmark>
 
@@ -58,7 +61,9 @@ const SinglePageApp = () => {
           className="py-16 md:py-20"
         >
           <ErrorBoundary>
-            <InteractiveServicesSection />
+            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+              <InteractiveServicesSection />
+            </LazySection>
           </ErrorBoundary>
         </RegionLandmark>
 
@@ -69,11 +74,15 @@ const SinglePageApp = () => {
           className="py-16 md:py-20 bg-muted/30"
         >
         <ErrorBoundary>
-          <ProjectGallerySection />
+          <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+            <ProjectGallerySection />
+          </LazySection>
         </ErrorBoundary>
 
         <ErrorBoundary>
-          <EnhancedShowcaseSection />
+          <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+            <EnhancedShowcaseSection />
+          </LazySection>
         </ErrorBoundary>
         </RegionLandmark>
 
@@ -84,7 +93,9 @@ const SinglePageApp = () => {
           className="py-16 md:py-20"
         >
           <ErrorBoundary>
-            <ProcessTimelineSection />
+            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+              <ProcessTimelineSection />
+            </LazySection>
           </ErrorBoundary>
         </RegionLandmark>
 
@@ -95,7 +106,9 @@ const SinglePageApp = () => {
           className="py-16 md:py-20 bg-muted/30"
         >
           <ErrorBoundary>
-            <ReviewsCarouselSection />
+            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+              <ReviewsCarouselSection />
+            </LazySection>
           </ErrorBoundary>
         </RegionLandmark>
 
@@ -106,7 +119,9 @@ const SinglePageApp = () => {
           className="py-16 md:py-20"
         >
           <ErrorBoundary>
-            <ModernContactSection />
+            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
+              <ModernContactSection />
+            </LazySection>
           </ErrorBoundary>
         </RegionLandmark>
 
@@ -120,8 +135,7 @@ const SinglePageApp = () => {
       {/* Dynamic Scroll to Top */}
       <DynamicScrollToTop />
       
-      {/* Premium Loading Screen */}
-      <PremiumLoadingScreen />
+      {/* Removed Premium Loading Screen for performance */}
     </PageStructureManager>
   );
 };
