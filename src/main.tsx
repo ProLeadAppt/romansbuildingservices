@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Layout } from '@/components/Layout'
 import App from './App.tsx'
 import ReviewFunnel from './pages/ReviewFunnel.tsx'
 import ServicesPage from './pages/ServicesPage.tsx'
@@ -31,30 +32,30 @@ createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/quote" element={<QuotePage />} />
-      <Route path="/assessment" element={<AssessmentPage />} />
-      <Route path="/emergency" element={<EmergencyPage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/services/masonry" element={<MasonryPage />} />
-      <Route path="/services/restoration" element={<RestorationPage />} />
-      <Route path="/services/foundation-repairs" element={<FoundationRepairsPage />} />
-      <Route path="/services/structural-repairs" element={<StructuralRepairsPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/thank-you" element={<ThankYouPage />} />
+      <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+      <Route path="/projects" element={<Layout><ProjectsPage /></Layout>} />
+      <Route path="/quote" element={<Layout><QuotePage /></Layout>} />
+      <Route path="/assessment" element={<Layout><AssessmentPage /></Layout>} />
+      <Route path="/emergency" element={<Layout><EmergencyPage /></Layout>} />
+      <Route path="/services" element={<Layout><ServicesPage /></Layout>} />
+      <Route path="/services/masonry" element={<Layout><MasonryPage /></Layout>} />
+      <Route path="/services/restoration" element={<Layout><RestorationPage /></Layout>} />
+      <Route path="/services/foundation-repairs" element={<Layout><FoundationRepairsPage /></Layout>} />
+      <Route path="/services/structural-repairs" element={<Layout><StructuralRepairsPage /></Layout>} />
+      <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+      <Route path="/thank-you" element={<Layout><ThankYouPage /></Layout>} />
       <Route path="/review" element={<ReviewFunnel />} />
-      <Route path="/areas" element={<ServicesAreasPage />} />
-      <Route path="/areas/sydney-cbd" element={<SydneyCBDPage />} />
-      <Route path="/areas/inner-sydney" element={<InnerSydneyPage />} />
-      <Route path="/areas/eastern-suburbs" element={<EasternSuburbsPage />} />
-      <Route path="/areas/north-shore" element={<NorthShorePage />} />
-      <Route path="/areas/northern-beaches" element={<NorthernBeachesPage />} />
-      <Route path="/areas/inner-west" element={<InnerWestPage />} />
-      <Route path="/areas/greater-sydney" element={<GreaterSydneyPage />} />
-      <Route path="/admin" element={<AdminPage />} />
-      <Route path="/admin/webhooks" element={<WebhookConfigPage />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="/areas" element={<Layout><ServicesAreasPage /></Layout>} />
+      <Route path="/areas/sydney-cbd" element={<Layout><SydneyCBDPage /></Layout>} />
+      <Route path="/areas/inner-sydney" element={<Layout><InnerSydneyPage /></Layout>} />
+      <Route path="/areas/eastern-suburbs" element={<Layout><EasternSuburbsPage /></Layout>} />
+      <Route path="/areas/north-shore" element={<Layout><NorthShorePage /></Layout>} />
+      <Route path="/areas/northern-beaches" element={<Layout><NorthernBeachesPage /></Layout>} />
+      <Route path="/areas/inner-west" element={<Layout><InnerWestPage /></Layout>} />
+      <Route path="/areas/greater-sydney" element={<Layout><GreaterSydneyPage /></Layout>} />
+      <Route path="/admin" element={<Layout><AdminPage /></Layout>} />
+      <Route path="/admin/webhooks" element={<Layout><WebhookConfigPage /></Layout>} />
+      <Route path="*" element={<Layout><NotFound /></Layout>} />
     </Routes>
   </BrowserRouter>
 );
