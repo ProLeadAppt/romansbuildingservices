@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
-import minasPhoto from '@/assets/minas-working.jpg';
+const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const ModernContactSection = () => {
   const [formData, setFormData] = useState({

@@ -10,7 +10,7 @@ import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, Ar
 import { toast } from 'sonner';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
-import minasPhoto from '@/assets/minas-working.jpg';
+const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 export const ProfessionalHeroSection = () => {
   const [formData, setFormData] = useState({
     name: '',

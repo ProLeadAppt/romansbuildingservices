@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
-import minasWorkingImage from '@/assets/minas-working.jpg';
+const minasWorkingImage = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const AnimatedAboutSection = () => {
   const achievements = [
