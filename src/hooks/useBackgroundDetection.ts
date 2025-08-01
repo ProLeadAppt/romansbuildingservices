@@ -81,7 +81,7 @@ export const useBackgroundDetection = ({
           isDark = checkElement(document.body) || checkElement(document.documentElement);
         }
 
-        setBackgroundTheme(isDark ? 'light' : 'dark');
+        setBackgroundTheme(isDark ? 'dark' : 'light');
       }, debounceMs);
     };
 
