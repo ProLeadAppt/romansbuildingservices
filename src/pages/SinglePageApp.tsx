@@ -10,9 +10,6 @@ import { ModernContactSection } from '@/components/ModernContactSection';
 import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
-
-
-// import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen'; // Removed for performance
 import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
 import {
   LandmarkSkipNavigation, 
