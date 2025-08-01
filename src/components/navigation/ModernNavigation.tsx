@@ -51,12 +51,12 @@ export const ModernNavigation = () => {
     <div className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6">
       <motion.nav 
         ref={navRef}
-        className="w-full max-w-7xl mx-auto mt-4 mb-2 backdrop-blur-xl shadow-2xl border border-white/20 rounded-2xl transition-all duration-300 ease-out"
+        className="w-full max-w-7xl mx-auto mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl transition-all duration-300 ease-out"
         initial={false}
         animate={{ y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         style={{
-          background: 'rgba(255,255,255,0.1)'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.90) 0%, rgba(248,250,252,0.90) 100%)'
         }}
       >
       <div className="container mx-auto px-4">
