@@ -72,13 +72,13 @@ export const ModernNavigation = () => {
         className={cn(
           "w-full max-w-7xl mx-auto transition-all duration-500 ease-out will-change-transform",
           isScrolled 
-            ? "mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl scale-[0.98] transform" 
+            ? "mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl" 
             : "mt-0 bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100/30"
         )}
         initial={false}
         animate={{ 
           scale: isScrolled ? 0.98 : 1,
-          y: isScrolled ? 0 : 0
+          y: 0
         }}
         transition={{ 
           duration: 0.4, 
@@ -86,7 +86,7 @@ export const ModernNavigation = () => {
         }}
         style={{
           background: isScrolled 
-            ? 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)'
+            ? 'linear-gradient(135deg, rgba(255,255,255,0.90) 0%, rgba(248,250,252,0.90) 100%)'
             : 'rgba(255,255,255,0.95)'
         }}
       >
