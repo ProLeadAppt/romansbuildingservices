@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Star, Heart, ExternalLink } from 'lucide-react';
+import { AccessibleStarRating, useFocusTrap } from './AccessibilityEnhancements';
 
 interface ReviewModalProps {
   isOpen: boolean;
@@ -11,7 +12,7 @@ interface ReviewModalProps {
 
 export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose }) => {
   const [selectedRating, setSelectedRating] = useState(0);
-  const [hoveredRating, setHoveredRating] = useState(0);
+  const focusTrapRef = useFocusTrap(isOpen);
 
   const handleStarClick = (rating: number) => {
     setSelectedRating(rating);
@@ -31,9 +32,15 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent 
+        className="sm:max-w-md"
+        ref={focusTrapRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="review-modal-title"
+      >
         <DialogHeader>
-          <DialogTitle className="text-center text-2xl font-bold">
+          <DialogTitle id="review-modal-title" className="text-center text-2xl font-bold">
             Rate Your Experience
           </DialogTitle>
         </DialogHeader>
@@ -44,26 +51,13 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose }) => 
               How was your experience with Romans Building Services?
             </p>
             
-            <div className="flex justify-center space-x-2 mb-6">
-              {[1, 2, 3, 4, 5].map((rating) => (
-                <motion.button
-                  key={rating}
-                  className="p-1"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onMouseEnter={() => setHoveredRating(rating)}
-                  onMouseLeave={() => setHoveredRating(0)}
-                  onClick={() => handleStarClick(rating)}
-                >
-                  <Star 
-                    className={`w-8 h-8 transition-colors ${
-                      rating <= (hoveredRating || selectedRating)
-                        ? 'text-yellow-400 fill-current'
-                        : 'text-gray-300'
-                    }`}
-                  />
-                </motion.button>
-              ))}
+            <div className="mb-6">
+              <AccessibleStarRating
+                rating={selectedRating}
+                onRatingChange={handleStarClick}
+                size="lg"
+                label="Rate your experience with Romans Building Services"
+              />
             </div>
 
             <AnimatePresence>

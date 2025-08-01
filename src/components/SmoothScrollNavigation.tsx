@@ -172,11 +172,11 @@ export const SmoothScrollNavigation = () => {
       >
         <Button
           size="sm"
-          className="rounded-full w-12 h-12 shadow-lg bg-primary hover:bg-primary/90"
+          className="rounded-full w-12 h-12 shadow-lg bg-primary hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2"
           onClick={scrollToTop}
-          aria-label="Scroll to top"
+          aria-label="Scroll to top of page"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-5 h-5" aria-hidden="true" />
         </Button>
       </motion.div>
     </>

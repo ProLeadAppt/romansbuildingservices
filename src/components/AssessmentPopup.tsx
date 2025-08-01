@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { Star, CheckCircle, X, Phone, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
+import { useFocusTrap } from './AccessibilityEnhancements';
 
 interface AssessmentPopupProps {
   isOpen: boolean;
@@ -23,6 +24,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const focusTrapRef = useFocusTrap(isOpen);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +48,13 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0">
+      <DialogContent 
+        ref={focusTrapRef}
+        className="max-w-2xl max-h-[90vh] overflow-y-auto p-0"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="assessment-popup-title"
+      >
         <div className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6">
           <DialogHeader className="text-center space-y-4">
             <motion.div 
@@ -58,7 +66,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
               <span className="font-semibold">FREE Assessment</span>
             </motion.div>
             
-            <DialogTitle className="text-3xl font-bold text-center">
+            <DialogTitle id="assessment-popup-title" className="text-3xl font-bold text-center">
               Get Your FREE $500 Assessment
             </DialogTitle>
             

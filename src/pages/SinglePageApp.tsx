@@ -1,5 +1,6 @@
 import React from 'react';
 import { CleanNavigation } from '@/components/CleanNavigation';
+import { KeyboardNavigationGuide } from '@/components/KeyboardNavigationGuide';
 import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
 import { AnimatedAboutSection } from '@/components/AnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';

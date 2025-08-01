@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, Home, Users, Wrench, Image, CheckCircle, Star, Menu, X } from 'lucide-react';
+import { SkipNavigation } from './AccessibilityEnhancements';
 
 const sections = [
   { id: 'hero', label: 'Home', icon: Home },
@@ -51,6 +52,7 @@ export const CleanNavigation = () => {
 
   return (
     <>
+      <SkipNavigation />
 
       {/* Clean Navigation Header */}
       <header
@@ -84,7 +86,9 @@ export const CleanNavigation = () => {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth ${
+                    aria-current={isActive ? 'page' : undefined}
+                    aria-label={`Navigate to ${section.label} section`}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
                         : 'hover:bg-muted text-foreground'
@@ -143,7 +147,9 @@ export const CleanNavigation = () => {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`flex items-center space-x-3 w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-smooth text-left ${
+                    aria-current={isActive ? 'page' : undefined}
+                    aria-label={`Navigate to ${section.label} section`}
+                    className={`flex items-center space-x-3 w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-smooth text-left focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
                         : 'hover:bg-muted text-foreground'
