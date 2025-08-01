@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Settings, Zap, BarChart3, Users, Mail, ExternalLink } from 'lucide-react';
 
-export const AdminPage: React.FC = () => {
+const AdminPage: React.FC = () => {
   const adminSections = [
     {
       title: 'Zapier Webhooks',
@@ -202,3 +202,5 @@ export const AdminPage: React.FC = () => {
     </Layout>
   );
 };
+
+export default AdminPage;

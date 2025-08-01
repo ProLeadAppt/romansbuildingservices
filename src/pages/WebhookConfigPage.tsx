@@ -6,7 +6,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Settings, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 
-export const WebhookConfigPage: React.FC = () => {
+const WebhookConfigPage: React.FC = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -171,3 +171,5 @@ export const WebhookConfigPage: React.FC = () => {
     </Layout>
   );
 };
+
+export default WebhookConfigPage;

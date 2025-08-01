@@ -22,8 +22,8 @@ import MasonryPage from './pages/services/MasonryPage.tsx'
 import RestorationPage from './pages/services/RestorationPage.tsx'
 import FoundationRepairsPage from './pages/services/FoundationRepairsPage.tsx'
 import StructuralRepairsPage from './pages/services/StructuralRepairsPage.tsx'
-import { AdminPage } from './pages/AdminPage.tsx'
-import { WebhookConfigPage } from './pages/WebhookConfigPage.tsx'
+import AdminPage from './pages/AdminPage.tsx'
+import WebhookConfigPage from './pages/WebhookConfigPage.tsx'
 import './index.css'
 
 createRoot(document.getElementById("root")!).render(
