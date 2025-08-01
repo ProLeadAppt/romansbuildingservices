@@ -102,7 +102,7 @@ export const LocalBusinessSchema = () => {
       `${BUSINESS_INFO.website}/images/masonry-work-sydney.jpg`,
       `${BUSINESS_INFO.website}/images/heritage-restoration.jpg`
     ],
-    "logo": `${BUSINESS_INFO.website}/images/romans-logo.png`,
+    "logo": `${BUSINESS_INFO.website}/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg`,
     "sameAs": [
       BUSINESS_INFO.socialMedia.facebook,
       BUSINESS_INFO.socialMedia.instagram, 

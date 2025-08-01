@@ -69,7 +69,7 @@ export const CleanNavigation = () => {
             {/* Professional Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               <img 
-                src="/src/assets/romans-logo.png" 
+                src="/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg" 
                 alt="Roman's Building Services" 
                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
               />
@@ -153,7 +153,7 @@ export const CleanNavigation = () => {
             <div className="flex items-center justify-between p-4 border-b" role="banner">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/src/assets/romans-logo.png" 
+                  src="/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg" 
                   alt="Roman's Building Services" 
                   className="w-8 h-8 object-contain"
                 />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
-import romansLogo from '@/assets/romans-logo.png';
+const romansLogo = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export const PremiumLoadingScreen = () => {
   const [progress, setProgress] = useState(0);
