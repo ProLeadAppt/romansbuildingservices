@@ -28,7 +28,7 @@ const WebhookConfigPage: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-2">
                   <Zap className="w-6 h-6" />
                 </div>
                 <CardTitle className="text-lg">Automated Lead Capture</CardTitle>
@@ -43,7 +43,7 @@ const WebhookConfigPage: React.FC = () => {
 
             <Card>
               <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-2">
                   <TrendingUp className="w-6 h-6" />
                 </div>
                 <CardTitle className="text-lg">Instant Notifications</CardTitle>
@@ -58,7 +58,7 @@ const WebhookConfigPage: React.FC = () => {
 
             <Card>
               <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-accent/10 text-accent-foreground rounded-full flex items-center justify-center mx-auto mb-2">
                   <CheckCircle className="w-6 h-6" />
                 </div>
                 <CardTitle className="text-lg">Zero Manual Work</CardTitle>
@@ -93,7 +93,7 @@ const WebhookConfigPage: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-red-100 text-red-800">High Priority</Badge>
+                    <Badge className="bg-destructive/10 text-destructive">High Priority</Badge>
                     <span className="font-medium">Lead Generation</span>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-1">
@@ -106,7 +106,7 @@ const WebhookConfigPage: React.FC = () => {
                 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-yellow-100 text-yellow-800">Medium Priority</Badge>
+                    <Badge className="bg-secondary/10 text-secondary-foreground">Medium Priority</Badge>
                     <span className="font-medium">Contact Forms</span>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-1">
@@ -119,7 +119,7 @@ const WebhookConfigPage: React.FC = () => {
                 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-green-100 text-green-800">Low Priority</Badge>
+                    <Badge className="bg-primary/10 text-primary">Low Priority</Badge>
                     <span className="font-medium">Feedback</span>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-1">
