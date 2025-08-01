@@ -38,9 +38,12 @@ export const DynamicScrollToTop = () => {
   const getButtonClasses = () => {
     const baseClasses = "w-12 h-12 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center backdrop-blur-md border-2";
     
+    // Light background detected → show dark button for contrast
     if (backgroundTheme === 'light') {
       return `${baseClasses} bg-gray-900/95 text-white border-gray-600/70 hover:bg-gray-800 hover:scale-110 shadow-gray-900/50`;
-    } else {
+    } 
+    // Dark background detected → show light button for contrast
+    else {
       return `${baseClasses} bg-white/95 text-gray-900 border-gray-300/70 hover:bg-gray-50 hover:scale-110 shadow-black/30`;
     }
   };

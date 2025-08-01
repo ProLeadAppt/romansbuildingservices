@@ -32,8 +32,15 @@ export const useBackgroundDetection = ({
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
+        // Temporarily hide the target element to get what's truly behind it
+        if (element) element.style.visibility = 'hidden';
+        
         // Get element behind the target element
         const elementBehind = document.elementFromPoint(centerX, centerY);
+        
+        // Restore visibility
+        if (element) element.style.visibility = 'visible';
+        
         if (!elementBehind) return;
 
         let isDark = false;
