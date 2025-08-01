@@ -93,9 +93,9 @@ export const ProfessionalHeroSection = () => {
               }}>
                 Sydney's #1
                 <br />
-                <span className="morphing-text font-bold" style={{
-                  textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
-                  WebkitTextStroke: '1px rgba(0,0,0,0.3)'
+                <span className="morphing-text font-bold relative bg-black/40 px-2 py-1 rounded-lg backdrop-blur-sm" style={{
+                  textShadow: '4px 4px 8px rgba(0,0,0,1), 2px 2px 4px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.8)',
+                  WebkitTextStroke: '2px rgba(0,0,0,0.8)'
                 }}>Building Experts</span>
               </h1>
               
