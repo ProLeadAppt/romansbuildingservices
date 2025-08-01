@@ -16,8 +16,8 @@ export const Layout: React.FC<LayoutProps> = ({
     <div className="min-h-screen">
       <ModernNavigation />
       
-      {/* Main Content with proper spacing for fixed nav */}
-      <main className="pt-16 lg:pt-18">
+      {/* Main Content without top padding for floating nav */}
+      <main>
         {showBreadcrumbs && <Breadcrumbs />}
         {children}
       </main>
