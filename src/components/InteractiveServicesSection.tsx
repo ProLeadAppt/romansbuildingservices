@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle, Phone } from 'lucide-react';
-import minasPhoto from '@/assets/professional-team.jpg';
+import minasPhoto from '@/assets/minas-working.jpg';
 
 export const InteractiveServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
@@ -232,7 +232,7 @@ export const InteractiveServicesSection = () => {
             <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
               <img 
                 src={minasPhoto} 
-                alt="Minas - Romans Building Services Owner" 
+                alt="Minas Romanakis working hands-on with masonry restoration" 
                 className="w-full h-full object-cover"
               />
             </div>

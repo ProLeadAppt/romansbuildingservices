@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
-import minasWorkingImage from '@/assets/professional-team.jpg';
+import minasWorkingImage from '@/assets/minas-working.jpg';
 
 export const AnimatedAboutSection = () => {
   const achievements = [
@@ -135,7 +135,7 @@ export const AnimatedAboutSection = () => {
           <div className="relative overflow-hidden rounded-2xl floating-shadow">
             <motion.img
               src={minasWorkingImage}
-              alt="Minas Romanakis working hands-on with masonry"
+              alt="Minas Romanakis working hands-on with masonry restoration"
               className="w-full h-[500px] object-cover"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}

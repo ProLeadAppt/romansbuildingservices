@@ -10,7 +10,7 @@ import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, Ar
 import { toast } from 'sonner';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
-import minasPhoto from '@/assets/professional-team.jpg';
+import minasPhoto from '@/assets/minas-working.jpg';
 export const ProfessionalHeroSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -334,7 +334,7 @@ export const ProfessionalHeroSection = () => {
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                        <img src={minasPhoto} alt="Minas - Romans Building Services Owner" className="w-full h-full object-cover" />
+                        <img src={minasPhoto} alt="Minas Romanakis working hands-on with masonry restoration" className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-foreground">Personal Guarantee</p>

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
-import minasPhoto from '@/assets/professional-team.jpg';
+import minasPhoto from '@/assets/minas-working.jpg';
 
 export const ModernContactSection = () => {
   const [formData, setFormData] = useState({
@@ -433,7 +433,7 @@ export const ModernContactSection = () => {
                     <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                       <img 
                         src={minasPhoto} 
-                        alt="Minas - Romans Building Services Owner" 
+                        alt="Minas Romanakis working hands-on with masonry restoration" 
                         className="w-full h-full object-cover"
                       />
                     </div>
