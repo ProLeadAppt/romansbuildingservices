@@ -20,11 +20,6 @@ export const LiveSocialProof = () => {
   const [isVisible, setIsVisible] = useState(true);
   const isMobile = useIsMobile();
 
-  // Hide on mobile devices
-  if (isMobile) {
-    return null;
-  }
-
   const activities: Activity[] = [
     {
       id: '1',
@@ -81,6 +76,10 @@ export const LiveSocialProof = () => {
     return () => clearInterval(interval);
   }, [activities.length]);
 
+  // Hide on mobile devices - AFTER all hooks are called
+  if (isMobile) {
+    return null;
+  }
   const getActivityIcon = (type: string) => {
     switch (type) {
       case 'quote': return '💬';
