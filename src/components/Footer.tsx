@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Building } from "lucide-react";
+import { ContentInfoLandmark } from "./ARIALandmarks";
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-white">
+    <ContentInfoLandmark 
+      id="site-footer"
+      label="Site footer with contact information and company details"
+      className="bg-foreground text-white"
+    >
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -115,6 +120,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </ContentInfoLandmark>
   );
 };

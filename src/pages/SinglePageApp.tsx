@@ -8,75 +8,114 @@ import { ProjectGallerySection } from '@/components/ProjectGallerySection';
 import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
 import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
+import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ReadabilityControls } from '@/components/ReadabilityControls';
-import { EnhancedSkipNavigation, RouteChangeFocusManager, FocusAnnouncement } from '@/components/FocusManagement';
+import { 
+  LandmarkSkipNavigation, 
+  MainLandmark, 
+  RegionLandmark, 
+  PageStructureManager 
+} from '@/components/ARIALandmarks';
 
 const SinglePageApp = () => {
   return (
-    <div className="min-h-screen scroll-smooth">
-      <EnhancedSkipNavigation />
-      <RouteChangeFocusManager routeName="Romans Building Services" focusTarget="h1" />
-      <FocusAnnouncement 
-        message="Page loaded successfully. Use Tab to navigate or access the keyboard help guide."
-        priority="polite"
-        id="page-load-announcement"
-      />
-      <ErrorBoundary>
-        <CleanNavigation />
-      </ErrorBoundary>
-      <KeyboardNavigationGuide />
-      <ReadabilityControls />
-      
-      {/* Hero Section */}
-      <main id="hero" className="min-h-screen" tabIndex={-1}>
+    <PageStructureManager>
+      <div className="min-h-screen scroll-smooth">
+        <LandmarkSkipNavigation />
+        
         <ErrorBoundary>
-          <ProfessionalHeroSection />
+          <CleanNavigation />
         </ErrorBoundary>
-      </main>
+        <KeyboardNavigationGuide />
+        <ReadabilityControls />
+        
+        {/* Main Content Area */}
+        <MainLandmark id="main-content" label="Main page content">
+          {/* Hero Section */}
+          <RegionLandmark 
+            id="hero" 
+            regionLabel="Hero section with company introduction and contact form"
+            className="min-h-screen"
+          >
+            <ErrorBoundary>
+              <ProfessionalHeroSection />
+            </ErrorBoundary>
+          </RegionLandmark>
+        </MainLandmark>
 
-      {/* About Section */}
-      <section id="about" className="py-16 md:py-20 bg-muted/30">
-        <ErrorBoundary>
-          <AnimatedAboutSection />
-        </ErrorBoundary>
-      </section>
+        {/* About Section */}
+        <RegionLandmark 
+          id="about" 
+          regionLabel="About section with company history and team information"
+          className="py-16 md:py-20 bg-muted/30"
+        >
+          <ErrorBoundary>
+            <AnimatedAboutSection />
+          </ErrorBoundary>
+        </RegionLandmark>
 
-      {/* Services Section */}
-      <section id="services" className="py-16 md:py-20">
-        <ErrorBoundary>
-          <InteractiveServicesSection />
-        </ErrorBoundary>
-      </section>
+        {/* Services Section */}
+        <RegionLandmark 
+          id="services" 
+          regionLabel="Services section showcasing company offerings"
+          className="py-16 md:py-20"
+        >
+          <ErrorBoundary>
+            <InteractiveServicesSection />
+          </ErrorBoundary>
+        </RegionLandmark>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-16 md:py-20 bg-muted/30">
-        <ErrorBoundary>
-          <ProjectGallerySection />
-        </ErrorBoundary>
-      </section>
+        {/* Projects Section */}
+        <RegionLandmark 
+          id="projects" 
+          regionLabel="Projects gallery showcasing completed work"
+          className="py-16 md:py-20 bg-muted/30"
+        >
+          <ErrorBoundary>
+            <ProjectGallerySection />
+          </ErrorBoundary>
+        </RegionLandmark>
 
-      {/* Process Section */}
-      <section id="process" className="py-16 md:py-20">
-        <ErrorBoundary>
-          <ProcessTimelineSection />
-        </ErrorBoundary>
-      </section>
+        {/* Process Section */}
+        <RegionLandmark 
+          id="process" 
+          regionLabel="Process timeline explaining how we work"
+          className="py-16 md:py-20"
+        >
+          <ErrorBoundary>
+            <ProcessTimelineSection />
+          </ErrorBoundary>
+        </RegionLandmark>
 
-      {/* Reviews Section */}
-      <section id="reviews" className="py-16 md:py-20 bg-muted/30">
-        <ErrorBoundary>
-          <ReviewsCarouselSection />
-        </ErrorBoundary>
-      </section>
+        {/* Reviews Section */}
+        <RegionLandmark 
+          id="reviews" 
+          regionLabel="Customer reviews and testimonials"
+          className="py-16 md:py-20 bg-muted/30"
+        >
+          <ErrorBoundary>
+            <ReviewsCarouselSection />
+          </ErrorBoundary>
+        </RegionLandmark>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-20">
+        {/* Contact Section */}
+        <RegionLandmark 
+          id="contact" 
+          regionLabel="Contact information and inquiry form"
+          className="py-16 md:py-20"
+        >
+          <ErrorBoundary>
+            <ModernContactSection />
+          </ErrorBoundary>
+        </RegionLandmark>
+
+        {/* Footer */}
         <ErrorBoundary>
-          <ModernContactSection />
+          <Footer />
         </ErrorBoundary>
-      </section>
-    </div>
+      </div>
+    </PageStructureManager>
   );
 };
 
