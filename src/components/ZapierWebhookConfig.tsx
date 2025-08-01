@@ -53,16 +53,36 @@ export const ZapierWebhookConfig: React.FC<ZapierWebhookConfigProps> = ({
   }, []);
 
   const saveWebhookUrl = (formType: string, url: string) => {
-    const updated = { ...webhookUrls, [formType]: url };
-    setWebhookUrls(updated);
+    console.log(`Saving webhook URL for ${formType}:`, url);
     
-    // Save to localStorage
-    localStorage.setItem('zapier_webhook_urls', JSON.stringify(updated));
-    
-    // Configure the webhook utility
-    if (url) {
+    try {
+      // Validate URL before saving
+      if (!zapierWebhook.isValidWebhookUrl(url)) {
+        toast.error('Invalid webhook URL format', {
+          description: 'Please enter a valid Zapier webhook URL'
+        });
+        return;
+      }
+
+      const updated = { ...webhookUrls, [formType]: url };
+      setWebhookUrls(updated);
+      
+      // Save to localStorage with error handling
+      localStorage.setItem('zapier_webhook_urls', JSON.stringify(updated));
+      console.log('Saved to localStorage:', updated);
+      
+      // Configure the webhook utility
       zapierWebhook.setWebhookUrl(formType, url);
-      toast.success(`Webhook URL saved for ${formType}`);
+      console.log('Configured webhook utility for:', formType);
+      
+      toast.success(`Webhook URL saved for ${FORM_TYPES.find(f => f.id === formType)?.label || formType}`, {
+        description: 'You can now test the webhook'
+      });
+    } catch (error) {
+      console.error('Error saving webhook URL:', error);
+      toast.error('Failed to save webhook URL', {
+        description: 'Please try again'
+      });
     }
   };
 
@@ -272,8 +292,17 @@ const WebhookFormConfig: React.FC<WebhookFormConfigProps> = ({
   }, [inputUrl]);
 
   const handleSave = () => {
-    if (isValid) {
-      onSave(inputUrl);
+    console.log(`Attempting to save URL for ${formType}:`, inputUrl, 'Valid:', isValid);
+    
+    if (!inputUrl.trim()) {
+      toast.error('Please enter a webhook URL');
+      return;
+    }
+    
+    if (isValid && inputUrl.trim()) {
+      onSave(inputUrl.trim());
+    } else {
+      toast.error('Please enter a valid Zapier webhook URL');
     }
   };
 

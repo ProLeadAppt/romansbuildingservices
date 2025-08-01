@@ -82,12 +82,31 @@ export class ZapierWebhook {
 
   // Helper method to validate webhook URL format
   isValidWebhookUrl(url: string): boolean {
+    if (!url || typeof url !== 'string') {
+      return false;
+    }
+    
     try {
-      const urlObj = new URL(url);
-      return urlObj.protocol === 'https:' && 
-             (urlObj.hostname.includes('zapier.com') || 
-              urlObj.hostname.includes('hooks.zapier.com'));
-    } catch {
+      const urlObj = new URL(url.trim());
+      const isValidProtocol = urlObj.protocol === 'https:';
+      const isValidDomain = urlObj.hostname === 'hooks.zapier.com' || 
+                           urlObj.hostname.includes('zapier.com');
+      const hasPath = urlObj.pathname.length > 1;
+      
+      console.log('URL validation:', {
+        url: url.trim(),
+        protocol: urlObj.protocol,
+        hostname: urlObj.hostname,
+        pathname: urlObj.pathname,
+        isValidProtocol,
+        isValidDomain,
+        hasPath,
+        result: isValidProtocol && isValidDomain && hasPath
+      });
+      
+      return isValidProtocol && isValidDomain && hasPath;
+    } catch (error) {
+      console.log('URL validation error:', error);
       return false;
     }
   }
