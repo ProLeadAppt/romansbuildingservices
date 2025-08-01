@@ -161,7 +161,7 @@ export const SmoothScrollNavigation = () => {
 
       {/* Scroll to Top Button - Positioned to leave space for webchat */}
       <motion.div
-        className="fixed bottom-4 right-4 z-40"
+        className="fixed bottom-4 right-4 z-[60]"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ 
           opacity: showScrollTop ? 1 : 0, 

@@ -48,10 +48,10 @@ export const ModernNavigation = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6">
+    <div className="fixed top-0 left-0 right-0 z-[70] px-4 lg:px-6">
       <motion.nav 
         ref={navRef}
-        className="w-full max-w-7xl mx-auto mt-4 mb-2 bg-white/95 backdrop-blur-xl shadow-2xl border border-white/30 rounded-2xl transition-all duration-300 ease-out"
+        className="w-full max-w-7xl mx-auto mt-4 mb-2 bg-white/98 backdrop-blur-xl shadow-2xl border border-white/30 rounded-2xl transition-all duration-300 ease-out"
         initial={false}
         animate={{ y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -107,7 +107,7 @@ export const ModernNavigation = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-xl shadow-xl border p-6 z-50"
+                      className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-xl shadow-xl border p-6 z-[80]"
                       onMouseEnter={() => handleMouseEnter('services')}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -169,7 +169,7 @@ export const ModernNavigation = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-[400px] bg-white rounded-xl shadow-xl border p-6 z-50"
+                      className="absolute top-full left-0 mt-2 w-[400px] bg-white rounded-xl shadow-xl border p-6 z-[80]"
                       onMouseEnter={() => handleMouseEnter('areas')}
                       onMouseLeave={handleMouseLeave}
                     >
