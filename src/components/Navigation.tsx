@@ -122,6 +122,16 @@ export const Navigation = () => {
             >
               Contact
             </Link>
+
+            <Link 
+              to="/admin" 
+              className={cn(
+                "text-xs font-medium transition-colors hover:text-primary opacity-60",
+                location.pathname.startsWith("/admin") ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              Admin
+            </Link>
           </div>
 
           {/* CTA Section */}
