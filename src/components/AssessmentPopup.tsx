@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { Star, CheckCircle, X, Phone, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
 import { useFocusTrap } from './AccessibilityEnhancements';
 
@@ -17,6 +18,7 @@ interface AssessmentPopupProps {
 }
 
 export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -44,8 +46,6 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success('Assessment request submitted! We\'ll contact you within 2 hours.');
-    
     // Reset form and close
     setFormData({
       name: '',
@@ -56,6 +56,9 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
     });
     setIsSubmitting(false);
     onClose();
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   const benefits = [

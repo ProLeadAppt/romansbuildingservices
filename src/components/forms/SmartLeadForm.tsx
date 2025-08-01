@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { useSmartDefaults } from '@/hooks/useSmartDefaults';
 import { useFormValidation } from '@/hooks/useFormValidation';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
@@ -21,6 +22,7 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
   variant = 'minimal',
   className = '' 
 }) => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     phone: '',
@@ -98,8 +100,6 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success('Request submitted! We\'ll contact you within 2 hours.');
-    
     if (onSuccess) {
       onSuccess(formData);
     }
@@ -111,6 +111,9 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
     });
     setStep(0);
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   const updateField = (field: string, value: string) => {
@@ -138,9 +141,11 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
     
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    toast.success('Thanks! We\'ll call you within 30 minutes.');
     setFormData(prev => ({ ...prev, phone: '' }));
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   if (variant === 'minimal') {

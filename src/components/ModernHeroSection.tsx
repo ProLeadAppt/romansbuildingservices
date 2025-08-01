@@ -7,10 +7,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
 import heroImage from '@/assets/hero-masonry.jpg';
 
 export const ModernHeroSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -43,8 +45,6 @@ export const ModernHeroSection = () => {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success('Request submitted! We\'ll contact you within 2 hours for your free assessment.');
-    
     // Reset form
     setFormData({
       name: '',
@@ -55,6 +55,9 @@ export const ModernHeroSection = () => {
     });
     
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   const trustBadges = [

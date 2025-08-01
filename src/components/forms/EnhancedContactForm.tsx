@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/select';
 import { Loader2, CheckCircle, AlertCircle, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { useError } from '@/contexts/ErrorProvider';
 import { useOffline } from '@/hooks/useOffline';
 import { 
@@ -48,6 +49,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
   submitEndpoint = '/api/contact',
   showUrgencyField = true
 }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -162,10 +164,6 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
         userAgent: navigator.userAgent
       });
 
-      toast.success('Message sent successfully!', {
-        description: 'We\'ll get back to you within 2 hours.'
-      });
-
       onSuccess?.(formData);
       
       // Reset form
@@ -178,6 +176,9 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
         message: ''
       });
       setValidationErrors({});
+      
+      // Navigate to thank you page
+      navigate('/thank-you');
 
     } catch (error: any) {
       console.error('Form submission error:', error);

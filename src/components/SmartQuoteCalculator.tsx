@@ -8,9 +8,11 @@ import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Calculator, Home, Zap, Clock, DollarSign, Phone, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 export const SmartQuoteCalculator = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     serviceType: '',
     propertyType: '',
@@ -111,12 +113,13 @@ export const SmartQuoteCalculator = () => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    toast.success('Quote request submitted! We\'ll contact you within 2 hours with your detailed quote.');
-    
     // Reset
     setShowContactForm(false);
     setContactData({ name: '', phone: '', email: '' });
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   return (

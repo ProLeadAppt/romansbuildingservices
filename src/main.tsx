@@ -11,6 +11,7 @@ import QuotePage from './pages/QuotePage.tsx'
 import AssessmentPage from './pages/AssessmentPage.tsx'
 import EmergencyPage from './pages/EmergencyPage.tsx'
 import ServicesAreasPage from './pages/ServicesAreasPage.tsx'
+import ThankYouPage from './pages/ThankYouPage.tsx'
 import SydneyCBDPage from './pages/areas/SydneyCBDPage.tsx'
 import InnerSydneyPage from './pages/areas/InnerSydneyPage.tsx'
 import EasternSuburbsPage from './pages/areas/EasternSuburbsPage.tsx'
@@ -41,6 +42,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/services/foundation-repairs" element={<FoundationRepairsPage />} />
       <Route path="/services/structural-repairs" element={<StructuralRepairsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/thank-you" element={<ThankYouPage />} />
       <Route path="/review" element={<ReviewFunnel />} />
       <Route path="/areas" element={<ServicesAreasPage />} />
       <Route path="/areas/sydney-cbd" element={<SydneyCBDPage />} />

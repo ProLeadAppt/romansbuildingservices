@@ -8,10 +8,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 export const ProfessionalHeroSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,7 +35,6 @@ export const ProfessionalHeroSection = () => {
         url: window.location.href
       });
       if (result.success) {
-        toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
         setFormData({
           name: '',
           phone: '',
@@ -41,6 +42,8 @@ export const ProfessionalHeroSection = () => {
           service: '',
           message: ''
         });
+        // Navigate to thank you page
+        navigate('/thank-you');
       } else {
         toast.error('Failed to submit request. Please try calling us directly.');
       }

@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Phone, Clock, Star } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { useFormValidation } from '@/hooks/useFormValidation';
 import { formatPhoneNumber, getSmartPlaceholder } from '@/utils/formHelpers';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
@@ -19,6 +20,7 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
   onSuccess, 
   className = '' 
 }) => {
+  const navigate = useNavigate();
   const [showFullForm, setShowFullForm] = useState(false);
   const [formData, setFormData] = useState({
     phone: '',
@@ -47,14 +49,15 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
     
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    toast.success('Request submitted! We\'ll call you within 2 hours to discuss your free assessment.');
-    
     if (onSuccess) {
       onSuccess({ ...formData, type: 'quick_assessment' });
     }
     
     setFormData({ phone: '', name: '', issue: '' });
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   const handleFullSubmit = async (e: React.FormEvent) => {
@@ -77,8 +80,6 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
     
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success('Assessment request submitted! We\'ll contact you within 2 hours with next steps.');
-    
     if (onSuccess) {
       onSuccess({ ...formData, type: 'full_assessment' });
     }
@@ -86,6 +87,9 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
     setFormData({ phone: '', name: '', issue: '' });
     setShowFullForm(false);
     setIsSubmitting(false);
+    
+    // Navigate to thank you page
+    navigate('/thank-you');
   };
 
   const updateField = (field: string, value: string) => {
