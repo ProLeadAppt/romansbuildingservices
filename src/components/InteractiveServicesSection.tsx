@@ -82,8 +82,9 @@ export const InteractiveServicesSection = () => {
         <h2 className="text-4xl font-bold">
           Expert <span className="gradient-text">Building Solutions</span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Don't let building problems cost you thousands more! Our expert solutions prevent 30% annual cost increases and protect your property value.
+        <p className="text-base sm:text-lg text-muted-foreground max-w-full sm:max-w-3xl mx-auto overflow-safe">
+          <span className="hidden sm:inline">Don't let building problems cost you thousands more! Our expert solutions prevent 30% annual cost increases and protect your property value.</span>
+          <span className="sm:hidden">Expert solutions prevent 30% cost increases and protect property value.</span>
         </p>
       </motion.div>
 

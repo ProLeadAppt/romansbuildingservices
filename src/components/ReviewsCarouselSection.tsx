@@ -133,8 +133,9 @@ export const ReviewsCarouselSection = () => {
         <h2 className="text-4xl font-bold">
           What Our <span className="gradient-text">Clients Say</span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          See how we've saved our clients hundreds of thousands in avoided damage costs and property value protection.
+        <p className="text-base sm:text-lg text-muted-foreground max-w-full sm:max-w-3xl mx-auto overflow-safe">
+          <span className="hidden sm:inline">See how we've saved our clients hundreds of thousands in avoided damage costs and property value protection.</span>
+          <span className="sm:hidden">See how we've saved clients hundreds of thousands in damage costs.</span>
         </p>
       </motion.div>
 

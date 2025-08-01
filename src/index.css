@@ -442,10 +442,58 @@ All colors MUST be HSL.
     background: radial-gradient(circle at 40% 90%, hsl(var(--accent) / 0.1) 0%, transparent 50%);
   }
 
-  /* Mobile Touch Targets */
+  /* Mobile Touch Targets & Optimizations */
   .touch-target {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  /* Mobile Container */
+  .mobile-container {
+    @apply px-3 sm:px-4 lg:px-6 max-w-full overflow-hidden;
+  }
+
+  /* Mobile Grid System */
+  .mobile-grid {
+    @apply grid gap-3 sm:gap-4 lg:gap-6;
+  }
+
+  /* Mobile Button Optimization */
+  .mobile-button {
+    @apply w-full sm:w-auto px-4 py-3 text-sm sm:text-base min-h-[44px] touch-target;
+  }
+
+  /* Overflow Safety */
+  .overflow-safe {
+    @apply max-w-full overflow-hidden;
+  }
+
+  /* Responsive Text Scaling */
+  .text-responsive-xl {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+
+  /* Mobile-first spacing */
+  .space-mobile {
+    @apply space-y-3 sm:space-y-4 lg:space-y-6;
+  }
+
+  /* Mobile CTA Optimization */
+  .mobile-cta {
+    @apply text-center sm:text-left;
+  }
+
+  /* Responsive Padding */
+  .padding-responsive {
+    @apply p-3 sm:p-4 lg:p-6;
   }
 
   /* Error Boundary Styles */

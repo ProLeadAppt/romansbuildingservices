@@ -124,8 +124,8 @@ export const ProfessionalHeroSection = () => {
         }} transition={{
           duration: 0.6
         }} className="space-y-6 sm:space-y-8 order-1 lg:order-1 px-0 mx-0 py-px my-[11px]">
-            {/* Core Trust Elements with Urgency */}
-            <motion.div className="flex items-center space-x-2 sm:space-x-4" initial={{
+            {/* Core Trust Elements with Urgency - Mobile Optimized */}
+            <motion.div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4" initial={{
             opacity: 0,
             y: 20
           }} animate={{
@@ -135,13 +135,15 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-              <Badge className="bg-destructive text-white px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm animate-pulse">
+              <Badge className="bg-destructive text-white px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm animate-pulse flex-shrink-0">
                 <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                30% Higher Costs Waiting!
+                <span className="hidden sm:inline">30% Higher Costs Waiting!</span>
+                <span className="sm:hidden">Costs Rising 30%!</span>
               </Badge>
-              <Badge className="bg-white/20 text-white border-white/30 px-2 py-2 sm:px-3 sm:py-[14px] text-xs sm:text-sm">
+              <Badge className="bg-white/20 text-white border-white/30 px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm flex-shrink-0">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-400 fill-current" />
-                Since 1995 - 2025 Standards
+                <span className="hidden sm:inline">Since 1995 - 2025 Standards</span>
+                <span className="sm:hidden">Since 1995</span>
               </Badge>
             </motion.div>
 
@@ -156,22 +158,31 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 0.4
           }}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white" style={{
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white overflow-safe" style={{
               textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
               WebkitTextStroke: '1px rgba(0,0,0,0.3)'
             }}>
-                Prevent 30% Annual Cost Increases!
+                <span className="hidden sm:inline">Prevent 30% Annual Cost Increases!</span>
+                <span className="sm:hidden">Stop 30% Cost Increases!</span>
                 <br />
-                <span className="morphing-text font-bold relative bg-black/80 px-4 py-2 rounded-lg backdrop-blur-md text-white" style={{
+                <span className="morphing-text font-bold relative bg-black/80 px-2 sm:px-4 py-1 sm:py-2 rounded-lg backdrop-blur-md text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl" style={{
                 textShadow: '2px 2px 4px rgba(0,0,0,1)'
-              }}>Fix Issues Now - Save $15,000+</span>
+              }}>
+                <span className="hidden sm:inline">Fix Issues Now - Save $15,000+</span>
+                <span className="sm:hidden">Save $15,000+ Now</span>
+              </span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
+              <p className="text-base sm:text-lg lg:text-xl text-white max-w-full sm:max-w-lg leading-relaxed drop-shadow-lg overflow-safe" style={{
               textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
             }}>
-                Don't let small problems become major expenses. 
-                <span className="text-secondary font-semibold">Act now and save thousands - FREE $500 assessment expires soon!</span>
+                <span className="hidden sm:inline">Don't let small problems become major expenses.</span>
+                <span className="sm:hidden">Stop small problems becoming big costs.</span>
+                <br className="sm:hidden" />
+                <span className="text-secondary font-semibold">
+                  <span className="hidden sm:inline">Act now and save thousands - FREE $500 assessment expires soon!</span>
+                  <span className="sm:hidden">Act now - FREE assessment!</span>
+                </span>
               </p>
             </motion.div>
 
@@ -216,9 +227,10 @@ export const ProfessionalHeroSection = () => {
             }} whileTap={{
               scale: 0.98
             }}>
-                <Button size="lg" className="w-full text-base sm:text-lg px-6 sm:px-12 py-6 sm:py-8 hover-glow-strong bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold micro-interaction animate-pulse" onClick={() => setShowAssessmentPopup(true)}>
-                  Protect Your Home's Value - Get FREE Assessment
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <Button size="lg" className="w-full text-sm sm:text-base lg:text-lg px-4 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 hover-glow-strong bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold micro-interaction animate-pulse overflow-safe mobile-button" onClick={() => setShowAssessmentPopup(true)}>
+                  <span className="hidden sm:inline">Protect Your Home's Value - Get FREE Assessment</span>
+                  <span className="sm:hidden">Get FREE Assessment</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2" />
                 </Button>
               </motion.div>
               
@@ -251,8 +263,8 @@ export const ProfessionalHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Emergency Note with Cost Warning */}
-            <motion.div className="flex items-center space-x-3 bg-destructive/20 rounded-lg p-4 border border-destructive/30" initial={{
+            {/* Emergency Note with Cost Warning - Mobile Optimized */}
+            <motion.div className="flex items-start space-x-2 sm:space-x-3 bg-destructive/20 rounded-lg p-3 sm:p-4 border border-destructive/30 overflow-safe" initial={{
             opacity: 0
           }} animate={{
             opacity: 1
@@ -260,8 +272,11 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 1
           }}>
-              <Zap className="w-5 h-5 text-yellow-400 animate-pulse" />
-              <span className="text-white font-medium">Emergency? Every hour costs you more - 2 Hour Response Time Guaranteed</span>
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 animate-pulse flex-shrink-0 mt-0.5" />
+              <span className="text-white font-medium text-sm sm:text-base">
+                <span className="hidden sm:inline">Emergency? Every hour costs you more - 2 Hour Response Time Guaranteed</span>
+                <span className="sm:hidden">Emergency? 2 Hour Response Guaranteed</span>
+              </span>
             </motion.div>
           </motion.div>
 
@@ -279,13 +294,20 @@ export const ProfessionalHeroSection = () => {
             <Card className="card-shadow border-secondary/30 bg-white/95 backdrop-blur-sm relative z-50">
               <CardContent className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
                   <div className="text-center space-y-2 sm:space-y-3">
-                    <div className="inline-flex items-center space-x-2 bg-destructive/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-destructive animate-pulse">
-                      <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
-                      <span className="text-sm sm:text-base font-semibold">URGENT: Save $15,000+</span>
+                    <div className="inline-flex items-center space-x-1 sm:space-x-2 bg-destructive/10 rounded-full px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 text-destructive animate-pulse overflow-safe">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 fill-current flex-shrink-0" />
+                      <span className="text-xs sm:text-sm lg:text-base font-semibold">
+                        <span className="hidden sm:inline">URGENT: Save $15,000+</span>
+                        <span className="sm:hidden">Save $15,000+</span>
+                      </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">FREE $500 Assessment - Limited Time</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      Act fast! Early action prevents 30% cost increases
+                    <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold overflow-safe">
+                      <span className="hidden sm:inline">FREE $500 Assessment - Limited Time</span>
+                      <span className="sm:hidden">FREE Assessment</span>
+                    </h3>
+                    <p className="text-xs sm:text-sm lg:text-base text-muted-foreground overflow-safe">
+                      <span className="hidden sm:inline">Act fast! Early action prevents 30% cost increases</span>
+                      <span className="sm:hidden">Act fast - prevent cost increases!</span>
                     </p>
                   </div>
 
