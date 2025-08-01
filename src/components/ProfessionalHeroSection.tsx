@@ -120,7 +120,7 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-              <Badge className="bg-secondary text-secondary-foreground px-3 py-[14px]">
+              <Badge className="bg-secondary text-secondary-foreground px-3 py-3 sm:py-[14px]">
                 <Shield className="w-4 h-4 mr-2" />
                 Licensed & Insured
               </Badge>
