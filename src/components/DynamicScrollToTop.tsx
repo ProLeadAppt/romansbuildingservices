@@ -51,7 +51,7 @@ export const DynamicScrollToTop = () => {
         <motion.button
           ref={buttonRef}
           onClick={scrollToTop}
-          className={`fixed bottom-6 right-20 z-[60] ${getButtonClasses()}`}
+          className={`fixed bottom-20 right-6 z-[60] ${getButtonClasses()}`}
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
