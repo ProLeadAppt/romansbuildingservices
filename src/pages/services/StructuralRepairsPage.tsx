@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,8 +16,7 @@ export default function StructuralRepairsPage() {
   ];
 
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
         <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -71,8 +69,7 @@ export default function StructuralRepairsPage() {
           <h2 className="text-3xl font-bold mb-4">Structural Issues? Get Expert Help</h2>
           <p className="text-xl mb-8 opacity-90">Emergency structural repairs available 24/7</p>
           <Button size="lg" variant="secondary">Book Structural Assessment</Button>
-        </section>
-      </div>
-    </Layout>
+      </section>
+    </div>
   );
 }
