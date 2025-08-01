@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ZapierWebhookConfig } from '@/components/ZapierWebhookConfig';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Settings, Zap, BarChart3, Users, Mail, ExternalLink } from 'lucide-react';
 
 const AdminPage: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    console.log('AdminPage: Component mounted');
+    // Simulate loading to ensure page structure renders first
+    const timer = setTimeout(() => {
+      console.log('AdminPage: Loading complete');
+      setIsLoading(false);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
   const adminSections = [
     {
       title: 'Zapier Webhooks',
@@ -154,7 +167,36 @@ const AdminPage: React.FC = () => {
           </div>
 
           {/* Current Zapier Configuration */}
-          <ZapierWebhookConfig />
+          <ErrorBoundary
+            fallback={
+              <Card>
+                <CardHeader>
+                  <CardTitle>Zapier Configuration</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    There was an issue loading the Zapier configuration. Please refresh the page.
+                  </p>
+                </CardContent>
+              </Card>
+            }
+          >
+            {isLoading ? (
+              <Card>
+                <CardHeader>
+                  <CardTitle>Loading Zapier Configuration...</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="animate-pulse">
+                    <div className="h-4 bg-muted rounded w-3/4 mb-2"></div>
+                    <div className="h-4 bg-muted rounded w-1/2"></div>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : (
+              <ZapierWebhookConfig />
+            )}
+          </ErrorBoundary>
 
           {/* Help & Resources */}
           <Card>
