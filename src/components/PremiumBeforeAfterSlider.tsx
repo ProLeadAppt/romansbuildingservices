@@ -77,7 +77,7 @@ export const PremiumBeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
         {/* Before Image (Clipped) */}
         <div 
-          className="absolute inset-0 overflow-hidden transition-all duration-75 ease-out"
+          className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         >
           <img 
@@ -92,7 +92,7 @@ export const PremiumBeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
         {/* Divider Line */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white shadow-lg transform -translate-x-0.5 z-10 transition-all duration-75 ease-out"
+          className="absolute top-0 bottom-0 w-1 bg-white shadow-lg transform -translate-x-0.5 z-10"
           style={{ left: `${position}%` }}
         >
           {/* Draggable Handle */}
@@ -109,7 +109,7 @@ export const PremiumBeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
         {/* Invisible interaction zone for better UX */}
         <div 
-          className="absolute top-0 bottom-0 w-16 cursor-col-resize z-20 transition-all duration-75 ease-out"
+          className="absolute top-0 bottom-0 w-16 cursor-col-resize z-20"
           style={{ left: `calc(${position}% - 2rem)` }}
           onMouseDown={() => setIsDragging(true)}
           onTouchStart={() => setIsDragging(true)}
