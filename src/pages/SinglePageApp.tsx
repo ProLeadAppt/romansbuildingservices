@@ -1,5 +1,4 @@
 import React from 'react';
-import { CleanNavigation } from '@/components/CleanNavigation';
 import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
 import { AnimatedAboutSection } from '@/components/AnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
@@ -21,10 +20,6 @@ const SinglePageApp = () => {
     <PageStructureManager>
       <div className="min-h-screen scroll-smooth">
         <LandmarkSkipNavigation />
-        
-        <ErrorBoundary>
-          <CleanNavigation />
-        </ErrorBoundary>
         
         {/* Main Content Area */}
         <MainLandmark id="main-content" label="Main page content">
