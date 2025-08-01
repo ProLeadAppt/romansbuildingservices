@@ -130,10 +130,10 @@ export default function BuildingRestorationPage() {
             Free building assessment and restoration consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="text-lg px-8 bg-secondary text-secondary-foreground hover:bg-secondary/90">
               Get Restoration Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
               <Phone className="mr-2 h-5 w-5" />
               Call Restoration Expert
             </Button>
