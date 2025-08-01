@@ -120,11 +120,11 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-              <Badge className="bg-secondary text-secondary-foreground px-3 py-[12px]">
+              <Badge className="bg-secondary text-secondary-foreground px-3 py-[14px]">
                 <Shield className="w-4 h-4 mr-2" />
                 Licensed & Insured
               </Badge>
-              <Badge className="bg-white/20 text-white border-white/30 px-3 py-1">
+              <Badge className="bg-white/20 text-white border-white/30 px-3 py-[14px]">
                 <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
                 25+ Years Experience
               </Badge>
