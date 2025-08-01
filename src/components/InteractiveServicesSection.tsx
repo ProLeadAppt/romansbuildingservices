@@ -251,7 +251,6 @@ export const InteractiveServicesSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              variant="secondary"
               className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
               onClick={() => {
                 const element = document.getElementById('contact');
@@ -263,8 +262,7 @@ export const InteractiveServicesSection = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="secondary"
-              className="mobile-button sm:min-w-[200px]"
+              className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
               onClick={() => window.open('tel:0414922276')}
             >
               <Phone className="mr-2 w-5 h-5" />
