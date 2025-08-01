@@ -336,7 +336,7 @@ export const ProfessionalHeroSection = () => {
                   {/* Personal Guarantee with Minas Photo */}
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                      <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0">
                         <img src={minasPhoto} alt="Minas Romanakis working hands-on with masonry restoration" className="w-full h-full object-cover" />
                       </div>
                       <div>
