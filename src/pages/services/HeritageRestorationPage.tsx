@@ -133,7 +133,7 @@ export default function HeritageRestorationPage() {
             <Button size="lg" variant="secondary" className="text-lg px-8">
               Get Heritage Consultation
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
               <Phone className="mr-2 h-5 w-5" />
               Call Heritage Specialist
             </Button>

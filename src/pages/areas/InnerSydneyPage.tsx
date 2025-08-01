@@ -165,7 +165,7 @@ export default function InnerSydneyPage() {
               <Star className="w-5 h-5 mr-2" />
               Get Free Assessment
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
               <Phone className="mr-2 h-5 w-5" />
               Call Inner Sydney Team
             </Button>
