@@ -125,7 +125,7 @@ export const ProfessionalHeroSection = () => {
           duration: 0.6
         }} className="space-y-6 sm:space-y-8 order-1 lg:order-1 px-0 mx-0 py-px my-[11px]">
             {/* Core Trust Elements */}
-            <motion.div className="flex items-center space-x-4" initial={{
+            <motion.div className="flex items-center space-x-2 sm:space-x-4" initial={{
             opacity: 0,
             y: 20
           }} animate={{
@@ -135,12 +135,12 @@ export const ProfessionalHeroSection = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-              <Badge className="bg-secondary text-secondary-foreground px-3 py-3 sm:py-[14px]">
-                <Shield className="w-4 h-4 mr-2" />
+              <Badge className="bg-secondary text-secondary-foreground px-2 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm">
+                <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                 Licensed & Insured
               </Badge>
-              <Badge className="bg-white/20 text-white border-white/30 px-3 py-[14px]">
-                <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
+              <Badge className="bg-white/20 text-white border-white/30 px-2 py-2 sm:px-3 sm:py-[14px] text-xs sm:text-sm">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-400 fill-current" />
                 25+ Years Experience
               </Badge>
             </motion.div>
