@@ -161,11 +161,11 @@ export default function InnerSydneyPage() {
             Local expertise for all Inner Sydney building projects
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
               <Star className="w-5 h-5 mr-2" />
               Get Free Assessment
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
               <Phone className="mr-2 h-5 w-5" />
               Call Inner Sydney Team
             </Button>
