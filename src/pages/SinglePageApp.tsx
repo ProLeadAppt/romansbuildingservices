@@ -10,7 +10,7 @@ import { Footer } from '@/components/Footer';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
 import { LiveSocialProof } from '@/components/LiveSocialProof';
-import { FloatingCTA } from '@/components/FloatingCTA';
+
 import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen';
 import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
 import {
@@ -118,9 +118,6 @@ const SinglePageApp = () => {
 
       {/* Live Social Proof */}
       <LiveSocialProof />
-      
-      {/* Floating CTA */}
-      <FloatingCTA />
 
       {/* Dynamic Scroll to Top */}
       <DynamicScrollToTop />
