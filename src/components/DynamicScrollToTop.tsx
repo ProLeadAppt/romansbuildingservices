@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
-import { useBackgroundDetection } from '@/hooks/useBackgroundDetection';
 
 export const DynamicScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const backgroundTheme = useBackgroundDetection({ 
-    targetRef: buttonRef, 
-    enabled: isVisible 
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,26 +30,17 @@ export const DynamicScrollToTop = () => {
     });
   };
 
-  const getButtonClasses = () => {
-    const baseClasses = "w-12 h-12 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center backdrop-blur-md border-2";
-    
-    // Light background detected → show dark button for contrast
-    if (backgroundTheme === 'light') {
-      return `${baseClasses} bg-gray-900/95 text-white border-gray-600/70 hover:bg-gray-800 hover:scale-110 shadow-gray-900/50`;
-    } 
-    // Dark background detected → show light button for contrast
-    else {
-      return `${baseClasses} bg-white/95 text-gray-900 border-gray-300/70 hover:bg-gray-50 hover:scale-110 shadow-black/30`;
-    }
-  };
-
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.button
           ref={buttonRef}
           onClick={scrollToTop}
-          className={`fixed bottom-24 right-6 z-[60] ${getButtonClasses()}`}
+          className="fixed bottom-24 right-6 z-[60] w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl border border-gray-200/50 shadow-2xl flex items-center justify-center text-gray-700 hover:bg-white hover:text-gray-900 hover:shadow-3xl transition-all duration-300"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8)'
+          }}
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
