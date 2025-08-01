@@ -12,6 +12,7 @@ import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
 import { LiveSocialProof } from '@/components/LiveSocialProof';
 import { FloatingCTA } from '@/components/FloatingCTA';
 import { PremiumLoadingScreen } from '@/components/PremiumLoadingScreen';
+import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
 import {
   LandmarkSkipNavigation, 
   MainLandmark, 
@@ -120,6 +121,9 @@ const SinglePageApp = () => {
       
       {/* Floating CTA */}
       <FloatingCTA />
+
+      {/* Dynamic Scroll to Top */}
+      <DynamicScrollToTop />
       
       {/* Premium Loading Screen */}
       <PremiumLoadingScreen />

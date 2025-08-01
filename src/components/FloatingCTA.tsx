@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, X, Zap } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export const FloatingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showCallPrompt, setShowCallPrompt] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +28,28 @@ export const FloatingCTA = () => {
   }, [isVisible]);
 
   if (!isVisible) return null;
+
+  // Mobile version - simplified single emergency call button
+  if (isMobile) {
+    return (
+      <motion.div
+        className="fixed bottom-20 right-4 z-50"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      >
+        <motion.button
+          onClick={() => window.open('tel:0414922276')}
+          className="w-14 h-14 bg-red-500 text-white rounded-full shadow-lg flex items-center justify-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Emergency call"
+        >
+          <Phone className="w-6 h-6" />
+        </motion.button>
+      </motion.div>
+    );
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

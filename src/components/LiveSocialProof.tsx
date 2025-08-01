@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Star, MapPin, Clock, Phone } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface Activity {
   id: string;
@@ -17,6 +18,12 @@ interface Activity {
 export const LiveSocialProof = () => {
   const [currentActivity, setCurrentActivity] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const isMobile = useIsMobile();
+
+  // Hide on mobile devices
+  if (isMobile) {
+    return null;
+  }
 
   const activities: Activity[] = [
     {
