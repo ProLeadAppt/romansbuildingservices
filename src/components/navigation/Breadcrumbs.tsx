@@ -16,10 +16,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   const location = useLocation();
   const breadcrumbs = generateBreadcrumbs(location.pathname);
 
-  // Don't show breadcrumbs on home page, main category pages, or if only home exists
+  // Don't show breadcrumbs on home page, main category pages, admin pages, or if only home exists
   if (location.pathname === '/' || 
       location.pathname === '/services' || 
       location.pathname === '/areas' || 
+      location.pathname.startsWith('/admin') ||
       breadcrumbs.length <= 1) {
     return null;
   }
