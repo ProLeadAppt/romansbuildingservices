@@ -263,8 +263,8 @@ export const InteractiveServicesSection = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="min-w-[200px] border-white text-white hover:bg-white/10"
+              variant="secondary"
+              className="min-w-[200px]"
               onClick={() => window.open('tel:0414922276')}
             >
               <Phone className="mr-2 w-5 h-5" />
