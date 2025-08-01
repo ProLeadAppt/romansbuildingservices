@@ -25,27 +25,9 @@ const iconMap = {
 export const ModernNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const navRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    let ticking = false;
-    
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 100);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleMouseEnter = (dropdownId: string) => {
     if (timeoutRef.current) {
@@ -69,25 +51,12 @@ export const ModernNavigation = () => {
     <div className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6">
       <motion.nav 
         ref={navRef}
-        className={cn(
-          "w-full max-w-7xl mx-auto transition-all duration-500 ease-out will-change-transform",
-          isScrolled 
-            ? "mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl" 
-            : "mt-0 bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100/30"
-        )}
+        className="w-full max-w-7xl mx-auto mt-4 mb-2 bg-white/90 backdrop-blur-xl shadow-2xl border border-gray-100/50 rounded-2xl transition-all duration-300 ease-out"
         initial={false}
-        animate={{ 
-          scale: isScrolled ? 0.98 : 1,
-          y: 0
-        }}
-        transition={{ 
-          duration: 0.4, 
-          ease: [0.25, 0.46, 0.45, 0.94] 
-        }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         style={{
-          background: isScrolled 
-            ? 'linear-gradient(135deg, rgba(255,255,255,0.90) 0%, rgba(248,250,252,0.90) 100%)'
-            : 'rgba(255,255,255,0.95)'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.90) 0%, rgba(248,250,252,0.90) 100%)'
         }}
       >
       <div className="container mx-auto px-4">
