@@ -66,7 +66,7 @@ export const ModernNavigation = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg" 
+              src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png" 
               alt="Roman's Building Services" 
               className="w-10 h-10 object-contain rounded-lg group-hover:scale-105 transition-transform"
             />
