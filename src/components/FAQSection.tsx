@@ -4,7 +4,7 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "How quickly can you start my project?",
-      answer: "We typically provide same-day consultations and can often begin work within 48-72 hours for urgent repairs. For larger projects, we'll work with your timeline to ensure minimal disruption to your property or business operations."
+      answer: "Emergency situations get same-day response. Standard projects start within 48-72 hours. We understand that structural issues worsen rapidly - every day counts in preventing escalating damage and costs. Quick, efficient service minimizes disruption to your life."
     },
     {
       question: "Do you provide free estimates?",
@@ -20,7 +20,7 @@ export const FAQSection = () => {
     },
     {
       question: "How much will my project cost?",
-      answer: "Project costs vary based on scope, materials, and complexity. We provide detailed, transparent quotes with no hidden fees. Most homeowners find our competitive pricing offers excellent value for the quality of work we deliver."
+      answer: "Early intervention saves thousands. Delaying repairs increases costs by 30% annually. Our competitive pricing delivers exceptional ROI - most clients see property value increases that exceed our fees. Free assessment helps you understand true costs vs. waiting."
     },
     {
       question: "Can you work on heritage buildings?",

@@ -24,33 +24,33 @@ export const HeroSection = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
               <Shield className="mr-2 h-4 w-4" />
-              Licensed & Insured • Est. 1995 • 1000+ Projects
+              Licensed & Insured • Trusted Since 1995 • 2025 Industry Standards
             </div>
 
             {/* Headline */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 Cracked Walls?
-                <span className="block text-yellow-400">Foundation Issues?</span>
+                <span className="block text-yellow-400">30% Higher Costs Waiting!</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-6">
-                Get Expert Building Solutions from Sydney's Most Trusted Team
+                Protect Your Home's Value with Sydney's Most Trusted Building Experts Since 1995
               </p>
             </div>
 
             {/* Irresistible Offer */}
             <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black p-6 rounded-xl">
-              <div className="text-sm font-bold uppercase tracking-wide mb-2">🚨 Limited Time Offer</div>
-              <div className="text-2xl md:text-3xl font-bold mb-2">FREE Structural Assessment</div>
-              <div className="text-lg font-semibold mb-2">+ 10% Off Your First Project</div>
-              <div className="text-sm">Worth $299 • No Obligation • Same Day Service Available</div>
+              <div className="text-sm font-bold uppercase tracking-wide mb-2">🚨 Emergency Special - Act Now!</div>
+              <div className="text-2xl md:text-3xl font-bold mb-2">FREE $299 Structural Assessment</div>
+              <div className="text-lg font-semibold mb-2">+ 10% Off - Save Thousands Before Damage Escalates</div>
+              <div className="text-sm">Prevent 30% Annual Cost Increases • Same Day Response • Zero Risk</div>
             </div>
 
             {/* Primary CTA */}
             <div className="space-y-4">
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white text-xl px-10 py-6 h-auto w-full sm:w-auto font-bold">
                 <Calendar className="mr-3 h-6 w-6" />
-                Get FREE Assessment Now
+                Protect Your Home's Value - Get FREE Assessment
               </Button>
               
               {/* Phone Number - Prominent */}

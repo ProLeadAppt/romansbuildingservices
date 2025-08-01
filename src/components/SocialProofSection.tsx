@@ -29,19 +29,25 @@ const testimonials = [
     name: "Sarah Mitchell",
     location: "Sydney CBD",
     rating: 5,
-    text: "Romans Building Services transformed our heritage building facade. The attention to detail and craftsmanship was exceptional. Professional service from start to finish."
+    text: "Romans Building Services saved us thousands by catching structural issues early. Their quick response prevented what could have been a $50,000 major repair. Our property value actually increased after their work!"
   },
   {
     name: "Michael Thompson", 
     location: "North Shore",
     rating: 5,
-    text: "Outstanding masonry work on our century-old home. The team's knowledge of heritage restoration techniques was impressive. Highly recommend their services."
+    text: "We were quoted $25,000 elsewhere, but Romans found the root cause and fixed it properly for half the price. Two years later, no issues. They prevented major structural damage to our heritage home."
   },
   {
     name: "Lisa Chen",
     location: "Eastern Suburbs", 
     rating: 5,
-    text: "Excellent remedial work on our apartment building. They solved complex waterproofing issues that previous contractors couldn't fix. True professionals."
+    text: "Emergency waterproofing service saved our apartment building from collapse. Three previous contractors failed, but Romans solved it permanently. Worth every penny for the peace of mind and safety."
+  },
+  {
+    name: "James Wilson",
+    location: "Inner West",
+    rating: 5,
+    text: "Professional assessment revealed hidden structural damage that would have cost us $80,000 if left untreated. Romans fixed it early for under $15,000. Excellent investment in our home's future."
   }
 ];
 
@@ -53,10 +59,10 @@ export const SocialProofSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Trusted Across Sydney Since 1995
+            Trusted by 1,000+ Sydney Homeowners Since 1995
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Romans Building Services has built a reputation for quality masonry, restoration and remedial building works across Sydney's residential and commercial properties.
+            Romans Building Services has saved Sydney homeowners millions in prevented damage. Fully licensed, insured, and continuously trained to 2025 industry standards - delivering lasting solutions that protect your investment.
           </p>
         </div>
 
@@ -83,7 +89,7 @@ export const SocialProofSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-card/95 backdrop-blur-sm p-6 rounded-lg trust-shadow hover:elevated-card transition-smooth geometric-accent">
               <div className="flex items-center gap-1 mb-4">

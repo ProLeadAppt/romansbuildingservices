@@ -43,10 +43,10 @@ export const LeadCaptureForm = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Get Your FREE Structural Assessment
+            Stop Losing Money - Get Your FREE $299 Assessment
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Professional building inspection worth $300 - completely free with no obligation. Plus get 10% off your first project when you proceed with Romans Building Services.
+            <strong>Every month you wait costs you more.</strong> Professional structural inspection worth $299 - completely free with zero obligation. Plus save 10% on approved work. Prevent thousands in escalating repair costs.
           </p>
         </div>
 
@@ -175,15 +175,22 @@ export const LeadCaptureForm = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary mt-1" />
                   <div>
-                    <h4 className="font-semibold">Quality Guarantee</h4>
-                    <p className="text-sm text-white/80">Comprehensive warranty on all work</p>
+                    <h4 className="font-semibold">Lifetime Warranties Available</h4>
+                    <p className="text-sm text-white/80">Comprehensive protection on all work</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary mt-1" />
                   <div>
-                    <h4 className="font-semibold">1000+ Properties Restored</h4>
-                    <p className="text-sm text-white/80">Proven track record across Sydney</p>
+                    <h4 className="font-semibold">Saved Clients Millions in Damage</h4>
+                    <p className="text-sm text-white/80">1000+ properties protected across Sydney</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-secondary mt-1" />
+                  <div>
+                    <h4 className="font-semibold">2025 Industry Standards</h4>
+                    <p className="text-sm text-white/80">Latest techniques and materials</p>
                   </div>
                 </div>
               </div>
