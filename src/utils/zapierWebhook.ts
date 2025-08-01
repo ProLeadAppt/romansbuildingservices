@@ -27,8 +27,32 @@ export class ZapierWebhook {
     this.webhookUrls[formType] = url;
   }
 
+  private loadWebhookUrlsFromStorage(): void {
+    try {
+      const stored = localStorage.getItem('zapier_webhook_urls');
+      if (stored) {
+        const urls = JSON.parse(stored);
+        this.webhookUrls = { ...this.webhookUrls, ...urls };
+        console.log('Loaded webhook URLs from localStorage:', this.webhookUrls);
+      }
+    } catch (error) {
+      console.error('Error loading webhook URLs from localStorage:', error);
+    }
+  }
+
   getWebhookUrl(formType: string): string | null {
-    return this.webhookUrls[formType] || null;
+    // First check in-memory storage
+    let url = this.webhookUrls[formType];
+    
+    // If not found, try loading from localStorage and check again
+    if (!url) {
+      console.log(`No webhook URL found for ${formType} in memory, checking localStorage...`);
+      this.loadWebhookUrlsFromStorage();
+      url = this.webhookUrls[formType];
+    }
+    
+    console.log(`Getting webhook URL for ${formType}:`, url || 'not found');
+    return url || null;
   }
 
   async sendToZapier(
