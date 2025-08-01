@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Romans Building Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      background: #f1f5f9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: #1e293b;
+    }
+
+    p {
+      color: #64748b;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+    }
+
+    .btn-secondary {
+      background: #6b7280;
+    }
+
+    .btn-secondary:hover {
+      background: #4b5563;
+    }
+
+    .status {
+      margin: 20px 0;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .status.offline {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+
+    .status.online {
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #bbf7d0;
+    }
+
+    .features {
+      text-align: left;
+      margin: 20px 0;
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .features ul {
+      list-style: none;
+    }
+
+    .features li {
+      padding: 8px 0;
+      color: #475569;
+    }
+
+    .features li:before {
+      content: "✓ ";
+      color: #16a34a;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">
+      📡
+    </div>
+    
+    <h1>You're Offline</h1>
+    
+    <p>It looks like you're not connected to the internet. Don't worry - you can still browse some content and your form submissions will be saved locally.</p>
+    
+    <div id="connection-status" class="status offline">
+      ● Offline - Please check your internet connection
+    </div>
+
+    <div class="features">
+      <h3 style="margin-bottom: 10px; color: #1e293b;">What you can still do:</h3>
+      <ul>
+        <li>Browse cached pages and content</li>
+        <li>Submit forms (they'll be sent when online)</li>
+        <li>View our contact information</li>
+        <li>Access emergency contact details</li>
+      </ul>
+    </div>
+
+    <div style="margin: 30px 0;">
+      <button class="btn" onclick="tryReconnect()">Try Again</button>
+      <a href="/" class="btn btn-secondary">Go Home</a>
+    </div>
+
+    <div style="margin-top: 20px; padding: 20px; background: #eff6ff; border-radius: 8px;">
+      <h4 style="color: #1e40af; margin-bottom: 10px;">Emergency Contact</h4>
+      <p style="color: #1e40af; margin: 0;">
+        <strong>24/7 Emergency Line:</strong><br>
+        <a href="tel:0414922276" style="color: #1e40af; text-decoration: none; font-weight: bold;">
+          0414 922 276
+        </a>
+      </p>
+    </div>
+
+    <p style="font-size: 12px; color: #94a3b8; margin-top: 20px;">
+      Romans Building Services - Professional building solutions since 1995
+    </p>
+  </div>
+
+  <script>
+    // Check online/offline status
+    function updateConnectionStatus() {
+      const statusEl = document.getElementById('connection-status');
+      
+      if (navigator.onLine) {
+        statusEl.className = 'status online';
+        statusEl.innerHTML = '● Online - Connection restored!';
+        
+        // Show reload option when back online
+        setTimeout(() => {
+          if (confirm('Connection restored! Would you like to reload the page?')) {
+            window.location.reload();
+          }
+        }, 1000);
+      } else {
+        statusEl.className = 'status offline';
+        statusEl.innerHTML = '● Offline - Please check your internet connection';
+      }
+    }
+
+    function tryReconnect() {
+      updateConnectionStatus();
+      
+      if (navigator.onLine) {
+        window.location.reload();
+      } else {
+        alert('Still offline. Please check your internet connection and try again.');
+      }
+    }
+
+    // Listen for online/offline events
+    window.addEventListener('online', updateConnectionStatus);
+    window.addEventListener('offline', updateConnectionStatus);
+
+    // Initial status check
+    updateConnectionStatus();
+
+    // Auto-retry connection every 30 seconds
+    setInterval(() => {
+      if (navigator.onLine) {
+        updateConnectionStatus();
+      }
+    }, 30000);
+  </script>
+</body>
+</html>
