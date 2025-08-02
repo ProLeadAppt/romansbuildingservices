@@ -281,11 +281,11 @@ export const ProfessionalHeroSection = () => {
                 <div className="text-center space-y-2 sm:space-y-3">
                   <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-secondary">
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
-                    <span className="text-sm sm:text-base font-semibold">Building Assessment</span>
+                    <span className="text-sm sm:text-base font-semibold">Stonemason Assessment</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Assessment & Quote</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Stonemason Assessment & Quote</h3>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    Professional evaluation and quote within 2-3 business days
+                    Professional masonry evaluation and quote within 2-3 business days
                   </p>
                 </div>
 
@@ -315,10 +315,10 @@ export const ProfessionalHeroSection = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="masonry">Masonry & Brickwork</SelectItem>
-                      <SelectItem value="restoration">Building Restoration</SelectItem>
+                      <SelectItem value="restoration">Stonemason Restoration</SelectItem>
                       <SelectItem value="structural">Structural Repairs</SelectItem>
                       <SelectItem value="foundation">Foundation Repairs</SelectItem>
-                      <SelectItem value="assessment">Building Assessment</SelectItem>
+                      <SelectItem value="assessment">Stonemason Assessment</SelectItem>
                     </SelectContent>
                   </Select>
 
