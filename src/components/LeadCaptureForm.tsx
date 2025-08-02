@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormToZapier } from "@/utils/zapierWebhook";
 
 export const LeadCaptureForm = () => {
   const [formData, setFormData] = useState({
@@ -22,16 +23,28 @@ export const LeadCaptureForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Assessment Request Submitted",
-      description: "We'll contact you within 24 hours to schedule your consultation and assessment.",
-    });
-    
-    setFormData({ name: "", phone: "", email: "", projectType: "", description: "" });
-    setIsSubmitting(false);
+    try {
+      // Send to Zapier webhook
+      await sendFormToZapier('lead_capture', {
+        ...formData,
+        submissionType: 'lead_capture'
+      });
+      
+      toast({
+        title: "Assessment Request Submitted",
+        description: "We'll contact you within 24 hours to schedule your consultation and assessment.",
+      });
+      
+      setFormData({ name: "", phone: "", email: "", projectType: "", description: "" });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your form. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

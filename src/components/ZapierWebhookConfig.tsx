@@ -10,15 +10,13 @@ import { toast } from 'sonner';
 import { zapierWebhook } from '@/utils/zapierWebhook';
 
 const FORM_TYPES = [
-  { id: 'quick_assessment', label: 'Quick Assessment Form', priority: 'high' },
   { id: 'smart_lead', label: 'Smart Lead Form', priority: 'high' },
   { id: 'enhanced_contact', label: 'Enhanced Contact Form', priority: 'high' },
-  { id: 'quote_calculator', label: 'Quote Calculator', priority: 'high' },
-  { id: 'assessment_popup', label: 'Assessment Popup', priority: 'medium' },
-  { id: 'hero_contact', label: 'Hero Section Contact', priority: 'medium' },
-  { id: 'lead_capture', label: 'Lead Capture Form', priority: 'medium' },
+  { id: 'quick_assessment', label: 'Quick Assessment Form', priority: 'high' },
+  { id: 'assessment_popup', label: 'Assessment Popup', priority: 'high' },
+  { id: 'hero_contact', label: 'Hero Section Contact', priority: 'high' },
+  { id: 'lead_capture', label: 'Lead Capture Form', priority: 'high' },
   { id: 'modern_contact', label: 'Modern Contact Section', priority: 'medium' },
-  { id: 'quote_page', label: 'Quote Page Form', priority: 'medium' },
   { id: 'feedback', label: 'Feedback Form', priority: 'low' }
 ];
 

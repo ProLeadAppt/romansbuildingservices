@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { ExternalLink, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 interface FeedbackFormProps {
   rating: number;
@@ -40,9 +41,13 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
 
     setIsSubmitting(true);
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send to Zapier webhook
+      await sendFormToZapier('feedback', {
+        ...formData,
+        rating,
+        submissionType: 'feedback'
+      });
       
       toast({
         title: "Thank You!",

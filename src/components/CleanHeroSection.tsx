@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Shield, Award, Clock, Users, Star, CheckCircle, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormToZapier } from '@/utils/zapierWebhook';
 
 export const CleanHeroSection = () => {
   const [formData, setFormData] = useState({
@@ -17,10 +18,22 @@ export const CleanHeroSection = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
-    setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    
+    try {
+      // Send to Zapier webhook
+      await sendFormToZapier('hero_contact', {
+        ...formData,
+        submissionType: 'hero_contact'
+      });
+      
+      toast.success('Quote request submitted! We\'ll contact you within 2 hours.');
+      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('There was an issue submitting your form. Please try again.');
+    }
   };
 
   const stats = [
