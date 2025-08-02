@@ -42,7 +42,7 @@ Services:
 ### **3. Geographic Organization**
 ```
 Service Areas:
-├── Inner Sydney (CBD, Surry Hills, Paddington)
+├── Sydney CBD (CBD, Surry Hills, Paddington)
 ├── Eastern Suburbs (Bondi, Double Bay, Woollahra)
 ├── North Shore (Chatswood, Mosman, Lane Cove)
 ├── Northern Beaches (Manly, Dee Why, Avalon)

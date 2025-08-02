@@ -14,7 +14,6 @@ import PriorityRepairsPage from './pages/EmergencyPage.tsx'
 import ServicesAreasPage from './pages/ServicesAreasPage.tsx'
 import ThankYouPage from './pages/ThankYouPage.tsx'
 import SydneyCBDPage from './pages/areas/SydneyCBDPage.tsx'
-import InnerSydneyPage from './pages/areas/InnerSydneyPage.tsx'
 import EasternSuburbsPage from './pages/areas/EasternSuburbsPage.tsx'
 import NorthShorePage from './pages/areas/NorthShorePage.tsx'
 import NorthernBeachesPage from './pages/areas/NorthernBeachesPage.tsx'
@@ -59,7 +58,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/review" element={<ReviewFunnel />} />
       <Route path="/areas" element={<Layout><ServicesAreasPage /></Layout>} />
       <Route path="/areas/sydney-cbd" element={<Layout><SydneyCBDPage /></Layout>} />
-      <Route path="/areas/inner-sydney" element={<Layout><InnerSydneyPage /></Layout>} />
+      <Route path="/areas/inner-sydney" element={<Layout><SydneyCBDPage /></Layout>} />
       <Route path="/areas/eastern-suburbs" element={<Layout><EasternSuburbsPage /></Layout>} />
       <Route path="/areas/north-shore" element={<Layout><NorthShorePage /></Layout>} />
       <Route path="/areas/northern-beaches" element={<Layout><NorthernBeachesPage /></Layout>} />

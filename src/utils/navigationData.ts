@@ -146,11 +146,11 @@ export const serviceCategories: ServiceCategory[] = [
 // Service areas with geographic logic
 export const serviceAreas: ServiceArea[] = [
   {
-    id: 'inner-sydney',
-    label: 'Inner Sydney',
+    id: 'sydney-cbd',
+    label: 'Sydney CBD',
     description: 'CBD and inner-city building services',
     suburbs: ['Sydney CBD', 'Surry Hills', 'Paddington', 'Darlinghurst', 'Potts Point'],
-    href: '/areas/inner-sydney'
+    href: '/areas/sydney-cbd'
   },
   {
     id: 'eastern-suburbs',

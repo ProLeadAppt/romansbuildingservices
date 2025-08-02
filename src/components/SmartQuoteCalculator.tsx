@@ -52,7 +52,7 @@ export const SmartQuoteCalculator = () => {
   };
 
   const locationMultipliers = {
-    'inner-sydney': 1.2,
+    'sydney-cbd': 1.2,
     'eastern-suburbs': 1.3,
     'north-shore': 1.25,
     'northern-beaches': 1.15,
@@ -234,7 +234,7 @@ export const SmartQuoteCalculator = () => {
                   <SelectValue placeholder="Select your area" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="inner-sydney">Inner Sydney</SelectItem>
+                  <SelectItem value="sydney-cbd">Sydney CBD</SelectItem>
                   <SelectItem value="eastern-suburbs">Eastern Suburbs</SelectItem>
                   <SelectItem value="north-shore">North Shore</SelectItem>
                   <SelectItem value="northern-beaches">Northern Beaches</SelectItem>
