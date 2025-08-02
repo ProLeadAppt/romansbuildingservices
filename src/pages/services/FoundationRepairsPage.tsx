@@ -11,7 +11,7 @@ export default function FoundationRepairsPage() {
     "Structural Foundation Repairs", 
     "Foundation Crack Injection",
     "Pier & Beam Foundation Work",
-    "Foundation Waterproofing",
+    "Foundation Protection",
     "Settlement Repair Solutions"
   ];
 
@@ -128,7 +128,7 @@ export default function FoundationRepairsPage() {
             </Button>
             <Button variant="outline" size="lg" className="border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
               <Phone className="mr-2 h-5 w-5" />
-              Emergency Foundation Repairs
+              Professional Foundation Repairs
             </Button>
           </div>
         </section>

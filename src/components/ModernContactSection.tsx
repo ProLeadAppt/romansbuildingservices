@@ -99,11 +99,11 @@ export const ModernContactSection = () => {
     { day: 'Public Holidays', hours: 'Priority calls only' }
   ];
 
-  const priorityFeatures = [
-    'Prompt response for urgent matters',
-    'Licensed building services',
+                  const priorityFeatures = [
+    'Prompt response for all inquiries',
+    'Licensed masonry services',
     'Insurance claim assistance',
-    'Professional building solutions'
+    'Professional stonework solutions'
   ];
 
   return (
@@ -188,7 +188,7 @@ export const ModernContactSection = () => {
                           <SelectItem value="structural">Structural Repairs</SelectItem>
                           <SelectItem value="foundation">Foundation Repairs</SelectItem>
                           <SelectItem value="assessment">Building Assessment</SelectItem>
-                          <SelectItem value="priority">Priority Service</SelectItem>
+                          <SelectItem value="consultation">Professional Consultation</SelectItem>
                           <SelectItem value="maintenance">Maintenance Services</SelectItem>
                         </SelectContent>
                       </Select>
@@ -198,8 +198,8 @@ export const ModernContactSection = () => {
                           <SelectValue placeholder="Project Urgency" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="priority">Priority (24-48 hours)</SelectItem>
-                          <SelectItem value="urgent">Urgent (1-2 weeks)</SelectItem>
+                          <SelectItem value="prompt">Prompt (2-3 business days)</SelectItem>
+                          <SelectItem value="standard2">Standard (1-2 weeks)</SelectItem>
                           <SelectItem value="standard">Standard (1-2 months)</SelectItem>
                           <SelectItem value="planning">Planning stage</SelectItem>
                         </SelectContent>
@@ -362,12 +362,12 @@ export const ModernContactSection = () => {
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center space-x-3 mb-4">
                   <Shield className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Priority Services</h3>
+                  <h3 className="text-xl font-semibold">Professional Services</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-sm">Prompt response for urgent matters</span>
+                    <span className="text-sm">Prompt response for all inquiries</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />

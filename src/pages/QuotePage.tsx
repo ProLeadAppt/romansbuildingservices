@@ -19,7 +19,7 @@ export default function QuotePage() {
     "Heritage Restoration",
     "Building Restoration",
     "Concrete Repairs",
-    "Waterproofing",
+    "Protective Coatings",
     "Remedial Building",
     "Building Inspections"
   ];
@@ -27,11 +27,11 @@ export default function QuotePage() {
   const urgencyLevels = [
     { value: "standard", label: "Standard (7-14 days)", description: "Normal project timeline" },
     { value: "priority", label: "Priority (3-7 days)", description: "Faster turnaround required" },
-    { value: "priority", label: "Priority (24-48 hours)", description: "Priority repairs needed" }
+    { value: "prompt", label: "Prompt (48-72 hours)", description: "Professional service required" }
   ];
 
   const features = [
-    { icon: Clock, title: "Fast Response", description: "Quote within 24 hours" },
+    { icon: Clock, title: "Prompt Response", description: "Quote within 2-3 business days" },
     { icon: Calculator, title: "Accurate Pricing", description: "Detailed breakdown provided" },
     { icon: CheckCircle, title: "No Obligation", description: "Completely free assessment" },
     { icon: Star, title: "Expert Advice", description: "Professional recommendations" }
@@ -173,7 +173,7 @@ export default function QuotePage() {
                       "Heritage building considerations", 
                       "Engineering consultation needed",
                       "Council approvals assistance",
-                      "Priority after-hours service",
+                      "Professional after-hours service",
                       "Warranty and maintenance plan"
                     ].map((option) => (
                       <div key={option} className="flex items-center space-x-2">
@@ -232,7 +232,7 @@ export default function QuotePage() {
                 <div className="mt-4 text-xs opacity-75 text-center">
                   Available 7 days a week
                   <br />
-                  Priority service: 24/7
+                  Professional service available
                 </div>
               </CardContent>
             </Card>

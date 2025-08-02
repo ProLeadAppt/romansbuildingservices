@@ -64,9 +64,9 @@ export default function ProjectsPage() {
       location: "Bondi",
       year: "2024",
       type: "Remedial Building",
-      description: "Strata building repairs including concrete cancer treatment, waterproofing, and facade restoration.",
+      description: "Strata building repairs including concrete cancer treatment, protective coatings, and facade restoration.",
       image: beforeAfterImage,
-      tags: ["Strata", "Concrete", "Waterproofing"]
+      tags: ["Strata", "Concrete", "Restoration"]
     }
   ];
 

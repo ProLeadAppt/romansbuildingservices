@@ -12,9 +12,8 @@ const NorthShorePage = () => {
     'Foundation Underpinning',
     'Masonry & Brickwork',
     'Concrete Cancer Treatment',
-    'Waterproofing Solutions',
     'Building Inspections',
-    'Priority Structural Repairs'
+    'Professional Structural Repairs'
   ];
 
   const suburbs = [

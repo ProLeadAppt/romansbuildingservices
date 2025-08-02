@@ -4,7 +4,7 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "How quickly can you start my project?",
-      answer: "Urgent repairs receive same-day response. Standard projects typically begin within 48-72 hours. We understand the importance of addressing structural concerns promptly and work efficiently to minimize disruption to your daily routine."
+      answer: "Standard projects typically begin within 48-72 hours. We understand the importance of addressing structural concerns promptly and work efficiently to minimize disruption to your daily routine."
     },
     {
       question: "Do you provide free estimates?",
@@ -27,8 +27,8 @@ export const FAQSection = () => {
       answer: "Yes, we specialize in heritage building restoration and have extensive experience working with heritage-listed properties. We understand the unique requirements and regulations involved in preserving historical buildings."
     },
     {
-      question: "Do you handle urgent repairs?",
-      answer: "Yes, we offer urgent repair services for critical structural issues. Contact us for priority response on same-day repairs that affect safety or property protection."
+      question: "Do you handle structural repairs?",
+      answer: "Yes, we offer professional repair services for structural issues. Contact us for prompt response within 48-72 hours on repairs that affect building integrity or property protection."
     },
     {
       question: "What areas do you service?",

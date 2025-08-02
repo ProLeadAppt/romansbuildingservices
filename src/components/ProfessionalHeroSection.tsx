@@ -251,7 +251,7 @@ export const ProfessionalHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Priority Response - Simplified */}
+            {/* Professional Service - Simplified */}
             <motion.div className="flex items-center space-x-3 bg-primary/20 rounded-lg p-4" initial={{
             opacity: 0
           }} animate={{
@@ -261,7 +261,7 @@ export const ProfessionalHeroSection = () => {
             delay: 1
           }}>
               <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-medium">Priority Repairs Available - 48-72 Hour Response</span>
+              <span className="text-white font-medium">Professional Service Available - 48-72 Hour Response</span>
             </motion.div>
           </motion.div>
 
@@ -285,7 +285,7 @@ export const ProfessionalHeroSection = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Assessment & Quote</h3>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    Professional evaluation and quote within 24 hours
+                    Professional evaluation and quote within 2-3 business days
                   </p>
                 </div>
 

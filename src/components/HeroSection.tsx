@@ -221,7 +221,7 @@ export const HeroSection = () => {
                 <option value="Foundation Issues">Foundation Issues</option>
                 <option value="Crack Repairs">Crack Repairs</option>
                 <option value="Heritage Restoration">Heritage Restoration</option>
-                <option value="Priority Repairs">Priority Repairs</option>
+                <option value="Professional Consultation">Professional Consultation</option>
               </select>
               
               <textarea 

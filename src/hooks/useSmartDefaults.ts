@@ -41,9 +41,9 @@ export const useSmartDefaults = () => {
         popular: true
       },
       {
-        value: 'waterproofing',
-        label: 'Waterproofing',
-        desc: 'Leak repairs & prevention',
+        value: 'heritage',
+        label: 'Heritage Work',
+        desc: 'Period building restoration',
         popular: true
       },
       {
@@ -59,9 +59,9 @@ export const useSmartDefaults = () => {
         popular: false
       },
       {
-        value: 'priority',
-        label: 'Priority Repairs',
-        desc: 'Urgent safety issues',
+        value: 'consultation',
+        label: 'Professional Consultation',
+        desc: 'Expert advice & planning',
         popular: false
       }
     ];
@@ -80,18 +80,18 @@ export const useSmartDefaults = () => {
       return 'standard';
     }
     
-    // Business hours on weekdays - could be urgent
-    return 'urgent';
+    // Business hours on weekdays - standard response
+    return 'standard';
   };
 
   // Smart service suggestions based on season/weather
   const getSeasonalServices = () => {
     const month = new Date().getMonth(); // 0-11
     
-    // Summer (Dec-Feb): Waterproofing high demand
+    // Summer (Dec-Feb): Heritage and restoration high demand
     if (month === 11 || month <= 1) {
       return suggestedServices.filter(s => 
-        s.value === 'waterproofing' || s.value === 'assessment'
+        s.value === 'heritage' || s.value === 'assessment'
       );
     }
     

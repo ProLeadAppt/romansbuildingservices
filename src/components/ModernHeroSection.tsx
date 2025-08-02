@@ -225,7 +225,7 @@ export const ModernHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Priority Response */}
+            {/* Professional Service */}
             <motion.div
               className="bg-primary/10 border border-primary/20 rounded-xl p-4 space-y-2"
               initial={{ opacity: 0, y: 20 }}
@@ -234,10 +234,10 @@ export const ModernHeroSection = () => {
             >
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5 text-primary" />
-                <span className="font-semibold text-primary">Priority Repairs Available</span>
+                <span className="font-semibold text-primary">Professional Service</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Structural damage? Water ingress? We prioritize urgent repairs with prompt response within 48-72 hours.
+                Structural issues? Building problems? We provide professional masonry and restoration solutions with prompt response within 48-72 hours.
               </p>
             </motion.div>
           </motion.div>
@@ -254,7 +254,7 @@ export const ModernHeroSection = () => {
                 <div className="text-center space-y-2">
                   <h3 className="text-2xl font-bold">Get Your Assessment</h3>
                   <p className="text-muted-foreground">
-                    Property evaluation + detailed quote within 24 hours
+                    Property evaluation + detailed quote within 2-3 business days
                   </p>
                 </div>
 
@@ -302,7 +302,7 @@ export const ModernHeroSection = () => {
                         <SelectItem value="structural">Structural Repairs</SelectItem>
                         <SelectItem value="foundation">Foundation Repairs</SelectItem>
                         <SelectItem value="assessment">Building Assessment</SelectItem>
-                        <SelectItem value="priority">Priority Repairs</SelectItem>
+                        <SelectItem value="consultation">Professional Consultation</SelectItem>
                       </SelectContent>
                     </Select>
                   </motion.div>

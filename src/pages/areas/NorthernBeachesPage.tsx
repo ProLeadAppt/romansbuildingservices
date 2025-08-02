@@ -7,14 +7,14 @@ import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
 
 const NorthernBeachesPage = () => {
   const services = [
-    'Coastal Weatherproofing',
+    'Coastal Protection',
     'Salt Damage Restoration', 
     'Structural Marine Repairs',
-    'Waterproofing & Sealing',
+    'Sealing & Protection',
     'Concrete Cancer Treatment',
     'Heritage Beach House Restoration',
     'Foundation Stabilization',
-    'Priority Storm Damage Repairs'
+    'Professional Storm Damage Repairs'
   ];
 
   const suburbs = [
@@ -88,7 +88,7 @@ const NorthernBeachesPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Advanced waterproofing and weatherproofing solutions designed 
+                  Advanced protection and weatherproofing solutions designed 
                   to withstand coastal storms and constant salt spray exposure.
                 </p>
               </CardContent>
@@ -168,7 +168,7 @@ const NorthernBeachesPage = () => {
                   </p>
                   <div className="flex gap-2">
                     <Badge variant="secondary">Foundation Repair</Badge>
-                    <Badge variant="secondary">Priority Service</Badge>
+                    <Badge variant="secondary">Professional Service</Badge>
                   </div>
                 </CardContent>
               </Card>

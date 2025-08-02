@@ -341,7 +341,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 <SelectItem value="structural">Structural Repairs</SelectItem>
                 <SelectItem value="foundation">Foundation Repairs</SelectItem>
                 <SelectItem value="assessment">Building Assessment</SelectItem>
-                <SelectItem value="priority">Priority Repairs</SelectItem>
+                <SelectItem value="consultation">Professional Consultation</SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
@@ -377,8 +377,8 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                   <SelectItem value="low">Low - Within a month</SelectItem>
                   <SelectItem value="normal">Normal - Within 2 weeks</SelectItem>
                   <SelectItem value="high">High - Within a week</SelectItem>
-                  <SelectItem value="urgent">Urgent - Within 2-3 business days</SelectItem>
-                  <SelectItem value="priority">Priority - Within 48-72 hours</SelectItem>
+                  <SelectItem value="prompt">Prompt - Within 2-3 business days</SelectItem>
+                  <SelectItem value="standard_quick">Standard - Within 48-72 hours</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -440,7 +440,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
 
           {/* Form Status */}
           <div className="text-xs text-muted-foreground text-center space-y-1">
-            <p>✓ Free assessment ✓ 2-hour response ✓ No obligation</p>
+            <p>✓ Free assessment ✓ Prompt response ✓ No obligation</p>
             {!isOnline && (
               <p className="text-amber-600">
                 Offline mode: Your message will be sent when connection is restored
