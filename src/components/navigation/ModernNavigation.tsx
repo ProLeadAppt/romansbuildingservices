@@ -139,7 +139,10 @@ export const ModernNavigation = () => {
                 
               </a>
               
-              <Button size="sm" className="bg-secondary hover:bg-secondary/90" onClick={() => setShowAssessmentPopup(true)}>
+              <Button size="sm" className="bg-secondary hover:bg-secondary/90" onClick={() => {
+                setIsMobileMenuOpen(false);
+                setShowAssessmentPopup(true);
+              }}>
                 Get Quote
               </Button>
             </div>
@@ -162,9 +165,12 @@ export const ModernNavigation = () => {
                     <Phone className="w-4 h-4 mr-2" />
                     Contact Us
                   </Button>
-                  <Button size="sm" variant="outline" onClick={() => setShowAssessmentPopup(true)}>
-                    Get Quote
-                  </Button>
+              <Button size="sm" variant="outline" onClick={() => {
+                setIsMobileMenuOpen(false);
+                setShowAssessmentPopup(true);
+              }}>
+                Get Quote
+              </Button>
                 </div>
 
                 {/* Navigation Links */}

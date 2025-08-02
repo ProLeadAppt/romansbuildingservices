@@ -162,7 +162,10 @@ export const CleanNavigation = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMobileMenuOpen(false);
+                }}
                 aria-label="Close mobile menu"
               >
                 <X className="w-5 h-5" />
