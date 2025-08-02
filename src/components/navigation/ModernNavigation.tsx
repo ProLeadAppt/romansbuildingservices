@@ -8,7 +8,6 @@ import {
   Star, ArrowRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { 
   mainNavigation, 
   serviceCategories, 
@@ -25,7 +24,6 @@ const iconMap = {
 export const ModernNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isAssessmentPopupOpen, setIsAssessmentPopupOpen] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const navRef = useRef<HTMLElement>(null);
@@ -49,10 +47,16 @@ export const ModernNavigation = () => {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
+    <div className="fixed top-0 left-0 right-0 z-[70] px-4 lg:px-6">
       <nav 
         ref={navRef}
-        className="w-full max-w-7xl mx-auto transition-all duration-300 ease-out"
+        className="w-full max-w-7xl mx-auto mt-4 mb-2 rounded-2xl transition-all duration-300 ease-out"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2)',
+          willChange: 'transform',
+          border: '1px solid rgba(255, 255, 255, 0.3)'
+        }}
       >
       <div className="container mx-auto px-4">
         {/* Main Navigation Bar */}
@@ -202,11 +206,7 @@ export const ModernNavigation = () => {
                 <span className="text-sm">{emergencyServices.phone}</span>
               </a>
               
-              <Button 
-                size="sm" 
-                className="bg-secondary hover:bg-secondary/90"
-                onClick={() => setIsAssessmentPopupOpen(true)}
-              >
+              <Button size="sm" className="bg-secondary hover:bg-secondary/90">
                 Get Free Quote
               </Button>
             </div>
@@ -241,11 +241,7 @@ export const ModernNavigation = () => {
                     <Phone className="w-4 h-4 mr-2" />
                     Call Now
                   </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    onClick={() => setIsAssessmentPopupOpen(true)}
-                  >
+                  <Button size="sm" variant="outline">
                     Free Quote
                   </Button>
                 </div>
@@ -283,12 +279,6 @@ export const ModernNavigation = () => {
           )}
       </div>
       </nav>
-      
-      {/* Assessment Popup */}
-      <AssessmentPopup 
-        isOpen={isAssessmentPopupOpen} 
-        onClose={() => setIsAssessmentPopupOpen(false)} 
-      />
     </div>
   );
 };

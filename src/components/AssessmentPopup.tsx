@@ -33,17 +33,14 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Send to Zapier with your specific webhook URL
+    // Send to Zapier
     const zapierResult = await sendFormToZapier('assessment_popup', {
       ...formData,
       formName: 'Assessment Popup'
-    }, 'https://hooks.zapier.com/hooks/catch/23975177/u4mrpsl/');
+    });
     
     if (!zapierResult.success) {
       console.warn('Failed to send to Zapier:', zapierResult.error);
-      toast.error('There was an issue submitting your form. Please try again or call us directly.');
-    } else {
-      toast.success('Assessment request submitted successfully! We\'ll contact you within 2 hours.');
     }
     
     // Simulate API call
