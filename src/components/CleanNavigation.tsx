@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, Home, Users, Wrench, Image, CheckCircle, Star, Menu, X, MapPin, FileText } from 'lucide-react';
+import { Phone, Mail, Home, Users, Wrench, Image, CheckCircle, Star, Menu, X } from 'lucide-react';
 import { SkipNavigation } from './AccessibilityEnhancements';
 import { BannerLandmark, NavigationLandmark } from './ARIALandmarks';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-const mainNavigation = [
-  { id: 'home', label: 'Home', icon: Home, href: '/' },
-  { id: 'services', label: 'Services', icon: Wrench, href: '/services' },
-  { id: 'areas', label: 'Areas', icon: MapPin, href: '/service-areas' },
-  { id: 'projects', label: 'Projects', icon: Image, href: '/projects' },
-  { id: 'about', label: 'About', icon: Users, href: '/about' },
-  { id: 'contact', label: 'Contact', icon: Phone, href: '/contact' },
-];
-
-const homePageSections = [
+const sections = [
   { id: 'hero', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: Users },
   { id: 'services', label: 'Services', icon: Wrench },
@@ -28,36 +18,30 @@ export const CleanNavigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-  
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Only track sections on home page
-      if (isHomePage) {
-        const sectionElements = homePageSections.map(section => 
-          document.getElementById(section.id)
-        ).filter(Boolean);
-        
-        const currentSection = sectionElements.find(element => {
-          if (!element) return false;
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        });
-        
-        if (currentSection) {
-          setActiveSection(currentSection.id);
-        }
+      // Find active section
+      const sectionElements = sections.map(section => 
+        document.getElementById(section.id)
+      ).filter(Boolean);
+      
+      const currentSection = sectionElements.find(element => {
+        if (!element) return false;
+        const rect = element.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      });
+      
+      if (currentSection) {
+        setActiveSection(currentSection.id);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -65,33 +49,6 @@ export const CleanNavigation = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
     }
-  };
-
-  const handleNavigation = (item: typeof mainNavigation[0]) => {
-    if (isHomePage && item.id === 'home') {
-      scrollToSection('hero');
-    } else if (isHomePage && item.id === 'services') {
-      scrollToSection('services');
-    } else if (isHomePage && item.id === 'about') {
-      scrollToSection('about');
-    } else if (isHomePage && item.id === 'contact') {
-      scrollToSection('contact');
-    } else {
-      navigate(item.href);
-    }
-    setIsMobileMenuOpen(false);
-  };
-
-  const isActiveNavItem = (item: typeof mainNavigation[0]) => {
-    if (isHomePage) {
-      if (item.id === 'home') return activeSection === 'hero';
-      if (item.id === 'services') return activeSection === 'services';
-      if (item.id === 'about') return activeSection === 'about';
-      if (item.id === 'contact') return activeSection === 'contact';
-      return false;
-    }
-    return location.pathname === item.href || 
-           (item.href !== '/' && location.pathname.startsWith(item.href));
   };
 
   return (
@@ -128,15 +85,15 @@ export const CleanNavigation = () => {
               label="Main site navigation"
               className="hidden md:flex items-center space-x-1"
             >
-              {mainNavigation.map((item) => {
-                const Icon = item.icon;
-                const isActive = isActiveNavItem(item);
+              {sections.map((section) => {
+                const Icon = section.icon;
+                const isActive = activeSection === section.id;
                 return (
                   <button
-                    key={item.id}
-                    onClick={() => handleNavigation(item)}
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
                     aria-current={isActive ? 'page' : undefined}
-                    aria-label={`Navigate to ${item.label}`}
+                    aria-label={`Navigate to ${section.label} section`}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
@@ -144,7 +101,7 @@ export const CleanNavigation = () => {
                     }`}
                   >
                     <Icon className="w-4 h-4" />
-                    <span className="text-sm font-medium">{item.label}</span>
+                    <span className="text-sm font-medium">{section.label}</span>
                   </button>
                 );
               })}
@@ -173,17 +130,15 @@ export const CleanNavigation = () => {
           </div>
         </div>
 
-        {/* Progress Bar - only show on home page */}
-        {isHomePage && (
-          <div className="absolute bottom-0 left-0 h-1 bg-primary/20">
-            <div
-              className="h-full bg-primary transition-all duration-300"
-              style={{
-                width: `${(homePageSections.findIndex(s => s.id === activeSection) / (homePageSections.length - 1)) * 100}%`
-              }}
-            />
-          </div>
-        )}
+        {/* Progress Bar */}
+        <div className="absolute bottom-0 left-0 h-1 bg-primary/20">
+          <div
+            className="h-full bg-primary transition-all duration-300"
+            style={{
+              width: `${(sections.findIndex(s => s.id === activeSection) / (sections.length - 1)) * 100}%`
+            }}
+          />
+        </div>
       </BannerLandmark>
 
       {/* Mobile Navigation Overlay */}
@@ -217,15 +172,15 @@ export const CleanNavigation = () => {
             {/* Navigation Links */}
             <div className="flex-1 overflow-y-auto p-4">
               <nav className="space-y-2" aria-label="Mobile navigation menu">
-                {mainNavigation.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = isActiveNavItem(item);
+                {sections.map((section) => {
+                  const Icon = section.icon;
+                  const isActive = activeSection === section.id;
                   return (
                     <button
-                      key={item.id}
-                      onClick={() => handleNavigation(item)}
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
                       aria-current={isActive ? 'page' : undefined}
-                      aria-label={`Navigate to ${item.label}`}
+                      aria-label={`Navigate to ${section.label} section`}
                       className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-smooth text-left focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
                         isActive 
                           ? 'bg-primary text-primary-foreground' 
@@ -233,7 +188,7 @@ export const CleanNavigation = () => {
                       }`}
                     >
                       <Icon className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-base font-medium">{item.label}</span>
+                      <span className="text-base font-medium">{section.label}</span>
                     </button>
                   );
                 })}
