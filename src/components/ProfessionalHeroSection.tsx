@@ -98,7 +98,8 @@ export const ProfessionalHeroSection = () => {
     text: '5-Star Google Rating',
     color: 'text-yellow-600'
   }];
-  return <div className="relative min-h-screen -mt-24 flex items-center">
+  return (
+    <div className="relative min-h-screen -mt-24 flex items-center">
       {/* Premium Background with Overlay - Extended to top */}
       <div 
         className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat" 
