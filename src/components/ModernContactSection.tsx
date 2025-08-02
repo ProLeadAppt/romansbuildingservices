@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
-import stoneWallBackground from '@/assets/stone-wall-hero.jpg';
+const stoneWallBackground = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const ModernContactSection = () => {

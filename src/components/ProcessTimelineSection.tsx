@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Calendar, FileText, Hammer, Award, Clock, Users } from 'lucide-react';
-import stoneWallBackground from '@/assets/stone-wall-hero.jpg';
+const stoneWallBackground = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export const ProcessTimelineSection = () => {
   const processSteps = [

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Phone, Star, Shield, Clock, Award, Home } from 'lucide-react';
-import heroImage from '@/assets/stone-wall-hero.jpg';
+const heroImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export default function FoundationRepairsPage() {
   const services = [
