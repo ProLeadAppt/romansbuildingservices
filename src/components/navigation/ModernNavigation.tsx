@@ -239,18 +239,18 @@ export const ModernNavigation = () => {
               <div className="py-4 space-y-2">
                 {/* Quick Actions */}
                 <div className="grid grid-cols-2 gap-2 mb-4">
-                  <Button 
-                    size="sm" 
-                    onClick={() => window.open(`tel:${contactServices.phone}`)}
-                    className="bg-primary"
+                  <a 
+                    href={`tel:${contactServices.phone}`}
+                    className="inline-flex items-center justify-center px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors mobile-button"
                   >
                     <Phone className="w-4 h-4 mr-2" />
                     Contact Us
-                  </Button>
+                  </a>
                   <Button 
                     size="sm" 
                     variant="outline"
                     onClick={() => setShowAssessmentPopup(true)}
+                    className="mobile-button"
                   >
                     Get Quote
                   </Button>
@@ -262,7 +262,7 @@ export const ModernNavigation = () => {
                     <Link
                       to={item.href}
                       className={cn(
-                        "block px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                        "mobile-nav-item block px-4 py-3 rounded-lg text-base font-medium transition-colors",
                         isActivePage(item.href)
                           ? "text-primary bg-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted/50"

@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
+import { ServiceFAQSection, masonryFAQs } from "@/components/ServiceFAQSection";
+import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/LocalSEO/StructuredData";
 import heroImage from "@/assets/hero-masonry.jpg";
 
 export default function MasonryPage() {
@@ -23,10 +25,14 @@ export default function MasonryPage() {
 
   return (
     <div>
+      {/* Structured Data */}
+      <LocalBusinessSchema />
+      <ServiceSchema service="Masonry Services" />
+      <FAQSchema faqs={masonryFAQs.map(faq => ({ question: faq.question, answer: faq.answer }))} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mobile-spacing-lg">
             <div>
               <Badge className="mb-4">Expert Masonry Services</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -37,10 +43,10 @@ export default function MasonryPage() {
                 exceptional craftsmanship that stands the test of time. 24+ years of proven excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 mobile-button-lg">
                   Get Free Quote
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (02) 9999-9999
                 </Button>
@@ -73,9 +79,9 @@ export default function MasonryPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mobile-grid-fix">{/* was: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 */}
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow mobile-card">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <CheckCircle className="h-6 w-6 text-primary" />
@@ -129,16 +135,25 @@ export default function MasonryPage() {
             Get your FREE assessment and 10% off your first project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="text-lg px-8 mobile-button-lg bg-primary text-primary-foreground hover:bg-primary/90">
               Get Free Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
               <Phone className="mr-2 h-5 w-5" />
               Call Now
             </Button>
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <ServiceFAQSection 
+        serviceName="Masonry Services"
+        faqs={masonryFAQs}
+        emergencyAvailable={true}
+        averageProjectTime="1-3 weeks"
+        warrantyPeriod="5 years"
+      />
     </div>
   );
 }

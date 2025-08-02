@@ -167,6 +167,26 @@ All colors MUST be HSL.
   [role="link"] {
     @apply touch-target;
   }
+
+  /* Enhanced mobile touch targets */
+  @media (max-width: 768px) {
+    button,
+    a,
+    input[type="submit"],
+    input[type="button"],
+    [role="button"],
+    [role="link"] {
+      min-height: 48px;
+      min-width: 48px;
+      touch-action: manipulation;
+    }
+    
+    /* Larger tap targets for small interactive elements */
+    .mobile-tap-target {
+      min-height: 56px;
+      min-width: 56px;
+    }
+  }
 }
 
 @layer utilities {
@@ -487,6 +507,62 @@ All colors MUST be HSL.
     .mobile-grid-fix {
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+    }
+  }
+
+  /* Mobile UX Enhancements */
+  @media (max-width: 768px) {
+    /* Improved spacing for mobile */
+    .mobile-spacing {
+      padding: 1rem;
+    }
+    
+    .mobile-spacing-lg {
+      padding: 1.5rem;
+    }
+    
+    /* Better mobile cards */
+    .mobile-card {
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Enhanced mobile navigation */
+    .mobile-nav-item {
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0;
+      border-radius: 0.5rem;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Mobile form improvements */
+    .mobile-form-field {
+      margin-bottom: 1.25rem;
+    }
+    
+    .mobile-form-field input,
+    .mobile-form-field textarea,
+    .mobile-form-field select {
+      min-height: 48px;
+      font-size: 16px; /* Prevents zoom on iOS */
+      padding: 0.75rem;
+    }
+    
+    /* Mobile button improvements */
+    .mobile-button {
+      min-height: 48px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+    }
+    
+    .mobile-button-lg {
+      min-height: 56px;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
     }
   }
 
