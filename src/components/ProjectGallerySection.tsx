@@ -17,75 +17,168 @@ export const ProjectGallerySection = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Heritage Terrace Restoration',
-      location: 'Paddington, Sydney',
-      year: '2024',
-      budget: '$85,000',
-      category: 'Restoration',
-      description: 'Complete restoration of a 1890s heritage terrace including facade renewal, structural repairs, and period-appropriate materials.',
-      images: [beforeAfterShowcase, beforeAfterImage, professionalTeam],
-      features: ['Heritage facade restoration', 'Structural reinforcement', 'Period sandstone work', 'Council heritage approval'],
-      duration: '8 weeks',
-      challenge: 'Maintaining heritage character while ensuring modern structural standards',
-      solution: 'Used traditional lime mortar and hand-matched heritage bricks for authentic restoration'
-    },
-    {
-      id: 2,
-      title: 'Modern Office Complex',
-      location: 'North Sydney',
-      year: '2024',
-      budget: '$150,000',
-      category: 'Commercial',
-      description: 'New commercial masonry construction with contemporary design elements and earthquake-resistant features.',
-      images: [heroBackground, teamImage, heroMasonry],
-      features: ['Earthquake-resistant design', 'Modern architectural brickwork', 'Commercial-grade materials', 'Fast-track construction'],
-      duration: '12 weeks',
-      challenge: 'Meeting tight construction deadlines while ensuring premium quality',
-      solution: 'Implemented lean construction methods and prefabricated components'
-    },
-    {
-      id: 3,
-      title: 'Waterfront Apartment Repairs',
-      location: 'Manly, Sydney',
-      year: '2023',
-      budget: '$65,000',
-      category: 'Repairs',
-      description: 'Priority structural repairs and waterproofing for a luxury waterfront apartment building.',
-      images: [beforeAfterImage, beforeAfterShowcase, professionalTeam],
-      features: ['Priority crack repairs', 'Advanced waterproofing', 'Balcony restoration', 'Ocean-resistant materials'],
-      duration: '6 weeks',
-      challenge: 'Working in occupied building with saltwater exposure challenges',
-      solution: 'Phased construction with marine-grade protective coatings'
-    },
-    {
-      id: 4,
-      title: 'Federation Home Extension',
-      location: 'Leichhardt, Sydney',
-      year: '2023',
-      budget: '$120,000',
-      category: 'Extension',
-      description: 'Seamless brick extension to a Federation home, perfectly matching existing heritage character.',
-      images: [teamImage, heroMasonry, heroBackground],
-      features: ['Heritage brick matching', 'Foundation work', 'Structural integration', 'Period detailing'],
-      duration: '10 weeks',
-      challenge: 'Perfectly matching 100-year-old heritage brickwork',
-      solution: 'Custom brick production and traditional laying techniques'
-    }
+  const workByService = {
+    masonry: [
+      {
+        id: 1,
+        title: 'Heritage Sandstone Restoration',
+        location: 'Paddington, Sydney',
+        year: '2024',
+        budget: '$75,000',
+        category: 'Masonry & Stonework',
+        description: 'Expert restoration of heritage sandstone facade using traditional techniques and period-appropriate materials.',
+        images: [beforeAfterShowcase, beforeAfterImage, professionalTeam],
+        features: ['Traditional stone carving', 'Heritage lime mortar', 'Hand-cut sandstone blocks', 'Council heritage approval'],
+        duration: '6 weeks',
+        challenge: 'Matching 150-year-old sandstone quarried from closed sites',
+        solution: 'Sourced reclaimed sandstone and employed traditional stone carving techniques'
+      },
+      {
+        id: 2,
+        title: 'Custom Garden Wall Construction',
+        location: 'Woollahra, Sydney',
+        year: '2024',
+        budget: '$45,000',
+        category: 'Masonry & Stonework',
+        description: 'Hand-crafted sandstone garden wall with integrated planting beds and drainage solutions.',
+        images: [heroBackground, teamImage, heroMasonry],
+        features: ['Dry-stack construction', 'Integrated drainage', 'Natural stone selection', 'Landscape integration'],
+        duration: '4 weeks',
+        challenge: 'Building on sloped site with complex drainage requirements',
+        solution: 'Engineered stepped foundation with French drain integration'
+      }
+    ],
+    heritage: [
+      {
+        id: 3,
+        title: 'Victorian Terrace Conservation',
+        location: 'Surry Hills, Sydney',
+        year: '2024',
+        budget: '$95,000',
+        category: 'Heritage Restoration',
+        description: 'Comprehensive heritage conservation of 1880s Victorian terrace using authentic restoration methods.',
+        images: [beforeAfterImage, beforeAfterShowcase, professionalTeam],
+        features: ['Period brick restoration', 'Traditional lime pointing', 'Heritage window restoration', 'Conservation approval'],
+        duration: '8 weeks',
+        challenge: 'Maintaining structural integrity while preserving historical authenticity',
+        solution: 'Hidden structural reinforcement with period-appropriate facade restoration'
+      },
+      {
+        id: 4,
+        title: 'Church Heritage Stonework',
+        location: 'The Rocks, Sydney',
+        year: '2023',
+        budget: '$180,000',
+        category: 'Heritage Restoration',
+        description: 'Detailed restoration of 1850s church stonework including carved details and structural repairs.',
+        images: [teamImage, heroMasonry, heroBackground],
+        features: ['Stone carving restoration', 'Structural stabilization', 'Weather protection', 'Heritage compliance'],
+        duration: '12 weeks',
+        challenge: 'Restoring intricate carved stonework damaged by 170 years of weathering',
+        solution: 'Master stonemason hand-carved replacement elements using period techniques'
+      }
+    ],
+    foundation: [
+      {
+        id: 5,
+        title: 'Federation Home Underpinning',
+        location: 'Balmain, Sydney',
+        year: '2024',
+        budget: '$85,000',
+        category: 'Foundation Repairs',
+        description: 'Comprehensive foundation underpinning using micro-piles with minimal disruption to residents.',
+        images: [beforeAfterShowcase, heroBackground, professionalTeam],
+        features: ['Micro-pile underpinning', 'Structural monitoring', 'Minimal excavation', 'Occupied building work'],
+        duration: '6 weeks',
+        challenge: 'Stabilizing foundation while maintaining full occupancy of heritage home',
+        solution: 'Phased micro-pile installation with continuous structural monitoring'
+      }
+    ],
+    structural: [
+      {
+        id: 6,
+        title: 'Load-Bearing Wall Restoration',
+        location: 'Newtown, Sydney',
+        year: '2023',
+        budget: '$65,000',
+        category: 'Structural Restoration',
+        description: 'Structural repair of compromised masonry walls with steel reinforcement and heritage compliance.',
+        images: [teamImage, beforeAfterImage, heroMasonry],
+        features: ['Steel reinforcement', 'Masonry restoration', 'Structural engineering', 'Heritage approval'],
+        duration: '5 weeks',
+        challenge: 'Installing modern structural support while maintaining heritage character',
+        solution: 'Concealed steel frame with traditional masonry exterior restoration'
+      }
+    ],
+    remedial: [
+      {
+        id: 7,
+        title: 'Strata Building Defects',
+        location: 'Bondi, Sydney',
+        year: '2024',
+        budget: '$120,000',
+        category: 'Remedial Building',
+        description: 'Comprehensive building defect rectification including facade repairs and waterproofing.',
+        images: [beforeAfterImage, professionalTeam, heroBackground],
+        features: ['Defect rectification', 'Facade restoration', 'Protective coatings', 'Compliance upgrades'],
+        duration: '8 weeks',
+        challenge: 'Coordinating repairs across multiple units while maintaining building operations',
+        solution: 'Phased remediation with minimal disruption scheduling'
+      }
+    ],
+    concrete: [
+      {
+        id: 8,
+        title: 'Coastal Concrete Restoration',
+        location: 'Manly, Sydney',
+        year: '2023',
+        budget: '$95,000',
+        category: 'Concrete Repairs',
+        description: 'Specialized concrete cancer treatment with marine-grade protective coatings for coastal exposure.',
+        images: [heroMasonry, beforeAfterShowcase, teamImage],
+        features: ['Concrete cancer treatment', 'Marine-grade coatings', 'Structural assessment', 'Corrosion protection'],
+        duration: '7 weeks',
+        challenge: 'Treating extensive concrete degradation in harsh coastal environment',
+        solution: 'Multi-layer protection system with cathodic protection for reinforcement'
+      }
+    ]
+  };
+
+  // Flatten all work for filtering
+  const allWork = Object.values(workByService).flat();
+
+  const categories = [
+    'All Work',
+    'Masonry & Stonework', 
+    'Heritage Restoration',
+    'Foundation Repairs',
+    'Structural Restoration', 
+    'Remedial Building',
+    'Concrete Repairs'
   ];
+  const [activeCategory, setActiveCategory] = useState('All Work');
 
-  const categories = ['All', 'Restoration', 'Commercial', 'Repairs', 'Extension'];
-  const [activeCategory, setActiveCategory] = useState('All');
+  const getFilteredWork = () => {
+    if (activeCategory === 'All Work') return allWork;
+    
+    const categoryMap: { [key: string]: string } = {
+      "Masonry & Stonework": "masonry",
+      "Heritage Restoration": "heritage", 
+      "Foundation Repairs": "foundation",
+      "Structural Restoration": "structural",
+      "Remedial Building": "remedial",
+      "Concrete Repairs": "concrete"
+    };
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+    const serviceKey = categoryMap[activeCategory];
+    return serviceKey ? workByService[serviceKey as keyof typeof workByService] : allWork;
+  };
+
+  const filteredProjects = getFilteredWork();
 
   const nextImage = () => {
     if (selectedProject !== null) {
-      const project = projects.find(p => p.id === selectedProject);
+      const project = allWork.find(p => p.id === selectedProject);
       if (project) {
         setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
       }
@@ -94,29 +187,29 @@ export const ProjectGallerySection = () => {
 
   const prevImage = () => {
     if (selectedProject !== null) {
-      const project = projects.find(p => p.id === selectedProject);
+      const project = allWork.find(p => p.id === selectedProject);
       if (project) {
         setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
       }
     }
   };
 
-  // Generate structured data for all project images
-  const allProjectImages = projects.flatMap(project => 
-    project.images.map(img => ({
+  // Generate structured data for all work images
+  const allWorkImages = allWork.flatMap(work => 
+    work.images.map(img => ({
       url: img,
-      description: `${project.title} - Professional masonry and building restoration work in ${project.location}`,
-      caption: project.description,
+      description: `${work.title} - Expert stonework and masonry craftsmanship in ${work.location}`,
+      caption: work.description,
       width: 1200,
       height: 800,
-      contentLocation: project.location
+      contentLocation: work.location
     }))
   );
 
   return (
     <div className="container mx-auto mobile-container overflow-safe">
       {/* SEO Structured Data for Images */}
-      <ImageSEOStructuredData images={allProjectImages} />
+      <ImageSEOStructuredData images={allWorkImages} />
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -125,10 +218,10 @@ export const ProjectGallerySection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold">
-          Our <span className="gradient-text">Project Portfolio</span>
+          Our <span className="gradient-text">Work Gallery</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Explore our recent projects showcasing exceptional craftsmanship and attention to detail across Sydney.
+          Explore our specialized stonework and masonry craftsmanship showcasing years of expertise across Sydney.
         </p>
       </motion.div>
 
@@ -165,14 +258,14 @@ export const ProjectGallerySection = () => {
           >
             <Card className="group hover-lift overflow-hidden floating-shadow micro-interaction">
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.images[0]} 
-                  alt={`${project.title} - Professional masonry and building restoration work in ${project.location}`}
-                  className="responsive-image w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  width="400"
-                  height="256"
-                />
+                  <img 
+                    src={project.images[0]} 
+                    alt={`${project.title} - Expert stonework and masonry craftsmanship in ${project.location}`}
+                    className="responsive-image w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width="400"
+                    height="256"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* View Button */}
@@ -240,7 +333,7 @@ export const ProjectGallerySection = () => {
                     setCurrentImageIndex(0);
                   }}
                 >
-                  View Project Details
+                  View Work Details
                 </Button>
               </CardContent>
             </Card>
@@ -266,7 +359,7 @@ export const ProjectGallerySection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const project = projects.find(p => p.id === selectedProject);
+                const project = allWork.find(p => p.id === selectedProject);
                 if (!project) return null;
 
                 return (
@@ -275,7 +368,7 @@ export const ProjectGallerySection = () => {
                     <div className="relative">
                       <img 
                         src={project.images[currentImageIndex]}
-                        alt={`${project.title} - Detailed view of masonry restoration project in ${project.location}`}
+                        alt={`${project.title} - Detailed view of stonework and masonry project in ${project.location}`}
                         className="w-full h-80 object-cover rounded-xl"
                         loading="lazy"
                         width="800"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,77 +7,194 @@ import { Eye, MapPin, Calendar, Building, Phone, Star } from 'lucide-react';
 import beforeAfterImage from '@/assets/before-after-showcase.jpg';
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: 1,
-      title: "Heritage Terrace Restoration",
-      location: "Paddington",
-      year: "2024",
-      type: "Heritage Restoration",
-      description: "Complete restoration of 1890s Victorian terrace including structural repairs, brickwork restoration, and heritage-compliant updates.",
-      image: beforeAfterImage,
-      tags: ["Heritage", "Structural", "Masonry"]
-    },
-    {
-      id: 2,
-      title: "Commercial Building Facade",
-      location: "Sydney CBD",
-      year: "2023",
-      type: "Commercial Restoration",
-      description: "Facade restoration and structural repairs for 12-story commercial building in the heart of Sydney's business district.",
-      image: beforeAfterImage,
-      tags: ["Commercial", "Facade", "Structural"]
-    },
-    {
-      id: 3,
-      title: "Federation Home Foundation",
-      location: "Balmain",
-      year: "2024",
-      type: "Foundation Repair",
-      description: "Foundation underpinning and structural stabilization of heritage Federation home with minimal disruption to residents.",
-      image: beforeAfterImage,
-      tags: ["Foundation", "Heritage", "Residential"]
-    },
-    {
-      id: 4,
-      title: "Sandstone Retaining Wall",
-      location: "Woollahra",
-      year: "2023",
-      type: "Masonry Construction",
-      description: "Custom sandstone retaining wall construction with integrated drainage and landscaping considerations.",
-      image: beforeAfterImage,
-      tags: ["Masonry", "Sandstone", "Construction"]
-    },
-    {
-      id: 5,
-      title: "Church Restoration Project",
-      location: "The Rocks",
-      year: "2023",
-      type: "Heritage Restoration",
-      description: "Comprehensive restoration of 1850s church including stonework, structural repairs, and heritage compliance.",
-      image: beforeAfterImage,
-      tags: ["Heritage", "Religious", "Stonework"]
-    },
-    {
-      id: 6,
-      title: "Apartment Complex Repairs",
-      location: "Bondi",
-      year: "2024",
-      type: "Remedial Building",
-      description: "Strata building repairs including concrete cancer treatment, protective coatings, and facade restoration.",
-      image: beforeAfterImage,
-      tags: ["Strata", "Concrete", "Restoration"]
-    }
-  ];
+  // Organized by service categories
+  const workByService = {
+    masonry: [
+      {
+        id: 1,
+        title: "Heritage Brick Repointing",
+        location: "Paddington",
+        year: "2024",
+        type: "Masonry & Stonework",
+        description: "Detailed heritage brick repointing using traditional lime mortar on 1890s Victorian terrace facade.",
+        image: beforeAfterImage,
+        tags: ["Heritage", "Repointing", "Lime Mortar"]
+      },
+      {
+        id: 2,
+        title: "Sandstone Garden Wall",
+        location: "Woollahra",
+        year: "2023",
+        type: "Masonry & Stonework",
+        description: "Custom sandstone garden wall construction with traditional dry-stacked techniques and integrated drainage.",
+        image: beforeAfterImage,
+        tags: ["Sandstone", "Garden Wall", "Traditional"]
+      },
+      {
+        id: 3,
+        title: "Commercial Brick Facade",
+        location: "Sydney CBD",
+        year: "2024",
+        type: "Masonry & Stonework",
+        description: "Modern commercial brick facade with architectural detailing and weather-resistant pointing.",
+        image: beforeAfterImage,
+        tags: ["Commercial", "Facade", "Architectural"]
+      }
+    ],
+    heritage: [
+      {
+        id: 4,
+        title: "Victorian Terrace Conservation",
+        location: "Surry Hills",
+        year: "2024",
+        type: "Heritage Restoration",
+        description: "Complete heritage conservation of 1880s Victorian terrace using period-appropriate materials and techniques.",
+        image: beforeAfterImage,
+        tags: ["Victorian", "Conservation", "Period Materials"]
+      },
+      {
+        id: 5,
+        title: "Federation Home Restoration",
+        location: "Balmain",
+        year: "2023",
+        type: "Heritage Restoration",
+        description: "Comprehensive Federation-era home restoration including original stonework and architectural features.",
+        image: beforeAfterImage,
+        tags: ["Federation", "Stonework", "Architectural"]
+      },
+      {
+        id: 6,
+        title: "Historic Church Stonework",
+        location: "The Rocks",
+        year: "2023",
+        type: "Heritage Restoration",
+        description: "Careful restoration of 1850s church stonework using traditional carving and repair techniques.",
+        image: beforeAfterImage,
+        tags: ["Church", "Stonework", "Traditional"]
+      }
+    ],
+    foundation: [
+      {
+        id: 7,
+        title: "House Foundation Stabilization",
+        location: "Leichhardt",
+        year: "2024",
+        type: "Foundation Repairs",
+        description: "Foundation underpinning and stabilization using micro-piles with minimal disruption to occupants.",
+        image: beforeAfterImage,
+        tags: ["Underpinning", "Stabilization", "Micro-piles"]
+      },
+      {
+        id: 8,
+        title: "Retaining Wall Foundation",
+        location: "Mosman",
+        year: "2023",
+        type: "Foundation Repairs",
+        description: "Deep foundation work for sandstone retaining wall with engineered drainage solutions.",
+        image: beforeAfterImage,
+        tags: ["Retaining Wall", "Drainage", "Engineering"]
+      }
+    ],
+    structural: [
+      {
+        id: 9,
+        title: "Load-Bearing Wall Repair",
+        location: "Newtown",
+        year: "2024",
+        type: "Structural Restoration",
+        description: "Structural repair of compromised load-bearing masonry walls with steel reinforcement integration.",
+        image: beforeAfterImage,
+        tags: ["Load-Bearing", "Steel Reinforcement", "Structural"]
+      },
+      {
+        id: 10,
+        title: "Chimney Structural Repair",
+        location: "Rozelle",
+        year: "2023",
+        type: "Structural Restoration",
+        description: "Complete structural assessment and repair of heritage chimney with earthquake compliance upgrades.",
+        image: beforeAfterImage,
+        tags: ["Chimney", "Compliance", "Heritage"]
+      }
+    ],
+    remedial: [
+      {
+        id: 11,
+        title: "Strata Building Defects",
+        location: "Bondi",
+        year: "2024",
+        type: "Remedial Building",
+        description: "Comprehensive building defect rectification including facade repairs and compliance upgrades.",
+        image: beforeAfterImage,
+        tags: ["Strata", "Defects", "Compliance"]
+      },
+      {
+        id: 12,
+        title: "Commercial Building Remediation",
+        location: "North Sydney",
+        year: "2023",
+        type: "Remedial Building",
+        description: "Large-scale remedial work addressing structural and facade issues in commercial building.",
+        image: beforeAfterImage,
+        tags: ["Commercial", "Remediation", "Facade"]
+      }
+    ],
+    concrete: [
+      {
+        id: 13,
+        title: "Concrete Cancer Treatment",
+        location: "Manly",
+        year: "2024",
+        type: "Concrete Repairs",
+        description: "Comprehensive concrete cancer treatment with protective coatings for coastal building exposure.",
+        image: beforeAfterImage,
+        tags: ["Concrete Cancer", "Coastal", "Protective"]
+      },
+      {
+        id: 14,
+        title: "Balcony Spalling Repairs",
+        location: "Double Bay",
+        year: "2023",
+        type: "Concrete Repairs",
+        description: "Detailed spalling repair work on luxury apartment balconies with aesthetic restoration.",
+        image: beforeAfterImage,
+        tags: ["Spalling", "Balcony", "Luxury"]
+      }
+    ]
+  };
+
+  // Flatten all projects for filtering
+  const allProjects = Object.values(workByService).flat();
 
   const categories = [
-    { name: "All Projects", count: projects.length },
-    { name: "Heritage Restoration", count: 3 },
-    { name: "Commercial", count: 2 },
-    { name: "Residential", count: 4 },
-    { name: "Foundation", count: 2 },
-    { name: "Masonry", count: 3 }
+    { name: "All Work", count: allProjects.length },
+    { name: "Masonry & Stonework", count: workByService.masonry.length },
+    { name: "Heritage Restoration", count: workByService.heritage.length },
+    { name: "Foundation Repairs", count: workByService.foundation.length },
+    { name: "Structural Restoration", count: workByService.structural.length },
+    { name: "Remedial Building", count: workByService.remedial.length },
+    { name: "Concrete Repairs", count: workByService.concrete.length }
   ];
+
+  const [activeCategory, setActiveCategory] = useState("All Work");
+
+  const getFilteredProjects = () => {
+    if (activeCategory === "All Work") return allProjects;
+    
+    const categoryMap: { [key: string]: string } = {
+      "Masonry & Stonework": "masonry",
+      "Heritage Restoration": "heritage", 
+      "Foundation Repairs": "foundation",
+      "Structural Restoration": "structural",
+      "Remedial Building": "remedial",
+      "Concrete Repairs": "concrete"
+    };
+
+    const serviceKey = categoryMap[activeCategory];
+    return serviceKey ? workByService[serviceKey as keyof typeof workByService] : allProjects;
+  };
+
+  const filteredProjects = getFilteredProjects();
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -87,14 +204,14 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <Badge className="mb-4">Our Portfolio</Badge>
+          <Badge className="mb-4">Our Work</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Project Showcase
+            Gallery of Stonework Excellence
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our extensive portfolio of completed projects across Sydney. From heritage 
-            restorations to modern commercial builds, see the quality and craftsmanship that 
-            sets Romans Building Services apart.
+            Discover years of specialized stonework and masonry craftsmanship across Sydney. 
+            From heritage conservation to modern structural work, witness the expertise and 
+            attention to detail that defines our trade.
           </p>
         </motion.div>
 
@@ -108,22 +225,23 @@ export default function ProjectsPage() {
           {categories.map((category, index) => (
             <Badge 
               key={index} 
-              variant={index === 0 ? "default" : "outline"}
+              variant={activeCategory === category.name ? "default" : "outline"}
               className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-2"
+              onClick={() => setActiveCategory(category.name)}
             >
               {category.name} ({category.count})
             </Badge>
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Work Gallery Grid */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
         >
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -188,20 +306,20 @@ export default function ProjectsPage() {
           <h2 className="text-2xl font-bold text-center mb-8">Project Statistics</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">2000+</div>
-              <div className="text-sm text-muted-foreground">Total Projects</div>
+              <div className="text-3xl font-bold text-primary mb-2">25+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Stonework Projects</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary mb-2">150+</div>
               <div className="text-sm text-muted-foreground">Heritage Restorations</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-sm text-muted-foreground">Commercial Projects</div>
-            </div>
-            <div>
               <div className="text-3xl font-bold text-primary mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
+              <div className="text-sm text-muted-foreground">Trade Expertise</div>
             </div>
           </div>
         </motion.section>
@@ -214,19 +332,19 @@ export default function ProjectsPage() {
           className="text-center bg-primary rounded-2xl p-8 text-white"
         >
           <Building className="w-16 h-16 mx-auto mb-4 opacity-80" />
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready for Expert Stonework?</h2>
           <p className="text-lg mb-6 opacity-90">
-            Join our portfolio of satisfied clients with professional building services
+            Experience the quality craftsmanship showcased in our gallery
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary">
               <Star className="w-5 h-5 mr-2" />
-              Get Free Project Assessment
+              Get Free Stonework Assessment
             </Button>
             <Button size="lg" variant="outline" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
               <Phone className="w-5 h-5 mr-2" />
-              Discuss Your Project
+              Discuss Your Stonework Needs
             </Button>
           </div>
         </motion.section>

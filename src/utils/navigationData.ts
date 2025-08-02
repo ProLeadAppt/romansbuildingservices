@@ -50,7 +50,7 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     id: 'projects',
-    label: 'Projects',
+    label: 'Gallery',
     href: '/projects'
   },
   {
@@ -208,13 +208,13 @@ export const quickActions = [
 // Popular searches for autocomplete
 export const popularSearches = [
   'Brick repair Sydney',
-  'Waterproofing',
+  'Stonework restoration',
   'Heritage restoration',
   'Structural assessment',
   'Concrete cancer',
   'Foundation repairs',
-  'Building inspection',
-  'Building maintenance'
+  'Masonry repairs',
+  'Heritage stonework'
 ];
 
 // Utility functions
