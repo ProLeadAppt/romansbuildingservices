@@ -109,7 +109,7 @@ export const LiveSocialProof = () => {
 
   return (
     <motion.div
-      className="fixed bottom-6 left-6 z-30 max-w-sm"
+      className="fixed bottom-6 left-6 z-40 max-w-sm"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 2, duration: 0.5 }}

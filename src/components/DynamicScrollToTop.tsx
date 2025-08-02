@@ -40,7 +40,7 @@ export const DynamicScrollToTop = () => {
   // Dynamic styling based on background theme
   const isDark = backgroundTheme === 'dark';
   
-  const buttonClass = `fixed bottom-24 right-6 z-30 w-12 h-12 rounded-full backdrop-blur-xl shadow-2xl flex items-center justify-center transition-all duration-300 ${
+  const buttonClass = `fixed bottom-24 right-6 z-[60] w-12 h-12 rounded-full backdrop-blur-xl shadow-2xl flex items-center justify-center transition-all duration-300 ${
     isDark 
       ? 'bg-black/90 border border-white/20 text-white hover:bg-black hover:text-white hover:shadow-white/20' 
       : 'bg-white/95 border border-gray-200/50 text-gray-700 hover:bg-white hover:text-gray-900'
