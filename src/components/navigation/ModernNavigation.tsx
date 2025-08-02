@@ -47,16 +47,10 @@ export const ModernNavigation = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[70] px-4 lg:px-6">
+    <div className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
       <nav 
         ref={navRef}
-        className="w-full max-w-7xl mx-auto mt-4 mb-2 rounded-2xl transition-all duration-300 ease-out"
-        style={{
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2)',
-          willChange: 'transform',
-          border: '1px solid rgba(255, 255, 255, 0.3)'
-        }}
+        className="w-full max-w-7xl mx-auto transition-all duration-300 ease-out"
       >
       <div className="container mx-auto px-4">
         {/* Main Navigation Bar */}
