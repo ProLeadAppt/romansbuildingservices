@@ -110,7 +110,7 @@ export const SmoothScrollNavigation = () => {
             <div className="hidden lg:flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="font-semibold">0414 922 276</span>
+                <span className="font-semibold">+61 483 981 292</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary" />

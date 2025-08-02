@@ -39,7 +39,7 @@ export default function ProfessionalRepairsPage() {
       step: "1",
       title: "Call Today",
       description: "Contact our consultation line for prompt response",
-      action: "0414 922 276"
+      action: "+61 483 981 292"
     },
     {
       step: "2", 
@@ -100,7 +100,7 @@ export default function ProfessionalRepairsPage() {
           >
             <Phone className="w-12 h-12 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">Project Consultation Line</h2>
-            <div className="text-3xl font-bold mb-4">0414 922 276</div>
+            <div className="text-3xl font-bold mb-4">+61 483 981 292</div>
             <p className="text-sm opacity-90">Professional response within 48-72 hours for structural issues</p>
           </motion.div>
         </motion.div>

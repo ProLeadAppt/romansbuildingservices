@@ -143,7 +143,7 @@ export const EnhancedShowcaseSection = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button variant="outline" size="lg">
-              Call 0414 922 276
+              Call +61 483 981 292
             </Button>
           </div>
         </motion.div>

@@ -94,8 +94,8 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <a href="tel:0414922276" className="text-2xl font-bold text-primary hover:underline">
-                    0414 922 276
+                  <a href="tel:+61483981292" className="text-2xl font-bold text-primary hover:underline">
+                    +61 483 981 292
                   </a>
                   <p className="text-muted-foreground mt-2">
                     Available 24/7 for priority services

@@ -227,7 +227,7 @@ export default function QuotePage() {
                 </p>
                 <Button variant="secondary" className="w-full">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call 0414 922 276
+                  Call +61 483 981 292
                 </Button>
                 <div className="mt-4 text-xs opacity-75 text-center">
                   Available 7 days a week

@@ -228,9 +228,9 @@ export const ProfessionalHeroSection = () => {
             }} whileTap={{
               scale: 0.98
             }}>
-                <Button variant="outline" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm" onClick={() => window.open('tel:0414922276')}>
+                <Button variant="outline" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-8 border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="w-5 h-5 mr-2" />
-                  0414 922 276
+                  +61 483 981 292
                 </Button>
               </motion.div>
             </motion.div>
@@ -340,7 +340,7 @@ export const ProfessionalHeroSection = () => {
                     <div className="flex items-center justify-center space-x-4 text-sm">
                       <div className="flex items-center space-x-1">
                         <Phone className="w-4 h-4 text-primary" />
-                        <span className="font-semibold">0414 922 276</span>
+                        <span className="font-semibold">+61 483 981 292</span>
                       </div>
                       <div className="flex items-center space-x-1">
                         <MapPin className="w-4 h-4" />

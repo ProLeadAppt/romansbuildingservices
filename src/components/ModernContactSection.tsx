@@ -71,8 +71,8 @@ export const ModernContactSection = () => {
     {
       icon: Phone,
       title: 'Professional Service Line',
-      content: '0414 922 276',
-      action: 'tel:0414922276',
+      content: '+61 483 981 292',
+      action: 'tel:+61483981292',
       description: 'All inquiries, quotes and priority responses',
       color: 'text-primary',
       bgColor: 'bg-primary/10'
@@ -395,10 +395,10 @@ export const ModernContactSection = () => {
                   variant="default" 
                   size="lg" 
                   className="w-full mt-4"
-                  onClick={() => window.open('tel:0414922276')}
+                  onClick={() => window.open('tel:+61483981292')}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Contact: 0414 922 276
+                  Contact: +61 483 981 292
                 </Button>
               </CardContent>
             </Card>
@@ -468,7 +468,7 @@ export const ModernContactSection = () => {
                     <Button 
                       size="lg" 
                       className="w-full hover-lift"
-                      onClick={() => window.open('tel:0414922276')}
+                      onClick={() => window.open('tel:+61483981292')}
                     >
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now for Instant Quote

@@ -217,7 +217,7 @@ export const QuickSearch: React.FC<QuickSearchProps> = ({
                   size="sm"
                   variant="outline"
                   className="mt-2"
-                  onClick={() => window.open(`tel:0414922276`)}
+                  onClick={() => window.open(`tel:+61483981292`)}
                 >
                   Call for assistance
                 </Button>

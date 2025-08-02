@@ -187,7 +187,7 @@ export default function AboutPage() {
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
               <Phone className="w-5 h-5 mr-2" />
-              Call: 0414 922 276
+              Call: +61 483 981 292
             </Button>
           </div>
         </motion.section>

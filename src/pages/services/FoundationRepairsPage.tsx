@@ -42,7 +42,7 @@ export default function FoundationRepairsPage() {
                 </Button>
                 <Button variant="outline" size="lg">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call 0414 922 276
+                  Call +61 483 981 292
                 </Button>
               </div>
             </div>

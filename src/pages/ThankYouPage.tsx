@@ -55,10 +55,10 @@ const ThankYouPage = () => {
                     <div>
                       <p className="text-sm text-muted-foreground">Need immediate assistance?</p>
                       <a 
-                        href="tel:0414922276" 
+                        href="tel:+61483981292" 
                         className="text-3xl font-bold text-primary hover:text-primary/80 transition-colors"
                       >
-                        0414 922 276
+                        +61 483 981 292
                       </a>
                     </div>
                   </div>

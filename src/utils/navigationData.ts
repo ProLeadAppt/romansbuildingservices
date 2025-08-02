@@ -179,7 +179,7 @@ export const serviceAreas: ServiceArea[] = [
 
 // Contact and quote services
 export const contactServices = {
-  phone: '0414 922 276',
+  phone: '+61 483 981 292',
   label: 'Contact Us',
   description: 'Professional building services consultation',
   href: '/contact'

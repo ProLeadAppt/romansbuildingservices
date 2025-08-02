@@ -45,7 +45,7 @@ const GreaterSydneyPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">
                 <Phone className="w-5 h-5 mr-2" />
-                Call 0414 922 276
+                Call +61 483 981 292
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8">
                 Metro Wide Quote
@@ -241,7 +241,7 @@ const GreaterSydneyPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">
               <Phone className="w-5 h-5 mr-2" />
-              Call Now: 0414 922 276
+              Call Now: +61 483 981 292
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
               Project Consultation

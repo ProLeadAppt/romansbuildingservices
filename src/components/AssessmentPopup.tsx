@@ -216,7 +216,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
             <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
               <div className="flex items-center space-x-1">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="font-semibold">0414 922 276</span>
+                <span className="font-semibold">+61 483 981 292</span>
               </div>
               <span>•</span>
               <span>Sydney Wide Service</span>
