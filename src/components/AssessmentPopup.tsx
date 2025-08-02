@@ -159,7 +159,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                 <SelectItem value="structural">Structural Repairs</SelectItem>
                 <SelectItem value="waterproofing">Waterproofing</SelectItem>
                 <SelectItem value="assessment">Building Assessment</SelectItem>
-                <SelectItem value="emergency">Emergency Repairs</SelectItem>
+                <SelectItem value="urgent">Urgent Repairs</SelectItem>
               </SelectContent>
             </Select>
 

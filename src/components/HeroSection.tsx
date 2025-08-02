@@ -130,7 +130,7 @@ export const HeroSection = () => {
                 <a href="tel:0414922276" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
                   0414 922 276
                 </a>
-                <span className="text-sm text-gray-300">24/7 Emergency</span>
+                <span className="text-sm text-gray-300">Professional Service</span>
               </div>
             </div>
 
@@ -221,7 +221,7 @@ export const HeroSection = () => {
                 <option value="Foundation Issues">Foundation Issues</option>
                 <option value="Crack Repairs">Crack Repairs</option>
                 <option value="Waterproofing">Waterproofing</option>
-                <option value="Emergency Service">Emergency Service</option>
+                <option value="Urgent Repairs">Urgent Repairs</option>
               </select>
               
               <textarea 

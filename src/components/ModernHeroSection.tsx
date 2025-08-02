@@ -63,7 +63,7 @@ export const ModernHeroSection = () => {
   const trustBadges = [
     { icon: Shield, text: 'Licensed & Insured', color: 'text-green-600' },
     { icon: Award, text: '25+ Years Experience', color: 'text-blue-600' },
-    { icon: Clock, text: '24/7 Emergency Service', color: 'text-orange-600' },
+    { icon: Clock, text: 'Same-Day Response', color: 'text-orange-600' },
     { icon: Users, text: '1000+ Happy Clients', color: 'text-purple-600' }
   ];
 
@@ -71,7 +71,7 @@ export const ModernHeroSection = () => {
     { number: '1000+', label: 'Projects Completed' },
     { number: '25+', label: 'Years Experience' },
     { number: '100%', label: 'Satisfaction Rate' },
-    { number: '24/7', label: 'Emergency Service' }
+    { number: '2hr', label: 'Response Time' }
   ];
 
   return (
@@ -225,19 +225,19 @@ export const ModernHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Emergency Contact */}
+            {/* Urgent Response */}
             <motion.div
-              className="bg-destructive/10 border border-destructive/20 rounded-xl p-4 space-y-2"
+              className="bg-primary/10 border border-primary/20 rounded-xl p-4 space-y-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.6 }}
             >
               <div className="flex items-center space-x-2">
-                <Clock className="w-5 h-5 text-destructive" />
-                <span className="font-semibold text-destructive">24/7 Emergency Service</span>
+                <Clock className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-primary">Urgent Repairs Available</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Structural damage? Water ingress? We respond within 2 hours for emergencies.
+                Structural damage? Water ingress? We prioritize urgent repairs with same-day response.
               </p>
             </motion.div>
           </motion.div>
@@ -302,7 +302,7 @@ export const ModernHeroSection = () => {
                         <SelectItem value="structural">Structural Repairs</SelectItem>
                         <SelectItem value="waterproofing">Waterproofing</SelectItem>
                         <SelectItem value="assessment">Building Assessment</SelectItem>
-                        <SelectItem value="emergency">Emergency Repairs</SelectItem>
+                        <SelectItem value="urgent">Urgent Repairs</SelectItem>
                       </SelectContent>
                     </Select>
                   </motion.div>

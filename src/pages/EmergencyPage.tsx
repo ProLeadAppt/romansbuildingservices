@@ -6,57 +6,57 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, Phone, Clock, Shield, Zap, Home, Building } from 'lucide-react';
 
-export default function EmergencyPage() {
-  const emergencyServices = [
+export default function UrgentRepairsPage() {
+  const urgentServices = [
     {
       icon: AlertTriangle,
-      title: "Structural Collapse",
-      description: "Immediate response for structural failures, foundation issues, or load-bearing damage",
-      response: "30 minutes"
+      title: "Structural Issues",
+      description: "Priority response for structural failures, foundation issues, or load-bearing damage",
+      response: "Same day"
     },
     {
       icon: Home,
       title: "Wall & Foundation Cracks",
-      description: "Emergency assessment and temporary stabilization of concerning structural cracks",
-      response: "45 minutes"
+      description: "Urgent assessment and stabilization of concerning structural cracks",
+      response: "Same day"
     },
     {
       icon: Zap,
       title: "Storm Damage",
-      description: "Post-storm building damage assessment and emergency repairs to secure property",
-      response: "60 minutes"
+      description: "Post-storm building damage assessment and urgent repairs to secure property",
+      response: "Same day"
     },
     {
       icon: Building,
       title: "Commercial Building Issues", 
-      description: "Emergency commercial building services to minimize business disruption",
-      response: "45 minutes"
+      description: "Priority commercial building services to minimize business disruption",
+      response: "Same day"
     }
   ];
 
-  const emergencySteps = [
+  const urgentSteps = [
     {
       step: "1",
-      title: "Call Immediately",
-      description: "Contact our 24/7 emergency line for immediate response",
+      title: "Call Today",
+      description: "Contact our urgent repairs line for priority response",
       action: "0414 922 276"
     },
     {
       step: "2", 
       title: "Safety First",
-      description: "Evacuate if necessary and secure the area until help arrives",
+      description: "Secure the area if needed and document the issue for our assessment",
       action: "Stay Safe"
     },
     {
       step: "3",
-      title: "Rapid Response",
-      description: "Our emergency team will arrive within 30-60 minutes",
-      action: "We're Coming"
+      title: "Same Day Response",
+      description: "Our team will prioritize your repair and respond same day",
+      action: "Priority Service"
     },
     {
       step: "4",
-      title: "Immediate Assessment",
-      description: "Professional evaluation and emergency stabilization if needed",
+      title: "Professional Assessment",
+      description: "Expert evaluation and urgent stabilization if required",
       action: "Expert Help"
     }
   ];
@@ -73,35 +73,35 @@ export default function EmergencyPage() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
-        {/* Emergency Header */}
+        {/* Urgent Repairs Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center mb-4">
-            <AlertTriangle className="w-8 h-8 text-destructive mr-3" />
-            <Badge variant="destructive" className="text-lg px-4 py-2">24/7 Emergency Service</Badge>
+            <AlertTriangle className="w-8 h-8 text-primary mr-3" />
+            <Badge variant="default" className="text-lg px-4 py-2">Same-Day Urgent Repairs</Badge>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-destructive">
-            Building Emergency? We're Here to Help
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Urgent Building Repairs? We Prioritize Your Safety
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            When structural emergencies occur, every minute counts. Our qualified emergency response 
-            team is available 24/7 to secure your property and ensure everyone's safety.
+            When structural issues require urgent attention, our qualified team prioritizes your repair 
+            with same-day response to secure your property and ensure everyone's safety.
           </p>
           
-          {/* Emergency Contact */}
+          {/* Urgent Contact */}
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-destructive text-destructive-foreground rounded-2xl p-8 max-w-md mx-auto"
+            className="bg-primary text-primary-foreground rounded-2xl p-8 max-w-md mx-auto"
           >
             <Phone className="w-12 h-12 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Emergency Hotline</h2>
+            <h2 className="text-2xl font-bold mb-2">Priority Repairs Line</h2>
             <div className="text-3xl font-bold mb-4">0414 922 276</div>
-            <p className="text-sm opacity-90">Available 24 hours a day, 7 days a week</p>
+            <p className="text-sm opacity-90">Same-day response for urgent structural issues</p>
           </motion.div>
         </motion.div>
 
@@ -114,12 +114,12 @@ export default function EmergencyPage() {
         >
           <div className="text-center mb-8">
             <Clock className="w-12 h-12 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold">Rapid Emergency Response</h2>
-            <p className="opacity-90 mt-2">Professional help when you need it most</p>
+            <h2 className="text-3xl font-bold">Priority Repair Response</h2>
+            <p className="opacity-90 mt-2">Professional help when structural issues need urgent attention</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {emergencyServices.map((service, index) => (
+            {urgentServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -139,7 +139,7 @@ export default function EmergencyPage() {
         </motion.section>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Emergency Process */}
+          {/* Urgent Repair Process */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -149,11 +149,11 @@ export default function EmergencyPage() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Shield className="w-6 h-6 text-primary" />
-                  <span>Emergency Response Process</span>
+                  <span>Urgent Repair Process</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {emergencySteps.map((step, index) => (
+                {urgentSteps.map((step, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
                       {step.step}
@@ -175,27 +175,27 @@ export default function EmergencyPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Card className="border-destructive/20">
+            <Card className="border-primary/20">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2 text-destructive">
+                <CardTitle className="flex items-center space-x-2 text-primary">
                   <AlertTriangle className="w-6 h-6" />
-                  <span>When to Call Emergency Services</span>
+                  <span>When to Call for Urgent Repairs</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Call our emergency line immediately if you notice any of these warning signs:
+                  Call our priority repairs line if you notice any of these concerning signs:
                 </p>
                 <div className="space-y-3">
                   {warningsSigns.map((sign, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <AlertTriangle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                      <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-sm">{sign}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 p-4 bg-destructive/10 rounded-lg">
-                  <p className="text-sm font-medium text-destructive">
+                <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+                  <p className="text-sm font-medium text-primary">
                     Remember: If you're unsure about the severity, it's always better to call. 
                     Our experts can quickly assess the situation over the phone.
                   </p>
@@ -214,11 +214,11 @@ export default function EmergencyPage() {
         >
           <Card>
             <CardHeader className="text-center">
-              <CardTitle>Emergency Service Coverage</CardTitle>
+              <CardTitle>Urgent Repair Service Coverage</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-center text-muted-foreground mb-6">
-                24/7 emergency response available across all Sydney metropolitan areas
+                Same-day urgent repair response available across all Sydney metropolitan areas
               </p>
               <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                 {[
@@ -243,27 +243,27 @@ export default function EmergencyPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="text-center bg-destructive rounded-2xl p-8 text-destructive-foreground"
+          className="text-center bg-primary rounded-2xl p-8 text-primary-foreground"
         >
           <AlertTriangle className="w-16 h-16 mx-auto mb-4 opacity-80" />
-          <h2 className="text-3xl font-bold mb-4">Don't Wait - Call Now</h2>
+          <h2 className="text-3xl font-bold mb-4">Don't Delay - Call Today</h2>
           <p className="text-lg mb-6 opacity-90">
-            Structural emergencies can worsen rapidly. Get professional help immediately.
+            Structural issues can worsen over time. Get professional help when you need it most.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8">
               <Phone className="w-5 h-5 mr-2" />
-              Call Emergency Line
+              Call Priority Line
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-destructive text-lg px-8">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8">
               <Clock className="w-5 h-5 mr-2" />
-              24/7 Available
+              Same-Day Response
             </Button>
           </div>
           
           <div className="mt-6 text-sm opacity-75">
-            Licensed emergency response team • Fully insured • 25+ years experience
+            Licensed priority repair team • Fully insured • 25+ years experience
           </div>
         </motion.section>
       </div>

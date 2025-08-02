@@ -77,8 +77,8 @@ export const ProfessionalHeroSection = () => {
     label: 'Satisfaction Rate',
     icon: Star
   }, {
-    number: '24/7',
-    label: 'Emergency Service',
+    number: '2hr',
+    label: 'Response Time',
     icon: Clock
   }];
   const trustBadges = [{
@@ -91,7 +91,7 @@ export const ProfessionalHeroSection = () => {
     color: 'text-blue-600'
   }, {
     icon: Clock,
-    text: '24/7 Emergency Response',
+    text: 'Same-Day Response',
     color: 'text-orange-600'
   }, {
     icon: Star,
@@ -195,8 +195,8 @@ export const ProfessionalHeroSection = () => {
                 <div className="text-xs sm:text-sm text-white/80">Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-secondary">24/7</div>
-                <div className="text-xs sm:text-sm text-white/80">Emergency</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">2hr</div>
+                <div className="text-xs sm:text-sm text-white/80">Response</div>
               </div>
             </motion.div>
 
@@ -251,8 +251,8 @@ export const ProfessionalHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Emergency Note - Simplified */}
-            <motion.div className="flex items-center space-x-3 bg-destructive/20 rounded-lg p-4" initial={{
+            {/* Urgent Response - Simplified */}
+            <motion.div className="flex items-center space-x-3 bg-primary/20 rounded-lg p-4" initial={{
             opacity: 0
           }} animate={{
             opacity: 1
@@ -261,7 +261,7 @@ export const ProfessionalHeroSection = () => {
             delay: 1
           }}>
               <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-medium">24/7 Emergency Response - 2 Hour Response Time</span>
+              <span className="text-white font-medium">Urgent Repairs Available - Same Day Response</span>
             </motion.div>
           </motion.div>
 

@@ -74,9 +74,9 @@ export const FloatingCTA = () => {
                   <Zap className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm mb-1">Emergency Response Available</p>
+                  <p className="font-semibold text-sm mb-1">Urgent Repairs Available</p>
                   <p className="text-xs text-muted-foreground mb-3">
-                    Need urgent building repairs? We're available 24/7 for emergency response.
+                    Need urgent building repairs? We provide same-day response for critical structural issues.
                   </p>
                   <Button
                     size="sm"

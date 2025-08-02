@@ -180,7 +180,7 @@ export const EnhancedShowcaseSection = () => {
                   <div className="w-12 h-12 mx-auto bg-orange-100 rounded-full flex items-center justify-center">
                     <Zap className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h4 className="font-semibold">24/7 Emergency</h4>
+                  <h4 className="font-semibold">Same-Day Response</h4>
                   <p className="text-sm text-muted-foreground">Rapid response</p>
                 </div>
               </div>

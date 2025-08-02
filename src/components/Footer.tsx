@@ -47,7 +47,7 @@ export const Footer = () => {
                 <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
                 <div>
                   <div className="font-medium text-white">(02) 9XXX-XXXX</div>
-                  <div className="text-muted-foreground">Emergency Service Available</div>
+                  <div className="text-muted-foreground">Urgent Repairs Available</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-secondary" />
-                <span>Sunday: Emergency Only</span>
+                <span>Sunday: By Appointment</span>
               </div>
             </div>
             

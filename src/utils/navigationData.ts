@@ -189,11 +189,11 @@ export const serviceAreas: ServiceArea[] = [
   }
 ];
 
-// Emergency services - always visible
+// Urgent services - priority response
 export const emergencyServices = {
   phone: '0414 922 276',
-  label: 'Emergency Repairs',
-  description: '24/7 structural emergency response',
+  label: 'Urgent Repairs',
+  description: 'Same-day structural repair response',
   href: '/emergency'
 };
 
@@ -211,8 +211,8 @@ export const quickActions = [
     href: '/assessment'
   },
   {
-    id: 'emergency',
-    label: 'Emergency Help',
+    id: 'urgent',
+    label: 'Urgent Help',
     href: '/emergency',
     urgent: true
   }
@@ -227,7 +227,7 @@ export const popularSearches = [
   'Concrete cancer',
   'Foundation repairs',
   'Building inspection',
-  'Emergency repairs'
+  'Urgent repairs'
 ];
 
 // Utility functions
