@@ -118,8 +118,8 @@ export default function AboutPage() {
             className="relative"
           >
             <img 
-              src={teamImage} 
-              alt="Romans Building Services professional team" 
+              src="/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png" 
+              alt="Master craftsman working on detailed stone carving" 
               className="rounded-lg shadow-xl"
             />
           </motion.div>
