@@ -33,12 +33,13 @@ export const ModernNavigation = () => {
     if (href === '/') return location.pathname === '/';
     return location.pathname.startsWith(href);
   };
-  return <div className="fixed top-0 left-0 right-0 z-[70] px-4 lg:px-6">
-      <nav ref={navRef} className="w-full max-w-7xl mx-auto mt-4 mb-2 rounded-2xl transition-all duration-300 ease-out" style={{
-      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
-      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2)',
-      willChange: 'transform',
-      border: '1px solid rgba(255, 255, 255, 0.3)'
+  return <div className="fixed top-0 left-0 right-0 z-[70] px-3 lg:px-6">
+      <nav ref={navRef} className="w-full max-w-6xl mx-auto mt-3 mb-2 rounded-2xl backdrop-blur-xl transition-all duration-500 ease-out hover:shadow-2xl" style={{
+      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(251,252,254,0.98) 100%)',
+      boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(59, 130, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+      willChange: 'transform, box-shadow',
+      border: '1px solid rgba(255, 255, 255, 0.4)',
+      transform: 'translateZ(0)'
     }}>
       <div className="container mx-auto px-4">
         {/* Main Navigation Bar */}
