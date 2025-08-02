@@ -12,7 +12,7 @@ const GreaterSydneyPage = () => {
     'Residential Foundation Repairs',
     'Large-Scale Masonry Projects',
     'Infrastructure Maintenance',
-    'Emergency Structural Response',
+    'Priority Structural Response',
     'Multi-Unit Developments',
     'Government Contract Work'
   ];

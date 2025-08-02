@@ -341,7 +341,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 <SelectItem value="structural">Structural Repairs</SelectItem>
                 <SelectItem value="waterproofing">Waterproofing</SelectItem>
                 <SelectItem value="assessment">Building Assessment</SelectItem>
-                <SelectItem value="emergency">Emergency Repairs</SelectItem>
+                <SelectItem value="priority">Priority Repairs</SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
@@ -378,7 +378,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                   <SelectItem value="normal">Normal - Within 2 weeks</SelectItem>
                   <SelectItem value="high">High - Within a week</SelectItem>
                   <SelectItem value="urgent">Urgent - ASAP</SelectItem>
-                  <SelectItem value="emergency">Emergency - Immediate</SelectItem>
+                  <SelectItem value="priority">Priority - Immediate</SelectItem>
                 </SelectContent>
               </Select>
             </div>

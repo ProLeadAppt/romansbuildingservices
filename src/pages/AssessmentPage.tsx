@@ -250,18 +250,18 @@ export default function AssessmentPage() {
               </CardContent>
             </Card>
 
-            {/* Emergency Contact */}
+            {/* Priority Contact */}
             <Card className="bg-destructive/10 border-destructive/20">
               <CardHeader>
                 <CardTitle className="text-destructive">Urgent Assessment Needed?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  For emergency structural concerns or safety issues, call us immediately for priority assessment.
+                  For priority structural concerns or safety issues, call us immediately for priority assessment.
                 </p>
                 <Button variant="destructive" className="w-full">
                   <Phone className="w-4 h-4 mr-2" />
-                  Emergency: 0414 922 276
+                  Priority: 0414 922 276
                 </Button>
               </CardContent>
             </Card>
@@ -286,7 +286,7 @@ export default function AssessmentPage() {
                 </div>
                 <div className="pt-2 border-t">
                   <div className="flex justify-between items-center font-medium">
-                    <span className="text-sm">Emergency (24hr)</span>
+                    <span className="text-sm">Priority (24hr)</span>
                     <span>+50%</span>
                   </div>
                 </div>

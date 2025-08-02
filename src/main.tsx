@@ -10,7 +10,7 @@ import AboutPage from './pages/AboutPage.tsx'
 import ProjectsPage from './pages/ProjectsPage.tsx'
 import QuotePage from './pages/QuotePage.tsx'
 import AssessmentPage from './pages/AssessmentPage.tsx'
-import EmergencyPage from './pages/EmergencyPage.tsx'
+import PriorityRepairsPage from './pages/EmergencyPage.tsx'
 import ServicesAreasPage from './pages/ServicesAreasPage.tsx'
 import ThankYouPage from './pages/ThankYouPage.tsx'
 import SydneyCBDPage from './pages/areas/SydneyCBDPage.tsx'
@@ -42,7 +42,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/projects" element={<Layout><ProjectsPage /></Layout>} />
       <Route path="/quote" element={<Layout><QuotePage /></Layout>} />
       <Route path="/assessment" element={<Layout><AssessmentPage /></Layout>} />
-      <Route path="/emergency" element={<Layout><EmergencyPage /></Layout>} />
+      <Route path="/emergency" element={<Layout><PriorityRepairsPage /></Layout>} />
       <Route path="/services" element={<Layout><ServicesPage /></Layout>} />
       <Route path="/services/masonry" element={<Layout><MasonryPage /></Layout>} />
       <Route path="/services/restoration" element={<Layout><RestorationPage /></Layout>} />

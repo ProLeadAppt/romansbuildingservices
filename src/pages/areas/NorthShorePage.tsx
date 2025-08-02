@@ -14,7 +14,7 @@ const NorthShorePage = () => {
     'Concrete Cancer Treatment',
     'Waterproofing Solutions',
     'Building Inspections',
-    'Emergency Structural Repairs'
+    'Priority Structural Repairs'
   ];
 
   const suburbs = [

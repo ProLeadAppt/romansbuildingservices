@@ -11,7 +11,7 @@ export default function AboutPage() {
     { number: "25+", label: "Years Experience" },
     { number: "2000+", label: "Projects Completed" },
     { number: "100%", label: "Licensed & Insured" },
-    { number: "24/7", label: "Emergency Response" }
+    { number: "24/7", label: "Professional Service" }
   ];
 
   const values = [

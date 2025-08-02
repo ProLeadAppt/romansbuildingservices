@@ -35,7 +35,7 @@ export const SmartQuoteCalculator = () => {
     'restoration': { base: 200, multiplier: 1.3, label: 'Heritage Restoration' },
     'structural': { base: 180, multiplier: 1.2, label: 'Structural Repairs' },
     'waterproofing': { base: 120, multiplier: 0.8, label: 'Waterproofing' },
-    'emergency': { base: 250, multiplier: 1.5, label: 'Emergency Repairs' }
+    'priority': { base: 250, multiplier: 1.5, label: 'Priority Repairs' }
   };
 
   const propertyMultipliers = {
@@ -48,7 +48,7 @@ export const SmartQuoteCalculator = () => {
   const urgencyMultipliers = {
     'standard': 1.0,
     'urgent': 1.3,
-    'emergency': 1.8
+    'priority': 1.8
   };
 
   const locationMultipliers = {
@@ -221,7 +221,7 @@ export const SmartQuoteCalculator = () => {
                 <SelectContent>
                   <SelectItem value="standard">Standard (2-4 weeks)</SelectItem>
                   <SelectItem value="urgent">Urgent (1-2 weeks)</SelectItem>
-                  <SelectItem value="emergency">Emergency (24-48 hours)</SelectItem>
+                  <SelectItem value="priority">Priority (24-48 hours)</SelectItem>
                 </SelectContent>
               </Select>
             </div>

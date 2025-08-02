@@ -27,7 +27,7 @@ export default function QuotePage() {
   const urgencyLevels = [
     { value: "standard", label: "Standard (7-14 days)", description: "Normal project timeline" },
     { value: "priority", label: "Priority (3-7 days)", description: "Faster turnaround required" },
-    { value: "emergency", label: "Emergency (24-48 hours)", description: "Urgent repairs needed" }
+    { value: "priority", label: "Priority (24-48 hours)", description: "Priority repairs needed" }
   ];
 
   const features = [
@@ -173,7 +173,7 @@ export default function QuotePage() {
                       "Heritage building considerations", 
                       "Engineering consultation needed",
                       "Council approvals assistance",
-                      "Emergency after-hours service",
+                      "Priority after-hours service",
                       "Warranty and maintenance plan"
                     ].map((option) => (
                       <div key={option} className="flex items-center space-x-2">
@@ -232,7 +232,7 @@ export default function QuotePage() {
                 <div className="mt-4 text-xs opacity-75 text-center">
                   Available 7 days a week
                   <br />
-                  Emergency service: 24/7
+                  Priority service: 24/7
                 </div>
               </CardContent>
             </Card>

@@ -4,12 +4,12 @@ import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { AlertTriangle, Phone, Clock, Shield, Zap, Home, Building } from 'lucide-react';
+import { Clock, Phone, Shield, Zap, Home, Building } from 'lucide-react';
 
-export default function UrgentRepairsPage() {
+export default function PriorityRepairsPage() {
   const urgentServices = [
     {
-      icon: AlertTriangle,
+      icon: Shield,
       title: "Structural Issues",
       description: "Priority response for structural failures, foundation issues, or load-bearing damage",
       response: "Same day"
@@ -17,13 +17,13 @@ export default function UrgentRepairsPage() {
     {
       icon: Home,
       title: "Wall & Foundation Cracks",
-      description: "Urgent assessment and stabilization of concerning structural cracks",
+      description: "Priority assessment and stabilization of concerning structural cracks",
       response: "Same day"
     },
     {
       icon: Zap,
       title: "Storm Damage",
-      description: "Post-storm building damage assessment and urgent repairs to secure property",
+      description: "Post-storm building damage assessment and priority repairs to secure property",
       response: "Same day"
     },
     {
@@ -38,7 +38,7 @@ export default function UrgentRepairsPage() {
     {
       step: "1",
       title: "Call Today",
-      description: "Contact our urgent repairs line for priority response",
+      description: "Contact our priority repairs line for rapid response",
       action: "0414 922 276"
     },
     {
@@ -56,7 +56,7 @@ export default function UrgentRepairsPage() {
     {
       step: "4",
       title: "Professional Assessment",
-      description: "Expert evaluation and urgent stabilization if required",
+      description: "Expert evaluation and priority stabilization if required",
       action: "Expert Help"
     }
   ];
@@ -80,11 +80,11 @@ export default function UrgentRepairsPage() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center mb-4">
-            <AlertTriangle className="w-8 h-8 text-primary mr-3" />
-            <Badge variant="default" className="text-lg px-4 py-2">Same-Day Urgent Repairs</Badge>
+            <Clock className="w-8 h-8 text-primary mr-3" />
+            <Badge variant="default" className="text-lg px-4 py-2">Same-Day Priority Repairs</Badge>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-            Urgent Building Repairs? We Prioritize Your Safety
+            Priority Building Repairs? Professional Response When You Need It
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             When structural issues require urgent attention, our qualified team prioritizes your repair 
@@ -101,7 +101,7 @@ export default function UrgentRepairsPage() {
             <Phone className="w-12 h-12 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">Priority Repairs Line</h2>
             <div className="text-3xl font-bold mb-4">0414 922 276</div>
-            <p className="text-sm opacity-90">Same-day response for urgent structural issues</p>
+            <p className="text-sm opacity-90">Same-day response for priority structural issues</p>
           </motion.div>
         </motion.div>
 
@@ -115,7 +115,7 @@ export default function UrgentRepairsPage() {
           <div className="text-center mb-8">
             <Clock className="w-12 h-12 mx-auto mb-4" />
             <h2 className="text-3xl font-bold">Priority Repair Response</h2>
-            <p className="opacity-90 mt-2">Professional help when structural issues need urgent attention</p>
+            <p className="opacity-90 mt-2">Professional help when structural issues need priority attention</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -149,7 +149,7 @@ export default function UrgentRepairsPage() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Shield className="w-6 h-6 text-primary" />
-                  <span>Urgent Repair Process</span>
+                  <span>Priority Repair Process</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -178,8 +178,8 @@ export default function UrgentRepairsPage() {
             <Card className="border-primary/20">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2 text-primary">
-                  <AlertTriangle className="w-6 h-6" />
-                  <span>When to Call for Urgent Repairs</span>
+                  <Clock className="w-6 h-6" />
+                  <span>When to Call for Priority Repairs</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -189,7 +189,7 @@ export default function UrgentRepairsPage() {
                 <div className="space-y-3">
                   {warningsSigns.map((sign, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-sm">{sign}</span>
                     </div>
                   ))}
@@ -214,11 +214,11 @@ export default function UrgentRepairsPage() {
         >
           <Card>
             <CardHeader className="text-center">
-              <CardTitle>Urgent Repair Service Coverage</CardTitle>
+              <CardTitle>Priority Repair Service Coverage</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-center text-muted-foreground mb-6">
-                Same-day urgent repair response available across all Sydney metropolitan areas
+                Same-day priority repair response available across all Sydney metropolitan areas
               </p>
               <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                 {[
@@ -245,7 +245,7 @@ export default function UrgentRepairsPage() {
           transition={{ delay: 0.7 }}
           className="text-center bg-primary rounded-2xl p-8 text-primary-foreground"
         >
-          <AlertTriangle className="w-16 h-16 mx-auto mb-4 opacity-80" />
+          <Clock className="w-16 h-16 mx-auto mb-4 opacity-80" />
           <h2 className="text-3xl font-bold mb-4">Don't Delay - Call Today</h2>
           <p className="text-lg mb-6 opacity-90">
             Structural issues can worsen over time. Get professional help when you need it most.

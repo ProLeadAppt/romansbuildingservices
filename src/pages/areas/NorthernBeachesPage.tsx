@@ -14,7 +14,7 @@ const NorthernBeachesPage = () => {
     'Concrete Cancer Treatment',
     'Heritage Beach House Restoration',
     'Foundation Stabilization',
-    'Emergency Storm Damage Repairs'
+    'Priority Storm Damage Repairs'
   ];
 
   const suburbs = [
@@ -168,7 +168,7 @@ const NorthernBeachesPage = () => {
                   </p>
                   <div className="flex gap-2">
                     <Badge variant="secondary">Foundation Repair</Badge>
-                    <Badge variant="secondary">Emergency Service</Badge>
+                    <Badge variant="secondary">Priority Service</Badge>
                   </div>
                 </CardContent>
               </Card>

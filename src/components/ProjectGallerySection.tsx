@@ -53,9 +53,9 @@ export const ProjectGallerySection = () => {
       year: '2023',
       budget: '$65,000',
       category: 'Repairs',
-      description: 'Emergency structural repairs and waterproofing for a luxury waterfront apartment building.',
+      description: 'Priority structural repairs and waterproofing for a luxury waterfront apartment building.',
       images: [beforeAfterImage, beforeAfterShowcase, professionalTeam],
-      features: ['Emergency crack repairs', 'Advanced waterproofing', 'Balcony restoration', 'Ocean-resistant materials'],
+      features: ['Priority crack repairs', 'Advanced waterproofing', 'Balcony restoration', 'Ocean-resistant materials'],
       duration: '6 weeks',
       challenge: 'Working in occupied building with saltwater exposure challenges',
       solution: 'Phased construction with marine-grade protective coatings'

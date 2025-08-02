@@ -322,7 +322,7 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
                   <Label htmlFor="urgency">Project Urgency</Label>
                   <div className="mt-2 grid grid-cols-1 gap-2">
                     {[
-                      { value: 'emergency', label: 'Emergency', desc: '24-48 hours', color: 'destructive' },
+                      { value: 'priority', label: 'Priority', desc: '24-48 hours', color: 'primary' },
                       { value: 'urgent', label: 'Urgent', desc: '1-2 weeks', color: 'orange' },
                       { value: 'standard', label: 'Standard', desc: '1-2 months', color: 'primary' },
                       { value: 'planning', label: 'Planning', desc: 'Future project', color: 'muted' }

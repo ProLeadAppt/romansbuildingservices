@@ -29,7 +29,7 @@ export const InteractiveServicesSection = () => {
       icon: Shield,
       title: 'Structural Repairs',
       shortDesc: 'Critical structural solutions',
-      fullDesc: 'Emergency and planned structural repairs including crack remediation, foundation work, and load-bearing modifications.',
+      fullDesc: 'Priority and planned structural repairs including crack remediation, foundation work, and load-bearing modifications.',
       features: ['Foundation repairs', 'Crack injection', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
       image: '/api/placeholder/400/300'
     },
@@ -54,7 +54,7 @@ export const InteractiveServicesSection = () => {
       title: 'Maintenance Services',
       shortDesc: 'Ongoing building care',
       fullDesc: 'Regular maintenance programs to keep your building in optimal condition. Preventive care that saves money long-term.',
-      features: ['Scheduled maintenance', 'Preventive repairs', 'Annual inspections', 'Emergency callouts', 'Warranty programs', 'Building compliance'],
+      features: ['Scheduled maintenance', 'Preventive repairs', 'Annual inspections', 'Priority callouts', 'Warranty programs', 'Building compliance'],
       image: '/api/placeholder/400/300'
     }
   ];

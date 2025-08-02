@@ -108,12 +108,12 @@ export const BusinessHours: React.FC<{ className?: string }> = ({ className = ''
         {days.map(({ day, hours }) => (
           <div key={day} className="flex justify-between">
             <span>{day}:</span>
-            <span className={hours === 'Emergency Only' ? 'text-orange-600' : ''}>{hours}</span>
+            <span className={hours === 'Priority Only' ? 'text-orange-600' : ''}>{hours}</span>
           </div>
         ))}
       </div>
       <div className="mt-3 text-xs text-muted-foreground">
-        * Emergency services available 24/7
+        * Priority services available
       </div>
     </div>
   );
@@ -181,7 +181,7 @@ export const QuickContactBar: React.FC = () => {
         </div>
         <div className="flex items-center space-x-4 mt-2 sm:mt-0">
           <span>✅ Licensed & Insured</span>
-          <span>⚡ 24/7 Emergency Service</span>
+          <span>⚡ Same-Day Response</span>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ export const BUSINESS_INFO = {
     thursday: "07:00-18:00",
     friday: "07:00-18:00",
     saturday: "08:00-16:00",
-    sunday: "Emergency Only"
+    sunday: "Priority Only"
   },
   established: "1995",
   licenseNumber: "NSW123456", // Replace with actual license

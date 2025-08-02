@@ -65,7 +65,7 @@ export default function ContactPage() {
                     <option>Restoration</option>
                     <option>Remedial Building</option>
                     <option>Structural Repairs</option>
-                    <option>Emergency Service</option>
+                    <option>Priority Service</option>
                   </select>
                 </div>
                 
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     0414 922 276
                   </a>
                   <p className="text-muted-foreground mt-2">
-                    Available 24/7 for emergency services
+                    Available 24/7 for priority services
                   </p>
                 </CardContent>
               </Card>
@@ -155,10 +155,10 @@ export default function ContactPage() {
                     </div>
                     <div className="flex justify-between">
                       <span>Sunday:</span>
-                      <span className="font-semibold">Emergency Only</span>
+                      <span className="font-semibold">Priority Only</span>
                     </div>
                     <div className="flex justify-between text-primary font-semibold">
-                      <span>Emergency:</span>
+                      <span>Priority:</span>
                       <span>24/7 Available</span>
                     </div>
                   </div>

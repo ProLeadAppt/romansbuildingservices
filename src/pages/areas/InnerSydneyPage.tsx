@@ -10,7 +10,7 @@ export default function InnerSydneyPage() {
     "Heritage Terrace Restoration",
     "Commercial Building Maintenance", 
     "High-Density Apartment Repairs",
-    "Emergency Building Services",
+    "Priority Building Services",
     "Strata Building Solutions",
     "City Building Compliance"
   ];
@@ -24,7 +24,7 @@ export default function InnerSydneyPage() {
   const stats = [
     { number: "200+", label: "Inner Sydney Projects" },
     { number: "10+", label: "Years Local Experience" },
-    { number: "24/7", label: "Emergency Response" },
+    { number: "24/7", label: "Professional Service" },
     { number: "100%", label: "Council Compliance" }
   ];
 
@@ -146,7 +146,7 @@ export default function InnerSydneyPage() {
                 <p className="text-muted-foreground text-lg mb-6">
                   Average response time for calls in Inner Sydney
                 </p>
-                <Button className="w-full">Get Emergency Service</Button>
+                <Button className="w-full">Contact Us</Button>
               </CardContent>
             </Card>
           </div>

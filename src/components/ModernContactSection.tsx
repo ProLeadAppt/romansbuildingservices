@@ -72,7 +72,7 @@ export const ModernContactSection = () => {
       title: 'Professional Service Line',
       content: '0414 922 276',
       action: 'tel:0414922276',
-      description: 'All inquiries, quotes and emergency responses',
+      description: 'All inquiries, quotes and priority responses',
       color: 'text-primary',
       bgColor: 'bg-primary/10'
     },
@@ -95,8 +95,8 @@ export const ModernContactSection = () => {
   const businessHours = [
     { day: 'Monday - Friday', hours: '7:00 AM - 6:00 PM' },
     { day: 'Saturday', hours: '8:00 AM - 4:00 PM' },
-    { day: 'Sunday', hours: 'Emergency calls only' },
-    { day: 'Public Holidays', hours: 'Emergency calls only' }
+    { day: 'Sunday', hours: 'Priority calls only' },
+    { day: 'Public Holidays', hours: 'Priority calls only' }
   ];
 
   const priorityFeatures = [

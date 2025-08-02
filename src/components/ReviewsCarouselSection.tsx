@@ -36,9 +36,9 @@ export const ReviewsCarouselSection = () => {
       location: 'Manly, Sydney',
       date: 'January 2024',
       rating: 5,
-      title: 'Emergency Response Excellence',
-      content: 'When we had structural damage from storms, Romans Building Services responded within hours. Their emergency repair work was swift and thorough. They really saved our property from further damage.',
-      project: 'Emergency Structural Repairs',
+      title: 'Priority Response Excellence',
+      content: 'When we had structural damage from storms, Romans Building Services responded within hours. Their priority repair work was swift and thorough. They really saved our property from further damage.',
+      project: 'Priority Structural Repairs',
       avatar: '/api/placeholder/60/60'
     },
     {

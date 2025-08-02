@@ -59,8 +59,8 @@ export const useSmartDefaults = () => {
         popular: false
       },
       {
-        value: 'emergency',
-        label: 'Emergency Repairs',
+        value: 'priority',
+        label: 'Priority Repairs',
         desc: 'Urgent safety issues',
         popular: false
       }
