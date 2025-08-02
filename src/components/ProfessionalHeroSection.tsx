@@ -160,7 +160,7 @@ export const ProfessionalHeroSection = () => {
               textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8), 0 0 25px rgba(0,0,0,0.6)',
               WebkitTextStroke: '1px rgba(0,0,0,0.3)'
             }}>
-                Sydney's #1
+                Established Sydney
                 <br />
                 <span className="morphing-text font-bold relative bg-black/80 px-4 py-2 rounded-lg backdrop-blur-md text-white" style={{
                 textShadow: '2px 2px 4px rgba(0,0,0,1)'
@@ -170,8 +170,8 @@ export const ProfessionalHeroSection = () => {
               <p className="text-lg sm:text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
               textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
             }}>
-                Professional masonry, restoration & structural solutions. 
-                <span className="text-secondary font-semibold"> Get your FREE $500 assessment today.</span>
+                Comprehensive masonry, restoration & structural solutions. 
+                <span className="text-secondary font-semibold"> Building assessment and quote available.</span>
               </p>
             </motion.div>
 
@@ -191,11 +191,11 @@ export const ProfessionalHeroSection = () => {
                 <div className="text-xs sm:text-sm text-white/80">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-secondary">100%</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">High</div>
                 <div className="text-xs sm:text-sm text-white/80">Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-secondary">2hr</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">Prompt</div>
                 <div className="text-xs sm:text-sm text-white/80">Response</div>
               </div>
             </motion.div>
@@ -217,7 +217,7 @@ export const ProfessionalHeroSection = () => {
               scale: 0.98
             }}>
                 <Button size="lg" className="w-full text-base sm:text-lg px-6 sm:px-12 py-6 sm:py-8 hover-glow-strong bg-gradient-to-r from-secondary to-secondary/90 text-white font-bold micro-interaction" onClick={() => setShowAssessmentPopup(true)}>
-                  Get FREE $500 Assessment
+                  Get Assessment
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </motion.div>
@@ -281,11 +281,11 @@ export const ProfessionalHeroSection = () => {
                 <div className="text-center space-y-2 sm:space-y-3">
                   <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-secondary">
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
-                    <span className="text-sm sm:text-base font-semibold">FREE Assessment</span>
+                    <span className="text-sm sm:text-base font-semibold">Building Assessment</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Worth $500 - Completely Free</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Assessment & Quote</h3>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    Get your professional quote within 24 hours
+                    Professional evaluation and quote within 24 hours
                   </p>
                 </div>
 
@@ -329,13 +329,13 @@ export const ProfessionalHeroSection = () => {
 
                   <Button type="submit" size="lg" disabled={isSubmitting} className="w-full text-base sm:text-lg py-4 sm:py-6 button-shadow bg-gradient-to-r from-primary to-primary/90">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    {isSubmitting ? 'Submitting...' : 'Get My FREE Assessment'}
+                    {isSubmitting ? 'Submitting...' : 'Get Assessment'}
                   </Button>
                 </form>
 
                 <div className="space-y-4">
                   <div className="text-center pt-4 border-t space-y-3">
-                    <p className="text-sm font-semibold text-primary">✓ No obligation ✓ 2-hour response ✓ Licensed professionals</p>
+                    <p className="text-sm font-semibold text-primary">✓ No obligation ✓ Prompt response ✓ Licensed professionals</p>
                     <div className="flex items-center justify-center space-x-4 text-sm">
                       <div className="flex items-center space-x-1">
                         <Phone className="w-4 h-4 text-primary" />
@@ -362,8 +362,8 @@ export const ProfessionalHeroSection = () => {
                         />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-foreground">Personal Guarantee</p>
-                        <p className="text-xs text-muted-foreground">"I personally oversee every project to ensure exceptional quality." - Minas</p>
+                        <p className="text-sm font-medium text-foreground">Our Commitment</p>
+                        <p className="text-xs text-muted-foreground">"I personally oversee every project to ensure quality results." - Minas</p>
                       </div>
                     </div>
                   </div>

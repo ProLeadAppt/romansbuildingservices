@@ -24,10 +24,10 @@ export const CleanHeroSection = () => {
   };
 
   const stats = [
-    { number: '1000+', label: 'Projects Completed' },
+    { number: 'Over 1000', label: 'Projects Completed' },
     { number: '25+', label: 'Years Experience' },
-    { number: '100%', label: 'Satisfaction Rate' },
-    { number: '2hr', label: 'Response Time' }
+    { number: 'High', label: 'Customer Satisfaction' },
+    { number: 'Prompt', label: 'Response Times' }
   ];
 
   return (
@@ -64,14 +64,14 @@ export const CleanHeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                <span className="gradient-text">Sydney's Premier</span>
+                <span className="gradient-text">Established Sydney</span>
                 <br />
                 Building Specialists
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-lg">
-                Expert masonry, restoration & structural solutions. 
-                <span className="text-primary font-semibold"> Licensed, insured & trusted since 1995.</span>
+                Comprehensive masonry, restoration & structural solutions. 
+                <span className="text-primary font-semibold"> Licensed, insured & established since 1995.</span>
               </p>
             </div>
 
@@ -84,10 +84,10 @@ export const CleanHeroSection = () => {
                 <Star className="w-5 h-5 text-secondary fill-current" />
               </div>
               <h3 className="text-2xl font-bold text-secondary">
-                FREE Assessment + 15% Off First Project
+                Building Assessment + Quote
               </h3>
               <p className="text-muted-foreground">
-                Get expert evaluation worth $300 absolutely free. Plus save 15% on your first project when you book this month.
+                Comprehensive evaluation and detailed quote for your project.
               </p>
             </div>
 
@@ -108,7 +108,7 @@ export const CleanHeroSection = () => {
                 className="text-lg px-8 py-6 button-shadow hover-lift"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Get Free Assessment
+                Get Assessment
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               
@@ -140,9 +140,9 @@ export const CleanHeroSection = () => {
             <Card className="card-shadow border-primary/20">
               <CardContent className="p-8 space-y-6">
                 <div className="text-center space-y-2">
-                  <h3 className="text-2xl font-bold">Get Your Free Assessment</h3>
+                  <h3 className="text-2xl font-bold">Get Your Assessment</h3>
                   <p className="text-muted-foreground">
-                    Expert evaluation + detailed quote within 24 hours
+                    Property evaluation + detailed quote within 24 hours
                   </p>
                 </div>
 
@@ -201,7 +201,7 @@ export const CleanHeroSection = () => {
                     className="w-full text-lg py-6 button-shadow"
                   >
                     <CheckCircle className="w-5 h-5 mr-2" />
-                    Get Free Assessment
+                    Get Assessment
                   </Button>
                 </form>
 

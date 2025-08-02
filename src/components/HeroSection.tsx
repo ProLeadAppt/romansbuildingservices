@@ -104,24 +104,24 @@ export const HeroSection = () => {
                 Professional Structural Solutions
                 <span className="block text-yellow-400">For Sydney Homes</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-6">
-                Protect Your Home's Value with Sydney's Most Trusted Building Experts Since 1995
+            <p className="text-xl md:text-2xl text-gray-200 mb-6">
+                Established Sydney Building Specialists Since 1995
               </p>
             </div>
 
             {/* Professional Offer */}
             <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black p-6 rounded-xl">
-              <div className="text-sm font-bold uppercase tracking-wide mb-2">Professional Service</div>
-              <div className="text-2xl md:text-3xl font-bold mb-2">Complimentary Structural Assessment</div>
-              <div className="text-lg font-semibold mb-2">Professional Evaluation of Your Property</div>
-              <div className="text-sm">Expert Analysis • Same Day Response • No Obligation</div>
+              <div className="text-sm font-bold uppercase tracking-wide mb-2">Building Assessment</div>
+              <div className="text-2xl md:text-3xl font-bold mb-2">Building Assessment & Quote</div>
+              <div className="text-lg font-semibold mb-2">Property Evaluation Service</div>
+              <div className="text-sm">Detailed Analysis • Prompt Response • No Obligation</div>
             </div>
 
             {/* Primary CTA */}
             <div className="space-y-4">
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white text-xl px-10 py-6 h-auto w-full sm:w-auto font-bold">
                 <Calendar className="mr-3 h-6 w-6" />
-                Schedule Your Professional Assessment
+                Schedule Your Assessment
               </Button>
               
               {/* Phone Number - Prominent */}
@@ -130,7 +130,7 @@ export const HeroSection = () => {
                 <a href="tel:0414922276" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
                   0414 922 276
                 </a>
-                <span className="text-sm text-gray-300">Professional Service</span>
+                <span className="text-sm text-gray-300">Contact us</span>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ export const HeroSection = () => {
                 <div className="text-xs text-gray-300">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400">100%</div>
+                <div className="text-2xl font-bold text-yellow-400">✓</div>
                 <div className="text-xs text-gray-300">Licensed & Insured</div>
               </div>
               <div className="text-center">

@@ -8,7 +8,7 @@ export const FAQSection = () => {
     },
     {
       question: "Do you provide free estimates?",
-      answer: "Yes, we provide completely free, no-obligation estimates for all projects. Our experienced team will assess your property, explain the required work, and provide a detailed written quote with transparent pricing."
+      answer: "Yes, we provide no-obligation estimates for all projects. Our team will assess your property, explain the required work, and provide a detailed written quote with transparent pricing."
     },
     {
       question: "Are you licensed and insured?",
@@ -16,11 +16,11 @@ export const FAQSection = () => {
     },
     {
       question: "What warranty do you offer on your work?",
-      answer: "We offer comprehensive warranties on all our work - up to lifetime warranties on certain services. Our warranty covers both materials and workmanship, giving you complete peace of mind."
+      answer: "We offer warranties on all our work - comprehensive warranties available on certain services. Our warranty covers both materials and workmanship."
     },
     {
       question: "How much will my project cost?",
-      answer: "Project costs vary based on scope and complexity. We provide detailed, transparent quotes after our complimentary assessment. Our competitive pricing reflects quality workmanship and materials. Early intervention often helps manage costs more effectively than delaying necessary repairs."
+      answer: "Project costs vary based on scope and complexity. We provide detailed, transparent quotes after our assessment. Our pricing reflects quality workmanship and materials, and we'll explain all costs clearly before starting work."
     },
     {
       question: "Can you work on heritage buildings?",

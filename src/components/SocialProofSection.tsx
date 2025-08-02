@@ -14,7 +14,7 @@ const stats = [
   },
   {
     icon: CheckCircle,
-    number: "100%",
+    number: "✓",
     label: "Licensed & Insured"
   },
   {
@@ -29,25 +29,25 @@ const testimonials = [
     name: "Sarah Mitchell",
     location: "Sydney CBD",
     rating: 5,
-    text: "Romans Building Services saved us thousands by catching structural issues early. Their quick response prevented what could have been a $50,000 major repair. Our property value actually increased after their work!"
+    text: "Romans Building Services identified structural issues early and provided effective solutions. Their prompt response and quality work gave us peace of mind about our property's condition."
   },
   {
     name: "Michael Thompson", 
     location: "North Shore",
     rating: 5,
-    text: "We were quoted $25,000 elsewhere, but Romans found the root cause and fixed it properly for half the price. Two years later, no issues. They prevented major structural damage to our heritage home."
+    text: "Romans provided a comprehensive solution that addressed the root cause of our building issues. Two years later, no problems. Their expertise with heritage buildings was exactly what we needed."
   },
   {
     name: "Lisa Chen",
     location: "Eastern Suburbs", 
     rating: 5,
-    text: "Emergency waterproofing service saved our apartment building from collapse. Three previous contractors failed, but Romans solved it permanently. Worth every penny for the peace of mind and safety."
+    text: "Romans provided effective waterproofing solutions for our apartment building when previous contractors couldn't resolve the issue. Their thorough approach gave us confidence in the long-term results."
   },
   {
     name: "James Wilson",
     location: "Inner West",
     rating: 5,
-    text: "Professional assessment revealed hidden structural damage that would have cost us $80,000 if left untreated. Romans fixed it early for under $15,000. Excellent investment in our home's future."
+    text: "The assessment revealed structural issues that needed attention. Romans addressed these concerns effectively and professionally, providing good value for the work completed."
   }
 ];
 
@@ -62,7 +62,7 @@ export const SocialProofSection = () => {
             Trusted by 1,000+ Sydney Homeowners Since 1995
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Romans Building Services has saved Sydney homeowners millions in prevented damage. Fully licensed, insured, and continuously trained to 2025 industry standards - delivering lasting solutions that protect your investment.
+            Romans Building Services has helped over 1,000 Sydney homeowners with building solutions. Fully licensed, insured, and trained to current industry standards - delivering quality solutions for your property.
           </p>
         </div>
 

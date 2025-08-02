@@ -49,7 +49,7 @@ export const ServicesSection = () => {
             Complete Building Solutions Since 1995
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Romans Building Services specializes in masonry, restoration, and remedial building works across Sydney. Our qualified professionals deliver lasting solutions backed by 24+ years of expertise.
+            Romans Building Services specializes in masonry, restoration, and remedial building works across Sydney. Our qualified professionals provide comprehensive solutions with 24+ years of experience.
           </p>
         </div>
 
@@ -75,10 +75,10 @@ export const ServicesSection = () => {
 
         <div className="text-center">
           <Button size="lg" className="bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold px-8 py-6 text-lg cta-shadow">
-            Request Professional Assessment
+            Request Assessment
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
-            Complimentary professional inspection • No obligation • Quality service guarantee
+            Property inspection • No obligation • Licensed professionals
           </p>
         </div>
       </div>
