@@ -21,11 +21,11 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     if (customTitle) return customTitle;
     
     const baseTitles = {
-      home: `Professional Masonry & Building Services Sydney | ${BUSINESS_INFO.name}`,
-      services: `${service || 'Building Services'} Sydney | Licensed Professionals | ${BUSINESS_INFO.name}`,
-      about: `About ${BUSINESS_INFO.name} | 25+ Years Building Experience Sydney`,
-      contact: `Contact ${BUSINESS_INFO.name} | Sydney Building Specialists | Free Quotes`,
-      projects: `Sydney Building Projects | ${BUSINESS_INFO.name} Portfolio`
+      home: `Professional Stonework & Masonry Services Sydney | ${BUSINESS_INFO.name}`,
+      services: `${service || 'Stonework Services'} Sydney | Licensed Stonemasons | ${BUSINESS_INFO.name}`,
+      about: `About ${BUSINESS_INFO.name} | 25+ Years Stonework Experience Sydney`,
+      contact: `Contact ${BUSINESS_INFO.name} | Sydney Stonework Specialists | Free Quotes`,
+      projects: `Sydney Stonework Projects | ${BUSINESS_INFO.name} Portfolio`
     };
 
     let title = baseTitles[page];
@@ -41,11 +41,11 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     if (customDescription) return customDescription;
     
     const baseDescriptions = {
-      home: `Professional masonry, building restoration & structural repairs in Sydney. Licensed specialists with 25+ years experience. Heritage buildings, waterproofing, brick repairs. Call ${BUSINESS_INFO.phone} for free assessment.`,
-      services: `Expert ${service || 'building services'} in Sydney. Licensed professionals specializing in heritage restoration, structural repairs, waterproofing. 25+ years experience. Free quotes available.`,
-      about: `${BUSINESS_INFO.name} - Sydney's trusted building specialists since ${BUSINESS_INFO.established}. Licensed masonry experts, heritage restoration specialists. Professional, reliable, fully insured.`,
-      contact: `Contact ${BUSINESS_INFO.name} for professional building services in Sydney. Licensed specialists in masonry, restoration, repairs. Call ${BUSINESS_INFO.phone} or request free quote online.`,
-      projects: `View our Sydney building projects portfolio. Heritage restorations, masonry work, structural repairs. 25+ years experience with satisfied customers across Sydney.`
+      home: `Professional stonework, masonry restoration & structural repairs in Sydney. Licensed stonemasons with 25+ years experience. Heritage buildings, stone repairs, brick pointing. Call ${BUSINESS_INFO.phone} for free assessment.`,
+      services: `Expert ${service || 'stonework services'} in Sydney. Licensed stonemasons specializing in heritage restoration, structural repairs, stone masonry. 25+ years experience. Free quotes available.`,
+      about: `${BUSINESS_INFO.name} - Sydney's trusted stonemasons since ${BUSINESS_INFO.established}. Licensed stonework experts, heritage restoration specialists. Professional, reliable, fully insured.`,
+      contact: `Contact ${BUSINESS_INFO.name} for professional stonework services in Sydney. Licensed stonemasons in masonry, restoration, repairs. Call ${BUSINESS_INFO.phone} or request free quote online.`,
+      projects: `View our Sydney stonework projects portfolio. Heritage restorations, stone masonry work, structural repairs. 25+ years experience with satisfied customers across Sydney.`
     };
 
     return baseDescriptions[page];
@@ -53,14 +53,15 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
 
   const generateKeywords = () => {
     const baseKeywords = [
-      'masonry Sydney',
-      'building restoration Sydney', 
-      'structural repairs Sydney',
-      'heritage building restoration',
-      'waterproofing Sydney',
+      'stonemason Sydney',
+      'stone masonry Sydney',
+      'stonework restoration Sydney', 
+      'structural stone repairs Sydney',
+      'heritage stonework restoration',
+      'stone pointing Sydney',
       'brick repairs Sydney',
-      'licensed masonry contractor Sydney',
-      'building assessment Sydney'
+      'licensed stonemason Sydney',
+      'stone assessment Sydney'
     ];
 
     if (service) {
@@ -68,7 +69,7 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     }
 
     if (location) {
-      baseKeywords.push(`masonry ${location}`, `building services ${location}`);
+      baseKeywords.push(`stonemason ${location}`, `stonework services ${location}`);
     }
 
     return baseKeywords.join(', ');

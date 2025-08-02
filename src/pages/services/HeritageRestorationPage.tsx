@@ -31,7 +31,7 @@ export default function HeritageRestorationPage() {
             <div>
               <Badge className="mb-4">Heritage Conservation Specialists</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Expert Heritage Building Restoration
+                Expert Heritage Stonework Restoration
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Preserving Sydney's architectural heritage with authentic conservation techniques. 

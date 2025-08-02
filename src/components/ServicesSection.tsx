@@ -46,10 +46,10 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Complete Building Solutions Since 1995
+            Master Stonework Solutions Since 1995
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Romans Building Services specializes in masonry, restoration, and remedial building works across Sydney. Our qualified professionals provide comprehensive solutions with 24+ years of experience.
+            Romans Building Services specializes in professional stonework, masonry, and restoration across Sydney. Our qualified stonemasons provide comprehensive solutions with 24+ years of experience.
           </p>
         </div>
 

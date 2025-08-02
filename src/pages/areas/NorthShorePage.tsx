@@ -35,11 +35,11 @@ const NorthShorePage = () => {
               North Shore Specialists
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Premium Building Services
+              Premium Stonework Services
               <span className="text-primary block">North Shore Sydney</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Expert building restoration and structural repairs across Sydney's prestigious North Shore. 
+              Expert stonework restoration and structural repairs across Sydney's prestigious North Shore. 
               From heritage homes in Mosman to modern developments in Chatswood.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -60,10 +60,10 @@ const NorthShorePage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Why North Shore Residents Choose Romans Building
+              Why North Shore Residents Choose Romans Stonework
             </h2>
             <p className="text-lg text-muted-foreground">
-              Deep understanding of North Shore architecture, local council requirements, and heritage preservation
+              Deep understanding of North Shore architecture, local council requirements, and heritage stone preservation
             </p>
           </div>
           
@@ -115,7 +115,7 @@ const NorthShorePage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Comprehensive Building Services
+              Comprehensive Stonework Services
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -148,9 +148,9 @@ const NorthShorePage = () => {
             
             <Card className="text-left">
               <CardHeader>
-                <CardTitle>North Shore Building Expertise</CardTitle>
+                <CardTitle>North Shore Stonework Expertise</CardTitle>
                 <CardDescription>
-                  Specialized services for the unique challenges of North Shore properties
+                  Specialized stonework services for the unique challenges of North Shore properties
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -188,8 +188,8 @@ const NorthShorePage = () => {
             Ready to Enhance Your North Shore Property?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Contact Romans Building Services for premium building solutions across the North Shore. 
-            Expert craftsmanship that matches your expectations.
+            Contact Romans Building Services for premium stonework solutions across the North Shore. 
+            Expert stone craftsmanship that matches your expectations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">

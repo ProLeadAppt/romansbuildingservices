@@ -32,14 +32,14 @@ const NorthernBeachesPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">
               <Waves className="w-4 h-4 mr-2" />
-              Coastal Building Experts
+              Coastal Stonework Specialists
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Expert Coastal Building Services
+              Expert Coastal Stonework Services
               <span className="text-primary block">Northern Beaches</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Specialized building restoration and structural repairs for Northern Beaches properties. 
+              Specialized stonework restoration and structural repairs for Northern Beaches properties. 
               Expert solutions for coastal weathering, salt damage, and marine environment challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -60,10 +60,10 @@ const NorthernBeachesPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Coastal Building Challenges We Solve
+              Coastal Stonework Challenges We Solve
             </h2>
             <p className="text-lg text-muted-foreground">
-              The Northern Beaches marine environment presents unique challenges that require specialized expertise
+              The Northern Beaches marine environment presents unique challenges that require specialized stonework expertise
             </p>
           </div>
           
@@ -115,7 +115,7 @@ const NorthernBeachesPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Specialized Coastal Building Services
+              Specialized Coastal Stonework Services
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -195,9 +195,9 @@ const NorthernBeachesPage = () => {
             
             <Card className="text-left">
               <CardHeader>
-                <CardTitle>Northern Beaches Building Solutions</CardTitle>
+                <CardTitle>Northern Beaches Stonework Solutions</CardTitle>
                 <CardDescription>
-                  Tailored services for the unique coastal environment
+                  Tailored stonework services for the unique coastal environment
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -236,7 +236,7 @@ const NorthernBeachesPage = () => {
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Don't let coastal weathering damage your Northern Beaches property. 
-            Expert coastal building solutions with guaranteed results.
+            Expert coastal stonework solutions with guaranteed results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">

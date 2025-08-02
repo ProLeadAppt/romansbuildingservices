@@ -31,7 +31,7 @@ export default function AssessmentPage() {
 
   const benefits = [
     { icon: Search, title: "Thorough Inspection", description: "Comprehensive 360-degree property evaluation" },
-    { icon: Clock, title: "Fast Turnaround", description: "Same-day preliminary report available" },
+    { icon: Clock, title: "Fast Turnaround", description: "48-72 hour preliminary report available" },
     { icon: CheckCircle, title: "Licensed Assessor", description: "Qualified building professionals only" },
     { icon: AlertTriangle, title: "Risk Identification", description: "Early detection of potential issues" }
   ];
@@ -47,10 +47,10 @@ export default function AssessmentPage() {
         >
           <Badge className="mb-4">Professional Assessment</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Book Your Building Assessment
+            Book Your Stonework Assessment
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get expert evaluation of your property's condition with our comprehensive building 
+            Get expert evaluation of your property's stonework condition with our comprehensive stone 
             assessment service. Identify issues early and plan your maintenance with confidence.
           </p>
         </motion.div>
@@ -205,7 +205,7 @@ export default function AssessmentPage() {
                     {[
                       "Thermal imaging inspection",
                       "Detailed photographic report", 
-                      "Urgent priority assessment",
+                      "Priority assessment (48-72hrs)",
                       "Engineer consultation",
                       "Heritage specialist report",
                       "Insurance claim documentation"
@@ -257,7 +257,7 @@ export default function AssessmentPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  For priority structural concerns or safety issues, call us immediately for priority assessment.
+                  For structural concerns or safety issues, call us for prompt professional assessment.
                 </p>
                 <Button variant="destructive" className="w-full">
                   <Phone className="w-4 h-4 mr-2" />

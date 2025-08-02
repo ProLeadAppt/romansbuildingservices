@@ -64,10 +64,10 @@ export const InteractiveServicesSection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold">
-          Expert <span className="gradient-text">Building Solutions</span>
+          Expert <span className="gradient-text">Stonework & Masonry</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          From heritage restoration to modern construction, we deliver exceptional results across all building disciplines.
+          From heritage restoration to modern stonework, we deliver exceptional results across all masonry disciplines.
         </p>
       </motion.div>
 

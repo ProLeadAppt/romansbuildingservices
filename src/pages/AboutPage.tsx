@@ -22,8 +22,8 @@ export default function AboutPage() {
     },
     {
       icon: Award,
-      title: "Expert Craftsmanship",
-      description: "Skilled tradesmen with decades of experience in building and restoration"
+      title: "Expert Stone Craftsmanship",
+      description: "Skilled stonemasons with decades of experience in stonework and restoration"
     },
     {
       icon: Users,
@@ -56,12 +56,12 @@ export default function AboutPage() {
         >
           <Badge className="mb-4">About Romans Building Services</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Sydney's Trusted Masonry Specialists Since 1995
+            Sydney's Trusted Master Stonemasons Since 1995
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             For over 25 years, Romans Building Services has been Sydney's go-to choice for 
-            professional masonry, restoration, and structural repairs. Family-owned and operated 
-            with an unwavering commitment to quality.
+            professional stonework, masonry, and restoration. Family-owned and operated 
+            with an unwavering commitment to quality stone craftsmanship.
           </p>
         </motion.div>
 
@@ -93,19 +93,19 @@ export default function AboutPage() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Romans Building Services was founded in 1995 with a simple mission: to provide 
-                Sydney with the highest quality building and restoration services. What started 
-                as a small family business has grown into Sydney's most trusted name in structural 
-                repairs and heritage restoration.
+                Sydney with the highest quality stonework and restoration services. What started 
+                as a small family business has grown into Sydney's most trusted name in stone masonry 
+                and heritage restoration.
               </p>
               <p>
-                Our founder, with over three decades of experience in the building industry, 
-                established the company on the principles of quality craftsmanship, honest pricing, 
+                Our founder, with over three decades of experience in stone craftsmanship, 
+                established the company on the principles of quality stonework, honest pricing, 
                 and exceptional customer service. These values continue to guide everything we do today.
               </p>
               <p>
-                Today, we're proud to be a fully licensed, insured, and certified masonry contractor company 
+                Today, we're proud to be a fully licensed, insured, and certified stonemason company 
                 serving residential and commercial clients across greater Sydney. Our team of 
-                skilled bricklayers and masonry specialists brings together traditional craftsmanship with modern techniques 
+                skilled stonemasons and stone specialists brings together traditional stone craftsmanship with modern techniques 
                 to deliver results that last.
               </p>
             </div>
