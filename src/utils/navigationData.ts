@@ -116,28 +116,16 @@ export const serviceCategories: ServiceCategory[] = [
     ]
   },
   {
-    id: 'protection',
-    label: 'Protection & Prevention',
-    description: 'Waterproofing and preventive building care',
+    id: 'remedial',
+    label: 'Remedial Building',
+    description: 'Building defect rectification and remedial work',
     icon: 'Shield',
     services: [
-      {
-        id: 'waterproofing',
-        label: 'Waterproofing',
-        href: '/services/waterproofing',
-        description: 'Advanced waterproofing and leak prevention'
-      },
       {
         id: 'remedial',
         label: 'Remedial Building',
         href: '/services/remedial-building',
         description: 'Building defect rectification and remedial work'
-      },
-      {
-        id: 'inspections',
-        label: 'Building Inspections',
-        href: '/services/inspections',
-        description: 'Professional building assessments and reports'
       }
     ]
   }

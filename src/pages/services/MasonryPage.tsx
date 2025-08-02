@@ -8,7 +8,7 @@ export default function MasonryPage() {
   const services = [
     "Brick Pointing & Repointing",
     "Stone Masonry Repairs", 
-    "Chimney Repairs & Rebuilding",
+    "Structural Brickwork",
     "Retaining Wall Construction",
     "Brick & Block Work",
     "Heritage Masonry Restoration"

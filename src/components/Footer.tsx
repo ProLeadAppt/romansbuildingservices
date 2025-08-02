@@ -33,9 +33,9 @@ export const Footer = () => {
               <li>Masonry & Brickwork</li>
               <li>Structural Restoration</li>
               <li>Remedial Building</li>
-              <li>Waterproofing & Damp</li>
               <li>Heritage Conservation</li>
-              <li>Building Inspections</li>
+              <li>Foundation Repairs</li>
+              <li>Concrete Repairs</li>
             </ul>
           </div>
 

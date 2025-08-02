@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Award, CheckCircle, Star, Zap } from 'lucide-react';
 import { PremiumBeforeAfterSlider } from './PremiumBeforeAfterSlider';
-import { SmartQuoteCalculator } from './SmartQuoteCalculator';
+
 import { PremiumStatsCounter } from './PremiumStatsCounter';
 import beforeAfterImage from '@/assets/before-after-showcase.jpg';
 import beforeImage from '@/assets/before-after.jpg';
@@ -120,24 +120,32 @@ export const EnhancedShowcaseSection = () => {
           </div>
         </motion.div>
 
-        {/* Quote Calculator Section */}
+        {/* Contact CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="text-center space-y-8"
         >
-          <div className="text-center space-y-4">
+          <div className="space-y-4">
             <h2 className="text-4xl font-bold">
-              Get Your <span className="gradient-text">Instant Quote</span>
+              Ready to <span className="gradient-text">Start Your Project</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our AI-powered calculator provides accurate estimates based on your project requirements
+              Get in touch with our expert team for a free consultation and detailed quote
             </p>
           </div>
 
-          <SmartQuoteCalculator />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="hover-glow-strong">
+              Get Free Assessment
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button variant="outline" size="lg">
+              Call 0414 922 276
+            </Button>
+          </div>
         </motion.div>
 
         {/* Trust & Guarantee Section */}

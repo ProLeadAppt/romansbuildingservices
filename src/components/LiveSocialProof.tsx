@@ -51,7 +51,7 @@ export const LiveSocialProof = () => {
       type: 'completion',
       name: 'David R.',
       location: 'Inner West',
-      service: 'Waterproofing',
+      service: 'Foundation Repairs',
       timeAgo: '12 minutes ago'
     },
     {

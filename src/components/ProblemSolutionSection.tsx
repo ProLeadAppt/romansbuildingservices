@@ -10,7 +10,7 @@ const problems = [
   {
     icon: AlertTriangle,
     title: "Water Damage & Leaks",
-    description: "Moisture infiltration can affect indoor air quality and structural integrity. Professional waterproofing protects your property investment."
+    description: "Moisture infiltration can affect indoor air quality and structural integrity. Professional building envelope repairs protect your property investment."
   },
   {
     icon: Wrench,
@@ -28,7 +28,7 @@ const solutions = [
   {
     icon: Shield,
     title: "Expert Structural Assessment",
-    description: "Comprehensive building inspections by qualified professionals to identify issues and provide detailed repair strategies."
+    description: "Comprehensive structural assessments by qualified professionals to identify issues and provide detailed repair strategies."
   },
   {
     icon: Hammer,
@@ -38,7 +38,7 @@ const solutions = [
   {
     icon: CheckCircle,
     title: "Remedial Building Solutions",
-    description: "Complete waterproofing, underpinning, and structural repairs to address foundation and building envelope issues."
+    description: "Complete underpinning, foundation work, and structural repairs to address foundation and building envelope issues."
   },
   {
     icon: Award,

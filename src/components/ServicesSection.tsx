@@ -18,13 +18,13 @@ const services = [
     icon: Shield,
     title: "Remedial Building",
     description: "Specialized remedial solutions for complex building defects and structural issues.",
-    features: ["Waterproofing Systems", "Underpinning", "Crack Repairs", "Building Rectification"]
+    features: ["Foundation Systems", "Underpinning", "Crack Repairs", "Building Rectification"]
   },
   {
     icon: Droplets,
-    title: "Waterproofing & Damp",
-    description: "Advanced waterproofing and damp proofing solutions to protect your property.",
-    features: ["Rising Damp Treatment", "Basement Waterproofing", "Balcony Waterproofing", "Leak Detection"]
+    title: "Foundation Repairs",
+    description: "Expert foundation repairs and structural underpinning to ensure building stability.",
+    features: ["Foundation Stabilization", "Underpinning", "Structural Repairs", "Settlement Correction"]
   },
   {
     icon: Wrench,
@@ -34,9 +34,9 @@ const services = [
   },
   {
     icon: Award,
-    title: "Building Inspections",
-    description: "Professional building inspections and structural assessments by qualified experts.",
-    features: ["Pre-Purchase Inspections", "Structural Reports", "Dilapidation Surveys", "Expert Witness"]
+    title: "Concrete Repairs",
+    description: "Specialized concrete cancer treatment and structural concrete restoration services.",
+    features: ["Concrete Cancer Treatment", "Spalling Repairs", "Reinforcement Protection", "Structural Restoration"]
   }
 ];
 

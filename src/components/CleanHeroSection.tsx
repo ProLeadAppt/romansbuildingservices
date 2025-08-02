@@ -181,7 +181,7 @@ export const CleanHeroSection = () => {
                       <SelectItem value="masonry">Masonry & Brickwork</SelectItem>
                       <SelectItem value="restoration">Building Restoration</SelectItem>
                       <SelectItem value="structural">Structural Repairs</SelectItem>
-                      <SelectItem value="waterproofing">Waterproofing</SelectItem>
+                      <SelectItem value="foundation">Foundation Repairs</SelectItem>
                       <SelectItem value="assessment">Building Assessment</SelectItem>
                       <SelectItem value="urgent">Urgent Repairs</SelectItem>
                     </SelectContent>

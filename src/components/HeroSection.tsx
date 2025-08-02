@@ -220,7 +220,7 @@ export const HeroSection = () => {
                 <option value="Masonry Repairs">Masonry Repairs</option>
                 <option value="Foundation Issues">Foundation Issues</option>
                 <option value="Crack Repairs">Crack Repairs</option>
-                <option value="Waterproofing">Waterproofing</option>
+                <option value="Heritage Restoration">Heritage Restoration</option>
                 <option value="Urgent Repairs">Urgent Repairs</option>
               </select>
               

@@ -122,9 +122,9 @@ export const LeadCaptureForm = () => {
                       <SelectItem value="masonry">Masonry & Brickwork</SelectItem>
                       <SelectItem value="restoration">Structural Restoration</SelectItem>
                       <SelectItem value="remedial">Remedial Building</SelectItem>
-                      <SelectItem value="waterproofing">Waterproofing & Damp</SelectItem>
+                      <SelectItem value="foundation">Foundation Repairs</SelectItem>
                       <SelectItem value="heritage">Heritage Conservation</SelectItem>
-                      <SelectItem value="inspection">Building Inspection</SelectItem>
+                      <SelectItem value="concrete">Concrete Repairs</SelectItem>
                       <SelectItem value="other">Not Sure / Other</SelectItem>
                     </SelectContent>
                   </Select>

@@ -58,9 +58,9 @@ export const ReviewsCarouselSection = () => {
       location: 'Bondi, Sydney',
       date: 'November 2023',
       rating: 5,
-      title: 'Waterproofing Specialists',
-      content: 'After years of water damage issues, Romans Building Services finally solved our problems. Their waterproofing solution has kept our basement completely dry through multiple storms. Excellent warranty support too.',
-      project: 'Basement Waterproofing',
+      title: 'Foundation Specialists',
+      content: 'After years of foundation settlement issues, Romans Building Services finally solved our problems. Their structural underpinning solution has completely stabilized our home. Excellent warranty support too.',
+      project: 'Foundation Repairs',
       avatar: '/api/placeholder/60/60'
     },
     {

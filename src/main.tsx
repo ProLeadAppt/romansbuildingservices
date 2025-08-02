@@ -26,9 +26,7 @@ import StructuralRepairsPage from './pages/services/StructuralRepairsPage.tsx'
 import HeritageRestorationPage from './pages/services/HeritageRestorationPage.tsx'
 import BuildingRestorationPage from './pages/services/BuildingRestorationPage.tsx'
 import ConcreteRepairsPage from './pages/services/ConcreteRepairsPage.tsx'
-import WaterproofingPage from './pages/services/WaterproofingPage.tsx'
 import RemedialBuildingPage from './pages/services/RemedialBuildingPage.tsx'
-import InspectionsPage from './pages/services/InspectionsPage.tsx'
 import AdminPage from './pages/AdminPage.tsx'
 import WebhookConfigPage from './pages/WebhookConfigPage.tsx'
 import './index.css'
@@ -50,9 +48,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/services/heritage-restoration" element={<Layout><HeritageRestorationPage /></Layout>} />
       <Route path="/services/building-restoration" element={<Layout><BuildingRestorationPage /></Layout>} />
       <Route path="/services/concrete-repairs" element={<Layout><ConcreteRepairsPage /></Layout>} />
-      <Route path="/services/waterproofing" element={<Layout><WaterproofingPage /></Layout>} />
       <Route path="/services/remedial-building" element={<Layout><RemedialBuildingPage /></Layout>} />
-      <Route path="/services/inspections" element={<Layout><InspectionsPage /></Layout>} />
       <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
       <Route path="/thank-you" element={<Layout><ThankYouPage /></Layout>} />
       <Route path="/review" element={<ReviewFunnel />} />

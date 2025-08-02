@@ -14,7 +14,7 @@ export const InteractiveServicesSection = () => {
       title: 'Masonry & Brickwork',
       shortDesc: 'Expert brick & stone construction',
       fullDesc: 'Comprehensive masonry services including new construction, repairs, repointing, and heritage restoration. We work with all types of brick, stone, and block materials.',
-      features: ['New brick construction', 'Heritage restoration', 'Repointing & repairs', 'Stone masonry', 'Retaining walls', 'Chimneys & fireplaces'],
+      features: ['New brick construction', 'Heritage restoration', 'Repointing & repairs', 'Stone masonry', 'Retaining walls', 'Structural brickwork'],
       image: '/api/placeholder/400/300'
     },
     {
@@ -34,27 +34,11 @@ export const InteractiveServicesSection = () => {
       image: '/api/placeholder/400/300'
     },
     {
-      icon: Droplets,
-      title: 'Waterproofing',
-      shortDesc: 'Complete moisture protection',
-      fullDesc: 'Advanced waterproofing solutions for basements, roofs, balconies, and external walls. Guaranteed leak-free results.',
-      features: ['Basement waterproofing', 'Roof membrane systems', 'Balcony sealing', 'Rising damp treatment', 'Cavity wall injection', 'Leak detection'],
-      image: '/api/placeholder/400/300'
-    },
-    {
-      icon: Search,
-      title: 'Building Inspections',
-      shortDesc: 'Comprehensive assessments',
-      fullDesc: 'Detailed building inspections and assessments for purchase, insurance, or maintenance planning. Professional reports with recommendations.',
-      features: ['Pre-purchase inspections', 'Structural assessments', 'Defect reports', 'Maintenance planning', 'Insurance claims', 'Expert witness services'],
-      image: '/api/placeholder/400/300'
-    },
-    {
       icon: Wrench,
       title: 'Maintenance Services',
       shortDesc: 'Ongoing building care',
       fullDesc: 'Regular maintenance programs to keep your building in optimal condition. Preventive care that saves money long-term.',
-      features: ['Scheduled maintenance', 'Preventive repairs', 'Annual inspections', 'Priority callouts', 'Warranty programs', 'Building compliance'],
+      features: ['Scheduled maintenance', 'Preventive repairs', 'Priority callouts', 'Warranty programs', 'Building compliance', 'Emergency repairs'],
       image: '/api/placeholder/400/300'
     }
   ];
