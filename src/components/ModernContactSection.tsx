@@ -99,11 +99,11 @@ export const ModernContactSection = () => {
     { day: 'Public Holidays', hours: 'Emergency calls only' }
   ];
 
-  const emergencyFeatures = [
-    'Same-day response for emergencies',
-    'Licensed emergency building services',
+  const priorityFeatures = [
+    'Prompt response for urgent matters',
+    'Licensed building services',
     'Insurance claim assistance',
-    'Temporary protection measures'
+    'Professional building solutions'
   ];
 
   return (
