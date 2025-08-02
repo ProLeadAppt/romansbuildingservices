@@ -75,10 +75,10 @@ export const ServicesSection = () => {
 
         <div className="text-center">
           <Button size="lg" className="bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold px-8 py-6 text-lg cta-shadow">
-            Get FREE Structural Assessment
+            Request Professional Assessment
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
-            Professional inspection worth $300 • No obligation • 10% off first project
+            Complimentary professional inspection • No obligation • Quality service guarantee
           </p>
         </div>
       </div>

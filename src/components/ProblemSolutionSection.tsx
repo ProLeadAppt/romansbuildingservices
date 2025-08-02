@@ -5,22 +5,22 @@ const problems = [
   {
     icon: Zap,
     title: "Structural Cracks",
-    description: "Visible cracks signal serious structural movement. Ignored, they worsen rapidly, leading to potential collapse risks and repair costs escalating 30% annually."
+    description: "Visible cracks indicate structural movement that requires professional assessment. Early intervention helps prevent further deterioration and maintains building integrity."
   },
   {
     icon: AlertTriangle,
     title: "Water Damage & Leaks",
-    description: "Moisture infiltration creates toxic mold, threatens family health, and destroys structural integrity. Property values drop up to 15% with untreated water damage."
+    description: "Moisture infiltration can affect indoor air quality and structural integrity. Professional waterproofing protects your property investment."
   },
   {
     icon: Wrench,
     title: "Foundation Issues",
-    description: "Foundation settlement causes catastrophic structural failure. Uneven floors and sticking doors are early warnings of potential building collapse."
+    description: "Foundation settlement may cause uneven floors and door alignment issues. Professional assessment helps identify appropriate solutions."
   },
   {
     icon: Clock,
     title: "Deteriorating Brickwork",
-    description: "Crumbling mortar and spalling bricks weaken your building's structure, creating safety hazards and exponentially increasing repair costs over time."
+    description: "Aging mortar and weathered bricks benefit from professional restoration to maintain your building's structural integrity and appearance."
   }
 ];
 
@@ -54,10 +54,10 @@ export const ProblemSolutionSection = () => {
         {/* Problem Section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Ignoring These Warning Signs Costs Sydney Homeowners Thousands
+            Common Building Issues We Address for Sydney Homeowners
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            <strong>Every month you wait, repair costs increase by 30% annually.</strong> These structural issues threaten your property value (up to 15% loss) and family safety. Act before minor problems become major disasters.
+            Early identification and professional assessment of structural concerns helps protect your property investment and ensures safe living conditions for your family.
           </p>
         </div>
 

@@ -101,27 +101,27 @@ export const HeroSection = () => {
             {/* Headline */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Cracked Walls?
-                <span className="block text-yellow-400">30% Higher Costs Waiting!</span>
+                Professional Structural Solutions
+                <span className="block text-yellow-400">For Sydney Homes</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-6">
                 Protect Your Home's Value with Sydney's Most Trusted Building Experts Since 1995
               </p>
             </div>
 
-            {/* Irresistible Offer */}
+            {/* Professional Offer */}
             <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black p-6 rounded-xl">
-              <div className="text-sm font-bold uppercase tracking-wide mb-2">🚨 Emergency Special - Act Now!</div>
-              <div className="text-2xl md:text-3xl font-bold mb-2">FREE $299 Structural Assessment</div>
-              <div className="text-lg font-semibold mb-2">+ 10% Off - Save Thousands Before Damage Escalates</div>
-              <div className="text-sm">Prevent 30% Annual Cost Increases • Same Day Response • Zero Risk</div>
+              <div className="text-sm font-bold uppercase tracking-wide mb-2">Professional Service</div>
+              <div className="text-2xl md:text-3xl font-bold mb-2">Complimentary Structural Assessment</div>
+              <div className="text-lg font-semibold mb-2">Professional Evaluation of Your Property</div>
+              <div className="text-sm">Expert Analysis • Same Day Response • No Obligation</div>
             </div>
 
             {/* Primary CTA */}
             <div className="space-y-4">
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white text-xl px-10 py-6 h-auto w-full sm:w-auto font-bold">
                 <Calendar className="mr-3 h-6 w-6" />
-                Protect Your Home's Value - Get FREE Assessment
+                Schedule Your Professional Assessment
               </Button>
               
               {/* Phone Number - Prominent */}
@@ -158,8 +158,8 @@ export const HeroSection = () => {
           {/* Right Side - Lead Capture Form */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl order-2 lg:order-2">
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Your FREE Assessment</h2>
-              <p className="text-gray-600">Complete the form below for immediate response</p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Request Your Assessment</h2>
+              <p className="text-gray-600">Complete the form below for prompt response</p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -238,7 +238,7 @@ export const HeroSection = () => {
                 disabled={isSubmitting}
                 className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 text-lg font-bold disabled:opacity-50"
               >
-                {isSubmitting ? 'Submitting...' : 'Get My FREE Assessment'}
+                {isSubmitting ? 'Submitting...' : 'Request My Assessment'}
               </Button>
               
               <p className="text-xs text-gray-500 text-center">

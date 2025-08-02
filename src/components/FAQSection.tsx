@@ -4,7 +4,7 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "How quickly can you start my project?",
-      answer: "Emergency situations get same-day response. Standard projects start within 48-72 hours. We understand that structural issues worsen rapidly - every day counts in preventing escalating damage and costs. Quick, efficient service minimizes disruption to your life."
+      answer: "Emergency situations receive same-day response. Standard projects typically begin within 48-72 hours. We understand the importance of addressing structural concerns promptly. Our efficient service approach minimizes disruption to your daily routine."
     },
     {
       question: "Do you provide free estimates?",
@@ -20,7 +20,7 @@ export const FAQSection = () => {
     },
     {
       question: "How much will my project cost?",
-      answer: "Early intervention saves thousands. Delaying repairs increases costs by 30% annually. Our competitive pricing delivers exceptional ROI - most clients see property value increases that exceed our fees. Free assessment helps you understand true costs vs. waiting."
+      answer: "Project costs vary based on scope and complexity. We provide detailed, transparent quotes after our complimentary assessment. Our competitive pricing reflects quality workmanship and materials. Early intervention often helps manage costs more effectively than delaying necessary repairs."
     },
     {
       question: "Can you work on heritage buildings?",
