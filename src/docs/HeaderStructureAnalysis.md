@@ -51,11 +51,11 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 </motion.h2>
 
 <h3 className="text-xl md:text-2xl font-semibold mb-4">
-  Meet Minas Romanakis - Licensed Building Specialist
+  Meet Minas Romanakis - Licensed Masonry Contractor
 </h3>
 
 <h4 className="text-lg font-semibold mb-3">
-  Master Builder • Heritage Restoration Expert • Structural Engineer
+  Licensed Bricklayer • Heritage Restoration Expert • Masonry Contractor
 </h4>
 ```
 
@@ -116,7 +116,7 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 </h3>
 
 <h4 className="text-lg font-semibold mb-3">
-  Licensed Sydney Building Professionals
+  Licensed Sydney Masonry Contractors
 </h4>
 ```
 
@@ -134,7 +134,7 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 - Structural masonry repairs Sydney
 - Professional building assessment Sydney
 - Waterproofing services Sydney
-- Licensed building contractor Sydney
+- Licensed masonry contractor Sydney
 
 ### **Header Keyword Distribution**
 ```tsx

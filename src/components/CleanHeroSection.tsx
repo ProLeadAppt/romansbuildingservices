@@ -66,7 +66,7 @@ export const CleanHeroSection = () => {
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 <span className="gradient-text">Established Sydney</span>
                 <br />
-                Building Specialists
+                Masonry & Restoration Specialists
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-lg">

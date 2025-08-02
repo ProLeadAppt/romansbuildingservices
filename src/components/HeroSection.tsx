@@ -104,8 +104,8 @@ export const HeroSection = () => {
                 Professional Structural Solutions
                 <span className="block text-yellow-400">For Sydney Homes</span>
               </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-6">
-                Established Sydney Building Specialists Since 1995
+              <p className="text-xl md:text-2xl text-gray-200 mb-6">
+                Established Sydney Masonry Specialists Since 1995
               </p>
             </div>
 

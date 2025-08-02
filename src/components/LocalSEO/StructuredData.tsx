@@ -63,7 +63,7 @@ export const LocalBusinessSchema = () => {
     "@type": "LocalBusiness",
     "@id": `${BUSINESS_INFO.website}#business`,
     "name": BUSINESS_INFO.name,
-    "description": "Professional masonry, building restoration and structural repair services in Sydney. Licensed specialists in heritage building restoration, brick repairs, and waterproofing with 25+ years experience.",
+    "description": "Professional masonry, building restoration and structural repair services in Sydney. Licensed masonry contractors specializing in heritage building restoration, brick repairs, and structural work with 25+ years experience.",
     "url": BUSINESS_INFO.website,
     "telephone": BUSINESS_INFO.phone,
     "email": BUSINESS_INFO.email,
@@ -117,7 +117,7 @@ export const LocalBusinessSchema = () => {
     },
     "hasCredential": {
       "@type": "EducationalOccupationalCredential",
-      "name": "NSW Building License",
+      "name": "NSW Masonry Contractor License",
       "credentialCategory": "Professional License",
       "recognizedBy": {
         "@type": "Organization",

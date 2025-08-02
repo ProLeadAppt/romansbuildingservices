@@ -12,7 +12,7 @@ export const FAQSection = () => {
     },
     {
       question: "Are you licensed and insured?",
-      answer: "Absolutely. We are fully licensed builders, insured with comprehensive liability coverage, and proud members of the Master Builders Association. We can provide certificates of insurance upon request."
+      answer: "Absolutely. We are fully licensed masonry contractors, insured with comprehensive liability coverage, and certified professionals. We can provide certificates of insurance upon request."
     },
     {
       question: "What warranty do you offer on your work?",

@@ -169,7 +169,7 @@ export const LeadCaptureForm = () => {
                   <CheckCircle className="w-5 h-5 text-secondary mt-1" />
                   <div>
                     <h4 className="font-semibold">Qualified Professionals</h4>
-                    <p className="text-sm text-white/80">Licensed builders and heritage specialists</p>
+                    <p className="text-sm text-white/80">Licensed masonry contractors and heritage specialists</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

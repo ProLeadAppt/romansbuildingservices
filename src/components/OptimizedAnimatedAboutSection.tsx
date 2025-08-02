@@ -67,7 +67,7 @@ export const OptimizedAnimatedAboutSection = () => {
 
           {/* Values List */}
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold mb-4">Minas's Personal Commitment to You:</h3>
+            <h3 className="text-xl font-semibold mb-4">Minas's Personal Commitment as Licensed Masonry Contractor:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {values.map((value, index) => (
                 <div

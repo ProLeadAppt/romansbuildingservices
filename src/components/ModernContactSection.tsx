@@ -119,7 +119,7 @@ export const ModernContactSection = () => {
           Get Your <span className="gradient-text">Free Assessment</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Ready to start your project? Contact Sydney's most trusted building specialists for your free consultation and detailed quote.
+          Ready to start your project? Contact Sydney's most trusted masonry & restoration specialists for your free consultation and detailed quote.
         </p>
       </motion.div>
 
@@ -371,7 +371,7 @@ export const ModernContactSection = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-sm">Licensed building services</span>
+                    <span className="text-sm">Licensed masonry contractor services</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
@@ -379,7 +379,7 @@ export const ModernContactSection = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-sm">Professional building solutions</span>
+                    <span className="text-sm">Professional masonry solutions</span>
                   </div>
                 </div>
                 <Button 
@@ -449,7 +449,7 @@ export const ModernContactSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">Speak Directly with Minas</h3>
-                      <p className="text-sm text-muted-foreground">Owner & Licensed Builder</p>
+                      <p className="text-sm text-muted-foreground">Owner & Licensed Masonry Contractor</p>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">

@@ -144,7 +144,7 @@ export const ModernHeroSection = () => {
               >
                 <span className="gradient-text">Established Sydney</span>
                 <br />
-                Building Specialists
+                Masonry & Restoration Specialists
               </motion.h1>
               
               <motion.p

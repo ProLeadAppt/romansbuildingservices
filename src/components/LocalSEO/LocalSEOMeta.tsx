@@ -59,7 +59,7 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
       'heritage building restoration',
       'waterproofing Sydney',
       'brick repairs Sydney',
-      'licensed builder Sydney',
+      'licensed masonry contractor Sydney',
       'building assessment Sydney'
     ];
 

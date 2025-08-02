@@ -38,10 +38,10 @@ export default function AboutPage() {
   ];
 
   const certifications = [
-    "NSW Building License",
+    "NSW Masonry Contractor License",
     "Heritage Building Certified",
     "WorkCover Approved",
-    "Master Builders Association",
+    "Licensed Bricklayer Certification",
     "Insurance Institute Certified",
     "Environmental Safety Certified"
   ];
@@ -56,7 +56,7 @@ export default function AboutPage() {
         >
           <Badge className="mb-4">About Romans Building Services</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Sydney's Trusted Building Specialists Since 1995
+            Sydney's Trusted Masonry Specialists Since 1995
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             For over 25 years, Romans Building Services has been Sydney's go-to choice for 
@@ -103,9 +103,9 @@ export default function AboutPage() {
                 and exceptional customer service. These values continue to guide everything we do today.
               </p>
               <p>
-                Today, we're proud to be a fully licensed, insured, and certified building company 
+                Today, we're proud to be a fully licensed, insured, and certified masonry contractor company 
                 serving residential and commercial clients across greater Sydney. Our team of 
-                skilled tradesmen brings together traditional craftsmanship with modern techniques 
+                skilled bricklayers and masonry specialists brings together traditional craftsmanship with modern techniques 
                 to deliver results that last.
               </p>
             </div>

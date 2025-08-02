@@ -162,9 +162,9 @@ export const ProfessionalHeroSection = () => {
             }}>
                 Established Sydney
                 <br />
-                <span className="morphing-text font-bold relative bg-black/80 px-4 py-2 rounded-lg backdrop-blur-md text-white" style={{
+                 <span className="morphing-text font-bold relative bg-black/80 px-4 py-2 rounded-lg backdrop-blur-md text-white" style={{
                 textShadow: '2px 2px 4px rgba(0,0,0,1)'
-              }}>Building Experts</span>
+              }}>Masonry Experts</span>
               </h1>
               
               <p className="text-lg sm:text-xl text-white max-w-lg leading-relaxed drop-shadow-lg" style={{
@@ -352,9 +352,9 @@ export const ProfessionalHeroSection = () => {
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0">
-                        <img 
+                         <img 
                           src={minasPhoto} 
-                          alt="Minas Romanakis, Master Builder and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" 
+                          alt="Minas Romanakis, Licensed Masonry Contractor and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" 
                           className="w-full h-full object-cover" 
                           loading="eager"
                           width="80"
