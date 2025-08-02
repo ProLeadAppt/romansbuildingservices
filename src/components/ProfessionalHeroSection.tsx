@@ -91,7 +91,7 @@ export const ProfessionalHeroSection = () => {
     color: 'text-blue-600'
   }, {
     icon: Clock,
-    text: 'Same-Day Response',
+    text: 'Prompt Response',
     color: 'text-orange-600'
   }, {
     icon: Star,
@@ -251,7 +251,7 @@ export const ProfessionalHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Urgent Response - Simplified */}
+            {/* Priority Response - Simplified */}
             <motion.div className="flex items-center space-x-3 bg-primary/20 rounded-lg p-4" initial={{
             opacity: 0
           }} animate={{
@@ -261,7 +261,7 @@ export const ProfessionalHeroSection = () => {
             delay: 1
           }}>
               <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-medium">Urgent Repairs Available - Same Day Response</span>
+              <span className="text-white font-medium">Priority Repairs Available - 48-72 Hour Response</span>
             </motion.div>
           </motion.div>
 

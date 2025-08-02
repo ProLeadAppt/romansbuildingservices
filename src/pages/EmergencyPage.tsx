@@ -12,25 +12,25 @@ export default function PriorityRepairsPage() {
       icon: Shield,
       title: "Structural Issues",
       description: "Priority response for structural failures, foundation issues, or load-bearing damage",
-      response: "Same day"
+      response: "48-72 hours"
     },
     {
       icon: Home,
       title: "Wall & Foundation Cracks",
       description: "Priority assessment and stabilization of concerning structural cracks",
-      response: "Same day"
+      response: "48-72 hours"
     },
     {
       icon: Zap,
       title: "Storm Damage",
       description: "Post-storm building damage assessment and priority repairs to secure property",
-      response: "Same day"
+      response: "48-72 hours"
     },
     {
       icon: Building,
       title: "Commercial Building Issues", 
       description: "Priority commercial building services to minimize business disruption",
-      response: "Same day"
+      response: "48-72 hours"
     }
   ];
 
@@ -38,7 +38,7 @@ export default function PriorityRepairsPage() {
     {
       step: "1",
       title: "Call Today",
-      description: "Contact our priority repairs line for rapid response",
+      description: "Contact our consultation line for prompt response",
       action: "0414 922 276"
     },
     {
@@ -49,9 +49,9 @@ export default function PriorityRepairsPage() {
     },
     {
       step: "3",
-      title: "Same Day Response",
-      description: "Our team will prioritize your repair and respond same day",
-      action: "Priority Service"
+      title: "Prompt Response",
+      description: "Our team will prioritize your repair and respond within 48-72 hours",
+      action: "Professional Service"
     },
     {
       step: "4",
@@ -81,14 +81,14 @@ export default function PriorityRepairsPage() {
         >
           <div className="flex items-center justify-center mb-4">
             <Clock className="w-8 h-8 text-primary mr-3" />
-            <Badge variant="default" className="text-lg px-4 py-2">Same-Day Priority Repairs</Badge>
+            <Badge variant="default" className="text-lg px-4 py-2">Professional Building Repairs</Badge>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Priority Building Repairs? Professional Response When You Need It
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            When structural issues require urgent attention, our qualified team prioritizes your repair 
-            with same-day response to secure your property and ensure everyone's safety.
+            When structural issues require priority attention, our qualified team prioritizes your repair 
+            with prompt response within 48-72 hours to secure your property and ensure everyone's safety.
           </p>
           
           {/* Urgent Contact */}
@@ -99,9 +99,9 @@ export default function PriorityRepairsPage() {
             className="bg-primary text-primary-foreground rounded-2xl p-8 max-w-md mx-auto"
           >
             <Phone className="w-12 h-12 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Priority Repairs Line</h2>
+            <h2 className="text-2xl font-bold mb-2">Project Consultation Line</h2>
             <div className="text-3xl font-bold mb-4">0414 922 276</div>
-            <p className="text-sm opacity-90">Same-day response for priority structural issues</p>
+            <p className="text-sm opacity-90">Prompt response within 48-72 hours for priority structural issues</p>
           </motion.div>
         </motion.div>
 
@@ -114,7 +114,7 @@ export default function PriorityRepairsPage() {
         >
           <div className="text-center mb-8">
             <Clock className="w-12 h-12 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold">Priority Repair Response</h2>
+            <h2 className="text-3xl font-bold">Professional Repair Response</h2>
             <p className="opacity-90 mt-2">Professional help when structural issues need priority attention</p>
           </div>
           
@@ -218,7 +218,7 @@ export default function PriorityRepairsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-center text-muted-foreground mb-6">
-                Same-day priority repair response available across all Sydney metropolitan areas
+                Priority repair response within 48-72 hours available across all Sydney metropolitan areas
               </p>
               <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                 {[
@@ -258,7 +258,7 @@ export default function PriorityRepairsPage() {
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8">
               <Clock className="w-5 h-5 mr-2" />
-              Same-Day Response
+              Prompt Response
             </Button>
           </div>
           

@@ -377,8 +377,8 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                   <SelectItem value="low">Low - Within a month</SelectItem>
                   <SelectItem value="normal">Normal - Within 2 weeks</SelectItem>
                   <SelectItem value="high">High - Within a week</SelectItem>
-                  <SelectItem value="urgent">Urgent - ASAP</SelectItem>
-                  <SelectItem value="priority">Priority - Immediate</SelectItem>
+                  <SelectItem value="urgent">Urgent - Within 2-3 business days</SelectItem>
+                  <SelectItem value="priority">Priority - Within 48-72 hours</SelectItem>
                 </SelectContent>
               </Select>
             </div>

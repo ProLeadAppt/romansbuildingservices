@@ -63,7 +63,7 @@ export const ModernHeroSection = () => {
   const trustBadges = [
     { icon: Shield, text: 'Licensed & Insured', color: 'text-green-600' },
     { icon: Award, text: '25+ Years Experience', color: 'text-blue-600' },
-    { icon: Clock, text: 'Same-Day Response', color: 'text-orange-600' },
+    { icon: Clock, text: 'Prompt Response', color: 'text-orange-600' },
     { icon: Users, text: '1000+ Happy Clients', color: 'text-purple-600' }
   ];
 
@@ -225,7 +225,7 @@ export const ModernHeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Urgent Response */}
+            {/* Priority Response */}
             <motion.div
               className="bg-primary/10 border border-primary/20 rounded-xl p-4 space-y-2"
               initial={{ opacity: 0, y: 20 }}
@@ -234,10 +234,10 @@ export const ModernHeroSection = () => {
             >
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5 text-primary" />
-                <span className="font-semibold text-primary">Urgent Repairs Available</span>
+                <span className="font-semibold text-primary">Priority Repairs Available</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Structural damage? Water ingress? We prioritize urgent repairs with same-day response.
+                Structural damage? Water ingress? We prioritize urgent repairs with prompt response within 48-72 hours.
               </p>
             </motion.div>
           </motion.div>
@@ -302,7 +302,7 @@ export const ModernHeroSection = () => {
                         <SelectItem value="structural">Structural Repairs</SelectItem>
                         <SelectItem value="foundation">Foundation Repairs</SelectItem>
                         <SelectItem value="assessment">Building Assessment</SelectItem>
-                        <SelectItem value="urgent">Urgent Repairs</SelectItem>
+                        <SelectItem value="priority">Priority Repairs</SelectItem>
                       </SelectContent>
                     </Select>
                   </motion.div>
