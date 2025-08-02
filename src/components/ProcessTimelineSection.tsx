@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Calendar, FileText, Hammer, Award, Clock, Users } from 'lucide-react';
+import stoneWallBackground from '@/assets/stone-wall-hero.jpg';
 
 export const ProcessTimelineSection = () => {
   const processSteps = [
@@ -71,9 +72,12 @@ export const ProcessTimelineSection = () => {
 
   return (
     <div className="relative overflow-hidden">
-      {/* Construction Process Background */}
+      {/* Stone Wall Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" 
+        style={{ backgroundImage: `url(${stoneWallBackground})` }}
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
-      <div className="absolute inset-0 blueprint-pattern opacity-5" />
       
       {/* Progressive Visual Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />

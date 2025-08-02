@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
 import { addPreloadLinks } from '@/utils/imagePreloader';
-import heroBackgroundImage from '@/assets/hero-background.jpg';
+import heroBackgroundImage from '@/assets/stone-wall-hero.jpg';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 export const ProfessionalHeroSection = () => {
   const navigate = useNavigate();

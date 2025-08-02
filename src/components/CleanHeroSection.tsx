@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import heroBackgroundImage from '@/assets/hero-background.jpg';
+import heroBackgroundImage from '@/assets/stone-wall-hero.jpg';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';

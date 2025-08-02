@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { sendFormToZapier } from '@/utils/zapierWebhook';
+import stoneWallBackground from '@/assets/stone-wall-hero.jpg';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const ModernContactSection = () => {
@@ -107,7 +108,15 @@ export const ModernContactSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="relative">
+      {/* Stone Wall Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" 
+        style={{ backgroundImage: `url(${stoneWallBackground})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+      
+      <div className="container mx-auto px-4 relative">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -480,6 +489,7 @@ export const ModernContactSection = () => {
           </motion.div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

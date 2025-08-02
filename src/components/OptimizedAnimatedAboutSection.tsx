@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
+import stoneWallBackground from '@/assets/stone-wall-hero.jpg';
 const minasWorkingImage = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const OptimizedAnimatedAboutSection = () => {
@@ -22,8 +23,11 @@ export const OptimizedAnimatedAboutSection = () => {
 
   return (
     <div className="relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 construction-pattern opacity-5" />
+      {/* Stone Wall Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" 
+        style={{ backgroundImage: `url(${stoneWallBackground})` }}
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       
       <div className="container mx-auto px-4 relative">
