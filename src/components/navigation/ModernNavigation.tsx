@@ -15,6 +15,7 @@ import {
   emergencyServices,
   quickActions 
 } from '@/utils/navigationData';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 const iconMap = {
   Building,
   Hammer, 
@@ -24,6 +25,7 @@ const iconMap = {
 export const ModernNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const navRef = useRef<HTMLElement>(null);
@@ -206,7 +208,11 @@ export const ModernNavigation = () => {
                 <span className="text-sm">{emergencyServices.phone}</span>
               </a>
               
-              <Button size="sm" className="bg-secondary hover:bg-secondary/90">
+              <Button 
+                size="sm" 
+                className="bg-secondary hover:bg-secondary/90"
+                onClick={() => setShowAssessmentPopup(true)}
+              >
                 Get Free Quote
               </Button>
             </div>
@@ -241,7 +247,11 @@ export const ModernNavigation = () => {
                     <Phone className="w-4 h-4 mr-2" />
                     Call Now
                   </Button>
-                  <Button size="sm" variant="outline">
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    onClick={() => setShowAssessmentPopup(true)}
+                  >
                     Free Quote
                   </Button>
                 </div>
@@ -279,6 +289,12 @@ export const ModernNavigation = () => {
           )}
       </div>
       </nav>
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup
+        isOpen={showAssessmentPopup}
+        onClose={() => setShowAssessmentPopup(false)}
+      />
     </div>
   );
 };
