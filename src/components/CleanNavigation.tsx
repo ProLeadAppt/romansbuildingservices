@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, Home, Users, Wrench, Image, CheckCircle, Star, Menu, X } from 'lucide-react';
 import { SkipNavigation } from './AccessibilityEnhancements';
 import { BannerLandmark, NavigationLandmark } from './ARIALandmarks';
+import { AssessmentPopup } from './AssessmentPopup';
 
 const sections = [
-  { id: 'hero', label: 'Home', icon: Home },
-  { id: 'about', label: 'About', icon: Users },
-  { id: 'services', label: 'Services', icon: Wrench },
-  { id: 'projects', label: 'Projects', icon: Image },
+  { id: 'hero', label: 'Home', icon: Home, route: '/' },
+  { id: 'about', label: 'About', icon: Users, route: '/about' },
+  { id: 'services', label: 'Services', icon: Wrench, route: '/services' },
+  { id: 'projects', label: 'Projects', icon: Image, route: '/projects' },
   { id: 'process', label: 'Process', icon: CheckCircle },
   { id: 'reviews', label: 'Reviews', icon: Star },
-  { id: 'contact', label: 'Contact', icon: Phone },
+  { id: 'contact', label: 'Contact', icon: Phone, route: '/contact' },
 ];
 
 export const CleanNavigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on the home page (single page app mode)
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +56,17 @@ export const CleanNavigation = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  const handleNavigation = (section: typeof sections[0]) => {
+    if (isHomePage && !section.route) {
+      // Scroll to section on home page
+      scrollToSection(section.id);
+    } else if (section.route) {
+      // Navigate to different page
+      setIsMobileMenuOpen(false);
+    }
+    // For sections without routes on non-home pages, do nothing
   };
 
   return (
@@ -87,29 +105,57 @@ export const CleanNavigation = () => {
             >
               {sections.map((section) => {
                 const Icon = section.icon;
-                const isActive = activeSection === section.id;
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    aria-current={isActive ? 'page' : undefined}
-                    aria-label={`Navigate to ${section.label} section`}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
-                      isActive 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'hover:bg-muted text-foreground'
-                    }`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                );
+                const isActive = isHomePage ? activeSection === section.id : location.pathname === section.route;
+                
+                if (section.route) {
+                  return (
+                    <Link
+                      key={section.id}
+                      to={section.route}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-label={`Navigate to ${section.label} section`}
+                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+                        isActive 
+                          ? 'bg-primary text-primary-foreground' 
+                          : 'hover:bg-muted text-foreground'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="text-sm font-medium">{section.label}</span>
+                    </Link>
+                  );
+                } else {
+                  return (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-label={`Navigate to ${section.label} section`}
+                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+                        isActive 
+                          ? 'bg-primary text-primary-foreground' 
+                          : 'hover:bg-muted text-foreground'
+                      }`}
+                      disabled={!isHomePage}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="text-sm font-medium">{section.label}</span>
+                    </button>
+                  );
+                }
               })}
             </NavigationLandmark>
 
             {/* Contact Info & Mobile Menu */}
             <div className="flex items-center space-x-4">
               <div className="hidden lg:flex items-center space-x-6">
+                <Button 
+                  size="sm" 
+                  onClick={() => setShowAssessmentPopup(true)}
+                  className="bg-secondary hover:bg-secondary/90"
+                >
+                  Get Free Quote
+                </Button>
                 <Button size="sm" className="bg-primary hover:bg-primary/90">
                   <Phone className="h-4 w-4 mr-2" />
                   0414 922 276
@@ -174,29 +220,61 @@ export const CleanNavigation = () => {
               <nav className="space-y-2" aria-label="Mobile navigation menu">
                 {sections.map((section) => {
                   const Icon = section.icon;
-                  const isActive = activeSection === section.id;
-                  return (
-                    <button
-                      key={section.id}
-                      onClick={() => scrollToSection(section.id)}
-                      aria-current={isActive ? 'page' : undefined}
-                      aria-label={`Navigate to ${section.label} section`}
-                      className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-smooth text-left focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
-                        isActive 
-                          ? 'bg-primary text-primary-foreground' 
-                          : 'hover:bg-muted text-foreground'
-                      }`}
-                    >
-                      <Icon className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-base font-medium">{section.label}</span>
-                    </button>
-                  );
+                  const isActive = isHomePage ? activeSection === section.id : location.pathname === section.route;
+                  
+                  if (section.route) {
+                    return (
+                      <Link
+                        key={section.id}
+                        to={section.route}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        aria-current={isActive ? 'page' : undefined}
+                        aria-label={`Navigate to ${section.label} section`}
+                        className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-smooth text-left focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+                          isActive 
+                            ? 'bg-primary text-primary-foreground' 
+                            : 'hover:bg-muted text-foreground'
+                        }`}
+                      >
+                        <Icon className="w-5 h-5 flex-shrink-0" />
+                        <span className="text-base font-medium">{section.label}</span>
+                      </Link>
+                    );
+                  } else {
+                    return (
+                      <button
+                        key={section.id}
+                        onClick={() => scrollToSection(section.id)}
+                        aria-current={isActive ? 'page' : undefined}
+                        aria-label={`Navigate to ${section.label} section`}
+                        className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-smooth text-left focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+                          isActive 
+                            ? 'bg-primary text-primary-foreground' 
+                            : 'hover:bg-muted text-foreground'
+                        }`}
+                        disabled={!isHomePage}
+                      >
+                        <Icon className="w-5 h-5 flex-shrink-0" />
+                        <span className="text-base font-medium">{section.label}</span>
+                      </button>
+                    );
+                  }
                 })}
               </nav>
             </div>
 
-            {/* Call Button */}
-            <div className="p-4 border-t">
+            {/* Action Buttons */}
+            <div className="p-4 border-t space-y-3">
+              <Button
+                onClick={() => {
+                  setShowAssessmentPopup(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                variant="outline"
+                className="w-full text-base py-3"
+              >
+                Get Free Quote
+              </Button>
               <Button
                 onClick={() => {
                   window.open('tel:0414922276');
@@ -211,6 +289,12 @@ export const CleanNavigation = () => {
           </div>
         </NavigationLandmark>
       )}
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup
+        isOpen={showAssessmentPopup}
+        onClose={() => setShowAssessmentPopup(false)}
+      />
     </>
   );
 };
