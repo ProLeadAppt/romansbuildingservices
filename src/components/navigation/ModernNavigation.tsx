@@ -7,6 +7,7 @@ import {
   Building, Hammer, Shield, MapPin, Clock,
   Star, ArrowRight
 } from 'lucide-react';
+import { QuickSearch } from '@/components/navigation/QuickSearch';
 import { cn } from '@/lib/utils';
 import { 
   mainNavigation, 
@@ -79,8 +80,14 @@ export const ModernNavigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {mainNavigation.map((item) => (
+          <div className="hidden lg:flex items-center space-x-6">
+            {/* Quick Search */}
+            <div className="w-64">
+              <QuickSearch />
+            </div>
+            {/* Navigation Items */}
+            <div className="flex items-center space-x-6">
+              {mainNavigation.map((item) => (
               <div 
                 key={item.id} 
                 className="relative"
@@ -193,7 +200,9 @@ export const ModernNavigation = () => {
                     </div>
                 )}
               </div>
-            ))}
+              ))}
+            </div>
+          </div>
           </div>
 
           {/* Right Section */}

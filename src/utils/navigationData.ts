@@ -50,7 +50,7 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     id: 'projects',
-    label: 'Gallery',
+    label: 'Projects',
     href: '/projects'
   },
   {
