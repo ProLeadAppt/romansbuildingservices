@@ -1,5 +1,5 @@
 import React from 'react';
-import { CleanNavigation } from '@/components/CleanNavigation';
+import { ModernNavigation } from '@/components/navigation/ModernNavigation';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { LeadConnectorChat } from '@/components/LeadConnectorChat';
 
@@ -14,7 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => {
   return (
     <div className="min-h-screen">
-      <CleanNavigation />
+      <ModernNavigation />
       
       {/* Main Content with top padding for floating nav */}
       <main className="pt-24">
