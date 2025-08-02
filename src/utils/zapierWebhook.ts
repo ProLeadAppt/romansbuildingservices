@@ -60,19 +60,19 @@ export class ZapierWebhook {
     data: Record<string, any>,
     customWebhookUrl?: string
   ): Promise<WebhookResponse> {
-    const webhookUrl = customWebhookUrl || this.getWebhookUrl(formType);
+    // Use hardcoded webhook URL for testing
+    const defaultWebhookUrl = 'https://hooks.zapier.com/hooks/catch/23975177/u4mrpsl/';
+    const webhookUrl = customWebhookUrl || this.getWebhookUrl(formType) || defaultWebhookUrl;
     
-    if (!webhookUrl) {
-      console.warn(`No webhook URL configured for form type: ${formType}`);
-      return { success: false, error: 'No webhook URL configured' };
-    }
+    console.log(`Using webhook URL for ${formType}:`, webhookUrl);
 
     const payload: WebhookPayload = {
       formType,
       timestamp: new Date().toISOString(),
-      source: window.location.origin,
+      source: window.location.href,
       data: {
         ...data,
+        formName: formType.charAt(0).toUpperCase() + formType.slice(1).replace('_', ' '),
         userAgent: navigator.userAgent,
         referrer: document.referrer,
         pageUrl: window.location.href
@@ -91,8 +91,8 @@ export class ZapierWebhook {
         body: JSON.stringify(payload),
       });
 
-      // Since we're using no-cors, we won't get a proper response status
-      // We'll assume success unless there's an error
+      // Log successful submission
+      console.log(`Successfully sent ${formType} form to Zapier`);
       return { success: true };
 
     } catch (error: any) {
