@@ -14,7 +14,7 @@ import { Calendar, Search, Clock, Phone, CheckCircle, AlertTriangle } from 'luci
 export default function AssessmentPage() {
   const assessmentTypes = [
     { value: "structural", label: "Structural Assessment", description: "Foundation, walls, load-bearing elements" },
-    { value: "heritage", label: "Heritage Building Assessment", description: "Conservation and restoration planning" },
+    { value: "heritage", label: "Heritage Building Assessment", description: "Heritage stonework evaluation and planning" },
     { value: "building-condition", label: "Building Condition Report", description: "Comprehensive property evaluation" },
     { value: "pre-purchase", label: "Pre-Purchase Inspection", description: "Buying/selling property assessment" },
     { value: "insurance", label: "Insurance Assessment", description: "Damage evaluation for claims" },

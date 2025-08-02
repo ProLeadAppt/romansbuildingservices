@@ -22,7 +22,7 @@ export const InteractiveServicesSection = () => {
       title: 'Building Restoration',
       shortDesc: 'Heritage & modern restoration',
       fullDesc: 'Specialist restoration services for heritage and modern buildings. We preserve the character while ensuring structural integrity and compliance.',
-      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Council approvals', 'Conservation planning', 'Weatherproofing'],
+      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Heritage stonework consultation', 'Traditional craftsmanship', 'Weatherproofing'],
       image: '/api/placeholder/400/300'
     },
     {
@@ -30,7 +30,7 @@ export const InteractiveServicesSection = () => {
       title: 'Structural Repairs',
       shortDesc: 'Critical structural solutions',
       fullDesc: 'Priority and planned structural repairs including crack remediation, foundation work, and load-bearing modifications.',
-      features: ['Foundation repairs', 'Crack injection', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
+      features: ['Foundation repairs', 'Stone crack repairs', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
       image: '/api/placeholder/400/300'
     },
     {

@@ -218,8 +218,8 @@ const InnerWestPage = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Council Heritage Requirements:</h4>
                   <p className="text-muted-foreground text-sm">
-                    Full compliance with Inner West Council heritage guidelines, 
-                    development applications, and conservation management plans.
+                    Expert heritage stonework in compliance with Inner West Council heritage guidelines 
+                    and conservation requirements.
                   </p>
                 </div>
               </CardContent>

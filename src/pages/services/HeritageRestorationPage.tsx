@@ -7,11 +7,11 @@ import beforeAfterImage from "@/assets/before-after.jpg";
 export default function HeritageRestorationPage() {
   const services = [
     "Heritage Building Assessment",
-    "Conservation Management Plans", 
+    "Heritage Stone Restoration", 
     "Period-Appropriate Materials Sourcing",
-    "Traditional Craft Techniques",
-    "Council Heritage Approvals",
-    "Archaeological Site Protection"
+    "Traditional Stonework Methods",
+    "Heritage Brick Repairs",
+    "Authentic Heritage Craftsmanship"
   ];
 
   const features = [
@@ -127,7 +127,7 @@ export default function HeritageRestorationPage() {
             Preserve Your Heritage Building
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Expert heritage assessment and conservation planning
+            Expert heritage assessment and stonework consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">

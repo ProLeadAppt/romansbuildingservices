@@ -9,9 +9,9 @@ export default function ConcreteRepairsPage() {
     "Concrete Cancer Treatment",
     "Spalling Concrete Repair", 
     "Structural Concrete Restoration",
-    "Concrete Crack Injection",
-    "Carbonation Repair",
-    "Protective Concrete Coatings"
+    "Concrete Surface Restoration",
+    "Protective Stone Coatings",
+    "Concrete Resurfacing"
   ];
 
   const features = [

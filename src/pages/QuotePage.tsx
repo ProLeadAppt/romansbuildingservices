@@ -172,7 +172,7 @@ export default function QuotePage() {
                       "Site inspection required",
                       "Heritage building considerations", 
                       "Engineering consultation needed",
-                      "Council approvals assistance",
+                      "Heritage stonework consultation",
                       "Professional after-hours service",
                       "Warranty and maintenance plan"
                     ].map((option) => (

@@ -30,7 +30,7 @@ const services = [
     icon: Wrench,
     title: "Heritage & Conservation",
     description: "Specialized heritage building conservation using traditional techniques and materials.",
-    features: ["Sandstone Restoration", "Heritage Brickwork", "Conservation Reports", "Council Approvals"]
+    features: ["Sandstone Restoration", "Heritage Brickwork", "Heritage Consultation", "Traditional Methods"]
   },
   {
     icon: Award,

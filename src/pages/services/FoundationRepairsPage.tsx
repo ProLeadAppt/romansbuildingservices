@@ -9,10 +9,10 @@ export default function FoundationRepairsPage() {
   const services = [
     "Foundation Underpinning",
     "Structural Foundation Repairs", 
-    "Foundation Crack Injection",
+    "Foundation Stone Repairs",
     "Pier & Beam Foundation Work",
-    "Foundation Protection",
-    "Settlement Repair Solutions"
+    "Settlement Stabilization",
+    "Foundation Structural Assessment"
   ];
 
   const features = [
