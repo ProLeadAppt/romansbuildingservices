@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,8 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, Phone, Clock, Star } from 'lucide-react';
 import { serviceAreas } from '@/utils/navigationData';
 import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 const ServicesAreasPage = () => {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const allSuburbs = serviceAreas.flatMap(area => area.suburbs);
   
   return (
@@ -197,12 +199,15 @@ const ServicesAreasPage = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call Now: +61 483 981 292
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm" onClick={() => setShowAssessmentPopup(true)}>
               Get Free Assessment
             </Button>
           </div>
         </div>
       </section>
+
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </Layout>
   );
 };

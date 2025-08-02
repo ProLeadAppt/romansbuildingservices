@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Award, Users, Clock, Phone, Star, CheckCircle } from 'lucide-react';
 import teamImage from '@/assets/professional-team.jpg';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 export default function AboutPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const stats = [
     { number: "25+", label: "Years Experience" },
     { number: "2000+", label: "Projects Completed" },
@@ -181,7 +183,7 @@ export default function AboutPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setShowAssessmentPopup(true)}>
               <Star className="w-5 h-5 mr-2" />
               Get Free Assessment
             </Button>

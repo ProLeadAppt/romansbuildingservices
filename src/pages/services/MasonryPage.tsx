@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,8 +6,10 @@ import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
 import { ServiceFAQSection, masonryFAQs } from "@/components/ServiceFAQSection";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/LocalSEO/StructuredData";
 import heroImage from "@/assets/hero-masonry.jpg";
+import { AssessmentPopup } from "@/components/AssessmentPopup";
 
 export default function MasonryPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Brick Pointing & Repointing",
     "Stone Masonry Repairs", 
@@ -135,7 +138,7 @@ export default function MasonryPage() {
             Get your FREE assessment and 10% off your first project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 mobile-button-lg bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="text-lg px-8 mobile-button-lg bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => setShowAssessmentPopup(true)}>
               Get Free Assessment
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
@@ -154,6 +157,9 @@ export default function MasonryPage() {
         averageProjectTime="1-3 weeks"
         warrantyPeriod="5 years"
       />
+
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </div>
   );
 }

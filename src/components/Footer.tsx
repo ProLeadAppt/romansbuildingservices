@@ -1,8 +1,11 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Building } from "lucide-react";
 import { ContentInfoLandmark } from "./ARIALandmarks";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 export const Footer = () => {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   return (
     <ContentInfoLandmark 
       id="site-footer"
@@ -85,7 +88,7 @@ export const Footer = () => {
               </div>
             </div>
             
-            <Button size="lg" className="w-full bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold py-6 mb-4 cta-shadow">
+            <Button size="lg" className="w-full bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold py-6 mb-4 cta-shadow" onClick={() => setShowAssessmentPopup(true)}>
               Get FREE Assessment
             </Button>
 
@@ -120,6 +123,9 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </ContentInfoLandmark>
   );
 };

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 export default function ContactPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       
@@ -78,7 +81,7 @@ export default function ContactPage() {
                   />
                 </div>
                 
-                <Button size="lg" className="w-full">
+                <Button size="lg" className="w-full" onClick={() => setShowAssessmentPopup(true)}>
                   Get Free Assessment
                 </Button>
               </CardContent>
@@ -199,6 +202,9 @@ export default function ContactPage() {
       </section>
 
       <Footer />
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </div>
   );
 }

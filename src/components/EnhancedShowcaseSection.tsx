@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Award, CheckCircle, Star, Zap } from 'lucide-react';
 import { PremiumBeforeAfterSlider } from './PremiumBeforeAfterSlider';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 import { PremiumStatsCounter } from './PremiumStatsCounter';
 import beforeAfterImage from '@/assets/before-after-showcase.jpg';
 import beforeImage from '@/assets/before-after.jpg';
 
 export const EnhancedShowcaseSection = () => {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const stats = [
     {
       number: 1000,
@@ -138,7 +140,7 @@ export const EnhancedShowcaseSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="hover-glow-strong">
+            <Button size="lg" className="hover-glow-strong" onClick={() => setShowAssessmentPopup(true)}>
               Get Free Assessment
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
@@ -196,6 +198,9 @@ export const EnhancedShowcaseSection = () => {
           </Card>
         </motion.div>
       </div>
+
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </div>
   );
 };
