@@ -80,15 +80,11 @@ export const ModernNavigation = () => {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6">
-              {/* Quick Search */}
-              <div className="w-64">
-                <QuickSearch />
-              </div>
-              {/* Navigation Items */}
-              <div className="flex items-center space-x-6">
-                {mainNavigation.map((item) => (
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Navigation Items */}
+            <div className="flex items-center space-x-4">
+              {mainNavigation.map((item) => (
                   <div 
                     key={item.id} 
                     className="relative"
@@ -203,28 +199,45 @@ export const ModernNavigation = () => {
                   </div>
                 ))}
               </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="flex items-center space-x-3">
+            {/* Compact Search Icon - Desktop */}
+            <div className="hidden lg:block">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="p-2"
+                onClick={() => {
+                  // Focus on search or show search modal
+                  const searchInput = document.querySelector('[placeholder*="Search"]') as HTMLInputElement;
+                  if (searchInput) searchInput.focus();
+                }}
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </Button>
             </div>
 
-            {/* Right Section */}
-            <div className="flex items-center space-x-4">
-              {/* Contact Information - Always Visible */}
-              <div className="hidden md:flex items-center space-x-3">
-                <a 
-                  href={`tel:${contactServices.phone}`}
-                  className="flex items-center space-x-2 font-semibold transition-colors text-primary hover:text-primary/80"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm">{contactServices.phone}</span>
-                </a>
-                
-                <Button 
-                  size="sm" 
-                  className="bg-secondary hover:bg-secondary/90"
-                  onClick={() => setShowAssessmentPopup(true)}
-                >
-                  Get Quote
-                </Button>
-              </div>
+            {/* Contact Information - Always Visible */}
+            <div className="hidden md:flex items-center space-x-3">
+              <a 
+                href={`tel:${contactServices.phone}`}
+                className="flex items-center space-x-2 font-semibold transition-colors text-primary hover:text-primary/80"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">{contactServices.phone}</span>
+              </a>
+              
+              <Button 
+                size="sm" 
+                className="bg-secondary hover:bg-secondary/90"
+                onClick={() => setShowAssessmentPopup(true)}
+              >
+                Get Quote
+              </Button>
+            </div>
 
               {/* Mobile Menu Button */}
               <Button
@@ -246,6 +259,10 @@ export const ModernNavigation = () => {
               style={{ willChange: 'opacity, height' }}
             >
               <div className="py-4 space-y-2">
+                {/* Mobile Search */}
+                <div className="mb-4 px-4">
+                  <QuickSearch />
+                </div>
                 {/* Quick Actions */}
                 <div className="grid grid-cols-2 gap-2 mb-4">
                   <a 
