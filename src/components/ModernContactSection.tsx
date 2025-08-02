@@ -188,7 +188,7 @@ export const ModernContactSection = () => {
                           <SelectItem value="structural">Structural Repairs</SelectItem>
                           <SelectItem value="waterproofing">Waterproofing</SelectItem>
                           <SelectItem value="assessment">Building Assessment</SelectItem>
-                          <SelectItem value="emergency">Emergency Repairs</SelectItem>
+                          <SelectItem value="priority">Priority Service</SelectItem>
                           <SelectItem value="maintenance">Maintenance Services</SelectItem>
                         </SelectContent>
                       </Select>
@@ -198,7 +198,7 @@ export const ModernContactSection = () => {
                           <SelectValue placeholder="Project Urgency" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="emergency">Emergency (24-48 hours)</SelectItem>
+                          <SelectItem value="priority">Priority (24-48 hours)</SelectItem>
                           <SelectItem value="urgent">Urgent (1-2 weeks)</SelectItem>
                           <SelectItem value="standard">Standard (1-2 months)</SelectItem>
                           <SelectItem value="planning">Planning stage</SelectItem>
@@ -342,44 +342,54 @@ export const ModernContactSection = () => {
                   ))}
                 </div>
                 <div className="pt-3 sm:pt-4 border-t">
-                  <Badge variant="destructive" className="w-full justify-center py-2 text-xs sm:text-sm">
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm">
                     <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    24/7 Emergency Service
+                    After Hours Available
                   </Badge>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Emergency Services */}
+          {/* Priority Services */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="floating-shadow border-destructive/20">
+            <Card className="floating-shadow border-primary/20">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Shield className="w-6 h-6 text-destructive" />
-                  <h3 className="text-xl font-semibold">Emergency Services</h3>
+                  <Shield className="w-6 h-6 text-primary" />
+                  <h3 className="text-xl font-semibold">Priority Services</h3>
                 </div>
                 <div className="space-y-3">
-                  {emergencyFeatures.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span className="text-sm">Prompt response for urgent matters</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span className="text-sm">Licensed building services</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span className="text-sm">Insurance claim assistance</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span className="text-sm">Professional building solutions</span>
+                  </div>
                 </div>
                 <Button 
-                  variant="destructive" 
+                  variant="default" 
                   size="lg" 
                   className="w-full mt-4"
                   onClick={() => window.open('tel:0414922276')}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Emergency: 0414 922 276
+                  Contact: 0414 922 276
                 </Button>
               </CardContent>
             </Card>

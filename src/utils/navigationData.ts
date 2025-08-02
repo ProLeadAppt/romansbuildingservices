@@ -189,32 +189,31 @@ export const serviceAreas: ServiceArea[] = [
   }
 ];
 
-// Urgent services - priority response
-export const emergencyServices = {
+// Contact and quote services
+export const contactServices = {
   phone: '0414 922 276',
-  label: 'Urgent Repairs',
-  description: 'Same-day structural repair response',
-  href: '/emergency'
+  label: 'Contact Us',
+  description: 'Professional building services consultation',
+  href: '/contact'
 };
 
 // Quick actions for improved UX
 export const quickActions = [
   {
     id: 'quote',
-    label: 'Get Free Quote',
+    label: 'Get Quote',
     href: '/quote',
     primary: true
   },
   {
     id: 'assessment',
-    label: 'Book Assessment',
+    label: 'Building Assessment',
     href: '/assessment'
   },
   {
-    id: 'urgent',
-    label: 'Urgent Help',
-    href: '/emergency',
-    urgent: true
+    id: 'contact',
+    label: 'Contact Us',
+    href: '/contact'
   }
 ];
 
@@ -227,7 +226,7 @@ export const popularSearches = [
   'Concrete cancer',
   'Foundation repairs',
   'Building inspection',
-  'Urgent repairs'
+  'Building maintenance'
 ];
 
 // Utility functions

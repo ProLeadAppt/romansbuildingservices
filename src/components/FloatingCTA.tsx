@@ -29,7 +29,7 @@ export const FloatingCTA = () => {
 
   if (!isVisible) return null;
 
-  // Mobile version - simplified single emergency call button
+  // Mobile version - simplified contact call button
   if (isMobile) {
     return (
       <motion.div
@@ -40,10 +40,10 @@ export const FloatingCTA = () => {
       >
         <motion.button
           onClick={() => window.open('tel:0414922276')}
-          className="w-14 h-14 bg-red-500 text-white rounded-full shadow-lg flex items-center justify-center"
+          className="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          aria-label="Emergency call"
+          aria-label="Contact us"
         >
           <Phone className="w-6 h-6" />
         </motion.button>
@@ -74,9 +74,9 @@ export const FloatingCTA = () => {
                   <Zap className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm mb-1">Urgent Repairs Available</p>
+                  <p className="font-semibold text-sm mb-1">Professional Building Services</p>
                   <p className="text-xs text-muted-foreground mb-3">
-                    Need urgent building repairs? We provide same-day response for critical structural issues.
+                    Need building assistance? Contact our qualified team for professional consultation and services.
                   </p>
                   <Button
                     size="sm"
@@ -86,8 +86,8 @@ export const FloatingCTA = () => {
                       setShowCallPrompt(false);
                     }}
                   >
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now: 0414 922 276
+                      <Phone className="w-4 h-4 mr-2" />
+                      Contact Us: 0414 922 276
                   </Button>
                 </div>
               </div>
@@ -102,14 +102,14 @@ export const FloatingCTA = () => {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="flex flex-col gap-3"
       >
-        {/* Emergency Call Button */}
+        {/* Contact Call Button */}
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           <Button
             size="lg"
-            className="rounded-full w-14 h-14 p-0 shadow-xl hover-glow-strong bg-destructive hover:bg-destructive/90"
+            className="rounded-full w-14 h-14 p-0 shadow-xl hover-glow-strong bg-primary hover:bg-primary/90"
             onClick={() => window.open('tel:0414922276')}
           >
             <Phone className="w-6 h-6" />

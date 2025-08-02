@@ -14,7 +14,7 @@ import {
   mainNavigation, 
   serviceCategories, 
   serviceAreas, 
-  emergencyServices
+  contactServices
 } from '@/utils/navigationData';
 
 const iconMap = { Building, Hammer, Shield };
@@ -339,15 +339,15 @@ export const AccessibleNavigation = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-3">
-              {/* Emergency Contact */}
+              {/* Contact Information */}
               <div className="hidden md:flex items-center space-x-3">
                 <a 
-                  href={`tel:${emergencyServices.phone}`}
+                  href={`tel:${contactServices.phone}`}
                   className="flex items-center space-x-2 text-primary font-semibold hover:text-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-                  aria-label={`Call emergency services at ${emergencyServices.phone}`}
+                  aria-label={`Contact us at ${contactServices.phone}`}
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
-                  <span className="text-sm">{emergencyServices.phone}</span>
+                  <span className="text-sm">{contactServices.phone}</span>
                 </a>
                 
                 <Button 
@@ -355,7 +355,7 @@ export const AccessibleNavigation = () => {
                   className="bg-secondary hover:bg-secondary/90"
                   asChild
                 >
-                  <Link to="/contact">Get Free Quote</Link>
+                  <Link to="/contact">Get Quote</Link>
                 </Button>
               </div>
 
@@ -408,11 +408,11 @@ export const AccessibleNavigation = () => {
                   <div className="grid grid-cols-2 gap-2 px-4 mb-4">
                     <Button 
                       size="sm" 
-                      onClick={() => window.open(`tel:${emergencyServices.phone}`)}
+                      onClick={() => window.open(`tel:${contactServices.phone}`)}
                       className="bg-primary"
                     >
                       <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-                      Call Now
+                      Contact Us
                     </Button>
                     <Button 
                       size="sm" 
@@ -420,7 +420,7 @@ export const AccessibleNavigation = () => {
                       asChild
                     >
                       <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                        Free Quote
+                        Get Quote
                       </Link>
                     </Button>
                   </div>
@@ -444,14 +444,14 @@ export const AccessibleNavigation = () => {
                     </div>
                   ))}
 
-                  {/* Emergency Badge */}
-                  <div className="mx-4 mt-4 p-3 bg-destructive/10 rounded-lg border border-destructive/20">
-                    <div className="flex items-center space-x-2 text-destructive">
+                  {/* Contact Badge */}
+                  <div className="mx-4 mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                    <div className="flex items-center space-x-2 text-primary">
                       <Clock className="w-4 h-4" aria-hidden="true" />
-                      <span className="text-sm font-semibold">24/7 Emergency Service</span>
+                      <span className="text-sm font-semibold">Professional Building Services</span>
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Structural emergencies and urgent repairs
+                      Quality construction and building maintenance
                     </p>
                   </div>
                 </div>

@@ -12,7 +12,7 @@ import {
   mainNavigation, 
   serviceCategories, 
   serviceAreas, 
-  emergencyServices,
+  contactServices,
   quickActions 
 } from '@/utils/navigationData';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
@@ -198,14 +198,14 @@ export const ModernNavigation = () => {
 
           {/* Right Section */}
           <div className="flex items-center space-x-4">
-            {/* Emergency Contact - Always Visible */}
+            {/* Contact Information - Always Visible */}
             <div className="hidden md:flex items-center space-x-3">
               <a 
-                href={`tel:${emergencyServices.phone}`}
+                href={`tel:${contactServices.phone}`}
                 className="flex items-center space-x-2 font-semibold transition-colors text-primary hover:text-primary/80"
               >
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">{emergencyServices.phone}</span>
+                <span className="text-sm">{contactServices.phone}</span>
               </a>
               
               <Button 
@@ -213,7 +213,7 @@ export const ModernNavigation = () => {
                 className="bg-secondary hover:bg-secondary/90"
                 onClick={() => setShowAssessmentPopup(true)}
               >
-                Get Free Quote
+                Get Quote
               </Button>
             </div>
 
@@ -241,18 +241,18 @@ export const ModernNavigation = () => {
                 <div className="grid grid-cols-2 gap-2 mb-4">
                   <Button 
                     size="sm" 
-                    onClick={() => window.open(`tel:${emergencyServices.phone}`)}
+                    onClick={() => window.open(`tel:${contactServices.phone}`)}
                     className="bg-primary"
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    Call Now
+                    Contact Us
                   </Button>
                   <Button 
                     size="sm" 
                     variant="outline"
                     onClick={() => setShowAssessmentPopup(true)}
                   >
-                    Free Quote
+                    Get Quote
                   </Button>
                 </div>
 
@@ -274,14 +274,14 @@ export const ModernNavigation = () => {
                   </div>
                 ))}
 
-                {/* Emergency Badge */}
-                <div className="mt-4 p-3 bg-destructive/10 rounded-lg border border-destructive/20">
-                  <div className="flex items-center space-x-2 text-destructive">
+                {/* Contact Badge */}
+                <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Clock className="w-4 h-4" />
-                    <span className="text-sm font-semibold">24/7 Emergency Service</span>
+                    <span className="text-sm font-semibold">Professional Building Services</span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-1">
-                    Structural emergencies and urgent repairs
+                    Quality construction and building maintenance
                   </p>
                 </div>
               </div>

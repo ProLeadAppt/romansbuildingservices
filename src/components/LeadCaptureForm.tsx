@@ -26,8 +26,8 @@ export const LeadCaptureForm = () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: "FREE Assessment Request Submitted!",
-      description: "We'll contact you within 2 hours to schedule your free structural assessment. Plus get 10% off your first project!",
+      title: "Assessment Request Submitted",
+      description: "We'll contact you within 24 hours to schedule your consultation and assessment.",
     });
     
     setFormData({ name: "", phone: "", email: "", projectType: "", description: "" });
@@ -43,10 +43,10 @@ export const LeadCaptureForm = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Stop Losing Money - Get Your FREE $299 Assessment
+            Professional Building Assessment & Quote
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            <strong>Every month you wait costs you more.</strong> Professional structural inspection worth $299 - completely free with zero obligation. Plus save 10% on approved work. Prevent thousands in escalating repair costs.
+            Comprehensive structural inspection and detailed quote provided by qualified building professionals. No obligation consultation to help you understand your property's needs.
           </p>
         </div>
 
@@ -56,10 +56,10 @@ export const LeadCaptureForm = () => {
             <div className="bg-white rounded-lg p-8 trust-shadow">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-primary mb-2">
-                  Schedule Your FREE Assessment
+                  Schedule Your Assessment
                 </h3>
                 <p className="text-muted-foreground">
-                  Quick response • Expert evaluation • No obligation
+                  Professional evaluation • Detailed report • Expert consultation
                 </p>
               </div>
 
@@ -145,7 +145,7 @@ export const LeadCaptureForm = () => {
                 </div>
 
                 <Button type="submit" size="lg" className="w-full bg-secondary hover:bg-secondary-light text-secondary-foreground font-bold py-6 text-lg cta-shadow">
-                  {isSubmitting ? "Submitting..." : "Get FREE Assessment + 10% Off"}
+                  {isSubmitting ? "Submitting..." : "Request Assessment"}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
@@ -182,8 +182,8 @@ export const LeadCaptureForm = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary mt-1" />
                   <div>
-                    <h4 className="font-semibold">Saved Clients Millions in Damage</h4>
-                    <p className="text-sm text-white/80">1000+ properties protected across Sydney</p>
+                    <h4 className="font-semibold">Extensive Project Portfolio</h4>
+                    <p className="text-sm text-white/80">Over 1000 properties serviced across Sydney</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -216,11 +216,11 @@ export const LeadCaptureForm = () => {
 
               {/* Offer Highlight */}
               <div className="bg-secondary/20 backdrop-blur-sm rounded-lg p-6 border border-secondary/30 mt-6">
-                <h4 className="font-bold text-lg mb-2">🎯 Your FREE Assessment Includes:</h4>
+                <h4 className="font-bold text-lg mb-2">Your Assessment Includes:</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Professional structural inspection (worth $300)</li>
+                  <li>• Professional building inspection</li>
                   <li>• Written report with recommendations</li>
-                  <li>• 10% discount on approved work</li>
+                  <li>• Detailed quote for any required work</li>
                   <li>• No obligation consultation</li>
                 </ul>
               </div>

@@ -85,15 +85,15 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
               className="inline-flex items-center justify-center space-x-2 bg-secondary/20 rounded-full px-4 py-2 text-secondary mx-auto"
             >
               <Star className="w-5 h-5 fill-current" />
-              <span className="font-semibold">FREE Assessment</span>
+              <span className="font-semibold">Assessment Available</span>
             </motion.div>
             
             <DialogTitle id="assessment-popup-title" className="text-3xl font-bold text-center">
-              Get Your FREE $500 Assessment
+              Building Assessment & Quote
             </DialogTitle>
             
             <p className="text-muted-foreground text-center max-w-md mx-auto">
-              Professional structural assessment worth $500 - completely free with no obligation.
+              Professional building assessment and detailed quote provided by qualified specialists.
             </p>
           </DialogHeader>
 
@@ -159,7 +159,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                 <SelectItem value="structural">Structural Repairs</SelectItem>
                 <SelectItem value="waterproofing">Waterproofing</SelectItem>
                 <SelectItem value="assessment">Building Assessment</SelectItem>
-                <SelectItem value="urgent">Urgent Repairs</SelectItem>
+                <SelectItem value="priority">Priority Service</SelectItem>
               </SelectContent>
             </Select>
 
@@ -187,10 +187,10 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                   <span>Submitting...</span>
                 </motion.div>
               ) : (
-                <>
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  Get My FREE Assessment
-                </>
+                  <>
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Request Assessment
+                  </>
               )}
             </Button>
           </motion.form>
