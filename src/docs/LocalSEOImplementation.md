@@ -104,7 +104,7 @@ import { ServiceSchema, LocalSEOMeta } from '@/components/LocalSEO';
 ### Long-tail Keywords:
 - heritage building restoration sydney cbd
 - structural masonry repairs eastern suburbs
-- waterproofing services north sydney
+- stone protection services north sydney
 - licensed building contractor sydney
 
 ### Location-Specific Keywords:

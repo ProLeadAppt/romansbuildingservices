@@ -41,7 +41,7 @@ const testimonials = [
     name: "Lisa Chen",
     location: "Eastern Suburbs", 
     rating: 5,
-    text: "Romans provided effective waterproofing solutions for our apartment building when previous contractors couldn't resolve the issue. Their thorough approach gave us confidence in the long-term results."
+    text: "Romans provided effective stone restoration solutions for our apartment building when previous contractors couldn't resolve the issue. Their thorough approach gave us confidence in the long-term results."
   },
   {
     name: "James Wilson",

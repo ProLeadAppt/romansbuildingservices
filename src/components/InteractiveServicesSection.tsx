@@ -22,7 +22,7 @@ export const InteractiveServicesSection = () => {
       title: 'Building Restoration',
       shortDesc: 'Heritage & modern restoration',
       fullDesc: 'Specialist restoration services for heritage and modern buildings. We preserve the character while ensuring structural integrity and compliance.',
-      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Heritage stonework consultation', 'Traditional craftsmanship', 'Weatherproofing'],
+      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Heritage stonework consultation', 'Traditional craftsmanship', 'Stone protection'],
       image: '/api/placeholder/400/300'
     },
     {

@@ -115,7 +115,7 @@ Background Information
 - "brick repair Sydney"
 - "building restoration Sydney" 
 - "structural repairs Sydney"
-- "waterproofing Sydney"
+- "stone protection Sydney"
 - "masonry contractors Sydney"
 
 ### Hero Section - SEO Optimized:

@@ -33,7 +33,7 @@ export const BUSINESS_INFO = {
     "Building Restoration", 
     "Structural Repairs",
     "Heritage Building Restoration",
-    "Waterproofing",
+    "Stone Protection",
     "Brick Repairs",
     "Stone Restoration",
     "Building Inspections"

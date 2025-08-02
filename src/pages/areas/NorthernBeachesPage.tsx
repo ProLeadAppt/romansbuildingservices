@@ -10,7 +10,7 @@ const NorthernBeachesPage = () => {
     'Coastal Protection',
     'Salt Damage Restoration', 
     'Structural Marine Repairs',
-    'Sealing & Protection',
+    'Stone Protection',
     'Concrete Cancer Treatment',
     'Heritage Beach House Restoration',
     'Foundation Stabilization',
@@ -84,11 +84,11 @@ const NorthernBeachesPage = () => {
             <Card className="text-center">
               <CardHeader>
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Weather Protection</CardTitle>
+                <CardTitle>Stone Protection</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Advanced protection and weatherproofing solutions designed 
+                  Advanced stone protection solutions designed 
                   to withstand coastal storms and constant salt spray exposure.
                 </p>
               </CardContent>
@@ -147,7 +147,7 @@ const NorthernBeachesPage = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
                     Complete structural restoration of 1920s beach house including salt damage remediation, 
-                    foundation stabilization, and heritage-compliant weatherproofing.
+                    foundation stabilization, and heritage stonework restoration.
                   </p>
                   <div className="flex gap-2">
                     <Badge variant="secondary">Heritage Restoration</Badge>

@@ -22,7 +22,7 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 ├── H2: Sydney Masonry & Restoration Services
 │   ├── H3: Heritage Building Restoration Sydney
 │   ├── H3: Structural Masonry Repairs
-│   ├── H3: Waterproofing & Damp Solutions
+│   ├── H3: Stone Protection & Restoration
 │   └── H3: Building Assessments & Inspections
 ├── H2: Our Sydney Building Projects Portfolio
 ├── H2: Professional Building Process & Quality Guarantee
@@ -76,7 +76,7 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 </h3>
 
 <h3 className="text-xl md:text-2xl font-bold mb-4">
-  Waterproofing & Damp Solutions Sydney
+  Stone Protection & Restoration Sydney
 </h3>
 
 <h3 className="text-xl md:text-2xl font-bold mb-4">
@@ -133,7 +133,7 @@ H1: Professional Masonry & Building Services Sydney | Romans Building
 - Heritage building restoration Sydney CBD
 - Structural masonry repairs Sydney
 - Professional building assessment Sydney
-- Waterproofing services Sydney
+- Stone protection services Sydney
 - Licensed masonry contractor Sydney
 
 ### **Header Keyword Distribution**

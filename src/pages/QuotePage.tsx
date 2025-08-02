@@ -19,7 +19,7 @@ export default function QuotePage() {
     "Heritage Restoration",
     "Building Restoration",
     "Concrete Repairs",
-    "Protective Coatings",
+    "Stone Protection",
     "Remedial Building",
     "Building Inspections"
   ];

@@ -25,7 +25,7 @@ export const locationServices = {
     projects: [
       "Coastal erosion repairs Bondi Junction",
       "Heritage terrace restoration Paddington",
-      "Waterproofing services Double Bay"
+      "Heritage stonework Double Bay"
     ]
   },
   "north-sydney": {
@@ -182,7 +182,7 @@ export const LocalProjectShowcase: React.FC = () => {
       location: "Martin Place, Sydney CBD",
       type: "Commercial Heritage",
       year: "2023",
-      description: "Complete facade restoration of 1920s heritage bank building including stonework, pointing, and waterproofing.",
+      description: "Complete facade restoration of 1920s heritage bank building including stonework, pointing, and structural repairs.",
       image: "/images/heritage-bank-restoration.jpg"
     },
     {
@@ -194,12 +194,12 @@ export const LocalProjectShowcase: React.FC = () => {
       image: "/images/paddington-terrace.jpg"
     },
     {
-      title: "Coastal Property Waterproofing",
+      title: "Coastal Stone Protection",
       location: "Bondi Beach",
-      type: "Residential Coastal",
+      category: "Structural Repairs",
       year: "2024", 
-      description: "Advanced waterproofing solutions for ocean-facing property with salt air exposure.",
-      image: "/images/bondi-waterproofing.jpg"
+      description: "Advanced stone protection solutions for ocean-facing property with salt air exposure.",
+      image: "/images/bondi-stonework.jpg"
     }
   ];
 

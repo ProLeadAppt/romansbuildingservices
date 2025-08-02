@@ -146,7 +146,7 @@ export default function ProjectsPage() {
         location: "Manly",
         year: "2024",
         type: "Concrete Repairs",
-        description: "Comprehensive concrete cancer treatment with protective coatings for coastal building exposure.",
+        description: "Comprehensive concrete cancer treatment with stone stabilization for coastal building exposure.",
         image: beforeAfterImage,
         tags: ["Concrete Cancer", "Coastal", "Protective"]
       },
