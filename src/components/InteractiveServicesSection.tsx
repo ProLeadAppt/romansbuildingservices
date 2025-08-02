@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle, Phone } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 
 export const InteractiveServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
+  const [showQuotePopup, setShowQuotePopup] = useState(false);
 
   const services = [
     {
@@ -44,18 +46,19 @@ export const InteractiveServicesSection = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden">
-      {/* Dynamic Background Based on Active Service */}
-      <div className="absolute inset-0 transition-all duration-1000">
-        <div className={`absolute inset-0 service-bg-${activeService} opacity-20`} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background/90" />
-      </div>
-      
-      {/* Geometric Patterns */}
-      <div className="absolute top-0 right-0 w-96 h-96 geometric-pattern opacity-10 animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 geometric-pattern opacity-5 rotate-180" />
-      
-      <div className="container mx-auto px-4 relative">
+    <>
+      <div className="relative overflow-hidden">
+        {/* Dynamic Background Based on Active Service */}
+        <div className="absolute inset-0 transition-all duration-1000">
+          <div className={`absolute inset-0 service-bg-${activeService} opacity-20`} />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background/90" />
+        </div>
+        
+        {/* Geometric Patterns */}
+        <div className="absolute top-0 right-0 w-96 h-96 geometric-pattern opacity-10 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 geometric-pattern opacity-5 rotate-180" />
+        
+        <div className="container mx-auto px-4 relative">
       <motion.div
         className="text-center space-y-4 mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -163,7 +166,7 @@ export const InteractiveServicesSection = () => {
                     <Button 
                       size="lg" 
                       className="w-full hover-lift touch-target"
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                      onClick={() => setShowQuotePopup(true)}
                     >
                       Get Free Quote
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -236,10 +239,7 @@ export const InteractiveServicesSection = () => {
             <Button 
               size="lg" 
               className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => setShowQuotePopup(true)}
             >
               Get Free Assessment
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -255,7 +255,14 @@ export const InteractiveServicesSection = () => {
           </div>
         </div>
       </motion.div>
+      </div>
     </div>
-    </div>
+
+    {/* Assessment Popup */}
+    <AssessmentPopup 
+      isOpen={showQuotePopup} 
+      onClose={() => setShowQuotePopup(false)} 
+    />
+    </>
   );
 };
