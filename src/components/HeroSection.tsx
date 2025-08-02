@@ -1,8 +1,79 @@
 import { Button } from "@/components/ui/button";
 import { Phone, CheckCircle, Calendar, Star, Shield } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { sendFormToZapier } from "@/utils/zapierWebhook";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-masonry.jpg";
 
 export const HeroSection = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await sendFormToZapier('hero_form', {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        phone: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        message: formData.message,
+        priority: 'high',
+        source: 'Hero Section Form'
+      });
+
+      if (response.success) {
+        toast({
+          title: "Assessment Request Received!",
+          description: "We'll contact you within 30 minutes to schedule your FREE assessment.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          service: '',
+          message: ''
+        });
+        
+        // Navigate to thank you page
+        navigate('/thank-you');
+      } else {
+        throw new Error(response.error || 'Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or call us directly at 0414 922 276",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
       {/* Background Image with Overlay */}
@@ -91,11 +162,14 @@ export const HeroSection = () => {
               <p className="text-gray-600">Complete the form below for immediate response</p>
             </div>
             
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <input 
                     type="text" 
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     placeholder="First Name*" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     required
@@ -104,6 +178,9 @@ export const HeroSection = () => {
                 <div>
                   <input 
                     type="text" 
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     placeholder="Last Name*" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     required
@@ -113,6 +190,9 @@ export const HeroSection = () => {
               
               <input 
                 type="tel" 
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
                 placeholder="Phone Number*" 
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 required
@@ -120,29 +200,45 @@ export const HeroSection = () => {
               
               <input 
                 type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="Email Address*" 
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 required
               />
               
-              <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                <option>What service do you need?</option>
-                <option>Structural Assessment</option>
-                <option>Masonry Repairs</option>
-                <option>Foundation Issues</option>
-                <option>Crack Repairs</option>
-                <option>Waterproofing</option>
-                <option>Emergency Service</option>
+              <select 
+                name="service"
+                value={formData.service}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                required
+              >
+                <option value="">What service do you need?</option>
+                <option value="Structural Assessment">Structural Assessment</option>
+                <option value="Masonry Repairs">Masonry Repairs</option>
+                <option value="Foundation Issues">Foundation Issues</option>
+                <option value="Crack Repairs">Crack Repairs</option>
+                <option value="Waterproofing">Waterproofing</option>
+                <option value="Emergency Service">Emergency Service</option>
               </select>
               
               <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 placeholder="Describe your building issue..." 
                 rows={3}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
               ></textarea>
               
-              <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 text-lg font-bold">
-                Get My FREE Assessment
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 text-lg font-bold disabled:opacity-50"
+              >
+                {isSubmitting ? 'Submitting...' : 'Get My FREE Assessment'}
               </Button>
               
               <p className="text-xs text-gray-500 text-center">
