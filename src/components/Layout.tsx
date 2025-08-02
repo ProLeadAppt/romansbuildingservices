@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModernNavigation } from '@/components/navigation/ModernNavigation';
+import { CleanNavigation } from '@/components/CleanNavigation';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { LeadConnectorChat } from '@/components/LeadConnectorChat';
 interface LayoutProps {
@@ -11,11 +11,11 @@ export const Layout: React.FC<LayoutProps> = ({
   showBreadcrumbs = true
 }) => {
   return <div className="min-h-screen">
-      <ModernNavigation />
+      <CleanNavigation />
       
       {/* Main Content */}
       <main>
-        {showBreadcrumbs}
+        {showBreadcrumbs && <Breadcrumbs />}
         {children}
       </main>
       
