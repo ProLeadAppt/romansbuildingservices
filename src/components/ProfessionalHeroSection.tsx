@@ -338,10 +338,10 @@ export const ProfessionalHeroSection = () => {
                   <div className="text-center pt-4 border-t space-y-3">
                     <p className="text-sm font-semibold text-primary">✓ No obligation ✓ Prompt response ✓ Licensed professionals</p>
                     <div className="flex items-center justify-center space-x-4 text-sm">
-                      <div className="flex items-center space-x-1">
+                      <a href="tel:+61483981292" className="flex items-center space-x-1 hover:text-primary transition-colors">
                         <Phone className="w-4 h-4 text-primary" />
                         <span className="font-semibold">+61 483 981 292</span>
-                      </div>
+                      </a>
                       <div className="flex items-center space-x-1">
                         <MapPin className="w-4 h-4" />
                         <span>Sydney Wide</span>
