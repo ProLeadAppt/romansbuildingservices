@@ -8,6 +8,7 @@ import {
   Star, ArrowRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { 
   mainNavigation, 
   serviceCategories, 
@@ -24,6 +25,7 @@ const iconMap = {
 export const ModernNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isAssessmentPopupOpen, setIsAssessmentPopupOpen] = useState(false);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const navRef = useRef<HTMLElement>(null);
@@ -200,7 +202,11 @@ export const ModernNavigation = () => {
                 <span className="text-sm">{emergencyServices.phone}</span>
               </a>
               
-              <Button size="sm" className="bg-secondary hover:bg-secondary/90">
+              <Button 
+                size="sm" 
+                className="bg-secondary hover:bg-secondary/90"
+                onClick={() => setIsAssessmentPopupOpen(true)}
+              >
                 Get Free Quote
               </Button>
             </div>
@@ -235,7 +241,11 @@ export const ModernNavigation = () => {
                     <Phone className="w-4 h-4 mr-2" />
                     Call Now
                   </Button>
-                  <Button size="sm" variant="outline">
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    onClick={() => setIsAssessmentPopupOpen(true)}
+                  >
                     Free Quote
                   </Button>
                 </div>
@@ -273,6 +283,12 @@ export const ModernNavigation = () => {
           )}
       </div>
       </nav>
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup 
+        isOpen={isAssessmentPopupOpen} 
+        onClose={() => setIsAssessmentPopupOpen(false)} 
+      />
     </div>
   );
 };
