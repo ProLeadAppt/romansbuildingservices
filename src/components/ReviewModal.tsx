@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Star, Heart, ExternalLink } from 'lucide-react';
 import { AccessibleStarRating, useFocusTrap } from './AccessibilityEnhancements';
@@ -43,6 +43,9 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose }) => 
           <DialogTitle id="review-modal-title" className="text-center text-2xl font-bold">
             Rate Your Experience
           </DialogTitle>
+          <DialogDescription className="text-center">
+            Help us improve our services by rating your experience with Romans Building Services
+          </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-6 py-4">

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Star, CheckCircle, X, Phone, Clock, Shield } from 'lucide-react';
 import { toast } from 'sonner';
@@ -92,9 +92,9 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
               Building Assessment & Quote
             </DialogTitle>
             
-            <p className="text-muted-foreground text-center max-w-md mx-auto">
+            <DialogDescription className="text-muted-foreground text-center max-w-md mx-auto">
               Professional building assessment and detailed quote provided by qualified specialists.
-            </p>
+            </DialogDescription>
           </DialogHeader>
 
           {/* Benefits Grid */}
