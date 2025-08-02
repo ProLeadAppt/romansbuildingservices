@@ -376,5 +376,6 @@ export const ProfessionalHeroSection = () => {
 
       {/* Assessment Popup */}
       <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </div>;
+    </div>
+  );
 };

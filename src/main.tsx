@@ -29,6 +29,7 @@ import ConcreteRepairsPage from './pages/services/ConcreteRepairsPage.tsx'
 import RemedialBuildingPage from './pages/services/RemedialBuildingPage.tsx'
 import AdminPage from './pages/AdminPage.tsx'
 import WebhookConfigPage from './pages/WebhookConfigPage.tsx'
+import SearchPage from './pages/SearchPage.tsx'
 import './index.css'
 
 createRoot(document.getElementById("root")!).render(
@@ -60,6 +61,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/areas/northern-beaches" element={<Layout><NorthernBeachesPage /></Layout>} />
       <Route path="/areas/inner-west" element={<Layout><InnerWestPage /></Layout>} />
       <Route path="/areas/greater-sydney" element={<Layout><GreaterSydneyPage /></Layout>} />
+      <Route path="/search" element={<Layout><SearchPage /></Layout>} />
       <Route path="/admin" element={<Layout><AdminPage /></Layout>} />
       <Route path="/admin/webhooks" element={<Layout><WebhookConfigPage /></Layout>} />
       <Route path="*" element={<Layout><NotFound /></Layout>} />
