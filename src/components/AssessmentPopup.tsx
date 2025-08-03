@@ -31,7 +31,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
   });
 
   const { toast } = useToast();
-  const { suggestedServices, defaultUrgency, sydneyAreas } = useSmartDefaults();
+  const { allServices, defaultUrgency, sydneyAreas } = useSmartDefaults();
   const { validateField, getFieldError } = useFormValidation();
 
   const handlePhoneSubmit = () => {
@@ -189,7 +189,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                     required
                   >
                     <option value="">Select a service...</option>
-                    {suggestedServices.map((service) => (
+                    {allServices.map((service) => (
                       <option key={service.value} value={service.value}>
                         {service.label} - {service.desc}
                       </option>
