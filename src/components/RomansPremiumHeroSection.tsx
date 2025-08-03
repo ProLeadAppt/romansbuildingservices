@@ -100,149 +100,120 @@ export const RomansPremiumHeroSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 -top-24 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
-      <div className="relative z-10 container mx-auto px-4 pt-20 sm:pt-24 pb-8 sm:pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="relative z-10 container mx-auto px-4 pt-16 pb-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[85vh]">
           
-          {/* Left Column - Premium Content with Character */}
-          <div className="text-white space-y-8">
-            {/* Trust Badges with Premium Feel */}
-            <div className="flex flex-wrap gap-3">
-              <Badge className="bg-gradient-to-r from-amber-500 to-amber-600 text-black px-4 py-2 text-sm font-bold shadow-lg border-0">
-                <Award className="h-4 w-4 mr-2" />
-                30+ Years Mastering Craft
+          {/* Left Column - Refined Content */}
+          <div className="text-white space-y-6">
+            {/* Trust Badges */}
+            <div className="flex flex-wrap gap-2">
+              <Badge className="bg-gradient-to-r from-amber-500 to-amber-600 text-black px-3 py-1 text-sm font-semibold shadow-lg border-0">
+                <Award className="h-4 w-4 mr-1" />
+                30+ Years Experience
               </Badge>
-              <Badge className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-4 py-2 text-sm font-semibold shadow-lg">
-                <Shield className="h-4 w-4 mr-2" />
-                Licensed & Trusted
+              <Badge className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-3 py-1 text-sm font-semibold">
+                <Shield className="h-4 w-4 mr-1" />
+                Licensed & Insured
               </Badge>
             </div>
 
-            {/* Hero Headline with Premium Typography */}
-            <div className="space-y-6">
+            {/* Refined Headline */}
+            <div className="space-y-4">
               <div className="space-y-2">
-                <p className="text-amber-400 font-semibold text-lg tracking-wide uppercase">
-                  Sydney's Premier Masonry Family
+                <p className="text-amber-400 font-semibold text-base tracking-wide">
+                  Sydney's Trusted Masonry Family
                 </p>
-                <h1 className="text-4xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                  <span className="block bg-gradient-to-r from-white via-white to-amber-200 bg-clip-text text-transparent">
-                    We Don't Just
+                <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
+                  <span className="block text-white">
+                    Quality Masonry &
                   </span>
-                  <span className="block text-amber-400 text-5xl lg:text-8xl font-black italic transform -rotate-1 relative">
-                    Restore Buildings
-                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></div>
-                  </span>
-                  <span className="block text-white mt-2">
-                    We Restore Dreams
+                  <span className="block text-amber-400 font-black">
+                    Heritage Restoration
                   </span>
                 </h1>
               </div>
               
-              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-lg font-light">
-                From heritage mansions to family homes, we breathe new life into Sydney's most cherished buildings.
-                <span className="block mt-2 text-amber-300 font-medium">
-                  ✨ Every brick tells a story. Let us help write yours.
-                </span>
+              <p className="text-lg text-white/90 leading-relaxed max-w-lg">
+                From heritage buildings to modern homes, we bring decades of craftsmanship to every Sydney project.
               </p>
             </div>
 
-            {/* Premium Statistics with Character */}
-            <div className="grid grid-cols-3 gap-6 my-8">
+            {/* Compact Statistics */}
+            <div className="grid grid-cols-3 gap-4">
               {[
-                { number: "1000+", label: "Dreams Restored", icon: Heart },
-                { number: "30+", label: "Years of Artistry", icon: Calendar },
-                { number: "100%", label: "Family Dedication", icon: Users }
+                { number: "1000+", label: "Projects", icon: Heart },
+                { number: "30+", label: "Years", icon: Calendar },
+                { number: "100%", label: "Satisfaction", icon: Users }
               ].map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-105">
-                    <stat.icon className="h-6 w-6 text-amber-400 mx-auto mb-2" />
-                    <div className="text-2xl lg:text-3xl font-black text-white">{stat.number}</div>
-                    <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+                <div key={index} className="text-center">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
+                    <stat.icon className="h-5 w-5 text-amber-400 mx-auto mb-1" />
+                    <div className="text-xl font-bold text-white">{stat.number}</div>
+                    <div className="text-xs text-white/80">{stat.label}</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Compelling CTAs */}
-            <div className="flex flex-col gap-4">
+            {/* Direct CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button 
                 onClick={handlePhoneSubmit}
                 size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold text-lg px-8 py-6 rounded-2xl shadow-2xl border-0 transform hover:scale-[1.02] transition-all duration-300"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-6 py-4 rounded-xl shadow-xl border-0 flex-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center justify-center">
-                  <CheckCircle2 className="h-5 w-5 mr-3" />
-                  Start Your Story Today
-                  <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
+                <CheckCircle2 className="h-5 w-5 mr-2" />
+                Get Free Assessment
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={() => window.open('tel:+61483981292')}
-                className="group relative bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white hover:text-black font-semibold text-lg px-8 py-6 rounded-2xl transition-all duration-300 hover:scale-[1.02]"
+                className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white hover:text-black font-semibold px-6 py-4 rounded-xl flex-1"
               >
-                <Phone className="h-5 w-5 mr-3" />
-                Chat with Minas Now
-                <span className="ml-2 text-sm opacity-80 group-hover:opacity-100">(+61 483 981 292)</span>
+                <Phone className="h-5 w-5 mr-2" />
+                Call Minas
               </Button>
             </div>
 
-            {/* Premium Value Proposition */}
-            <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Heart className="h-6 w-6 text-black" />
+            {/* Simple Value Proposition */}
+            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Heart className="h-5 w-5 text-black" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-lg mb-2">The Roman's Promise</h3>
-                  <p className="text-white/90 leading-relaxed">
-                    When you choose us, you're not just hiring contractors—you're partnering with a family that's been perfecting the art of masonry for over three decades. We treat every project like it's our own home.
-                  </p>
+                  <p className="text-white font-semibold text-sm">Family Business Promise</p>
+                  <p className="text-white/80 text-sm">Personal attention to every project, honest pricing, quality guaranteed.</p>
                 </div>
               </div>
             </div>
-
-            {/* Social Proof */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Shield, label: "Licensed Masonry Masters", accent: "text-green-400" },
-                { icon: Award, label: "Heritage Restoration Experts", accent: "text-blue-400" },
-                { icon: CheckCircle2, label: "Honest Pricing Promise", accent: "text-purple-400" },
-                { icon: Heart, label: "Community Champions", accent: "text-pink-400" }
-              ].map((badge, index) => (
-                <div key={index} className="flex items-center gap-3 bg-black/30 backdrop-blur-md rounded-lg px-4 py-3 border border-white/10">
-                  <badge.icon className={`h-5 w-5 ${badge.accent}`} />
-                  <span className="text-white font-medium text-sm">{badge.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Column - Premium Assessment Form */}
+          {/* Right Column - Compact Form */}
           <div className="flex justify-center lg:justify-end">
-            <Card className="w-full max-w-md bg-gradient-to-br from-white via-white to-white/95 shadow-2xl border-0 rounded-3xl overflow-hidden">
-              {/* Premium Header */}
-              <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-6 text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-white" />
+            <Card className="w-full max-w-md bg-white shadow-2xl border-0 rounded-2xl overflow-hidden">
+              {/* Compact Header */}
+              <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-4 text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Award className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  Complimentary Dream Assessment
+                <h3 className="text-xl font-bold text-white mb-1">
+                  Free Building Assessment
                 </h3>
                 <p className="text-white/90 text-sm">
-                  Let's explore what's possible for your special project
+                  Quick assessment, honest quote
                 </p>
                 
                 {/* Progress Indicator */}
-                <div className="flex items-center justify-center gap-2 mt-6">
-                  <div className={`w-4 h-4 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-white' : 'bg-white/30'}`} />
-                  <div className={`w-12 h-1 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-white' : 'bg-white/30'}`} />
-                  <div className={`w-4 h-4 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-white' : 'bg-white/30'}`} />
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <div className={`w-3 h-3 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-white' : 'bg-white/30'}`} />
+                  <div className={`w-8 h-1 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-white' : 'bg-white/30'}`} />
+                  <div className={`w-3 h-3 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-white' : 'bg-white/30'}`} />
                 </div>
-                <p className="text-white/80 text-sm mt-2 font-medium">
-                  Step {currentStep} of 2 - Almost there!
+                <p className="text-white/80 text-xs mt-1">
+                  Step {currentStep} of 2
                 </p>
               </div>
 
