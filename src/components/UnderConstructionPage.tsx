@@ -8,11 +8,11 @@ const UnderConstructionPage = () => {
       <div className="max-w-2xl w-full text-center space-y-8">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white p-4 rounded-lg shadow-lg">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img 
               src="/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.png" 
               alt="Romans Building Services Logo" 
-              className="h-16 w-auto"
+              className="h-20 w-full object-contain"
             />
           </div>
         </div>
