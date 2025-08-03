@@ -57,7 +57,7 @@ export default function ContactPage() {
                 
                 <div>
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="(02) 9999-9999" />
+                  <Input id="phone" type="tel" placeholder="+61 4XX XXX XXX" />
                 </div>
                 
                 <div>

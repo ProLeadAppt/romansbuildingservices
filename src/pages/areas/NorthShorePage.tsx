@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Phone, Clock, Award, CheckCircle } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
 
 const NorthShorePage = () => {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     'Heritage Restoration',
     'Structural Repairs', 
@@ -42,11 +44,11 @@ const NorthShorePage = () => {
               From heritage homes in Mosman to modern developments in Chatswood.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
                 <Phone className="w-5 h-5 mr-2" />
                 Call +61 483 981 292
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
                 Free North Shore Quote
               </Button>
             </div>
@@ -195,12 +197,15 @@ const NorthShorePage = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call Now: +61 483 981 292
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm" onClick={() => setShowAssessmentPopup(true)}>
               Schedule Assessment
             </Button>
           </div>
         </div>
       </section>
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </div>
   );
 };

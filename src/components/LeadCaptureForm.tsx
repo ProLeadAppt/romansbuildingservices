@@ -103,7 +103,7 @@ export const LeadCaptureForm = () => {
                       onChange={(e) => handleInputChange("phone", e.target.value)}
                       required
                       className="mt-1"
-                      placeholder="(02) 9XXX XXXX"
+                      placeholder="+61 4XX XXX XXX"
                     />
                   </div>
                 </div>
@@ -214,7 +214,7 @@ export const LeadCaptureForm = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-secondary" />
-                    <span className="font-medium">(02) 9XXX-XXXX</span>
+                    <a href="tel:+61483981292" className="font-medium text-white hover:text-secondary transition-colors">+61 483 981 292</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-secondary" />

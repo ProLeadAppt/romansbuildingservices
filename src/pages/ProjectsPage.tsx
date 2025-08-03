@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Calendar, Building, Phone, Star } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { PremiumBeforeAfterSlider } from '@/components/PremiumBeforeAfterSlider';
 
 export default function ProjectsPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
+  
   // Before/After work showcases organized by service categories
   const workByService = {
     masonry: [
@@ -313,16 +316,19 @@ export default function ProjectsPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" onClick={() => setShowAssessmentPopup(true)}>
               <Star className="w-5 h-5 mr-2" />
               Get Free Stonework Assessment
             </Button>
-            <Button size="lg" variant="outline" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button size="lg" variant="outline" className="border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="w-5 h-5 mr-2" />
               Discuss Your Stonework Needs
             </Button>
           </div>
         </motion.section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
       </div>
   );
 }

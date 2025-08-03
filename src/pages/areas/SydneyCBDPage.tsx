@@ -1,11 +1,14 @@
+import React, { useState } from 'react';
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, CheckCircle, Building, Star } from "lucide-react";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import teamImage from "@/assets/team.jpg";
 
 export default function SydneyCBDPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Commercial Building Maintenance",
     "Heritage Building Restoration", 
@@ -52,12 +55,12 @@ export default function SydneyCBDPage() {
                 premium quality and fast response times.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
                   Get CBD Quote
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (02) 9999-9999
+                  Call +61 483 981 292
                 </Button>
               </div>
             </div>
@@ -154,7 +157,7 @@ export default function SydneyCBDPage() {
                 <CardDescription className="text-lg">
                   Average response time for emergency calls in Sydney CBD
                 </CardDescription>
-                <Button className="mt-6 w-full">Get Emergency Service</Button>
+                <Button className="mt-6 w-full" onClick={() => window.open('tel:+61483981292')}>Get Emergency Service</Button>
               </CardContent>
             </Card>
           </div>
@@ -171,10 +174,10 @@ export default function SydneyCBDPage() {
             Free assessment for all CBD building projects
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8">
+            <Button size="lg" variant="secondary" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
               Get Free CBD Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="mr-2 h-5 w-5" />
               Call CBD Specialist
             </Button>
@@ -183,6 +186,9 @@ export default function SydneyCBDPage() {
       </section>
 
       <Footer />
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </div>
   );
 }

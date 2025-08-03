@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Phone, Clock, CheckCircle, Building, Star } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import teamImage from '@/assets/team.jpg';
 
 export default function EasternSuburbsPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Premium Residential Restoration",
     "Luxury Home Maintenance", 
@@ -37,8 +39,8 @@ export default function EasternSuburbsPage() {
                 residential properties, heritage homes, and coastal building protection.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">Get Premium Quote</Button>
-                <Button variant="outline" size="lg">
+                <Button size="lg" onClick={() => setShowAssessmentPopup(true)}>Get Premium Quote</Button>
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call +61 483 981 292
                 </Button>
@@ -76,8 +78,11 @@ export default function EasternSuburbsPage() {
         <section className="bg-primary text-primary-foreground rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Premium Eastern Suburbs Service</h2>
           <p className="text-xl mb-8 opacity-90">Exclusive building services for discerning clients</p>
-          <Button size="lg" variant="secondary">Get Premium Assessment</Button>
+          <Button size="lg" variant="secondary" onClick={() => setShowAssessmentPopup(true)}>Get Premium Assessment</Button>
         </section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
       </div>
   );
 }

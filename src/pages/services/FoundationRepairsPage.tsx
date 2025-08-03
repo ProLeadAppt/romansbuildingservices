@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Phone, Star, Shield, Clock, Award, Home } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 const heroImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export default function FoundationRepairsPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Foundation Underpinning",
     "Structural Foundation Repairs", 
@@ -37,10 +39,10 @@ export default function FoundationRepairsPage() {
                 to complete foundation stabilization, we ensure your property's structural integrity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">
+                <Button size="lg" onClick={() => setShowAssessmentPopup(true)}>
                   Get Foundation Assessment
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call +61 483 981 292
                 </Button>
@@ -132,6 +134,9 @@ export default function FoundationRepairsPage() {
             </Button>
           </div>
         </section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
       </div>
   );
 }

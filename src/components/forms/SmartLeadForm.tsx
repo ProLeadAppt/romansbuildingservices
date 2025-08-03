@@ -244,7 +244,7 @@ export const SmartLeadForm: React.FC<SmartLeadFormProps> = ({
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="(02) 9XXX XXXX"
+                    placeholder="+61 4XX XXX XXX"
                     value={formData.phone}
                     onChange={(e) => updateField('phone', e.target.value)}
                     className={`mt-1 h-12 ${getFieldError('phone') ? 'border-red-500' : ''}`}
