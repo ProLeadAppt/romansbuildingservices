@@ -113,7 +113,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white/60 text-sm">
-              © 2024 Romans Building Services. All rights reserved. ABN: XX XXX XXX XXX
+              © 2024 Romans Building Services. All rights reserved. ABN: 49 641 892 677
             </div>
             <div className="flex gap-6 text-sm text-white/60">
               <a href="#" className="hover:text-secondary transition-smooth">Privacy Policy</a>

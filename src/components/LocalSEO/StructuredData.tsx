@@ -14,7 +14,7 @@ export const BUSINESS_INFO = {
   phone: "+61 483 981 292",
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com.au",
-  abn: "12 345 678 901", // Replace with actual ABN
+  abn: "49 641 892 677",
   coordinates: {
     latitude: -33.8688,
     longitude: 151.2093
