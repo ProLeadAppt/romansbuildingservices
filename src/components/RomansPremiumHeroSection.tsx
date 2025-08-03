@@ -25,7 +25,7 @@ export const RomansPremiumHeroSection = () => {
   });
 
   const { toast } = useToast();
-  const { allServices, defaultUrgency, sydneyAreas } = useSmartDefaults();
+  const { suggestedServices, defaultUrgency, sydneyAreas } = useSmartDefaults();
   const { validateField, getFieldError, isFieldValid } = useFormValidation();
 
   const handlePhoneSubmit = () => {
@@ -298,20 +298,27 @@ export const RomansPremiumHeroSection = () => {
 
                     <div className="space-y-2">
                       <Label htmlFor="service">What can we help with?</Label>
-                      <select
-                        id="service"
-                        className="w-full p-2 border rounded-md"
-                        value={formData.service}
-                        onChange={(e) => setFormData(prev => ({ ...prev, service: e.target.value }))}
-                        required
-                      >
-                        <option value="">Select a service...</option>
-                        {allServices.map((service) => (
-                          <option key={service.value} value={service.value}>
-                            {service.label} - {service.desc}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <select
+                          id="service"
+                          className="w-full p-3 border-2 border-gray-200 rounded-xl bg-white text-gray-800 font-medium appearance-none cursor-pointer focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-200 shadow-sm hover:shadow-md"
+                          value={formData.service}
+                          onChange={(e) => setFormData(prev => ({ ...prev, service: e.target.value }))}
+                          required
+                        >
+                          <option value="" className="text-gray-500">Choose your project type...</option>
+                          <option value="assessment" className="py-2">🏗️ Building Assessment & Quote</option>
+                          <option value="masonry" className="py-2">🧱 Masonry & Brickwork Repairs</option>
+                          <option value="heritage" className="py-2">🏛️ Heritage Building Restoration</option>
+                          <option value="structural" className="py-2">🔧 Structural & Foundation Repairs</option>
+                          <option value="concrete" className="py-2">🏗️ Concrete Cancer Treatment</option>
+                          <option value="repointing" className="py-2">⚒️ Repointing & Stone Restoration</option>
+                          <option value="consultation" className="py-2">💬 Professional Consultation</option>
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                          <ArrowRight className="h-5 w-5 text-gray-400 rotate-90" />
+                        </div>
+                      </div>
                     </div>
 
                     <div className="space-y-2">
