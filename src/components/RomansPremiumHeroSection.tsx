@@ -189,7 +189,7 @@ export const RomansPremiumHeroSection = () => {
               <Button 
                 variant="ghost" 
                 className="text-white hover:bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2" 
-                onClick={() => window.open('https://www.google.com/search?q=romans+building+services+reviews#lrd=0x6b12bb0fada7152f:0x1ce36abd4586e82d,3,,,,', '_blank')}
+                onClick={() => window.open('/review', '_blank')}
               >
                 <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
                 Leave a Review
