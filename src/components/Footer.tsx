@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Building } from "lucide-react";
 import { ContentInfoLandmark } from "./ARIALandmarks";
 import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
@@ -33,12 +34,36 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Our Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Masonry & Brickwork</li>
-              <li>Structural Restoration</li>
-              <li>Remedial Building</li>
-              <li>Heritage Conservation</li>
-              <li>Foundation Repairs</li>
-              <li>Concrete Repairs</li>
+              <li>
+                <Link to="/services/masonry" className="hover:text-secondary transition-smooth">
+                  Masonry & Brickwork
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/structural-repairs" className="hover:text-secondary transition-smooth">
+                  Structural Restoration
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/remedial-building" className="hover:text-secondary transition-smooth">
+                  Remedial Building
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/heritage-restoration" className="hover:text-secondary transition-smooth">
+                  Heritage Conservation
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/foundation-repairs" className="hover:text-secondary transition-smooth">
+                  Foundation Repairs
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/concrete-repairs" className="hover:text-secondary transition-smooth">
+                  Concrete Repairs
+                </Link>
+              </li>
             </ul>
           </div>
 
