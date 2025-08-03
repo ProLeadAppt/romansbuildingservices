@@ -59,7 +59,7 @@ export const ReviewsCarouselSection = () => {
       date: 'November 2023',
       rating: 5,
       title: 'Foundation Specialists',
-      content: 'After years of foundation settlement issues, Romans Building Services finally solved our problems. Their structural underpinning solution has completely stabilized our home. Excellent warranty support too.',
+      content: 'After years of foundation settlement issues, Romans Building Services finally solved our problems. Their structural underpinning solution has completely stabilized our home. Excellent professional support too.',
       project: 'Foundation Repairs',
       avatar: '/api/placeholder/60/60'
     },

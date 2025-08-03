@@ -40,7 +40,7 @@ export const OptimizedAnimatedAboutSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-4">
-              For over 25 years, Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
+              Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
             </p>
 
             <div className="glass-morphism rounded-xl p-6 border-l-4 border-primary">

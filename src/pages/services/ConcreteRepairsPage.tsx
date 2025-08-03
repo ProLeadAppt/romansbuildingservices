@@ -18,7 +18,7 @@ export default function ConcreteRepairsPage() {
     { icon: Shield, title: "Concrete Specialists", description: "Specialized expertise in all types of concrete repairs" },
     { icon: Clock, title: "25+ Years Experience", description: "Decades of experience treating concrete cancer and spalling" },
     { icon: Award, title: "Advanced Techniques", description: "Latest concrete repair technologies and materials" },
-    { icon: Star, title: "Warranty Backed", description: "All concrete repairs backed by comprehensive warranty" }
+    { icon: Star, title: "Quality Assured", description: "All concrete repairs backed by professional quality assurance" }
   ];
 
   return (

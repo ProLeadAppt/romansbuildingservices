@@ -57,7 +57,7 @@ export const ProcessTimelineSection = () => {
       icon: Award,
       title: 'Completion',
       description: 'Final inspection, handover, and ongoing support guarantee.',
-      details: ['Final quality inspection', 'Client walkthrough', 'Warranty provision', 'Maintenance advice'],
+      details: ['Final quality inspection', 'Client walkthrough', 'Project completion', 'Maintenance advice'],
       duration: '1 day',
       color: 'text-emerald-600'
     }
@@ -66,7 +66,7 @@ export const ProcessTimelineSection = () => {
   const guarantees = [
     { icon: Clock, title: 'On-Time Delivery', desc: 'Projects completed as scheduled or we pay penalties' },
     { icon: Users, title: 'Expert Team', desc: 'Licensed professionals with 25+ years experience' },
-    { icon: Award, title: 'Quality Guarantee', desc: '5-year warranty on all structural work' },
+    { icon: Award, title: 'Quality Guarantee', desc: 'Professional workmanship on all projects' },
     { icon: CheckCircle, title: 'Fixed Pricing', desc: 'No hidden costs or surprise charges' }
   ];
 

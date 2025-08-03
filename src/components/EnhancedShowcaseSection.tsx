@@ -60,7 +60,7 @@ export const EnhancedShowcaseSection = () => {
               Proven <span className="gradient-text">Excellence</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Over 25 years of delivering exceptional results across Sydney
+              Delivering exceptional results across Sydney
             </p>
           </div>
           

@@ -15,10 +15,6 @@ export const FAQSection = () => {
       answer: "Absolutely. We are fully licensed masonry contractors, insured with comprehensive liability coverage, and certified professionals. We can provide certificates of insurance upon request."
     },
     {
-      question: "What warranty do you offer on your work?",
-      answer: "We offer warranties on all our work - comprehensive warranties available on certain services. Our warranty covers both materials and workmanship."
-    },
-    {
       question: "How much will my project cost?",
       answer: "Project costs vary based on scope and complexity. We provide detailed, transparent quotes after our assessment. Our pricing reflects quality workmanship and materials, and we'll explain all costs clearly before starting work."
     },

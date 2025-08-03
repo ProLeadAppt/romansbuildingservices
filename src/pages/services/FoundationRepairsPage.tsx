@@ -16,7 +16,7 @@ export default function FoundationRepairsPage() {
   ];
 
   const features = [
-    { icon: Shield, title: "Structural Warranty", description: "Comprehensive warranty on all foundation work" },
+    { icon: Shield, title: "Structural Guarantee", description: "Professional quality assurance on all foundation work" },
     { icon: Clock, title: "Minimal Disruption", description: "Advanced techniques minimize impact on daily life" },
     { icon: Award, title: "Engineering Backed", description: "All work approved by structural engineers" },
     { icon: Star, title: "Foundation Specialists", description: "25+ years of foundation repair expertise" }

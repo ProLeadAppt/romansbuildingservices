@@ -174,7 +174,7 @@ export default function QuotePage() {
                       "Engineering consultation needed",
                       "Heritage stonework consultation",
                       "Professional after-hours service",
-                      "Warranty and maintenance plan"
+                      "Maintenance recommendations"
                     ].map((option) => (
                       <div key={option} className="flex items-center space-x-2">
                         <Checkbox id={option} />

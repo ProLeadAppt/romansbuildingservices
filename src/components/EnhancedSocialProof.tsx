@@ -445,11 +445,11 @@ export const sampleTrustIndicators: TrustIndicator[] = [
     color: 'bg-yellow-500'
   },
   {
-    id: 'warranty',
+    id: 'quality',
     icon: Shield,
-    title: 'Warranty Period',
-    value: '10 Years',
-    description: 'Comprehensive coverage',
+    title: 'Quality Assurance',
+    value: 'Premium',
+    description: 'Professional standard',
     color: 'bg-purple-500'
   }
 ];

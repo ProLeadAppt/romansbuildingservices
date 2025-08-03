@@ -61,7 +61,7 @@ export default function AboutPage() {
             Sydney's Trusted Master Stonemasons Since 1995
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            For over 25 years, Romans Building Services has been Sydney's go-to choice for 
+            Romans Building Services has been Sydney's go-to choice for 
             professional stonework, masonry, and restoration. Family-owned and operated 
             with an unwavering commitment to quality stone craftsmanship.
           </p>

@@ -55,7 +55,7 @@ export const AnimatedAboutSection = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              For over 25 years, Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
+              Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
             </motion.p>
 
             <motion.div

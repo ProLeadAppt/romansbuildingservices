@@ -40,7 +40,7 @@ export const InteractiveServicesSection = () => {
       title: 'Maintenance Services',
       shortDesc: 'Ongoing building care',
       fullDesc: 'Regular maintenance programs to keep your building in optimal condition. Preventive care that saves money long-term.',
-      features: ['Scheduled maintenance', 'Preventive repairs', 'Priority callouts', 'Warranty programs', 'Building compliance', 'Emergency repairs'],
+      features: ['Scheduled maintenance', 'Preventive repairs', 'Priority callouts', 'Quality assurance', 'Building compliance', 'Emergency repairs'],
       image: '/api/placeholder/400/300'
     }
   ];

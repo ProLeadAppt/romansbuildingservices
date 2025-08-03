@@ -15,7 +15,7 @@ interface ServiceFAQSectionProps {
   faqs: FAQ[];
   emergencyAvailable?: boolean;
   averageProjectTime?: string;
-  warrantyPeriod?: string;
+  
   className?: string;
 }
 
@@ -24,7 +24,7 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
   faqs,
   emergencyAvailable = true,
   averageProjectTime = "1-3 weeks",
-  warrantyPeriod = "5 years",
+  
   className = ""
 }) => {
   // Group FAQs by category if categories are provided
@@ -43,12 +43,6 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
       label: "Project Timeline",
       value: averageProjectTime,
       color: "text-blue-600"
-    },
-    {
-      icon: Shield,
-      label: "Warranty Period",
-      value: warrantyPeriod,
-      color: "text-green-600"
     },
     {
       icon: Star,
@@ -196,11 +190,6 @@ export const masonryFAQs: FAQ[] = [
     category: "Services"
   },
   {
-    question: "Do you provide warranties on masonry work?",
-    answer: "Yes, all our masonry work comes with a comprehensive 5-year warranty covering materials and workmanship. We also provide ongoing maintenance advice to ensure your masonry work lasts for decades.",
-    category: "Warranty & Quality"
-  },
-  {
     question: "How much do masonry services cost?",
     answer: "Costs vary depending on the scope of work, materials, and access. Small pointing repairs start from $500, while larger projects range from $2,000-$15,000+. We provide detailed quotes after our free on-site assessment.",
     category: "Pricing"
@@ -266,9 +255,4 @@ export const structuralFAQs: FAQ[] = [
     answer: "Structural issues should be addressed promptly to prevent further damage and ensure safety. We offer priority scheduling for urgent structural problems and emergency stabilization services.",
     category: "Urgency"
   },
-  {
-    question: "What's the warranty on structural repairs?",
-    answer: "Structural repairs come with a 10-year warranty on workmanship and materials, with ongoing monitoring available. We also provide detailed maintenance recommendations to ensure long-term structural integrity.",
-    category: "Warranty"
-  }
 ];

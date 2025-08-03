@@ -155,7 +155,6 @@ export default function MasonryPage() {
         faqs={masonryFAQs}
         emergencyAvailable={true}
         averageProjectTime="1-3 weeks"
-        warrantyPeriod="5 years"
       />
 
       {/* Assessment Popup */}

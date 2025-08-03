@@ -17,7 +17,7 @@ export default function BuildingRestorationPage() {
   const features = [
     { icon: Shield, title: "Complete Restoration", description: "Full-service building restoration from planning to completion" },
     { icon: Clock, title: "25+ Years Experience", description: "Decades of experience in comprehensive building restoration" },
-    { icon: Award, title: "Quality Guaranteed", description: "All restoration work backed by comprehensive warranty" },
+    { icon: Award, title: "Quality Guaranteed", description: "All restoration work backed by professional quality assurance" },
     { icon: Star, title: "Heritage Approved", description: "Restoration techniques approved for heritage buildings" }
   ];
 
