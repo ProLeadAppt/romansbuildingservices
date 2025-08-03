@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ZapierWebhookConfig } from '@/components/ZapierWebhookConfig';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { AuthGuard } from '@/components/auth/AuthGuard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -59,9 +58,8 @@ const AdminPage: React.FC = () => {
   ];
 
   return (
-    <AuthGuard>
-      <Layout>
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
           <div className="container mx-auto px-4 py-8 space-y-8">
             {/* Header */}
             <div className="text-center space-y-4">
@@ -242,10 +240,9 @@ const AdminPage: React.FC = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
         </div>
-      </Layout>
-    </AuthGuard>
+      </div>
+    </Layout>
   );
 };
 
