@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Phone, Star, Shield, Clock, Award, Building } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 const heroImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export default function StructuralRepairsPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Load-Bearing Wall Repairs",
     "Beam & Column Restoration", 
@@ -29,8 +31,8 @@ export default function StructuralRepairsPage() {
                 and critical building components. Engineering-backed solutions you can trust.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">Get Structural Assessment</Button>
-                <Button variant="outline" size="lg">
+                <Button size="lg" onClick={() => setShowAssessmentPopup(true)}>Get Structural Assessment</Button>
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call +61 483 981 292
                 </Button>
@@ -68,8 +70,11 @@ export default function StructuralRepairsPage() {
         <section className="bg-primary text-primary-foreground rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Structural Issues? Get Expert Help</h2>
           <p className="text-xl mb-8 opacity-90">Emergency structural repairs available 24/7</p>
-          <Button size="lg" variant="secondary">Book Structural Assessment</Button>
-      </section>
-    </div>
+          <Button size="lg" variant="secondary" onClick={() => setShowAssessmentPopup(true)}>Book Structural Assessment</Button>
+        </section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
+      </div>
   );
 }

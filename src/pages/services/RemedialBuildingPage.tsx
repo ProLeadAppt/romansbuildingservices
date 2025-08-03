@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import beforeAfterImage from "@/assets/before-after.jpg";
 
 export default function RemedialBuildingPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Building Defect Rectification",
     "Strata Building Repairs", 
@@ -38,10 +41,10 @@ export default function RemedialBuildingPage() {
                 From minor defects to major building compliance issues, we fix buildings right.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
                   Get Building Assessment
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call +61 483 981 292
                 </Button>
@@ -130,16 +133,19 @@ export default function RemedialBuildingPage() {
             Free building defect assessment and remedial consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">
+            <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90" onClick={() => setShowAssessmentPopup(true)}>
               Get Defect Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-white text-white bg-transparent hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-white text-white bg-transparent hover:bg-white hover:text-primary" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="mr-2 h-5 w-5" />
               Emergency Building Repair
             </Button>
           </div>
         </div>
-      </section>
-    </div>
-  );
-}
+        </section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
+      </div>
+    );
+  }

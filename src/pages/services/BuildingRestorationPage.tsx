@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import beforeAfterImage from "@/assets/before-after.jpg";
 
 export default function BuildingRestorationPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Complete Building Restoration",
     "Facade Renovation & Repair", 
@@ -38,10 +41,10 @@ export default function BuildingRestorationPage() {
                 From minor repairs to complete building renewal, we restore buildings to their former glory.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
                   Get Restoration Quote
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call +61 483 981 292
                 </Button>
@@ -130,16 +133,19 @@ export default function BuildingRestorationPage() {
             Free building assessment and restoration consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-secondary text-secondary-foreground hover:bg-secondary/90">
+            <Button size="lg" className="text-lg px-8 bg-secondary text-secondary-foreground hover:bg-secondary/90" onClick={() => setShowAssessmentPopup(true)}>
               Get Restoration Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="mr-2 h-5 w-5" />
               Call Restoration Expert
             </Button>
           </div>
         </div>
-      </section>
-    </div>
-  );
-}
+        </section>
+        
+        {/* Assessment Popup */}
+        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
+      </div>
+    );
+  }

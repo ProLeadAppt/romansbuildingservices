@@ -1,11 +1,14 @@
+import React, { useState } from 'react';
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import beforeAfterImage from "@/assets/before-after.jpg";
 
 export default function RestorationPage() {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const services = [
     "Heritage Building Restoration",
     "Facade Restoration & Cleaning", 
@@ -39,12 +42,12 @@ export default function RestorationPage() {
                 From Federation homes to Art Deco buildings, we restore with precision and care.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
                   Get Heritage Assessment
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (02) 9999-9999
+                  Call +61 483 981 292
                 </Button>
               </div>
             </div>
@@ -131,16 +134,19 @@ export default function RestorationPage() {
             Free heritage assessment with restoration recommendations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => setShowAssessmentPopup(true)}>
               Get Heritage Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="mr-2 h-5 w-5" />
               Call Heritage Expert
             </Button>
           </div>
         </div>
       </section>
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
 
       <Footer />
     </div>

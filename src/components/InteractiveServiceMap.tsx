@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { MapPin, Phone, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { AssessmentPopup } from '@/components/AssessmentPopup';
 import { toast } from 'sonner';
 
 interface ServiceArea {
@@ -35,6 +36,7 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
   const [isTokenValid, setIsTokenValid] = useState<boolean>(false);
   const [selectedArea, setSelectedArea] = useState<ServiceArea | null>(null);
   const [isMapInitialized, setIsMapInitialized] = useState<boolean>(false);
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState<boolean>(false);
 
   // Check if we can get token from Supabase environment
   useEffect(() => {
@@ -375,7 +377,11 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
                     </div>
 
                     <div className="pt-4 border-t">
-                      <Button className="w-full" size="lg">
+                      <Button 
+                        onClick={() => setShowAssessmentPopup(true)}
+                        className="w-full" 
+                        size="lg"
+                      >
                         <Phone className="w-4 h-4 mr-2" />
                         Get Quote for {selectedArea.name}
                       </Button>
@@ -421,6 +427,9 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
           </Card>
         </div>
       </div>
+      
+      {/* Assessment Popup */}
+      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
     </section>
   );
 };

@@ -46,12 +46,12 @@ export default function MasonryPage() {
                 exceptional craftsmanship that stands the test of time. 30+ years of proven excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 mobile-button-lg">
+                <Button size="lg" className="text-lg px-8 mobile-button-lg" onClick={() => setShowAssessmentPopup(true)}>
                   Get Free Quote
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg">
+                <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg" onClick={() => window.open('tel:+61483981292')}>
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (02) 9999-9999
+                  Call +61 483 981 292
                 </Button>
               </div>
             </div>
@@ -141,9 +141,9 @@ export default function MasonryPage() {
             <Button size="lg" className="text-lg px-8 mobile-button-lg bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => setShowAssessmentPopup(true)}>
               Get Free Assessment
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+61483981292')}>
               <Phone className="mr-2 h-5 w-5" />
-              Call Now
+              Call +61 483 981 292
             </Button>
           </div>
         </div>
