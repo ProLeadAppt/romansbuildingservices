@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfessionalHeroSection } from '@/components/ProfessionalHeroSection';
+import { RomansPremiumHeroSection } from '@/components/RomansPremiumHeroSection';
 import { OptimizedAnimatedAboutSection } from '@/components/OptimizedAnimatedAboutSection';
 import { LazySection } from '@/components/LazySection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
@@ -33,7 +33,7 @@ const SinglePageApp = () => {
             className="min-h-screen"
           >
             <ErrorBoundary>
-              <ProfessionalHeroSection />
+              <RomansPremiumHeroSection />
             </ErrorBoundary>
           </RegionLandmark>
         </MainLandmark>
