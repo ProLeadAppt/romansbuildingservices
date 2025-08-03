@@ -16,13 +16,14 @@ const heroBackgroundImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d0
 const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
 export const ProfessionalHeroSection = () => {
   const navigate = useNavigate();
-  
+
   // Preload critical images for better performance
   React.useEffect(() => {
-    addPreloadLinks([
-      { src: heroBackgroundImage },
-      { src: minasPhoto }
-    ]);
+    addPreloadLinks([{
+      src: heroBackgroundImage
+    }, {
+      src: minasPhoto
+    }]);
   }, []);
   const [formData, setFormData] = useState({
     name: '',
@@ -98,15 +99,11 @@ export const ProfessionalHeroSection = () => {
     text: '5-Star Google Rating',
     color: 'text-yellow-600'
   }];
-  return (
-    <div className="relative min-h-screen -mt-24 flex items-center">
+  return <div className="relative min-h-screen -mt-24 flex items-center">
       {/* Premium Background with Overlay - Extended to top */}
-      <div 
-        className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `url(${heroBackgroundImage})`
-        }}
-      >
+      <div className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBackgroundImage})`
+    }}>
         <link rel="preload" href={heroBackgroundImage} as="image" />
       </div>
       <div className="absolute inset-0 -top-24 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
@@ -284,7 +281,7 @@ export const ProfessionalHeroSection = () => {
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                     <span className="text-sm sm:text-base font-semibold">Stonemason Assessment</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Stonemason Assessment & Quote</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Building Assessment & Quote</h3>
                   <p className="text-sm sm:text-base text-muted-foreground">
                     Professional masonry evaluation and quote within 2-3 business days
                   </p>
@@ -353,14 +350,7 @@ export const ProfessionalHeroSection = () => {
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0">
-                         <img 
-                          src={minasPhoto} 
-                          alt="Minas Romanakis, Licensed Masonry Contractor and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" 
-                          className="w-full h-full object-cover" 
-                          loading="eager"
-                          width="80"
-                          height="80"
-                        />
+                         <img src={minasPhoto} alt="Minas Romanakis, Licensed Masonry Contractor and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" className="w-full h-full object-cover" loading="eager" width="80" height="80" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-foreground">Our Commitment</p>
@@ -377,6 +367,5 @@ export const ProfessionalHeroSection = () => {
 
       {/* Assessment Popup */}
       <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </div>
-  );
+    </div>;
 };
