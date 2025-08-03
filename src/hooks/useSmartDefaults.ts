@@ -26,36 +26,72 @@ export const useSmartDefaults = () => {
       setLocation('Sydney');
     }
 
-    // Set popular services based on current trends
+    // Set comprehensive services based on current trends
     const popularServices: ServiceOption[] = [
       {
         value: 'assessment',
         label: 'Building Assessment',
-        desc: 'Professional inspection',
+        desc: 'Professional inspection & quote',
         popular: true
       },
       {
         value: 'masonry',
-        label: 'Brick & Masonry',
-        desc: 'Repairs & restoration',
+        label: 'Masonry & Brickwork',
+        desc: 'Expert brick & stone work',
         popular: true
       },
       {
         value: 'heritage',
-        label: 'Heritage Work',
-        desc: 'Period building restoration',
+        label: 'Heritage Restoration',
+        desc: 'Period building conservation',
         popular: true
       },
       {
         value: 'structural',
         label: 'Structural Repairs',
-        desc: 'Foundation & support',
+        desc: 'Foundation & load bearing',
         popular: false
       },
       {
-        value: 'restoration',
-        label: 'Heritage Restoration',
-        desc: 'Period building work',
+        value: 'building-restoration',
+        label: 'Building Restoration', 
+        desc: 'Complete building renewal',
+        popular: false
+      },
+      {
+        value: 'concrete-repairs',
+        label: 'Concrete Repairs',
+        desc: 'Concrete cancer treatment',
+        popular: false
+      },
+      {
+        value: 'foundation-repairs',
+        label: 'Foundation Repairs',
+        desc: 'Underpinning & stabilization',
+        popular: false
+      },
+      {
+        value: 'remedial-building',
+        label: 'Remedial Building',
+        desc: 'Complex defect solutions',
+        popular: false
+      },
+      {
+        value: 'repointing',
+        label: 'Repointing & Tuckpointing',
+        desc: 'Mortar joint restoration',
+        popular: false
+      },
+      {
+        value: 'stone-restoration',
+        label: 'Stone Restoration',
+        desc: 'Sandstone & natural stone',
+        popular: false
+      },
+      {
+        value: 'retaining-walls',
+        label: 'Retaining Walls',
+        desc: 'New construction & repairs',
         popular: false
       },
       {
