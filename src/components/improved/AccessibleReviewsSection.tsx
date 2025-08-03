@@ -261,7 +261,7 @@ export const AccessibleReviewsSection = () => {
 
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { name: 'Google Reviews', rating: '4.9★', url: '#' },
+              { name: 'Google Reviews', rating: '4.9★', url: 'https://www.google.com/search?q=romans+building+services+reviews#lrd=0x6b12bb0fada7152f:0x1ce36abd4586e82d,3,,,,' },
               { name: 'TrustPilot', rating: '4.8★', url: '#' },
               { name: 'HiPages', rating: '4.9★', url: '#' }
             ].map((platform) => (

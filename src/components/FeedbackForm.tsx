@@ -17,7 +17,7 @@ interface FeedbackFormProps {
 export const FeedbackForm: React.FC<FeedbackFormProps> = ({ 
   rating, 
   businessName = "Romans Building Services",
-  googleReviewUrl = "https://www.google.com/search?q=romans+building+services+reviews"
+  googleReviewUrl = "https://www.google.com/search?q=romans+building+services+reviews#lrd=0x6b12bb0fada7152f:0x1ce36abd4586e82d,3,,,,"
 }) => {
   const [formData, setFormData] = useState({
     name: '',
