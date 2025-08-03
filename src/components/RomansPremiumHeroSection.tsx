@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Users, Calendar, Award, Shield, Heart, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Phone, Users, Calendar, Award, Shield, Heart, CheckCircle2, ArrowRight, Star } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
@@ -100,7 +100,7 @@ export const RomansPremiumHeroSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 -top-24 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
-      <div className="relative z-10 container mx-auto px-4 pt-16 pb-6">
+      <div className="relative z-10 container mx-auto px-4 pt-24 sm:pt-20 pb-6">
         <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[85vh]">
           
           {/* Left Column - Refined Content */}
@@ -174,6 +174,18 @@ export const RomansPremiumHeroSection = () => {
               >
                 <Phone className="h-5 w-5 mr-2" />
                 Call Minas
+              </Button>
+            </div>
+
+            {/* Leave a Review Button */}
+            <div className="flex justify-center sm:justify-start">
+              <Button 
+                variant="ghost" 
+                className="text-white hover:bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2" 
+                onClick={() => window.open('https://www.google.com/search?q=romans+building+services+reviews#lrd=0x6b12bb0fada7152f:0x1ce36abd4586e82d,3,,,,', '_blank')}
+              >
+                <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
+                Leave a Review
               </Button>
             </div>
 
