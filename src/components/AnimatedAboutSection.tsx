@@ -15,7 +15,7 @@ export const AnimatedAboutSection = () => {
   const values = [
     'Personal inspection of every project',
     'Direct communication with the owner',
-    '30-year reputation for excellence', 
+    'Trusted reputation for excellence', 
     'Family business values & integrity',
     'Hands-on quality control',
     'Lifetime craftsmanship guarantee'

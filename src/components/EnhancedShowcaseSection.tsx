@@ -164,10 +164,10 @@ export const EnhancedShowcaseSection = () => {
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">30-Year Guarantee</h3>
+                <h3 className="text-2xl font-bold">Quality Guarantee</h3>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  We stand behind our work with an industry-leading 30-year structural guarantee. 
-                  Your investment is protected by our commitment to excellence.
+                  We stand behind our work with comprehensive warranty coverage. 
+                  Your investment is protected by our commitment to excellence and quality craftsmanship.
                 </p>
               </div>
               
