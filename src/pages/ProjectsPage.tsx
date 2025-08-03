@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Eye, MapPin, Calendar, Building, Phone, Star } from 'lucide-react';
-import beforeAfterImage from '@/assets/before-after-showcase.jpg';
+import { MapPin, Calendar, Building, Phone, Star } from 'lucide-react';
+import { PremiumBeforeAfterSlider } from '@/components/PremiumBeforeAfterSlider';
 
 export default function ProjectsPage() {
-  // Organized by service categories
+  // Before/After work showcases organized by service categories
   const workByService = {
     masonry: [
       {
@@ -15,30 +14,27 @@ export default function ProjectsPage() {
         title: "Heritage Brick Repointing",
         location: "Paddington",
         year: "2024",
-        type: "Masonry & Stonework",
-        description: "Detailed heritage brick repointing using traditional lime mortar on 1890s Victorian terrace facade.",
-        image: beforeAfterImage,
-        tags: ["Heritage", "Repointing", "Lime Mortar"]
+        service: "Masonry & Stonework",
+        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       },
       {
         id: 2,
         title: "Sandstone Garden Wall",
-        location: "Woollahra",
+        location: "Woollahra", 
         year: "2023",
-        type: "Masonry & Stonework",
-        description: "Custom sandstone garden wall construction with traditional dry-stacked techniques and integrated drainage.",
-        image: beforeAfterImage,
-        tags: ["Sandstone", "Garden Wall", "Traditional"]
+        service: "Masonry & Stonework",
+        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 3,
         title: "Commercial Brick Facade",
         location: "Sydney CBD",
-        year: "2024",
-        type: "Masonry & Stonework",
-        description: "Modern commercial brick facade with architectural detailing and weather-resistant pointing.",
-        image: beforeAfterImage,
-        tags: ["Commercial", "Facade", "Architectural"]
+        year: "2024", 
+        service: "Masonry & Stonework",
+        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ],
     heritage: [
@@ -47,30 +43,27 @@ export default function ProjectsPage() {
         title: "Victorian Terrace Conservation",
         location: "Surry Hills",
         year: "2024",
-        type: "Heritage Restoration",
-        description: "Complete heritage conservation of 1880s Victorian terrace using period-appropriate materials and techniques.",
-        image: beforeAfterImage,
-        tags: ["Victorian", "Conservation", "Period Materials"]
+        service: "Heritage Restoration",
+        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       },
       {
         id: 5,
-        title: "Federation Home Restoration",
+        title: "Federation Home Restoration", 
         location: "Balmain",
         year: "2023",
-        type: "Heritage Restoration",
-        description: "Comprehensive Federation-era home restoration including original stonework and architectural features.",
-        image: beforeAfterImage,
-        tags: ["Federation", "Stonework", "Architectural"]
+        service: "Heritage Restoration",
+        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 6,
         title: "Historic Church Stonework",
         location: "The Rocks",
         year: "2023",
-        type: "Heritage Restoration",
-        description: "Careful restoration of 1850s church stonework using traditional carving and repair techniques.",
-        image: beforeAfterImage,
-        tags: ["Church", "Stonework", "Traditional"]
+        service: "Heritage Restoration", 
+        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ],
     foundation: [
@@ -79,20 +72,18 @@ export default function ProjectsPage() {
         title: "House Foundation Stabilization",
         location: "Leichhardt",
         year: "2024",
-        type: "Foundation Repairs",
-        description: "Foundation underpinning and stabilization using micro-piles with minimal disruption to occupants.",
-        image: beforeAfterImage,
-        tags: ["Underpinning", "Stabilization", "Micro-piles"]
+        service: "Foundation Repairs",
+        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 8,
-        title: "Retaining Wall Foundation",
+        title: "Retaining Wall Foundation", 
         location: "Mosman",
         year: "2023",
-        type: "Foundation Repairs",
-        description: "Deep foundation work for sandstone retaining wall with engineered drainage solutions.",
-        image: beforeAfterImage,
-        tags: ["Retaining Wall", "Drainage", "Engineering"]
+        service: "Foundation Repairs",
+        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ],
     structural: [
@@ -101,20 +92,18 @@ export default function ProjectsPage() {
         title: "Load-Bearing Wall Repair",
         location: "Newtown",
         year: "2024",
-        type: "Structural Restoration",
-        description: "Structural repair of compromised load-bearing masonry walls with steel reinforcement integration.",
-        image: beforeAfterImage,
-        tags: ["Load-Bearing", "Steel Reinforcement", "Structural"]
+        service: "Structural Restoration",
+        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 10,
         title: "Chimney Structural Repair",
         location: "Rozelle",
-        year: "2023",
-        type: "Structural Restoration",
-        description: "Complete structural assessment and repair of heritage chimney with earthquake compliance upgrades.",
-        image: beforeAfterImage,
-        tags: ["Chimney", "Compliance", "Heritage"]
+        year: "2023", 
+        service: "Structural Restoration",
+        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ],
     remedial: [
@@ -123,42 +112,38 @@ export default function ProjectsPage() {
         title: "Strata Building Defects",
         location: "Bondi",
         year: "2024",
-        type: "Remedial Building",
-        description: "Comprehensive building defect rectification including facade repairs and compliance upgrades.",
-        image: beforeAfterImage,
-        tags: ["Strata", "Defects", "Compliance"]
+        service: "Remedial Building",
+        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 12,
         title: "Commercial Building Remediation",
         location: "North Sydney",
         year: "2023",
-        type: "Remedial Building",
-        description: "Large-scale remedial work addressing structural and facade issues in commercial building.",
-        image: beforeAfterImage,
-        tags: ["Commercial", "Remediation", "Facade"]
+        service: "Remedial Building", 
+        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ],
     concrete: [
       {
         id: 13,
         title: "Concrete Cancer Treatment",
-        location: "Manly",
+        location: "Manly", 
         year: "2024",
-        type: "Concrete Repairs",
-        description: "Comprehensive concrete cancer treatment with stone stabilization for coastal building exposure.",
-        image: beforeAfterImage,
-        tags: ["Concrete Cancer", "Coastal", "Protective"]
+        service: "Concrete Repairs",
+        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
       },
       {
         id: 14,
         title: "Balcony Spalling Repairs",
         location: "Double Bay",
         year: "2023",
-        type: "Concrete Repairs",
-        description: "Detailed spalling repair work on luxury apartment balconies with aesthetic restoration.",
-        image: beforeAfterImage,
-        tags: ["Spalling", "Balcony", "Luxury"]
+        service: "Concrete Repairs",
+        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
+        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
       }
     ]
   };
@@ -234,12 +219,12 @@ export default function ProjectsPage() {
           ))}
         </motion.div>
 
-        {/* Work Gallery Grid */}
+        {/* Before/After Work Gallery */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -247,21 +232,30 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
+              className="group"
             >
-              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                {/* Before/After Slider */}
+                <div className="relative">
+                  <PremiumBeforeAfterSlider
+                    beforeImage={project.beforeImage}
+                    afterImage={project.afterImage}
+                    beforeLabel="Before"
+                    afterLabel="After"
+                    className="h-80"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                  <Badge className="absolute top-4 left-4">{project.type}</Badge>
+                  <Badge className="absolute top-4 right-4 z-30 bg-background/80 backdrop-blur-sm">
+                    {project.service}
+                  </Badge>
                 </div>
                 
-                <CardHeader>
-                  <CardTitle className="text-lg line-clamp-2">{project.title}</CardTitle>
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                {/* Project Info */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center space-x-1">
                       <MapPin className="w-4 h-4" />
                       <span>{project.location}</span>
@@ -271,27 +265,8 @@ export default function ProjectsPage() {
                       <span>{project.year}</span>
                     </div>
                   </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Eye className="w-4 h-4 mr-2" />
-                    View Project Details
-                  </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.section>
