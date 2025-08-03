@@ -80,8 +80,8 @@ export const ModernContactSection = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@romansbuildingservices.com.au',
-      action: 'mailto:info@romansbuildingservices.com.au',
+      content: 'romanspropertyservices@gmail.com',
+      action: 'mailto:romanspropertyservices@gmail.com',
       description: 'Detailed inquiries and document sharing',
       color: 'text-green-600',
       bgColor: 'bg-green-50'

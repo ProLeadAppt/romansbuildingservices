@@ -12,7 +12,7 @@ export const BUSINESS_INFO = {
     country: "Australia"
   },
   phone: "+61 483 981 292",
-  email: "info@romansbuildingservices.com.au",
+  email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com.au",
   abn: "12 345 678 901", // Replace with actual ABN
   coordinates: {

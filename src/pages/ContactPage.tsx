@@ -114,8 +114,8 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <a href="mailto:info@romansbuildingservices.com.au" className="text-lg text-primary hover:underline">
-                    info@romansbuildingservices.com.au
+                  <a href="mailto:romanspropertyservices@gmail.com" className="text-lg text-primary hover:underline">
+                    romanspropertyservices@gmail.com
                   </a>
                   <p className="text-muted-foreground mt-2">
                     We respond within 2 hours during business hours

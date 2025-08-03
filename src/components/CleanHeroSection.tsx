@@ -245,7 +245,7 @@ export const CleanHeroSection = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         <Mail className="w-4 h-4 text-primary" />
-                        <span>info@romansbuildingservices.com.au</span>
+                        <span>romanspropertyservices@gmail.com</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">

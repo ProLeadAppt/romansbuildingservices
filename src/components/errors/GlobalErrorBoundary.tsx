@@ -111,7 +111,7 @@ export class GlobalErrorBoundary extends React.Component<Props, ErrorBoundarySta
       timestamp: new Date().toISOString()
     };
 
-    const mailto = `mailto:support@romansbuildingservices.com?subject=Bug Report - Error ${this.state.errorId}&body=Error ID: ${this.state.errorId}%0A%0APlease describe what you were doing when this error occurred:%0A%0A`;
+    const mailto = `mailto:romanspropertyservices@gmail.com?subject=Bug Report - Error ${this.state.errorId}&body=Error ID: ${this.state.errorId}%0A%0APlease describe what you were doing when this error occurred:%0A%0A`;
     window.open(mailto);
   };
 

@@ -71,7 +71,7 @@ export const FAQSection = () => {
                 Call Now: +61 483 981 292
               </a>
               <a 
-                href="mailto:info@romansbuildingservices.com"
+                href="mailto:romanspropertyservices@gmail.com"
                 className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-primary-foreground font-bold px-6 py-3 rounded-md transition-smooth"
               >
                 Email Us
