@@ -116,8 +116,8 @@ export const Footer = () => {
               © 2024 Romans Building Services. All rights reserved. ABN: 49 641 892 677
             </div>
             <div className="flex gap-6 text-sm text-white/60">
-              <a href="#" className="hover:text-secondary transition-smooth">Privacy Policy</a>
-              <a href="#" className="hover:text-secondary transition-smooth">Terms of Service</a>
+              <a href="/privacy-policy" className="hover:text-secondary transition-smooth">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-secondary transition-smooth">Terms of Service</a>
               <a href="#" className="hover:text-secondary transition-smooth">Sitemap</a>
             </div>
           </div>
