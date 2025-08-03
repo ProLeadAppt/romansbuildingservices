@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://romansbuildingservices.com.au/</loc>
+    
+    <image:image>
+      <image:loc>https://romansbuildingservices.com.au/images/sydney-masonry-contractor-minas-romanakis.webp</image:loc>
+      <image:caption><![CDATA[Minas Romanakis, professional masonry contractor working on heritage building restoration in Sydney]]></image:caption>
+      <image:title><![CDATA[Sydney Masonry Contractor - Romans Building Services]]></image:title>
+      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://romansbuildingservices.com.au/images/heritage-building-restoration-before-after-sydney.webp</image:loc>
+      <image:caption><![CDATA[Before and after images of heritage building restoration project completed by Romans Building Services in Sydney]]></image:caption>
+      <image:title><![CDATA[Heritage Building Restoration Sydney - Before and After]]></image:title>
+      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://romansbuildingservices.com.au/images/romans-building-services-team-sydney.webp</image:loc>
+      <image:caption><![CDATA[Professional building restoration team from Romans Building Services working in Sydney]]></image:caption>
+      <image:title><![CDATA[Professional Building Team Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://romansbuildingservices.com.au/services/masonry</loc>
+    
+    <image:image>
+      <image:loc>https://romansbuildingservices.com.au/images/professional-masonry-work-sydney.webp</image:loc>
+      <image:caption><![CDATA[Professional masonry and brickwork services in Sydney by qualified tradesman]]></image:caption>
+      <image:title><![CDATA[Professional Masonry Services Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://romansbuildingservices.com.au/services/building-restoration</loc>
+    
+    <image:image>
+      <image:loc>https://romansbuildingservices.com.au/images/building-restoration-showcase-sydney.webp</image:loc>
+      <image:caption><![CDATA[Completed building restoration project showcasing expert craftsmanship in Sydney]]></image:caption>
+      <image:title><![CDATA[Building Restoration Sydney Showcase]]></image:title>
+      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+    </image:image>
+  </url>
+</urlset>

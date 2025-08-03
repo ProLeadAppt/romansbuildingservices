@@ -12,3 +12,10 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemaps
+Sitemap: https://romansbuildingservices.com.au/sitemap.xml
+Sitemap: https://romansbuildingservices.com.au/sitemap-images.xml
+
+# Host (optional but recommended)
+Host: https://romansbuildingservices.com.au
