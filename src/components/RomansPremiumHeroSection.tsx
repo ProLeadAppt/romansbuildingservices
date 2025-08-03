@@ -8,10 +8,12 @@ import { Phone, Users, Calendar, Award, Shield, Heart, CheckCircle2, ArrowRight,
 import { useToast } from "@/components/ui/use-toast";
 import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
+import { AssessmentPopup } from "@/components/AssessmentPopup";
 
 const heroBackgroundImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export const RomansPremiumHeroSection = () => {
+  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -158,7 +160,7 @@ export const RomansPremiumHeroSection = () => {
             {/* Direct CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Button 
-                onClick={handlePhoneSubmit}
+                onClick={() => setShowAssessmentPopup(true)}
                 size="lg" 
                 className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-6 py-4 rounded-xl shadow-xl border-0 flex-1"
               >
@@ -391,6 +393,12 @@ export const RomansPremiumHeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Assessment Popup */}
+      <AssessmentPopup 
+        isOpen={showAssessmentPopup} 
+        onClose={() => setShowAssessmentPopup(false)} 
+      />
     </section>
   );
 };
