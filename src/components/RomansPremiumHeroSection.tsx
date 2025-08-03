@@ -9,6 +9,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
 
+const heroBackgroundImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
+
 export const RomansPremiumHeroSection = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -82,14 +84,23 @@ export const RomansPremiumHeroSection = () => {
     { icon: Award, label: "Community Trusted" }
   ];
 
-  return (
-    <section className="relative min-h-screen bg-gradient-to-br from-primary via-primary-glow to-secondary overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-white/5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px]" />
+   return (
+    <section className="relative min-h-screen -mt-24 flex items-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat" 
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
+        }}
+      >
+        <link rel="preload" href={heroBackgroundImage} as="image" />
       </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 -top-24 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
       
-      <div className="relative z-10 container mx-auto px-4 py-12 lg:py-20">
+      <div className="relative z-10 container mx-auto px-4 pt-20 sm:pt-24 pb-8 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column - Content */}
