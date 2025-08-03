@@ -282,9 +282,7 @@ export const ProfessionalHeroSection = () => {
                     <span className="text-sm sm:text-base font-semibold">Stonemason Assessment</span>
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Building Assessment & Quote</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    Professional masonry evaluation and quote within 2-3 business days
-                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground">Professional building evaluation and quote within 2-3 business days</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
