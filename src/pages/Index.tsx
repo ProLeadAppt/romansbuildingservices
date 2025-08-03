@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/HeroSection";
+import { RomansPremiumHeroSection } from "@/components/RomansPremiumHeroSection";
 import { ProblemSolutionSection } from "@/components/ProblemSolutionSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { SocialProofSection } from "@/components/SocialProofSection";
@@ -11,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <LocalBusinessSchema />
-      <HeroSection />
+      <RomansPremiumHeroSection />
       <ProblemSolutionSection />
       <ServicesSection />
       <SocialProofSection />
