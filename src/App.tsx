@@ -11,7 +11,7 @@ import { ErrorTrackingProvider } from "@/components/ErrorTracking";
 const queryClient = new QueryClient();
 
 // Toggle this to show/hide the under construction page
-const SHOW_CONSTRUCTION_PAGE = true;
+const SHOW_CONSTRUCTION_PAGE = false;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
