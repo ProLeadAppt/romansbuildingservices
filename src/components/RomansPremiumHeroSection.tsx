@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Users, Calendar, Award, Shield, Heart, CheckCircle2, ArrowRight, Star } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from 'react-router-dom';
 import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { AssessmentPopup } from "@/components/AssessmentPopup";
@@ -27,8 +28,9 @@ export const RomansPremiumHeroSection = () => {
   });
 
   const { toast } = useToast();
+  const navigate = useNavigate();
   const { suggestedServices, defaultUrgency, sydneyAreas } = useSmartDefaults();
-  const { validateField, getFieldError, isFieldValid } = useFormValidation();
+  const { validateField, getFieldError } = useFormValidation();
 
   const handlePhoneSubmit = () => {
     const error = validateField('phone', formData.phone);
@@ -61,6 +63,9 @@ export const RomansPremiumHeroSection = () => {
         message: ''
       });
       setCurrentStep(1);
+      
+      // Navigate to thank you page
+      navigate('/thank-you');
     } catch (error) {
       toast({
         title: "Something went wrong",
