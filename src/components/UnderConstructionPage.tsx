@@ -59,7 +59,7 @@ const UnderConstructionPage = () => {
             <Button 
               size="lg" 
               className="gap-2"
-              onClick={() => window.location.href = 'tel:0296482100'}
+              onClick={() => window.location.href = 'tel:+61483981292'}
             >
               <Phone className="h-4 w-4" />
               Call Now
@@ -68,7 +68,7 @@ const UnderConstructionPage = () => {
               size="lg" 
               variant="outline" 
               className="gap-2"
-              onClick={() => window.location.href = 'mailto:info@romansbuildingservices.com'}
+              onClick={() => window.location.href = 'mailto:romanspropertyservices@gmail.com'}
             >
               <Mail className="h-4 w-4" />
               Email Us
@@ -78,11 +78,11 @@ const UnderConstructionPage = () => {
           <div className="space-y-2 text-sm text-muted-foreground">
             <p className="flex items-center justify-center gap-2">
               <Phone className="h-4 w-4" />
-              (02) 9648 2100
+              +61 483 981 292
             </p>
             <p className="flex items-center justify-center gap-2">
               <Mail className="h-4 w-4" />
-              info@romansbuildingservices.com
+              romanspropertyservices@gmail.com
             </p>
           </div>
         </div>
