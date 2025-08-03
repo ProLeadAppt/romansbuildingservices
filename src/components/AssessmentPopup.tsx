@@ -205,19 +205,29 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="popup-location">Location in Sydney</Label>
-                  <Input
-                    id="popup-location"
-                    placeholder="e.g., Bondi, CBD, Inner West"
-                    value={formData.location}
-                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                    list="popup-sydney-areas"
-                  />
-                  <datalist id="popup-sydney-areas">
-                    {sydneyAreas.map((area) => (
-                      <option key={area} value={area} />
-                    ))}
-                  </datalist>
+                  <Label htmlFor="popup-location">Where in Sydney?</Label>
+                  <div className="relative">
+                    <select
+                      id="popup-location"
+                      className="w-full p-3 border-2 border-gray-200 rounded-xl bg-white text-gray-800 font-medium appearance-none cursor-pointer focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-200 shadow-sm hover:shadow-md z-50"
+                      value={formData.location}
+                      onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
+                    >
+                      <option value="" className="text-gray-500">Choose your area...</option>
+                      <option value="sydney-cbd" className="py-2">🏙️ Sydney CBD & Surrounds</option>
+                      <option value="eastern-suburbs" className="py-2">🏖️ Eastern Suburbs (Bondi, Coogee, etc.)</option>
+                      <option value="north-shore" className="py-2">🌉 North Shore (Mosman, Chatswood, etc.)</option>
+                      <option value="inner-west" className="py-2">🎨 Inner West (Newtown, Leichhardt, etc.)</option>
+                      <option value="northern-beaches" className="py-2">🏄 Northern Beaches (Manly, Dee Why, etc.)</option>
+                      <option value="hills-district" className="py-2">🌳 Hills District (Castle Hill, Hornsby, etc.)</option>
+                      <option value="western-sydney" className="py-2">🏘️ Western Sydney (Parramatta, Blacktown, etc.)</option>
+                      <option value="south-sydney" className="py-2">🏛️ South Sydney (Sutherland, Cronulla, etc.)</option>
+                      <option value="other" className="py-2">📍 Other Sydney Area</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <ArrowRight className="h-5 w-5 text-gray-400 rotate-90" />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
