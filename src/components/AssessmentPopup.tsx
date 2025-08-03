@@ -90,16 +90,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
       <DialogContent className="max-w-md p-0 bg-transparent border-0 shadow-none">
         <Card className="bg-white shadow-2xl border-0 rounded-2xl overflow-hidden">
           {/* Header matching hero section style */}
-          <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-4 text-center relative">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="absolute right-2 top-2 text-white hover:bg-white/20 h-8 w-8 p-0"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-            
+          <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-4 text-center">
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
               <Award className="h-6 w-6 text-white" />
             </div>
