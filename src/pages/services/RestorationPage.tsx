@@ -17,7 +17,7 @@ export default function RestorationPage() {
 
   const features = [
     { icon: Shield, title: "Heritage Specialists", description: "Certified in heritage restoration techniques and materials" },
-    { icon: Clock, title: "24+ Years Experience", description: "Extensive experience in restoring Sydney's historic buildings" },
+    { icon: Clock, title: "30+ Years Experience", description: "Extensive experience in restoring Sydney's historic buildings" },
     { icon: Award, title: "Council Approved", description: "Pre-approved with Sydney councils for heritage work" },
     { icon: Star, title: "Museum Quality", description: "Restoration work meets museum-quality standards" }
   ];

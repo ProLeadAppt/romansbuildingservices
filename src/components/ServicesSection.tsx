@@ -49,7 +49,7 @@ export const ServicesSection = () => {
             Master Stonework Solutions Since 1995
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Romans Building Services specializes in professional stonework, masonry, and restoration across Sydney. Our qualified stonemasons provide comprehensive solutions with 24+ years of experience.
+            Romans Building Services specializes in professional stonework, masonry, and restoration across Sydney. Our qualified stonemasons provide comprehensive solutions with 30+ years of experience.
           </p>
         </div>
 

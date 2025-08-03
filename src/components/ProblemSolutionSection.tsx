@@ -42,7 +42,7 @@ const solutions = [
   },
   {
     icon: Award,
-    title: "24+ Years Experience",
+    title: "30+ Years Experience",
     description: "Established 1995, trusted by 1000+ Sydney property owners with comprehensive warranties on all work."
   }
 ];
@@ -99,7 +99,7 @@ export const ProblemSolutionSection = () => {
             Romans Building Services: Your Trusted Solution
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            With 24+ years serving Sydney, we provide comprehensive masonry, restoration & remedial building services that address root causes, not just symptoms.
+            With 30+ years serving Sydney, we provide comprehensive masonry, restoration & remedial building services that address root causes, not just symptoms.
           </p>
         </div>
 

@@ -424,7 +424,7 @@ export const sampleTrustIndicators: TrustIndicator[] = [
     id: 'experience',
     icon: Calendar,
     title: 'Years Experience',
-    value: '25+',
+    value: '30+',
     description: 'Established since 1995',
     color: 'bg-blue-500'
   },

@@ -174,7 +174,7 @@ export const LeadCaptureForm = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary mt-1" />
                   <div>
-                    <h4 className="font-semibold">24+ Years Experience</h4>
+                    <h4 className="font-semibold">30+ Years Experience</h4>
                     <p className="text-sm text-white/80">Established 1995, trusted across Sydney</p>
                   </div>
                 </div>

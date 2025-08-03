@@ -114,7 +114,7 @@ export const SocialProofSection = () => {
             <div className="max-w-2xl">
               <h3 className="text-2xl font-bold text-primary mb-4">Romans Building Services Team</h3>
               <p className="text-muted-foreground mb-6">
-                Our qualified professionals bring 24+ years of combined experience in masonry, restoration, and remedial building works. Based in Sydney, we're committed to delivering quality solutions that stand the test of time.
+                Our qualified professionals bring 30+ years of combined experience in masonry, restoration, and remedial building works. Based in Sydney, we're committed to delivering quality solutions that stand the test of time.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">

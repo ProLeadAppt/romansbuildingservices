@@ -22,7 +22,7 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Building className="w-4 h-4 text-secondary" />
-                <span className="text-sm">Est. 1995 • 24+ Years Experience</span>
+                <span className="text-sm">Est. 1995 • 30+ Years Experience</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Sydney's trusted specialists in masonry, restoration and remedial building works. Licensed, insured, and committed to quality.

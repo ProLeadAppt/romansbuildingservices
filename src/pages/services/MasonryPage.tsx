@@ -21,7 +21,7 @@ export default function MasonryPage() {
 
   const features = [
     { icon: Shield, title: "Licensed & Insured", description: "Fully licensed tradesman with comprehensive insurance coverage" },
-    { icon: Clock, title: "24+ Years Experience", description: "Established in 1995 with thousands of satisfied customers" },
+    { icon: Clock, title: "30+ Years Experience", description: "Established in 1995 with thousands of satisfied customers" },
     { icon: Award, title: "Quality Guarantee", description: "All work comes with our comprehensive quality guarantee" },
     { icon: Star, title: "5-Star Reviews", description: "Consistently rated 5 stars by our customers across Sydney" }
   ];
@@ -43,7 +43,7 @@ export default function MasonryPage() {
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 From heritage restoration to modern construction, our expert masons deliver 
-                exceptional craftsmanship that stands the test of time. 24+ years of proven excellence.
+                exceptional craftsmanship that stands the test of time. 30+ years of proven excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 mobile-button-lg">
