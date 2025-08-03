@@ -76,14 +76,20 @@ const UnderConstructionPage = () => {
           </div>
 
           <div className="space-y-2 text-sm text-muted-foreground">
-            <p className="flex items-center justify-center gap-2">
+            <button 
+              className="flex items-center justify-center gap-2 hover:text-primary transition-colors cursor-pointer"
+              onClick={() => window.location.href = 'tel:+61483981292'}
+            >
               <Phone className="h-4 w-4" />
               +61 483 981 292
-            </p>
-            <p className="flex items-center justify-center gap-2">
+            </button>
+            <button 
+              className="flex items-center justify-center gap-2 hover:text-primary transition-colors cursor-pointer"
+              onClick={() => window.location.href = 'mailto:romanspropertyservices@gmail.com'}
+            >
               <Mail className="h-4 w-4" />
               romanspropertyservices@gmail.com
-            </p>
+            </button>
           </div>
         </div>
 
