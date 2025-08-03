@@ -63,7 +63,7 @@ export const LocalBusinessSchema = () => {
     "@type": "LocalBusiness",
     "@id": `${BUSINESS_INFO.website}#business`,
     "name": BUSINESS_INFO.name,
-    "description": "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specializing in heritage stone restoration, masonry repairs, and structural stonework with 25+ years experience.",
+    "description": "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specializing in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
     "url": BUSINESS_INFO.website,
     "telephone": BUSINESS_INFO.phone,
     "email": BUSINESS_INFO.email,

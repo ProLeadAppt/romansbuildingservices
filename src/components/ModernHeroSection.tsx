@@ -62,14 +62,14 @@ export const ModernHeroSection = () => {
 
   const trustBadges = [
     { icon: Shield, text: 'Licensed & Insured', color: 'text-green-600' },
-    { icon: Award, text: '25+ Years Experience', color: 'text-blue-600' },
+    { icon: Award, text: '30+ Years Experience', color: 'text-blue-600' },
     { icon: Clock, text: 'Prompt Response', color: 'text-orange-600' },
     { icon: Users, text: '1000+ Happy Clients', color: 'text-purple-600' }
   ];
 
   const stats = [
     { number: 'Over 1000', label: 'Projects Completed' },
-    { number: '25+', label: 'Years Experience' },
+    { number: '30+', label: 'Years Experience' },
     { number: 'High', label: 'Customer Satisfaction' },
     { number: 'Prompt', label: 'Response Times' }
   ];

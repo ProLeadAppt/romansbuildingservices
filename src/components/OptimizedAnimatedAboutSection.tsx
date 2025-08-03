@@ -6,7 +6,7 @@ const minasWorkingImage = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48
 
 export const OptimizedAnimatedAboutSection = () => {
   const achievements = [
-    { icon: Award, title: '25+ Years Experience', desc: 'Industry-leading expertise since 1995' },
+    { icon: Award, title: '30+ Years Experience', desc: 'Industry-leading expertise since 1995' },
     { icon: Users, title: '1000+ Projects', desc: 'Completed across Greater Sydney' },
     { icon: Shield, title: 'Fully Licensed', desc: 'Insured & certified professionals' },
     { icon: Star, title: '5-Star Rating', desc: 'Consistent excellence & satisfaction' }
@@ -15,7 +15,7 @@ export const OptimizedAnimatedAboutSection = () => {
   const values = [
     'Personal inspection of every project',
     'Direct communication with the owner',
-    '25-year reputation for excellence', 
+    '30-year reputation for excellence', 
     'Family business values & integrity',
     'Hands-on quality control',
     'Lifetime craftsmanship guarantee'

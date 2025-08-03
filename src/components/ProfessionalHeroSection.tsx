@@ -141,7 +141,7 @@ export const ProfessionalHeroSection = () => {
               </Badge>
               <Badge className="bg-white/20 text-white border-white/30 px-2 py-2 sm:px-3 sm:py-[14px] text-xs sm:text-sm">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-400 fill-current" />
-                25+ Years Experience
+                30+ Years Experience
               </Badge>
             </motion.div>
 
@@ -350,7 +350,7 @@ export const ProfessionalHeroSection = () => {
                   <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden flex-shrink-0">
-                         <img src={minasPhoto} alt="Minas Romanakis, Licensed Masonry Contractor and owner of Roman's Building Services, with 25+ years of masonry and restoration experience" className="w-full h-full object-cover" loading="eager" width="80" height="80" />
+                         <img src={minasPhoto} alt="Minas Romanakis, Licensed Masonry Contractor and owner of Roman's Building Services, with 30+ years of masonry and restoration experience" className="w-full h-full object-cover" loading="eager" width="80" height="80" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-foreground">Our Commitment</p>

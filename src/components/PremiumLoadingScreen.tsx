@@ -88,7 +88,7 @@ export const PremiumLoadingScreen = () => {
             transition={{ delay: 1, duration: 0.6 }}
             className="flex justify-center space-x-6 text-white/60 text-sm"
           >
-            <span>✓ 25+ Years Experience</span>
+            <span>✓ 30+ Years Experience</span>
             <span>✓ Licensed & Insured</span>
             <span>✓ 5-Star Rated</span>
           </motion.div>

@@ -80,7 +80,7 @@ export const ReviewsCarouselSection = () => {
     { number: '98%', label: 'Customer Satisfaction' },
     { number: '1000+', label: 'Happy Clients' },
     { number: '4.9/5', label: 'Average Rating' },
-    { number: '25+', label: 'Years Experience' }
+    { number: '30+', label: 'Years Experience' }
   ];
 
   useEffect(() => {

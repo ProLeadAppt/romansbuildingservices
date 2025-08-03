@@ -38,7 +38,7 @@ export const CleanHeroSection = () => {
 
   const stats = [
     { number: 'Over 1000', label: 'Projects Completed' },
-    { number: '25+', label: 'Years Experience' },
+    { number: '30+', label: 'Years Experience' },
     { number: 'High', label: 'Customer Satisfaction' },
     { number: 'Prompt', label: 'Response Times' }
   ];
@@ -66,7 +66,7 @@ export const CleanHeroSection = () => {
               </div>
               <div className="flex items-center space-x-2 bg-background border rounded-full px-4 py-2 card-shadow">
                 <Award className="w-4 h-4 text-blue-600" />
-                <span className="text-sm font-medium">25+ Years Experience</span>
+                <span className="text-sm font-medium">30+ Years Experience</span>
               </div>
               <div className="flex items-center space-x-2 bg-background border rounded-full px-4 py-2 card-shadow">
                 <Clock className="w-4 h-4 text-orange-600" />

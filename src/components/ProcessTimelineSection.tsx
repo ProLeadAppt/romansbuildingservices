@@ -65,7 +65,7 @@ export const ProcessTimelineSection = () => {
 
   const guarantees = [
     { icon: Clock, title: 'On-Time Delivery', desc: 'Projects completed as scheduled or we pay penalties' },
-    { icon: Users, title: 'Expert Team', desc: 'Licensed professionals with 25+ years experience' },
+    { icon: Users, title: 'Expert Team', desc: 'Licensed professionals with 30+ years experience' },
     { icon: Award, title: 'Quality Guarantee', desc: 'Professional workmanship on all projects' },
     { icon: CheckCircle, title: 'Fixed Pricing', desc: 'No hidden costs or surprise charges' }
   ];

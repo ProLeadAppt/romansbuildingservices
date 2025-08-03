@@ -163,7 +163,7 @@ export const BusinessCredentials: React.FC<{ className?: string }> = ({ classNam
         <Clock className="w-5 h-5 text-purple-600" />
         <div>
           <div className="font-medium">Established {BUSINESS_INFO.established}</div>
-          <div className="text-sm text-muted-foreground">25+ Years Experience</div>
+          <div className="text-sm text-muted-foreground">30+ Years Experience</div>
         </div>
       </div>
     </div>

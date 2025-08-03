@@ -294,7 +294,7 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
         </Badge>
         <Badge variant="outline" className="text-secondary">
           <Star className="w-3 h-3 mr-1" />
-          25+ Years
+          30+ Years
         </Badge>
       </div>
     </motion.div>

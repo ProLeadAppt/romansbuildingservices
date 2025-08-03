@@ -186,7 +186,7 @@ export const masonryFAQs: FAQ[] = [
   },
   {
     question: "What types of masonry services do you offer?",
-    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. All work is performed by licensed masons with 25+ years experience.",
+    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. All work is performed by licensed masons with 30+ years experience.",
     category: "Services"
   },
   {

@@ -23,7 +23,7 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     const baseTitles = {
       home: `Professional Stonework & Masonry Services Sydney | ${BUSINESS_INFO.name}`,
       services: `${service || 'Stonework Services'} Sydney | Licensed Stonemasons | ${BUSINESS_INFO.name}`,
-      about: `About ${BUSINESS_INFO.name} | 25+ Years Stonework Experience Sydney`,
+      about: `About ${BUSINESS_INFO.name} | 30+ Years Stonework Experience Sydney`,
       contact: `Contact ${BUSINESS_INFO.name} | Sydney Stonework Specialists | Free Quotes`,
       projects: `Sydney Stonework Projects | ${BUSINESS_INFO.name} Portfolio`
     };
@@ -41,11 +41,11 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     if (customDescription) return customDescription;
     
     const baseDescriptions = {
-      home: `Professional stonework, masonry restoration & structural repairs in Sydney. Licensed stonemasons with 25+ years experience. Heritage buildings, stone repairs, brick pointing. Call ${BUSINESS_INFO.phone} for free assessment.`,
-      services: `Expert ${service || 'stonework services'} in Sydney. Licensed stonemasons specializing in heritage restoration, structural repairs, stone masonry. 25+ years experience. Free quotes available.`,
+      home: `Professional stonework, masonry restoration & structural repairs in Sydney. Licensed stonemasons with 30+ years experience. Heritage buildings, stone repairs, brick pointing. Call ${BUSINESS_INFO.phone} for free assessment.`,
+      services: `Expert ${service || 'stonework services'} in Sydney. Licensed stonemasons specializing in heritage restoration, structural repairs, stone masonry. 30+ years experience. Free quotes available.`,
       about: `${BUSINESS_INFO.name} - Sydney's trusted stonemasons since ${BUSINESS_INFO.established}. Licensed stonework experts, heritage restoration specialists. Professional, reliable, fully insured.`,
       contact: `Contact ${BUSINESS_INFO.name} for professional stonework services in Sydney. Licensed stonemasons in masonry, restoration, repairs. Call ${BUSINESS_INFO.phone} or request free quote online.`,
-      projects: `View our Sydney stonework projects portfolio. Heritage restorations, stone masonry work, structural repairs. 25+ years experience with satisfied customers across Sydney.`
+      projects: `View our Sydney stonework projects portfolio. Heritage restorations, stone masonry work, structural repairs. 30+ years experience with satisfied customers across Sydney.`
     };
 
     return baseDescriptions[page];
