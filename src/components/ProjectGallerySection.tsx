@@ -13,12 +13,6 @@ export const ProjectGallerySection = () => {
   // High-quality work showcase images using the uploaded files
   const workImages = [
     {
-      id: 1,
-      title: 'Heritage Stonework Restoration',
-      image: "/lovable-uploads/2020-06-04.png",
-      description: "Expert heritage restoration work"
-    },
-    {
       id: 2,
       title: 'Modern Masonry Project',
       image: "/lovable-uploads/2020-08-12.png",
