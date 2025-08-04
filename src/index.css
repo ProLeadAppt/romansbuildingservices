@@ -143,13 +143,25 @@ All colors MUST be HSL.
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
   }
 
-  /* Ensure chat widgets don't interfere with main content */
+  /* Comprehensive chat widget protection - prevents style interference */
   [id*="chat-widget"],
   [class*="chat-widget"],
   [id*="lc_text-widget"],
-  [class*="lc_text-widget"] {
+  [class*="lc_text-widget"],
+  [id*="lc_"],
+  [class*="lc_"],
+  [id*="leadconnector"],
+  [class*="leadconnector"] {
+    all: initial !important;
     z-index: 1000 !important;
     position: fixed !important;
+    pointer-events: auto !important;
+  }
+
+  /* Force main app styles to override any widget interference */
+  #root,
+  #root * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
   }
 
   /* Enhanced focus styles for better keyboard navigation */
