@@ -508,6 +508,16 @@ All colors MUST be HSL.
     100% { background-position: -200% 0; }
   }
 
+  /* Hide scrollbars for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Enhanced Mobile Grid */
   .mobile-grid-fix {
     display: grid;
