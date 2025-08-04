@@ -133,6 +133,25 @@ All colors MUST be HSL.
     max-width: 100vw;
   }
 
+  /* Protect against third-party widget interference */
+  #root,
+  #root > *,
+  [data-testid*="romans"],
+  .romans-app {
+    color: hsl(var(--foreground)) !important;
+    background-color: hsl(var(--background)) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+  }
+
+  /* Ensure chat widgets don't interfere with main content */
+  [id*="chat-widget"],
+  [class*="chat-widget"],
+  [id*="lc_text-widget"],
+  [class*="lc_text-widget"] {
+    z-index: 1000 !important;
+    position: fixed !important;
+  }
+
   /* Enhanced focus styles for better keyboard navigation */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2;
