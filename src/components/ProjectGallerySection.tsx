@@ -10,73 +10,127 @@ export const ProjectGallerySection = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // High-quality work showcase images using the uploaded files
+  // All uploaded work photos
   const workImages = [
     {
+      id: 1,
+      image: "/lovable-uploads/2020-06-04.png",
+    },
+    {
       id: 2,
-      title: 'Modern Masonry Project',
-      image: "/lovable-uploads/2020-08-12.png",
-      description: "Contemporary masonry craftsmanship"
+      image: "/lovable-uploads/2020-06-04 (1).png",
     },
     {
       id: 3,
-      title: 'Foundation Repair Excellence',
-      image: "/lovable-uploads/2020-08-27.png",
-      description: "Structural foundation restoration"
+      image: "/lovable-uploads/2020-08-12.png",
     },
     {
       id: 4,
-      title: 'Premium Stonework Detail',
-      image: "/lovable-uploads/2020-09-01.png",
-      description: "Fine stonework detailing"
+      image: "/lovable-uploads/2020-08-27.png",
     },
     {
       id: 5,
-      title: 'Commercial Building Restoration',
-      image: "/lovable-uploads/2020-09-27.png",
-      description: "Large scale commercial work"
+      image: "/lovable-uploads/2020-09-01.png",
     },
     {
       id: 6,
-      title: 'Residential Heritage Project',
-      image: "/lovable-uploads/2020-10-13.png",
-      description: "Residential heritage restoration"
+      image: "/lovable-uploads/2020-09-27.png",
     },
     {
       id: 7,
-      title: 'Custom Stonework Design',
-      image: "/lovable-uploads/2020-11-02.png",
-      description: "Bespoke stonework creation"
+      image: "/lovable-uploads/2020-10-13.png",
     },
     {
       id: 8,
-      title: 'Structural Repair Mastery',
-      image: "/lovable-uploads/2020-11-22.png",
-      description: "Complex structural repairs"
+      image: "/lovable-uploads/2020-11-02.png",
     },
     {
       id: 9,
-      title: 'Artisan Craftsmanship',
-      image: "/lovable-uploads/2020-11-30.png",
-      description: "Traditional artisan techniques"
+      image: "/lovable-uploads/2020-11-22.png",
     },
     {
       id: 10,
-      title: 'Premium Restoration Work',
-      image: "/lovable-uploads/2020-12-07.png",
-      description: "High-end restoration project"
+      image: "/lovable-uploads/2020-11-22 (1).png",
     },
     {
       id: 11,
-      title: 'Concrete Repair Excellence',
-      image: "/lovable-uploads/2020-12-29.png",
-      description: "Specialized concrete restoration"
+      image: "/lovable-uploads/2020-11-30.png",
     },
     {
       id: 12,
-      title: 'Master Stonework Project',
+      image: "/lovable-uploads/2020-12-07.png",
+    },
+    {
+      id: 13,
+      image: "/lovable-uploads/2020-12-29.png",
+    },
+    {
+      id: 14,
       image: "/lovable-uploads/2021-01-07.png",
-      description: "Master level stonework"
+    },
+    {
+      id: 15,
+      image: "/lovable-uploads/2021-10-09.jpg",
+    },
+    {
+      id: 16,
+      image: "/lovable-uploads/Untitled design.png",
+    },
+    {
+      id: 17,
+      image: "/lovable-uploads/Untitled design (1).png",
+    },
+    {
+      id: 18,
+      image: "/lovable-uploads/Untitled design (2).png",
+    },
+    {
+      id: 19,
+      image: "/lovable-uploads/Untitled design (3).png",
+    },
+    {
+      id: 20,
+      image: "/lovable-uploads/unnamed (46).png",
+    },
+    {
+      id: 21,
+      image: "/lovable-uploads/unnamed (47).png",
+    },
+    {
+      id: 22,
+      image: "/lovable-uploads/unnamed (48).png",
+    },
+    {
+      id: 23,
+      image: "/lovable-uploads/unnamed-_44__1.png",
+    },
+    {
+      id: 24,
+      image: "/lovable-uploads/unnamed-_45__1.png",
+    },
+    {
+      id: 25,
+      image: "/lovable-uploads/unnamed.jpg",
+    },
+    {
+      id: 26,
+      image: "/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png",
+    },
+    {
+      id: 27,
+      image: "/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.png",
+    },
+    {
+      id: 28,
+      image: "/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png",
+    },
+    {
+      id: 29,
+      image: "/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png",
+    },
+    {
+      id: 30,
+      image: "/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg",
     }
   ];
 
@@ -112,8 +166,8 @@ export const ProjectGallerySection = () => {
   // Generate structured data for all work images
   const allWorkImages = workImages.map(work => ({
     url: work.image,
-    description: `${work.title} - Professional masonry and stonework by Roman's Building Services`,
-    caption: work.description,
+    description: `Professional masonry and stonework by Roman's Building Services`,
+    caption: "Quality craftsmanship and restoration work",
     width: 400,
     height: 500,
     contentLocation: "Sydney, Australia"
@@ -134,10 +188,10 @@ export const ProjectGallerySection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-            Minas' <span className="gradient-text">Masterwork</span>
+            Minas' <span className="gradient-text">Work Gallery</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Discover decades of craftsmanship through our premium project showcase
+            Showcasing decades of quality craftsmanship across Sydney
           </p>
         </motion.div>
 
@@ -198,29 +252,19 @@ export const ProjectGallerySection = () => {
                   <div className="relative w-full h-full overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt="Quality masonry and stonework by Romans Building Services"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                     />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* Expand Icon */}
                     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                         <Maximize2 className="w-5 h-5 text-white" />
                       </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-xl font-bold mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        {project.title}
-                      </h3>
-                      <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                        {project.description}
-                      </p>
                     </div>
                   </div>
                   
@@ -261,7 +305,7 @@ export const ProjectGallerySection = () => {
           >
             <img
               src={selectedImage}
-              alt="Project showcase"
+              alt="Professional masonry and stonework showcase"
               className="w-full h-full object-contain rounded-xl shadow-2xl"
             />
             <Button
