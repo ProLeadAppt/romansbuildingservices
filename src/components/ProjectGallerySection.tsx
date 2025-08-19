@@ -83,12 +83,6 @@ export const ProjectGallerySection = () => {
     id: 25,
     image: "/lovable-uploads/unnamed.jpg"
   }, {
-    id: 26,
-    image: "/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png"
-  }, {
-    id: 27,
-    image: "/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.png"
-  }, {
     id: 28,
     image: "/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png"
   }, {
