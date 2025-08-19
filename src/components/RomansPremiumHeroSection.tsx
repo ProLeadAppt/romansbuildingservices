@@ -11,7 +11,7 @@ import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { AssessmentPopup } from "@/components/AssessmentPopup";
 
-const heroBackgroundImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
+const heroBackgroundImage = '/lovable-uploads/2020-06-04.png';
 
 export const RomansPremiumHeroSection = () => {
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
