@@ -11,9 +11,7 @@ import { useSmartDefaults } from "@/hooks/useSmartDefaults";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { AssessmentPopup } from "@/components/AssessmentPopup";
 
-import { minasWorkingPhoto } from '@/data/projectImages';
-
-const heroBackgroundImage = minasWorkingPhoto.src;
+const heroBackgroundImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
 
 export const RomansPremiumHeroSection = () => {
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
@@ -96,15 +94,14 @@ export const RomansPremiumHeroSection = () => {
    return (
     <section className="relative min-h-screen -mt-24 flex items-center">
       {/* Background Image */}
-      <div className="absolute inset-0 -top-24">
-        <img 
-          src={heroBackgroundImage}
-          alt={minasWorkingPhoto.alt}
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          style={{ objectPosition: 'center center' }}
-        />
+      <div 
+        className="absolute inset-0 -top-24 bg-cover bg-center bg-no-repeat" 
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
+        }}
+      >
         <link rel="preload" href={heroBackgroundImage} as="image" />
       </div>
       {/* Overlay */}

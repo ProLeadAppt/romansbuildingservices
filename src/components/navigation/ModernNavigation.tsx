@@ -47,7 +47,7 @@ export const ModernNavigation = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-[71px] h-[71px] sm:w-[70px] sm:h-[70px] lg:w-[69px] lg:h-[69px] bg-gray-900 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform p-2">
-              <div className="text-white font-bold text-sm">RBS</div>
+              <img src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png" alt="Roman's Building Services" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block">
               <div className="text-xl font-bold transition-colors text-foreground">Romans Building</div>
