@@ -211,14 +211,10 @@ export const ProjectGallerySection = () => {
                 <div className="relative w-80 h-96 bg-card rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
                   {/* Image */}
                   <div className="relative w-full h-full overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt="Professional masonry and stonework by Roman's Building Services"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                    <img src={project.image} alt="Professional masonry and stonework by Roman's Building Services" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                    
                     
                     
                     {/* Expand Icon */}
