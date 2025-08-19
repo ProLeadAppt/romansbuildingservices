@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { MobileOptimizedImage } from './images/MobileOptimizedImage';
 
 interface ProjectImage {
   src: string;
@@ -49,20 +50,21 @@ export const ProjectGalleryCarousel = ({
       {/* Main Image Display */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.div
             key={currentIndex}
-            src={images[currentIndex].src}
-            alt={`${title} - ${images[currentIndex].label}`}
-            className="w-full h-full object-cover"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            onError={(e) => {
-              e.currentTarget.src = '/placeholder.svg';
-              console.log(`Failed to load image: ${images[currentIndex].src}`);
-            }}
-          />
+            className="w-full h-full"
+          >
+            <MobileOptimizedImage
+              src={images[currentIndex].src}
+              alt={`${title} - ${images[currentIndex].label}`}
+              className="w-full h-full object-cover"
+              fallbackSrc="/placeholder.svg"
+            />
+          </motion.div>
         </AnimatePresence>
 
         {/* Service Badge */}
@@ -121,13 +123,11 @@ export const ProjectGalleryCarousel = ({
                 : 'border-border hover:border-primary/50'
             }`}
           >
-            <img
+            <MobileOptimizedImage
               src={image.src}
               alt={`${title} - ${image.label}`}
               className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.src = '/placeholder.svg';
-              }}
+              fallbackSrc="/placeholder.svg"
             />
             <div className={`absolute inset-0 flex items-center justify-center ${
               image.type === 'before' 

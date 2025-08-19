@@ -3,11 +3,14 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { ImageSEOStructuredData } from '@/components/ImageSEOStructuredData';
+import { MobileOptimizedImage } from './images/MobileOptimizedImage';
+import { useMobileDetection } from '@/hooks/useMobileDetection';
 export const ProjectGallerySection = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { isMobile, isTablet } = useMobileDetection();
 
   // All uploaded work photos
   const workImages = [{
@@ -258,13 +261,11 @@ export const ProjectGallerySection = () => {
         scale: 0.8,
         opacity: 0
       }} className="relative max-w-4xl max-h-full" onClick={e => e.stopPropagation()}>
-            <img 
-              src={selectedImage} 
-              alt="Professional masonry and stonework showcase" 
+            <MobileOptimizedImage
+              src={selectedImage}
+              alt="Professional masonry and stonework showcase"
               className="w-full h-full object-contain rounded-xl shadow-2xl"
-              onError={(e) => {
-                e.currentTarget.src = '/placeholder.svg';
-              }}
+              fallbackSrc="/placeholder.svg"
             />
             <Button onClick={() => setSelectedImage(null)} size="icon" variant="outline" className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
               ×
