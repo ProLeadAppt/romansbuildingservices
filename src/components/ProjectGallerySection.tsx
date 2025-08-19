@@ -12,9 +12,6 @@ export const ProjectGallerySection = () => {
   // All uploaded work photos
   const workImages = [{
     id: 1,
-    image: "/lovable-uploads/2020-06-04.png"
-  }, {
-    id: 2,
     image: "/lovable-uploads/2020-06-04 (1).png"
   }, {
     id: 3,
@@ -208,7 +205,19 @@ export const ProjectGallerySection = () => {
                 <div className="relative w-80 h-96 bg-card rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
                   {/* Image */}
                   <div className="relative w-full h-full overflow-hidden">
-                    <img src={project.image} alt="Professional masonry and stonework by Roman's Building Services" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img 
+                      src={project.image} 
+                      alt="Professional masonry and stonework by Roman's Building Services" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const fallback = e.currentTarget.parentElement?.querySelector('.fallback-message') as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="fallback-message absolute inset-0 bg-muted/50 flex items-center justify-center text-muted-foreground hidden">
+                      <span>Image unavailable</span>
+                    </div>
                     
                     {/* Gradient Overlay */}
                     
@@ -255,7 +264,14 @@ export const ProjectGallerySection = () => {
         scale: 0.8,
         opacity: 0
       }} className="relative max-w-4xl max-h-full" onClick={e => e.stopPropagation()}>
-            <img src={selectedImage} alt="Professional masonry and stonework showcase" className="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <img 
+              src={selectedImage} 
+              alt="Professional masonry and stonework showcase" 
+              className="w-full h-full object-contain rounded-xl shadow-2xl"
+              onError={(e) => {
+                e.currentTarget.src = '/placeholder.svg';
+              }}
+            />
             <Button onClick={() => setSelectedImage(null)} size="icon" variant="outline" className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
               ×
             </Button>
