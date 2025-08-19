@@ -168,14 +168,13 @@ export default function QuotePage() {
                 <div className="space-y-3">
                   <Label>Additional Services (Optional)</Label>
                   <div className="grid md:grid-cols-2 gap-3">
-                    {[
-                      "Site inspection required",
-                      "Heritage building considerations", 
-                      "Engineering consultation needed",
-                      "Heritage stonework consultation",
-                      "Professional after-hours service",
-                      "Maintenance recommendations"
-                    ].map((option) => (
+                     {[
+                       "Site inspection required",
+                       "Heritage building considerations", 
+                       "Engineering consultation needed",
+                       "Professional after-hours service",
+                       "Emergency service"
+                     ].map((option) => (
                       <div key={option} className="flex items-center space-x-2">
                         <Checkbox id={option} />
                         <Label htmlFor={option} className="text-sm">{option}</Label>

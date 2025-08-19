@@ -181,7 +181,7 @@ export const QuickContactBar: React.FC = () => {
         </div>
         <div className="flex items-center space-x-4 mt-2 sm:mt-0">
           <span>✅ Licensed & Insured</span>
-          <span>⚡ Same-Day Response</span>
+          <span>⚡ 24-48hr Response</span>
         </div>
       </div>
     </div>

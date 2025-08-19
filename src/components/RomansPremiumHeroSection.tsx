@@ -77,9 +77,9 @@ export const RomansPremiumHeroSection = () => {
     }
   };
 
-  const statistics = [
-    { icon: Users, label: "1000+ Happy Clients", desc: "Satisfied homeowners" },
-    { icon: Calendar, label: "30+ Years Experience", desc: "Trusted expertise" },
+   const statistics = [
+     { icon: Users, label: "800+ Happy Clients", desc: "Satisfied homeowners" },
+     { icon: Calendar, label: "30+ Years Experience", desc: "Trusted expertise" },
     { icon: Heart, label: "Family Business", desc: "Personal touch" },
     { icon: Award, label: "Sydney Local", desc: "Community trusted" }
   ];
@@ -147,11 +147,11 @@ export const RomansPremiumHeroSection = () => {
 
             {/* Compact Statistics */}
             <div className="grid grid-cols-3 gap-4">
-              {[
-                { number: "1000+", label: "Projects", icon: Heart },
-                { number: "30+", label: "Years", icon: Calendar },
-                { number: "100%", label: "Satisfaction", icon: Users }
-              ].map((stat, index) => (
+               {[
+                 { number: "800+", label: "Projects", icon: Heart },
+                 { number: "30+", label: "Years", icon: Calendar },
+                 { number: "100%", label: "Satisfaction", icon: Users }
+               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
                     <stat.icon className="h-5 w-5 text-amber-400 mx-auto mb-1" />

@@ -86,7 +86,7 @@ export const ModernContactSection = () => {
     day: 'Public Holidays',
     hours: 'Priority calls only'
   }];
-  const priorityFeatures = ['Prompt response for all inquiries', 'Licensed masonry services', 'Insurance claim assistance', 'Professional stonework solutions'];
+  const priorityFeatures = ['Prompt response for all inquiries', 'Licensed masonry services', '24-48hr response from Minas or Sandra', 'Professional stonework solutions'];
   return <div className="relative">
       {/* Stone Wall Background */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" style={{
@@ -184,7 +184,6 @@ export const ModernContactSection = () => {
                           <SelectItem value="foundation">Foundation Repairs</SelectItem>
                           <SelectItem value="assessment">Building Assessment</SelectItem>
                           <SelectItem value="consultation">Professional Consultation</SelectItem>
-                          <SelectItem value="maintenance">Maintenance Services</SelectItem>
                         </SelectContent>
                       </Select>
 
@@ -247,7 +246,7 @@ export const ModernContactSection = () => {
                   <div className="bg-muted/50 rounded-xl p-6 space-y-4">
                     <h4 className="font-semibold text-primary">Your Free Assessment Includes:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                      {['Professional site inspection', 'Detailed written report', 'Fixed-price quote', 'Timeline & methodology', 'Material recommendations', 'No-obligation consultation'].map((item, idx) => <div key={idx} className="flex items-center space-x-2">
+                      {['Professional site inspection', 'Project evaluation', 'Honest quote', 'Timeline & methodology', 'Material recommendations', 'No-obligation consultation'].map((item, idx) => <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                           <span className="text-xs sm:text-sm">{item}</span>
                         </div>)}
@@ -363,10 +362,10 @@ export const ModernContactSection = () => {
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                     <span className="text-sm">Licensed masonry contractor services</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-sm">Insurance claim assistance</span>
-                  </div>
+                   <div className="flex items-center space-x-2">
+                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                     <span className="text-sm">24-48hr response from Minas or Sandra</span>
+                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                     <span className="text-sm">Professional masonry solutions</span>

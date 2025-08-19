@@ -4,12 +4,12 @@ import teamImage from "@/assets/team.jpg";
 const stats = [
   {
     icon: Users,
-    number: "1,000+",
+    number: "800+",
     label: "Sydney Properties Restored"
   },
   {
     icon: Clock,
-    number: "24+",
+    number: "30+",
     label: "Years Experience"
   },
   {
@@ -58,12 +58,12 @@ export const SocialProofSection = () => {
       <div className="relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Trusted by 1,000+ Sydney Homeowners Since 1995
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Romans Building Services has helped over 1,000 Sydney homeowners with building solutions. Fully licensed, insured, and trained to current industry standards - delivering quality solutions for your property.
-          </p>
+           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+             Trusted by 800+ Sydney Homeowners Since 1995
+           </h2>
+           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+             Romans Building Services has helped over 800+ Sydney homeowners with building solutions. Fully licensed, insured, and trained to current industry standards - delivering quality solutions for your property.
+           </p>
         </div>
 
         {/* Stats Section */}

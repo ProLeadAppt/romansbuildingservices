@@ -33,9 +33,9 @@ export default function HeritageRestorationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4">Heritage Conservation Specialists</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Expert Heritage Stonework Restoration
-              </h1>
+               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                 Expert Heritage Building Restoration
+               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Preserving Sydney's architectural heritage with authentic conservation techniques. 
                 From Federation terraces to Colonial buildings, we restore with historical accuracy and care.

@@ -16,24 +16,24 @@ export const ProcessTimelineSection = () => {
       duration: '30 minutes',
       color: 'text-blue-600'
     },
-    {
-      step: 2,
-      icon: Calendar,
-      title: 'Site Assessment',
-      description: 'Comprehensive on-site evaluation by our expert building team.',
-      details: ['Detailed site inspection', 'Structural analysis', 'Material assessment', 'Digital measurements'],
-      duration: '1-2 hours',
-      color: 'text-green-600'
-    },
-    {
-      step: 3,
-      icon: FileText,
-      title: 'Detailed Quote',
-      description: 'Written fixed-price quote with full project breakdown and timeline.',
-      details: ['Itemized cost breakdown', 'Material specifications', 'Project timeline', 'Terms & conditions'],
-      duration: '24-48 hours',
-      color: 'text-orange-600'
-    },
+     {
+       step: 2,
+       icon: Calendar,
+       title: 'Site Assessment',
+       description: 'Comprehensive on-site evaluation by our expert building team.',
+       details: ['Detailed site inspection', 'Material assessment', 'Digital measurements', 'Visual inspection'],
+       duration: '1-2 hours',
+       color: 'text-green-600'
+     },
+     {
+       step: 3,
+       icon: FileText,
+       title: 'Quote & Agreement',
+       description: 'Clear quote with project breakdown and timeline.',
+       details: ['Itemized cost breakdown', 'Material specifications', 'Project timeline', 'Straightforward agreement'],
+       duration: '24-48 hours',
+       color: 'text-orange-600'
+     },
     {
       step: 4,
       icon: CheckCircle,
@@ -63,12 +63,12 @@ export const ProcessTimelineSection = () => {
     }
   ];
 
-  const guarantees = [
-    { icon: Clock, title: 'On-Time Delivery', desc: 'Projects completed as scheduled or we pay penalties' },
-    { icon: Users, title: 'Expert Team', desc: 'Licensed professionals with 30+ years experience' },
-    { icon: Award, title: 'Quality Guarantee', desc: 'Professional workmanship on all projects' },
-    { icon: CheckCircle, title: 'Fixed Pricing', desc: 'No hidden costs or surprise charges' }
-  ];
+   const guarantees = [
+     { icon: Clock, title: 'On-Time Delivery', desc: 'Projects completed as scheduled or we pay penalties' },
+     { icon: Users, title: 'Expert Team', desc: 'Licensed professionals with 30+ years experience' },
+     { icon: Award, title: 'Quality Guarantee', desc: 'Professional workmanship on all projects' },
+     { icon: CheckCircle, title: 'Honest Pricing', desc: 'Transparent costs with no hidden charges' }
+   ];
 
   return (
     <div className="relative overflow-hidden">

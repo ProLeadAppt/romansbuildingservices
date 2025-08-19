@@ -8,21 +8,22 @@ import { PremiumBeforeAfterSlider } from './PremiumBeforeAfterSlider';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
 
 import { PremiumStatsCounter } from './PremiumStatsCounter';
-import beforeAfterImage from '@/assets/before-after-showcase.jpg';
-import beforeImage from '@/assets/before-after.jpg';
+// Using uploaded heritage before/after images
+const beforeImage = '/lovable-uploads/2020-06-04.png';
+const beforeAfterImage = '/lovable-uploads/2020-06-04 (1).png';
 
 export const EnhancedShowcaseSection = () => {
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   const stats = [
     {
-      number: 1000,
+      number: 800,
       suffix: '+',
       label: 'Projects Completed',
       icon: <CheckCircle className="w-8 h-8 text-white" />,
       color: 'bg-gradient-to-br from-green-500 to-green-600'
     },
     {
-      number: 25,
+      number: 30,
       suffix: '+',
       label: 'Years Experience',
       icon: <Award className="w-8 h-8 text-white" />,
@@ -36,8 +37,9 @@ export const EnhancedShowcaseSection = () => {
       color: 'bg-gradient-to-br from-yellow-500 to-yellow-600'
     },
     {
-      number: 2,
-      label: 'Hour Response',
+      number: 24,
+      suffix: '-48h',
+      label: 'Response Time',
       icon: <Zap className="w-8 h-8 text-white" />,
       color: 'bg-gradient-to-br from-orange-500 to-orange-600'
     }
@@ -83,11 +85,11 @@ export const EnhancedShowcaseSection = () => {
               <h3 className="text-3xl font-bold">
                 Transforming Sydney's Heritage
               </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                See the dramatic transformation of this 1890s Paddington terrace. 
-                Our heritage restoration specialists preserved the original character 
-                while ensuring modern structural integrity.
-              </p>
+               <p className="text-muted-foreground text-lg leading-relaxed">
+                 See the dramatic transformation of this heritage Sydney property. 
+                 Our masonry specialists restored the original stonework and brickwork 
+                 while ensuring modern structural integrity and heritage compliance.
+               </p>
             </div>
             
             <div className="space-y-4">
@@ -190,8 +192,8 @@ export const EnhancedShowcaseSection = () => {
                   <div className="w-12 h-12 mx-auto bg-orange-100 rounded-full flex items-center justify-center">
                     <Zap className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h4 className="font-semibold">Same-Day Response</h4>
-                  <p className="text-sm text-muted-foreground">Rapid response</p>
+                   <h4 className="font-semibold">24-48hr Response</h4>
+                   <p className="text-sm text-muted-foreground">Direct from Minas or Sandra</p>
                 </div>
               </div>
             </CardContent>

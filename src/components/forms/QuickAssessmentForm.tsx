@@ -266,14 +266,14 @@ export const QuickAssessmentForm: React.FC<QuickAssessmentFormProps> = ({
       <div className="bg-muted/30 rounded-lg p-4 space-y-3">
         <h4 className="text-sm font-semibold text-primary">Your FREE Assessment Includes:</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {[
-            'Professional site inspection',
-            'Structural safety evaluation', 
-            'Detailed written report',
-            'Fixed-price quote',
-            'Material recommendations',
-            'No-obligation consultation'
-          ].map((item, idx) => (
+           {[
+             'Professional site inspection',
+             'Structural safety evaluation', 
+             'Project evaluation',
+             'Honest quote',
+             'Material recommendations',
+             'No-obligation consultation'
+           ].map((item, idx) => (
             <div key={idx} className="flex items-center space-x-2">
               <CheckCircle className="w-3 h-3 text-green-600" />
               <span className="text-xs">{item}</span>

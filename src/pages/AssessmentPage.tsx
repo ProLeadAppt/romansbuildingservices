@@ -202,14 +202,13 @@ export default function AssessmentPage() {
                 <div className="space-y-3">
                   <Label>Additional Services (Optional)</Label>
                   <div className="grid md:grid-cols-2 gap-3">
-                    {[
-                      "Thermal imaging inspection",
-                      "Detailed photographic report", 
-                      "Priority assessment (48-72hrs)",
-                      "Engineer consultation",
-                      "Heritage specialist report",
-                      "Insurance claim documentation"
-                    ].map((service) => (
+                     {[
+                       "Thermal imaging inspection",
+                       "Priority assessment (24-48hrs)",
+                       "Engineer consultation",
+                       "Heritage specialist consultation",
+                       "Additional site visits"
+                     ].map((service) => (
                       <div key={service} className="flex items-center space-x-2">
                         <Checkbox id={service} />
                         <Label htmlFor={service} className="text-sm">{service}</Label>

@@ -7,7 +7,7 @@ const minasWorkingImage = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48
 export const AnimatedAboutSection = () => {
   const achievements = [
     { icon: Award, title: '30+ Years Experience', desc: 'Industry-leading expertise since 1995' },
-    { icon: Users, title: '1000+ Projects', desc: 'Completed across Greater Sydney' },
+    { icon: Users, title: '800+ Projects', desc: 'Completed across Greater Sydney' },
     { icon: Shield, title: 'Fully Licensed', desc: 'Insured & certified professionals' },
     { icon: Star, title: '5-Star Rating', desc: 'Consistent excellence & satisfaction' }
   ];
@@ -55,7 +55,7 @@ export const AnimatedAboutSection = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
+              With over 800+ projects completed over 30 years, Minas has been personally dedicated to delivering the highest quality masonry and restoration work across Sydney. As a hands-on owner who inspects every project, Minas combines traditional craftsmanship with modern techniques to ensure exceptional results.
             </motion.p>
 
             <motion.div
@@ -151,7 +151,7 @@ export const AnimatedAboutSection = () => {
               viewport={{ once: true }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold">25+</div>
+                <div className="text-2xl font-bold">30+</div>
                 <div className="text-sm opacity-90">Years</div>
               </div>
             </motion.div>

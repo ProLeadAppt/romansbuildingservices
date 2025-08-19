@@ -93,7 +93,7 @@ const ServicesAreasPage = () => {
                     
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Clock className="w-4 h-4" />
-                      <span>Same-Day Response Available</span>
+                      <span>24-48hr Response Available</span>
                     </div>
                     
                     <Button 

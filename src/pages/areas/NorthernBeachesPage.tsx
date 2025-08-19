@@ -146,8 +146,8 @@ const NorthernBeachesPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Complete structural restoration of 1920s beach house including salt damage remediation, 
-                    foundation stabilization, and heritage stonework restoration.
+                     Complete structural restoration of 1920s beach house including salt damage remediation, 
+                     foundation stabilization, and heritage masonry restoration.
                   </p>
                   <div className="flex gap-2">
                     <Badge variant="secondary">Heritage Restoration</Badge>

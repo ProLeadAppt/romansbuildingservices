@@ -24,7 +24,7 @@ export const InteractiveServicesSection = () => {
       title: 'Building Restoration',
       shortDesc: 'Heritage & modern restoration',
       fullDesc: 'Specialist restoration services for heritage and modern buildings. We preserve the character while ensuring structural integrity and compliance.',
-      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Heritage stonework consultation', 'Traditional craftsmanship', 'Stone protection'],
+      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Traditional craftsmanship', 'Stone protection', 'Heritage compliance'],
       image: '/api/placeholder/400/300'
     },
     {
@@ -35,14 +35,6 @@ export const InteractiveServicesSection = () => {
       features: ['Foundation repairs', 'Stone crack repairs', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
       image: '/api/placeholder/400/300'
     },
-    {
-      icon: Wrench,
-      title: 'Maintenance Services',
-      shortDesc: 'Ongoing building care',
-      fullDesc: 'Regular maintenance programs to keep your building in optimal condition. Preventive care that saves money long-term.',
-      features: ['Scheduled maintenance', 'Preventive repairs', 'Priority callouts', 'Quality assurance', 'Building compliance', 'Emergency repairs'],
-      image: '/api/placeholder/400/300'
-    }
   ];
 
   return (
@@ -185,10 +177,10 @@ export const InteractiveServicesSection = () => {
                   <div className="bg-muted/50 rounded-xl p-4 space-y-2">
                     <h4 className="font-semibold text-primary">Our Service Promise</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 text-sm text-muted-foreground">
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Fixed-price quotes</span>
-                      </div>
+                       <div className="flex items-center space-x-2">
+                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                         <span>Honest pricing</span>
+                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                         <span>Quality guarantee</span>
