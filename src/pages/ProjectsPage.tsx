@@ -14,30 +14,30 @@ export default function ProjectsPage() {
     masonry: [
       {
         id: 1,
-        title: "Heritage Brick Repointing",
+        title: "Heritage Brick Repointing - Before/After",
         location: "Paddington",
-        year: "2024",
+        year: "2020",
         service: "Masonry & Stonework",
-        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-06-04.png",
+        afterImage: "/lovable-uploads/2020-06-04 (1).png"
       },
       {
         id: 2,
-        title: "Sandstone Garden Wall",
+        title: "Sandstone Garden Wall Restoration",
         location: "Woollahra", 
-        year: "2023",
+        year: "2020",
         service: "Masonry & Stonework",
-        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-08-12.png",
+        afterImage: "/lovable-uploads/2020-08-27.png"
       },
       {
         id: 3,
         title: "Commercial Brick Facade",
         location: "Sydney CBD",
-        year: "2024", 
+        year: "2020", 
         service: "Masonry & Stonework",
-        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-09-01.png",
+        afterImage: "/lovable-uploads/2020-09-27.png"
       }
     ],
     heritage: [
@@ -45,28 +45,28 @@ export default function ProjectsPage() {
         id: 4,
         title: "Victorian Terrace Conservation",
         location: "Surry Hills",
-        year: "2024",
+        year: "2020",
         service: "Heritage Restoration",
-        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-10-13.png",
+        afterImage: "/lovable-uploads/2020-11-02.png"
       },
       {
         id: 5,
         title: "Federation Home Restoration", 
         location: "Balmain",
-        year: "2023",
+        year: "2020",
         service: "Heritage Restoration",
-        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-11-22.png",
+        afterImage: "/lovable-uploads/2020-11-22 (1).png"
       },
       {
         id: 6,
         title: "Historic Church Stonework",
         location: "The Rocks",
-        year: "2023",
+        year: "2020",
         service: "Heritage Restoration", 
-        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-11-30.png",
+        afterImage: "/lovable-uploads/2020-12-07.png"
       }
     ],
     foundation: [
@@ -74,19 +74,19 @@ export default function ProjectsPage() {
         id: 7,
         title: "House Foundation Stabilization",
         location: "Leichhardt",
-        year: "2024",
+        year: "2020",
         service: "Foundation Repairs",
-        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/2020-12-29.png",
+        afterImage: "/lovable-uploads/2021-01-07.png"
       },
       {
         id: 8,
         title: "Retaining Wall Foundation", 
         location: "Mosman",
-        year: "2023",
+        year: "2021",
         service: "Foundation Repairs",
-        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/Untitled design.png",
+        afterImage: "/lovable-uploads/Untitled design (1).png"
       }
     ],
     structural: [
@@ -94,19 +94,19 @@ export default function ProjectsPage() {
         id: 9,
         title: "Load-Bearing Wall Repair",
         location: "Newtown",
-        year: "2024",
+        year: "2021",
         service: "Structural Restoration",
-        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/Untitled design (2).png",
+        afterImage: "/lovable-uploads/Untitled design (3).png"
       },
       {
         id: 10,
         title: "Chimney Structural Repair",
         location: "Rozelle",
-        year: "2023", 
+        year: "2021", 
         service: "Structural Restoration",
-        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/unnamed (44).png",
+        afterImage: "/lovable-uploads/unnamed (45).png"
       }
     ],
     remedial: [
@@ -114,19 +114,19 @@ export default function ProjectsPage() {
         id: 11,
         title: "Strata Building Defects",
         location: "Bondi",
-        year: "2024",
+        year: "2021",
         service: "Remedial Building",
-        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/unnamed (46).png",
+        afterImage: "/lovable-uploads/unnamed (47).png"
       },
       {
         id: 12,
         title: "Commercial Building Remediation",
         location: "North Sydney",
-        year: "2023",
+        year: "2021",
         service: "Remedial Building", 
-        beforeImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/unnamed (48).png",
+        afterImage: "/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.png"
       }
     ],
     concrete: [
@@ -134,19 +134,19 @@ export default function ProjectsPage() {
         id: 13,
         title: "Concrete Cancer Treatment",
         location: "Manly", 
-        year: "2024",
+        year: "2021",
         service: "Concrete Repairs",
-        beforeImage: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.png",
+        afterImage: "/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png"
       },
       {
         id: 14,
         title: "Balcony Spalling Repairs",
         location: "Double Bay",
-        year: "2023",
+        year: "2021",
         service: "Concrete Repairs",
-        beforeImage: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=800&h=600&fit=crop",
-        afterImage: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop"
+        beforeImage: "/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png",
+        afterImage: "/lovable-uploads/2021-10-09.jpg"
       }
     ]
   };
