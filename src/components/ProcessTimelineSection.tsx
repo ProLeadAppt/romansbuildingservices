@@ -30,7 +30,7 @@ export const ProcessTimelineSection = () => {
        icon: FileText,
        title: 'Quote & Agreement',
        description: 'Clear quote with project breakdown and timeline.',
-       details: ['Itemized cost breakdown', 'Material specifications', 'Project timeline', 'Straightforward agreement'],
+       details: ['Itemized cost breakdown', 'Material specifications', 'Project timeline', 'Simple agreement'],
        duration: '24-48 hours',
        color: 'text-orange-600'
      },

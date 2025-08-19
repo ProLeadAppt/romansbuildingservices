@@ -26,28 +26,28 @@ const stats = [
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    location: "Sydney CBD",
+    name: "David Miller",
+    location: "Paddington",
     rating: 5,
-    text: "Romans Building Services identified structural issues early and provided effective solutions. Their prompt response and quality work gave us peace of mind about our property's condition."
+    text: "Outstanding heritage restoration work on our Victorian terrace. Minas personally supervised the project and the attention to detail was exceptional. Highly recommend Romans Building Services."
   },
   {
-    name: "Michael Thompson", 
-    location: "North Shore",
+    name: "Jennifer Wilson", 
+    location: "Balmain",
     rating: 5,
-    text: "Romans provided a comprehensive solution that addressed the root cause of our building issues. Two years later, no problems. Their expertise with heritage buildings was exactly what we needed."
+    text: "Professional stonework restoration that exceeded our expectations. The team was reliable, skilled, and completed the work on time. Great communication throughout the project."
   },
   {
-    name: "Lisa Chen",
-    location: "Eastern Suburbs", 
+    name: "Mark Thompson",
+    location: "Leichhardt", 
     rating: 5,
-    text: "Romans provided effective stone restoration solutions for our apartment building when previous contractors couldn't resolve the issue. Their thorough approach gave us confidence in the long-term results."
+    text: "Excellent masonry work on our retaining wall. Fair pricing, quality workmanship, and cleaned up perfectly after completion. Will definitely use Romans Building Services again."
   },
   {
-    name: "James Wilson",
-    location: "Inner West",
+    name: "Sarah Chen",
+    location: "Newtown",
     rating: 5,
-    text: "The assessment revealed structural issues that needed attention. Romans addressed these concerns effectively and professionally, providing good value for the work completed."
+    text: "Minas and his team did an amazing job restoring our heritage brick facade. The craftsmanship is top-notch and the results speak for themselves. Very happy with the service."
   }
 ];
 
