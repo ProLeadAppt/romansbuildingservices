@@ -21,7 +21,7 @@ export const ProcessTimelineSection = () => {
        icon: Calendar,
        title: 'Site Assessment',
        description: 'Comprehensive on-site evaluation by our expert building team.',
-       details: ['Detailed site inspection', 'Material assessment', 'Digital measurements', 'Visual inspection'],
+        details: ['Detailed site inspection', 'Material assessment', 'Digital measurements', 'Visual inspection'],
        duration: '1-2 hours',
        color: 'text-green-600'
      },

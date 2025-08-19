@@ -62,7 +62,7 @@ export default function MasonryPage() {
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-3xl font-bold text-primary">1000+</div>
+                <div className="text-3xl font-bold text-primary">800+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
             </div>

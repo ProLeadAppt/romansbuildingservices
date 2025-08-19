@@ -64,11 +64,11 @@ export const ModernHeroSection = () => {
     { icon: Shield, text: 'Licensed & Insured', color: 'text-green-600' },
     { icon: Award, text: '30+ Years Experience', color: 'text-blue-600' },
     { icon: Clock, text: 'Prompt Response', color: 'text-orange-600' },
-    { icon: Users, text: '1000+ Happy Clients', color: 'text-purple-600' }
+    { icon: Users, text: '800+ Happy Clients', color: 'text-purple-600' }
   ];
 
   const stats = [
-    { number: 'Over 1000', label: 'Projects Completed' },
+    { number: 'Over 800', label: 'Projects Completed' },
     { number: '30+', label: 'Years Experience' },
     { number: 'High', label: 'Customer Satisfaction' },
     { number: 'Prompt', label: 'Response Times' }
@@ -349,11 +349,11 @@ export const ModernHeroSection = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600" />
-                        <span>Detailed written assessment</span>
+                        <span>Professional site inspection</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-600" />
-                        <span>No-obligation fixed-price quote</span>
+                        <span>Honest quote with no surprises</span>
                       </div>
                     </div>
                   </div>

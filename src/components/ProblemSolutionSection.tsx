@@ -43,7 +43,7 @@ const solutions = [
   {
     icon: Award,
     title: "30+ Years Experience",
-    description: "Established 1995, trusted by 1000+ Sydney property owners with comprehensive warranties on all work."
+    description: "Established 1995, trusted by 800+ Sydney property owners with comprehensive warranties on all work."
   }
 ];
 
