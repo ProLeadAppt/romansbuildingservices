@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Calendar, Building, Phone, Star } from 'lucide-react';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
-import { PremiumBeforeAfterSlider } from '@/components/PremiumBeforeAfterSlider';
+import { ProjectGalleryCarousel } from '@/components/ProjectGalleryCarousel';
 
 export default function ProjectsPage() {
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
@@ -238,18 +238,15 @@ export default function ProjectsPage() {
               className="group"
             >
               <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                {/* Before/After Slider */}
+                {/* Project Gallery Carousel */}
                 <div className="relative">
-                  <PremiumBeforeAfterSlider
+                  <ProjectGalleryCarousel
                     beforeImage={project.beforeImage}
                     afterImage={project.afterImage}
-                    beforeLabel="Before"
-                    afterLabel="After"
+                    title={project.title}
+                    service={project.service}
                     className="h-80"
                   />
-                  <Badge className="absolute top-4 right-4 z-30 bg-background/80 backdrop-blur-sm">
-                    {project.service}
-                  </Badge>
                 </div>
                 
                 {/* Project Info */}
@@ -284,11 +281,11 @@ export default function ProjectsPage() {
           <h2 className="text-2xl font-bold text-center mb-8">Project Statistics</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">25+</div>
+              <div className="text-3xl font-bold text-primary mb-2">30+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-3xl font-bold text-primary mb-2">800+</div>
               <div className="text-sm text-muted-foreground">Stonework Projects</div>
             </div>
             <div>
