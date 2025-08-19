@@ -58,6 +58,10 @@ export const ProjectGalleryCarousel = ({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
+            onError={(e) => {
+              e.currentTarget.src = '/placeholder.svg';
+              console.log(`Failed to load image: ${images[currentIndex].src}`);
+            }}
           />
         </AnimatePresence>
 
@@ -121,6 +125,9 @@ export const ProjectGalleryCarousel = ({
               src={image.src}
               alt={`${title} - ${image.label}`}
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = '/placeholder.svg';
+              }}
             />
             <div className={`absolute inset-0 flex items-center justify-center ${
               image.type === 'before' 
