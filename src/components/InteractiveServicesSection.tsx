@@ -4,7 +4,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { AssessmentPopup } from '@/components/AssessmentPopup';
-const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
+import { minasWorkingPhoto, projectImages } from '@/data/projectImages';
+
+const minasPhoto = minasWorkingPhoto.src;
 
 export const InteractiveServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
@@ -17,7 +19,7 @@ export const InteractiveServicesSection = () => {
       shortDesc: 'Expert brick & stone construction',
       fullDesc: 'Comprehensive masonry services including new construction, repairs, repointing, and heritage restoration. We work with all types of brick, stone, and block materials.',
       features: ['New brick construction', 'Heritage restoration', 'Repointing & repairs', 'Stone masonry', 'Retaining walls', 'Structural brickwork'],
-      image: '/lovable-uploads/2020-11-02.png'
+      image: projectImages.find(img => img.category === 'structural')?.src || '/lovable-uploads/2020-11-02.png'
     },
     {
       icon: Hammer,
@@ -25,7 +27,7 @@ export const InteractiveServicesSection = () => {
       shortDesc: 'Heritage & modern restoration',
       fullDesc: 'Specialist restoration services for heritage and modern buildings. We preserve the character while ensuring structural integrity and compliance.',
       features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Traditional craftsmanship', 'Stone protection', 'Heritage compliance'],
-      image: '/lovable-uploads/2020-09-27.png'
+      image: projectImages.find(img => img.category === 'restoration')?.src || '/lovable-uploads/2020-09-27.png'
     },
     {
       icon: Shield,
@@ -33,7 +35,7 @@ export const InteractiveServicesSection = () => {
       shortDesc: 'Critical structural solutions',
       fullDesc: 'Priority and planned structural repairs including crack remediation, foundation work, and load-bearing modifications.',
       features: ['Foundation repairs', 'Stone crack repairs', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
-      image: '/lovable-uploads/2020-08-12.png'
+      image: projectImages.find(img => img.category === 'masonry')?.src || '/lovable-uploads/2020-08-12.png'
     },
   ];
 

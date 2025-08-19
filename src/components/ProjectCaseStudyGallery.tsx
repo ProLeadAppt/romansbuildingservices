@@ -8,7 +8,7 @@ import {
   Star, CheckCircle, Eye, X, ZoomIn 
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { OptimizedImageLazy } from '@/components/OptimizedImageLazy';
+import { UniversalImage } from '@/components/images/UniversalImage';
 
 interface ProjectImage {
   src: string;
@@ -145,10 +145,11 @@ export const ProjectCaseStudyGallery: React.FC<ProjectCaseStudyGalleryProps> = (
                       <div className="grid grid-cols-2 h-full">
                         <div className="relative">
                           {study.beforeImages[0] && (
-                            <OptimizedImageLazy
+                            <UniversalImage
                               src={study.beforeImages[0].src}
                               alt={study.beforeImages[0].alt}
                               className="w-full h-full object-cover"
+                              aspectRatio="4/3"
                             />
                           )}
                           <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs">
@@ -157,10 +158,11 @@ export const ProjectCaseStudyGallery: React.FC<ProjectCaseStudyGalleryProps> = (
                         </div>
                         <div className="relative">
                           {study.afterImages[0] && (
-                            <OptimizedImageLazy
+                            <UniversalImage
                               src={study.afterImages[0].src}
                               alt={study.afterImages[0].alt}
                               className="w-full h-full object-cover"
+                              aspectRatio="4/3"
                             />
                           )}
                           <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs">
@@ -294,7 +296,7 @@ export const ProjectCaseStudyGallery: React.FC<ProjectCaseStudyGalleryProps> = (
                     <div className="relative rounded-lg overflow-hidden bg-muted aspect-video">
                       {selectedStudy && (
                         <>
-                          <OptimizedImageLazy
+                          <UniversalImage
                             src={
                               showBefore 
                                 ? selectedStudy.beforeImages[currentImageIndex]?.src 
@@ -306,6 +308,7 @@ export const ProjectCaseStudyGallery: React.FC<ProjectCaseStudyGalleryProps> = (
                                 : selectedStudy.afterImages[currentImageIndex]?.alt
                             }
                             className="w-full h-full object-cover"
+                            aspectRatio="16/9"
                           />
                           
                           {/* Navigation arrows */}
