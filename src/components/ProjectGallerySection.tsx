@@ -12,7 +12,7 @@ export const ProjectGallerySection = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const { isMobile, isTablet } = useMobileDetection();
 
-  // All uploaded work photos
+  // All uploaded work photos - filtered to only include actual work photos
   const workImages = [{
     id: 1,
     image: "/lovable-uploads/2020-06-04 (1).png"
@@ -56,18 +56,6 @@ export const ProjectGallerySection = () => {
     id: 15,
     image: "/lovable-uploads/2021-10-09.jpg"
   }, {
-    id: 16,
-    image: "/lovable-uploads/Untitled design.png"
-  }, {
-    id: 17,
-    image: "/lovable-uploads/Untitled design (1).png"
-  }, {
-    id: 18,
-    image: "/lovable-uploads/Untitled design (2).png"
-  }, {
-    id: 19,
-    image: "/lovable-uploads/Untitled design (3).png"
-  }, {
     id: 20,
     image: "/lovable-uploads/unnamed (46).png"
   }, {
@@ -77,20 +65,8 @@ export const ProjectGallerySection = () => {
     id: 22,
     image: "/lovable-uploads/unnamed (48).png"
   }, {
-    id: 23,
-    image: "/lovable-uploads/unnamed-_44__1.png"
-  }, {
-    id: 24,
-    image: "/lovable-uploads/unnamed-_45__1.png"
-  }, {
     id: 25,
     image: "/lovable-uploads/unnamed.jpg"
-  }, {
-    id: 28,
-    image: "/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png"
-  }, {
-    id: 29,
-    image: "/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png"
   }];
   const scroll = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
