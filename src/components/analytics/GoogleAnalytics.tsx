@@ -12,7 +12,7 @@ interface GoogleAnalyticsProps {
 }
 
 export const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ 
-  measurementId = 'G-XXXXXXXXXX' // Replace with actual GA4 Measurement ID
+  measurementId = 'G-M9SZ1334SV' // Romans Building Services GA4 ID
 }) => {
   useEffect(() => {
     // Initialize dataLayer if not exists

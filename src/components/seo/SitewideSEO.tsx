@@ -61,7 +61,7 @@ export const SitewideSEO: React.FC<SitewideSEOProps> = ({ children }) => {
 
   return (
     <>
-      <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+      <GoogleAnalytics measurementId="G-M9SZ1334SV" />
       {children}
     </>
   );
