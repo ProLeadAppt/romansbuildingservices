@@ -37,8 +37,8 @@ export const FAQSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Frequently Asked Questions
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              FAQs
             </h2>
             <p className="text-xl text-muted-foreground">
               Get answers to common questions about our services and process
