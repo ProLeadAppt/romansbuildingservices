@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import enhanced typography system */
-@import url('./styles/typography.css');
+/* Enhanced Typography and Readability System */
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -62,6 +61,45 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Typography Scale - Based on 1.125 ratio for better hierarchy */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+
+    /* Line Height Scale - Optimized for readability */
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+
+    /* Letter Spacing - Improved for dyslexia */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+
+    /* Optimal reading widths */
+    --reading-width-narrow: 45ch;
+    --reading-width-normal: 65ch;
+    --reading-width-wide: 85ch;
+
+    /* Content spacing */
+    --content-spacing-xs: 0.5rem;
+    --content-spacing-sm: 0.75rem;
+    --content-spacing-md: 1rem;
+    --content-spacing-lg: 1.5rem;
+    --content-spacing-xl: 2rem;
+    --content-spacing-2xl: 3rem;
   }
 
   .dark {

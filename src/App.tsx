@@ -7,6 +7,7 @@ import SinglePageApp from "./pages/SinglePageApp";
 import UnderConstructionPage from "@/components/UnderConstructionPage";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 import { ErrorTrackingProvider } from "@/components/ErrorTracking";
+import { SitewideSEO } from "@/components/seo/SitewideSEO";
 
 const queryClient = new QueryClient();
 
@@ -16,18 +17,20 @@ const SHOW_CONSTRUCTION_PAGE = false;
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ErrorTrackingProvider>
-      <TooltipProvider>
-        <PerformanceMonitor />
-        <Toaster />
-        <Sonner />
-        {SHOW_CONSTRUCTION_PAGE ? (
-          <UnderConstructionPage />
-        ) : (
-          <Layout showBreadcrumbs={false}>
-            <SinglePageApp />
-          </Layout>
-        )}
-      </TooltipProvider>
+      <SitewideSEO>
+        <TooltipProvider>
+          <PerformanceMonitor />
+          <Toaster />
+          <Sonner />
+          {SHOW_CONSTRUCTION_PAGE ? (
+            <UnderConstructionPage />
+          ) : (
+            <Layout showBreadcrumbs={false}>
+              <SinglePageApp />
+            </Layout>
+          )}
+        </TooltipProvider>
+      </SitewideSEO>
     </ErrorTrackingProvider>
   </QueryClientProvider>
 );

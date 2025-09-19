@@ -75,7 +75,8 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
     return baseKeywords.join(', ');
   };
 
-  const canonicalUrl = `${BUSINESS_INFO.website}${location ? `/${location.toLowerCase().replace(/\s+/g, '-')}` : ''}`;
+  // Always use main domain for canonical - site-wide SEO requirement
+  const canonicalUrl = 'https://www.romansbuildingservices.com/';
 
   useEffect(() => {
     // Update document title and meta tags
@@ -97,7 +98,7 @@ export const LocalSEOMeta: React.FC<LocalSEOMetaProps> = ({
       meta.setAttribute('content', content);
     };
 
-    // Update canonical link
+    // Update canonical link - always points to main domain
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
