@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthGuard } from '@/components/auth/AuthGuard';
 import { Layout } from '@/components/Layout';
 import { ZapierWebhookConfig } from '@/components/ZapierWebhookConfig';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
@@ -58,8 +59,9 @@ const AdminPage: React.FC = () => {
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <AuthGuard>
+      <Layout>
+        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
           <div className="container mx-auto px-4 py-8 space-y-8">
             {/* Header */}
             <div className="text-center space-y-4">
@@ -242,7 +244,8 @@ const AdminPage: React.FC = () => {
             </Card>
         </div>
       </div>
-    </Layout>
+      </Layout>
+    </AuthGuard>
   );
 };
 

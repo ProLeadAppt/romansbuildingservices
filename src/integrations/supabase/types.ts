@@ -14,7 +14,81 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      form_submissions: {
+        Row: {
+          additional_data: Json | null
+          email: string
+          form_type: string
+          id: string
+          ip_address: string | null
+          message: string | null
+          name: string | null
+          phone: string | null
+          preferred_contact: string | null
+          service: string | null
+          submitted_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          additional_data?: Json | null
+          email: string
+          form_type: string
+          id?: string
+          ip_address?: string | null
+          message?: string | null
+          name?: string | null
+          phone?: string | null
+          preferred_contact?: string | null
+          service?: string | null
+          submitted_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          additional_data?: Json | null
+          email?: string
+          form_type?: string
+          id?: string
+          ip_address?: string | null
+          message?: string | null
+          name?: string | null
+          phone?: string | null
+          preferred_contact?: string | null
+          service?: string | null
+          submitted_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      webhook_configs: {
+        Row: {
+          created_at: string
+          form_type: string
+          id: string
+          is_active: boolean
+          updated_at: string
+          user_id: string
+          webhook_url: string
+        }
+        Insert: {
+          created_at?: string
+          form_type: string
+          id?: string
+          is_active?: boolean
+          updated_at?: string
+          user_id: string
+          webhook_url: string
+        }
+        Update: {
+          created_at?: string
+          form_type?: string
+          id?: string
+          is_active?: boolean
+          updated_at?: string
+          user_id?: string
+          webhook_url?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

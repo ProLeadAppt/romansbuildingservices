@@ -1,4 +1,5 @@
 import React from 'react';
+import { AuthGuard } from '@/components/auth/AuthGuard';
 import { Layout } from '@/components/Layout';
 import { ZapierWebhookConfig } from '@/components/ZapierWebhookConfig';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,8 +9,9 @@ import { Settings, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 
 const WebhookConfigPage: React.FC = () => {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <AuthGuard>
+      <Layout>
+        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 py-8 space-y-8">
           {/* Header */}
           <div className="text-center space-y-4">
@@ -168,7 +170,8 @@ const WebhookConfigPage: React.FC = () => {
           </Card>
         </div>
       </div>
-    </Layout>
+      </Layout>
+    </AuthGuard>
   );
 };
 
