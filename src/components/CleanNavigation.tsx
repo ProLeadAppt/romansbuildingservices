@@ -112,7 +112,7 @@ export const CleanNavigation = () => {
               <div className="hidden lg:flex items-center space-x-6">
                 <Button size="sm" className="bg-primary hover:bg-primary/90">
                   <Phone className="h-4 w-4 mr-2" />
-                  +61 483 981 292
+                  +61 414 922 276
                 </Button>
               </div>
               
@@ -202,13 +202,13 @@ export const CleanNavigation = () => {
             <div className="p-4 border-t">
               <Button
                 onClick={() => {
-                  window.open('tel:+61483981292');
+                  window.open('tel:+61414922276');
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full text-base py-3"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now: +61 483 981 292
+                Call Now: +61 414 922 276
               </Button>
             </div>
           </div>

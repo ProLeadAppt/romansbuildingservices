@@ -177,7 +177,7 @@ export const RomansPremiumHeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => window.open('tel:+61483981292')}
+                onClick={() => window.open('tel:+61414922276')}
                 className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white hover:text-black font-semibold px-6 py-4 rounded-xl flex-1"
               >
                 <Phone className="h-5 w-5 mr-2" />
@@ -253,7 +253,7 @@ export const RomansPremiumHeroSection = () => {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="0483 981 292"
+                        placeholder="0414 922 276"
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                         className={getFieldError('phone') ? 'border-red-500' : ''}

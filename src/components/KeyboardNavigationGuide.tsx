@@ -153,10 +153,10 @@ export const KeyboardNavigationGuide: React.FC = () => {
                   If you encounter any accessibility issues or need assistance, 
                   please contact us at{' '}
                   <a 
-                    href="tel:+61483981292" 
+                    href="tel:+61414922276" 
                     className="text-primary hover:underline focus:underline focus:outline-none"
                   >
-                    +61 483 981 292
+                    +61 414 922 276
                   </a>
                 </p>
               </div>

@@ -179,7 +179,7 @@ export const LiveSocialProof = () => {
                     className="text-xs bg-primary text-white px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => window.open('tel:+61483981292')}
+                    onClick={() => window.open('tel:+61414922276')}
                   >
                     <Phone className="w-3 h-3 inline mr-1" />
                     Call Now

@@ -167,9 +167,9 @@ export const InteractiveServicesSection = () => {
                       variant="outline" 
                       size="lg" 
                       className="w-full hover-lift touch-target"
-                      onClick={() => window.open('tel:+61483981292')}
+                      onClick={() => window.open('tel:+61414922276')}
                     >
-                      Call Expert: +61 483 981 292
+                      Call Expert: +61 414 922 276
                     </Button>
                   </div>
 
@@ -239,7 +239,7 @@ export const InteractiveServicesSection = () => {
             <Button 
               size="lg" 
               className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
-              onClick={() => window.open('tel:+61483981292')}
+              onClick={() => window.open('tel:+61414922276')}
             >
               <Phone className="mr-2 w-5 h-5" />
               Call Now

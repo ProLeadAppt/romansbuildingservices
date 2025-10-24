@@ -214,7 +214,7 @@ export const LeadCaptureForm = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-secondary" />
-                    <a href="tel:+61483981292" className="font-medium text-white hover:text-secondary transition-colors">+61 483 981 292</a>
+                    <a href="tel:+61414922276" className="font-medium text-white hover:text-secondary transition-colors">+61 414 922 276</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-secondary" />

@@ -5,9 +5,9 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Call Minas",
-    value: "+61 483 981 292",
+    value: "+61 414 922 276",
     description: "Available 7 days a week",
-    action: "tel:+61483981292",
+    action: "tel:+61414922276",
     primary: true
   },
   {
@@ -99,7 +99,7 @@ export const ContactSection = () => {
                   <Button 
                     size="lg" 
                     className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold"
-                    onClick={() => window.open('tel:+61483981292')}
+                    onClick={() => window.open('tel:+61414922276')}
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Call Now for Free Assessment

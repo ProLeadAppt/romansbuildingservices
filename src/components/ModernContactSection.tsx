@@ -58,8 +58,8 @@ export const ModernContactSection = () => {
   const contactMethods = [{
     icon: Phone,
     title: 'Professional Service Line',
-    content: '+61 483 981 292',
-    action: 'tel:+61483981292',
+    content: '+61 414 922 276',
+    action: 'tel:+61414922276',
     description: 'All inquiries, quotes and priority responses',
     color: 'text-primary',
     bgColor: 'bg-primary/10'
@@ -371,9 +371,9 @@ export const ModernContactSection = () => {
                     <span className="text-sm">Professional masonry solutions</span>
                   </div>
                 </div>
-                <Button variant="default" size="lg" className="w-full mt-4" onClick={() => window.open('tel:+61483981292')}>
+                <Button variant="default" size="lg" className="w-full mt-4" onClick={() => window.open('tel:+61414922276')}>
                   <Phone className="w-4 h-4 mr-2" />
-                  Contact: +61 483 981 292
+                  Contact: +61 414 922 276
                 </Button>
               </CardContent>
             </Card>
@@ -446,7 +446,7 @@ export const ModernContactSection = () => {
                     "I personally handle all consultations to ensure you get the best service and honest advice."
                   </p>
                   <div className="grid grid-cols-1 gap-3">
-                    <Button size="lg" className="w-full hover-lift" onClick={() => window.open('tel:+61483981292')}>
+                    <Button size="lg" className="w-full hover-lift" onClick={() => window.open('tel:+61414922276')}>
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now for Instant Quote
                     </Button>

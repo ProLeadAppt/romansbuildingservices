@@ -128,7 +128,7 @@ export const AssessmentPopup: React.FC<AssessmentPopupProps> = ({ isOpen, onClos
                   <Input
                     id="popup-phone"
                     type="tel"
-                    placeholder="0483 981 292"
+                    placeholder="0414 922 276"
                     value={formData.phone}
                     onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                     className={getFieldError('phone') ? 'border-red-500' : ''}

@@ -184,7 +184,7 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
             <div class="p-3 text-center">
               <h3 class="font-semibold">Romans Building Services</h3>
               <p class="text-sm text-gray-600">Head Office - Sydney CBD</p>
-              <p class="text-xs mt-2">📞 +61 483 981 292</p>
+              <p class="text-xs mt-2">📞 +61 414 922 276</p>
             </div>
           `))
           .addTo(map.current!);

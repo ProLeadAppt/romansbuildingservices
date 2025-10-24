@@ -105,7 +105,7 @@ export const ZapierWebhookConfig: React.FC<ZapierWebhookConfigProps> = ({
     const testData = {
       name: 'Test User',
       email: 'test@example.com',
-      phone: '0412 345 678',
+      phone: '0414 922 276',
       service: 'Test Service',
       message: 'This is a test submission from the webhook configuration',
       testMode: true

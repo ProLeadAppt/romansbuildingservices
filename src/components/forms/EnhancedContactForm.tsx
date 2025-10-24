@@ -297,7 +297,7 @@ export const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               className={cn(hasFieldError('phone') && "border-destructive focus:ring-destructive")}
-              placeholder="0412 345 678"
+              placeholder="0414 922 276"
               disabled={isSubmitting}
               required
               aria-invalid={hasFieldError('phone')}

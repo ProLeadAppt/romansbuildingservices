@@ -59,7 +59,7 @@ const UnderConstructionPage = () => {
             <Button 
               size="lg" 
               className="gap-2"
-              onClick={() => window.location.href = 'tel:+61483981292'}
+              onClick={() => window.location.href = 'tel:+61414922276'}
             >
               <Phone className="h-4 w-4" />
               Call Now
@@ -78,10 +78,10 @@ const UnderConstructionPage = () => {
           <div className="flex flex-col items-center gap-3">
             <button 
               className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200 text-foreground hover:text-primary"
-              onClick={() => window.location.href = 'tel:+61483981292'}
+              onClick={() => window.location.href = 'tel:+61414922276'}
             >
               <Phone className="h-5 w-5" />
-              <span className="font-medium">+61 483 981 292</span>
+              <span className="font-medium">+61 414 922 276</span>
             </button>
             <button 
               className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200 text-foreground hover:text-primary"

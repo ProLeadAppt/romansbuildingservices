@@ -129,10 +129,10 @@ export const CleanHeroSection = () => {
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-8 py-6 hover-lift"
-                onClick={() => window.open('tel:+61483981292')}
+                onClick={() => window.open('tel:+61414922276')}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                +61 483 981 292
+                +61 414 922 276
               </Button>
             </div>
 
@@ -241,7 +241,7 @@ export const CleanHeroSection = () => {
                     <div className="flex items-center justify-center space-x-4 text-sm">
                       <div className="flex items-center space-x-2">
                         <Phone className="w-4 h-4 text-primary" />
-                        <span className="font-semibold">+61 483 981 292</span>
+                        <span className="font-semibold">+61 414 922 276</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Mail className="w-4 h-4 text-primary" />

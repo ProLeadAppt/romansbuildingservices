@@ -66,7 +66,7 @@ export const HeroSection = () => {
       console.error('Form submission error:', error);
       toast({
         title: "Submission Failed",
-        description: "Please try again or call us directly at +61 483 981 292",
+        description: "Please try again or call us directly at +61 414 922 276",
         variant: "destructive",
       });
     } finally {
@@ -127,8 +127,8 @@ export const HeroSection = () => {
               {/* Phone Number - Prominent */}
               <div className="flex items-center justify-center sm:justify-start space-x-3">
                 <Phone className="h-6 w-6 text-yellow-400" />
-                <a href="tel:+61483981292" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
-                  +61 483 981 292
+                <a href="tel:+61414922276" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
+                  +61 414 922 276
                 </a>
                 <span className="text-sm text-gray-300">Contact us</span>
               </div>

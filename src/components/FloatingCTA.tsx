@@ -39,7 +39,7 @@ export const FloatingCTA = () => {
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         <motion.button
-          onClick={() => window.open('tel:+61483981292')}
+          onClick={() => window.open('tel:+61414922276')}
           className="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -82,12 +82,12 @@ export const FloatingCTA = () => {
                     size="sm"
                     className="w-full"
                     onClick={() => {
-                      window.open('tel:+61483981292');
+                      window.open('tel:+61414922276');
                       setShowCallPrompt(false);
                     }}
                   >
                       <Phone className="w-4 h-4 mr-2" />
-                      Contact Us: +61 483 981 292
+                      Contact Us: +61 414 922 276
                   </Button>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export const FloatingCTA = () => {
           <Button
             size="lg"
             className="rounded-full w-14 h-14 p-0 shadow-xl hover-glow-strong bg-primary hover:bg-primary/90"
-            onClick={() => window.open('tel:+61483981292')}
+            onClick={() => window.open('tel:+61414922276')}
           >
             <Phone className="w-6 h-6" />
           </Button>
@@ -125,7 +125,7 @@ export const FloatingCTA = () => {
             size="lg"
             variant="secondary"
             className="rounded-full w-14 h-14 p-0 shadow-xl hover-glow-strong"
-            onClick={() => window.open('sms:+61483981292')}
+            onClick={() => window.open('sms:+61414922276')}
           >
             <MessageCircle className="w-6 h-6" />
           </Button>
