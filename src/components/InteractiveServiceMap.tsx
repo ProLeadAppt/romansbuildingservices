@@ -38,31 +38,21 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
   const [isMapInitialized, setIsMapInitialized] = useState<boolean>(false);
   const [showAssessmentPopup, setShowAssessmentPopup] = useState<boolean>(false);
 
-  // Check if we can get token from Supabase environment
+  // Check if we can get token from localStorage
   useEffect(() => {
-    // Since this project is connected to Supabase, try to get token from environment
-    // In a real implementation, this would be an API call to your Supabase Edge Function
-    const checkSupabaseToken = async () => {
+    const checkToken = async () => {
       try {
-        // This would be replaced with actual Supabase Edge Function call
-        // const { data } = await supabase.functions.invoke('get-mapbox-token');
-        // if (data?.token) {
-        //   setMapboxToken(data.token);
-        //   setIsTokenValid(true);
-        // }
-        
-        // For now, check if token is in localStorage (temporary fallback)
         const savedToken = localStorage.getItem('mapbox-token');
         if (savedToken) {
           setMapboxToken(savedToken);
           validateToken(savedToken);
         }
       } catch (error) {
-        console.warn('Could not retrieve Mapbox token from Supabase:', error);
+        console.warn('Could not retrieve Mapbox token:', error);
       }
     };
 
-    checkSupabaseToken();
+    checkToken();
   }, []);
 
   const validateToken = async (token: string) => {
@@ -234,11 +224,10 @@ export const InteractiveServiceMap: React.FC<InteractiveServiceMapProps> = ({
             <CardContent className="space-y-4">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="text-sm text-blue-800 mb-2">
-                  <strong>For Site Administrator:</strong> This project is connected to Supabase. 
-                  Please add your Mapbox public token to Supabase Edge Function Secrets for the interactive map to work.
+                  <strong>For Site Administrator:</strong> Please add your Mapbox public token to localStorage for the interactive map to work.
                 </p>
                 <p className="text-xs text-blue-600">
-                  Go to your Supabase dashboard → Edge Functions → Secrets and add MAPBOX_PUBLIC_TOKEN
+                  You can set it programmatically: localStorage.setItem('mapbox-token', 'your-token-here')
                 </p>
               </div>
               

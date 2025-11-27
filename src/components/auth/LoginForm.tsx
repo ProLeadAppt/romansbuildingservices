@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -22,19 +21,9 @@ export const LoginForm = () => {
     setError('');
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (error) {
-        setError(error.message);
-      } else {
-        toast({
-          title: "Success",
-          description: "Logged in successfully",
-        });
-      }
+      // Authentication removed - implement your own auth system here
+      // For now, just show an error
+      setError('Authentication system not configured. Please implement your own auth solution.');
     } catch (err) {
       setError('An unexpected error occurred');
     } finally {

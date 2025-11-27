@@ -1,5 +1,3 @@
-import { supabase } from "@/integrations/supabase/client";
-
 export interface WebhookConfig {
   id: string;
   user_id: string;
@@ -11,35 +9,25 @@ export interface WebhookConfig {
 }
 
 /**
- * Save or update webhook configuration in the database
+ * Save or update webhook configuration in localStorage
  */
 export async function saveWebhookConfig(
   formType: string,
   webhookUrl: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const key = `webhook_config_${formType}`;
+    const config: WebhookConfig = {
+      id: `local_${Date.now()}`,
+      user_id: 'local_user',
+      form_type: formType,
+      webhook_url: webhookUrl,
+      is_active: true,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
     
-    if (!user) {
-      return { success: false, error: "User not authenticated" };
-    }
-
-    const { error } = await supabase
-      .from('webhook_configs')
-      .upsert({
-        user_id: user.id,
-        form_type: formType,
-        webhook_url: webhookUrl,
-        is_active: true,
-      }, {
-        onConflict: 'user_id,form_type'
-      });
-
-    if (error) {
-      console.error('Error saving webhook config:', error);
-      return { success: false, error: error.message };
-    }
-
+    localStorage.setItem(key, JSON.stringify(config));
     return { success: true };
   } catch (error) {
     console.error('Error saving webhook config:', error);
@@ -54,26 +42,15 @@ export async function getWebhookConfig(
   formType: string
 ): Promise<{ config: WebhookConfig | null; error?: string }> {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const key = `webhook_config_${formType}`;
+    const stored = localStorage.getItem(key);
     
-    if (!user) {
-      return { config: null, error: "User not authenticated" };
+    if (!stored) {
+      return { config: null };
     }
-
-    const { data, error } = await supabase
-      .from('webhook_configs')
-      .select('*')
-      .eq('user_id', user.id)
-      .eq('form_type', formType)
-      .eq('is_active', true)
-      .single();
-
-    if (error && error.code !== 'PGRST116') { // PGRST116 is "not found" error
-      console.error('Error fetching webhook config:', error);
-      return { config: null, error: error.message };
-    }
-
-    return { config: data || null };
+    
+    const config = JSON.parse(stored) as WebhookConfig;
+    return { config };
   } catch (error) {
     console.error('Error fetching webhook config:', error);
     return { config: null, error: String(error) };
@@ -81,31 +58,32 @@ export async function getWebhookConfig(
 }
 
 /**
- * Get all webhook configurations for the current user
+ * Get all webhook configurations from localStorage
  */
 export async function getAllWebhookConfigs(): Promise<{
   configs: WebhookConfig[];
   error?: string;
 }> {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const configs: WebhookConfig[] = [];
     
-    if (!user) {
-      return { configs: [], error: "User not authenticated" };
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('webhook_config_')) {
+        try {
+          const stored = localStorage.getItem(key);
+          if (stored) {
+            configs.push(JSON.parse(stored) as WebhookConfig);
+          }
+        } catch (e) {
+          // Skip invalid entries
+        }
+      }
     }
-
-    const { data, error } = await supabase
-      .from('webhook_configs')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      console.error('Error fetching webhook configs:', error);
-      return { configs: [], error: error.message };
-    }
-
-    return { configs: data || [] };
+    
+    return { configs: configs.sort((a, b) => 
+      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    ) };
   } catch (error) {
     console.error('Error fetching webhook configs:', error);
     return { configs: [], error: String(error) };
@@ -119,23 +97,8 @@ export async function deleteWebhookConfig(
   formType: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    if (!user) {
-      return { success: false, error: "User not authenticated" };
-    }
-
-    const { error } = await supabase
-      .from('webhook_configs')
-      .delete()
-      .eq('user_id', user.id)
-      .eq('form_type', formType);
-
-    if (error) {
-      console.error('Error deleting webhook config:', error);
-      return { success: false, error: error.message };
-    }
-
+    const key = `webhook_config_${formType}`;
+    localStorage.removeItem(key);
     return { success: true };
   } catch (error) {
     console.error('Error deleting webhook config:', error);
@@ -144,7 +107,7 @@ export async function deleteWebhookConfig(
 }
 
 /**
- * Save form submission to database
+ * Save form submission to localStorage (for development/testing)
  */
 export async function saveFormSubmission(
   formType: string,
@@ -159,20 +122,29 @@ export async function saveFormSubmission(
   }
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const { error } = await supabase
-      .from('form_submissions')
-      .insert({
-        form_type: formType,
-        ...data,
-        ip_address: null, // Can be populated server-side if needed
-        user_agent: navigator.userAgent,
-      });
-
-    if (error) {
-      console.error('Error saving form submission:', error);
-      return { success: false, error: error.message };
-    }
-
+    const submission = {
+      id: `submission_${Date.now()}`,
+      form_type: formType,
+      ...data,
+      ip_address: null,
+      user_agent: navigator.userAgent,
+      created_at: new Date().toISOString(),
+    };
+    
+    const key = `form_submission_${Date.now()}`;
+    localStorage.setItem(key, JSON.stringify(submission));
+    
+    // Keep only last 100 submissions
+    const keys = Object.keys(localStorage)
+      .filter(k => k.startsWith('form_submission_'))
+      .sort()
+      .reverse()
+      .slice(100);
+    
+    Object.keys(localStorage)
+      .filter(k => k.startsWith('form_submission_') && !keys.includes(k))
+      .forEach(k => localStorage.removeItem(k));
+    
     return { success: true };
   } catch (error) {
     console.error('Error saving form submission:', error);

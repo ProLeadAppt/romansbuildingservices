@@ -1,0 +1,54 @@
+DNS RECORDS SUMMARY FOR NETLIFY MIGRATION
+==========================================
+
+DOMAIN: romansbuildingservices.com
+
+=== WEBSITE RECORDS (UPDATE THESE) ===
+
+A Record (Apex Domain):
+  Option 1 (Recommended): romansbuildingservices.com → ALIAS → apex-loadbalancer.netlify.com
+  Option 2 (Fallback):     romansbuildingservices.com → A → 75.2.60.5
+
+CNAME Record (WWW):
+  www.romansbuildingservices.com → CNAME → romansbuildingservices.netlify.app
+
+=== EMAIL RECORDS (KEEP THESE UNCHANGED) ===
+
+MX Records (Google Workspace):
+  romansbuildingservices.com → aspmx.l.google.com (Priority: 10)
+  romansbuildingservices.com → alt1.aspmx.l.google.com (Priority: 20)
+  romansbuildingservices.com → alt2.aspmx.l.google.com (Priority: 30)
+  romansbuildingservices.com → alt3.aspmx.l.google.com (Priority: 40)
+  romansbuildingservices.com → alt4.aspmx.l.google.com (Priority: 50)
+
+TXT Records (Email - KEEP ALL):
+  romansbuildingservices.com → v=spf1 include:_spf.google.com...
+  google._domainkey.romansbuildingservices.com → v=DKIM1; k=rsa; p=...
+  mail.romansbuildingservices.com → v=DMARC1; p=none;
+  mail.romansbuildingservices.com → v=spf1 include:spf.leadcon...
+  pic._domainkey.mail.romansbuildingservices.com → k=rsa; p=...
+
+TXT Records (Verification - KEEP):
+  romansbuildingservices.com → google-site-verification=...
+  www.romansbuildingservices.com → google-site-verification=...
+
+=== RECORDS TO DELETE ===
+
+DELETE:
+  - romansbuildingservices.com → 185.158.133.1 (A Record)
+  - www.romansbuildingservices.com → 185.158.133.1 (A Record)
+  - en.romansbuildingservices.com → cdn1.wixdns.net (CNAME)
+  - Any other Wix-related CNAME records
+
+=== ACTION ITEMS ===
+
+1. Delete old A records pointing to 185.158.133.1
+2. Add new A/ALIAS record pointing to Netlify
+3. Add CNAME for www pointing to Netlify
+4. Delete Wix CNAME records
+5. Keep all MX records (Google Workspace)
+6. Keep all email TXT records (SPF, DKIM, DMARC)
+7. Keep Google verification TXT records
+8. Wait 24-48 hours for DNS propagation
+9. Verify in Netlify dashboard
+
