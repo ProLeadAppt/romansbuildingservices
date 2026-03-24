@@ -1,256 +1,104 @@
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Phone, Clock, Truck, CheckCircle } from 'lucide-react';
-import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
-const GreaterSydneyPage = () => {
-  const services = [
-    'Commercial Building Repairs',
-    'Industrial Structural Work', 
-    'Residential Foundation Repairs',
-    'Large-Scale Masonry Projects',
-    'Infrastructure Maintenance',
-    'Priority Structural Response',
-    'Multi-Unit Developments',
-    'Government Contract Work'
-  ];
+const services = [
+  'Commercial and residential masonry',
+  'Concrete cancer repairs',
+  'Structural crack stitching',
+  'Retaining wall construction',
+  'Brick and block laying',
+  'Repointing and mortar repairs',
+];
 
-  const suburbs = [
-    'Parramatta', 'Hornsby', 'Sutherland', 'Blacktown', 'Liverpool',
-    'Penrith', 'Campbelltown', 'Bankstown', 'Fairfield', 'Auburn'
-  ];
+const GreaterSydneyPage = () => (
+  <>
+    <Helmet>
+      <title>Greater Sydney Masonry and Building Services | Romans Building Services</title>
+      <meta
+        name="description"
+        content="All masonry and remedial building services across Greater Sydney. Servicing Parramatta, Liverpool, Penrith, Blacktown and the Hills District."
+      />
+    </Helmet>
 
-  return (
-    <div>
-      <LocalBusinessSchema />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-background to-secondary/5 py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4">
-              <Truck className="w-4 h-4 mr-2" />
-              Metropolitan Wide Service
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Building Services Across
-              <span className="text-primary block">Greater Sydney</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Comprehensive building and structural services across Sydney's outer regions. 
-              From commercial projects in Parramatta to residential repairs in Penrith.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                <Phone className="w-5 h-5 mr-2" />
-                Call +61 483 981 292
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Metro Wide Quote
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Hero */}
+    <section className="bg-navy py-24">
+      <div className="container mx-auto px-4 text-center">
+        <motion.h1
+          className="font-heading text-4xl md:text-5xl text-white mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Greater Sydney
+        </motion.h1>
+        <motion.p
+          className="font-body text-white/70 max-w-xl mx-auto text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          All masonry services for commercial and residential properties across the wider Sydney metro.
+        </motion.p>
+      </div>
+    </section>
 
-      {/* Service Coverage Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Comprehensive Greater Sydney Coverage
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Professional building services across Sydney's growth corridors and established suburbs
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Rapid Response</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Quick deployment across Greater Sydney with mobile teams 
-                  strategically positioned for optimal response times.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardHeader>
-                <Truck className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Large Scale Projects</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Capacity for major commercial and residential developments 
-                  across outer Sydney growth areas.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardHeader>
-                <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Local Expertise</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Understanding of diverse council requirements and local 
-                  building conditions across Greater Sydney regions.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-16 bg-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Metropolitan Building Services
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              {services.map((service, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium text-foreground">{service}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Major Projects */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Major Greater Sydney Projects
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Parramatta CBD Office Complex</CardTitle>
-                  <CardDescription>Large-scale commercial restoration</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Comprehensive structural repairs and facade restoration of 12-story office building 
-                    including concrete cancer treatment and seismic strengthening.
-                  </p>
-                  <div className="flex gap-2">
-                    <Badge variant="secondary">Commercial</Badge>
-                    <Badge variant="secondary">Structural Engineering</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle>Blacktown Industrial Warehouse</CardTitle>
-                  <CardDescription>Manufacturing facility restoration</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Complete structural assessment and repair of 5,000m² industrial facility 
-                    including foundation stabilization and load-bearing wall reconstruction.
-                  </p>
-                  <div className="flex gap-2">
-                    <Badge variant="secondary">Industrial</Badge>
-                    <Badge variant="secondary">Foundation Repair</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Suburbs We Service */}
-      <section className="py-16 bg-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
-              Greater Sydney Regions We Service
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-              {suburbs.map((suburb) => (
-                <Badge key={suburb} variant="outline" className="p-3 text-center justify-center">
-                  {suburb}
-                </Badge>
-              ))}
-            </div>
-            
-            <Card className="text-left">
-              <CardHeader>
-                <CardTitle>Greater Sydney Building Solutions</CardTitle>
-                <CardDescription>
-                  Tailored services for diverse metropolitan requirements
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Western Sydney Growth Areas:</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Supporting rapid development in Penrith, Campbelltown, and surrounding growth corridors 
-                    with scalable building solutions for new communities.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Established Suburban Centers:</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Heritage and character building preservation in established areas like Hornsby, 
-                    Sutherland, and central business districts.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Commercial & Industrial:</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Large-scale commercial and industrial building maintenance across 
-                    Parramatta, Blacktown, and major employment centers.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Ready for Your Greater Sydney Project?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            No project too large or location too distant. Romans Building Services 
-            delivers professional results across all of Greater Sydney.
+    {/* Content */}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="font-body text-text-secondary mb-6">
+            We are not just an inner-city operation. We travel right across Greater Sydney for the right job. From Parramatta and Liverpool to Penrith and the Hills District, we bring the same quality of work no matter where you are.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now: +61 483 981 292
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
-              Project Consultation
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
+          <p className="font-body text-text-secondary mb-6">
+            Out in Blacktown and Penrith, we handle a lot of residential masonry work. Cracked walls, damaged retaining walls and concrete repairs are common across the western suburbs. The clay soils in these areas cause movement and we know how to deal with it properly.
+          </p>
+          <p className="font-body text-text-secondary mb-10">
+            For commercial properties around Parramatta and Liverpool, we do everything from facade repairs to full remedial building work. If your building has structural issues or water damage, give us a call. We will come out and give you an honest assessment.
+          </p>
+        </motion.div>
+
+        {/* Services list */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          <h2 className="font-heading text-2xl text-navy mb-6">What we do across Greater Sydney</h2>
+          <ul className="space-y-3 mb-12">
+            {services.map((s) => (
+              <li key={s} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green mt-0.5 shrink-0" />
+                <span className="font-body text-text-secondary">{s}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
+          >
+            Get a quote for Greater Sydney <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  </>
+);
 
 export default GreaterSydneyPage;

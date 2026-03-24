@@ -1,151 +1,47 @@
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
-import { AssessmentPopup } from '@/components/AssessmentPopup';
-import beforeAfterImage from "@/assets/before-after.jpg";
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Shield, Wrench, Layers, Gauge, HardHat, Settings } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function ConcreteRepairsPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const services = [
-    "Concrete Cancer Treatment",
-    "Spalling Concrete Repair", 
-    "Structural Concrete Restoration",
-    "Concrete Surface Restoration",
-    "Protective Stone Coatings",
-    "Concrete Resurfacing"
-  ];
-
-  const features = [
-    { icon: Shield, title: "Concrete Specialists", description: "Specialized expertise in all types of concrete repairs" },
-    { icon: Clock, title: "25+ Years Experience", description: "Decades of experience treating concrete cancer and spalling" },
-    { icon: Award, title: "Advanced Techniques", description: "Latest concrete repair technologies and materials" },
-    { icon: Star, title: "Quality Assured", description: "All concrete repairs backed by professional quality assurance" }
-  ];
+const ConcreteRepairsPage = () => {
+  const childServices = getSubServiceRoutes('concrete-repairs');
 
   return (
-    <div className="min-h-screen bg-background">
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">Concrete Repair Specialists</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Expert Concrete Cancer & Spalling Repairs
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Professional concrete cancer treatment and structural concrete repairs. 
-                From minor spalling to major structural restoration, we restore concrete integrity.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
-                  Get Concrete Assessment
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +61 483 981 292
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={beforeAfterImage} 
-                alt="Concrete cancer repair before and after" 
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-3xl font-bold text-primary">800+</div>
-                <div className="text-sm text-muted-foreground">Concrete Repairs</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Concrete Repair Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive concrete cancer and structural repair solutions
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <CheckCircle className="h-6 w-6 text-primary" />
-                    <span>{service}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Professional {service.toLowerCase()} using advanced repair techniques and 
-                    high-quality materials for permanent concrete restoration.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Concrete Repair Excellence
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Concrete Cancer Problem?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Free concrete assessment and repair consultation
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-secondary text-secondary-foreground hover:bg-secondary/90" onClick={() => setShowAssessmentPopup(true)}>
-              Get Concrete Assessment
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary" onClick={() => window.open('tel:+61483981292')}>
-              <Phone className="mr-2 h-5 w-5" />
-              Emergency Concrete Repair
-            </Button>
-          </div>
-        </div>
-      </section>
-      
-      {/* Assessment Popup */}
-      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </div>
+  <ServicePageTemplate
+    title="Concrete Repairs"
+    metaTitle="Concrete Repairs Sydney | Roman Building Services"
+    metaDescription="Concrete cancer, spalling, and carbonation repairs in Sydney. Proper diagnosis and lasting fixes. Call Minas for a quote."
+    heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
+    intro={[
+      "Concrete cancer is one of the most common problems in Sydney buildings. Water gets in, the steel reinforcement rusts, and the concrete starts to crack and fall apart. It looks bad and it is a real structural risk if left alone.",
+      "Minas has been diagnosing and repairing concrete problems for over 30 years. Spalling, carbonation, chloride attack, render failure. We work out what is causing the damage, treat the reinforcement, and rebuild the concrete properly.",
+      "A quick patch over the top does not fix concrete cancer. The corrosion continues underneath and you end up paying twice. We do it right the first time. Break out the damaged concrete, treat the steel, and apply proper repair materials with protective coatings."
+    ]}
+    features={[
+      { icon: Gauge, title: "Concrete Cancer Treatment", description: "Full break-out of damaged concrete, rust treatment of exposed reinforcement, and rebuild with polymer-modified repair mortar." },
+      { icon: Wrench, title: "Spalling Repairs", description: "Repair of spalled concrete on balconies, soffits, columns, and facades. Structural and cosmetic repair in one process." },
+      { icon: Layers, title: "Protective Coatings", description: "Anti-carbonation coatings and water-repellent sealers to prevent future damage. Applied after repair for long-term protection." },
+      { icon: HardHat, title: "Balcony & Soffit Repairs", description: "Overhead and balcony concrete repairs including waterproofing. Safe working methods with proper access equipment." },
+      { icon: Shield, title: "Structural Concrete Repair", description: "Repair of load-bearing concrete elements to engineer specifications. Steel treatment, cathodic protection, and structural rebuild." },
+      { icon: Settings, title: "Condition Assessments", description: "On-site inspection and reporting on the extent of concrete damage. Core sampling and carbonation testing available." }
+    ]}
+    faqs={[
+      { question: "What causes concrete cancer?", answer: "Concrete cancer is caused by moisture reaching the steel reinforcement inside the concrete. The steel rusts, expands, and cracks the surrounding concrete. Common causes are insufficient concrete cover, poor waterproofing, and carbonation of the concrete over time." },
+      { question: "How much does concrete cancer repair cost?", answer: "It varies depending on the extent of the damage and access requirements. A small balcony repair might be a few thousand dollars. A full building facade can be significantly more. Minas will inspect the site and give you an honest quote." },
+      { question: "Can concrete cancer come back after repair?", answer: "If the repair is done properly with the right materials and protective coatings are applied, it should not come back for 20 to 30 years. Cheap patch jobs that skip the steel treatment will fail again within a few years." },
+      { question: "Do you work on apartment buildings and strata?", answer: "Yes. A large part of our concrete repair work is on strata buildings. We work with strata managers, provide detailed reports, and can stage the work to minimise disruption to residents." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp",
+      "/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp",
+      "/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Concrete Repairs', href: '' },
+    ]}
+  />
   );
-}
+};
+
+export default ConcreteRepairsPage;

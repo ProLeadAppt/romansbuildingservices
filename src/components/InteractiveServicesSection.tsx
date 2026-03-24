@@ -1,260 +1,132 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Building, Hammer, Shield, Droplets, Search, Wrench, ArrowRight, CheckCircle, Phone } from 'lucide-react';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
-const minasPhoto = '/lovable-uploads/fca9df0e-1672-43ed-a1a0-4d254b541a48.png';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Layers, Home, Shield } from 'lucide-react';
+import { fadeUpBlur, scaleReveal, slideFromRight, staggerContainer } from '@/utils/animations';
+
+const featuredServices = [
+  {
+    title: 'Heritage Restoration',
+    description: 'Restoring heritage-listed buildings and period features across Sydney.',
+    image: '/gallery/thumbs/romansstone_1572902412_2169985170382604428_2394650725.webp',
+    link: '/services/heritage-restoration',
+  },
+  {
+    title: 'Stone & Masonry',
+    description: 'Walls, chimneys, feature stone, retaining walls. New builds and repairs.',
+    image: '/gallery/thumbs/romansstone_1452415091_1159264269511646168_2394650725.webp',
+    link: '/services/masonry',
+  },
+  {
+    title: 'Structural Repairs',
+    description: 'Crack stitching, lintel replacement, load-bearing wall repairs.',
+    image: '/gallery/thumbs/romansstone_1575487721_2191672319871916475_2394650725.webp',
+    link: '/services/structural-repairs',
+  },
+];
+
+const secondaryServices = [
+  {
+    icon: Layers,
+    title: 'Repointing',
+    description: 'Brick pointing, repointing, and mortar joint repairs.',
+    link: '/services/masonry/repointing',
+  },
+  {
+    icon: Home,
+    title: 'Foundation Work',
+    description: 'Underpinning, restumping, foundation crack repairs.',
+    link: '/services/foundation-repairs',
+  },
+  {
+    icon: Shield,
+    title: 'Concrete & Remedial',
+    description: 'Concrete cancer, spalling repairs, render replacement.',
+    link: '/services/concrete-repairs',
+  },
+];
 
 export const InteractiveServicesSection = () => {
-  const [activeService, setActiveService] = useState(0);
-  const [showQuotePopup, setShowQuotePopup] = useState(false);
-
-  const services = [
-    {
-      icon: Building,
-      title: 'Masonry & Brickwork',
-      shortDesc: 'Expert brick & stone construction',
-      fullDesc: 'Comprehensive masonry services including new construction, repairs, repointing, and heritage restoration. We work with all types of brick, stone, and block materials.',
-      features: ['New brick construction', 'Heritage restoration', 'Repointing & repairs', 'Stone masonry', 'Retaining walls', 'Structural brickwork'],
-      image: '/lovable-uploads/2020-11-02.png'
-    },
-    {
-      icon: Hammer,
-      title: 'Building Restoration',
-      shortDesc: 'Heritage & modern restoration',
-      fullDesc: 'Specialist restoration services for heritage and modern buildings. We preserve the character while ensuring structural integrity and compliance.',
-      features: ['Heritage facade restoration', 'Structural repairs', 'Period-appropriate materials', 'Traditional craftsmanship', 'Stone protection', 'Heritage compliance'],
-      image: '/lovable-uploads/2020-09-27.png'
-    },
-    {
-      icon: Shield,
-      title: 'Structural Repairs',
-      shortDesc: 'Critical structural solutions',
-      fullDesc: 'Priority and planned structural repairs including crack remediation, foundation work, and load-bearing modifications.',
-      features: ['Foundation repairs', 'Stone crack repairs', 'Beam replacements', 'Load-bearing modifications', 'Subsidence repairs', 'Underpinning'],
-      image: '/lovable-uploads/2020-08-12.png'
-    },
-  ];
-
   return (
-    <>
-      <div className="relative overflow-hidden">
-        {/* Dynamic Background Based on Active Service */}
-        <div className="absolute inset-0 transition-all duration-1000">
-          <div className={`absolute inset-0 service-bg-${activeService} opacity-20`} />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background/90" />
-        </div>
-        
-        {/* Geometric Patterns */}
-        <div className="absolute top-0 right-0 w-96 h-96 geometric-pattern opacity-10 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 geometric-pattern opacity-5 rotate-180" />
-        
-        <div className="container mx-auto px-4 relative">
-      <motion.div
-        className="text-center space-y-4 mb-16"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-4xl font-bold">
-          Expert <span className="gradient-text">Stonework & Masonry</span>
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          From heritage restoration to modern stonework, we deliver exceptional results across all masonry disciplines.
-        </p>
-      </motion.div>
+    <section className="bg-navy texture-grain py-28 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading — left-aligned */}
+        <motion.div
+          variants={fadeUpBlur}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-3xl lg:text-4xl text-white">What We Do</h2>
+          <span className="accent-line mt-4 mb-6" />
+          <p className="font-body text-lg text-white/60 max-w-xl">
+            Masonry, restoration, and structural repairs across Sydney. 30 years of getting it right.
+          </p>
+        </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-        {/* Service Cards */}
-        <div className="lg:col-span-1 space-y-2 md:space-y-3 lg:space-y-4">
-          {services.map((service, index) => (
+        {/* Featured services — large photo cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12"
+          variants={staggerContainer(0.12)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {featuredServices.map((service) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
+              key={service.title}
+              variants={scaleReveal}
+              className="relative aspect-[3/4] md:aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer"
             >
-              <Card 
-                className={`cursor-pointer transition-all duration-300 hover-lift ${
-                  activeService === index 
-                    ? 'border-primary bg-primary/5 glow-shadow' 
-                    : 'hover:border-primary/50'
-                }`}
-                onClick={() => setActiveService(index)}
-              >
-                <CardContent className="p-3 md:p-4 lg:p-6">
-                  <div className="flex items-start space-x-3 md:space-x-4">
-                    <div className={`p-2 md:p-3 rounded-lg transition-colors touch-target ${
-                      activeService === index 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'bg-muted'
-                    }`}>
-                      <service.icon className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                    <div className="flex-1 space-y-1 md:space-y-2">
-                      <h3 className="font-semibold text-sm md:text-base lg:text-lg">{service.title}</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.shortDesc}</p>
-                    </div>
-                    <ArrowRight className={`w-4 h-4 md:w-5 md:h-5 transition-all ${
-                      activeService === index 
-                        ? 'text-primary translate-x-1' 
-                        : 'text-muted-foreground'
-                    }`} />
-                  </div>
-                </CardContent>
-              </Card>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent transition-opacity duration-700 group-hover:opacity-80" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <h3 className="font-body text-xl font-medium text-white">{service.title}</h3>
+                <p className="font-body text-sm text-white/70 mt-1">{service.description}</p>
+                <Link
+                  to={service.link}
+                  className="inline-block text-white/60 hover:text-white text-sm mt-3 link-animated"
+                >
+                  Learn more
+                </Link>
+              </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Service Details */}
-        <div className="lg:col-span-2">
-          <AnimatePresence mode="wait">
+        {/* Secondary services — compact horizontal cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8"
+          variants={staggerContainer(0.08)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {secondaryServices.map((service) => (
             <motion.div
-              key={activeService}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
-              transition={{ duration: 0.5 }}
+              key={service.title}
+              variants={slideFromRight}
+              className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-lg p-5"
             >
-              <Card className="h-full floating-shadow">
-                <CardContent className="p-8 space-y-6">
-                  {/* Header */}
-                  <div className="flex items-start space-x-4">
-                    <div className="p-4 bg-primary/10 rounded-xl">
-                      {React.createElement(services[activeService].icon, {
-                        className: "w-8 h-8 text-primary"
-                      })}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-2">{services[activeService].title}</h3>
-                      <p className="text-muted-foreground text-lg leading-relaxed">
-                        {services[activeService].fullDesc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                    {services[activeService].features.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        className="flex items-center space-x-2 md:space-x-3"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1, duration: 0.4 }}
-                      >
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" />
-                        <span className="text-sm md:text-base">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex flex-col gap-3 md:gap-4 pt-4 border-t">
-                    <Button 
-                      size="lg" 
-                      className="w-full hover-lift touch-target"
-                      onClick={() => setShowQuotePopup(true)}
-                    >
-                      Get Free Quote
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="w-full hover-lift touch-target"
-                      onClick={() => window.open('tel:+61414922276')}
-                    >
-                      Call Expert: +61 414 922 276
-                    </Button>
-                  </div>
-
-                  {/* Service Promise */}
-                  <div className="bg-muted/50 rounded-xl p-4 space-y-2">
-                    <h4 className="font-semibold text-primary">Our Service Promise</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 text-sm text-muted-foreground">
-                       <div className="flex items-center space-x-2">
-                         <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                         <span>Honest pricing</span>
-                       </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>Quality guarantee</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>On-time completion</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <service.icon className="text-blue-bright w-6 h-6 mt-1 shrink-0" />
+              <div>
+                <h3 className="font-body text-base font-medium text-white">{service.title}</h3>
+                <p className="font-body text-sm text-white/50 mt-1">{service.description}</p>
+                <Link
+                  to={service.link}
+                  className="inline-block text-white/50 hover:text-white text-sm mt-2 link-animated"
+                >
+                  Learn more
+                </Link>
+              </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          ))}
+        </motion.div>
       </div>
-
-      {/* Call to Action with Minas Photo */}
-      <motion.div
-        className="text-center mt-12 md:mt-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        <div className="bg-gradient-to-r from-primary to-secondary p-6 sm:p-8 rounded-2xl text-white overflow-safe">
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-              <img 
-                src={minasPhoto} 
-                alt="Minas Romanakis working hands-on with masonry restoration" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-                Ready to Transform Your Space?
-              </h3>
-              <p className="text-base sm:text-lg opacity-90">
-                "I personally guarantee exceptional results on every project." - Minas
-              </p>
-            </div>
-          </div>
-          <p className="text-base sm:text-lg mb-6 opacity-90">
-            Get a free assessment and discover how we can help you achieve your vision.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
-              onClick={() => setShowQuotePopup(true)}
-            >
-              Get Free Assessment
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              className="mobile-button sm:min-w-[200px] bg-white text-primary hover:bg-white/90"
-              onClick={() => window.open('tel:+61414922276')}
-            >
-              <Phone className="mr-2 w-5 h-5" />
-              Call Now
-            </Button>
-          </div>
-        </div>
-      </motion.div>
-      </div>
-    </div>
-
-    {/* Assessment Popup */}
-    <AssessmentPopup 
-      isOpen={showQuotePopup} 
-      onClose={() => setShowQuotePopup(false)} 
-    />
-    </>
+    </section>
   );
 };

@@ -1,151 +1,47 @@
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
-import { AssessmentPopup } from '@/components/AssessmentPopup';
-import beforeAfterImage from "@/assets/before-after.jpg";
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Building, FileCheck, Shield, HardHat, Gauge, Briefcase } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function RemedialBuildingPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const services = [
-    "Building Defect Rectification",
-    "Strata Building Repairs", 
-    "Facade Maintenance",
-    "Structural Defect Repair",
-    "Building Compliance Upgrades",
-    "Emergency Building Repairs"
-  ];
-
-  const features = [
-    { icon: Shield, title: "Remedial Specialists", description: "Expert building defect identification and rectification" },
-    { icon: Clock, title: "25+ Years Experience", description: "Decades of experience in remedial building work" },
-    { icon: Award, title: "Strata Approved", description: "Approved contractor for major strata building repairs" },
-    { icon: Star, title: "Compliance Experts", description: "Ensuring all repairs meet current building standards" }
-  ];
+const RemedialBuildingPage = () => {
+  const childServices = getSubServiceRoutes('remedial-building');
 
   return (
-    <div className="min-h-screen bg-background">
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">Remedial Building Specialists</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Expert Remedial Building Services
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Professional building defect rectification and remedial repair services. 
-                From minor defects to major building compliance issues, we fix buildings right.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8" onClick={() => setShowAssessmentPopup(true)}>
-                  Get Building Assessment
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => window.open('tel:+61483981292')}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +61 483 981 292
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={beforeAfterImage} 
-                alt="Remedial building repair work" 
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-3xl font-bold text-primary">300+</div>
-                <div className="text-sm text-muted-foreground">Strata Projects</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <ServicePageTemplate
+    title="Remedial Building"
+    metaTitle="Remedial Building Services Sydney | Roman Building Services"
+    metaDescription="Structural assessments, remedial engineering, and building compliance work in Sydney. Working with engineers and strata managers. Call Minas."
+    heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
+    intro={[
+      "Remedial building is about finding what is wrong with a building and fixing it properly. Structural defects, water damage, concrete cancer, non-compliant construction. These problems do not go away on their own. They get worse and they get more expensive.",
+      "Minas works with structural engineers, building consultants, and strata managers to deliver remedial programmes that actually solve the problem. We read the engineering reports, understand the scope, and execute the work to spec.",
+      "If you are a strata manager or building owner dealing with defect claims, maintenance backlogs, or compliance issues, we can help. Clear communication, honest pricing, and work that passes inspection the first time."
+    ]}
+    features={[
+      { icon: Gauge, title: "Structural Assessments", description: "On-site inspection and reporting on building defects. We identify the problem and recommend the right fix." },
+      { icon: FileCheck, title: "Building Compliance", description: "Rectification of non-compliant building work. Fire safety, structural, and waterproofing compliance upgrades." },
+      { icon: Building, title: "Defect Rectification", description: "Systematic repair of building defects identified in engineering reports. Concrete, masonry, waterproofing, and structural work." },
+      { icon: Briefcase, title: "Strata Building Work", description: "We work with strata managers and owners corporations on major remedial projects. Clear reporting and staged programmes." },
+      { icon: HardHat, title: "Facade Remediation", description: "Repair and upgrade of building facades including render, cladding, balconies, and parapets." },
+      { icon: Shield, title: "Maintenance Programmes", description: "Planned maintenance to prevent defects before they become expensive problems. Regular inspections and scheduled repairs." }
+    ]}
+    faqs={[
+      { question: "What is remedial building work?", answer: "Remedial building work is the repair and rectification of defects in existing buildings. It covers structural repairs, waterproofing, concrete cancer treatment, facade restoration, and bringing buildings up to current standards." },
+      { question: "Do you work with engineers and consultants?", answer: "Yes. Most of our remedial work is done to engineer specifications. We work alongside structural engineers, building consultants, and project managers. Minas can also recommend trusted engineers if you need one." },
+      { question: "Can you handle large strata remedial projects?", answer: "Yes. We regularly work on strata buildings with 50 or more units. We provide detailed scoping, staged work programmes, and regular progress updates to the strata committee." },
+      { question: "How do you price remedial building work?", answer: "We price based on the scope of work, usually from an engineering report. If there is no report yet, Minas will inspect the building and provide a detailed quote. No hidden costs. What we quote is what you pay." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp",
+      "/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp",
+      "/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Remedial Building', href: '' },
+    ]}
+  />
+  );
+};
 
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Remedial Building Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive building defect rectification and remedial repair solutions
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <CheckCircle className="h-6 w-6 text-primary" />
-                    <span>{service}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Professional {service.toLowerCase()} ensuring compliance with 
-                    current building standards and long-term building performance.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Remedial Building Excellence
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Building Defects Need Fixing?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Free building defect assessment and remedial consultation
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90" onClick={() => setShowAssessmentPopup(true)}>
-              Get Defect Assessment
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 border-white text-white bg-transparent hover:bg-white hover:text-primary" onClick={() => window.open('tel:+61483981292')}>
-              <Phone className="mr-2 h-5 w-5" />
-              Emergency Building Repair
-            </Button>
-          </div>
-        </div>
-        </section>
-        
-        {/* Assessment Popup */}
-        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-      </div>
-    );
-  }
+export default RemedialBuildingPage;

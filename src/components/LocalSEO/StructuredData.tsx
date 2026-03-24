@@ -5,19 +5,19 @@ import { useEffect } from 'react';
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
   address: {
-    street: "123 Construction Lane", // Replace with actual address
-    suburb: "Sydney",
-    state: "NSW", 
-    postcode: "2000",
+    street: "",
+    suburb: "Strathfield",
+    state: "NSW",
+    postcode: "2135",
     country: "Australia"
   },
   phone: "+61 414 922 276",
   email: "romanspropertyservices@gmail.com",
-  website: "https://romansbuildingservices.com.au",
+  website: "https://www.romansbuildingservices.com",
   abn: "49 641 892 677",
   coordinates: {
-    latitude: -33.8688,
-    longitude: 151.2093
+    latitude: -33.8796,
+    longitude: 151.0942
   },
   serviceAreas: [
     "Sydney CBD",
@@ -51,8 +51,7 @@ export const BUSINESS_INFO = {
   licenseNumber: "NSW123456", // Replace with actual license
   socialMedia: {
     facebook: "https://facebook.com/romansbuildingservices",
-    instagram: "https://instagram.com/romansbuildingservices", 
-    linkedin: "https://linkedin.com/company/romansbuildingservices"
+    instagram: "https://instagram.com/romansstone"
   }
 };
 
@@ -102,11 +101,10 @@ export const LocalBusinessSchema = () => {
       `${BUSINESS_INFO.website}/images/masonry-work-sydney.jpg`,
       `${BUSINESS_INFO.website}/images/heritage-restoration.jpg`
     ],
-    "logo": `${BUSINESS_INFO.website}/lovable-uploads/romans-business-logo.jpg`,
+    "logo": `${BUSINESS_INFO.website}/lovable-uploads/romans-business-logo.webp`,
     "sameAs": [
       BUSINESS_INFO.socialMedia.facebook,
-      BUSINESS_INFO.socialMedia.instagram, 
-      BUSINESS_INFO.socialMedia.linkedin
+      BUSINESS_INFO.socialMedia.instagram
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -124,27 +122,11 @@ export const LocalBusinessSchema = () => {
         "name": "NSW Fair Trading"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating", 
-      "ratingValue": "4.9",
-      "reviewCount": "47",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Sarah M."
-        },
-        "reviewRating": {
-          "@type": "Rating", 
-          "ratingValue": "5"
-        },
-        "datePublished": "2024-01-15",
-        "reviewBody": "Excellent heritage restoration work on our Victorian terrace. Professional service and attention to detail."
-      }
+    "knowsAbout": [
+      "Heritage restoration",
+      "Masonry repairs",
+      "Sandstone restoration",
+      "Structural repairs"
     ]
   };
 

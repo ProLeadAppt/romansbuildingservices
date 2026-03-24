@@ -1,198 +1,159 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Shield, Award, Users, Clock, Phone, Star, CheckCircle } from 'lucide-react';
-import teamImage from '@/assets/professional-team.jpg';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
+
+const values = [
+  {
+    icon: MessageSquare,
+    title: 'Straight Talking',
+    description:
+      "No jargon. No runaround. You'll know what needs doing, what it costs, and when it'll be done.",
+  },
+  {
+    icon: PackageCheck,
+    title: 'Quality Materials',
+    description:
+      'We use the right materials for the job. Proper lime mortar for heritage work. Structural-grade for load-bearing. No shortcuts.',
+  },
+  {
+    icon: HardHat,
+    title: 'Owner on Site',
+    description:
+      "Minas doesn't just quote the job. He does the job. That's why the standard stays the same.",
+  },
+];
 
 export default function AboutPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const stats = [
-    { number: "25+", label: "Years Experience" },
-    { number: "2000+", label: "Projects Completed" },
-    { number: "100%", label: "Licensed & Insured" },
-    { number: "24/7", label: "Professional Service" }
-  ];
-
-  const values = [
-    {
-      icon: Shield,
-      title: "Quality & Safety",
-      description: "Every project meets the highest safety standards with quality guaranteed"
-    },
-    {
-      icon: Award,
-      title: "Expert Stone Craftsmanship",
-      description: "Skilled stonemasons with decades of experience in stonework and restoration"
-    },
-    {
-      icon: Users,
-      title: "Customer Focus",
-      description: "Your satisfaction is our priority with personalized service every time"
-    },
-    {
-      icon: Clock,
-      title: "Reliable Service",
-      description: "On-time delivery and transparent communication throughout your project"
-    }
-  ];
-
-  const certifications = [
-    "NSW Masonry Contractor License",
-    "Heritage Building Certified",
-    "WorkCover Approved",
-    "Licensed Bricklayer Certification",
-    "Insurance Institute Certified",
-    "Environmental Safety Certified"
-  ];
-
   return (
-    <div className="container mx-auto px-4 py-12">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <Badge className="mb-4">About Romans Building Services</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Sydney's Trusted Master Stonemasons Since 1995
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Romans Building Services has been Sydney's go-to choice for 
-            professional stonework, masonry, and restoration. Family-owned and operated 
-            with an unwavering commitment to quality stone craftsmanship.
-          </p>
-        </motion.div>
+    <>
+      <Helmet>
+        <title>About Minas Romanakis | 30 Years of Masonry Across Sydney</title>
+      </Helmet>
 
-        {/* Stats Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="bg-primary rounded-2xl p-8 mb-16 text-white"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <div key={index}>
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                <div className="text-sm opacity-90">{stat.label}</div>
-              </div>
-            ))}
+      <div className="min-h-screen font-body">
+        {/* Hero Banner */}
+        <section className="bg-navy py-24">
+          <div className="container mx-auto px-4 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-4xl md:text-5xl text-white"
+            >
+              About Romans Building Services
+            </motion.h1>
           </div>
-        </motion.section>
+        </section>
 
         {/* Story Section */}
-        <section className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Romans Building Services was founded in 1995 with a simple mission: to provide 
-                Sydney with the highest quality stonework and restoration services. What started 
-                as a small family business has grown into Sydney's most trusted name in stone masonry 
-                and heritage restoration.
-              </p>
-              <p>
-                Our founder, with over three decades of experience in stone craftsmanship, 
-                established the company on the principles of quality stonework, honest pricing, 
-                and exceptional customer service. These values continue to guide everything we do today.
-              </p>
-              <p>
-                Today, we're proud to be a fully licensed, insured, and certified stonemason company 
-                serving residential and commercial clients across greater Sydney. Our team of 
-                skilled stonemasons and stone specialists brings together traditional stone craftsmanship with modern techniques 
-                to deliver results that last.
-              </p>
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              {/* Left: Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
+                  alt="Minas Romanakis working on a masonry project"
+                  className="rounded-lg w-full object-cover"
+                />
+              </motion.div>
+
+              {/* Right: Story */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <h2 className="font-heading text-3xl text-text-primary">
+                  Built on Handshakes, Not Sales Pitches
+                </h2>
+                <p className="text-text-secondary leading-relaxed">
+                  Minas Romanakis started Romans Building Services in 1995 with one goal: do the
+                  work properly and let it speak for itself. 30 years later, that hasn't changed.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  He grew up around stone and brick. His Greek-Italian heritage gave him a deep
+                  respect for old-world craftsmanship, the kind where you take your time, do it
+                  right, and stand behind it.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  Today, Romans Building Services handles everything from heritage-listed
+                  restorations to residential retaining walls. Minas still works on site. Sandra
+                  runs the office. It's a family operation.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  We don't do sales pitches. We show up, look at the job, give you a straight
+                  answer, and get to work. Our clients come back because the work lasts.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  We work with architects, building companies, strata managers, insurance
+                  companies, and homeowners across Greater Sydney. The job size doesn't matter. The
+                  standard does.
+                </p>
+              </motion.div>
             </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="relative"
-          >
-            <img 
-              src="/lovable-uploads/ef614a43-ee83-488e-b50e-313f60198a45.png" 
-              alt="Master craftsman working on detailed stone carving" 
-              className="rounded-lg shadow-xl"
-            />
-          </motion.div>
+          </div>
         </section>
 
         {/* Values Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-center mb-8">Our Values</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <value.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <CardTitle className="text-lg">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Certifications Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mb-16"
-        >
-          <div className="bg-muted/50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-center mb-8">Licensed & Certified</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">{cert}</span>
-                </div>
+        <section className="bg-bg-light py-16">
+          <div className="container mx-auto px-4">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-3xl text-text-primary text-center mb-12"
+            >
+              How We Work
+            </motion.h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-8 shadow-sm"
+                >
+                  <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-4">
+                    <value.icon className="w-6 h-6 text-navy" />
+                  </div>
+                  <h3 className="font-heading text-xl text-text-primary mb-3">{value.title}</h3>
+                  <p className="text-text-secondary leading-relaxed">{value.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* CTA Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="text-center bg-primary rounded-2xl p-8 text-white"
-        >
-          <h2 className="text-3xl font-bold mb-4">Ready to Work With Sydney's Best?</h2>
-          <p className="text-lg mb-6 opacity-90">
-            Experience the Romans Building Services difference for your next project
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setShowAssessmentPopup(true)}>
-              <Star className="w-5 h-5 mr-2" />
-              Get Free Assessment
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm">
-              <Phone className="w-5 h-5 mr-2" />
-              Call: +61 483 981 292
-            </Button>
+        <section className="bg-navy py-16">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-heading text-3xl text-white mb-6">
+                Ready to talk about your project?
+              </h2>
+              <Link
+                to="/contact"
+                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Get in Touch
+              </Link>
+            </motion.div>
           </div>
-        </motion.section>
+        </section>
       </div>
+    </>
   );
 }

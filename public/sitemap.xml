@@ -1,197 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Main Pages -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/about</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/contact</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/projects</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/quote</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/assessment</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/emergency</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Service Areas -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/sydney-cbd</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/eastern-suburbs</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/north-shore</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/northern-beaches</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/inner-west</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/areas/greater-sydney</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Individual Services -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/masonry</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/foundation-repairs</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/structural-repairs</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/heritage-restoration</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/building-restoration</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/concrete-repairs</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/services/remedial-building</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/privacy-policy</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/terms-of-service</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Utility Pages -->
-  <url>
-    <loc>https://romansbuildingservices.com.au/thank-you</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/search</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  
-  <url>
-    <loc>https://romansbuildingservices.com.au/sitemap</loc>
-    <lastmod>2024-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <!-- Main pages -->
+  <url><loc>https://www.romansbuildingservices.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services</loc><priority>0.9</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/gallery</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas</loc><priority>0.7</priority></url>
+
+  <!-- Tier 1: Masonry -->
+  <url><loc>https://www.romansbuildingservices.com/services/masonry</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/masonry/brick-block-work</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/masonry/repointing</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/masonry/stone-masonry-repairs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/masonry/structural-brickwork</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/masonry/retaining-walls</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Heritage Restoration -->
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/heritage-masonry</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/heritage-stone</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/heritage-brick-repairs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/traditional-stonework</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/period-materials</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/heritage-restoration/historic-stuccos-renders</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Structural Repairs -->
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs/load-bearing-walls</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs/beam-column-restoration</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs/structural-crack-repair</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs/building-reinforcement</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/structural-repairs/steel-structure-repairs</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Building Restoration -->
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration/complete-restoration</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration/facade-renovation</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration/interior-restoration</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration/historic-upgrades</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/building-restoration/defect-rectification</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Concrete Repairs -->
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs/concrete-cancer</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs/spalling-repair</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs/structural-concrete</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs/concrete-resurfacing</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/concrete-repairs/protective-coatings</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Foundation Repairs -->
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs/underpinning</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs/structural-foundation</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs/foundation-stone</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs/pier-beam</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/foundation-repairs/settlement-stabilisation</loc><priority>0.6</priority></url>
+
+  <!-- Tier 1: Remedial Building -->
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building</loc><priority>0.8</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building/strata-repairs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building/structural-defect</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building/compliance-upgrades</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building/emergency-repairs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/services/remedial-building/emergency-structural</loc><priority>0.6</priority></url>
+
+  <!-- Area pages -->
+  <url><loc>https://www.romansbuildingservices.com/areas/sydney-cbd</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas/eastern-suburbs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas/north-shore</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas/northern-beaches</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas/inner-west</loc><priority>0.6</priority></url>
+  <url><loc>https://www.romansbuildingservices.com/areas/greater-sydney</loc><priority>0.6</priority></url>
 </urlset>

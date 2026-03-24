@@ -1,29 +1,17 @@
 import React from 'react';
 import { ModernNavigation } from '@/components/navigation/ModernNavigation';
-import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
-import { LeadConnectorChat } from '@/components/LeadConnectorChat';
+import { Footer } from '@/components/Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
-  showBreadcrumbs?: boolean;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ 
-  children, 
-  showBreadcrumbs = true 
-}) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <ModernNavigation />
-      
-      {/* Main Content with top padding for floating nav */}
-      <main className="pt-24">
-        {showBreadcrumbs && <Breadcrumbs />}
-        {children}
-      </main>
-      
-      {/* Chat widget loads on all pages */}
-      <LeadConnectorChat />
+      <main className="flex-1">{children}</main>
+      <Footer />
     </div>
   );
 };

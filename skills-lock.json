@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "skills": {
+    "adapt": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "computedHash": "da0d3fef219577871a36854e6f9163a3068ffce6d808a691ede86cdd7020e254"
+    },
+    "audit": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "computedHash": "fa7754330d2e9e72e6fcba364178738f1050fc75ae983f5997f630f75ef392ad"
+    },
+    "better-auth-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "computedHash": "9ab075b5061be2a5f299c10505667345cc1ec76e8de4120901cfd586643e776f"
+    },
+    "brainstorming": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "576ee8b8c2e1b514b1eea2d152320e208e4187e44fa4ae923ad33142f25ee8d1"
+    },
+    "content-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e1ab02527702ead90a9e5774cfe1be9a222bdcc6e861f2cae778ad7cc293f225"
+    },
+    "copywriting": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "c008c80aff1eec1aba190edf421772a3f350e91405d4207575092b663c3702a7"
+    },
+    "critique": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "computedHash": "073cfe05d48b725986ace8647e5f8c43fb2b7192518b1f5aa7d0a6a679dd0f8f"
+    },
+    "executing-plans": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "2f709d1a2c7564f8ce6a9bb707e7f5451117ba80f8e8e2302662c29bc61246a6"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "computedHash": "645b891da1edbae76ab79c7b088d4e73397464f8396edaf773c0e01971ce75d6"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "marketing-ideas": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "ece95da6d74dc84deb45035109311748697b7b074af1a78e111299464306cad2"
+    },
+    "marketing-psychology": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "5b8654c4d6db63d9da55f7cd56f2babd92e602b089e96a86ef38c7f547f51d52"
+    },
+    "mcp-builder": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "f08cbdec74dba480ec5217363446dae154b7576b8c3d9b4cb17aff234f15973b"
+    },
+    "polish": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "computedHash": "06b69554048c8bf992e049e6b9e6cbd6c4f8ef2250065cb089cecf97372020cb"
+    },
+    "pricing-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "45dcee6fb615d7db2ed85764a91c57b6f6806cbca92b0a348fc901aeda02b10b"
+    },
+    "product-marketing-context": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e0c954d8b63d562b997fe6d60f0b39aef49517bdbb93ad67e61989ecbc647cf8"
+    },
+    "programmatic-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "c6384f24bb0203f8aa98b23b55d35b9e6721b94532a0e7965215c340ae96f1e0"
+    },
+    "requesting-code-review": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "246e65cd72a7e360987d94e6c61564ce6d71c6361d1784d529d70e4cbbe8522d"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "941f6f4db0f79248f6480256cf1838ed19bc1a0d70f499bb756f491142625cb4"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "57f470f512f45bdac598e302bc72fd62bf2b649fc7fad032efe97720149cde4d"
+    },
+    "social-content": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "89c1726323ac944b02fb8f27c1d86e84c6310ebacb6b0f62dae74e0351873c08"
+    },
+    "subagent-driven-development": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "a197f8e5fba5ea59013e1adbaa90dd42db35de8f074feca200c8038de584a83b"
+    },
+    "using-superpowers": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "91a4d2ccb9432dfd4d3654f6ebd97875adab301d3d77f84e590169ba397760e3"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "e218e50fe7057a4db91390e579c7db5aafac2394c31a3d8e5fa9444c8fa00726"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "d8e7d3afe37dcc8a97b99ffb5afdb4d0919ae0092ea8b68f44eb201f035e33ac"
+    }
+  }
+}

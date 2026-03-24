@@ -1,139 +1,49 @@
-import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { RomansPremiumHeroSection } from '@/components/RomansPremiumHeroSection';
 import { OptimizedAnimatedAboutSection } from '@/components/OptimizedAnimatedAboutSection';
-import { LazySection } from '@/components/LazySection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
 import { ProjectGallerySection } from '@/components/ProjectGallerySection';
-import { ProcessTimelineSection } from '@/components/ProcessTimelineSection';
-import { ReviewsCarouselSection } from '@/components/ReviewsCarouselSection';
 import { ModernContactSection } from '@/components/ModernContactSection';
-import { Footer } from '@/components/Footer';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { EnhancedShowcaseSection } from '@/components/EnhancedShowcaseSection';
-import { DynamicScrollToTop } from '@/components/DynamicScrollToTop';
-import {
-  LandmarkSkipNavigation, 
-  MainLandmark, 
-  RegionLandmark, 
-  PageStructureManager 
-} from '@/components/ARIALandmarks';
+import { SectionDivider } from '@/components/SectionDivider';
+import { ProcessStrip } from '@/components/ProcessStrip';
+import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
 
 const SinglePageApp = () => {
   return (
-    <PageStructureManager>
-      <div className="min-h-screen scroll-smooth">
-        <LandmarkSkipNavigation />
-        
-        {/* Main Content Area */}
-        <MainLandmark id="main-content" label="Main page content">
-          {/* Hero Section */}
-          <RegionLandmark 
-            id="hero" 
-            regionLabel="Hero section with company introduction and contact form"
-            className="min-h-screen"
-          >
-            <ErrorBoundary>
-              <RomansPremiumHeroSection />
-            </ErrorBoundary>
-          </RegionLandmark>
-        </MainLandmark>
+    <>
+      <Helmet>
+        <title>Romans Building Services | Heritage Restoration & Masonry | Sydney</title>
+        <meta
+          name="description"
+          content="Heritage restoration, masonry repairs and stone construction across Sydney since 1995. Licensed, insured, 30 years experience. Call Minas for a quote."
+        />
+      </Helmet>
+      <LocalBusinessSchema />
 
-        {/* About Section */}
-        <RegionLandmark 
-          id="about" 
-          regionLabel="About section with company history and team information"
-          className="py-16 md:py-20 bg-muted/30"
-        >
-          <ErrorBoundary>
-            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-              <OptimizedAnimatedAboutSection />
-            </LazySection>
-          </ErrorBoundary>
-        </RegionLandmark>
+      {/* Hero — full-bleed, cinematic, credential strip included */}
+      <RomansPremiumHeroSection />
 
-        {/* Services Section */}
-        <RegionLandmark 
-          id="services" 
-          regionLabel="Services section showcasing company offerings"
-          className="py-16 md:py-20"
-        >
-          <ErrorBoundary>
-            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-              <InteractiveServicesSection />
-            </LazySection>
-          </ErrorBoundary>
-        </RegionLandmark>
+      {/* About — spacious, grid-breaking, personal */}
+      <OptimizedAnimatedAboutSection />
 
-        {/* Projects Section */}
-        <RegionLandmark 
-          id="projects" 
-          regionLabel="Projects gallery showcasing completed work"
-          className="py-16 md:py-20 bg-muted/30"
-        >
-        <ErrorBoundary>
-          <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-            <ProjectGallerySection />
-          </LazySection>
-        </ErrorBoundary>
+      {/* Angled transition into navy services section */}
+      <SectionDivider from="#F5F5F5" to="#0A2E76" variant="angle-down" />
 
-        <ErrorBoundary>
-          <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-            <EnhancedShowcaseSection />
-          </LazySection>
-        </ErrorBoundary>
-        </RegionLandmark>
+      {/* Services — tiered with photography, navy background */}
+      <InteractiveServicesSection />
 
-        {/* Process Section */}
-        <RegionLandmark 
-          id="process" 
-          regionLabel="Process timeline explaining how we work"
-          className="py-16 md:py-20"
-        >
-          <ErrorBoundary>
-            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-              <ProcessTimelineSection />
-            </LazySection>
-          </ErrorBoundary>
-        </RegionLandmark>
+      {/* Angled transition out of navy into light gallery */}
+      <SectionDivider from="#0A2E76" to="#F1F5F9" variant="angle-up" />
 
-        {/* Reviews Section */}
-        <RegionLandmark 
-          id="reviews" 
-          regionLabel="Customer reviews and testimonials"
-          className="py-16 md:py-20 bg-muted/30"
-        >
-          <ErrorBoundary>
-            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-              <ReviewsCarouselSection />
-            </LazySection>
-          </ErrorBoundary>
-        </RegionLandmark>
+      {/* Gallery preview — horizontal portfolio carousel */}
+      <ProjectGallerySection />
 
-        {/* Contact Section */}
-        <RegionLandmark 
-          id="contact" 
-          regionLabel="Contact information and inquiry form"
-          className="py-16 md:py-20"
-        >
-          <ErrorBoundary>
-            <LazySection fallback={<div className="h-96 bg-muted/10 animate-pulse rounded-lg" />}>
-              <ModernContactSection />
-            </LazySection>
-          </ErrorBoundary>
-        </RegionLandmark>
+      {/* Process strip — tight, navy, breaks the rhythm */}
+      <ProcessStrip />
 
-        {/* Footer */}
-        <ErrorBoundary>
-          <Footer />
-        </ErrorBoundary>
-      </div>
-
-
-      {/* Dynamic Scroll to Top */}
-      <DynamicScrollToTop />
-      
-      {/* Removed Premium Loading Screen for performance */}
-    </PageStructureManager>
+      {/* Contact — phone-first, trust-building */}
+      <ModernContactSection />
+    </>
   );
 };
 

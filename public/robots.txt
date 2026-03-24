@@ -1,21 +1,4 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://romansbuildingservices.com.au/sitemap.xml
-Sitemap: https://romansbuildingservices.com.au/sitemap-images.xml
-
-# Host (optional but recommended)
-Host: https://romansbuildingservices.com.au
+Sitemap: https://www.romansbuildingservices.com/sitemap.xml

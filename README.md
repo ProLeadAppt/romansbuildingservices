@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# Roman Building Services
 
-## Project info
+Heritage restoration, masonry repairs and structural remedial work across Sydney.
 
-**URL**: https://lovable.dev/projects/30a2966e-02dd-4093-8045-272e7e512ecd
+## How to Start the Development Server
 
-## How can I edit this code?
+**Easiest way:** Double-click `START.bat` in the project folder.
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/30a2966e-02dd-4093-8045-272e7e512ecd) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+**Or use the command line:**
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The server will automatically:
+- Start on **http://localhost:5173**
+- Open your browser automatically
+- Allow connections from localhost, 127.0.0.1, and your local network IP
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+If port 5173 is busy, Vite will automatically use the next available port (5174, 5175, etc.) - check the console output for the actual URL.
 
-**Use GitHub Codespaces**
+### Troubleshooting
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+If the browser doesn't open automatically:
+1. Manually navigate to **http://localhost:5173** or **http://127.0.0.1:5173**
+2. If you see cached content, clear your browser cache (Ctrl+Shift+Delete) or use private/incognito mode
+3. Make sure no firewall is blocking port 5173
 
-## What technologies are used for this project?
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher) - [Download Node.js](https://nodejs.org/)
+- npm (comes with Node.js)
+
+### Setup
+
+1. Clone the repository:
+```sh
+git clone <YOUR_GIT_URL>
+cd "Roman Building Services"
+```
+
+2. Install dependencies:
+```sh
+npm install
+```
+
+3. Start the development server:
+```sh
+npm run dev
+# OR just double-click START.bat
+```
+
+The application will open automatically in your browser at `http://localhost:5173`
+
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Fast build tool and dev server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **shadcn-ui** - Component library
+- **Tailwind CSS** - Utility-first CSS framework
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/30a2966e-02dd-4093-8045-272e7e512ecd) and click on Share -> Publish.
+- The development server supports hot module replacement (HMR)
+- Changes to files will automatically reload in the browser
+- Press `Ctrl+C` in the terminal to stop the server
 
-## Can I connect a custom domain to my Lovable project?
+## Building for Production
 
-Yes, you can!
+```sh
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The production build will be created in the `dist` folder.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Deployment
+
+The project is configured to deploy to Netlify. Push changes to the main branch to trigger automatic deployments.

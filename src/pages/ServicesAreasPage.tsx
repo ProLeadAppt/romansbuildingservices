@@ -1,215 +1,143 @@
-import React, { useState } from 'react';
-import { Layout } from '@/components/Layout';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Phone, Clock, Star } from 'lucide-react';
-import { serviceAreas } from '@/utils/navigationData';
-import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowRight, MapPin } from 'lucide-react';
 
-const ServicesAreasPage = () => {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const allSuburbs = serviceAreas.flatMap(area => area.suburbs);
-  
-  return (
-    <Layout>
-      <LocalBusinessSchema />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-background to-secondary/5 py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4">
-              <MapPin className="w-4 h-4 mr-2" />
-              Sydney Wide Service
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Service Areas Across
-              <span className="text-primary block">Greater Sydney</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Professional building services across all Sydney regions. From heritage restoration in Paddington 
-              to modern repairs in Parramatta, we deliver expert craftsmanship to your doorstep.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                <Phone className="w-5 h-5 mr-2" />
-                Call +61 483 981 292
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Get Free Quote
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+const areas = [
+  {
+    name: 'Sydney CBD',
+    description: 'Heritage buildings, commercial facades and sandstone restoration in the city centre.',
+    href: '/areas/sydney-cbd',
+  },
+  {
+    name: 'Eastern Suburbs',
+    description: 'Period homes, sandstone terraces and retaining walls from Bondi to Rose Bay.',
+    href: '/areas/eastern-suburbs',
+  },
+  {
+    name: 'North Shore',
+    description: 'Residential masonry, heritage homes and federation-era repairs across the lower and upper North Shore.',
+    href: '/areas/north-shore',
+  },
+  {
+    name: 'Northern Beaches',
+    description: 'Coastal repairs, salt damage remediation and masonry restoration from Manly to Palm Beach.',
+    href: '/areas/northern-beaches',
+  },
+  {
+    name: 'Inner West',
+    description: 'Terrace houses, brick restoration and heritage streetscapes. Our home turf.',
+    href: '/areas/inner-west',
+  },
+  {
+    name: 'Greater Sydney',
+    description: 'All masonry services for commercial and residential properties across the wider metro.',
+    href: '/areas/greater-sydney',
+  },
+];
 
-      {/* Main Service Areas */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Our Primary Service Areas
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive building services across Sydney's most prestigious and dynamic neighborhoods
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceAreas.map((area) => (
-              <Card key={area.id} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-xl">{area.label}</CardTitle>
-                    <Badge variant="outline">
-                      {area.suburbs.length} suburbs
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-base">
-                    {area.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-2">
-                        KEY SUBURBS WE SERVICE:
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {area.suburbs.slice(0, 3).map((suburb) => (
-                          <Badge key={suburb} variant="secondary" className="text-xs">
-                            {suburb}
-                          </Badge>
-                        ))}
-                        {area.suburbs.length > 3 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{area.suburbs.length - 3} more
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4" />
-                      <span>24-48hr Response Available</span>
-                    </div>
-                    
-                    <Button 
-                      className="w-full group-hover:bg-primary/90 transition-colors"
-                      onClick={() => window.location.href = area.href}
-                    >
-                      View {area.label} Services
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+const ServicesAreasPage = () => (
+  <>
+    <Helmet>
+      <title>Areas We Service | Romans Building Services</title>
+      <meta
+        name="description"
+        content="Romans Building Services covers all of Sydney. From the CBD to the Northern Beaches, we provide masonry, restoration and remedial building services."
+      />
+    </Helmet>
 
-      {/* All Suburbs Section */}
-      <section className="py-16 bg-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Complete Suburb Coverage
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Romans Building Services provides expert masonry, restoration, and structural repair services 
-              across {allSuburbs.length}+ Sydney suburbs. Local knowledge, professional results.
-            </p>
-          </div>
-          
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-              {allSuburbs.map((suburb) => (
-                <div key={suburb} className="text-center p-3 bg-background rounded-lg border hover:border-primary/20 transition-colors">
-                  <span className="text-sm font-medium text-foreground">{suburb}</span>
+    {/* Hero */}
+    <section className="bg-navy py-24">
+      <div className="container mx-auto px-4 text-center">
+        <motion.h1
+          className="font-heading text-4xl md:text-5xl text-white mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Areas We Service
+        </motion.h1>
+        <motion.p
+          className="font-body text-white/70 max-w-xl mx-auto text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          We work right across Sydney. Pick your area to see what we do there.
+        </motion.p>
+      </div>
+    </section>
+
+    {/* Area cards grid */}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {areas.map((area, i) => (
+            <motion.div
+              key={area.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+            >
+              <Link
+                to={area.href}
+                className="block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow group h-full"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <MapPin className="w-5 h-5 text-navy-light" />
+                  <h2 className="font-heading text-xl text-navy">{area.name}</h2>
                 </div>
-              ))}
-            </div>
-          </div>
+                <p className="font-body text-text-secondary text-sm mb-4">
+                  {area.description}
+                </p>
+                <span className="inline-flex items-center gap-1 text-navy-light font-body text-sm font-semibold group-hover:gap-2 transition-all">
+                  View area <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Local SEO Keywords Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Professional Building Services Near You
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Star className="w-5 h-5 text-yellow-500" />
-                    Heritage & Restoration
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Heritage restoration Paddington</li>
-                    <li>• Brick repair Sydney CBD</li>
-                    <li>• Stone masonry Woollahra</li>
-                    <li>• Building restoration Surry Hills</li>
-                    <li>• Sandstone repair Double Bay</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Star className="w-5 h-5 text-yellow-500" />
-                    Structural & Foundation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Foundation repairs Bondi</li>
-                    <li>• Structural engineers Mosman</li>
-                    <li>• Underpinning services Manly</li>
-                    <li>• Load bearing walls Chatswood</li>
-                    <li>• Concrete repairs Parramatta</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Contact Romans Building Services today for expert building services across Sydney. 
-            Free quotes, professional advice, guaranteed results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-white text-primary hover:bg-white/90">
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now: +61 483 981 292
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-primary/10 backdrop-blur-sm" onClick={() => setShowAssessmentPopup(true)}>
-              Get Free Assessment
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Assessment Popup */}
-      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </Layout>
-  );
-};
+    {/* CTA */}
+    <section className="bg-navy py-16">
+      <div className="container mx-auto px-4 text-center">
+        <motion.h2
+          className="font-heading text-3xl text-white mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Not sure which area you fall under?
+        </motion.h2>
+        <motion.p
+          className="font-body text-white/70 mb-8 max-w-lg mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          Give us a call or send a message. If we can get to you, we will.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <Link
+            to="/contact"
+            className="inline-block bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
+          >
+            Get in touch
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  </>
+);
 
 export default ServicesAreasPage;

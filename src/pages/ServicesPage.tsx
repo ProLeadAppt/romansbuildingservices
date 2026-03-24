@@ -1,189 +1,144 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Building, MapPin, Phone, Star } from 'lucide-react';
-import { serviceCategories, serviceAreas } from '@/utils/navigationData';
-import { Layout } from '@/components/Layout';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { Helmet } from 'react-helmet-async';
+import {
+  Hammer,
+  Landmark,
+  Building2,
+  Wrench,
+  Construction,
+  Shovel,
+  ClipboardCheck,
+} from 'lucide-react';
 
-const iconMap = {
-  Building,
-  Hammer: Building, 
-  Shield: Building
-};
+const services = [
+  {
+    icon: Hammer,
+    title: 'Masonry',
+    slug: 'masonry',
+    description: 'Stone walls, brick, block, retaining walls, chimneys. New builds and repairs.',
+  },
+  {
+    icon: Landmark,
+    title: 'Heritage Restoration',
+    slug: 'heritage-restoration',
+    description:
+      'Restoring heritage-listed buildings and period features to their original condition.',
+  },
+  {
+    icon: Building2,
+    title: 'Building Restoration',
+    slug: 'building-restoration',
+    description: 'Full building facade restoration, render repairs, and structural upgrades.',
+  },
+  {
+    icon: Wrench,
+    title: 'Structural Repairs',
+    slug: 'structural-repairs',
+    description: 'Crack stitching, lintel replacement, load-bearing wall repairs.',
+  },
+  {
+    icon: Construction,
+    title: 'Concrete Repairs',
+    slug: 'concrete-repairs',
+    description: 'Concrete cancer treatment, spalling repairs, render replacement.',
+  },
+  {
+    icon: Shovel,
+    title: 'Foundation Repairs',
+    slug: 'foundation-repairs',
+    description: 'Underpinning, restumping, foundation crack repairs.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Remedial Building',
+    slug: 'remedial-building',
+    description:
+      'Structural assessments, remedial engineering, and building compliance work.',
+  },
+];
 
-const ServicesOverviewPage = () => {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
+export default function ServicesPage() {
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold mb-4">
-            Professional Building Services Across Sydney
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            Expert masonry, restoration, and structural solutions for residential and commercial properties. 
-            Licensed, insured, and trusted since 1995.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary">
-              <Phone className="w-5 h-5 mr-2" />
-              +61 483 981 292
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => setShowAssessmentPopup(true)}>
-              Get Free Assessment
-            </Button>
-          </div>
-        </motion.div>
+    <>
+      <Helmet>
+        <title>Our Services | Masonry, Heritage Restoration &amp; Structural Repairs</title>
+      </Helmet>
 
-        {/* Service Categories */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {serviceCategories.map((category, index) => {
-              const Icon = iconMap[category.icon as keyof typeof iconMap];
-              return (
-                <motion.div
-                  key={category.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <h3 className="text-xl font-bold">{category.label}</h3>
-                      </div>
-                      
-                      <p className="text-muted-foreground mb-6">
-                        {category.description}
-                      </p>
-                      
-                      <div className="space-y-3">
-                        {category.services.map((service) => (
-                          <Link
-                            key={service.id}
-                            to={service.href}
-                            className="flex items-center justify-between p-3 rounded-lg border hover:bg-muted/50 transition-colors group/service"
-                          >
-                            <div>
-                              <div className="flex items-center space-x-2">
-                                <span className="font-medium text-sm group-hover/service:text-primary">
-                                  {service.label}
-                                </span>
-                                {service.badge && (
-                                  <Badge variant="secondary" className="text-xs">
-                                    {service.badge}
-                                  </Badge>
-                                )}
-                              </div>
-                              <p className="text-xs text-muted-foreground mt-1">
-                                {service.description}
-                              </p>
-                            </div>
-                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover/service:text-primary" />
-                          </Link>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+      <div className="min-h-screen font-body">
+        {/* Hero Banner */}
+        <section className="bg-navy py-24">
+          <div className="container mx-auto px-4 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-4xl md:text-5xl text-white mb-4"
+            >
+              Our Services
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-white/80 text-lg max-w-2xl mx-auto"
+            >
+              Masonry, restoration, and structural repairs. Whatever the job, the standard is the
+              same.
+            </motion.p>
           </div>
         </section>
 
-        {/* Service Areas */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Areas We Service</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceAreas.map((area, index) => (
-              <motion.div
-                key={area.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link to={area.href}>
-                  <Card className="hover:shadow-lg transition-all duration-300 group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-3">
-                        <MapPin className="w-5 h-5 text-primary" />
-                        <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                          {area.label}
-                        </h3>
-                      </div>
-                      
-                      <p className="text-muted-foreground text-sm mb-3">
-                        {area.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-1">
-                        {area.suburbs.slice(0, 4).map((suburb) => (
-                          <Badge key={suburb} variant="outline" className="text-xs">
-                            {suburb}
-                          </Badge>
-                        ))}
-                        {area.suburbs.length > 4 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{area.suburbs.length - 4} more
-                          </Badge>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
+        {/* Services List */}
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-bg-light rounded-lg p-8"
+                >
+                  <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="w-6 h-6 text-navy" />
+                  </div>
+                  <h3 className="font-heading text-xl text-text-primary mb-3">{service.title}</h3>
+                  <p className="text-text-secondary leading-relaxed mb-4">{service.description}</p>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="text-navy font-semibold hover:text-navy-light transition-colors"
+                  >
+                    Learn more &rarr;
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-primary rounded-2xl p-8 text-center text-white"
-        >
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
-          <p className="text-lg mb-6 opacity-90">
-            Get expert evaluation and detailed quote within 24 hours
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setShowAssessmentPopup(true)}>
-              <Star className="w-5 h-5 mr-2" />
-              Get Free Assessment
-            </Button>
-            <Button size="lg" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-colors">
-              <Phone className="w-5 h-5 mr-2" />
-              Call: +61 483 981 292
-            </Button>
+        <section className="bg-bg-light py-16">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-heading text-3xl text-text-primary mb-6">Need a quote?</h2>
+              <Link
+                to="/contact"
+                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Get in Touch
+              </Link>
+            </motion.div>
           </div>
-          
-          <div className="flex items-center justify-center space-x-6 mt-6 text-sm opacity-75">
-            <span>✓ Licensed & Insured</span>
-            <span>✓ 25+ Years Experience</span>
-            <span>✓ 2-Hour Response</span>
-          </div>
-        </motion.section>
-
-        {/* Assessment Popup */}
-        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
+        </section>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default ServicesOverviewPage;
+}

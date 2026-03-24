@@ -1,142 +1,47 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Phone, Star, Shield, Clock, Award, Home } from 'lucide-react';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
-const heroImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Home, Shield, Wrench, Gauge, HardHat, Shovel } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function FoundationRepairsPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const services = [
-    "Foundation Underpinning",
-    "Structural Foundation Repairs", 
-    "Foundation Stone Repairs",
-    "Pier & Beam Foundation Work",
-    "Settlement Stabilization",
-    "Foundation Structural Assessment"
-  ];
-
-  const features = [
-    { icon: Shield, title: "Structural Guarantee", description: "Professional quality assurance on all foundation work" },
-    { icon: Clock, title: "Minimal Disruption", description: "Advanced techniques minimize impact on daily life" },
-    { icon: Award, title: "Engineering Backed", description: "All work approved by structural engineers" },
-    { icon: Star, title: "Foundation Specialists", description: "25+ years of foundation repair expertise" }
-  ];
+const FoundationRepairsPage = () => {
+  const childServices = getSubServiceRoutes('foundation-repairs');
 
   return (
-    <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">Foundation Repair Specialists</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Expert Foundation Repairs in Sydney
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Professional foundation repair and underpinning services. From minor crack repairs 
-                to complete foundation stabilization, we ensure your property's structural integrity.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" onClick={() => setShowAssessmentPopup(true)}>
-                  Get Foundation Assessment
-                </Button>
-                <Button variant="outline" size="lg" onClick={() => window.open('tel:+61483981292')}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +61 483 981 292
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Foundation repair work in Sydney" 
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-3xl font-bold text-primary">25+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Foundation Repair Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive foundation solutions for residential and commercial properties
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Home className="h-6 w-6 text-primary" />
-                    <span>{service}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Professional {service.toLowerCase()} services with expert techniques 
-                    and quality materials for lasting results.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Our Foundation Services?
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-primary text-primary-foreground rounded-2xl p-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Foundation Issues? Get Expert Help
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Free foundation assessment and structural engineering consultation
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-              Book Foundation Assessment
-            </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
-              <Phone className="mr-2 h-5 w-5" />
-              Professional Foundation Repairs
-            </Button>
-          </div>
-        </section>
-        
-        {/* Assessment Popup */}
-        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-      </div>
+  <ServicePageTemplate
+    title="Foundation Repairs"
+    metaTitle="Foundation Repairs Sydney | Roman Building Services"
+    metaDescription="Underpinning, restumping, and foundation crack repairs in Sydney. The bit you cannot see but cannot ignore. Call Minas for a quote."
+    heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
+    intro={[
+      "Cracks in the walls, doors that stick, floors that slope. These are usually signs of foundation movement. It is the bit you cannot see but it holds everything up. If the foundation is failing, everything above it is at risk.",
+      "Minas has been repairing foundations across Sydney for over 30 years. Underpinning, restumping, crack repairs, and stabilisation. We work on sandstone footings, brick piers, concrete slabs, and everything in between.",
+      "We work with structural engineers to get the diagnosis right and the fix right. No guesswork. Just a proper assessment, a clear plan, and solid work that stops the movement for good."
+    ]}
+    features={[
+      { icon: Shovel, title: "Underpinning", description: "Mass concrete and screw pile underpinning to stabilise foundations that have settled or moved. Done in stages to keep the building safe." },
+      { icon: Home, title: "Restumping", description: "Replacement of deteriorated timber or brick stumps with new concrete or steel adjustable stumps. Levels the building and stops further movement." },
+      { icon: Wrench, title: "Foundation Crack Repairs", description: "Epoxy injection and structural repair of cracked foundations. Stops water entry and restores structural integrity." },
+      { icon: Gauge, title: "Foundation Assessments", description: "On-site inspection of foundation condition. We check for movement, cracking, moisture, and bearing capacity issues." },
+      { icon: HardHat, title: "Retaining Wall Foundations", description: "Repair and replacement of failed retaining wall footings. Proper drainage and engineering to prevent future movement." },
+      { icon: Shield, title: "Pier & Beam Repairs", description: "Repair and replacement of damaged piers, bearers, and joists. Concrete, steel, or timber depending on the building type." }
+    ]}
+    faqs={[
+      { question: "How do I know if my foundation needs repair?", answer: "Common signs include cracks in walls (especially near doors and windows), sticking doors, uneven floors, and gaps between walls and ceilings. If you notice any of these, call Minas for an inspection." },
+      { question: "What is underpinning and when is it needed?", answer: "Underpinning strengthens and deepens existing foundations. It is needed when the original foundation is not deep enough, the soil has changed, or the building has settled unevenly. It is the most reliable way to stop foundation movement." },
+      { question: "How long does underpinning take?", answer: "A typical residential underpinning job takes 2 to 4 weeks depending on the number of pits and access. We work in stages so the building is supported at all times." },
+      { question: "Will I need to move out during foundation repairs?", answer: "Usually not. Most foundation work is done from outside or underneath the building. There will be noise and vibration during the dig, but the house remains safe to live in throughout the process." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp",
+      "/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp",
+      "/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Foundation Repairs', href: '' },
+    ]}
+  />
   );
-}
+};
+
+export default FoundationRepairsPage;

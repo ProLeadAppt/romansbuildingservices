@@ -1,120 +1,47 @@
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone, CheckCircle2, Shield, Award, Clock, Building, Hammer, AlertTriangle } from 'lucide-react';
-import { AssessmentPopup } from "@/components/AssessmentPopup";
-import { MobileOptimizedImage } from '@/components/images/MobileOptimizedImage';
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Landmark, Hammer, Shield, Layers, FileCheck, Ruler } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function HeritageRestorationPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-
-  const typicalIssues = [
-    "Sandstone deterioration and spalling",
-    "Original mortar failing and cracking", 
-    "Heritage brick damage and weathering",
-    "Structural movement affecting facades",
-    "Water damage to heritage materials",
-    "Loss of architectural detail",
-    "Inappropriate previous repairs",
-    "Foundation settlement issues"
-  ];
-
-  const processSteps = [
-    {
-      step: "1",
-      title: "Heritage Assessment", 
-      description: "Comprehensive evaluation of heritage significance, structural condition, and conservation requirements. We document existing materials and methods."
-    },
-    {
-      step: "2",
-      title: "Conservation Planning",
-      description: "Development of detailed restoration plan respecting heritage guidelines and council requirements. Material sourcing and method specification."
-    },
-    {
-      step: "3", 
-      title: "Expert Restoration",
-      description: "Skilled craftsmen execute restoration using traditional techniques and compatible materials. Quality control throughout the process."
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Do you have experience with heritage-listed buildings?",
-      answer: "Yes, we specialize in heritage building restoration and have extensive experience working with heritage-listed properties across Sydney. We understand the unique requirements, regulations, and conservation principles involved in preserving historical buildings while ensuring structural integrity."
-    },
-    {
-      question: "What approvals are needed for heritage restoration work?", 
-      answer: "Heritage restoration often requires council development consent and may need Heritage Council approval depending on the listing level. We assist with the application process, provide detailed documentation, and ensure all work complies with heritage conservation guidelines."
-    },
-    {
-      question: "Can you match original heritage materials?",
-      answer: "We specialize in sourcing and matching heritage materials including sandstone, heritage bricks, and traditional mortars. Our craftsmen are experienced in traditional techniques and use compatible materials that respect the building's historical authenticity while providing long-term durability."
-    }
-  ];
+const HeritageRestorationPage = () => {
+  const childServices = getSubServiceRoutes('heritage-restoration');
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-secondary text-secondary-foreground">Heritage Specialists</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Heritage Building Restoration in Sydney
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Preserving Sydney's architectural heritage with authentic restoration techniques. Expert craftsmen specializing in sandstone, heritage brick, and traditional masonry conservation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={() => setShowAssessmentPopup(true)}
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold"
-              >
-                <CheckCircle2 className="w-5 h-5 mr-2" />
-                Free Heritage Assessment
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => window.open('tel:+61483981292')}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call +61 483 981 292
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Overview Section with 800+ words content continues... */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">Overview</h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Heritage building restoration requires specialized knowledge, traditional skills, and deep respect for architectural history. At Romans Building Services, we combine 30+ years of masonry expertise with dedicated heritage conservation training to preserve Sydney's most treasured buildings. Our heritage restoration services encompass everything from Federation-era terraces to Victorian mansions and heritage-listed commercial buildings. We work closely with heritage consultants, council authorities, and building owners to ensure every restoration project meets both conservation requirements and modern building standards.
-          </p>
-          
-          <MobileOptimizedImage
-            src="/lovable-uploads/2020-09-27.png"
-            alt="Heritage sandstone restoration work on Sydney Federation building"
-            className="w-full rounded-lg shadow-lg mb-8"
-            priority={true}
-          />
-
-          {/* Remaining sections follow same pattern... */}
-        </div>
-      </section>
-
-      {/* Assessment Popup */}
-      {showAssessmentPopup && (
-        <AssessmentPopup
-          isOpen={showAssessmentPopup}
-          onClose={() => setShowAssessmentPopup(false)}
-        />
-      )}
-    </div>
+  <ServicePageTemplate
+    title="Heritage Restoration"
+    metaTitle="Heritage Restoration Sydney | Roman Building Services"
+    metaDescription="Specialised heritage restoration across Sydney. Sandstone, convict brick, period details. Working with councils and heritage architects. Call Minas."
+    heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
+    intro={[
+      "Sydney has some of the finest heritage buildings in the country. Sandstone terraces, convict-era brickwork, Federation homes, and Victorian commercial buildings. They all need care from someone who understands how they were built in the first place.",
+      "Minas has spent 30 years restoring heritage buildings across Sydney. We work with heritage architects, councils, and conservation officers to make sure every project meets the right standards. Original materials are matched. Traditional methods are used. No modern shortcuts that damage old stone.",
+      "If a previous repair was done badly with cement render or incompatible materials, we strip it back and do it properly. Heritage work is about respecting the building and giving it another lifetime."
+    ]}
+    features={[
+      { icon: Landmark, title: "Sandstone Restoration", description: "Repair and replacement of deteriorated sandstone using stone sourced to match the original. Hand-finished to blend with existing facades." },
+      { icon: Hammer, title: "Convict Brick Repairs", description: "Careful repair and replacement of early colonial brickwork. We source period-correct bricks and use lime-based mortars." },
+      { icon: Layers, title: "Lime Mortar Repointing", description: "Removal of failed joints and repointing with traditional lime mortar. Colour-matched and tooled to the original profile." },
+      { icon: FileCheck, title: "Council & Heritage Approvals", description: "We handle the paperwork. Heritage impact statements, methodology documents, and liaison with council heritage officers." },
+      { icon: Ruler, title: "Period Detail Reproduction", description: "Mouldings, cornices, and decorative elements faithfully reproduced from original profiles. Cast or carved to match." },
+      { icon: Shield, title: "Conservation Management", description: "Ongoing maintenance programmes for heritage buildings. Regular inspections and planned repairs to prevent costly damage." }
+    ]}
+    faqs={[
+      { question: "Do you have experience with heritage-listed buildings?", answer: "Yes. We have restored dozens of heritage-listed properties across Sydney, from state-listed sandstone buildings to locally listed Federation terraces. Minas understands the regulations and the craft." },
+      { question: "What approvals are needed for heritage restoration?", answer: "It depends on the listing level. Locally listed buildings usually need council consent. State-listed buildings may also need Heritage NSW approval. We help with the application process and provide the documentation councils require." },
+      { question: "Can you match original heritage materials?", answer: "That is a core part of what we do. We source matching sandstone, heritage bricks, and traditional lime mortars. Where materials are no longer available, we work with suppliers to produce custom matches." },
+      { question: "How do you handle badly done previous repairs?", answer: "We carefully remove inappropriate materials like cement render or modern mortars that are damaging the original stone or brick. Then we replace them with compatible, traditional materials that allow the building to breathe." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp",
+      "/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp",
+      "/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Heritage Restoration', href: '' },
+    ]}
+  />
   );
-}
+};
+
+export default HeritageRestorationPage;

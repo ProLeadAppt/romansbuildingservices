@@ -1,80 +1,47 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Phone, Star, Shield, Clock, Award, Building } from 'lucide-react';
-import { AssessmentPopup } from '@/components/AssessmentPopup';
-const heroImage = '/lovable-uploads/021212_ced9a2de6c6e43478213886e0d066486~mv2_d_3024_4032_s_4_2.jpg';
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Shield, Wrench, HardHat, Gauge, Hammer, Building } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function StructuralRepairsPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const services = [
-    "Load-Bearing Wall Repairs",
-    "Beam & Column Restoration", 
-    "Steel Structure Repairs",
-    "Structural Crack Repair",
-    "Building Reinforcement",
-    "Emergency Structural Support"
-  ];
+const StructuralRepairsPage = () => {
+  const childServices = getSubServiceRoutes('structural-repairs');
 
   return (
-    <div className="container mx-auto px-4 py-12">
-        <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">Structural Repair Experts</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Expert Structural Repairs in Sydney
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Professional structural repair services for load-bearing elements, beams, columns, 
-                and critical building components. Engineering-backed solutions you can trust.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" onClick={() => setShowAssessmentPopup(true)}>Get Structural Assessment</Button>
-                <Button variant="outline" size="lg" onClick={() => window.open('tel:+61483981292')}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +61 483 981 292
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img src={heroImage} alt="Structural repair work" className="rounded-lg shadow-2xl" />
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Structural Repair Services</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Building className="h-6 w-6 text-primary" />
-                    <span>{service}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Professional {service.toLowerCase()} with engineering support and quality guarantee.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-primary text-primary-foreground rounded-2xl p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Structural Issues? Get Expert Help</h2>
-          <p className="text-xl mb-8 opacity-90">Emergency structural repairs available 24/7</p>
-          <Button size="lg" variant="secondary" onClick={() => setShowAssessmentPopup(true)}>Book Structural Assessment</Button>
-        </section>
-        
-        {/* Assessment Popup */}
-        <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-      </div>
+  <ServicePageTemplate
+    title="Structural Repairs"
+    metaTitle="Structural Repairs Sydney | Roman Building Services"
+    metaDescription="Crack stitching, lintel replacement, and load-bearing wall repairs in Sydney. Fixing the things that hold buildings together. Call Minas."
+    heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
+    intro={[
+      "Cracks in walls, sagging lintels, bulging brickwork. These are not cosmetic problems. They are signs that something structural needs attention. Ignoring them only makes the repair bigger and more expensive down the track.",
+      "Minas has been doing structural repairs across Sydney for over 30 years. Crack stitching, lintel replacement, load-bearing wall repairs, and structural reinforcement. We work with engineers when needed and make sure every repair is done to spec.",
+      "We fix the cause, not just the symptom. If a crack keeps coming back, there is a reason. We find it, address it, and then repair the damage properly."
+    ]}
+    features={[
+      { icon: Wrench, title: "Crack Stitching", description: "Helical bar insertion and epoxy injection to stabilise and repair structural cracks in masonry walls. Permanent fix, not a cover-up." },
+      { icon: HardHat, title: "Lintel Replacement", description: "Removal and replacement of failed steel and concrete lintels above windows and doors. Temporary propping and proper installation." },
+      { icon: Shield, title: "Load-Bearing Wall Repairs", description: "Rebuilding and reinforcing load-bearing walls. Brick replacement, structural ties, and strengthening to engineer specifications." },
+      { icon: Gauge, title: "Structural Assessments", description: "On-site assessment of structural damage with clear reporting. We can recommend an engineer if a formal report is required." },
+      { icon: Hammer, title: "Wall Tie Replacement", description: "Removal of corroded wall ties and installation of new stainless steel remedial ties. Stops cavity wall separation." },
+      { icon: Building, title: "Beam & Column Repairs", description: "Concrete and steel beam repairs, column strengthening, and structural element restoration." }
+    ]}
+    faqs={[
+      { question: "How do I know if a crack is structural?", answer: "Cracks wider than 2mm, cracks that follow a stair-step pattern through mortar joints, or cracks near windows and doors are often structural. If you are unsure, call Minas. He will take a look and tell you straight." },
+      { question: "Do you work with structural engineers?", answer: "Yes. For any significant structural work, we work alongside qualified structural engineers. They design the fix, we build it. On smaller jobs, Minas can assess the situation and recommend whether an engineer is needed." },
+      { question: "How long does crack stitching take?", answer: "Most crack stitching jobs on a residential property take 2 to 5 days depending on the number of cracks and access. It is a fast, effective repair that avoids the need for major rebuilding." },
+      { question: "Will the repair be visible?", answer: "We take care to match mortar colours and brick finishes so the repair blends in. On rendered walls, we patch and paint to match. The goal is always a clean, invisible repair." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp",
+      "/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp",
+      "/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Structural Repairs', href: '' },
+    ]}
+  />
   );
-}
+};
+
+export default StructuralRepairsPage;

@@ -1,79 +1,185 @@
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import { Toaster } from '@/components/ui/sonner'
+import { lazy, Suspense } from 'react'
 import { Layout } from '@/components/Layout'
-import App from './App.tsx'
-import ReviewFunnel from './pages/ReviewFunnel.tsx'
-import ServicesPage from './pages/ServicesPage.tsx'
-import ContactPage from './pages/ContactPage.tsx'
-import NotFound from './pages/NotFound.tsx'
-import AboutPage from './pages/AboutPage.tsx'
-import ProjectsPage from './pages/ProjectsPage.tsx'
-import QuotePage from './pages/QuotePage.tsx'
-import AssessmentPage from './pages/AssessmentPage.tsx'
-import PriorityRepairsPage from './pages/EmergencyPage.tsx'
-import ServicesAreasPage from './pages/ServicesAreasPage.tsx'
-import ThankYouPage from './pages/ThankYouPage.tsx'
-import SydneyCBDPage from './pages/areas/SydneyCBDPage.tsx'
-import EasternSuburbsPage from './pages/areas/EasternSuburbsPage.tsx'
-import NorthShorePage from './pages/areas/NorthShorePage.tsx'
-import NorthernBeachesPage from './pages/areas/NorthernBeachesPage.tsx'
-import InnerWestPage from './pages/areas/InnerWestPage.tsx'
-import GreaterSydneyPage from './pages/areas/GreaterSydneyPage.tsx'
-import MasonryPage from './pages/services/MasonryPage.tsx'
-import RestorationPage from './pages/services/RestorationPage.tsx'
-import FoundationRepairsPage from './pages/services/FoundationRepairsPage.tsx'
-import StructuralRepairsPage from './pages/services/StructuralRepairsPage.tsx'
-import HeritageRestorationPage from './pages/services/HeritageRestorationPage.tsx'
-import BuildingRestorationPage from './pages/services/BuildingRestorationPage.tsx'
-import ConcreteRepairsPage from './pages/services/ConcreteRepairsPage.tsx'
-import RemedialBuildingPage from './pages/services/RemedialBuildingPage.tsx'
-import AdminPage from './pages/AdminPage.tsx'
-import WebhookConfigPage from './pages/WebhookConfigPage.tsx'
-import SearchPage from './pages/SearchPage.tsx'
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx'
-import TermsOfServicePage from './pages/TermsOfServicePage.tsx'
-import SitemapPage from './pages/SitemapPage.tsx'
+import SinglePageApp from './pages/SinglePageApp'
 import './index.css'
 
-createRoot(document.getElementById("root")!).render(
+// Lazy-load main pages
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ServicesPage = lazy(() => import('./pages/ServicesPage'))
+const GalleryPage = lazy(() => import('./pages/ProjectsPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const ServicesAreasPage = lazy(() => import('./pages/ServicesAreasPage'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+
+// Tier 1 service pages
+const MasonryPage = lazy(() => import('./pages/services/MasonryPage'))
+const HeritageRestorationPage = lazy(() => import('./pages/services/HeritageRestorationPage'))
+const StructuralRepairsPage = lazy(() => import('./pages/services/StructuralRepairsPage'))
+const BuildingRestorationPage = lazy(() => import('./pages/services/BuildingRestorationPage'))
+const ConcreteRepairsPage = lazy(() => import('./pages/services/ConcreteRepairsPage'))
+const FoundationRepairsPage = lazy(() => import('./pages/services/FoundationRepairsPage'))
+const RemedialBuildingPage = lazy(() => import('./pages/services/RemedialBuildingPage'))
+
+// Masonry sub-services
+const BrickBlockWorkPage = lazy(() => import('./pages/services/masonry/BrickBlockWorkPage'))
+const RepointingPage = lazy(() => import('./pages/services/masonry/RepointingPage'))
+const StoneMasonryRepairsPage = lazy(() => import('./pages/services/masonry/StoneMasonryRepairsPage'))
+const StructuralBrickworkPage = lazy(() => import('./pages/services/masonry/StructuralBrickworkPage'))
+const RetainingWallsPage = lazy(() => import('./pages/services/masonry/RetainingWallsPage'))
+
+// Heritage restoration sub-services
+const HeritageMasonryPage = lazy(() => import('./pages/services/heritage-restoration/HeritageMasonryPage'))
+const HeritageStoneRestorationPage = lazy(() => import('./pages/services/heritage-restoration/HeritageStoneRestorationPage'))
+const HeritageBrickRepairsPage = lazy(() => import('./pages/services/heritage-restoration/HeritageBrickRepairsPage'))
+const TraditionalStoneworkPage = lazy(() => import('./pages/services/heritage-restoration/TraditionalStoneworkPage'))
+const PeriodMaterialsPage = lazy(() => import('./pages/services/heritage-restoration/PeriodMaterialsPage'))
+const HistoricStuccosPage = lazy(() => import('./pages/services/heritage-restoration/HistoricStuccosPage'))
+
+// Structural repairs sub-services
+const LoadBearingWallsPage = lazy(() => import('./pages/services/structural-repairs/LoadBearingWallsPage'))
+const BeamColumnPage = lazy(() => import('./pages/services/structural-repairs/BeamColumnPage'))
+const StructuralCrackRepairPage = lazy(() => import('./pages/services/structural-repairs/StructuralCrackRepairPage'))
+const BuildingReinforcementPage = lazy(() => import('./pages/services/structural-repairs/BuildingReinforcementPage'))
+const SteelStructureRepairsPage = lazy(() => import('./pages/services/structural-repairs/SteelStructureRepairsPage'))
+
+// Building restoration sub-services
+const CompleteRestorationPage = lazy(() => import('./pages/services/building-restoration/CompleteRestorationPage'))
+const FacadeRenovationPage = lazy(() => import('./pages/services/building-restoration/FacadeRenovationPage'))
+const InteriorRestorationPage = lazy(() => import('./pages/services/building-restoration/InteriorRestorationPage'))
+const HistoricUpgradesPage = lazy(() => import('./pages/services/building-restoration/HistoricUpgradesPage'))
+const DefectRectificationPage = lazy(() => import('./pages/services/building-restoration/DefectRectificationPage'))
+
+// Concrete repairs sub-services
+const ConcreteCancerPage = lazy(() => import('./pages/services/concrete-repairs/ConcreteCancerPage'))
+const SpallingRepairPage = lazy(() => import('./pages/services/concrete-repairs/SpallingRepairPage'))
+const StructuralConcretePage = lazy(() => import('./pages/services/concrete-repairs/StructuralConcretePage'))
+const ConcreteResurfacingPage = lazy(() => import('./pages/services/concrete-repairs/ConcreteResurfacingPage'))
+const ProtectiveCoatingsPage = lazy(() => import('./pages/services/concrete-repairs/ProtectiveCoatingsPage'))
+
+// Foundation repairs sub-services
+const UnderpinningPage = lazy(() => import('./pages/services/foundation-repairs/UnderpinningPage'))
+const StructuralFoundationPage = lazy(() => import('./pages/services/foundation-repairs/StructuralFoundationPage'))
+const FoundationStonePage = lazy(() => import('./pages/services/foundation-repairs/FoundationStonePage'))
+const PierBeamPage = lazy(() => import('./pages/services/foundation-repairs/PierBeamPage'))
+const SettlementStabilisationPage = lazy(() => import('./pages/services/foundation-repairs/SettlementStabilisationPage'))
+
+// Remedial building sub-services
+const StrataRepairsPage = lazy(() => import('./pages/services/remedial-building/StrataRepairsPage'))
+const StructuralDefectPage = lazy(() => import('./pages/services/remedial-building/StructuralDefectPage'))
+const ComplianceUpgradesPage = lazy(() => import('./pages/services/remedial-building/ComplianceUpgradesPage'))
+const EmergencyRepairsPage = lazy(() => import('./pages/services/remedial-building/EmergencyRepairsPage'))
+const EmergencyStructuralSupportPage = lazy(() => import('./pages/services/remedial-building/EmergencyStructuralSupportPage'))
+
+// Area pages
+const SydneyCBDPage = lazy(() => import('./pages/areas/SydneyCBDPage'))
+const EasternSuburbsPage = lazy(() => import('./pages/areas/EasternSuburbsPage'))
+const NorthShorePage = lazy(() => import('./pages/areas/NorthShorePage'))
+const NorthernBeachesPage = lazy(() => import('./pages/areas/NorthernBeachesPage'))
+const InnerWestPage = lazy(() => import('./pages/areas/InnerWestPage'))
+const GreaterSydneyPage = lazy(() => import('./pages/areas/GreaterSydneyPage'))
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-navy border-t-amber rounded-full animate-spin" />
+  </div>
+)
+
+const L = ({ children }: { children: React.ReactNode }) => <Layout>{children}</Layout>
+
+createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/about" element={<Layout><AboutPage /></Layout>} />
-      <Route path="/projects" element={<Layout><ProjectsPage /></Layout>} />
-      <Route path="/quote" element={<Layout><QuotePage /></Layout>} />
-      <Route path="/assessment" element={<Layout><AssessmentPage /></Layout>} />
-      <Route path="/emergency" element={<Layout><PriorityRepairsPage /></Layout>} />
-      <Route path="/services" element={<Layout><ServicesPage /></Layout>} />
-      <Route path="/services/masonry" element={<Layout><MasonryPage /></Layout>} />
-      <Route path="/services/restoration" element={<Layout><RestorationPage /></Layout>} />
-      <Route path="/services/foundation-repairs" element={<Layout><FoundationRepairsPage /></Layout>} />
-      <Route path="/services/structural-repairs" element={<Layout><StructuralRepairsPage /></Layout>} />
-      <Route path="/services/heritage-restoration" element={<Layout><HeritageRestorationPage /></Layout>} />
-      <Route path="/services/building-restoration" element={<Layout><BuildingRestorationPage /></Layout>} />
-      <Route path="/services/concrete-repairs" element={<Layout><ConcreteRepairsPage /></Layout>} />
-      <Route path="/services/remedial-building" element={<Layout><RemedialBuildingPage /></Layout>} />
-      <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
-      <Route path="/thank-you" element={<Layout><ThankYouPage /></Layout>} />
-      <Route path="/review" element={<ReviewFunnel />} />
-      <Route path="/areas" element={<Layout><ServicesAreasPage /></Layout>} />
-      <Route path="/areas/sydney-cbd" element={<Layout><SydneyCBDPage /></Layout>} />
-      <Route path="/areas/inner-sydney" element={<Layout><SydneyCBDPage /></Layout>} />
-      <Route path="/areas/eastern-suburbs" element={<Layout><EasternSuburbsPage /></Layout>} />
-      <Route path="/areas/north-shore" element={<Layout><NorthShorePage /></Layout>} />
-      <Route path="/areas/northern-beaches" element={<Layout><NorthernBeachesPage /></Layout>} />
-      <Route path="/areas/inner-west" element={<Layout><InnerWestPage /></Layout>} />
-      <Route path="/areas/greater-sydney" element={<Layout><GreaterSydneyPage /></Layout>} />
-      <Route path="/search" element={<Layout><SearchPage /></Layout>} />
-      <Route path="/privacy-policy" element={<Layout><PrivacyPolicyPage /></Layout>} />
-      <Route path="/terms-of-service" element={<Layout><TermsOfServicePage /></Layout>} />
-      <Route path="/sitemap" element={<Layout><SitemapPage /></Layout>} />
-      <Route path="/admin" element={<Layout><AdminPage /></Layout>} />
-      <Route path="/admin/webhooks" element={<Layout><WebhookConfigPage /></Layout>} />
-      <Route path="*" element={<Layout><NotFound /></Layout>} />
-    </Routes>
-  </BrowserRouter>
+      <Toaster position="bottom-right" />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<L><SinglePageApp /></L>} />
+
+          {/* Main pages */}
+          <Route path="/about" element={<L><AboutPage /></L>} />
+          <Route path="/services" element={<L><ServicesPage /></L>} />
+          <Route path="/gallery" element={<L><GalleryPage /></L>} />
+          <Route path="/contact" element={<L><ContactPage /></L>} />
+          <Route path="/areas" element={<L><ServicesAreasPage /></L>} />
+
+          {/* Redirects */}
+          <Route path="/projects" element={<Navigate to="/gallery" replace />} />
+          <Route path="/services/waterproofing" element={<Navigate to="/services" replace />} />
+          <Route path="/services/restoration" element={<Navigate to="/services/building-restoration" replace />} />
+
+          {/* Tier 1: Masonry */}
+          <Route path="/services/masonry" element={<L><MasonryPage /></L>} />
+          <Route path="/services/masonry/brick-block-work" element={<L><BrickBlockWorkPage /></L>} />
+          <Route path="/services/masonry/repointing" element={<L><RepointingPage /></L>} />
+          <Route path="/services/masonry/stone-masonry-repairs" element={<L><StoneMasonryRepairsPage /></L>} />
+          <Route path="/services/masonry/structural-brickwork" element={<L><StructuralBrickworkPage /></L>} />
+          <Route path="/services/masonry/retaining-walls" element={<L><RetainingWallsPage /></L>} />
+
+          {/* Tier 1: Heritage Restoration */}
+          <Route path="/services/heritage-restoration" element={<L><HeritageRestorationPage /></L>} />
+          <Route path="/services/heritage-restoration/heritage-masonry" element={<L><HeritageMasonryPage /></L>} />
+          <Route path="/services/heritage-restoration/heritage-stone" element={<L><HeritageStoneRestorationPage /></L>} />
+          <Route path="/services/heritage-restoration/heritage-brick-repairs" element={<L><HeritageBrickRepairsPage /></L>} />
+          <Route path="/services/heritage-restoration/traditional-stonework" element={<L><TraditionalStoneworkPage /></L>} />
+          <Route path="/services/heritage-restoration/period-materials" element={<L><PeriodMaterialsPage /></L>} />
+          <Route path="/services/heritage-restoration/historic-stuccos-renders" element={<L><HistoricStuccosPage /></L>} />
+
+          {/* Tier 1: Structural Repairs */}
+          <Route path="/services/structural-repairs" element={<L><StructuralRepairsPage /></L>} />
+          <Route path="/services/structural-repairs/load-bearing-walls" element={<L><LoadBearingWallsPage /></L>} />
+          <Route path="/services/structural-repairs/beam-column-restoration" element={<L><BeamColumnPage /></L>} />
+          <Route path="/services/structural-repairs/structural-crack-repair" element={<L><StructuralCrackRepairPage /></L>} />
+          <Route path="/services/structural-repairs/building-reinforcement" element={<L><BuildingReinforcementPage /></L>} />
+          <Route path="/services/structural-repairs/steel-structure-repairs" element={<L><SteelStructureRepairsPage /></L>} />
+
+          {/* Tier 1: Building Restoration */}
+          <Route path="/services/building-restoration" element={<L><BuildingRestorationPage /></L>} />
+          <Route path="/services/building-restoration/complete-restoration" element={<L><CompleteRestorationPage /></L>} />
+          <Route path="/services/building-restoration/facade-renovation" element={<L><FacadeRenovationPage /></L>} />
+          <Route path="/services/building-restoration/interior-restoration" element={<L><InteriorRestorationPage /></L>} />
+          <Route path="/services/building-restoration/historic-upgrades" element={<L><HistoricUpgradesPage /></L>} />
+          <Route path="/services/building-restoration/defect-rectification" element={<L><DefectRectificationPage /></L>} />
+
+          {/* Tier 1: Concrete Repairs */}
+          <Route path="/services/concrete-repairs" element={<L><ConcreteRepairsPage /></L>} />
+          <Route path="/services/concrete-repairs/concrete-cancer" element={<L><ConcreteCancerPage /></L>} />
+          <Route path="/services/concrete-repairs/spalling-repair" element={<L><SpallingRepairPage /></L>} />
+          <Route path="/services/concrete-repairs/structural-concrete" element={<L><StructuralConcretePage /></L>} />
+          <Route path="/services/concrete-repairs/concrete-resurfacing" element={<L><ConcreteResurfacingPage /></L>} />
+          <Route path="/services/concrete-repairs/protective-coatings" element={<L><ProtectiveCoatingsPage /></L>} />
+
+          {/* Tier 1: Foundation Repairs */}
+          <Route path="/services/foundation-repairs" element={<L><FoundationRepairsPage /></L>} />
+          <Route path="/services/foundation-repairs/underpinning" element={<L><UnderpinningPage /></L>} />
+          <Route path="/services/foundation-repairs/structural-foundation" element={<L><StructuralFoundationPage /></L>} />
+          <Route path="/services/foundation-repairs/foundation-stone" element={<L><FoundationStonePage /></L>} />
+          <Route path="/services/foundation-repairs/pier-beam" element={<L><PierBeamPage /></L>} />
+          <Route path="/services/foundation-repairs/settlement-stabilisation" element={<L><SettlementStabilisationPage /></L>} />
+
+          {/* Tier 1: Remedial Building */}
+          <Route path="/services/remedial-building" element={<L><RemedialBuildingPage /></L>} />
+          <Route path="/services/remedial-building/strata-repairs" element={<L><StrataRepairsPage /></L>} />
+          <Route path="/services/remedial-building/structural-defect" element={<L><StructuralDefectPage /></L>} />
+          <Route path="/services/remedial-building/compliance-upgrades" element={<L><ComplianceUpgradesPage /></L>} />
+          <Route path="/services/remedial-building/emergency-repairs" element={<L><EmergencyRepairsPage /></L>} />
+          <Route path="/services/remedial-building/emergency-structural" element={<L><EmergencyStructuralSupportPage /></L>} />
+
+          {/* Area pages */}
+          <Route path="/areas/sydney-cbd" element={<L><SydneyCBDPage /></L>} />
+          <Route path="/areas/eastern-suburbs" element={<L><EasternSuburbsPage /></L>} />
+          <Route path="/areas/north-shore" element={<L><NorthShorePage /></L>} />
+          <Route path="/areas/northern-beaches" element={<L><NorthernBeachesPage /></L>} />
+          <Route path="/areas/inner-west" element={<L><InnerWestPage /></L>} />
+          <Route path="/areas/greater-sydney" element={<L><GreaterSydneyPage /></L>} />
+
+          {/* 404 */}
+          <Route path="*" element={<L><NotFound /></L>} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   </HelmetProvider>
-);
+)

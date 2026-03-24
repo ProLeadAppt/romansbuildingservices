@@ -1,210 +1,242 @@
-import React, { useState } from 'react';
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
-import { AssessmentPopup } from '@/components/AssessmentPopup';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { Phone, Mail, Clock, MapPin, Instagram } from 'lucide-react';
 
 export default function ContactPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
   return (
-    <div className="min-h-screen bg-background">
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Contact Romans Building Services
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get in touch for your free assessment. We're here to help with all your 
-            building, masonry, and restoration needs across Sydney.
-          </p>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Contact Us | Call 0414 922 276 for a Quote</title>
+      </Helmet>
 
-      {/* Contact Form and Info */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Get Your Free Assessment</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you within 2 hours
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Smith" />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="+61 4XX XXX XXX" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="service">Service Needed</Label>
-                  <select className="w-full px-3 py-2 border border-input rounded-md">
-                    <option>Select a service</option>
-                    <option>Masonry</option>
-                    <option>Restoration</option>
-                    <option>Remedial Building</option>
-                    <option>Structural Repairs</option>
-                    <option>Priority Service</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <Label htmlFor="message">Project Details</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your project..." 
-                    rows={4}
-                  />
-                </div>
-                
-                <Button size="lg" className="w-full" onClick={() => setShowAssessmentPopup(true)}>
-                  Get Free Assessment
-                </Button>
-              </CardContent>
-            </Card>
+      <div className="min-h-screen font-body">
+        {/* Hero Banner */}
+        <section className="bg-navy py-24">
+          <div className="container mx-auto px-4 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-4xl md:text-5xl text-white mb-4"
+            >
+              Get in Touch
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-white/80 text-lg max-w-2xl mx-auto"
+            >
+              Call Minas directly, or fill in the form. We'll get back to you within 24 hours.
+            </motion.p>
+          </div>
+        </section>
 
-            {/* Contact Information */}
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Phone className="h-6 w-6 text-primary" />
-                    <span>Call Us Now</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <a href="tel:+61483981292" className="text-2xl font-bold text-primary hover:underline">
-                    +61 483 981 292
+        {/* Content */}
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Left: Contact Form */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-text-primary font-semibold mb-2"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-navy/50 focus:border-navy transition-colors"
+                      placeholder="Your name"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-text-primary font-semibold mb-2"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-navy/50 focus:border-navy transition-colors"
+                      placeholder="04XX XXX XXX"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-text-primary font-semibold mb-2"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-navy/50 focus:border-navy transition-colors"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="service"
+                      className="block text-text-primary font-semibold mb-2"
+                    >
+                      Service
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-navy/50 focus:border-navy transition-colors bg-white"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="masonry">Masonry</option>
+                      <option value="heritage-restoration">Heritage Restoration</option>
+                      <option value="building-restoration">Building Restoration</option>
+                      <option value="structural-repairs">Structural Repairs</option>
+                      <option value="concrete-repairs">Concrete Repairs</option>
+                      <option value="foundation-repairs">Foundation Repairs</option>
+                      <option value="repointing">Repointing</option>
+                      <option value="remedial-building">Remedial Building</option>
+                      <option value="other">Something else</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-text-primary font-semibold mb-2"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-navy/50 focus:border-navy transition-colors resize-vertical"
+                      placeholder="Tell us a bit about what needs doing..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity w-full"
+                  >
+                    Send Enquiry
+                  </button>
+                </form>
+              </motion.div>
+
+              {/* Right: Info Cards */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                {/* Phone */}
+                <div className="bg-bg-light rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Phone className="w-5 h-5 text-navy" />
+                    <span className="text-text-muted font-semibold text-sm uppercase tracking-wide">
+                      Phone
+                    </span>
+                  </div>
+                  <a
+                    href="tel:+61414922276"
+                    className="font-heading text-2xl md:text-3xl text-navy hover:text-navy-light transition-colors"
+                  >
+                    0414 922 276
                   </a>
-                  <p className="text-muted-foreground mt-2">
-                    Available 24/7 for priority services
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <span>Email Us</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <a href="mailto:romanspropertyservices@gmail.com" className="text-lg text-primary hover:underline">
+                {/* Email */}
+                <div className="bg-bg-light rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Mail className="w-5 h-5 text-navy" />
+                    <span className="text-text-muted font-semibold text-sm uppercase tracking-wide">
+                      Email
+                    </span>
+                  </div>
+                  <a
+                    href="mailto:romanspropertyservices@gmail.com"
+                    className="text-navy hover:text-navy-light transition-colors font-semibold break-all"
+                  >
                     romanspropertyservices@gmail.com
                   </a>
-                  <p className="text-muted-foreground mt-2">
-                    We respond within 2 hours during business hours
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <span>Service Areas</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg font-semibold">Greater Sydney Area</p>
-                  <p className="text-muted-foreground mt-2">
-                    Including CBD, Eastern Suburbs, Northern Beaches, 
-                    North Shore, Inner West, and Western Sydney
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Clock className="h-6 w-6 text-primary" />
-                    <span>Business Hours</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Monday - Friday:</span>
-                      <span className="font-semibold">7:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Saturday:</span>
-                      <span className="font-semibold">8:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday:</span>
-                      <span className="font-semibold">Priority Only</span>
-                    </div>
-                    <div className="flex justify-between text-primary font-semibold">
-                      <span>Priority:</span>
-                      <span>24/7 Available</span>
-                    </div>
+                {/* Hours */}
+                <div className="bg-bg-light rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Clock className="w-5 h-5 text-navy" />
+                    <span className="text-text-muted font-semibold text-sm uppercase tracking-wide">
+                      Hours
+                    </span>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-text-primary font-semibold">
+                    Monday to Saturday, 7am to 5pm
+                  </p>
+                </div>
+
+                {/* Service Area */}
+                <div className="bg-bg-light rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <MapPin className="w-5 h-5 text-navy" />
+                    <span className="text-text-muted font-semibold text-sm uppercase tracking-wide">
+                      Service Area
+                    </span>
+                  </div>
+                  <p className="text-text-primary font-semibold">All of Greater Sydney</p>
+                </div>
+
+                {/* Social */}
+                <div className="bg-bg-light rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Instagram className="w-5 h-5 text-navy" />
+                    <span className="text-text-muted font-semibold text-sm uppercase tracking-wide">
+                      Instagram
+                    </span>
+                  </div>
+                  <a
+                    href="https://www.instagram.com/romansstone/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-navy hover:text-navy-light transition-colors font-semibold"
+                  >
+                    @romansstone
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Trust Indicators */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-8">
-            Why Sydney Trusts Romans Building Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">24+</div>
-              <div className="text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">800+</div>
-              <div className="text-muted-foreground">Happy Customers</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Star className="h-8 w-8 text-yellow-500 fill-current" />
-                <Star className="h-8 w-8 text-yellow-500 fill-current" />
-                <Star className="h-8 w-8 text-yellow-500 fill-current" />
-                <Star className="h-8 w-8 text-yellow-500 fill-current" />
-                <Star className="h-8 w-8 text-yellow-500 fill-current" />
-              </div>
-              <div className="text-muted-foreground">5-Star Reviews</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      
-      {/* Assessment Popup */}
-      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </div>
+        </section>
+      </div>
+    </>
   );
 }

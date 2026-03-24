@@ -1,164 +1,48 @@
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Phone, Star, Shield, Clock, Award } from "lucide-react";
-import { ServiceFAQSection, masonryFAQs } from "@/components/ServiceFAQSection";
-import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/LocalSEO/StructuredData";
-import heroImage from "@/assets/hero-masonry.jpg";
-import { AssessmentPopup } from "@/components/AssessmentPopup";
+import { ServicePageTemplate } from '@/components/ServicePageTemplate';
+import { Hammer, Layers, Shield, Home, Wrench, Building } from 'lucide-react';
+import { getSubServiceRoutes } from '@/data/serviceHierarchy';
 
-export default function MasonryPage() {
-  const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
-  const services = [
-    "Brick Pointing & Repointing",
-    "Stone Masonry Repairs", 
-    "Structural Brickwork",
-    "Retaining Wall Construction",
-    "Brick & Block Work",
-    "Heritage Masonry Restoration"
-  ];
-
-  const features = [
-    { icon: Shield, title: "Licensed & Insured", description: "Fully licensed tradesman with comprehensive insurance coverage" },
-    { icon: Clock, title: "30+ Years Experience", description: "Established in 1995 with thousands of satisfied customers" },
-    { icon: Award, title: "Quality Guarantee", description: "All work comes with our comprehensive quality guarantee" },
-    { icon: Star, title: "5-Star Reviews", description: "Consistently rated 5 stars by our customers across Sydney" }
-  ];
+const MasonryPage = () => {
+  const childServices = getSubServiceRoutes('masonry');
 
   return (
-    <div>
-      {/* Structured Data */}
-      <LocalBusinessSchema />
-      <ServiceSchema service="Masonry Services" />
-      <FAQSchema faqs={masonryFAQs.map(faq => ({ question: faq.question, answer: faq.answer }))} />
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mobile-spacing-lg">
-            <div>
-              <Badge className="mb-4">Expert Masonry Services</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Professional Masonry Services in Sydney
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                From heritage restoration to modern construction, our expert masons deliver 
-                exceptional craftsmanship that stands the test of time. 30+ years of proven excellence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 mobile-button-lg" onClick={() => setShowAssessmentPopup(true)}>
-                  Get Free Quote
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg" onClick={() => window.open('tel:+61483981292')}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +61 483 981 292
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Professional masonry work in Sydney" 
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-3xl font-bold text-primary">800+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Masonry Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive masonry solutions for residential and commercial properties across Sydney
-            </p>
-          </div>
-          
-          <div className="mobile-grid-fix">{/* was: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 */}
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow mobile-card">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <CheckCircle className="h-6 w-6 text-primary" />
-                    <span>{service}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Professional {service.toLowerCase()} services with expert craftsmanship 
-                    and attention to detail.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Romans Building Services?
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Your Masonry Project?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Get your FREE assessment and 10% off your first project
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 mobile-button-lg bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => setShowAssessmentPopup(true)}>
-              Get Free Assessment
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 mobile-button-lg border-primary/20 text-primary bg-background/90 hover:bg-primary hover:text-primary-foreground" onClick={() => window.open('tel:+61483981292')}>
-              <Phone className="mr-2 h-5 w-5" />
-              Call +61 483 981 292
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <ServiceFAQSection 
-        serviceName="Masonry Services"
-        faqs={masonryFAQs}
-        emergencyAvailable={true}
-        averageProjectTime="1-3 weeks"
-      />
-
-      {/* Assessment Popup */}
-      <AssessmentPopup isOpen={showAssessmentPopup} onClose={() => setShowAssessmentPopup(false)} />
-    </div>
+  <ServicePageTemplate
+    title="Stone & Masonry"
+    metaTitle="Stone & Masonry Services Sydney | Roman Building Services"
+    metaDescription="Brick and stone masonry across Sydney. Walls, chimneys, retaining walls, feature stone, and repairs. New builds and restorations. Call Minas for a quote."
+    heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
+    intro={[
+      "Minas has been laying stone and brick across Sydney for over 30 years. From garden walls to full commercial facades, this is what we do best. Good masonry is about getting the foundations right, choosing the right materials, and taking the time to do it properly.",
+      "We handle all types of masonry work. Retaining walls, chimneys, feature stonework, brick repairs, repointing, and new builds. If it involves stone or brick, we have done it hundreds of times.",
+      "Every job gets the same attention to detail. We match existing materials where needed and use traditional methods that have stood the test of time. No rushed work, no cheap substitutes."
+    ]}
+    features={[
+      { icon: Hammer, title: "Brick & Block Work", description: "New brickwork, blockwork, and brick repairs for residential and commercial buildings. Colour-matched mortar and proper bonding." },
+      { icon: Layers, title: "Stone Masonry", description: "Sandstone, bluestone, and natural stone work. Feature walls, cladding, and stone restoration using traditional techniques." },
+      { icon: Home, title: "Retaining Walls", description: "Engineered retaining walls in stone, brick, or block. Built to handle the load and last for decades." },
+      { icon: Wrench, title: "Repointing & Repairs", description: "Mortar joint replacement and brick repairs. We match existing mortar colour and profile so the repair blends in." },
+      { icon: Building, title: "Chimneys & Fireplaces", description: "Chimney rebuilds, repairs, and new fireplace surrounds. Proper flashing and weatherproofing included." },
+      { icon: Shield, title: "Heritage Masonry", description: "Period-accurate stonework and brickwork for heritage-listed buildings. Traditional lime mortars and matched materials." }
+    ]}
+    faqs={[
+      { question: "What types of stone do you work with?", answer: "We work with all types. Sandstone, bluestone, limestone, granite, and natural fieldstone. Minas will recommend the best stone for your project based on the application, location, and your budget." },
+      { question: "Can you match existing brickwork on older buildings?", answer: "Yes. We source matching bricks and mix custom mortar colours to blend repairs with the original work. On heritage buildings, we use traditional lime-based mortars to stay true to the original construction." },
+      { question: "How long does a masonry retaining wall last?", answer: "A properly built and engineered masonry retaining wall will last 50 years or more. We make sure the drainage is right and the footings are sized for the load. That is what makes the difference." },
+      { question: "Do you handle council approvals for masonry work?", answer: "For retaining walls over 600mm and other regulated work, yes. We can prepare the documentation and work with your engineer or recommend one we trust." }
+    ]}
+    galleryImages={[
+      "/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp",
+      "/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp",
+      "/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp",
+      "/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
+    ]}
+    childServices={childServices}
+    breadcrumbs={[
+      { label: 'Services', href: '/services' },
+      { label: 'Stone & Masonry', href: '' },
+    ]}
+  />
   );
-}
+};
+
+export default MasonryPage;
