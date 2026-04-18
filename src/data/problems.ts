@@ -853,6 +853,473 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
       { title: 'Historic Stuccos & Renders', href: '/services/heritage-restoration/historic-stuccos-renders' },
     ],
   },
+
+  'leaking-balconies': {
+    name: 'Leaking Balconies',
+    slug: 'leaking-balconies',
+    metaTitle: 'Leaking Balconies Sydney | Causes & Proper Repair | Romans Building Services',
+    metaDescription:
+      'Balcony leaks into the apartment below? Learn what is really failing — waterproof membrane, tile bedding, drainage — and how a proper repair works. Strata specialists.',
+    heroTagline:
+      'Water coming through from the balcony above is almost always the membrane — and almost never fixed by more silicone.',
+    quickAnswer:
+      'Leaking balconies are usually caused by a failed waterproof membrane beneath the tiles, blocked drainage, or cracked tile bedding allowing water into the slab. Fixing a balcony leak properly means lifting the tiles, removing the failed membrane, treating any concrete damage, installing a new compliant membrane system, and re-bedding tiles with correct falls to drainage. Sealants around tile joints are not a real fix.',
+    whatItIs: [
+      'A leaking balcony is one of the most common and most expensive problems in Sydney apartments. Water comes through the ceiling of the unit below, or shows up as damp patches on internal walls, or rots out window frames over time. The source is almost always a failed waterproof membrane under the balcony tiles, though drainage failures, cracked slabs and wall-junction failures all contribute.',
+      'Balcony waterproofing has a design life of 10–15 years when done properly. Older apartments are well past that, and many balconies have never had a proper membrane replacement since original construction. Even newer buildings often have balcony defects from rushed original waterproofing that fails within 5 years.',
+      'The fix is rarely simple. A proper balcony waterproofing repair means lifting tiles, removing bedding, inspecting the concrete slab, treating any damage, installing a new compliant membrane, and re-bedding tiles to correct falls. Cheap fixes — silicone around the edges, sealer painted on top — delay the real job and usually make it worse.',
+    ],
+    signs: [
+      'Water stains or damp patches on the ceiling below the balcony',
+      'Cracked or loose tiles on the balcony surface',
+      'Efflorescence (white salt deposits) on the underside of the balcony',
+      'Rusty steel reinforcement visible in the balcony soffit (concrete cancer starting)',
+      'Water pooling on the balcony instead of draining away',
+      'Damp patches on internal walls adjacent to balcony door frames',
+      'Timber door and window frames warping or rotting near the balcony',
+    ],
+    causes: [
+      'Failed or perished waterproof membrane under the tiles (most common cause)',
+      'Blocked or badly positioned balcony drainage outlets',
+      'Cracked tile bedding letting water into the slab',
+      'Inadequate or non-existent falls to drainage',
+      'Wall-to-balcony junction leaks (where the balcony meets the building)',
+      'Cracked slab from movement or concrete cancer below the membrane',
+      'Original construction defects — membrane installed over wet concrete or dusty substrate',
+    ],
+    urgency: 'high',
+    urgencyNote:
+      'A balcony leak is damaging the apartment below right now — typically to ceilings, walls, and sometimes electrical systems. It will also be damaging the structural concrete in the balcony slab, which is a much more expensive fix if left. Get it inspected soon so you understand the scope, even if the full repair is staged over months.',
+    howWeFixIt: [
+      {
+        step: 'Inspect and diagnose',
+        detail:
+          'Identify where the water is actually entering — membrane failure, drainage, wall junction, slab cracking. Often a combination. We probe the tile bedding, check falls, inspect drainage outlets and examine the underside of the slab for damage.',
+      },
+      {
+        step: 'Lift tiles and remove failed membrane',
+        detail:
+          'Tiles come up along with bedding and the old membrane. For heritage or expensive tiles we carefully salvage what we can. Everything down to the concrete substrate is exposed and assessed.',
+      },
+      {
+        step: 'Treat the slab',
+        detail:
+          'Any concrete cancer, cracks, or damage in the slab gets repaired before new waterproofing goes on. This is the step where quick jobs fail — if the slab is wet or damaged, the new membrane fails too.',
+      },
+      {
+        step: 'Install a compliant membrane system',
+        detail:
+          'New waterproof membrane applied to manufacturer spec with proper upturns at walls, around penetrations, and into drainage outlets. Multiple coats with inspection between. Warranty-backed system.',
+      },
+      {
+        step: 'Re-bed tiles with correct falls',
+        detail:
+          'Tiles re-laid on new bedding with correct falls to drainage (minimum 1:100). Grout and perimeter sealant to match. Done right, the balcony sheds water properly for the next 15+ years.',
+      },
+    ],
+    costBand:
+      'Typical apartment balcony repair: $8,000 – $25,000. Multiple balconies staged across a strata building $50,000 – $300,000+. Depends on tile area, slab damage, and whether scaffolding is needed.',
+    faqs: [
+      {
+        question: 'Can I just reseal the tile grout to stop the leak?',
+        answer:
+          'No. The water is not coming through the grout — it is coming through the failed membrane underneath. Regrouting or siliconing around the edges is cosmetic at best and often traps moisture, making the damage worse. The membrane has to be replaced.',
+      },
+      {
+        question: 'How long does a proper balcony waterproofing job take?',
+        answer:
+          'For a single apartment balcony: typically 1–2 weeks including curing time between membrane coats. Strata-wide programs run 2–6 months depending on number of balconies and whether they are done sequentially or in parallel.',
+      },
+      {
+        question: 'Is the balcony leak coming from my unit or the one above?',
+        answer:
+          'Almost always the balcony directly above. Water tracks down through the slab and appears below where it entered. Occasionally water can travel sideways within the slab, but in nearly every case the leaking balcony is directly overhead.',
+      },
+      {
+        question: 'Who pays for balcony leak repairs in a strata building?',
+        answer:
+          'Depends on your by-laws. Typically the slab and the waterproof membrane are common property (strata pays) and the tiles are lot property (owner pays). Get advice from your strata manager — bylaws vary and insurance may cover some situations.',
+      },
+    ],
+    relatedServices: [
+      { title: 'Concrete Cancer Treatment', href: '/services/concrete-repairs/concrete-cancer' },
+      { title: 'Strata Building Repairs', href: '/services/remedial-building/strata-repairs' },
+      { title: 'Spalling Concrete Repair', href: '/services/concrete-repairs/spalling-repair' },
+      { title: 'Defect Rectification', href: '/services/building-restoration/defect-rectification' },
+    ],
+  },
+
+  'tuckpointing-restoration': {
+    name: 'Tuckpointing Restoration',
+    slug: 'tuckpointing-restoration',
+    metaTitle: 'Tuckpointing Restoration Sydney | Heritage Victorian Terraces | Romans',
+    metaDescription:
+      'Tuckpointing restoration on Victorian and Federation terraces across Sydney. Colour-matched lime mortar with fine white fillet. 30 years of heritage work.',
+    heroTagline:
+      'The fine-line decorative pointing on Victorian terraces — when it is done well, it defines the facade.',
+    quickAnswer:
+      'Tuckpointing is a decorative heritage pointing technique on Victorian and Federation brickwork: dark pigmented mortar fills the joint flush to the brick, then a thin fillet of white lime putty is run through the centre to create the illusion of very fine, precise brickwork. Proper restoration requires lime-based mortar matched to the original, hand-tooled fillets, and correct width — anything else ruins the facade. Expect $10,000–$18,000 for a front facade of a single-width terrace.',
+    whatItIs: [
+      'Tuckpointing is one of the most beautiful masonry finishes ever developed, and also one of the most misunderstood. On higher-end Victorian and Federation terraces across Paddington, Newtown, Glebe, Leichhardt, Surry Hills and Darlinghurst, the original brickwork was tuckpointed — dark coloured mortar flush to the brick face, with a thin fillet of white lime putty run through the centre of each joint. The visual effect is the illusion of very precise, very fine brickwork.',
+      'On most terraces, the original tuckpointing has weathered away. Worse, many have been repointed in recent decades by tradies who did not understand what tuckpointing was — resulting in plain cement pointing where the original decorative finish used to be. This destroys the character of the facade and devalues the property.',
+      'Proper tuckpointing restoration brings the facade back to what it was. Matched coloured lime mortar filling the joints flush, matched white lime putty running through the centre as a fine fillet, tooled to the correct width and profile. Done properly, it lasts 40+ years and makes the building look the way it was designed to look.',
+    ],
+    signs: [
+      'Front facade brickwork looks flat or featureless compared to neighbouring terraces',
+      'Fine white lines visible in patches where old tuckpointing has worn through',
+      'Modern grey cement pointing is smeared across the brick faces',
+      'Original tuckpointed joints are crumbling or missing',
+      'Mortar colour is a patchy mix of old and recent repairs',
+      'Tuckpointing exists but fillet lines are broken, flaked or missing',
+    ],
+    causes: [
+      'Age — original tuckpointing is often 100–150 years old',
+      'Incorrect modern repointing without restoring the tuckpoint detail',
+      'Weathering of soft lime mortars over decades',
+      'Previous sandblasting or harsh cleaning that damaged the fillets',
+      'Water ingress breaking down the mortar from behind',
+    ],
+    urgency: 'low',
+    urgencyNote:
+      'Tuckpointing restoration is almost never urgent — it is a heritage and aesthetic project. The underlying brickwork is usually still structurally sound. But for heritage-listed properties or homes in Conservation Areas, restoring tuckpointing maintains character and property value. Worth doing while other facade work is scheduled rather than on its own.',
+    howWeFixIt: [
+      {
+        step: 'Assess original specification',
+        detail:
+          'We examine surviving original tuckpointing to determine the dark mortar colour, fillet width, and profile. Samples and test panels before committing to scope. For heritage properties we document this in methodology reports for council.',
+      },
+      {
+        step: 'Rake out by hand',
+        detail:
+          'Old cement or damaged lime mortar is raked out by hand with chisels to 15–20mm depth. Never with angle grinders — they damage soft Victorian brick faces. Slow work but the only way to preserve the bricks.',
+      },
+      {
+        step: 'Point with coloured lime mortar',
+        detail:
+          'Dark pigmented lime mortar pushed into the joints firmly and struck flush to the brick face. Colour matched to surviving original mortar.',
+      },
+      {
+        step: 'Run the white lime putty fillet',
+        detail:
+          'A thin strip of white lime putty is run through the centre of each joint while the base mortar is still green. Tooled to the correct width — often 3mm, sometimes 2mm for finer work. This is the step that makes or breaks the job.',
+      },
+      {
+        step: 'Slow cure and protect',
+        detail:
+          'Lime-based tuckpointing needs slow, damp curing. We cover the work and mist-spray for several days, protecting from direct sun and heavy rain. Rushed curing causes shrinkage cracking and failed fillets.',
+      },
+    ],
+    costBand:
+      'Front facade of a single-width terrace: $10,000 – $18,000. Full external tuckpointing $25,000 – $45,000. Premium pricing reflects specialist skill — not every mason can do it.',
+    faqs: [
+      {
+        question: 'Does my terrace have tuckpointing?',
+        answer:
+          'Look closely at the joints. If you see (or used to see) a thin white line running through dark-coloured joints, yes — it is tuckpointed. Most Victorian-era middle and upper-class terraces in Paddington, Newtown, Glebe, Leichhardt, Surry Hills and similar suburbs originally were.',
+      },
+      {
+        question: 'How is tuckpointing different from normal pointing?',
+        answer:
+          'Normal pointing fills the joint with one material — typically flush, struck, or raked. Tuckpointing uses two materials: a dark mortar fills the joint, then a fine white lime putty fillet is run through the centre. The white line creates the optical illusion of very fine brickwork. It is significantly more labour-intensive and specialised.',
+      },
+      {
+        question: 'Can tuckpointing be done in stages?',
+        answer:
+          'Yes. Front facade first is common — that is what is visible. Sides and rear can follow in later years. If we use the same mix and techniques consistently, staged work looks cohesive.',
+      },
+      {
+        question: 'Why does tuckpointing cost more than regular repointing?',
+        answer:
+          'Two-step process with higher skill requirement. The fillet work is slow, precise, and requires hands that have done it many times. Expect 2–3x the cost of regular lime repointing on the same building.',
+      },
+    ],
+    relatedServices: [
+      { title: 'Repointing & Brick Pointing', href: '/services/masonry/repointing' },
+      { title: 'Heritage Masonry', href: '/services/heritage-restoration/heritage-masonry' },
+      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
+    ],
+  },
+
+  'sandstone-weathering': {
+    name: 'Sandstone Weathering & Erosion',
+    slug: 'sandstone-weathering',
+    metaTitle: 'Sandstone Weathering & Erosion Sydney | Restoration | Romans Building Services',
+    metaDescription:
+      'Sandstone walls eroding, flaking or losing detail? Learn the causes and proper restoration for Sydney heritage sandstone. 30 years of heritage stone work.',
+    heroTagline:
+      'Sydney sandstone is beautiful but not indestructible — salt, water and poor repairs all wear it down over time.',
+    quickAnswer:
+      'Sandstone weathers through exposure to salt, water, wind and pollution over decades. Signs include flaking surfaces, loss of carved detail, pitting, and dark staining. Proper restoration means cleaning gently, consolidating weakened stone with breathable lime-based consolidants, replacing stone that is beyond saving with matched Sydney sandstone, and never using impermeable sealers that trap moisture. A good sandstone restoration lasts decades.',
+    whatItIs: [
+      'Sydney is one of the great sandstone cities — almost every heritage building around the CBD, The Rocks, Paddington, Woollahra, Mosman and beyond has significant sandstone. It is beautiful stone but it weathers. Salt in the air, rain, wind, pollution and ground moisture all slowly break it down over decades. On heritage buildings that have been standing 100+ years, weathering is often significant.',
+      'The worst damage is usually to decorative carved detail — cornices, window surrounds, capitals, balustrades. Fine detail erodes faster than flat surfaces. Salt crystallisation inside the stone causes flaking (spalling) on coastal buildings. Past repairs with cement-based mortars or impermeable sealers accelerate damage because they trap moisture in the stone.',
+      'Proper restoration is a combination of gentle cleaning, consolidation of weakened stone, replacement of stone beyond saving, and breathable protective finishes. Done well, weathered sandstone can be brought back to good structural condition and kept there for decades.',
+    ],
+    signs: [
+      'Stone surface flaking or powdering — small pieces coming away',
+      'Loss of carved detail on decorative elements',
+      'Pitting or hollowing in the stone face',
+      'Dark staining (black soot, biological growth, or salt bloom)',
+      'Stone turning soft or crumbly where touched',
+      'Cracks or fractures in individual stone blocks',
+      'Mortar weathering faster than the stone (a sign of correct original spec)',
+    ],
+    causes: [
+      'Normal weathering — rain, sun, wind over decades',
+      'Salt crystallisation inside the stone (coastal exposure or rising damp)',
+      'Pollution deposits (historic coal soot, modern traffic)',
+      'Cement-based pointing trapping moisture in the stone',
+      'Impermeable sealers applied in past repairs',
+      'Ground moisture rising through the stone',
+      'Freeze-thaw cycles (minor in Sydney but exists)',
+    ],
+    urgency: 'medium',
+    urgencyNote:
+      'Weathering is gradual but not self-limiting — it accelerates once the protective outer surface of the stone is lost. Fine carved detail, once gone, cannot be recovered without replacing the stone block. Structural sandstone failing is more urgent than cosmetic weathering of flat surfaces. Heritage buildings benefit from catching weathering early with consolidation rather than later with replacement.',
+    howWeFixIt: [
+      {
+        step: 'Assess and clean',
+        detail:
+          'Careful cleaning with appropriate methods — never sandblasting, never harsh chemicals, never pressure washing at high pressure. Usually soft brush, low-pressure water, and occasionally poultices for stubborn staining. We document what we find as we go.',
+      },
+      {
+        step: 'Consolidate weakened stone',
+        detail:
+          'Breathable lime-based or silicate consolidants penetrate weathered stone and strengthen it without changing appearance or trapping moisture. For significantly weakened stone this can extend life by decades without replacement.',
+      },
+      {
+        step: 'Replace stone beyond saving',
+        detail:
+          'Individual stones that have lost structural integrity or critical detail are cut out and replaced with matched Sydney sandstone. Hand-carved detail restored where needed. New stone weathered to blend with surroundings.',
+      },
+      {
+        step: 'Repoint with breathable lime mortar',
+        detail:
+          'Old cement mortar removed if present — it is damaging the stone. Repoint with traditional lime mortar matched to original colour and profile. Lime mortar protects the stone while letting it breathe.',
+      },
+      {
+        step: 'Apply breathable protection',
+        detail:
+          'Where needed, a breathable silicate or mineral protective treatment. Never acrylic sealers or waterproofing coatings — they trap salt and accelerate damage. Done right, the stone is protected for decades without looking treated.',
+      },
+    ],
+    costBand:
+      'Depends heavily on scope. Cleaning and consolidation on a single facade $8,000 – $30,000. Significant replacement with carved detail $25,000 – $150,000+. Heritage projects priced per element.',
+    faqs: [
+      {
+        question: 'Can you restore carved sandstone detail that is mostly gone?',
+        answer:
+          'Yes, for detail that still has enough profile to reference. We can hand-carve replacement elements matched to surviving sections. For detail entirely lost, we work with heritage architects or conservators to document appropriate replacement — either based on historical photos or matching surviving similar elements.',
+      },
+      {
+        question: 'Should I seal my sandstone to stop weathering?',
+        answer:
+          'Not with modern waterproofing sealers — they trap moisture and salts inside the stone, accelerating damage. Breathable silicate or mineral treatments are the only appropriate option for sandstone protection. Most heritage conservators prefer no treatment at all unless actively needed.',
+      },
+      {
+        question: 'How do you match Sydney sandstone?',
+        answer:
+          'Sydney sandstone is still quarried from Hawkesbury-area quarries. We source stone matched to grain, colour and texture of the original. For visible repairs we weather-match with appropriate patina so new stone blends with aged surrounding stone.',
+      },
+      {
+        question: 'Is sandstone weathering a structural concern?',
+        answer:
+          'Usually not — it is cosmetic at first. But significant weathering of load-bearing sandstone (lintels, large structural blocks) can become structural. Part of the assessment is working out whether the damage is cosmetic or whether the stone is losing structural capacity.',
+      },
+    ],
+    relatedServices: [
+      { title: 'Stone Masonry Repairs', href: '/services/masonry/stone-masonry-repairs' },
+      { title: 'Heritage Stone Restoration', href: '/services/heritage-restoration/heritage-stone' },
+      { title: 'Traditional Stonework', href: '/services/heritage-restoration/traditional-stonework' },
+    ],
+  },
+
+  'damaged-lintels': {
+    name: 'Damaged Lintels Above Windows & Doors',
+    slug: 'damaged-lintels',
+    metaTitle: 'Damaged Lintels Sydney | Rusting Steel & Brick Cracking | Romans',
+    metaDescription:
+      'Rust stains above your window, cracks radiating from door corners? That is a failing lintel. Learn the signs, causes and proper replacement for Sydney homes.',
+    heroTagline:
+      'The horizontal beam above your window or door. When it fails, everything above it starts cracking.',
+    quickAnswer:
+      'Lintels are the horizontal beams that support brickwork above windows and doors. When steel lintels rust they expand up to 7x their original size, cracking the bricks above and eventually failing structurally. Signs include rust stains on brickwork, cracks radiating from window or door corners, and bulging or bowing brickwork above openings. Proper repair means temporarily propping the load, cutting out the old lintel, installing a new galvanised or stainless steel lintel, and rebuilding the brickwork.',
+    whatItIs: [
+      'A lintel is the horizontal beam that carries the weight of brickwork above a window or door opening. In Australian homes built from 1900 to around 1970, lintels were almost always mild steel — painted once and then forgotten. Steel rusts when exposed to moisture, and when embedded in brickwork it rusts slowly but continuously.',
+      'When steel rusts, it expands up to seven times its original volume. That expansion cracks the bricks above the window, pushes the bricks out of line, and eventually causes structural failure. The classic signs are rust stains bleeding down the brickwork, cracks radiating from the corners of window and door openings, and bricks starting to bulge or come loose above the lintel.',
+      'Lintel failure is common on Sydney Federation, Interwar and mid-century homes. The good news: it is a contained repair, not whole-house structural work. The bad news: it has to be done properly, with temporary propping, full lintel replacement, and brickwork rebuild. Quick patch jobs always come back.',
+    ],
+    signs: [
+      'Rust stains bleeding down brickwork from above a window or door',
+      'Cracks radiating from the corners of openings (often stair-step)',
+      'Bricks loose, bulging, or bowing above windows',
+      'Window or door no longer closing properly',
+      'Visible rust on any exposed lintel ends',
+      'Internal cracks in plaster above the opening',
+      'Gaps opening between the lintel and the brickwork',
+    ],
+    causes: [
+      'Steel lintel rusting — moisture reaches the steel through cracks, bad flashing, or masonry porosity',
+      'Salt air accelerating corrosion (coastal suburbs)',
+      'Failed or missing damp-proof course allowing moisture into the lintel',
+      'Original construction without proper rust protection',
+      'Direct water ingress from failed window sills or roof flashing above',
+      'Age — 50+ year old mild steel lintels commonly fail on pre-1970 homes',
+    ],
+    urgency: 'high',
+    urgencyNote:
+      'A visibly failing lintel is a structural concern. Eventually the brickwork above the opening can fall — while you do not want to be standing under it when that happens, the more common problem is that once bricks start moving, the repair scope grows fast. Catch it when cracks first appear and the fix is contained. Leave it five years and the whole wall above the window may need rebuilding.',
+    howWeFixIt: [
+      {
+        step: 'Assess and prop',
+        detail:
+          'We confirm the lintel is failing, check the extent of brick damage, and install temporary propping to support the load above. Propping stays in place throughout the work.',
+      },
+      {
+        step: 'Remove damaged brickwork',
+        detail:
+          'Bricks above the lintel that are cracked, spalled or displaced come out carefully. We salvage what we can for reuse or replacement matching. Goal is clean access to remove the lintel.',
+      },
+      {
+        step: 'Cut out the old lintel',
+        detail:
+          'The failed steel lintel is cut out and removed. The bearing points at each end are cleaned back to sound masonry.',
+      },
+      {
+        step: 'Install new lintel',
+        detail:
+          'A new lintel — galvanised steel, stainless steel, or precast concrete depending on span and load — is installed with correct bearing at each end and proper DPC to prevent future rusting.',
+      },
+      {
+        step: 'Rebuild brickwork',
+        detail:
+          'Matched bricks and lime mortar rebuild the damaged area. Replacement bricks sourced to match colour, size and texture. Pointing matched to surrounding mortar. Done right, the repair is invisible when finished.',
+      },
+    ],
+    costBand:
+      'Single lintel replacement typically $1,500 – $4,500 depending on span, access and brick matching requirements. Full facade of multiple failing lintels can run $8,000 – $20,000+.',
+    faqs: [
+      {
+        question: 'Why is there rust running down my brickwork above the window?',
+        answer:
+          'The steel lintel above the window is rusting. Water has reached the steel — usually through a failed sill, cracked pointing, or general masonry porosity — and the rust is bleeding through to the surface. It means the lintel is deteriorating and needs attention.',
+      },
+      {
+        question: 'Can you just paint over the rust to fix it?',
+        answer:
+          'No. The rust is inside the wall, on the lintel. Painting the surface does nothing. And because the steel is expanding as it rusts, cracking bricks from inside, surface treatment is pointless. The lintel has to come out and be replaced.',
+      },
+      {
+        question: 'How long does a lintel replacement take?',
+        answer:
+          'Single lintel on a residential property: typically 2–4 days including propping, removal, installation and brick rebuild. Multiple lintels on the same facade can be done together, often 1–2 weeks.',
+      },
+      {
+        question: 'Will the repair be visible?',
+        answer:
+          'Done properly, no. Matched brick, matched mortar, matched profile — the repair blends into the surrounding wall. On heritage work we take extra care to match aged brick colour and weathering.',
+      },
+    ],
+    relatedServices: [
+      { title: 'Structural Crack Repair', href: '/services/structural-repairs/structural-crack-repair' },
+      { title: 'Load-Bearing Wall Repairs', href: '/services/structural-repairs/load-bearing-walls' },
+      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
+      { title: 'Building Reinforcement', href: '/services/structural-repairs/building-reinforcement' },
+    ],
+  },
+
+  'cavity-wall-tie-failure': {
+    name: 'Cavity Wall Tie Failure',
+    slug: 'cavity-wall-tie-failure',
+    metaTitle: 'Cavity Wall Tie Failure Sydney | Signs & Repair | Romans Building Services',
+    metaDescription:
+      'Horizontal cracks at regular intervals, bowing walls? Your cavity wall ties may be failing. Romans Building Services remedies tie failure across Sydney homes.',
+    heroTagline:
+      'The hidden steel ties holding two brick walls together rust and fail — most 1960s-80s brick veneer homes are affected.',
+    quickAnswer:
+      'Cavity wall ties are steel ties embedded in the mortar between the two leaves of a cavity brick wall, holding them together. In 1960s–80s Australian brick veneer homes they often corrode as the galvanising fails, and once they corrode they stop doing their job. Signs include horizontal cracks at regular spacing, bowing walls, and cracked mortar in horizontal joints. The fix is installing new stainless steel remedial wall ties — a proven, non-destructive repair.',
+    whatItIs: [
+      'Cavity wall construction has two leaves of brick with a small gap (cavity) between them, tied together by steel ties embedded in the mortar joints. The ties stop the two leaves from separating. They were standard construction for Australian brick veneer homes from the 1940s through to around 1990.',
+      'The problem: the ties were galvanised mild steel, and the galvanising fails over decades. Once the galvanising is gone, the steel rusts — and once it rusts significantly, it stops doing its job. The two leaves of the wall are no longer held together properly. Over years, the outer leaf can start to bow outward, and the mortar joints where the ties sit crack horizontally at regular intervals.',
+      'This is a widespread issue on Sydney homes built from 1950 to 1985. Most homes of that vintage will have some tie corrosion, and many have significant enough corrosion to need remedial wall ties installed. The fix is non-destructive — new stainless steel ties are installed through small holes drilled from outside, then the holes are repointed.',
+    ],
+    signs: [
+      'Horizontal cracks in mortar joints at regular spacing (roughly 450–600mm apart)',
+      'Outer brick leaf bowing or leaning outward',
+      'Stair-step cracks radiating from window or door corners',
+      'Bricks loose or moving in sections of the wall',
+      'Rust stains at mortar joints (rare — usually hidden inside)',
+      'Visible gap between internal and external walls at junctions',
+      'Home was built between 1950 and 1985 (age bracket for affected construction)',
+    ],
+    causes: [
+      'Original galvanising wearing out over 30+ years',
+      'Moisture ingress through cracks, damp or failed flashing',
+      'Salt air (coastal homes) accelerating corrosion',
+      'Poor original construction — inadequate tie spacing or wrong tie type',
+      'Thermal expansion over decades flexing the ties and breaking galvanising',
+    ],
+    urgency: 'medium',
+    urgencyNote:
+      'Cavity wall tie failure is rarely an emergency — it progresses slowly over years. But once the outer leaf starts bowing noticeably, the repair scope gets bigger and the risk of more serious structural failure grows. Homes in coastal suburbs or with visible tie corrosion warrant action sooner. For homes showing just hairline horizontal cracking, monitoring for change is reasonable.',
+    howWeFixIt: [
+      {
+        step: 'Diagnose the failure pattern',
+        detail:
+          'We check the spacing of horizontal cracks, look for bowing with a straight edge, and sometimes open up a small section of mortar to inspect tie condition. Confirms whether the problem is tie failure or something else.',
+      },
+      {
+        step: 'Calculate new tie layout',
+        detail:
+          'New remedial ties are specified in a grid pattern across the affected walls — typically 450mm vertical spacing and 600–900mm horizontal. More ties near corners and openings where stress concentrates.',
+      },
+      {
+        step: 'Drill and install new ties',
+        detail:
+          'Small holes (10mm diameter) drilled through the outer leaf into the inner leaf, at the specified locations. Stainless steel helical remedial ties driven in to lock both leaves together. The ties bite into the masonry on both sides and do not need resin or mechanical fixings.',
+      },
+      {
+        step: 'Seal and repoint',
+        detail:
+          'Tie heads are set back below the brick face and the small drill holes are repointed with matched mortar. Done carefully, the repair is practically invisible.',
+      },
+      {
+        step: 'Monitor movement',
+        detail:
+          'For homes where the outer leaf had already bowed, we install monitors and review after 12 months to confirm movement has stopped.',
+      },
+    ],
+    costBand:
+      'Per tie: $45 – $90 installed. A typical home needs 100–300 ties. Total jobs usually $8,000 – $25,000 depending on home size, wall condition and access.',
+    faqs: [
+      {
+        question: 'How do I know my cavity wall ties have failed?',
+        answer:
+          'Horizontal cracks in mortar joints at regular spacing (450–600mm) are the classic sign. Bowing of the outer leaf when checked with a straight edge is another. Your home also has to be from the right era — 1950s to 1980s brick veneer — to have this specific problem.',
+      },
+      {
+        question: 'Is cavity wall tie failure dangerous?',
+        answer:
+          'Eventually, yes — if the outer leaf fully separates it can collapse. In practice this happens over decades of untreated decay. The reasonable approach is to fix the ties when signs appear rather than wait for catastrophic failure.',
+      },
+      {
+        question: 'Will the new ties last?',
+        answer:
+          'Stainless steel remedial ties have effectively unlimited service life in Australian conditions. 50+ year warranties are standard. They will not rust and will not need replacement during the useful life of the building.',
+      },
+      {
+        question: 'Will the repair damage my interior walls?',
+        answer:
+          'No — the repair is entirely external. Drilling is from outside only, so there is no interior work, no need to move furniture, and no internal disruption.',
+      },
+    ],
+    relatedServices: [
+      { title: 'Structural Crack Repair', href: '/services/structural-repairs/structural-crack-repair' },
+      { title: 'Load-Bearing Wall Repairs', href: '/services/structural-repairs/load-bearing-walls' },
+      { title: 'Building Reinforcement', href: '/services/structural-repairs/building-reinforcement' },
+      { title: 'Repointing & Brick Pointing', href: '/services/masonry/repointing' },
+    ],
+  },
 };
 
 export function getProblem(slug: string): ProblemPageProps | undefined {

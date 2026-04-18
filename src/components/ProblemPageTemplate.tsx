@@ -106,6 +106,28 @@ const PROBLEM_ENTITY_MAP: Record<string, Array<{ name: string; sameAs: string }>
     { name: 'Efflorescence', sameAs: 'https://en.wikipedia.org/wiki/Efflorescence' },
     { name: 'Masonry', sameAs: 'https://en.wikipedia.org/wiki/Masonry' },
   ],
+  'leaking-balconies': [
+    { name: 'Waterproofing', sameAs: 'https://en.wikipedia.org/wiki/Waterproofing' },
+    { name: 'Balcony', sameAs: 'https://en.wikipedia.org/wiki/Balcony' },
+  ],
+  'tuckpointing-restoration': [
+    { name: 'Tuckpointing', sameAs: 'https://en.wikipedia.org/wiki/Tuckpointing' },
+    { name: 'Repointing', sameAs: 'https://en.wikipedia.org/wiki/Repointing' },
+    { name: 'Lime mortar', sameAs: 'https://en.wikipedia.org/wiki/Lime_mortar' },
+  ],
+  'sandstone-weathering': [
+    { name: 'Sandstone', sameAs: 'https://en.wikipedia.org/wiki/Sandstone' },
+    { name: 'Weathering', sameAs: 'https://en.wikipedia.org/wiki/Weathering' },
+    { name: 'Historic preservation', sameAs: 'https://en.wikipedia.org/wiki/Historic_preservation' },
+  ],
+  'damaged-lintels': [
+    { name: 'Lintel', sameAs: 'https://en.wikipedia.org/wiki/Lintel_(architecture)' },
+    { name: 'Corrosion', sameAs: 'https://en.wikipedia.org/wiki/Corrosion' },
+  ],
+  'cavity-wall-tie-failure': [
+    { name: 'Cavity wall', sameAs: 'https://en.wikipedia.org/wiki/Cavity_wall' },
+    { name: 'Wall tie', sameAs: 'https://en.wikipedia.org/wiki/Wall_tie' },
+  ],
 };
 
 const buildProblemSchema = (props: ProblemPageProps) => {

@@ -6,11 +6,14 @@ export const SERVICE_TO_PROBLEMS: Record<string, string[]> = {
     'concrete-cancer',
     'spalling-render',
     'efflorescence-salt-damage',
+    'leaking-balconies',
   ],
   'Structural Repairs': [
     'cracked-brick-walls',
     'foundation-movement',
     'chimney-cracks',
+    'damaged-lintels',
+    'cavity-wall-tie-failure',
   ],
   'Foundation Repairs': [
     'foundation-movement',
@@ -18,12 +21,16 @@ export const SERVICE_TO_PROBLEMS: Record<string, string[]> = {
   ],
   'Heritage Restoration': [
     'crumbling-mortar',
+    'tuckpointing-restoration',
+    'sandstone-weathering',
     'rising-damp',
     'efflorescence-salt-damage',
     'chimney-cracks',
   ],
   'Stone & Masonry': [
     'crumbling-mortar',
+    'tuckpointing-restoration',
+    'sandstone-weathering',
     'cracked-brick-walls',
     'failing-retaining-walls',
     'chimney-cracks',
@@ -33,12 +40,15 @@ export const SERVICE_TO_PROBLEMS: Record<string, string[]> = {
     'crumbling-mortar',
     'rising-damp',
     'efflorescence-salt-damage',
+    'leaking-balconies',
   ],
   'Remedial Building': [
     'concrete-cancer',
+    'leaking-balconies',
     'foundation-movement',
     'cracked-brick-walls',
     'spalling-render',
+    'cavity-wall-tie-failure',
   ],
 };
 
@@ -104,5 +114,10 @@ export const PROBLEM_TO_SUBURBS: Record<string, string[]> = {
   'crumbling-mortar': ['paddington', 'newtown', 'leichhardt', 'balmain', 'darlinghurst'],
   'foundation-movement': ['chatswood', 'parramatta', 'marrickville', 'strathfield'],
   'chimney-cracks': ['mosman', 'woollahra', 'strathfield', 'neutral-bay'],
-  'efflorescence-salt-damage': ['bondi', 'manly', 'dee-why', 'avalon'],
+  'efflorescence-salt-damage': ['bondi', 'manly', 'dee-why', 'avalon', 'collaroy'],
+  'leaking-balconies': ['bondi', 'manly', 'dee-why', 'coogee', 'pyrmont', 'st-leonards'],
+  'tuckpointing-restoration': ['paddington', 'glebe', 'newtown', 'leichhardt', 'darlinghurst', 'surry-hills'],
+  'sandstone-weathering': ['the-rocks', 'circular-quay', 'paddington', 'bellevue-hill', 'mosman'],
+  'damaged-lintels': ['paddington', 'newtown', 'erskineville', 'balmain', 'strathfield', 'burwood'],
+  'cavity-wall-tie-failure': ['chatswood', 'burwood', 'concord', 'homebush', 'parramatta'],
 };
