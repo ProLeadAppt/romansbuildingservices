@@ -15,7 +15,7 @@ export const BreadcrumbSchema = ({ items }: { items: BreadcrumbItem[] }) => {
         '@type': 'ListItem',
         position: index + 1,
         name: item.label,
-        item: `https://www.romansbuildingservices.com${item.href}`,
+        item: `https://romansbuildingservices.com${item.href}`,
       })),
   };
 

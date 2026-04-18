@@ -14,7 +14,7 @@ export const BUSINESS_INFO = {
   telephone: "+61414922276",
   phone: "+61414922276",
   email: "romanspropertyservices@gmail.com",
-  website: "https://www.romansbuildingservices.com",
+  website: "https://romansbuildingservices.com",
   abn: "49 641 892 677",
   coordinates: {
     latitude: -33.8796,
@@ -77,11 +77,11 @@ export const BUSINESS_INFO = {
     instagram: "https://www.instagram.com/romansstone"
   },
   images: {
-    main: "https://www.romansbuildingservices.com/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp",
-    heritage: "https://www.romansbuildingservices.com/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp",
-    masonry: "https://www.romansbuildingservices.com/gallery/full/romansstone_1452415091_1159264269511646168_2394650725.webp"
+    main: "https://romansbuildingservices.com/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp",
+    heritage: "https://romansbuildingservices.com/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp",
+    masonry: "https://romansbuildingservices.com/gallery/full/romansstone_1452415091_1159264269511646168_2394650725.webp"
   },
-  logo: "https://www.romansbuildingservices.com/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
+  logo: "https://romansbuildingservices.com/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
 };
 
 // Local Business Structured Data Schema

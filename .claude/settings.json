@@ -52,7 +52,8 @@
       "Read(//c/Users/domin/.claude/**)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(node -e \"const fs=require\\('fs'\\);const s=fs.readFileSync\\('public/sitemap.xml','utf8'\\);const locs=\\(s.match\\(/<loc>/g\\)||[]\\).length;const closes=\\(s.match\\(/<\\\\/loc>/g\\)||[]\\).length;const urls=\\(s.match\\(/<url>/g\\)||[]\\).length;const urlcloses=\\(s.match\\(/<\\\\/url>/g\\)||[]\\).length;console.log\\('loc pairs:',locs,'/',closes\\);console.log\\('url pairs:',urls,'/',urlcloses\\);console.log\\('has xml decl:',s.startsWith\\('<?xml'\\)\\);console.log\\('has urlset close:',s.includes\\('</urlset>'\\)\\);console.log\\('www refs:',\\(s.match\\(/www\\\\\\\\./g\\)||[]\\).length\\);console.log\\('apex refs:',\\(s.match\\(/https:\\\\\\\\/\\\\\\\\/romansbuildingservices/g\\)||[]\\).length\\);\")"
     ]
   }
 }

@@ -9,7 +9,7 @@ interface SEOHeadProps {
   schemaJson?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const SITE_URL = 'https://www.romansbuildingservices.com';
+const SITE_URL = 'https://romansbuildingservices.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.webp`;
 
 const toAbsolute = (url: string) => {

@@ -1,5 +1,5 @@
 # robots.txt for Romans Building Services
-# https://www.romansbuildingservices.com/
+# https://romansbuildingservices.com/
 
 # Google
 User-agent: Googlebot
@@ -79,5 +79,5 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /*.json$
 
-Sitemap: https://www.romansbuildingservices.com/sitemap.xml
-Sitemap: https://www.romansbuildingservices.com/sitemap-images.xml
+Sitemap: https://romansbuildingservices.com/sitemap.xml
+Sitemap: https://romansbuildingservices.com/sitemap-images.xml
