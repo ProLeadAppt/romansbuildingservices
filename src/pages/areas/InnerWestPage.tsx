@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const InnerWestPage = () => (
   <>
-    <Helmet>
-      <title>Inner West Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Terrace house restoration, brick repairs and heritage masonry in Sydney's Inner West. Servicing Newtown, Marrickville, Leichhardt, Balmain and Strathfield."
-      />
-    </Helmet>
+    <SEO
+      title="Inner West Masonry and Building Services | Romans Building Services"
+      description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Newtown, Balmain, and Strathfield."
+      canonical="/areas/inner-west"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

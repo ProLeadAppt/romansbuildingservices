@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const SydneyCBDPage = () => (
   <>
-    <Helmet>
-      <title>Sydney CBD Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Masonry, sandstone restoration and remedial building services in Sydney CBD. We work around Martin Place, George Street, The Rocks and Circular Quay."
-      />
-    </Helmet>
+    <SEO
+      title="Sydney CBD Masonry and Building Services | Romans Building Services"
+      description="Masonry and heritage restoration in Sydney CBD. Romans Building Services handles stone, brick, and structural work across the inner city. Call Minas."
+      canonical="/areas/sydney-cbd"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

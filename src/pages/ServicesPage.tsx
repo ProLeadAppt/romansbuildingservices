@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import {
   Hammer,
   Landmark,
@@ -61,9 +61,11 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <Helmet>
-        <title>Our Services | Masonry, Heritage Restoration &amp; Structural Repairs</title>
-      </Helmet>
+      <SEO
+        title="Our Services | Masonry, Heritage Restoration & Structural Repairs"
+        description="Stone, brick, heritage restoration, structural repairs, concrete and remedial building services across Sydney. Licensed masons with 30 years on the tools."
+        canonical="/services"
+      />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}

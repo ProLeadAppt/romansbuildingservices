@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const GreaterSydneyPage = () => (
   <>
-    <Helmet>
-      <title>Greater Sydney Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="All masonry and remedial building services across Greater Sydney. Servicing Parramatta, Liverpool, Penrith, Blacktown and the Hills District."
-      />
-    </Helmet>
+    <SEO
+      title="Greater Sydney Masonry and Building Services | Romans Building Services"
+      description="Masonry and building services across Greater Sydney. From the CBD to Parramatta and the Hills District. Romans Building Services handles it all."
+      canonical="/areas/greater-sydney"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

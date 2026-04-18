@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
 
 const values = [
@@ -27,9 +27,12 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>About Minas Romanakis | 30 Years of Masonry Across Sydney</title>
-      </Helmet>
+      <SEO
+        title="About Romans Building Services | 30 Years of Masonry Across Sydney"
+        description="Meet Minas Romanakis, founder of Romans Building Services. 30 years of masonry and heritage restoration across Sydney since 1995. Family-run, licensed, and proud of every job."
+        canonical="/about"
+        ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
+      />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}

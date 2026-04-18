@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const NorthShorePage = () => (
   <>
-    <Helmet>
-      <title>North Shore Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Residential masonry, heritage home restoration and federation-era repairs on Sydney's North Shore. Servicing Mosman, Neutral Bay, Cremorne, Chatswood and Lane Cove."
-      />
-    </Helmet>
+    <SEO
+      title="North Shore Masonry and Building Services | Romans Building Services"
+      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licensed and insured since 1995."
+      canonical="/areas/north-shore"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

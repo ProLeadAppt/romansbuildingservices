@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Phone, Mail, Clock, MapPin, Instagram } from 'lucide-react';
 
 export default function ContactPage() {
   return (
     <>
-      <Helmet>
-        <title>Contact Us | Call 0414 922 276 for a Quote</title>
-      </Helmet>
+      <SEO
+        title="Contact Us | Call 0414 922 276 for a Quote"
+        description="Call Minas on 0414 922 276 for a quote. Romans Building Services covers Greater Sydney for masonry, heritage, structural and remedial work. Fast response."
+        canonical="/contact"
+      />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}

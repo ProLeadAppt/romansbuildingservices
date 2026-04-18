@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { RomansPremiumHeroSection } from '@/components/RomansPremiumHeroSection';
 import { OptimizedAnimatedAboutSection } from '@/components/OptimizedAnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
@@ -11,13 +11,12 @@ import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
 const SinglePageApp = () => {
   return (
     <>
-      <Helmet>
-        <title>Romans Building Services | Heritage Restoration & Masonry | Sydney</title>
-        <meta
-          name="description"
-          content="Heritage restoration, masonry repairs and stone construction across Sydney since 1995. Licensed, insured, 30 years experience. Call Minas for a quote."
-        />
-      </Helmet>
+      <SEO
+        title="Romans Building Services | Heritage Restoration & Masonry | Sydney"
+        description="Heritage restoration and masonry by Minas Romanakis. 30 years of stonework, brick repairs, and structural building services across Sydney."
+        canonical="/"
+        ogImage="/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.webp"
+      />
       <LocalBusinessSchema />
 
       {/* Hero — full-bleed, cinematic, credential strip included */}

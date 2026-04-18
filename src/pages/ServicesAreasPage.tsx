@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
@@ -38,13 +38,11 @@ const areas = [
 
 const ServicesAreasPage = () => (
   <>
-    <Helmet>
-      <title>Areas We Service | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Romans Building Services covers all of Sydney. From the CBD to the Northern Beaches, we provide masonry, restoration and remedial building services."
-      />
-    </Helmet>
+    <SEO
+      title="Areas We Service | Romans Building Services"
+      description="Sydney-wide coverage. Romans Building Services works across Sydney CBD, Eastern Suburbs, North Shore, Northern Beaches, Inner West and Greater Sydney."
+      canonical="/areas"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

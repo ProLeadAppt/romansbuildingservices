@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const NorthernBeachesPage = () => (
   <>
-    <Helmet>
-      <title>Northern Beaches Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Coastal masonry repairs, salt damage remediation and stone restoration on Sydney's Northern Beaches. Servicing Manly, Dee Why, Mona Vale, Avalon and Palm Beach."
-      />
-    </Helmet>
+    <SEO
+      title="Northern Beaches Masonry and Building Services | Romans Building Services"
+      description="Masonry repairs and restoration across Sydney's Northern Beaches. Manly, Dee Why, Avalon and beyond. Coastal expertise for harsh conditions."
+      canonical="/areas/northern-beaches"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

@@ -44,7 +44,15 @@
       "Bash(grep -rh \"import.*from ''''lucide-react''''\" src/pages/services/*/)",
       "Bash(node -e \":*)",
       "Bash(grep -rl \"Brick\" src/pages/services/*/)",
-      "Bash(grep -rl \"Pillar\" src/pages/services/*/)"
+      "Bash(grep -rl \"Pillar\" src/pages/services/*/)",
+      "Bash(npm info:*)",
+      "Bash(node -e ' *)",
+      "Bash(cat .claude/settings.local.json)",
+      "Bash(ls -la .claude/)",
+      "Read(//c/Users/domin/.claude/**)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

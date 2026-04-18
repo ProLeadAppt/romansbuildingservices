@@ -5,13 +5,14 @@ import { useEffect } from 'react';
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
   address: {
-    street: "",
+    streetAddress: "Strathfield",
     suburb: "Strathfield",
     state: "NSW",
     postcode: "2135",
     country: "Australia"
   },
-  phone: "+61 414 922 276",
+  telephone: "+61414922276",
+  phone: "+61414922276",
   email: "romanspropertyservices@gmail.com",
   website: "https://www.romansbuildingservices.com",
   abn: "49 641 892 677",
@@ -19,18 +20,30 @@ export const BUSINESS_INFO = {
     latitude: -33.8796,
     longitude: 151.0942
   },
-  serviceAreas: [
+  areaServed: [
+    "Sydney",
+    "Strathfield",
     "Sydney CBD",
-    "North Sydney", 
     "Eastern Suburbs",
-    "Inner West",
+    "North Shore",
     "Northern Beaches",
-    "Lower North Shore",
-    "Upper North Shore"
+    "Inner West",
+    "Greater Sydney"
+  ],
+  // Back-compat alias used by some consumers
+  serviceAreas: [
+    "Sydney",
+    "Strathfield",
+    "Sydney CBD",
+    "Eastern Suburbs",
+    "North Shore",
+    "Northern Beaches",
+    "Inner West",
+    "Greater Sydney"
   ],
   services: [
     "Masonry Services",
-    "Building Restoration", 
+    "Building Restoration",
     "Structural Repairs",
     "Heritage Building Restoration",
     "Stone Protection",
@@ -38,9 +51,15 @@ export const BUSINESS_INFO = {
     "Stone Restoration",
     "Building Inspections"
   ],
+  knowsAbout: [
+    "Heritage restoration",
+    "Masonry repairs",
+    "Sandstone restoration",
+    "Structural repairs"
+  ],
   businessHours: {
     monday: "07:00-18:00",
-    tuesday: "07:00-18:00", 
+    tuesday: "07:00-18:00",
     wednesday: "07:00-18:00",
     thursday: "07:00-18:00",
     friday: "07:00-18:00",
@@ -48,11 +67,21 @@ export const BUSINESS_INFO = {
     sunday: "Priority Only"
   },
   established: "1995",
-  licenseNumber: "NSW123456", // Replace with actual license
+  foundingDate: "1995-01-01",
+  sameAs: [
+    "https://www.instagram.com/romansstone",
+    "https://www.facebook.com/RomansBuildingServicesStrathfield"
+  ],
   socialMedia: {
-    facebook: "https://facebook.com/romansbuildingservices",
-    instagram: "https://instagram.com/romansstone"
-  }
+    facebook: "https://www.facebook.com/RomansBuildingServicesStrathfield",
+    instagram: "https://www.instagram.com/romansstone"
+  },
+  images: {
+    main: "https://www.romansbuildingservices.com/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp",
+    heritage: "https://www.romansbuildingservices.com/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp",
+    masonry: "https://www.romansbuildingservices.com/gallery/full/romansstone_1452415091_1159264269511646168_2394650725.webp"
+  },
+  logo: "https://www.romansbuildingservices.com/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
 };
 
 // Local Business Structured Data Schema
@@ -64,12 +93,13 @@ export const LocalBusinessSchema = () => {
     "name": BUSINESS_INFO.name,
     "description": "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specializing in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
     "url": BUSINESS_INFO.website,
-    "telephone": BUSINESS_INFO.phone,
+    "telephone": BUSINESS_INFO.telephone,
     "email": BUSINESS_INFO.email,
-    "foundingDate": BUSINESS_INFO.established,
+    "foundingDate": BUSINESS_INFO.foundingDate,
+    "priceRange": "$$",
     "address": {
-      "@type": "PostalAddress", 
-      "streetAddress": BUSINESS_INFO.address.street,
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS_INFO.address.streetAddress,
       "addressLocality": BUSINESS_INFO.address.suburb,
       "addressRegion": BUSINESS_INFO.address.state,
       "postalCode": BUSINESS_INFO.address.postcode,
@@ -80,16 +110,15 @@ export const LocalBusinessSchema = () => {
       "latitude": BUSINESS_INFO.coordinates.latitude,
       "longitude": BUSINESS_INFO.coordinates.longitude
     },
-    "areaServed": BUSINESS_INFO.serviceAreas.map(area => ({
+    "areaServed": BUSINESS_INFO.areaServed.map(area => ({
       "@type": "City",
       "name": area,
       "containedInPlace": {
-        "@type": "State", 
+        "@type": "State",
         "name": "New South Wales"
       }
     })),
     "serviceType": BUSINESS_INFO.services,
-    "priceRange": "$$",
     "currenciesAccepted": "AUD",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": [
@@ -97,18 +126,15 @@ export const LocalBusinessSchema = () => {
       "Sa 08:00-16:00"
     ],
     "image": [
-      `${BUSINESS_INFO.website}/images/romans-building-services.jpg`,
-      `${BUSINESS_INFO.website}/images/masonry-work-sydney.jpg`,
-      `${BUSINESS_INFO.website}/images/heritage-restoration.jpg`
+      BUSINESS_INFO.images.main,
+      BUSINESS_INFO.images.masonry,
+      BUSINESS_INFO.images.heritage
     ],
-    "logo": `${BUSINESS_INFO.website}/lovable-uploads/romans-business-logo.webp`,
-    "sameAs": [
-      BUSINESS_INFO.socialMedia.facebook,
-      BUSINESS_INFO.socialMedia.instagram
-    ],
+    "logo": BUSINESS_INFO.logo,
+    "sameAs": BUSINESS_INFO.sameAs,
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": BUSINESS_INFO.phone,
+      "telephone": BUSINESS_INFO.telephone,
       "contactType": "customer service",
       "availableLanguage": "English",
       "areaServed": "AU"
@@ -122,12 +148,7 @@ export const LocalBusinessSchema = () => {
         "name": "NSW Fair Trading"
       }
     },
-    "knowsAbout": [
-      "Heritage restoration",
-      "Masonry repairs",
-      "Sandstone restoration",
-      "Structural repairs"
-    ]
+    "knowsAbout": BUSINESS_INFO.knowsAbout
   };
 
   useEffect(() => {
@@ -136,7 +157,7 @@ export const LocalBusinessSchema = () => {
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
-    
+
     return () => {
       document.head.removeChild(script);
     };
@@ -156,7 +177,7 @@ export const ServiceSchema = ({ service }: { service: string }) => {
       "name": BUSINESS_INFO.name,
       "@id": `${BUSINESS_INFO.website}#business`
     },
-    "areaServed": BUSINESS_INFO.serviceAreas,
+    "areaServed": BUSINESS_INFO.areaServed,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `${service} in Sydney`,

@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { ServiceSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
+import { SEOHead } from '@/components/SEOHead';
 import { fadeUp, fadeUpBlur, scaleReveal, staggerContainer } from '@/utils/animations';
 
 interface ServiceFeature {
@@ -57,12 +57,15 @@ export const ServicePageTemplate = ({
   childServices = [],
   siblingServices = [],
 }: ServicePageProps) => {
+  const location = useLocation();
   return (
     <>
-      <Helmet>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Helmet>
+      <SEOHead
+        title={metaTitle}
+        description={metaDescription}
+        canonical={location.pathname}
+        ogImage={heroImage}
+      />
       <ServiceSchema service={title} />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
       {breadcrumbs.length > 0 && <BreadcrumbSchema items={breadcrumbs} />}

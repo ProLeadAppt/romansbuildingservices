@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -14,13 +14,11 @@ const services = [
 
 const EasternSuburbsPage = () => (
   <>
-    <Helmet>
-      <title>Eastern Suburbs Masonry and Building Services | Romans Building Services</title>
-      <meta
-        name="description"
-        content="Masonry, sandstone terrace restoration and retaining wall repairs in Sydney's Eastern Suburbs. Servicing Bondi, Paddington, Woollahra, Double Bay and Rose Bay."
-      />
-    </Helmet>
+    <SEO
+      title="Eastern Suburbs Masonry and Building Services | Romans Building Services"
+      description="Masonry specialists for Sydney's Eastern Suburbs. Heritage restoration in Paddington, Woollahra, Bondi and Double Bay. 30 years on the tools."
+      canonical="/areas/eastern-suburbs"
+    />
 
     {/* Hero */}
     <section className="bg-navy py-24">

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import { galleryImages } from '@/data/galleryImages';
@@ -7,13 +7,12 @@ import galleryVideo from '@/assets/videos/romansstone_1704887055_327715251743933
 const GalleryPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Our Work | Real Projects, Real Craftsmanship | Romans Building Services</title>
-        <meta
-          name="description"
-          content="Browse 30 years of masonry, heritage restoration, and structural repair projects across Sydney. Real photos from real job sites."
-        />
-      </Helmet>
+      <SEO
+        title="Our Work | Real Projects, Real Craftsmanship | Romans Building Services"
+        description="Real projects by Romans Building Services. 315+ completed masonry and heritage restoration jobs across Sydney since 1995. No stock photos, just our work."
+        canonical="/gallery"
+        ogImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
+      />
 
       {/* Page header with video background */}
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">

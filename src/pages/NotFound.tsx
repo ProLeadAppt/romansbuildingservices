@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/SEOHead';
 
 const NotFound = () => {
   return (
     <>
-      <Helmet>
-        <title>Page Not Found | Romans Building Services</title>
-      </Helmet>
+      <SEOHead
+        title="Page Not Found | Romans Building Services"
+        description="This page doesn't exist. Maybe it was demolished. Head back to the home page or call Minas for a quote."
+        canonical="/404"
+        noIndex
+      />
       <div className="min-h-[60vh] flex items-center justify-center px-4">
         <div className="text-center">
           <h1 className="font-heading text-5xl text-navy mb-4">404</h1>
