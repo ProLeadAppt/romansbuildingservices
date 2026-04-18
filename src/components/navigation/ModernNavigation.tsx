@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
+  { label: 'Areas', href: '/areas' },
   { label: 'Our Work', href: '/gallery' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -21,20 +22,31 @@ const serviceDropdownLinks = [
   { label: 'Building Restoration', href: '/services/building-restoration' },
 ] as const;
 
+const areaDropdownLinks = [
+  { label: 'Sydney CBD', href: '/areas/sydney-cbd' },
+  { label: 'Eastern Suburbs', href: '/areas/eastern-suburbs' },
+  { label: 'North Shore', href: '/areas/north-shore' },
+  { label: 'Northern Beaches', href: '/areas/northern-beaches' },
+  { label: 'Inner West', href: '/areas/inner-west' },
+  { label: 'Greater Sydney', href: '/areas/greater-sydney' },
+] as const;
+
 const PHONE_NUMBER = '0414 922 276';
 const PHONE_TEL = 'tel:0414922276';
+
+type DropdownKey = 'Services' | 'Areas' | null;
 
 export const ModernNavigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
   const location = useLocation();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
-    setDropdownOpen(false);
+    setOpenDropdown(null);
   }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -57,13 +69,13 @@ export const ModernNavigation = () => {
     return location.pathname.startsWith(href);
   };
 
-  const handleDropdownEnter = () => {
+  const handleDropdownEnter = (key: DropdownKey) => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setDropdownOpen(true);
+    setOpenDropdown(key);
   };
 
   const handleDropdownLeave = () => {
-    dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 150);
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   };
 
   return (
@@ -85,12 +97,28 @@ export const ModernNavigation = () => {
         {/* Desktop nav links */}
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
-            if (link.label === 'Services') {
+            const dropdownConfig =
+              link.label === 'Services'
+                ? {
+                    key: 'Services' as const,
+                    items: serviceDropdownLinks,
+                    footerLink: { label: 'Common Problems →', href: '/problems' },
+                  }
+                : link.label === 'Areas'
+                  ? {
+                      key: 'Areas' as const,
+                      items: areaDropdownLinks,
+                      footerLink: null,
+                    }
+                  : null;
+
+            if (dropdownConfig) {
+              const isOpen = openDropdown === dropdownConfig.key;
               return (
                 <li
                   key={link.href}
                   className="relative"
-                  onMouseEnter={handleDropdownEnter}
+                  onMouseEnter={() => handleDropdownEnter(dropdownConfig.key)}
                   onMouseLeave={handleDropdownLeave}
                 >
                   <Link
@@ -101,43 +129,44 @@ export const ModernNavigation = () => {
                         : 'text-white hover:text-white/80'
                     }`}
                   >
-                    Services
+                    {link.label}
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        dropdownOpen ? 'rotate-180' : ''
+                        isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </Link>
 
-                  {/* Services dropdown */}
                   <AnimatePresence>
-                    {dropdownOpen && (
+                    {isOpen && (
                       <motion.div
                         initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
-                        onMouseEnter={handleDropdownEnter}
+                        onMouseEnter={() => handleDropdownEnter(dropdownConfig.key)}
                         onMouseLeave={handleDropdownLeave}
                       >
-                        {serviceDropdownLinks.map((service) => (
+                        {dropdownConfig.items.map((item) => (
                           <Link
-                            key={service.href}
-                            to={service.href}
+                            key={item.href}
+                            to={item.href}
                             className="block px-4 py-2.5 text-sm font-body text-gray-700 hover:bg-navy/5 hover:text-navy transition-colors"
                           >
-                            {service.label}
+                            {item.label}
                           </Link>
                         ))}
-                        <div className="border-t border-gray-100 mt-1 pt-1">
-                          <Link
-                            to="/problems"
-                            className="block px-4 py-2.5 text-sm font-body text-navy font-semibold hover:bg-navy/5 transition-colors"
-                          >
-                            Common Problems →
-                          </Link>
-                        </div>
+                        {dropdownConfig.footerLink && (
+                          <div className="border-t border-gray-100 mt-1 pt-1">
+                            <Link
+                              to={dropdownConfig.footerLink.href}
+                              className="block px-4 py-2.5 text-sm font-body text-navy font-semibold hover:bg-navy/5 transition-colors"
+                            >
+                              {dropdownConfig.footerLink.label}
+                            </Link>
+                          </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>

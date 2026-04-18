@@ -1,13 +1,24 @@
 import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, ChevronRight, Phone } from 'lucide-react';
+import { CheckCircle, ArrowRight, ChevronRight, Phone, Hammer } from 'lucide-react';
 import {
   PlaceSchema,
   ServiceSchema,
   FAQSchema,
 } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+
+const SUBURB_SERVICE_LINKS = [
+  { label: 'Stone & Masonry', href: '/services/masonry', sublabel: 'Brick, stone, retaining walls' },
+  { label: 'Heritage Restoration', href: '/services/heritage-restoration', sublabel: 'Period homes & listed buildings' },
+  { label: 'Structural Repairs', href: '/services/structural-repairs', sublabel: 'Crack stitching, lintels' },
+  { label: 'Concrete Repairs', href: '/services/concrete-repairs', sublabel: 'Concrete cancer, spalling' },
+  { label: 'Foundation Repairs', href: '/services/foundation-repairs', sublabel: 'Underpinning, settlement' },
+  { label: 'Building Restoration', href: '/services/building-restoration', sublabel: 'Full facade & interior' },
+  { label: 'Remedial Building', href: '/services/remedial-building', sublabel: 'Strata & defects' },
+];
 
 export interface NearbySuburb {
   name: string;
@@ -188,6 +199,16 @@ export const SuburbPageTemplate = ({
           </motion.div>
         </div>
       </section>
+
+      {/* Services we offer in this suburb — cross-links to every tier-1 service */}
+      <RelatedLinksBlock
+        heading={`Masonry & building services we offer in ${name}`}
+        intro="Full scope of work Romans Building Services handles across Sydney. Click through for detail on each service."
+        items={SUBURB_SERVICE_LINKS}
+        icon={Hammer}
+        columns={3}
+        background="light"
+      />
 
       {/* FAQ */}
       {faqs.length > 0 && (

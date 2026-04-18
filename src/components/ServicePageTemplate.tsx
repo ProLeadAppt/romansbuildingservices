@@ -1,10 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, ArrowRight, ChevronRight } from 'lucide-react';
+import { Phone, ArrowRight, ChevronRight, AlertCircle, MapPin } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { ServiceSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { SEOHead } from '@/components/SEOHead';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+import { SERVICE_TO_PROBLEMS, SERVICE_TO_SUBURBS } from '@/data/serviceProblemMap';
+import { getProblem } from '@/data/problems';
+import { getSuburb } from '@/data/suburbs';
 import { fadeUp, fadeUpBlur, scaleReveal, staggerContainer } from '@/utils/animations';
 
 interface ServiceFeature {
@@ -58,6 +62,23 @@ export const ServicePageTemplate = ({
   siblingServices = [],
 }: ServicePageProps) => {
   const location = useLocation();
+
+  // Cross-link to problems this service fixes + suburbs where it's most relevant
+  const problemSlugs = SERVICE_TO_PROBLEMS[title] ?? [];
+  const suburbSlugs = SERVICE_TO_SUBURBS[title] ?? [];
+  const relatedProblems = problemSlugs
+    .map((slug) => {
+      const p = getProblem(slug);
+      return p ? { label: p.name, href: `/problems/${slug}` } : null;
+    })
+    .filter((x): x is { label: string; href: string } => x !== null);
+  const relatedSuburbs = suburbSlugs
+    .map((slug) => {
+      const s = getSuburb(slug);
+      return s ? { label: s.name, href: `/suburbs/${slug}`, sublabel: s.parentAreaName } : null;
+    })
+    .filter((x): x is { label: string; href: string; sublabel: string } => x !== null);
+
   return (
     <>
       <SEOHead
@@ -286,6 +307,30 @@ export const ServicePageTemplate = ({
             </div>
           </div>
         </section>
+      )}
+
+      {/* Problems this service fixes (tier-1 pages) */}
+      {relatedProblems.length > 0 && (
+        <RelatedLinksBlock
+          heading={`Problems ${title.toLowerCase()} fixes`}
+          intro="If you are seeing any of these, this is the work we do. Each guide explains the signs, causes and proper repair."
+          items={relatedProblems}
+          icon={AlertCircle}
+          columns={3}
+          background="off-white"
+        />
+      )}
+
+      {/* Suburbs where we do this work */}
+      {relatedSuburbs.length > 0 && (
+        <RelatedLinksBlock
+          heading={`Where we do ${title.toLowerCase()}`}
+          intro="Recent work across these Sydney suburbs. Click through for local context on the housing stock and common issues we see."
+          items={relatedSuburbs}
+          icon={MapPin}
+          columns={3}
+          background="light"
+        />
       )}
 
       {/* Sibling Services (Tier 2 pages only) */}

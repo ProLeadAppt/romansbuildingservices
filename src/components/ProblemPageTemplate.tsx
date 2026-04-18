@@ -8,9 +8,13 @@ import {
   Phone,
   ArrowRight,
   Clock,
+  MapPin,
 } from 'lucide-react';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+import { PROBLEM_TO_SUBURBS } from '@/data/serviceProblemMap';
+import { getSuburb } from '@/data/suburbs';
 
 type UrgencyLevel = 'low' | 'medium' | 'high';
 
@@ -174,6 +178,15 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
   const canonical = `/problems/${slug}`;
   const badge = urgencyBadge[urgency];
   const schemas = buildProblemSchema(props);
+
+  // Suburbs where we commonly see this problem — internal cross-links
+  const suburbSlugs = PROBLEM_TO_SUBURBS[slug] ?? [];
+  const relatedSuburbs = suburbSlugs
+    .map((s) => {
+      const sub = getSuburb(s);
+      return sub ? { label: sub.name, href: `/suburbs/${s}`, sublabel: sub.parentAreaName } : null;
+    })
+    .filter((x): x is { label: string; href: string; sublabel: string } => x !== null);
 
   return (
     <>
@@ -465,6 +478,18 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Suburbs where we commonly see this problem */}
+      {relatedSuburbs.length > 0 && (
+        <RelatedLinksBlock
+          heading={`Where we see ${name.toLowerCase()} most often`}
+          intro="Some suburbs have more of this problem than others — the local housing stock, age, and coastal exposure all play a part. Click through for the local context."
+          items={relatedSuburbs}
+          icon={MapPin}
+          columns={3}
+          background="off-white"
+        />
       )}
 
       {/* CTA */}

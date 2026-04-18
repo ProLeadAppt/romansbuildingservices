@@ -13,6 +13,17 @@ const quickLinks = [
   { label: 'Contact', to: '/contact' },
 ];
 
+// Popular suburbs — one column of high-value internal links for SEO + navigation
+const popularSuburbs = [
+  { label: 'Paddington', to: '/suburbs/paddington' },
+  { label: 'Mosman', to: '/suburbs/mosman' },
+  { label: 'Bondi', to: '/suburbs/bondi' },
+  { label: 'Manly', to: '/suburbs/manly' },
+  { label: 'Newtown', to: '/suburbs/newtown' },
+  { label: 'Balmain', to: '/suburbs/balmain' },
+  { label: 'Strathfield', to: '/suburbs/strathfield' },
+];
+
 const galleryPreview = [
   '/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp',
   '/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp',
@@ -82,7 +93,7 @@ export const Footer = () => {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 py-14 relative z-10"
       >
-        <div className="lg:grid lg:grid-cols-3 gap-12">
+        <div className="lg:grid lg:grid-cols-4 gap-12">
           {/* Column 1: Company */}
           <motion.div variants={fadeUp}>
             <Link to="/">
@@ -117,7 +128,26 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Column 3: Contact */}
+          {/* Column 3: Popular Suburbs */}
+          <motion.div variants={fadeUp} className="mt-10 lg:mt-0">
+            <h3 className="font-body text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-5">
+              Popular Suburbs
+            </h3>
+            <ul className="space-y-3">
+              {popularSuburbs.map((suburb) => (
+                <li key={suburb.to}>
+                  <Link
+                    to={suburb.to}
+                    className="font-body text-sm text-white/60 hover:text-white transition link-animated"
+                  >
+                    {suburb.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Column 4: Contact */}
           <motion.div variants={fadeUp} className="mt-10 lg:mt-0">
             <h3 className="font-body text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-5">
               Contact
