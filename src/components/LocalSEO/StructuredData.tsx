@@ -1,9 +1,7 @@
-import React from 'react';
-import { useEffect } from 'react';
-
 // Business information constants for NAP consistency
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
+  legalName: "Romans Building Services",
   address: {
     streetAddress: "Strathfield",
     suburb: "Strathfield",
@@ -13,6 +11,7 @@ export const BUSINESS_INFO = {
   },
   telephone: "+61414922276",
   phone: "+61414922276",
+  phoneDisplay: "0414 922 276",
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
   abn: "49 641 892 677",
@@ -55,7 +54,13 @@ export const BUSINESS_INFO = {
     "Heritage restoration",
     "Masonry repairs",
     "Sandstone restoration",
-    "Structural repairs"
+    "Structural repairs",
+    "Repointing",
+    "Concrete cancer treatment",
+    "Underpinning",
+    "Lime mortar",
+    "Tuckpointing",
+    "Retaining walls"
   ],
   businessHours: {
     monday: "07:00-18:00",
@@ -68,6 +73,11 @@ export const BUSINESS_INFO = {
   },
   established: "1995",
   foundingDate: "1995-01-01",
+  founder: {
+    name: "Minas Romanakis",
+    jobTitle: "Founder & Master Stonemason",
+    description: "Founder of Romans Building Services. Master stonemason with 30+ years of experience in heritage restoration, masonry, and structural repairs across Sydney."
+  },
   sameAs: [
     "https://www.instagram.com/romansstone",
     "https://www.facebook.com/RomansBuildingServicesStrathfield"
@@ -81,143 +91,430 @@ export const BUSINESS_INFO = {
     heritage: "https://romansbuildingservices.com/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp",
     masonry: "https://romansbuildingservices.com/gallery/full/romansstone_1452415091_1159264269511646168_2394650725.webp"
   },
-  logo: "https://romansbuildingservices.com/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
+  logo: "https://romansbuildingservices.com/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp",
+  ogImage: "https://romansbuildingservices.com/og-image.png"
 };
 
-// Local Business Structured Data Schema
-export const LocalBusinessSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${BUSINESS_INFO.website}#business`,
-    "name": BUSINESS_INFO.name,
-    "description": "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specializing in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
-    "url": BUSINESS_INFO.website,
-    "telephone": BUSINESS_INFO.telephone,
-    "email": BUSINESS_INFO.email,
-    "foundingDate": BUSINESS_INFO.foundingDate,
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": BUSINESS_INFO.address.streetAddress,
-      "addressLocality": BUSINESS_INFO.address.suburb,
-      "addressRegion": BUSINESS_INFO.address.state,
-      "postalCode": BUSINESS_INFO.address.postcode,
-      "addressCountry": BUSINESS_INFO.address.country
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": BUSINESS_INFO.coordinates.latitude,
-      "longitude": BUSINESS_INFO.coordinates.longitude
-    },
-    "areaServed": BUSINESS_INFO.areaServed.map(area => ({
-      "@type": "City",
-      "name": area,
-      "containedInPlace": {
-        "@type": "State",
-        "name": "New South Wales"
-      }
-    })),
-    "serviceType": BUSINESS_INFO.services,
-    "currenciesAccepted": "AUD",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "openingHours": [
-      "Mo-Fr 07:00-18:00",
-      "Sa 08:00-16:00"
-    ],
-    "image": [
-      BUSINESS_INFO.images.main,
-      BUSINESS_INFO.images.masonry,
-      BUSINESS_INFO.images.heritage
-    ],
-    "logo": BUSINESS_INFO.logo,
-    "sameAs": BUSINESS_INFO.sameAs,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": BUSINESS_INFO.telephone,
-      "contactType": "customer service",
-      "availableLanguage": "English",
-      "areaServed": "AU"
-    },
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "name": "NSW Masonry Contractor License",
-      "credentialCategory": "Professional License",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "NSW Fair Trading"
-      }
-    },
-    "knowsAbout": BUSINESS_INFO.knowsAbout
-  };
+const BUSINESS_ID = `${BUSINESS_INFO.website}#business`;
+const ORG_ID = `${BUSINESS_INFO.website}#organization`;
+const WEBSITE_ID = `${BUSINESS_INFO.website}#website`;
 
-  useEffect(() => {
-    // Add schema to head
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
+type SchemaObject = Record<string, unknown>;
 
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+const SchemaScript = ({ schema }: { schema: SchemaObject | SchemaObject[] }) => (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+  />
+);
 
-  return null;
+// ---------- LocalBusiness (used on home) ----------
+const localBusinessSchema: SchemaObject = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "GeneralContractor", "HomeAndConstructionBusiness"],
+  "@id": BUSINESS_ID,
+  name: BUSINESS_INFO.name,
+  legalName: BUSINESS_INFO.legalName,
+  description:
+    "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+  url: BUSINESS_INFO.website,
+  telephone: BUSINESS_INFO.telephone,
+  email: BUSINESS_INFO.email,
+  foundingDate: BUSINESS_INFO.foundingDate,
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BUSINESS_INFO.address.streetAddress,
+    addressLocality: BUSINESS_INFO.address.suburb,
+    addressRegion: BUSINESS_INFO.address.state,
+    postalCode: BUSINESS_INFO.address.postcode,
+    addressCountry: BUSINESS_INFO.address.country
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: BUSINESS_INFO.coordinates.latitude,
+    longitude: BUSINESS_INFO.coordinates.longitude
+  },
+  areaServed: BUSINESS_INFO.areaServed.map((area) => ({
+    "@type": "City",
+    name: area,
+    containedInPlace: {
+      "@type": "State",
+      name: "New South Wales"
+    }
+  })),
+  serviceType: BUSINESS_INFO.services,
+  currenciesAccepted: "AUD",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "16:00"
+    }
+  ],
+  openingHours: ["Mo-Fr 07:00-18:00", "Sa 08:00-16:00"],
+  image: [BUSINESS_INFO.images.main, BUSINESS_INFO.images.masonry, BUSINESS_INFO.images.heritage],
+  logo: BUSINESS_INFO.logo,
+  sameAs: BUSINESS_INFO.sameAs,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: BUSINESS_INFO.telephone,
+    contactType: "customer service",
+    availableLanguage: "English",
+    areaServed: "AU"
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    name: "NSW Masonry Contractor License",
+    credentialCategory: "Professional License",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "NSW Fair Trading"
+    }
+  },
+  knowsAbout: BUSINESS_INFO.knowsAbout,
+  founder: {
+    "@type": "Person",
+    name: BUSINESS_INFO.founder.name,
+    jobTitle: BUSINESS_INFO.founder.jobTitle
+  },
+  slogan: "Masonry. Restoration. Remedial.",
+  // Entity linking — connects this business to known topical entities
+  // Helps AI/Google associate Romans with these subjects as an authority
+  about: [
+    { "@type": "Thing", name: "Stonemasonry", sameAs: "https://en.wikipedia.org/wiki/Stonemasonry" },
+    { "@type": "Thing", name: "Masonry", sameAs: "https://en.wikipedia.org/wiki/Masonry" },
+    { "@type": "Thing", name: "Heritage conservation", sameAs: "https://en.wikipedia.org/wiki/Historic_preservation" },
+    { "@type": "Thing", name: "Reinforced concrete", sameAs: "https://en.wikipedia.org/wiki/Reinforced_concrete" },
+    { "@type": "Thing", name: "Sandstone", sameAs: "https://en.wikipedia.org/wiki/Sandstone" },
+    { "@type": "Thing", name: "Lime mortar", sameAs: "https://en.wikipedia.org/wiki/Lime_mortar" },
+    { "@type": "Thing", name: "Tuckpointing", sameAs: "https://en.wikipedia.org/wiki/Tuckpointing" },
+    { "@type": "Thing", name: "Underpinning", sameAs: "https://en.wikipedia.org/wiki/Underpinning" },
+    { "@type": "Place", name: "Sydney", sameAs: "https://en.wikipedia.org/wiki/Sydney" }
+  ]
 };
 
-// Service-specific structured data
-export const ServiceSchema = ({ service }: { service: string }) => {
-  const schema = {
+// Organization — parent entity, sits alongside LocalBusiness
+const organizationSchema: SchemaObject = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": ORG_ID,
+  name: BUSINESS_INFO.name,
+  url: BUSINESS_INFO.website,
+  logo: {
+    "@type": "ImageObject",
+    url: BUSINESS_INFO.logo,
+    width: 525,
+    height: 370
+  },
+  sameAs: BUSINESS_INFO.sameAs,
+  foundingDate: BUSINESS_INFO.foundingDate,
+  founder: {
+    "@type": "Person",
+    name: BUSINESS_INFO.founder.name
+  }
+};
+
+// WebSite — enables Google Sitelinks Search Box in future, and is a hub entity
+const websiteSchema: SchemaObject = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  url: BUSINESS_INFO.website,
+  name: BUSINESS_INFO.name,
+  description:
+    "Heritage restoration, masonry, and structural repairs across Sydney by Romans Building Services.",
+  publisher: { "@id": ORG_ID },
+  inLanguage: "en-AU"
+};
+
+export const LocalBusinessSchema = () => (
+  <SchemaScript schema={[localBusinessSchema, organizationSchema, websiteSchema]} />
+);
+
+// ---------- Service (used on every service page via template) ----------
+export const ServiceSchema = ({
+  service,
+  description,
+  url
+}: {
+  service: string;
+  description?: string;
+  url?: string;
+}) => {
+  const schema: SchemaObject = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": service,
-    "provider": {
+    name: service,
+    serviceType: service,
+    ...(description ? { description } : {}),
+    ...(url ? { url } : {}),
+    provider: {
       "@type": "LocalBusiness",
-      "name": BUSINESS_INFO.name,
-      "@id": `${BUSINESS_INFO.website}#business`
+      "@id": BUSINESS_ID,
+      name: BUSINESS_INFO.name,
+      telephone: BUSINESS_INFO.telephone,
+      url: BUSINESS_INFO.website
     },
-    "areaServed": BUSINESS_INFO.areaServed,
-    "hasOfferCatalog": {
+    areaServed: BUSINESS_INFO.areaServed.map((area) => ({
+      "@type": "City",
+      name: area
+    })),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: url || BUSINESS_INFO.website,
+      servicePhone: BUSINESS_INFO.telephone,
+      availableLanguage: "English"
+    },
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": `${service} in Sydney`,
-      "itemListElement": [
+      name: `${service} in Sydney`,
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": service
-          }
+            name: service
+          },
+          priceCurrency: "AUD",
+          availability: "https://schema.org/InStock"
         }
       ]
     }
   };
 
-  return (
-    <script type="application/ld+json">
-      {JSON.stringify(schema)}
-    </script>
-  );
+  return <SchemaScript schema={schema} />;
 };
 
-// FAQ Schema for local SEO
-export const FAQSchema = ({ faqs }: { faqs: Array<{question: string, answer: string}> }) => {
-  const schema = {
+// ---------- FAQ (used anywhere we have Q&A) ----------
+export const FAQSchema = ({
+  faqs
+}: {
+  faqs: Array<{ question: string; answer: string }>;
+}) => {
+  if (!faqs || faqs.length === 0) return null;
+  const schema: SchemaObject = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
+        text: faq.answer
       }
     }))
   };
+  return <SchemaScript schema={schema} />;
+};
 
-  return (
-    <script type="application/ld+json">
-      {JSON.stringify(schema)}
-    </script>
-  );
+// ---------- Place (for area pages — tells Google this page is about a place) ----------
+export const PlaceSchema = ({
+  name,
+  description,
+  url
+}: {
+  name: string;
+  description?: string;
+  url?: string;
+}) => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name,
+    ...(description ? { description } : {}),
+    ...(url ? { url } : {}),
+    containedInPlace: {
+      "@type": "City",
+      name: "Sydney",
+      containedInPlace: {
+        "@type": "State",
+        name: "New South Wales",
+        containedInPlace: {
+          "@type": "Country",
+          name: "Australia"
+        }
+      }
+    }
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- Person (for About page) ----------
+export const PersonSchema = () => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: BUSINESS_INFO.founder.name,
+    jobTitle: BUSINESS_INFO.founder.jobTitle,
+    description: BUSINESS_INFO.founder.description,
+    worksFor: { "@id": BUSINESS_ID },
+    knowsAbout: BUSINESS_INFO.knowsAbout
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- ContactPage (for Contact page) ----------
+export const ContactPageSchema = () => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: `Contact ${BUSINESS_INFO.name}`,
+    description: `Contact Romans Building Services. Call ${BUSINESS_INFO.phoneDisplay} or email ${BUSINESS_INFO.email} for a quote.`,
+    url: `${BUSINESS_INFO.website}/contact`,
+    mainEntity: {
+      "@id": BUSINESS_ID
+    },
+    potentialAction: {
+      "@type": "CommunicateAction",
+      instrument: [
+        { "@type": "EntryPoint", urlTemplate: `tel:${BUSINESS_INFO.telephone}` },
+        { "@type": "EntryPoint", urlTemplate: `mailto:${BUSINESS_INFO.email}` }
+      ]
+    }
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- CollectionPage (for Services/Areas hubs) ----------
+export const CollectionPageSchema = ({
+  name,
+  description,
+  url,
+  items
+}: {
+  name: string;
+  description?: string;
+  url: string;
+  items: Array<{ name: string; url: string; description?: string }>;
+}) => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    ...(description ? { description } : {}),
+    url,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: item.url,
+        name: item.name,
+        ...(item.description ? { description: item.description } : {})
+      }))
+    }
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- ImageGallery (for Gallery page) ----------
+export const ImageGallerySchema = ({
+  url,
+  images
+}: {
+  url: string;
+  images: Array<{ url: string; caption?: string }>;
+}) => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    url,
+    name: `${BUSINESS_INFO.name} — Project Gallery`,
+    description:
+      "Real projects by Romans Building Services. Masonry, heritage restoration, and structural work across Sydney.",
+    image: images.map((img) => ({
+      "@type": "ImageObject",
+      contentUrl: img.url,
+      url: img.url,
+      ...(img.caption ? { caption: img.caption } : {})
+    }))
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- Speakable (for voice search on key pages) ----------
+export const SpeakableSchema = ({
+  url,
+  cssSelectors = ["h1", "h2", "p"]
+}: {
+  url: string;
+  cssSelectors?: string[];
+}) => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors
+    }
+  };
+  return <SchemaScript schema={schema} />;
+};
+
+// ---------- AggregateRating (for when reviews are wired in) ----------
+// Ready-to-use scaffold. Pass ratingValue + reviewCount when testimonials are live.
+// Google requires at least one Review alongside AggregateRating for rich results.
+export const AggregateRatingSchema = ({
+  ratingValue,
+  reviewCount,
+  bestRating = 5,
+  worstRating = 1,
+  reviews
+}: {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+  worstRating?: number;
+  reviews?: Array<{
+    author: string;
+    rating: number;
+    body: string;
+    datePublished: string; // ISO 8601 (YYYY-MM-DD)
+  }>;
+}) => {
+  if (!ratingValue || !reviewCount) return null;
+
+  const aggregateRating: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": BUSINESS_ID,
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.website,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: ratingValue.toFixed(1),
+      reviewCount,
+      bestRating,
+      worstRating
+    },
+    ...(reviews && reviews.length > 0
+      ? {
+          review: reviews.map((r) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: r.author },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: r.rating,
+              bestRating,
+              worstRating
+            },
+            reviewBody: r.body,
+            datePublished: r.datePublished
+          }))
+        }
+      : {})
+  };
+
+  return <SchemaScript schema={aggregateRating} />;
 };

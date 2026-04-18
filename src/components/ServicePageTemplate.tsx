@@ -66,7 +66,11 @@ export const ServicePageTemplate = ({
         canonical={location.pathname}
         ogImage={heroImage}
       />
-      <ServiceSchema service={title} />
+      <ServiceSchema
+        service={title}
+        description={metaDescription}
+        url={`https://romansbuildingservices.com${location.pathname}`}
+      />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
       {breadcrumbs.length > 0 && <BreadcrumbSchema items={breadcrumbs} />}
 

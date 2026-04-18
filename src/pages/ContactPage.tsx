@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
 import { Phone, Mail, Clock, MapPin, Instagram } from 'lucide-react';
+import { ContactPageSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 export default function ContactPage() {
   return (
@@ -10,6 +11,8 @@ export default function ContactPage() {
         description="Call Minas on 0414 922 276 for a quote. Romans Building Services covers Greater Sydney for masonry, heritage, structural and remedial work. Fast response."
         canonical="/contact"
       />
+      <ContactPageSchema />
+      <SpeakableSchema url="https://romansbuildingservices.com/contact" cssSelectors={['h1', 'p', 'a[href^="tel:"]', 'a[href^="mailto:"]']} />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}

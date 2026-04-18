@@ -6,6 +6,8 @@ import { fadeUp, staggerContainer } from '@/utils/animations';
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Common Problems', to: '/problems' },
+  { label: 'Areas', to: '/areas' },
   { label: 'Our Work', to: '/gallery' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

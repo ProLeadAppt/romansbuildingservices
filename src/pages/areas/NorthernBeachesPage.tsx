@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Salt damage repair and prevention',
@@ -18,6 +20,16 @@ const NorthernBeachesPage = () => (
       title="Northern Beaches Masonry and Building Services | Romans Building Services"
       description="Masonry repairs and restoration across Sydney's Northern Beaches. Manly, Dee Why, Avalon and beyond. Coastal expertise for harsh conditions."
       canonical="/areas/northern-beaches"
+    />
+    <PlaceSchema
+      name="Northern Beaches, Sydney"
+      description="Coastal masonry repairs, salt damage remediation and stone restoration across Sydney's Northern Beaches."
+      url="https://romansbuildingservices.com/areas/northern-beaches"
+    />
+    <ServiceSchema
+      service="Masonry and Coastal Restoration — Northern Beaches"
+      description="Salt damage repair, concrete cancer treatment, retaining wall construction and facade maintenance from Manly to Palm Beach."
+      url="https://romansbuildingservices.com/areas/northern-beaches"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const NorthernBeachesPage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/northern-beaches" parentAreaName="Northern Beaches" />
 
         {/* CTA */}
         <motion.div

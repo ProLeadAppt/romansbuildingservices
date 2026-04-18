@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Residential masonry repairs',
@@ -18,6 +20,16 @@ const NorthShorePage = () => (
       title="North Shore Masonry and Building Services | Romans Building Services"
       description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licensed and insured since 1995."
       canonical="/areas/north-shore"
+    />
+    <PlaceSchema
+      name="North Shore, Sydney"
+      description="Residential masonry, heritage homes and federation-era repairs across Sydney's North Shore."
+      url="https://romansbuildingservices.com/areas/north-shore"
+    />
+    <ServiceSchema
+      service="Masonry and Heritage Restoration — North Shore"
+      description="Residential masonry repairs, heritage home restoration, sandstone repointing and structural work across Mosman, Neutral Bay, Cremorne, Chatswood and Lane Cove."
+      url="https://romansbuildingservices.com/areas/north-shore"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const NorthShorePage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/north-shore" parentAreaName="North Shore" />
 
         {/* CTA */}
         <motion.div

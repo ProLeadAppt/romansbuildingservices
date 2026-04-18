@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Sandstone restoration and repointing',
@@ -18,6 +20,16 @@ const SydneyCBDPage = () => (
       title="Sydney CBD Masonry and Building Services | Romans Building Services"
       description="Masonry and heritage restoration in Sydney CBD. Romans Building Services handles stone, brick, and structural work across the inner city. Call Minas."
       canonical="/areas/sydney-cbd"
+    />
+    <PlaceSchema
+      name="Sydney CBD"
+      description="Masonry, sandstone restoration and remedial building services across Sydney CBD."
+      url="https://romansbuildingservices.com/areas/sydney-cbd"
+    />
+    <ServiceSchema
+      service="Masonry and Heritage Restoration — Sydney CBD"
+      description="Sandstone restoration, heritage facade repairs, concrete cancer treatment and structural crack repairs across the Sydney CBD."
+      url="https://romansbuildingservices.com/areas/sydney-cbd"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const SydneyCBDPage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/sydney-cbd" parentAreaName="Sydney CBD" />
 
         {/* CTA */}
         <motion.div

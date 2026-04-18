@@ -1,10 +1,10 @@
 # robots.txt for Romans Building Services
 # https://romansbuildingservices.com/
+# Heritage restoration, masonry, and structural building services across Sydney since 1995.
 
-# Google
+# ---- Search engines ----
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /
@@ -12,15 +12,19 @@ Allow: /
 User-agent: Googlebot-News
 Allow: /
 
-# Bing
 User-agent: Bingbot
 Allow: /
 
-# DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
 
-# AI Crawlers - explicitly welcomed
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---- AI / answer-engine crawlers (welcomed) ----
 User-agent: GPTBot
 Allow: /
 
@@ -48,9 +52,6 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Applebot
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
@@ -69,15 +70,32 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# Default rule
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DiffbotBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# ---- Default ----
 User-agent: *
 Allow: /
 
-# Block admin and utility routes
+# Nothing sensitive to block — static site, no admin, no API surface.
+# Kept as a safety net in case future routes are added.
 Disallow: /admin
 Disallow: /api/
-Disallow: /_next/
 Disallow: /*.json$
 
+# ---- Sitemaps ----
 Sitemap: https://romansbuildingservices.com/sitemap.xml
+Sitemap: https://romansbuildingservices.com/sitemap-main.xml
+Sitemap: https://romansbuildingservices.com/sitemap-services.xml
+Sitemap: https://romansbuildingservices.com/sitemap-areas.xml
+Sitemap: https://romansbuildingservices.com/sitemap-problems.xml
 Sitemap: https://romansbuildingservices.com/sitemap-images.xml

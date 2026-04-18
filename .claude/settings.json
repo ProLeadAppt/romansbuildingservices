@@ -53,7 +53,9 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(node -e \"const fs=require\\('fs'\\);const s=fs.readFileSync\\('public/sitemap.xml','utf8'\\);const locs=\\(s.match\\(/<loc>/g\\)||[]\\).length;const closes=\\(s.match\\(/<\\\\/loc>/g\\)||[]\\).length;const urls=\\(s.match\\(/<url>/g\\)||[]\\).length;const urlcloses=\\(s.match\\(/<\\\\/url>/g\\)||[]\\).length;console.log\\('loc pairs:',locs,'/',closes\\);console.log\\('url pairs:',urls,'/',urlcloses\\);console.log\\('has xml decl:',s.startsWith\\('<?xml'\\)\\);console.log\\('has urlset close:',s.includes\\('</urlset>'\\)\\);console.log\\('www refs:',\\(s.match\\(/www\\\\\\\\./g\\)||[]\\).length\\);console.log\\('apex refs:',\\(s.match\\(/https:\\\\\\\\/\\\\\\\\/romansbuildingservices/g\\)||[]\\).length\\);\")"
+      "Bash(node -e \"const fs=require\\('fs'\\);const s=fs.readFileSync\\('public/sitemap.xml','utf8'\\);const locs=\\(s.match\\(/<loc>/g\\)||[]\\).length;const closes=\\(s.match\\(/<\\\\/loc>/g\\)||[]\\).length;const urls=\\(s.match\\(/<url>/g\\)||[]\\).length;const urlcloses=\\(s.match\\(/<\\\\/url>/g\\)||[]\\).length;console.log\\('loc pairs:',locs,'/',closes\\);console.log\\('url pairs:',urls,'/',urlcloses\\);console.log\\('has xml decl:',s.startsWith\\('<?xml'\\)\\);console.log\\('has urlset close:',s.includes\\('</urlset>'\\)\\);console.log\\('www refs:',\\(s.match\\(/www\\\\\\\\./g\\)||[]\\).length\\);console.log\\('apex refs:',\\(s.match\\(/https:\\\\\\\\/\\\\\\\\/romansbuildingservices/g\\)||[]\\).length\\);\")",
+      "Bash(node -e \"const s=require\\('sharp'\\); ['12ca1977-0622-414c-a4b7-fa428cde1018','03e057ec-f76b-425e-99fd-289e0c734fa3','ef614a43-ee83-488e-b50e-313f60198a45','fca9df0e-1672-43ed-a1a0-4d254b541a48'].forEach\\(n=>s\\('public/lovable-uploads/'+n+'.png'\\).metadata\\(\\).then\\(m=>console.log\\(n, m.width+'x'+m.height, m.format, m.hasAlpha?'alpha':'opaque'\\)\\)\\);\")",
+      "Read(//d/tmp/**)"
     ]
   }
 }

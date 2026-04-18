@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
+import { PersonSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 const values = [
   {
@@ -33,6 +34,8 @@ export default function AboutPage() {
         canonical="/about"
         ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       />
+      <PersonSchema />
+      <SpeakableSchema url="https://romansbuildingservices.com/about" cssSelectors={['h1', 'h2', 'p']} />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}
@@ -46,6 +49,63 @@ export default function AboutPage() {
             >
               About Romans Building Services
             </motion.h1>
+          </div>
+        </section>
+
+        {/* At a glance — AEO-friendly quotable facts block */}
+        <section className="bg-bg-light py-12 border-b border-border">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-body text-xs font-semibold text-text-muted uppercase tracking-widest mb-6 text-center">
+                Romans Building Services — at a glance
+              </h2>
+              <dl className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
+                    Founded
+                  </dt>
+                  <dd className="font-heading text-2xl text-navy">1995</dd>
+                  <p className="font-body text-xs text-text-muted mt-1">
+                    30+ years trading
+                  </p>
+                </div>
+                <div className="text-center">
+                  <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
+                    Owner
+                  </dt>
+                  <dd className="font-heading text-base text-navy leading-tight">
+                    Minas Romanakis
+                  </dd>
+                  <p className="font-body text-xs text-text-muted mt-1">
+                    Master stonemason, on every job
+                  </p>
+                </div>
+                <div className="text-center">
+                  <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
+                    Based in
+                  </dt>
+                  <dd className="font-heading text-base text-navy leading-tight">Strathfield</dd>
+                  <p className="font-body text-xs text-text-muted mt-1">
+                    Servicing all of Sydney
+                  </p>
+                </div>
+                <div className="text-center">
+                  <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
+                    Specialty
+                  </dt>
+                  <dd className="font-heading text-base text-navy leading-tight">
+                    Heritage &amp; Masonry
+                  </dd>
+                  <p className="font-body text-xs text-text-muted mt-1">
+                    Lime mortar, sandstone, concrete
+                  </p>
+                </div>
+              </dl>
+            </motion.div>
           </div>
         </section>
 

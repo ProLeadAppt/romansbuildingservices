@@ -130,6 +130,14 @@ export const ModernNavigation = () => {
                             {service.label}
                           </Link>
                         ))}
+                        <div className="border-t border-gray-100 mt-1 pt-1">
+                          <Link
+                            to="/problems"
+                            className="block px-4 py-2.5 text-sm font-body text-navy font-semibold hover:bg-navy/5 transition-colors"
+                          >
+                            Common Problems →
+                          </Link>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>

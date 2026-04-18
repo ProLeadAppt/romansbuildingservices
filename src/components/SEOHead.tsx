@@ -10,7 +10,7 @@ interface SEOHeadProps {
 }
 
 const SITE_URL = 'https://romansbuildingservices.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 const toAbsolute = (url: string) => {
   if (!url) return url;
@@ -35,13 +35,17 @@ export const SEOHead = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en-AU" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      <html lang="en-AU" />
       {noIndex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
 
       <meta property="og:title" content={title} />
+      <meta property="og:locale" content="en_AU" />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />

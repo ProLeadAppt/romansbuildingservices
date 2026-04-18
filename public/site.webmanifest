@@ -1,0 +1,21 @@
+{
+  "name": "Romans Building Services",
+  "short_name": "Romans",
+  "description": "Heritage restoration, masonry and structural repairs across Sydney since 1995.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A2E76",
+  "theme_color": "#0A2E76",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

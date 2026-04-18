@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Terrace house brick restoration',
@@ -18,6 +20,16 @@ const InnerWestPage = () => (
       title="Inner West Masonry and Building Services | Romans Building Services"
       description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Newtown, Balmain, and Strathfield."
       canonical="/areas/inner-west"
+    />
+    <PlaceSchema
+      name="Inner West, Sydney"
+      description="Terrace house brick restoration and heritage streetscape repairs across Sydney's Inner West."
+      url="https://romansbuildingservices.com/areas/inner-west"
+    />
+    <ServiceSchema
+      service="Masonry and Heritage Restoration — Inner West"
+      description="Terrace house brick restoration, tuckpointing, heritage repointing and retaining wall repairs across Newtown, Marrickville, Leichhardt, Balmain and Strathfield."
+      url="https://romansbuildingservices.com/areas/inner-west"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const InnerWestPage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/inner-west" parentAreaName="Inner West" />
 
         {/* CTA */}
         <motion.div

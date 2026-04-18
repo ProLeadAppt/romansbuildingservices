@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Commercial and residential masonry',
@@ -18,6 +20,16 @@ const GreaterSydneyPage = () => (
       title="Greater Sydney Masonry and Building Services | Romans Building Services"
       description="Masonry and building services across Greater Sydney. From the CBD to Parramatta and the Hills District. Romans Building Services handles it all."
       canonical="/areas/greater-sydney"
+    />
+    <PlaceSchema
+      name="Greater Sydney"
+      description="Masonry, building restoration and remedial services across Greater Sydney."
+      url="https://romansbuildingservices.com/areas/greater-sydney"
+    />
+    <ServiceSchema
+      service="Masonry and Building Services — Greater Sydney"
+      description="Commercial and residential masonry, concrete cancer repairs, structural crack stitching and retaining wall construction across Parramatta, Liverpool, Penrith, Blacktown and the Hills District."
+      url="https://romansbuildingservices.com/areas/greater-sydney"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const GreaterSydneyPage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/greater-sydney" parentAreaName="Greater Sydney" />
 
         {/* CTA */}
         <motion.div

@@ -2,6 +2,8 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
+import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 
 const services = [
   'Sandstone terrace restoration',
@@ -18,6 +20,16 @@ const EasternSuburbsPage = () => (
       title="Eastern Suburbs Masonry and Building Services | Romans Building Services"
       description="Masonry specialists for Sydney's Eastern Suburbs. Heritage restoration in Paddington, Woollahra, Bondi and Double Bay. 30 years on the tools."
       canonical="/areas/eastern-suburbs"
+    />
+    <PlaceSchema
+      name="Eastern Suburbs, Sydney"
+      description="Period homes, sandstone terraces and retaining walls across Sydney's Eastern Suburbs."
+      url="https://romansbuildingservices.com/areas/eastern-suburbs"
+    />
+    <ServiceSchema
+      service="Masonry and Heritage Restoration — Eastern Suburbs"
+      description="Sandstone terrace restoration, period home brick repairs, retaining walls and heritage repointing across Paddington, Woollahra, Bondi, Double Bay and Rose Bay."
+      url="https://romansbuildingservices.com/areas/eastern-suburbs"
     />
 
     {/* Hero */}
@@ -79,6 +91,8 @@ const EasternSuburbsPage = () => (
             ))}
           </ul>
         </motion.div>
+
+        <AreaSuburbsLinks parentAreaHref="/areas/eastern-suburbs" parentAreaName="Eastern Suburbs" />
 
         {/* CTA */}
         <motion.div

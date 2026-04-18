@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import { galleryImages } from '@/data/galleryImages';
 import galleryVideo from '@/assets/videos/romansstone_1704887055_3277152517439331908_2394650725.mp4';
+import { ImageGallerySchema } from '@/components/LocalSEO/StructuredData';
+
+const SITE_URL = 'https://romansbuildingservices.com';
+const schemaImages = galleryImages
+  .filter((img) => img.featured)
+  .slice(0, 20)
+  .map((img) => ({
+    url: img.full.startsWith('http') ? img.full : `${SITE_URL}${img.full}`,
+    caption: img.alt,
+  }));
 
 const GalleryPage = () => {
   return (
@@ -13,6 +23,7 @@ const GalleryPage = () => {
         canonical="/gallery"
         ogImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       />
+      <ImageGallerySchema url={`${SITE_URL}/gallery`} images={schemaImages} />
 
       {/* Page header with video background */}
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">

@@ -82,6 +82,13 @@ const NorthernBeachesPage = lazy(() => import('./pages/areas/NorthernBeachesPage
 const InnerWestPage = lazy(() => import('./pages/areas/InnerWestPage'))
 const GreaterSydneyPage = lazy(() => import('./pages/areas/GreaterSydneyPage'))
 
+// Suburb pages (dynamic — rendered from data/suburbs.ts)
+const SuburbPage = lazy(() => import('./pages/areas/suburbs/SuburbPage'))
+
+// Problem pages (dynamic — rendered from data/problems.ts)
+const ProblemsHubPage = lazy(() => import('./pages/problems/ProblemsHubPage'))
+const ProblemPage = lazy(() => import('./pages/problems/ProblemPage'))
+
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="w-8 h-8 border-2 border-navy border-t-amber rounded-full animate-spin" />
@@ -175,6 +182,13 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/areas/northern-beaches" element={<L><NorthernBeachesPage /></L>} />
           <Route path="/areas/inner-west" element={<L><InnerWestPage /></L>} />
           <Route path="/areas/greater-sydney" element={<L><GreaterSydneyPage /></L>} />
+
+          {/* Suburb pages (dynamic) */}
+          <Route path="/suburbs/:suburb" element={<L><SuburbPage /></L>} />
+
+          {/* Problem pages (dynamic) */}
+          <Route path="/problems" element={<L><ProblemsHubPage /></L>} />
+          <Route path="/problems/:problem" element={<L><ProblemPage /></L>} />
 
           {/* 404 */}
           <Route path="*" element={<L><NotFound /></L>} />

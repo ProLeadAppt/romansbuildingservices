@@ -6,7 +6,7 @@ import { ProjectGallerySection } from '@/components/ProjectGallerySection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { SectionDivider } from '@/components/SectionDivider';
 import { ProcessStrip } from '@/components/ProcessStrip';
-import { LocalBusinessSchema } from '@/components/LocalSEO/StructuredData';
+import { LocalBusinessSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 const SinglePageApp = () => {
   return (
@@ -15,9 +15,10 @@ const SinglePageApp = () => {
         title="Romans Building Services | Heritage Restoration & Masonry | Sydney"
         description="Heritage restoration and masonry by Minas Romanakis. 30 years of stonework, brick repairs, and structural building services across Sydney."
         canonical="/"
-        ogImage="/lovable-uploads/12ca1977-0622-414c-a4b7-fa428cde1018.webp"
+        ogImage="/og-image.png"
       />
       <LocalBusinessSchema />
+      <SpeakableSchema url="https://romansbuildingservices.com/" cssSelectors={['h1', 'h2']} />
 
       {/* Hero — full-bleed, cinematic, credential strip included */}
       <RomansPremiumHeroSection />

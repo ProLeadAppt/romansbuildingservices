@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
+import { CollectionPageSchema } from '@/components/LocalSEO/StructuredData';
+import { ProblemsLinksSection } from '@/components/ProblemsLinksSection';
 import {
   Hammer,
   Landmark,
@@ -66,6 +68,16 @@ export default function ServicesPage() {
         description="Stone, brick, heritage restoration, structural repairs, concrete and remedial building services across Sydney. Licensed masons with 30 years on the tools."
         canonical="/services"
       />
+      <CollectionPageSchema
+        name="Our Services"
+        description="All masonry, heritage, structural, concrete, foundation and remedial building services offered by Romans Building Services across Sydney."
+        url="https://romansbuildingservices.com/services"
+        items={services.map((s) => ({
+          name: s.title,
+          url: `https://romansbuildingservices.com/services/${s.slug}`,
+          description: s.description,
+        }))}
+      />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}
@@ -121,6 +133,12 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        <ProblemsLinksSection
+          heading="Got a problem? Here's what it might be."
+          intro="Plain-English diagnosis of the most common masonry, concrete and structural issues we see across Sydney. Pick what matches what you are seeing."
+          background="off-white"
+        />
 
         {/* CTA Section */}
         <section className="bg-bg-light py-16">

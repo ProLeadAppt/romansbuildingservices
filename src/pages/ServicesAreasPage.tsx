@@ -2,6 +2,7 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { CollectionPageSchema } from '@/components/LocalSEO/StructuredData';
 
 const areas = [
   {
@@ -42,6 +43,16 @@ const ServicesAreasPage = () => (
       title="Areas We Service | Romans Building Services"
       description="Sydney-wide coverage. Romans Building Services works across Sydney CBD, Eastern Suburbs, North Shore, Northern Beaches, Inner West and Greater Sydney."
       canonical="/areas"
+    />
+    <CollectionPageSchema
+      name="Areas We Service"
+      description="Romans Building Services covers all of Sydney. Pick an area to see the masonry, heritage and remedial work we do there."
+      url="https://romansbuildingservices.com/areas"
+      items={areas.map((a) => ({
+        name: a.name,
+        url: `https://romansbuildingservices.com${a.href}`,
+        description: a.description,
+      }))}
     />
 
     {/* Hero */}
