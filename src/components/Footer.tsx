@@ -7,6 +7,7 @@ const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
   { label: 'Common Problems', to: '/problems' },
+  { label: 'Heritage Eras', to: '/heritage' },
   { label: 'Areas', to: '/areas' },
   { label: 'Our Work', to: '/gallery' },
   { label: 'About', to: '/about' },

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
+import { AreaProblemLinks } from '@/components/AreaProblemLinks';
 
 const services = [
   'Commercial and residential masonry',
@@ -110,6 +111,8 @@ const GreaterSydneyPage = () => (
         </motion.div>
       </div>
     </section>
+
+    <AreaProblemLinks areaSlug="greater-sydney" />
   </>
 );
 

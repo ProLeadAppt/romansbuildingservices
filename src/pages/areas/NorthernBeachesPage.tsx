@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
+import { AreaProblemLinks } from '@/components/AreaProblemLinks';
 
 const services = [
   'Salt damage repair and prevention',
@@ -110,6 +111,8 @@ const NorthernBeachesPage = () => (
         </motion.div>
       </div>
     </section>
+
+    <AreaProblemLinks areaSlug="northern-beaches" />
   </>
 );
 

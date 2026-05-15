@@ -88,6 +88,11 @@ const SuburbPage = lazy(() => import('./pages/areas/suburbs/SuburbPage'))
 // Problem pages (dynamic — rendered from data/problems.ts)
 const ProblemsHubPage = lazy(() => import('./pages/problems/ProblemsHubPage'))
 const ProblemPage = lazy(() => import('./pages/problems/ProblemPage'))
+const ProblemAreaPage = lazy(() => import('./pages/problems/ProblemAreaPage'))
+
+// Heritage era pages (dynamic — rendered from data/heritage.ts)
+const HeritageHubPage = lazy(() => import('./pages/heritage/HeritageHubPage'))
+const HeritageEraPage = lazy(() => import('./pages/heritage/HeritageEraPage'))
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -189,6 +194,11 @@ createRoot(document.getElementById('root')!).render(
           {/* Problem pages (dynamic) */}
           <Route path="/problems" element={<L><ProblemsHubPage /></L>} />
           <Route path="/problems/:problem" element={<L><ProblemPage /></L>} />
+          <Route path="/problems/:problem/:area" element={<L><ProblemAreaPage /></L>} />
+
+          {/* Heritage era pages (dynamic) */}
+          <Route path="/heritage" element={<L><HeritageHubPage /></L>} />
+          <Route path="/heritage/:era" element={<L><HeritageEraPage /></L>} />
 
           {/* 404 */}
           <Route path="*" element={<L><NotFound /></L>} />
