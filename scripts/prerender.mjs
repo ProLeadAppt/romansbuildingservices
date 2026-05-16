@@ -128,8 +128,30 @@ async function prerenderRoute(browser, route, port) {
   } catch {
     // Best-effort: capture whatever rendered.
   }
-  // Brief settle for helmet to flush meta tags.
-  await new Promise((r) => setTimeout(r, 200));
+  // Settle long enough for Framer Motion enter animations to complete.
+  await new Promise((r) => setTimeout(r, 800));
+
+  // Force Framer Motion's initial inline styles to their final visible state
+  // before capture. Without this, crawlers see h1/h2/h3 etc with opacity:0
+  // and report "missing H1" warnings (Bing in particular). Real visitors are
+  // unaffected — the React app re-mounts on hydration and animations replay.
+  await page.evaluate(() => {
+    document.querySelectorAll('[style]').forEach((el) => {
+      const style = el.getAttribute('style') || '';
+      if (
+        style.includes('opacity: 0') ||
+        style.includes('opacity:0') ||
+        style.includes('translateY') ||
+        style.includes('translateX') ||
+        style.includes('blur(') ||
+        style.includes('scale(')
+      ) {
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.style.filter = '';
+      }
+    });
+  });
 
   let html = await page.content();
   if (!html.startsWith('<!DOCTYPE')) {
