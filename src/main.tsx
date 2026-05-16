@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from '@/components/ui/sonner'
 import { lazy, Suspense } from 'react'
 import { Layout } from '@/components/Layout'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import SinglePageApp from './pages/SinglePageApp'
 import './index.css'
 
@@ -105,6 +106,7 @@ const L = ({ children }: { children: React.ReactNode }) => <Layout>{children}</L
 createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <BrowserRouter>
+      <ScrollToTop />
       <Toaster position="bottom-right" />
       <Suspense fallback={<PageLoader />}>
         <Routes>
