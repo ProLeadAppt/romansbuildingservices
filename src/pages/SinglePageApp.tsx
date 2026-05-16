@@ -6,6 +6,8 @@ import { ProjectGallerySection } from '@/components/ProjectGallerySection';
 import { ModernContactSection } from '@/components/ModernContactSection';
 import { SectionDivider } from '@/components/SectionDivider';
 import { ProcessStrip } from '@/components/ProcessStrip';
+import { HowWeWorkSection } from '@/components/HowWeWorkSection';
+import { HomeFAQSection } from '@/components/HomeFAQSection';
 import { LocalBusinessSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 const SinglePageApp = () => {
@@ -40,6 +42,12 @@ const SinglePageApp = () => {
 
       {/* Process strip — tight, navy, breaks the rhythm */}
       <ProcessStrip />
+
+      {/* How we work — detailed steps with prose */}
+      <HowWeWorkSection />
+
+      {/* Common questions — homepage FAQ with schema */}
+      <HomeFAQSection />
 
       {/* Contact — phone-first, trust-building */}
       <ModernContactSection />

@@ -10,6 +10,7 @@ export default function ContactPage() {
         title="Contact Us | Call 0414 922 276 for a Quote"
         description="Call Minas on 0414 922 276 for a quote. Romans Building Services covers Greater Sydney for masonry, heritage, structural and remedial work. Fast response."
         canonical="/contact"
+        noIndex={true}
       />
       <ContactPageSchema />
       <SpeakableSchema url="https://romansbuildingservices.com/contact" cssSelectors={['h1', 'p', 'a[href^="tel:"]', 'a[href^="mailto:"]']} />
