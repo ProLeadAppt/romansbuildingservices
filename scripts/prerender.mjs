@@ -62,8 +62,18 @@ function loadRoutes() {
 
 function serveFile(res, filePath) {
   const ext = path.extname(filePath).toLowerCase();
-  res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
-  fs.createReadStream(filePath).pipe(res);
+  const stream = fs.createReadStream(filePath);
+  stream.on('error', (err) => {
+    console.error(`[server] failed to read ${filePath}: ${err.code}`);
+    if (!res.headersSent) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('not found');
+    }
+  });
+  stream.on('open', () => {
+    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+    stream.pipe(res);
+  });
 }
 
 function startServer() {

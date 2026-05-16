@@ -16,15 +16,6 @@ export interface GalleryImage {
 }
 
 export const galleryImages: GalleryImage[] = [
-  // === Timestamp 1451641808 — Stonemason chiselling sandstone ===
-  {
-    id: 'romansstone_1451641808_1152777498045144003_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1451641808_1152777498045144003_2394650725.webp',
-    full: '/gallery/full/romansstone_1451641808_1152777498045144003_2394650725.webp',
-    alt: 'Stonemason hand-chiselling sandstone block on heritage site',
-    category: 'on-the-tools',
-    featured: false,
-  },
   {
     id: 'romansstone_1451642255_1152781246863726646_2394650725',
     thumb: '/gallery/thumbs/romansstone_1451642255_1152781246863726646_2394650725.webp',
