@@ -1,9 +1,16 @@
 [build]
-  command = "npm run build"
+  # `npx puppeteer browsers install chrome` is required because Netlify caches
+  # node_modules between builds, so puppeteer's postinstall (which downloads
+  # Chrome) doesn't re-run on cached installs. Running it explicitly is fast
+  # (~2s) when Chrome is already cached, and idempotent otherwise.
+  command = "npx puppeteer browsers install chrome && npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  # Vite 7 + react-router 7 require Node >= 20.19; bump to 22 LTS to match.
+  NODE_VERSION = "22"
+  # Cache Chrome between builds in Netlify's persistent cache dir.
+  PUPPETEER_CACHE_DIR = "/opt/build/cache/puppeteer"
 
 # Redirect old /projects path to /gallery
 [[redirects]]
