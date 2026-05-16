@@ -444,16 +444,6 @@ export const galleryImages: GalleryImage[] = [
     featured: false,
   },
 
-  // === Timestamp 1569630590 — Ancient ruins ===
-  {
-    id: 'romansstone_1569630590_2142539144143077209_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1569630590_2142539144143077209_2394650725.webp',
-    full: '/gallery/full/romansstone_1569630590_2142539144143077209_2394650725.webp',
-    alt: 'Ancient stone ruins showcasing historical masonry craft',
-    category: 'heritage',
-    featured: false,
-  },
-
   // === Timestamp 1569789894 — Waterfront sandstone and waterproofing ===
   {
     id: 'romansstone_1569789894_2143875479596473212_2394650725',
@@ -721,16 +711,6 @@ export const galleryImages: GalleryImage[] = [
     full: '/gallery/full/romansstone_1571366258_2157098980214302698_2394650725.webp',
     alt: 'Completed sandstone seawall section at harbour foreshore',
     category: 'stonework',
-    featured: false,
-  },
-
-  // === Timestamp 1571434550 — Ancient stonework inspiration ===
-  {
-    id: 'romansstone_1571434550_2157671857305151758_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1571434550_2157671857305151758_2394650725.webp',
-    full: '/gallery/full/romansstone_1571434550_2157671857305151758_2394650725.webp',
-    alt: 'Ancient precision-fitted stone wall showcasing masonry heritage',
-    category: 'heritage',
     featured: false,
   },
 
@@ -2551,106 +2531,6 @@ export const galleryImages: GalleryImage[] = [
     full: '/gallery/full/romansstone_1700556302_3240823616450756136_2394650725.webp',
     alt: 'Completed structural retaining wall with drainage system',
     category: 'structural',
-    featured: false,
-  },
-
-  // === Timestamp 1716529176 — Travel inspiration ===
-  {
-    id: 'romansstone_1716529176_3374813773105289437_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716529176_3374813773105289437_2394650725.webp',
-    full: '/gallery/full/romansstone_1716529176_3374813773105289437_2394650725.webp',
-    alt: 'Well-worn travel maps from masonry study tours abroad',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716529176_3374813773608530851_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716529176_3374813773608530851_2394650725.webp',
-    full: '/gallery/full/romansstone_1716529176_3374813773608530851_2394650725.webp',
-    alt: 'Ancient Greek temple ruins showcasing classical masonry',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716529176_3374813773608582459_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716529176_3374813773608582459_2394650725.webp',
-    full: '/gallery/full/romansstone_1716529176_3374813773608582459_2394650725.webp',
-    alt: 'Historic Mediterranean stonework architecture inspiration',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716529176_3374813774439024467_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716529176_3374813774439024467_2394650725.webp',
-    full: '/gallery/full/romansstone_1716529176_3374813774439024467_2394650725.webp',
-    alt: 'Classical stone architecture from European masonry tour',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716529176_3374813775705785516_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716529176_3374813775705785516_2394650725.webp',
-    full: '/gallery/full/romansstone_1716529176_3374813775705785516_2394650725.webp',
-    alt: 'Ancient ruins collage showcasing world masonry heritage',
-    category: 'heritage',
-    featured: false,
-  },
-
-  // === Timestamp 1716879803 — Mediterranean travel ===
-  {
-    id: 'romansstone_1716879803_3377755054777515898_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755054777515898_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755054777515898_2394650725.webp',
-    alt: 'Mediterranean landscape with ancient stone structures',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755054827756963_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755054827756963_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755054827756963_2394650725.webp',
-    alt: 'Ancient Mediterranean stone architecture and landscape',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755055599526582_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755055599526582_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755055599526582_2394650725.webp',
-    alt: 'Historic stone buildings from European masonry tradition',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755055616178053_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755055616178053_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755055616178053_2394650725.webp',
-    alt: 'Ancient olive tree in Mediterranean stone landscape',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755055742024468_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755055742024468_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755055742024468_2394650725.webp',
-    alt: 'Classical heritage stonework from European masonry tour',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755055800838726_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755055800838726_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755055800838726_2394650725.webp',
-    alt: 'Traditional stone construction from Mediterranean region',
-    category: 'heritage',
-    featured: false,
-  },
-  {
-    id: 'romansstone_1716879803_3377755055893190359_2394650725',
-    thumb: '/gallery/thumbs/romansstone_1716879803_3377755055893190359_2394650725.webp',
-    full: '/gallery/full/romansstone_1716879803_3377755055893190359_2394650725.webp',
-    alt: 'Ancient stone masonry heritage from overseas study trip',
-    category: 'heritage',
     featured: false,
   },
 
