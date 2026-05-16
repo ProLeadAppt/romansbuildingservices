@@ -11,6 +11,7 @@ import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 import { QuoteCTAButton } from '@/components/quote';
 import { AreaProblemLinks } from '@/components/AreaProblemLinks';
+import { SuburbGallery } from '@/components/SuburbGallery';
 
 const SUBURB_SERVICE_LINKS = [
   { label: 'Stone & Masonry', href: '/services/masonry', sublabel: 'Brick, stone, retaining walls' },
@@ -178,6 +179,13 @@ export const SuburbPageTemplate = ({
           </motion.div>
         </div>
       </section>
+
+      {/* Recent work — photos from real projects similar to this suburb */}
+      <SuburbGallery
+        suburbSlug={slug}
+        suburbName={name}
+        areaSlug={parentAreaHref.replace('/areas/', '')}
+      />
 
       {/* Services list */}
       <section className="py-16 bg-white">
