@@ -161,6 +161,11 @@ export const getArea = (slug: string): AreaProfile | undefined => AREAS[slug];
 
 export const getAllAreas = (): AreaProfile[] => Object.values(AREAS);
 
+// Reverse lookup: which areas have a hand-written page for this problem?
+// Used by the problem-hub page to link down to its area-specific variants.
+export const getAreasForProblem = (problemSlug: string): AreaProfile[] =>
+  getAllAreas().filter((a) => a.topProblems.includes(problemSlug) && !!a.problemNotes[problemSlug]);
+
 // All (problem, area) combinations that should be prerendered.
 // We only ship the top 5 problems per area to keep every page meaningfully
 // unique — the other 9 problems per area aren't worth the thin-content risk.

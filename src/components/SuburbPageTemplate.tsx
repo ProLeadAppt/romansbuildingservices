@@ -10,6 +10,7 @@ import {
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 import { QuoteCTAButton } from '@/components/quote';
+import { AreaProblemLinks } from '@/components/AreaProblemLinks';
 
 const SUBURB_SERVICE_LINKS = [
   { label: 'Stone & Masonry', href: '/services/masonry', sublabel: 'Brick, stone, retaining walls' },
@@ -240,6 +241,10 @@ export const SuburbPageTemplate = ({
           </div>
         </section>
       )}
+
+      {/* Problem × area pages for this suburb's parent area — cross-link
+          to the structural/masonry issues common in this region */}
+      <AreaProblemLinks areaSlug={parentAreaHref.replace('/areas/', '')} />
 
       {/* Nearby suburbs */}
       {nearbySuburbs.length > 0 && (

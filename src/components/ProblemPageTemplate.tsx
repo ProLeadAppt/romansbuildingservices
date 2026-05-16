@@ -13,6 +13,7 @@ import {
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+import { getAreasForProblem } from '@/data/areas';
 import { QuoteCTAButton } from '@/components/quote';
 import { PROBLEM_TO_SUBURBS } from '@/data/serviceProblemMap';
 import { getSuburb } from '@/data/suburbs';
@@ -210,6 +211,11 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
       return sub ? { label: sub.name, href: `/suburbs/${s}`, sublabel: sub.parentAreaName } : null;
     })
     .filter((x): x is { label: string; href: string; sublabel: string } => x !== null);
+
+  // Areas where this problem has its own dedicated page — drives crawlers
+  // down to the area-specific variants and helps users navigate to their
+  // region's version of this page.
+  const areaVariants = getAreasForProblem(slug);
 
   return (
     <>
@@ -496,6 +502,35 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
                   className="font-body text-sm text-navy bg-white px-4 py-2 rounded-md shadow-premium hover:shadow-premium-lg transition-shadow"
                 >
                   {s.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Area-specific guides — link down to the problem×area pages */}
+      {areaVariants.length > 0 && (
+        <section className="py-14 bg-bg-light">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-3 text-center">
+              {name} in your area
+            </h2>
+            <p className="font-body text-text-secondary text-center max-w-2xl mx-auto mb-8 leading-relaxed">
+              The causes and right fix for {name.toLowerCase()} vary with local housing stock and exposure. Read the version closest to where you are:
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {areaVariants.map((a) => (
+                <Link
+                  key={a.slug}
+                  to={`/problems/${slug}/${a.slug}`}
+                  className="group flex items-center justify-between gap-3 px-4 py-3 rounded-md bg-white border border-stone-200 hover:border-amber transition-colors"
+                >
+                  <span className="font-body text-navy">
+                    <span className="text-text-muted text-sm">{name} in</span>
+                    <span className="block font-heading">{a.name}</span>
+                  </span>
+                  <MapPin className="w-4 h-4 text-text-muted group-hover:text-amber transition-colors flex-shrink-0" />
                 </Link>
               ))}
             </div>
