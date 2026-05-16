@@ -69,6 +69,9 @@ const FoundationStonePage = lazy(() => import('./pages/services/foundation-repai
 const PierBeamPage = lazy(() => import('./pages/services/foundation-repairs/PierBeamPage'))
 const SettlementStabilisationPage = lazy(() => import('./pages/services/foundation-repairs/SettlementStabilisationPage'))
 
+// Service × Area combos (dynamic — rendered from data/serviceAreas.ts)
+const ServiceAreaPage = lazy(() => import('./pages/services/ServiceAreaPage'))
+
 // Remedial building sub-services
 const StrataRepairsPage = lazy(() => import('./pages/services/remedial-building/StrataRepairsPage'))
 const StructuralDefectPage = lazy(() => import('./pages/services/remedial-building/StructuralDefectPage'))
@@ -184,6 +187,9 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/services/remedial-building/compliance-upgrades" element={<L><ComplianceUpgradesPage /></L>} />
           <Route path="/services/remedial-building/emergency-repairs" element={<L><EmergencyRepairsPage /></L>} />
           <Route path="/services/remedial-building/emergency-structural" element={<L><EmergencyStructuralSupportPage /></L>} />
+
+          {/* Service × Area combo pages (dynamic — only hand-written combos render) */}
+          <Route path="/services/:service/:area" element={<L><ServiceAreaPage /></L>} />
 
           {/* Area pages */}
           <Route path="/areas/sydney-cbd" element={<L><SydneyCBDPage /></L>} />

@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 import { AreaProblemLinks } from '@/components/AreaProblemLinks';
+import { AreaServiceLinks } from '@/components/AreaServiceLinks';
 import { QuoteCTAButton } from '@/components/quote';
 
 const services = [
@@ -112,6 +113,7 @@ const SydneyCBDPage = () => (
     </section>
 
     <AreaProblemLinks areaSlug="sydney-cbd" />
+    <AreaServiceLinks areaSlug="sydney-cbd" />
   </>
 );
 

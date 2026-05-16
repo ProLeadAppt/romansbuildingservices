@@ -99,5 +99,6 @@ Sitemap: https://romansbuildingservices.com/sitemap-services.xml
 Sitemap: https://romansbuildingservices.com/sitemap-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-problems.xml
 Sitemap: https://romansbuildingservices.com/sitemap-problem-areas.xml
+Sitemap: https://romansbuildingservices.com/sitemap-service-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-heritage.xml
 Sitemap: https://romansbuildingservices.com/sitemap-images.xml
