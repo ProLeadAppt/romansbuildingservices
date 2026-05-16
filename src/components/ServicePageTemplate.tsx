@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, ArrowRight, ChevronRight, AlertCircle, MapPin } from 'lucide-react';
+import { Phone, ArrowRight, ChevronRight, AlertCircle, MapPin, CheckCircle2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { ServiceSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
@@ -33,6 +33,16 @@ interface BreadcrumbItem {
   href: string;
 }
 
+interface MaterialItem {
+  title: string;
+  detail: string;
+}
+
+interface ProcessStep {
+  step: string;
+  detail: string;
+}
+
 interface ServicePageProps {
   title: string;
   metaTitle: string;
@@ -46,7 +56,38 @@ interface ServicePageProps {
   parentService?: ServiceLink;
   childServices?: ServiceLink[];
   siblingServices?: ServiceLink[];
+  whatWeUse?: MaterialItem[];
+  processSteps?: ProcessStep[];
 }
+
+const HowToSchema = ({
+  title,
+  description,
+  steps,
+}: {
+  title: string;
+  description: string;
+  steps: ProcessStep[];
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How we do ${title.toLowerCase()}`,
+    description,
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.step,
+      text: s.detail,
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
 
 export const ServicePageTemplate = ({
   title,
@@ -61,6 +102,8 @@ export const ServicePageTemplate = ({
   parentService,
   childServices = [],
   siblingServices = [],
+  whatWeUse = [],
+  processSteps = [],
 }: ServicePageProps) => {
   const location = useLocation();
 
@@ -95,6 +138,9 @@ export const ServicePageTemplate = ({
       />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
       {breadcrumbs.length > 0 && <BreadcrumbSchema items={breadcrumbs} />}
+      {processSteps.length > 0 && (
+        <HowToSchema title={title} description={metaDescription} steps={processSteps} />
+      )}
 
       {/* Breadcrumb bar */}
       {breadcrumbs.length > 0 && (
@@ -238,6 +284,75 @@ export const ServicePageTemplate = ({
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* What we use */}
+      {whatWeUse.length > 0 && (
+        <section className="py-16 md:py-20 bg-white px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-heading text-3xl text-text-primary text-center mb-3">
+              What we use
+            </h2>
+            <p className="font-body text-text-muted text-center mb-12 max-w-2xl mx-auto">
+              The materials and methods Minas picks for {title.toLowerCase()}. Different from one
+              job to the next, but the principles do not change.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {whatWeUse.map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="flex gap-4 bg-bg-light rounded-lg p-5"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-body font-semibold text-navy mb-1">{item.title}</h3>
+                    <p className="font-body text-sm text-text-muted leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* What happens on the job */}
+      {processSteps.length > 0 && (
+        <section className="py-16 md:py-20 bg-bg-light px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-heading text-3xl text-text-primary text-center mb-3">
+              What happens on the job
+            </h2>
+            <p className="font-body text-text-muted text-center mb-12 max-w-2xl mx-auto">
+              What you will actually see if you are home while we work.
+            </p>
+            <ol className="space-y-8">
+              {processSteps.map((s, i) => (
+                <motion.li
+                  key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="flex gap-5"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy text-white font-heading flex items-center justify-center">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl text-navy mb-2">{s.step}</h3>
+                    <p className="font-body text-text-muted leading-relaxed">{s.detail}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ol>
           </div>
         </section>
       )}
