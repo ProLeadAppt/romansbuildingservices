@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { ProblemsLinksSection } from '@/components/ProblemsLinksSection';
+import { QuoteCTAButton } from '@/components/quote';
 import {
   Hammer,
   Landmark,
@@ -248,12 +249,11 @@ export default function ServicesPage() {
               viewport={{ once: true }}
             >
               <h2 className="font-heading text-3xl text-text-primary mb-6">Need a quote?</h2>
-              <Link
-                to="/contact"
+              <QuoteCTAButton
                 className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
               >
                 Get in Touch
-              </Link>
+              </QuoteCTAButton>
             </motion.div>
           </div>
         </section>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { QuoteCTAButton } from '@/components/quote';
 
 const areas = [
   {
@@ -216,12 +217,11 @@ const ServicesAreasPage = () => (
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <Link
-            to="/contact"
+          <QuoteCTAButton
             className="inline-block bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
           >
             Get in touch
-          </Link>
+          </QuoteCTAButton>
         </motion.div>
       </div>
     </section>

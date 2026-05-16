@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import heroVideo from '@/assets/videos/romansstone_1705577418_3282943687956227913_2394650725.mp4';
 import { fadeUpBlur, fadeUp, staggerContainer, clipRevealLeft, premiumEase } from '@/utils/animations';
+import { QuoteCTAButton } from '@/components/quote';
 
 export const RomansPremiumHeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -92,12 +93,11 @@ export const RomansPremiumHeroSection = () => {
             >
               See Our Work
             </Link>
-            <Link
-              to="/contact"
+            <QuoteCTAButton
               className="btn-premium bg-amber text-white hover:bg-amber/90 rounded-md px-8 py-3 font-body font-medium transition-colors"
             >
               Get a Quote
-            </Link>
+            </QuoteCTAButton>
           </motion.div>
         </motion.div>
 

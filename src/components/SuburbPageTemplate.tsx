@@ -9,6 +9,7 @@ import {
 } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+import { QuoteCTAButton } from '@/components/quote';
 
 const SUBURB_SERVICE_LINKS = [
   { label: 'Stone & Masonry', href: '/services/masonry', sublabel: 'Brick, stone, retaining walls' },
@@ -287,12 +288,11 @@ export const SuburbPageTemplate = ({
               <Phone className="w-4 h-4" />
               0414 922 276
             </a>
-            <Link
-              to="/contact"
+            <QuoteCTAButton
               className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
               Get a Quote
-            </Link>
+            </QuoteCTAButton>
           </div>
         </div>
       </section>

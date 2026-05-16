@@ -1,10 +1,10 @@
 import { SEO } from '@/components/SEO';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
 import { AreaProblemLinks } from '@/components/AreaProblemLinks';
+import { QuoteCTAButton } from '@/components/quote';
 
 const services = [
   'Terrace house brick restoration',
@@ -102,12 +102,11 @@ const InnerWestPage = () => (
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <Link
-            to="/contact"
+          <QuoteCTAButton
             className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
           >
             Get a quote for Inner West <ArrowRight className="w-4 h-4" />
-          </Link>
+          </QuoteCTAButton>
         </motion.div>
       </div>
     </section>

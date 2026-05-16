@@ -13,6 +13,7 @@ import {
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+import { QuoteCTAButton } from '@/components/quote';
 import { PROBLEM_TO_SUBURBS } from '@/data/serviceProblemMap';
 import { getSuburb } from '@/data/suburbs';
 
@@ -532,12 +533,11 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
               <Phone className="w-4 h-4" />
               0414 922 276
             </a>
-            <Link
-              to="/contact"
+            <QuoteCTAButton
               className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
               Get it Inspected <ArrowRight className="w-4 h-4" />
-            </Link>
+            </QuoteCTAButton>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { AlertCircle, ArrowRight, Phone } from 'lucide-react';
 import { CollectionPageSchema } from '@/components/LocalSEO/StructuredData';
 import { PROBLEMS_LIST } from '@/data/problems';
+import { QuoteCTAButton } from '@/components/quote';
 
 const SITE_URL = 'https://romansbuildingservices.com';
 
@@ -98,12 +99,11 @@ const ProblemsHubPage = () => (
             <Phone className="w-4 h-4" />
             0414 922 276
           </a>
-          <Link
-            to="/contact"
+          <QuoteCTAButton
             className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
           >
             Get it Inspected
-          </Link>
+          </QuoteCTAButton>
         </div>
       </div>
     </section>

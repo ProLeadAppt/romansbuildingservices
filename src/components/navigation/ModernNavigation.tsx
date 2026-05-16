@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { QuoteCTAButton } from '@/components/quote';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -200,12 +201,11 @@ export const ModernNavigation = () => {
             <Phone className="w-4 h-4" />
             {PHONE_NUMBER}
           </a>
-          <Link
-            to="/contact"
+          <QuoteCTAButton
             className="bg-amber hover:bg-amber/90 text-white font-body font-semibold text-sm px-5 py-2.5 rounded-md transition-colors"
           >
             Get a Quote
-          </Link>
+          </QuoteCTAButton>
         </div>
 
         {/* Mobile hamburger */}
@@ -272,12 +272,12 @@ export const ModernNavigation = () => {
                 <Phone className="w-5 h-5" />
                 {PHONE_NUMBER}
               </a>
-              <Link
-                to="/contact"
-                className="bg-amber hover:bg-amber/90 text-white font-body font-semibold text-base px-5 py-3 rounded-md transition-colors text-center"
+              <QuoteCTAButton
+                onClick={() => setMobileOpen(false)}
+                className="bg-amber hover:bg-amber/90 text-white font-body font-semibold text-base px-5 py-3 rounded-md transition-colors text-center w-full"
               >
                 Get a Quote
-              </Link>
+              </QuoteCTAButton>
             </div>
           </motion.div>
         )}

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
 import { PersonSchema, SpeakableSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { QuoteCTAButton } from '@/components/quote';
 
 const values = [
   {
@@ -296,12 +296,11 @@ export default function AboutPage() {
               <h2 className="font-heading text-3xl text-white mb-6">
                 Ready to talk about your project?
               </h2>
-              <Link
-                to="/contact"
+              <QuoteCTAButton
                 className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
               >
                 Get in Touch
-              </Link>
+              </QuoteCTAButton>
             </motion.div>
           </div>
         </section>

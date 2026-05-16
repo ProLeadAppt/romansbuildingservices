@@ -10,6 +10,7 @@ import { SERVICE_TO_PROBLEMS, SERVICE_TO_SUBURBS } from '@/data/serviceProblemMa
 import { getProblem } from '@/data/problems';
 import { getSuburb } from '@/data/suburbs';
 import { fadeUp, fadeUpBlur, scaleReveal, staggerContainer } from '@/utils/animations';
+import { QuoteCTAButton } from '@/components/quote';
 
 interface ServiceFeature {
   icon: LucideIcon;
@@ -372,12 +373,11 @@ export const ServicePageTemplate = ({
               <Phone className="w-4 h-4" />
               0414 922 276
             </a>
-            <Link
-              to="/contact"
+            <QuoteCTAButton
               className="btn-premium inline-flex items-center gap-2 bg-amber text-white font-body font-medium px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
               Get a Quote
-            </Link>
+            </QuoteCTAButton>
           </div>
         </div>
       </section>

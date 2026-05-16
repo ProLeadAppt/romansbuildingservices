@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Phone, Calendar, Shield, CheckCircle, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fadeUpBlur, fadeUp, slideFromRight, clipRevealLeft, staggerContainer, premiumEase } from '@/utils/animations';
+import { QuoteSurvey } from '@/components/quote';
 
 const trustBadges = [
   { icon: Calendar, label: '30+ Years Experience' },
@@ -30,24 +27,6 @@ const badgeVariant = {
 };
 
 export const ModernContactSection = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const form = e.currentTarget;
-    if (!form.checkValidity()) return;
-
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
-    })
-      .then(() => setSubmitted(true))
-      .catch(() => alert('Something went wrong. Please try calling us instead.'));
-  };
-
   return (
     <section id="contact">
       {/* Phone CTA Strip */}
@@ -98,107 +77,12 @@ export const ModernContactSection = () => {
               Get in Touch
             </h2>
             <p className="font-body text-sm text-text-muted mb-8">
-              Prefer to write? Fill this in and we will call you back within 24 hours.
+              Quick 60-second form. Minas will call you back within 24 hours.
             </p>
 
-            {submitted ? (
-              <div className="bg-bg-light rounded-lg p-8 text-center">
-                <p className="font-heading text-xl text-text-primary mb-2">
-                  Thanks for reaching out.
-                </p>
-                <p className="font-body text-text-muted">
-                  We will get back to you within one business day.
-                </p>
-              </div>
-            ) : (
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                onSubmit={handleSubmit}
-                className="space-y-5"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-
-                <div>
-                  <Label htmlFor="name" className="font-body text-sm text-text-primary mb-1.5 block">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    className="font-body"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="phone" className="font-body text-sm text-text-primary mb-1.5 block">
-                    Phone
-                  </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    className="font-body"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email" className="font-body text-sm text-text-primary mb-1.5 block">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className="font-body"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="service" className="font-body text-sm text-text-primary mb-1.5 block">
-                    Service
-                  </Label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full rounded-md border border-input bg-background px-3 py-2 font-body text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    <option value="general">General Enquiry</option>
-                    <option value="heritage">Heritage Restoration</option>
-                    <option value="masonry">Masonry</option>
-                    <option value="structural">Structural Repairs</option>
-                    <option value="repointing">Repointing</option>
-                    <option value="concrete">Concrete Repairs</option>
-                    <option value="foundation">Foundation Work</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="font-body text-sm text-text-primary mb-1.5 block">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="font-body"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn-premium bg-navy text-white font-body font-medium py-3 px-8 rounded-md hover:bg-navy/90 transition"
-                >
-                  Send Enquiry
-                </button>
-              </form>
-            )}
+            <div className="bg-bg-light rounded-lg p-6 md:p-8">
+              <QuoteSurvey variant="inline" />
+            </div>
           </motion.div>
 
           {/* Right: Trust Panel (col-span-2) */}

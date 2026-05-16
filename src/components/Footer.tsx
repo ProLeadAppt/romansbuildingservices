@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fadeUp, staggerContainer } from '@/utils/animations';
+import { QuoteCTAButton } from '@/components/quote';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -54,12 +55,11 @@ export const Footer = () => {
             >
               0414 922 276
             </a>
-            <Link
-              to="/contact"
+            <QuoteCTAButton
               className="btn-premium bg-amber text-white font-body font-medium px-8 py-3 rounded-md hover:bg-amber/90 transition-colors inline-flex items-center gap-2"
             >
               Get a Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+            </QuoteCTAButton>
           </div>
         </div>
       </div>
