@@ -194,7 +194,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   We work with architects, building companies, strata managers, insurance
-                  companies, and homeowners across Greater Sydney. The job size does not matter. The
+                  companies, and homeowners across Sydney metro suburbs. The job size does not matter. The
                   standard does.
                 </p>
               </motion.div>

@@ -8,7 +8,7 @@ const TraditionalStoneworkPage = () => {
   return (
     <ServicePageTemplate
       title="Traditional Stonework Methods"
-      metaTitle="Traditional Stonemasonry Sydney | Hand-Cut Stone, Hot Lime | Romans Building Services"
+      metaTitle="Traditional Stonemasonry Sydney | Romans"
       metaDescription="Sydney traditional stonemasonry by Minas Romanakis. Hand-cut stone, hot lime mortar, carved profiles, period methods. Heritage work as it was originally done."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}

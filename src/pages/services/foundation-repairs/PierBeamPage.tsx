@@ -8,7 +8,7 @@ const PierBeamPage = () => {
   return (
     <ServicePageTemplate
       title="Pier & Beam Foundation Work"
-      metaTitle="Pier & Beam Foundation Sydney | Restumping, Subfloor Levelling | Romans Building Services"
+      metaTitle="Pier & Beam Foundation Sydney | Romans"
       metaDescription="Sydney restumping and pier beam foundation work by Minas Romanakis. Concrete and steel pier replacement, bearer and joist repair, subfloor levelling."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}

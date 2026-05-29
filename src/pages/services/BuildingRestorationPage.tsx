@@ -8,7 +8,7 @@ const BuildingRestorationPage = () => {
   return (
   <ServicePageTemplate
     title="Building Restoration"
-    metaTitle="Building Restoration Sydney | Roman Building Services"
+    metaTitle="Building Restoration Sydney | Romans Building Services"
     metaDescription="Full building restoration in Sydney. Facade repairs, render replacement, structural upgrades, and complete makeovers. Call Minas for a quote."
     heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
     intro={[

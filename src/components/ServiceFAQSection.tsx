@@ -206,7 +206,7 @@ export const masonryFAQs: FAQ[] = [
   },
   {
     question: "What areas do you service?",
-    answer: "We service all of Sydney including CBD, North Shore, Eastern Suburbs, Inner West, Northern Beaches, and Greater Sydney areas. Emergency services are available 24/7 across all service areas.",
+    answer: "We service Sydney metro suburbs including CBD, North Shore, Eastern Suburbs, Inner West, Northern Beaches, Parramatta, Strathfield, Burwood and nearby areas. Emergency services are available across our service area.",
     category: "Service Areas"
   },
   {

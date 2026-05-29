@@ -170,7 +170,7 @@ export const serviceAreas: ServiceArea[] = [
   },
   {
     id: 'greater-sydney',
-    label: 'Greater Sydney',
+    label: 'Sydney Metro',
     description: 'Extended Sydney metropolitan services',
     suburbs: ['Parramatta', 'Hornsby', 'Sutherland', 'Blacktown', 'Liverpool'],
     href: '/areas/greater-sydney'

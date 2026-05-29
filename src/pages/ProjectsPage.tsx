@@ -13,6 +13,7 @@ const schemaImages = galleryImages
   .map((img) => ({
     url: img.full.startsWith('http') ? img.full : `${SITE_URL}${img.full}`,
     caption: img.alt,
+    location: 'Sydney, NSW',
   }));
 
 const galleryFaqs = [
@@ -44,7 +45,7 @@ const galleryFaqs = [
   {
     question: 'Where do you work?',
     answer:
-      'All across Greater Sydney. Our home turf is the Inner West and Eastern Suburbs but we travel north to the Northern Beaches, south to Cronulla and west out to Penrith when the job is right. See the areas page for a full list.',
+      'Across Sydney metro. Our home turf is Strathfield, the Inner West and Eastern Suburbs, and we regularly work north to the Northern Beaches and west through Parramatta, Burwood, Concord and Homebush.',
   },
 ];
 

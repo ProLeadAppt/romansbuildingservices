@@ -8,8 +8,8 @@ const HeritageStoneRestorationPage = () => {
   return (
     <ServicePageTemplate
       title="Heritage Stone Restoration"
-      metaTitle="Heritage Sandstone Restoration Sydney | Hand-Dressed Stone | Romans Building Services"
-      metaDescription="Sydney heritage stone restoration by Minas Romanakis. Sandstone cleaning, dutchman repairs, hand-dressed replacement, lime repointing. 30 years on heritage stone."
+      metaTitle="Heritage Sandstone Restoration Sydney | Romans"
+      metaDescription="Sydney heritage stone restoration by Minas Romanakis. Sandstone cleaning, dutchman repairs, hand-dressed replacement, lime repointing. 30 years on heritage."
       heroImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}

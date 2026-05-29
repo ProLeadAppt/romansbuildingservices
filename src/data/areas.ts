@@ -135,8 +135,8 @@ export const AREAS: Record<string, AreaProfile> = {
 
   'greater-sydney': {
     slug: 'greater-sydney',
-    name: 'Greater Sydney',
-    shortName: 'Greater Sydney',
+    name: 'Sydney Metro',
+    shortName: 'Sydney metro',
     href: '/areas/greater-sydney',
     housingProfile:
       "Strathfield, Burwood, Concord, Homebush and Parramatta cover the suburbs from the Inner West out toward Western Sydney. Housing here ranges from Federation and inter-war brick homes through to post-war fibro and brick veneer, plus newer apartment stock around the rail corridors. Reactive clay soils are widespread, and many of the older homes have shallow footings that move with seasonal moisture changes.",
@@ -146,7 +146,7 @@ export const AREAS: Record<string, AreaProfile> = {
       'cracked-brick-walls':
         "Older homes through Strathfield, Burwood and Concord were built on shallow footings over reactive clay. After droughts and heavy rain, the clay swells and shrinks unevenly under the building and cracks appear — usually stepping through the mortar joints, sometimes through bricks. We assess every crack against actual movement using level checks and tell-tales before deciding whether it's cosmetic stitching, structural repair or underpinning.",
       'foundation-movement':
-        "Foundation movement is the most common structural issue we see in Greater Sydney. Reactive clay soils, broken stormwater, leaking sewer connections and large established trees all drive it. Strathfield and Homebush in particular sit on clay that moves significantly. We do full diagnosis — soil tests, level surveys, drainage checks — before deciding between drainage rectification, root barriers, or targeted underpinning. Jumping straight to underpinning without diagnosis wastes money.",
+        "Foundation movement is the most common structural issue we see around Sydney metro suburbs such as Strathfield, Burwood, Concord and Homebush. Reactive clay soils, broken stormwater, leaking sewer connections and large established trees all drive it. We do full diagnosis before deciding between drainage rectification, root barriers or targeted underpinning. Jumping straight to underpinning without diagnosis wastes money.",
       'failing-retaining-walls':
         "Sloping blocks through Strathfield, Burwood and Concord have a lot of retaining walls, many of them 50+ years old and built without proper drainage. Sandstone block, brick or rendered concrete walls bulge, crack or lean as the hydrostatic pressure builds up behind them. Repair depends on the wall type and severity — sometimes weep holes and drainage fix it, sometimes the wall needs partial rebuild, sometimes full replacement with engineered design.",
       'crumbling-mortar':

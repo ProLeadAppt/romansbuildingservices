@@ -27,7 +27,7 @@ export const BUSINESS_INFO = {
     "North Shore",
     "Northern Beaches",
     "Inner West",
-    "Greater Sydney"
+    "Sydney metro"
   ],
   // Back-compat alias used by some consumers
   serviceAreas: [
@@ -38,7 +38,7 @@ export const BUSINESS_INFO = {
     "North Shore",
     "Northern Beaches",
     "Inner West",
-    "Greater Sydney"
+    "Sydney metro"
   ],
   services: [
     "Masonry Services",
@@ -169,7 +169,7 @@ const localBusinessSchema: SchemaObject = {
     telephone: BUSINESS_INFO.telephone,
     contactType: "customer service",
     availableLanguage: "English",
-    areaServed: "AU"
+    areaServed: "Sydney, NSW"
   },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
@@ -423,7 +423,7 @@ export const ImageGallerySchema = ({
   images
 }: {
   url: string;
-  images: Array<{ url: string; caption?: string }>;
+  images: Array<{ url: string; caption?: string; location?: string }>;
 }) => {
   const schema: SchemaObject = {
     "@context": "https://schema.org",
@@ -436,7 +436,16 @@ export const ImageGallerySchema = ({
       "@type": "ImageObject",
       contentUrl: img.url,
       url: img.url,
-      ...(img.caption ? { caption: img.caption } : {})
+      ...(img.caption ? { caption: img.caption } : {}),
+      ...(img.location
+        ? {
+            contentLocation: {
+              "@type": "Place",
+              name: img.location,
+              containedInPlace: { "@type": "City", name: "Sydney" }
+            }
+          }
+        : {})
     }))
   };
   return <SchemaScript schema={schema} />;

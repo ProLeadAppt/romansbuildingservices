@@ -8,8 +8,8 @@ const ConcreteResurfacingPage = () => {
   return (
     <ServicePageTemplate
       title="Concrete Resurfacing"
-      metaTitle="Concrete Resurfacing Sydney | Driveways, Pool Surrounds, Carparks | Romans Building Services"
-      metaDescription="Sydney concrete resurfacing by Minas Romanakis. Polymer-modified overlays, non-slip finishes, decorative coatings. Driveways, pool surrounds, balconies, carparks."
+      metaTitle="Concrete Resurfacing Sydney | Romans"
+      metaDescription="Sydney concrete resurfacing by Minas Romanakis. Polymer-modified overlays, non-slip finishes, decorative coatings. Driveways, pool surrounds, balconies."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}
       siblingServices={siblings}

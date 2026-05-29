@@ -7,7 +7,7 @@ const CompleteRestorationPage = () => {
   return (
     <ServicePageTemplate
       title="Complete Building Restoration"
-      metaTitle="Complete Building Restoration Sydney | Heritage & Modern | Romans Building Services"
+      metaTitle="Complete Building Restoration Sydney | Romans"
       metaDescription="Full Sydney building restoration by Minas Romanakis. Facade, masonry, structural, render, waterproofing. One team, one contract. Heritage and modern."
       heroImage="/gallery/thumbs/romansstone_1451642255_1152781246863726646_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}

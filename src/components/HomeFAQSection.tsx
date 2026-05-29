@@ -25,7 +25,7 @@ const homeFaqs = [
   {
     question: 'Where in Sydney do you work?',
     answer:
-      'Greater Sydney. Our home turf is the Inner West and Eastern Suburbs. We regularly work the North Shore, Northern Beaches, Sutherland Shire, and the Hills. Outer fringes we take case by case.',
+      'Sydney metro. Our home base is Strathfield and our regular work is across the Inner West, Eastern Suburbs, North Shore, Northern Beaches, Parramatta, Burwood, Concord and Homebush. Outer fringe jobs are quoted case by case.',
   },
 ];
 

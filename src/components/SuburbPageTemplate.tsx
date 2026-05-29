@@ -144,6 +144,20 @@ export const SuburbPageTemplate = ({
         </div>
       </section>
 
+      <section className="py-10 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-amber mb-3">
+            Quick answer
+          </p>
+          <p className="font-body text-lg text-text-secondary leading-relaxed">
+            Romans Building Services provides masonry, heritage restoration and structural repair in
+            {` ${name}, Sydney`}, with work matched to the suburb's building age, materials and
+            common movement or salt-damage patterns.
+          </p>
+          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
+        </div>
+      </section>
+
       {/* Intro */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -304,7 +318,7 @@ export const SuburbPageTemplate = ({
             <QuoteCTAButton
               className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
-              Get a Quote
+              Get a Sydney Quote
             </QuoteCTAButton>
           </div>
         </div>

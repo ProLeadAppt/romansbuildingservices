@@ -37,7 +37,7 @@ const areas = [
     href: '/areas/inner-west',
   },
   {
-    name: 'Greater Sydney',
+    name: 'Sydney Metro',
     short: 'Everything outside the inner ring.',
     long: 'All masonry services for commercial and residential properties across the wider metro. From the Sutherland Shire up to the Hills, out west to Penrith. Quotes for outer fringes are case by case so we know we can run the job properly.',
     href: '/areas/greater-sydney',
@@ -48,7 +48,7 @@ const areasFaqs = [
   {
     question: 'Do you really cover all of Sydney?',
     answer:
-      'Greater Sydney, yes. For inner-ring suburbs we are there often. For outer fringes like the Hawkesbury or far western Sydney we quote case by case and the call-out fees scale with travel. The work is always the same standard.',
+      'Sydney metro, yes. We are based in Strathfield and regularly work the inner-ring suburbs, Parramatta, Burwood, Concord and Homebush. Outer fringe jobs are quoted case by case before anyone travels.',
   },
   {
     question: 'How do I know which area my suburb is in?',
@@ -58,7 +58,7 @@ const areasFaqs = [
   {
     question: 'Do you charge call-out fees?',
     answer:
-      'No call-out fee for the initial site visit within Greater Sydney. For very far-out jobs we discuss travel before we come out so there are no surprises. Site visit and quote are free.',
+      'No call-out fee for the initial site visit within Sydney metro suburbs. For far-out jobs we discuss travel before we come out so there are no surprises. Site visit and quote are free.',
   },
   {
     question: 'Are area pages different to service pages?',
@@ -71,7 +71,7 @@ const ServicesAreasPage = () => (
   <>
     <SEO
       title="Sydney Areas We Cover | Masonry & Heritage Restoration | Romans Building Services"
-      description="Romans Building Services works across Greater Sydney. CBD, Eastern Suburbs, North Shore, Northern Beaches, Inner West and beyond. 30 years on the tools."
+      description="Romans Building Services works across Sydney metro suburbs. CBD, Eastern Suburbs, North Shore, Northern Beaches, Inner West, Parramatta and Strathfield."
       canonical="/areas"
     />
     <CollectionPageSchema

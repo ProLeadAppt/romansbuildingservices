@@ -101,9 +101,9 @@ export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
     serviceSlug: 'foundation-repairs',
     areaSlug: 'greater-sydney',
     heroLine:
-      "Foundation repairs across Greater Sydney. Underpinning, structural diagnosis and footing repair on homes in Strathfield, Burwood, Concord, Homebush and Parramatta.",
+      "Foundation repairs across Sydney metro suburbs. Underpinning, structural diagnosis and footing repair on homes in Strathfield, Burwood, Concord, Homebush and Parramatta.",
     context:
-      "Greater Sydney's clay soils — especially through Strathfield, Burwood, Concord and Homebush — drive significant seasonal foundation movement. After drought followed by heavy rain, reactive clay swells and shrinks unevenly under shallow footings, and older homes start cracking. Most cracks we look at are cosmetic, but every one needs proper assessment against actual movement before recommending repair. We do level checks and tell-tales over time where active movement is suspected, plus soil tests on serious jobs. Treatment depends on diagnosis — sometimes fixing broken stormwater and waiting six months solves it, sometimes targeted underpinning is needed, occasionally the whole side of a building needs full footing replacement. Jumping straight to underpinning without diagnosis wastes money and doesn't fix the cause.",
+      "Sydney metro clay soils — especially through Strathfield, Burwood, Concord and Homebush — drive significant seasonal foundation movement. After drought followed by heavy rain, reactive clay swells and shrinks unevenly under shallow footings, and older homes start cracking. Most cracks we look at are cosmetic, but every one needs proper assessment against actual movement before recommending repair. We do level checks and tell-tales over time where active movement is suspected, plus soil tests on serious jobs. Treatment depends on diagnosis — sometimes fixing broken stormwater and waiting six months solves it, sometimes targeted underpinning is needed, occasionally the whole side of a building needs full footing replacement. Jumping straight to underpinning without diagnosis wastes money and doesn't fix the cause.",
   },
 ];
 

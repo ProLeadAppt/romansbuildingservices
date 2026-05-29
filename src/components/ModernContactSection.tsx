@@ -57,7 +57,7 @@ export const ModernContactSection = () => {
             className="btn-premium bg-amber text-white px-10 py-4 rounded-lg text-lg font-body font-medium inline-flex items-center gap-2 hover:bg-amber/90 transition"
           >
             <Phone className="w-5 h-5" />
-            Call Now
+            Call Minas
           </a>
         </motion.div>
       </div>

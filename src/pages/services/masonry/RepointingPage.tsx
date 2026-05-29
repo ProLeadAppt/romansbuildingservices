@@ -8,7 +8,7 @@ const RepointingPage = () => {
   return (
     <ServicePageTemplate
       title="Repointing & Brick Pointing"
-      metaTitle="Repointing & Brick Pointing Sydney | Lime & Cement Mortar | Romans Building Services"
+      metaTitle="Repointing & Brick Pointing Sydney | Romans"
       metaDescription="Sydney repointing by Minas Romanakis. Lime mortar for heritage walls, cement-based for modern brick. Colour and profile matched on site. 30 years of pointing."
       heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}

@@ -8,8 +8,8 @@ const StructuralConcretePage = () => {
   return (
     <ServicePageTemplate
       title="Structural Concrete Restoration"
-      metaTitle="Structural Concrete Restoration Sydney | Beams, Columns, Slabs | Romans Building Services"
-      metaDescription="Sydney structural concrete restoration by Minas Romanakis. Engineered repair of load-bearing beams, columns and slabs. Carbon fibre strengthening, AS 3600 compliant."
+      metaTitle="Structural Concrete Restoration Sydney | Romans"
+      metaDescription="Sydney structural concrete restoration by Minas Romanakis. Engineered repair of load-bearing beams, columns and slabs. Carbon fibre strengthening, AS 3600."
       heroImage="/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}
       siblingServices={siblings}

@@ -8,7 +8,7 @@ const ConcreteRepairsPage = () => {
   return (
   <ServicePageTemplate
     title="Concrete Repairs"
-    metaTitle="Concrete Repairs Sydney | Roman Building Services"
+    metaTitle="Concrete Repairs Sydney | Romans Building Services"
     metaDescription="Concrete cancer, spalling, and carbonation repairs in Sydney. Proper diagnosis and lasting fixes. Call Minas for a quote."
     heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
     intro={[

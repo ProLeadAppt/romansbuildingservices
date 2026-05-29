@@ -66,9 +66,9 @@ export const RomansPremiumHeroSection = () => {
             variants={fadeUpBlur}
             className="font-heading text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight text-shadow-strong"
           >
-            Heritage Restoration
+            Sydney Heritage Restoration
             <br className="hidden md:block" />
-            {' '}&amp; Masonry.
+            {' '}&amp; Masonry{' '}
             <br />
             Done Properly.
           </motion.h1>
@@ -96,7 +96,7 @@ export const RomansPremiumHeroSection = () => {
             <QuoteCTAButton
               className="btn-premium bg-amber text-white hover:bg-amber/90 rounded-md px-8 py-3 font-body font-medium transition-colors"
             >
-              Get a Quote
+              Get a Sydney Quote
             </QuoteCTAButton>
           </motion.div>
         </motion.div>

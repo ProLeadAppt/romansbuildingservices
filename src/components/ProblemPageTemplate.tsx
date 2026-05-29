@@ -162,6 +162,12 @@ const buildProblemSchema = (props: ProblemPageProps) => {
       name: 'Romans Building Services',
       url: SITE_URL,
     },
+    reviewedBy: {
+      '@type': 'Person',
+      name: 'Minas Romanakis',
+      jobTitle: 'Founder and stonemason',
+    },
+    dateModified: '2026-05-29',
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -303,8 +309,10 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
               className="font-body text-lg text-text-primary leading-relaxed"
               itemProp="text"
             >
-              {quickAnswer}
+              {quickAnswer} Romans Building Services assesses {name.toLowerCase()} across Sydney
+              before recommending repair, so the visible damage and the cause are both dealt with.
             </p>
+            <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
           </motion.div>
         </div>
       </section>
@@ -569,6 +577,7 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
               0414 922 276
             </a>
             <QuoteCTAButton
+              initialService={name.toLowerCase().includes('concrete') || name.toLowerCase().includes('balcon') ? 'concrete-repair' : name.toLowerCase().includes('foundation') ? 'foundation' : 'structural-repair'}
               className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
               Get it Inspected <ArrowRight className="w-4 h-4" />

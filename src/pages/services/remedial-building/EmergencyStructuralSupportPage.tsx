@@ -8,8 +8,8 @@ const EmergencyStructuralSupportPage = () => {
   return (
     <ServicePageTemplate
       title="Emergency Structural Support"
-      metaTitle="Emergency Structural Propping & Shoring Sydney | Romans Building Services"
-      metaDescription="Sydney emergency structural support by Minas Romanakis. Acrow propping, steel shoring, wall bracing, engineer-designed. Stabilises buildings until permanent repair."
+      metaTitle="Emergency Structural Propping & Shoring Sydney | Romans"
+      metaDescription="Sydney emergency structural support by Minas Romanakis. Acrow propping, steel shoring, wall bracing, engineer-designed. Stabilises buildings until permanent."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}
       siblingServices={siblings}

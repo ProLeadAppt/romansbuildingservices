@@ -7,7 +7,7 @@ const DefectRectificationPage = () => {
   return (
     <ServicePageTemplate
       title="Building Defect Rectification"
-      metaTitle="Building Defect Rectification Sydney | Strata, Residential, Commercial | Romans Building Services"
+      metaTitle="Building Defect Rectification Sydney | Romans"
       metaDescription="Sydney building defect rectification by Minas Romanakis. Strata defect reports, engineer scopes, root-cause repair. Documented, warranted, signed off."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}
