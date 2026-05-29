@@ -8,7 +8,7 @@ const ProtectiveCoatingsPage = () => {
   return (
     <ServicePageTemplate
       title="Protective Stone Coatings"
-      metaTitle="Protective Coatings Sydney | Silane, Siloxane, Anti-Carbonation | Romans Building Services"
+      metaTitle="Protective Coatings Sydney | Romans"
       metaDescription="Sydney protective coatings by Minas Romanakis. Silane water repellents, anti-carbonation, anti-graffiti, heritage-breathable. Stone, brick, concrete and render."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}

@@ -7,8 +7,8 @@ const BuildingReinforcementPage = () => {
   return (
     <ServicePageTemplate
       title="Building Reinforcement"
-      metaTitle="Building Reinforcement Sydney | Steel, Carbon Fibre, Helibar | Romans Building Services"
-      metaDescription="Sydney building reinforcement by Minas Romanakis. Steel beams, carbon fibre, helibar masonry, foundation underpinning. Engineer-designed, AS 3700/AS 3600 compliant."
+      metaTitle="Building Reinforcement Sydney | Romans"
+      metaDescription="Sydney building reinforcement by Minas Romanakis. Steel beams, carbon fibre, helibar masonry, foundation underpinning. Engineer-designed, AS 3700/AS 3600."
       heroImage="/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}

@@ -11,6 +11,7 @@ import { getProblem } from '@/data/problems';
 import { getSuburb } from '@/data/suburbs';
 import { fadeUp, fadeUpBlur, scaleReveal, staggerContainer } from '@/utils/animations';
 import { QuoteCTAButton } from '@/components/quote';
+import type { QuoteService } from '@/components/quote';
 
 interface ServiceFeature {
   icon: LucideIcon;
@@ -42,6 +43,19 @@ interface ProcessStep {
   step: string;
   detail: string;
 }
+
+const LAST_UPDATED = '2026-05-29';
+
+const serviceToQuoteType = (title: string): QuoteService => {
+  const lower = title.toLowerCase();
+  if (lower.includes('heritage') || lower.includes('traditional') || lower.includes('period')) return 'heritage-restoration';
+  if (lower.includes('concrete') || lower.includes('spalling')) return 'concrete-repair';
+  if (lower.includes('foundation') || lower.includes('underpinning') || lower.includes('settlement')) return 'foundation';
+  if (lower.includes('structural') || lower.includes('beam') || lower.includes('wall') || lower.includes('steel')) return 'structural-repair';
+  if (lower.includes('brick') || lower.includes('repoint') || lower.includes('tuckpoint')) return 'brickwork-repointing';
+  if (lower.includes('stone') || lower.includes('masonry')) return 'stonework';
+  return 'not-sure';
+};
 
 interface ServicePageProps {
   title: string;
@@ -196,6 +210,40 @@ export const ServicePageTemplate = ({
             {title}
           </h1>
         </motion.div>
+      </section>
+
+      {/* Short answer + evidence for AI extraction and fast user scanning */}
+      <section className="py-10 px-4 bg-white border-b border-border">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-6 items-start">
+          <div>
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-amber mb-3">
+              Quick answer
+            </p>
+            <p className="font-body text-lg text-text-secondary leading-relaxed">
+              Romans Building Services provides {title.toLowerCase()} across Sydney, with Minas
+              Romanakis assessing the work and matching the repair method to the building, material
+              and suburb.
+            </p>
+          </div>
+          <dl className="grid grid-cols-2 gap-3 text-sm">
+            <div className="rounded-md bg-bg-light p-4">
+              <dt className="font-body text-text-muted">Base</dt>
+              <dd className="font-body font-semibold text-navy">Strathfield</dd>
+            </div>
+            <div className="rounded-md bg-bg-light p-4">
+              <dt className="font-body text-text-muted">Updated</dt>
+              <dd className="font-body font-semibold text-navy">{LAST_UPDATED}</dd>
+            </div>
+            <div className="rounded-md bg-bg-light p-4">
+              <dt className="font-body text-text-muted">Established</dt>
+              <dd className="font-body font-semibold text-navy">1995</dd>
+            </div>
+            <div className="rounded-md bg-bg-light p-4">
+              <dt className="font-body text-text-muted">ABN</dt>
+              <dd className="font-body font-semibold text-navy">49 641 892 677</dd>
+            </div>
+          </dl>
+        </div>
       </section>
 
       {/* Intro */}
@@ -489,9 +537,10 @@ export const ServicePageTemplate = ({
               0414 922 276
             </a>
             <QuoteCTAButton
+              initialService={serviceToQuoteType(title)}
               className="btn-premium inline-flex items-center gap-2 bg-amber text-white font-body font-medium px-6 py-3 rounded-md hover:bg-amber/90 transition-colors"
             >
-              Get a Quote
+              Get a Sydney Quote
             </QuoteCTAButton>
           </div>
         </div>
@@ -501,7 +550,7 @@ export const ServicePageTemplate = ({
       <section className="py-12 px-4 bg-bg-off-white">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-body text-sm text-text-muted mb-4">
-            We provide {title.toLowerCase()} services across Greater Sydney
+            We provide {title.toLowerCase()} services across Sydney metro suburbs
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -510,7 +559,7 @@ export const ServicePageTemplate = ({
               { label: 'North Shore', href: '/areas/north-shore' },
               { label: 'Northern Beaches', href: '/areas/northern-beaches' },
               { label: 'Inner West', href: '/areas/inner-west' },
-              { label: 'Greater Sydney', href: '/areas/greater-sydney' },
+              { label: 'Sydney Metro', href: '/areas/greater-sydney' },
             ].map((area) => (
               <Link
                 key={area.href}

@@ -133,10 +133,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
     const phone = data.phone.trim();
     if (!phone) return 'Please enter a phone number.';
     if (phone.replace(/\D/g, '').length < 8) return 'That phone number looks too short.';
-    if (data.email.trim()) {
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim());
-      if (!emailOk) return 'That email address does not look right.';
-    }
+    if (!data.email.trim()) return 'Please enter an email address.';
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim());
+    if (!emailOk) return 'That email address does not look right.';
     return null;
   };
 
@@ -372,7 +371,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
               How do we reach you?
             </h2>
             <p className="font-body text-text-muted mb-6">
-              Minas will call you back within 24 hours. Email is optional.
+              Minas will call you back within 24 hours. Your details are sent straight to him.
             </p>
 
             <div className="space-y-4">
@@ -410,11 +409,12 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
 
               <div>
                 <label htmlFor="qs-email" className="block font-body text-sm font-semibold text-navy mb-2">
-                  Email <span className="font-normal text-text-muted">(optional)</span>
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="qs-email"
                   type="email"
+                  required
                   inputMode="email"
                   autoComplete="email"
                   value={data.email}
@@ -487,8 +487,8 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
               Got it. Minas will be in touch.
             </h2>
             <p className="font-body text-text-muted mb-8 max-w-md mx-auto">
-              We will call you back within 24 hours. Most jobs we can quote over the phone after a
-              quick chat.
+              Your enquiry has been emailed to Minas with the job details. We will call you back
+              within 24 hours.
             </p>
             <div className="bg-navy/5 rounded-lg p-5 max-w-md mx-auto">
               <p className="font-body text-sm text-text-muted mb-2">

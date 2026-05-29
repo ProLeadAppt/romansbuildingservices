@@ -29,7 +29,7 @@ const areaDropdownLinks = [
   { label: 'North Shore', href: '/areas/north-shore' },
   { label: 'Northern Beaches', href: '/areas/northern-beaches' },
   { label: 'Inner West', href: '/areas/inner-west' },
-  { label: 'Greater Sydney', href: '/areas/greater-sydney' },
+  { label: 'Sydney Metro', href: '/areas/greater-sydney' },
 ] as const;
 
 const PHONE_NUMBER = '0414 922 276';

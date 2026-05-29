@@ -8,8 +8,8 @@ const StoneMasonryRepairsPage = () => {
   return (
     <ServicePageTemplate
       title="Stone Masonry Repairs"
-      metaTitle="Sandstone & Stone Masonry Repairs Sydney | Romans Building Services"
-      metaDescription="Sydney stone masonry repairs by Minas Romanakis. Sandstone, bluestone, limestone, granite. Hand-dressed replacement, lime repointing, dutchman repairs. 30 years on the tools."
+      metaTitle="Sandstone & Stone Masonry Repairs Sydney | Romans"
+      metaDescription="Sydney stone masonry repairs by Minas Romanakis. Sandstone, bluestone, limestone and granite repairs with hand-dressed replacement and lime repointing."
       heroImage="/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
       siblingServices={siblings}

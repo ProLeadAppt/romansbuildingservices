@@ -25,7 +25,7 @@ export const HERITAGE_ERAS: Record<string, HeritageEraData> = {
     era: '1890 – 1915',
     metaTitle: 'Federation Home Restoration Sydney | Romans Building Services',
     metaDescription:
-      'Federation home restoration in Sydney. Tuckpointing, render repair, sandstone work and structural repairs on Federation-era homes by master stonemason Minas Romanakis.',
+      'Federation home restoration in Sydney. Tuckpointing, render repair, sandstone work and structural repairs on period homes with correct materials.',
     heroTagline:
       'Restoring Federation-era homes across Sydney with materials and methods matched to the original build.',
     intro: [
@@ -113,7 +113,7 @@ export const HERITAGE_ERAS: Record<string, HeritageEraData> = {
     era: '1840 – 1900',
     metaTitle: 'Victorian Terrace Restoration Sydney | Romans Building Services',
     metaDescription:
-      'Victorian terrace restoration in Paddington, Surry Hills, Newtown and across Sydney. Lime mortar repointing, tuckpointing, render repair and structural work on terraces.',
+      'Victorian terrace restoration across Sydney. Lime mortar repointing, tuckpointing, render repair and structural work in Paddington, Newtown and Surry Hills.',
     heroTagline:
       'Sydney\'s Victorian terraces are 150+ years old and deserve restoration done the right way — with the right materials.',
     intro: [
@@ -418,7 +418,7 @@ export const HERITAGE_ERAS: Record<string, HeritageEraData> = {
       {
         title: 'Foundation settlement',
         detail:
-          'Inter-war footings were generally shallow concrete or sandstone. On reactive clay soils (common across the Inner West and Greater Sydney suburbs) seasonal movement is normal. Most cracking is cosmetic but should be checked. Where active movement is happening, targeted underpinning may be needed.',
+          'Inter-war footings were generally shallow concrete or sandstone. On reactive clay soils around the Inner West and Sydney metro suburbs, seasonal movement is normal. Most cracking is cosmetic but should be checked. Where active movement is happening, targeted underpinning may be needed.',
       },
     ],
     ourApproach: [

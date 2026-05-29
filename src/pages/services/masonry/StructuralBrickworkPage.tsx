@@ -8,8 +8,8 @@ const StructuralBrickworkPage = () => {
   return (
     <ServicePageTemplate
       title="Structural Brickwork"
-      metaTitle="Structural Brickwork Sydney | Load-Bearing Walls, Piers, Arches | Romans Building Services"
-      metaDescription="Sydney structural brickwork by Minas Romanakis. Load-bearing walls, piers, arches, lintels. Engineered repairs, crack stitching, pier rebuilds. AS 3700 compliant."
+      metaTitle="Structural Brickwork Sydney | Romans"
+      metaDescription="Sydney structural brickwork by Minas Romanakis. Load-bearing walls, piers, arches, lintels. Engineered repairs, crack stitching, pier rebuilds. AS 3700."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
       siblingServices={siblings}

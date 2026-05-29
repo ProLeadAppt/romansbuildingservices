@@ -8,7 +8,7 @@ const StructuralRepairsPage = () => {
   return (
   <ServicePageTemplate
     title="Structural Repairs"
-    metaTitle="Structural Repairs Sydney | Roman Building Services"
+    metaTitle="Structural Repairs Sydney | Romans Building Services"
     metaDescription="Crack stitching, lintel replacement, and load-bearing wall repairs in Sydney. Fixing the things that hold buildings together. Call Minas."
     heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
     intro={[

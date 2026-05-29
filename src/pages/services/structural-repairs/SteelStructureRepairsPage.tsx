@@ -7,7 +7,7 @@ const SteelStructureRepairsPage = () => {
   return (
     <ServicePageTemplate
       title="Steel Structure Repairs"
-      metaTitle="Steel Lintel & Structural Steel Repairs Sydney | Romans Building Services"
+      metaTitle="Steel Lintel & Structural Steel Repairs Sydney | Romans"
       metaDescription="Sydney steel structure repairs by Minas Romanakis. Corroded lintels, structural beams, brick reinstatement. Hot-dip galvanised and stainless replacements."
       heroImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}

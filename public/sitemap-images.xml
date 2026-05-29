@@ -4,48 +4,71 @@
 
   <url>
     <loc>https://romansbuildingservices.com/</loc>
-
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp</image:loc>
-      <image:caption><![CDATA[Heritage stonework project by Romans Building Services in Sydney]]></image:caption>
-      <image:title><![CDATA[Sydney Masonry and Heritage Restoration - Romans Building Services]]></image:title>
-      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+      <image:caption><![CDATA[Sydney heritage stonework project by Romans Building Services]]></image:caption>
+      <image:title><![CDATA[Sydney Heritage Restoration and Masonry]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
     </image:image>
-
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp</image:loc>
-      <image:caption><![CDATA[Heritage building restoration work completed by Romans Building Services in Sydney]]></image:caption>
-      <image:title><![CDATA[Heritage Building Restoration Sydney]]></image:title>
-      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+      <image:caption><![CDATA[Sydney sandstone seawall and heritage stone restoration work]]></image:caption>
+      <image:title><![CDATA[Sandstone Restoration Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
     </image:image>
-
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1452415091_1159264269511646168_2394650725.webp</image:loc>
-      <image:caption><![CDATA[Stone masonry work by Romans Building Services across Greater Sydney]]></image:caption>
-      <image:title><![CDATA[Stone Masonry Sydney - Romans Building Services]]></image:title>
-      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+      <image:caption><![CDATA[Stone masonry wall work by Romans Building Services in Sydney]]></image:caption>
+      <image:title><![CDATA[Stone Masonry Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://romansbuildingservices.com/gallery</loc>
+    <image:image>
+      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1574104761_2180071211265247711_2394650725.webp</image:loc>
+      <image:caption><![CDATA[Real Sydney masonry project from the Romans Building Services gallery]]></image:caption>
+      <image:title><![CDATA[Sydney Masonry Project Gallery]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1575487721_2191672319871916475_2394650725.webp</image:loc>
+      <image:caption><![CDATA[Structural steel and masonry repair work on a Sydney building]]></image:caption>
+      <image:title><![CDATA[Structural Masonry Repair Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1575057672_2188064802893944247_2394650725.webp</image:loc>
+      <image:caption><![CDATA[Concrete cancer and remedial building repair work in Sydney]]></image:caption>
+      <image:title><![CDATA[Concrete Repairs Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1451642255_1152781246863726646_2394650725.webp</image:loc>
+      <image:caption><![CDATA[Tuckpointing and brick repointing work on Sydney masonry]]></image:caption>
+      <image:title><![CDATA[Tuckpointing Sydney]]></image:title>
+      <image:geo_location>Sydney, NSW</image:geo_location>
     </image:image>
   </url>
 
   <url>
     <loc>https://romansbuildingservices.com/services/masonry</loc>
-
     <image:image>
-      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1574104761_2180071211265247711_2394650725.webp</image:loc>
-      <image:caption><![CDATA[Professional masonry and brickwork by Romans Building Services in Sydney]]></image:caption>
+      <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1576003161_2195996136622601152_2394650725.webp</image:loc>
+      <image:caption><![CDATA[Stone wall rebuild and masonry repair by Romans Building Services in Sydney]]></image:caption>
       <image:title><![CDATA[Masonry Services Sydney]]></image:title>
-      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+      <image:geo_location>Sydney, NSW</image:geo_location>
     </image:image>
   </url>
 
   <url>
     <loc>https://romansbuildingservices.com/services/building-restoration</loc>
-
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1576440613_2199665757989086550_2394650725.webp</image:loc>
       <image:caption><![CDATA[Building restoration project completed by Romans Building Services in Sydney]]></image:caption>
       <image:title><![CDATA[Building Restoration Sydney]]></image:title>
-      <image:geo_location>Sydney, NSW, Australia</image:geo_location>
+      <image:geo_location>Sydney, NSW</image:geo_location>
     </image:image>
   </url>
 </urlset>

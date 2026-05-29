@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Contact Us | Call 0414 922 276 for a Quote"
-        description="Call Minas on 0414 922 276 for a quote. Romans Building Services covers Greater Sydney for masonry, heritage, structural and remedial work. Fast response."
+        description="Call Minas on 0414 922 276 for a Sydney quote. Romans Building Services covers masonry, heritage, structural and remedial work from Strathfield."
         canonical="/contact"
         noIndex={true}
       />
@@ -112,7 +112,7 @@ export default function ContactPage() {
                       Service Area
                     </span>
                   </div>
-                  <p className="text-text-primary font-semibold">All of Greater Sydney</p>
+                  <p className="text-text-primary font-semibold">Sydney metro suburbs</p>
                 </div>
 
                 <div className="bg-bg-light rounded-lg p-6">

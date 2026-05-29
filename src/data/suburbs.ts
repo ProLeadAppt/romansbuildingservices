@@ -11,9 +11,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'the-rocks',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Heritage Restoration The Rocks | Romans Building Services',
+    metaTitle: 'Masonry & Heritage Restoration The Rocks | Romans',
     metaDescription:
-      'Sandstone restoration, heritage repointing and masonry repairs in The Rocks. Romans Building Services works on colonial sandstone buildings and heritage-listed properties.',
+      'Sandstone restoration, heritage repointing and masonry repairs in The Rocks. Romans works on colonial sandstone buildings and heritage-listed properties.',
     heroTagline:
       'Colonial sandstone restoration, heritage repointing and masonry repairs in Sydney\'s oldest neighbourhood.',
     intro: [
@@ -55,9 +55,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'circular-quay',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Sandstone Restoration Circular Quay | Romans Building Services',
+    metaTitle: 'Masonry & Sandstone Restoration Circular Quay | Romans',
     metaDescription:
-      'Heritage masonry, sandstone restoration and commercial facade repairs in Circular Quay. Romans Building Services handles historic buildings and waterfront properties.',
+      'Heritage masonry, sandstone restoration and commercial facade repairs in Circular Quay. Romans handles historic buildings and waterfront properties.',
     heroTagline:
       'Heritage sandstone, historic commercial facades and waterfront masonry repairs at Circular Quay.',
     intro: [
@@ -99,9 +99,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'darlinghurst',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Terrace Restoration Darlinghurst | Romans Building Services',
+    metaTitle: 'Masonry & Terrace Restoration Darlinghurst | Romans',
     metaDescription:
-      'Victorian terrace restoration, brick repointing and heritage masonry in Darlinghurst. Romans Building Services works on period homes and converted warehouses.',
+      'Victorian terrace restoration, brick repointing and heritage masonry in Darlinghurst. Romans works on period homes and converted warehouses.',
     heroTagline:
       'Victorian terrace brick restoration, tuckpointing and heritage masonry across Darlinghurst.',
     intro: [
@@ -145,9 +145,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'paddington',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Terrace Restoration & Tuckpointing Paddington | Romans Building Services',
+    metaTitle: 'Terrace Restoration & Tuckpointing Paddington | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage masonry in Paddington. Romans Building Services handles period brick and sandstone across the Eastern Suburbs.',
+      'Victorian terrace restoration, tuckpointing and heritage masonry in Paddington. Romans handles period brick and sandstone across the Eastern Suburbs.',
     heroTagline:
       'Victorian terrace brick restoration and tuckpointing across Paddington\'s heritage streetscapes.',
     intro: [
@@ -189,9 +189,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'woollahra',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Masonry & Stone Restoration Woollahra | Romans Building Services',
+    metaTitle: 'Heritage Masonry & Stone Restoration Woollahra | Romans',
     metaDescription:
-      'Heritage terrace restoration, sandstone and brick masonry in Woollahra. Romans Building Services works on period homes and retaining walls across the Eastern Suburbs.',
+      'Heritage terrace restoration, sandstone and brick masonry in Woollahra. Romans works on period homes and retaining walls across the Eastern Suburbs.',
     heroTagline:
       'Heritage masonry, sandstone restoration and retaining walls across Woollahra\'s period streets.',
     intro: [
@@ -233,9 +233,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'bondi',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Masonry & Salt Damage Repair Bondi | Romans Building Services',
+    metaTitle: 'Masonry & Salt Damage Repair Bondi | Romans',
     metaDescription:
-      'Coastal masonry repairs, salt damage treatment and retaining walls in Bondi. Romans Building Services handles apartment blocks and homes across Sydney\'s east.',
+      'Coastal masonry repairs, salt damage treatment and retaining walls in Bondi. Romans handles apartment blocks and homes across Sydney\'s east.',
     heroTagline:
       'Coastal masonry, salt damage repair and retaining walls across Bondi and Bondi Beach.',
     intro: [
@@ -277,9 +277,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'double-bay',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Masonry & Stone Restoration Double Bay | Romans Building Services',
+    metaTitle: 'Heritage Masonry & Stone Restoration Double Bay | Romans',
     metaDescription:
-      'Heritage stone restoration, period home masonry and retaining walls in Double Bay. Romans Building Services works on high-end properties in Sydney\'s east.',
+      'Heritage stone restoration, period home masonry and retaining walls in Double Bay. Romans works on high-end properties in Sydney\'s east.',
     heroTagline:
       'Heritage stone restoration, period home masonry and retaining walls across Double Bay and Bellevue Hill.',
     intro: [
@@ -323,9 +323,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'mosman',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Heritage Masonry & Federation Home Restoration Mosman | Romans Building Services',
+    metaTitle: 'Heritage Masonry & Federation Home Restoration Mosman | Romans',
     metaDescription:
-      'Federation home restoration, sandstone masonry and retaining walls in Mosman. Romans Building Services works on heritage properties across Sydney\'s Lower North Shore.',
+      'Federation home restoration, sandstone masonry and retaining walls in Mosman. Romans works on heritage properties across Sydney\'s Lower North Shore.',
     heroTagline:
       'Federation home restoration, sandstone walls and heritage masonry across Mosman and Cremorne.',
     intro: [
@@ -367,9 +367,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'neutral-bay',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Brick Restoration Neutral Bay | Romans Building Services',
+    metaTitle: 'Masonry & Brick Restoration Neutral Bay | Romans',
     metaDescription:
-      'Period home masonry, brick restoration and retaining walls in Neutral Bay. Romans Building Services works on Federation and Interwar homes across the Lower North Shore.',
+      'Period home masonry, brick restoration and retaining walls in Neutral Bay. Romans works on Federation and Interwar homes across the Lower North Shore.',
     heroTagline:
       'Period home masonry, brick restoration and retaining walls across Neutral Bay and Cremorne.',
     intro: [
@@ -411,9 +411,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'chatswood',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Structural Repairs Chatswood | Romans Building Services',
+    metaTitle: 'Masonry & Structural Repairs Chatswood | Romans',
     metaDescription:
-      'Residential masonry, structural repairs and brickwork in Chatswood. Romans Building Services handles homes, apartments and commercial buildings on the Upper North Shore.',
+      'Residential masonry, structural repairs and brickwork in Chatswood. Romans handles homes, apartments and commercial buildings on the Upper North Shore.',
     heroTagline:
       'Residential masonry, structural brickwork and concrete repairs across Chatswood and Artarmon.',
     intro: [
@@ -455,9 +455,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'lane-cove',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Home Restoration Lane Cove | Romans Building Services',
+    metaTitle: 'Masonry & Home Restoration Lane Cove | Romans',
     metaDescription:
-      'Home masonry, brick repointing and retaining walls in Lane Cove. Romans Building Services handles period homes and concrete repairs across the Lower North Shore.',
+      'Home masonry, brick repointing and retaining walls in Lane Cove. Romans handles period homes and concrete repairs across the Lower North Shore.',
     heroTagline:
       'Home masonry, brick restoration and retaining walls across Lane Cove and Longueville.',
     intro: [
@@ -501,9 +501,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'manly',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Coastal Masonry & Salt Damage Repair Manly | Romans Building Services',
+    metaTitle: 'Coastal Masonry & Salt Damage Repair Manly | Romans',
     metaDescription:
-      'Coastal masonry, salt damage treatment and concrete cancer repair in Manly. Romans Building Services handles apartment blocks and homes on Sydney\'s Northern Beaches.',
+      'Coastal masonry, salt damage treatment and concrete cancer repair in Manly. Romans handles apartment blocks and homes on Sydney\'s Northern Beaches.',
     heroTagline:
       'Coastal masonry, salt damage treatment and concrete cancer repair across Manly and Fairlight.',
     intro: [
@@ -545,9 +545,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'dee-why',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Concrete Cancer & Coastal Masonry Dee Why | Romans Building Services',
+    metaTitle: 'Concrete Cancer & Coastal Masonry Dee Why | Romans',
     metaDescription:
-      'Concrete cancer repair, salt damage treatment and apartment block masonry in Dee Why. Romans Building Services works on strata buildings across the Northern Beaches.',
+      'Concrete cancer repair, salt damage treatment and apartment block masonry in Dee Why. Romans works on strata buildings across the Northern Beaches.',
     heroTagline:
       'Concrete cancer repair, coastal masonry and apartment block restoration across Dee Why and Collaroy.',
     intro: [
@@ -589,9 +589,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'avalon',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Retaining Walls & Coastal Masonry Avalon | Romans Building Services',
+    metaTitle: 'Retaining Walls & Coastal Masonry Avalon | Romans',
     metaDescription:
-      'Retaining walls, sandstone restoration and coastal masonry in Avalon. Romans Building Services handles sloped blocks and period homes on Sydney\'s Northern Beaches.',
+      'Retaining walls, sandstone restoration and coastal masonry in Avalon. Romans handles sloped blocks and period homes on Sydney\'s Northern Beaches.',
     heroTagline:
       'Retaining walls, sandstone work and coastal masonry across Avalon, Palm Beach and Newport.',
     intro: [
@@ -635,9 +635,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'newtown',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Brick Repointing Newtown | Romans Building Services',
+    metaTitle: 'Terrace Restoration & Brick Repointing Newtown | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage brick repair in Newtown. Romans Building Services handles period homes across Sydney\'s Inner West.',
+      'Victorian terrace restoration, tuckpointing and heritage brick repair in Newtown. Romans handles period homes across Sydney\'s Inner West.',
     heroTagline:
       'Victorian terrace restoration, tuckpointing and heritage brick repair across Newtown and Enmore.',
     intro: [
@@ -679,9 +679,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'balmain',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Heritage Masonry & Sandstone Restoration Balmain | Romans Building Services',
+    metaTitle: 'Heritage Masonry & Sandstone Restoration Balmain | Romans',
     metaDescription:
-      'Heritage terrace masonry, sandstone and brick restoration in Balmain. Romans Building Services handles period homes and waterfront properties across the Inner West.',
+      'Heritage terrace masonry, sandstone and brick restoration in Balmain. Romans handles period homes and waterfront properties across the Inner West.',
     heroTagline:
       'Heritage terrace masonry, sandstone work and brick restoration across Balmain and Rozelle.',
     intro: [
@@ -723,9 +723,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'marrickville',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace & Warehouse Masonry Marrickville | Romans Building Services',
+    metaTitle: 'Terrace & Warehouse Masonry Marrickville | Romans',
     metaDescription:
-      'Terrace restoration, warehouse conversion masonry and brick repointing in Marrickville. Romans Building Services handles period homes and commercial buildings in the Inner West.',
+      'Terrace restoration, warehouse conversion masonry and brick repointing in Marrickville. Romans handles period homes and commercial buildings in the Inner West.',
     heroTagline:
       'Terrace restoration, warehouse masonry and brick repointing across Marrickville and Dulwich Hill.',
     intro: [
@@ -767,9 +767,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'leichhardt',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Masonry Leichhardt | Romans Building Services',
+    metaTitle: 'Terrace Restoration & Masonry Leichhardt | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage masonry in Leichhardt. Romans Building Services handles period homes across Sydney\'s Inner West.',
+      'Victorian terrace restoration, tuckpointing and heritage masonry in Leichhardt. Romans handles period homes across Sydney\'s Inner West.',
     heroTagline:
       'Victorian terrace restoration, heritage repointing and tuckpointing across Leichhardt and Annandale.',
     intro: [
@@ -807,15 +807,15 @@ const SUBURBS: Record<string, SuburbData> = {
     nearbySlugs: ['newtown', 'balmain', 'marrickville'],
   },
 
-  // ===== Greater Sydney area =====
+  // ===== Sydney Metro area =====
   'parramatta': {
     name: 'Parramatta',
     slug: 'parramatta',
-    parentAreaName: 'Greater Sydney',
+    parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Commercial & Heritage Masonry Parramatta | Romans Building Services',
+    metaTitle: 'Commercial & Heritage Masonry Parramatta | Romans',
     metaDescription:
-      'Commercial masonry, heritage restoration and structural repairs in Parramatta. Romans Building Services handles Sydney\'s second CBD and surrounding suburbs.',
+      'Commercial masonry, heritage restoration and structural repairs in Parramatta. Romans handles brick, sandstone and facade repairs across Sydney\'s second CBD.',
     heroTagline:
       'Commercial masonry, heritage restoration and structural repairs across Parramatta and Westmead.',
     intro: [
@@ -855,9 +855,9 @@ const SUBURBS: Record<string, SuburbData> = {
   'strathfield': {
     name: 'Strathfield',
     slug: 'strathfield',
-    parentAreaName: 'Greater Sydney',
+    parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Heritage Home Restoration Strathfield | Romans Building Services',
+    metaTitle: 'Masonry & Heritage Home Restoration Strathfield | Romans',
     metaDescription:
       'Heritage home restoration, brick repointing and stonework in Strathfield. Romans Building Services is based in Strathfield — local masonry experts since 1995.',
     heroTagline:
@@ -881,7 +881,7 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Are you actually based in Strathfield?',
         answer:
-          'Yes. Romans Building Services has been based in Strathfield since 1995. Minas lives locally. If you\'re in the suburb we can often be on site same-day for inspections.',
+          'Yes. Romans has been based in Strathfield since 1995. Minas lives locally. If you\'re in the suburb we can often be on site same-day for inspections.',
       },
       {
         question: 'Do you work on Strathfield Council heritage-listed homes?',
@@ -903,9 +903,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'pyrmont',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Warehouse Conversion Work Pyrmont | Romans Building Services',
+    metaTitle: 'Masonry & Warehouse Conversion Work Pyrmont | Romans',
     metaDescription:
-      'Warehouse conversion brickwork, heritage sandstone and apartment concrete repairs in Pyrmont. Romans Building Services handles industrial-era buildings across the inner city.',
+      'Warehouse conversion brickwork, heritage sandstone and apartment concrete repairs in Pyrmont. Romans handles industrial-era buildings across the inner city.',
     heroTagline:
       'Warehouse conversion brickwork, heritage sandstone and apartment concrete work across Pyrmont and Darling Harbour.',
     intro: [
@@ -947,7 +947,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'ultimo',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Terrace & Warehouse Masonry Ultimo | Romans Building Services',
+    metaTitle: 'Terrace & Warehouse Masonry Ultimo | Romans',
     metaDescription:
       'Victorian terrace brick restoration, warehouse conversion masonry and heritage repointing in Ultimo. Romans Building Services works across Sydney\'s inner city.',
     heroTagline:
@@ -993,9 +993,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'coogee',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Concrete Cancer & Coastal Masonry Coogee | Romans Building Services',
+    metaTitle: 'Concrete Cancer & Coastal Masonry Coogee | Romans',
     metaDescription:
-      'Concrete cancer treatment, salt damage repair and coastal masonry in Coogee. Romans Building Services handles apartment blocks and homes across Sydney\'s east.',
+      'Concrete cancer treatment, salt damage repair and coastal masonry in Coogee. Romans handles apartment blocks and homes across Sydney\'s east.',
     heroTagline:
       'Concrete cancer, salt damage and coastal masonry restoration across Coogee, Clovelly and Bronte.',
     intro: [
@@ -1037,9 +1037,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'randwick',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Masonry & Heritage Home Restoration Randwick | Romans Building Services',
+    metaTitle: 'Masonry & Heritage Home Restoration Randwick | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and retaining walls in Randwick. Romans Building Services handles period properties across Sydney\'s east.',
+      'Federation home restoration, brick repointing and retaining walls in Randwick. Romans handles period properties across Sydney\'s east.',
     heroTagline:
       'Federation home restoration, heritage brick and retaining walls across Randwick and Kensington.',
     intro: [
@@ -1081,9 +1081,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'bellevue-hill',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Stone & Masonry Bellevue Hill | Romans Building Services',
+    metaTitle: 'Heritage Stone & Masonry Bellevue Hill | Romans',
     metaDescription:
-      'Heritage stone restoration, period home masonry and retaining walls in Bellevue Hill. Romans Building Services works on high-end Eastern Suburbs properties.',
+      'Heritage stone restoration, period home masonry and retaining walls in Bellevue Hill. Romans works on high-end Eastern Suburbs properties.',
     heroTagline:
       'Heritage stone restoration, period home masonry and multi-level retaining walls across Bellevue Hill and Rose Bay.',
     intro: [
@@ -1127,7 +1127,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'cremorne',
     parentAreaName: 'Lower North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Heritage Masonry & Brick Restoration Cremorne | Romans Building Services',
+    metaTitle: 'Heritage Masonry & Brick Restoration Cremorne | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and retaining walls in Cremorne. Romans Building Services works across Sydney\'s Lower North Shore.',
     heroTagline:
@@ -1171,9 +1171,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'st-leonards',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Commercial Masonry & Facade Repair St Leonards | Romans Building Services',
+    metaTitle: 'Commercial Masonry & Facade Repair St Leonards | Romans',
     metaDescription:
-      'Commercial facade repair, concrete cancer treatment and remedial masonry in St Leonards. Romans Building Services handles office buildings and apartments.',
+      'Commercial facade repair, concrete cancer treatment and remedial masonry in St Leonards. Romans handles office buildings and apartments.',
     heroTagline:
       'Commercial facade work, concrete cancer and remedial masonry across St Leonards and Crows Nest.',
     intro: [
@@ -1217,9 +1217,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'collaroy',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Coastal Masonry & Concrete Cancer Collaroy | Romans Building Services',
+    metaTitle: 'Coastal Masonry & Concrete Cancer Collaroy | Romans',
     metaDescription:
-      'Concrete cancer repair, salt damage treatment and coastal masonry in Collaroy. Romans Building Services handles beachfront apartments and homes.',
+      'Concrete cancer repair, salt damage treatment and coastal masonry in Collaroy. Romans handles beachfront apartments and homes.',
     heroTagline:
       'Concrete cancer, salt damage and coastal masonry across Collaroy and Narrabeen.',
     intro: [
@@ -1263,7 +1263,7 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Coastal Masonry & Heritage Home Restoration Freshwater | Romans',
     metaDescription:
-      'Coastal masonry repairs, heritage home restoration and concrete work in Freshwater. Romans Building Services handles salt damage and period homes.',
+      'Coastal masonry repairs, heritage home restoration and concrete work in Freshwater. Romans handles salt damage and period homes.',
     heroTagline:
       'Heritage home restoration, coastal masonry and concrete work across Freshwater and Harbord.',
     intro: [
@@ -1307,9 +1307,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'glebe',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Victorian Terrace Restoration Glebe | Romans Building Services',
+    metaTitle: 'Victorian Terrace Restoration Glebe | Romans',
     metaDescription:
-      'Victorian terrace brick restoration, tuckpointing and heritage repointing in Glebe. Romans Building Services works on period homes in Sydney\'s Inner West.',
+      'Victorian terrace brick restoration, tuckpointing and heritage repointing in Glebe. Romans works on period homes in Sydney\'s Inner West.',
     heroTagline:
       'Victorian terrace restoration, tuckpointing and heritage repointing across Glebe and Forest Lodge.',
     intro: [
@@ -1351,9 +1351,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'surry-hills',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace & Warehouse Masonry Surry Hills | Romans Building Services',
+    metaTitle: 'Terrace & Warehouse Masonry Surry Hills | Romans',
     metaDescription:
-      'Victorian terrace restoration, warehouse conversion masonry and heritage brickwork in Surry Hills. Romans Building Services handles period buildings.',
+      'Victorian terrace restoration, warehouse conversion masonry and heritage brickwork in Surry Hills. Romans handles period buildings.',
     heroTagline:
       'Victorian terrace restoration, warehouse masonry and heritage brickwork across Surry Hills and Redfern.',
     intro: [
@@ -1395,9 +1395,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'erskineville',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Repointing Erskineville | Romans Building Services',
+    metaTitle: 'Terrace Restoration & Repointing Erskineville | Romans',
     metaDescription:
-      'Victorian terrace restoration, heritage brick repointing and tuckpointing in Erskineville. Romans Building Services handles period homes in Sydney\'s Inner West.',
+      'Victorian terrace restoration, heritage brick repointing and tuckpointing in Erskineville. Romans handles period homes in Sydney\'s Inner West.',
     heroTagline:
       'Victorian terrace restoration, heritage repointing and tuckpointing across Erskineville and Alexandria.',
     intro: [
@@ -1435,15 +1435,15 @@ const SUBURBS: Record<string, SuburbData> = {
     nearbySlugs: ['newtown', 'marrickville', 'glebe'],
   },
 
-  // ===== Greater Sydney area (additional) =====
+  // ===== Sydney Metro area (additional) =====
   'burwood': {
     name: 'Burwood',
     slug: 'burwood',
-    parentAreaName: 'Greater Sydney',
+    parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Heritage Home Restoration Burwood | Romans Building Services',
+    metaTitle: 'Masonry & Heritage Home Restoration Burwood | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and retaining walls in Burwood. Romans Building Services is a local specialist — 10 minutes from Strathfield home base.',
+      'Federation home restoration, brick repointing and retaining walls in Burwood. Romans handles heritage masonry, period homes and structural repairs.',
     heroTagline:
       'Federation home restoration, heritage repointing and retaining walls across Burwood and Croydon.',
     intro: [
@@ -1483,9 +1483,9 @@ const SUBURBS: Record<string, SuburbData> = {
   'concord': {
     name: 'Concord',
     slug: 'concord',
-    parentAreaName: 'Greater Sydney',
+    parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Period Home Restoration Concord | Romans Building Services',
+    metaTitle: 'Masonry & Period Home Restoration Concord | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and structural repairs in Concord. Romans Building Services works across Sydney\'s inner west.',
     heroTagline:
@@ -1527,9 +1527,9 @@ const SUBURBS: Record<string, SuburbData> = {
   'homebush': {
     name: 'Homebush',
     slug: 'homebush',
-    parentAreaName: 'Greater Sydney',
+    parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Home Restoration Homebush | Romans Building Services',
+    metaTitle: 'Masonry & Home Restoration Homebush | Romans',
     metaDescription:
       'Heritage home restoration, brick repointing and retaining walls in Homebush. Romans Building Services is local — based in neighbouring Strathfield.',
     heroTagline:

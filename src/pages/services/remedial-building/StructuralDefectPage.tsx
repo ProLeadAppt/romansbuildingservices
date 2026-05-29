@@ -8,8 +8,8 @@ const StructuralDefectPage = () => {
   return (
     <ServicePageTemplate
       title="Structural Defect Repair"
-      metaTitle="Structural Defect Repair Sydney | Builder Warranty, HBI, Engineer Reports | Romans Building Services"
-      metaDescription="Sydney structural defect rectification by Minas Romanakis. Builder warranty claims, HBI defects, engineer scopes. Crack stitching, lintel replacement, wall rebuilds."
+      metaTitle="Structural Defect Repair Sydney | Romans"
+      metaDescription="Sydney structural defect rectification by Minas Romanakis. Builder warranty claims, HBI defects, engineer scopes. Crack stitching, lintel replacement, wall."
       heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}
       siblingServices={siblings}

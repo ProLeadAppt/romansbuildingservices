@@ -58,6 +58,12 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       name: s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
     })),
     author: { '@type': 'Organization', name: 'Romans Building Services' },
+    reviewedBy: {
+      '@type': 'Person',
+      name: 'Minas Romanakis',
+      jobTitle: 'Founder and stonemason',
+    },
+    dateModified: '2026-05-29',
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -133,6 +139,19 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
               Call Minas — 0414 922 276
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-b border-stone-200">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-amber mb-3">
+            Quick answer
+          </p>
+          <p className="font-body text-text-secondary text-lg leading-relaxed">
+            Romans Building Services fixes {problem.name.toLowerCase()} in {area.name}, Sydney,
+            using repair methods matched to local housing stock, salt exposure, age and movement.
+          </p>
+          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
         </div>
       </section>
 

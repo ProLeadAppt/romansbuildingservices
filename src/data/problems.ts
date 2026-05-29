@@ -96,7 +96,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'cracked-brick-walls': {
     name: 'Cracked Brick Walls',
     slug: 'cracked-brick-walls',
-    metaTitle: 'Cracked Brick Walls Sydney | Causes, Risk & Fix | Romans Building Services',
+    metaTitle: 'Cracked Brick Walls Sydney | Romans Building Services',
     metaDescription:
       'Cracks in your brick wall? Learn what different crack patterns mean, which ones matter, and how we fix them properly. 30 years of masonry across Sydney.',
     heroTagline:
@@ -198,7 +198,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'failing-retaining-walls': {
     name: 'Failing Retaining Walls',
     slug: 'failing-retaining-walls',
-    metaTitle: 'Failing Retaining Walls Sydney | Repair or Rebuild? | Romans Building Services',
+    metaTitle: 'Failing Retaining Walls Sydney | Romans',
     metaDescription:
       'Retaining wall leaning, bulging or cracking? Learn why it happens, what proper repair looks like, and when you need to rebuild. Sydney masonry since 1995.',
     heroTagline:
@@ -384,7 +384,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'spalling-render': {
     name: 'Spalling & Falling Render',
     slug: 'spalling-render',
-    metaTitle: 'Render Falling Off Walls Sydney | Causes & Fix | Romans Building Services',
+    metaTitle: 'Render Falling Off Walls Sydney | Romans',
     metaDescription:
       'Render bubbling, cracking or falling off your walls? Here is what is really happening and what a proper repair looks like. Sydney masonry since 1995.',
     heroTagline:
@@ -476,7 +476,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'crumbling-mortar': {
     name: 'Crumbling Mortar Joints',
     slug: 'crumbling-mortar',
-    metaTitle: 'Crumbling Mortar in Brick Walls Sydney | Repointing Explained | Romans',
+    metaTitle: 'Crumbling Mortar Sydney | Repointing | Romans',
     metaDescription:
       'Mortar crumbling out of brick joints? Learn why it happens, why cement pointing damages old bricks, and what proper lime repointing looks like.',
     heroTagline:
@@ -569,7 +569,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'foundation-movement': {
     name: 'Foundation Movement & Settlement',
     slug: 'foundation-movement',
-    metaTitle: 'House Foundation Movement Sydney | Signs & Repair | Romans Building Services',
+    metaTitle: 'Foundation Movement Sydney | Romans Building Services',
     metaDescription:
       'House settling, walls cracking, doors sticking? Learn the signs of foundation movement, when it is serious, and how underpinning works.',
     heroTagline:
@@ -664,7 +664,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'chimney-cracks': {
     name: 'Chimney Cracks & Leaks',
     slug: 'chimney-cracks',
-    metaTitle: 'Chimney Cracks & Leaks Sydney | Repair Guide | Romans Building Services',
+    metaTitle: 'Chimney Cracks & Leaks Sydney | Romans',
     metaDescription:
       'Chimney cracked, leaking or leaning? Learn why chimneys fail, how to tell if yours is dangerous, and what a proper rebuild involves.',
     heroTagline:
@@ -764,7 +764,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'efflorescence-salt-damage': {
     name: 'Efflorescence & Salt Damage',
     slug: 'efflorescence-salt-damage',
-    metaTitle: 'Salt Damage & Efflorescence on Brick Walls Sydney | Romans Building Services',
+    metaTitle: 'Salt Damage & Efflorescence Sydney | Romans',
     metaDescription:
       'White salt crystals on brickwork, crumbling mortar, spalling brick faces — salt damage explained. Coastal Sydney specialists.',
     heroTagline:
@@ -857,9 +857,9 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'leaking-balconies': {
     name: 'Leaking Balconies',
     slug: 'leaking-balconies',
-    metaTitle: 'Leaking Balconies Sydney | Causes & Proper Repair | Romans Building Services',
+    metaTitle: 'Leaking Balconies Sydney | Romans Building Services',
     metaDescription:
-      'Balcony leaks into the apartment below? Learn what is really failing — waterproof membrane, tile bedding, drainage — and how a proper repair works. Strata specialists.',
+      'Leaking balconies in Sydney apartments. Learn whether the membrane, tile bed, drainage or concrete is failing, and how to repair it properly.',
     heroTagline:
       'Water coming through from the balcony above is almost always the membrane — and almost never fixed by more silicone.',
     quickAnswer:
@@ -952,7 +952,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'tuckpointing-restoration': {
     name: 'Tuckpointing Restoration',
     slug: 'tuckpointing-restoration',
-    metaTitle: 'Tuckpointing Restoration Sydney | Heritage Victorian Terraces | Romans',
+    metaTitle: 'Tuckpointing Restoration Sydney | Romans',
     metaDescription:
       'Tuckpointing restoration on Victorian and Federation terraces across Sydney. Colour-matched lime mortar with fine white fillet. 30 years of heritage work.',
     heroTagline:
@@ -1043,7 +1043,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'sandstone-weathering': {
     name: 'Sandstone Weathering & Erosion',
     slug: 'sandstone-weathering',
-    metaTitle: 'Sandstone Weathering & Erosion Sydney | Restoration | Romans Building Services',
+    metaTitle: 'Sandstone Weathering Sydney | Romans Building Services',
     metaDescription:
       'Sandstone walls eroding, flaking or losing detail? Learn the causes and proper restoration for Sydney heritage sandstone. 30 years of heritage stone work.',
     heroTagline:
@@ -1231,7 +1231,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'cavity-wall-tie-failure': {
     name: 'Cavity Wall Tie Failure',
     slug: 'cavity-wall-tie-failure',
-    metaTitle: 'Cavity Wall Tie Failure Sydney | Signs & Repair | Romans Building Services',
+    metaTitle: 'Cavity Wall Tie Failure Sydney | Romans',
     metaDescription:
       'Horizontal cracks at regular intervals, bowing walls? Your cavity wall ties may be failing. Romans Building Services remedies tie failure across Sydney homes.',
     heroTagline:

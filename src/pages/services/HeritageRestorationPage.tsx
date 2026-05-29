@@ -8,7 +8,7 @@ const HeritageRestorationPage = () => {
   return (
   <ServicePageTemplate
     title="Heritage Restoration"
-    metaTitle="Heritage Restoration Sydney | Roman Building Services"
+    metaTitle="Heritage Restoration Sydney | Romans Building Services"
     metaDescription="Specialised heritage restoration across Sydney. Sandstone, convict brick, period details. Working with councils and heritage architects. Call Minas."
     heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
     intro={[

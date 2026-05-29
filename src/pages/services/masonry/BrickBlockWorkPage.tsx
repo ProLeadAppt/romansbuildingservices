@@ -8,8 +8,8 @@ const BrickBlockWorkPage = () => {
   return (
     <ServicePageTemplate
       title="Brick & Block Work"
-      metaTitle="Brick & Block Work Sydney | Garden Walls, Boundary Walls, Extensions | Romans Building Services"
-      metaDescription="Sydney brick and block work by Minas Romanakis. New builds, extensions, boundary walls, repairs. 30 years of laying brick across Greater Sydney."
+      metaTitle="Brick & Block Work Sydney | Romans Building Services"
+      metaDescription="Sydney brick and block work by Minas Romanakis. New builds, extensions, boundary walls and repairs across Sydney metro suburbs."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
       siblingServices={siblings}
@@ -21,7 +21,7 @@ const BrickBlockWorkPage = () => {
       intro={[
         'We build and repair brick and block walls across Sydney. New construction, house extensions, boundary walls, garden walls, retaining walls, feature walls. If the wall is brick or block, we do it.',
         'For new work we match the bond pattern, the brick size and the mortar colour to whatever is already on the property. For repairs we find matching bricks or have them tinted to blend in. A patched wall should not look patched once we are finished with it.',
-        'Romans has been laying brick and block across Greater Sydney since 1995. Minas does the assessment himself and is on the tools for any structural or heritage work. For straight boundary walls and garden builds, the senior crew runs the job under his sign-off.',
+        'Romans has been laying brick and block across Sydney metro suburbs since 1995. Minas does the assessment himself and is on the tools for any structural or heritage work. For straight boundary walls and garden builds, the senior crew runs the job under his sign-off.',
       ]}
       features={[
         {

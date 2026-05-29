@@ -2,6 +2,7 @@ import type { QuoteData } from './types';
 import { SERVICE_LABELS, URGENCY_LABELS } from './types';
 
 const WEBHOOK_URL = import.meta.env.VITE_QUOTE_WEBHOOK_URL as string | undefined;
+const PRODUCTION_QUOTE_ENDPOINT = '/.netlify/functions/quote-email';
 
 interface SubmitResult {
   ok: boolean;
@@ -31,7 +32,9 @@ export async function submitQuote(data: QuoteData, pageOrigin: string): Promise<
     userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
   };
 
-  if (!WEBHOOK_URL) {
+  const endpoint = WEBHOOK_URL || (import.meta.env.PROD ? PRODUCTION_QUOTE_ENDPOINT : undefined);
+
+  if (!endpoint) {
     if (import.meta.env.DEV) {
       console.warn('[quote] VITE_QUOTE_WEBHOOK_URL not set. Payload that would be sent:', payload);
       await new Promise((r) => setTimeout(r, 800));
@@ -41,7 +44,7 @@ export async function submitQuote(data: QuoteData, pageOrigin: string): Promise<
   }
 
   try {
-    const res = await fetch(WEBHOOK_URL, {
+    const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

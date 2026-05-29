@@ -7,8 +7,8 @@ const BeamColumnPage = () => {
   return (
     <ServicePageTemplate
       title="Beam & Column Restoration"
-      metaTitle="Concrete & Masonry Beam & Column Repairs Sydney | Romans Building Services"
-      metaDescription="Sydney beam and column restoration. Concrete spalling repair, steel lintel replacement, carbon fibre reinforcement. Strata, commercial, residential. Engineer signed off."
+      metaTitle="Concrete & Masonry Beam & Column Repairs Sydney | Romans"
+      metaDescription="Sydney beam and column restoration. Concrete spalling repair, steel lintel replacement, carbon fibre reinforcement. Strata, commercial, residential."
       heroImage="/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}

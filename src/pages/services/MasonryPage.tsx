@@ -8,7 +8,7 @@ const MasonryPage = () => {
   return (
   <ServicePageTemplate
     title="Stone & Masonry"
-    metaTitle="Stone & Masonry Services Sydney | Roman Building Services"
+    metaTitle="Stone & Masonry Services Sydney | Romans Building Services"
     metaDescription="Brick and stone masonry across Sydney. Walls, chimneys, retaining walls, feature stone, and repairs. New builds and restorations. Call Minas for a quote."
     heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
     intro={[

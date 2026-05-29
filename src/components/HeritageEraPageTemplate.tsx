@@ -24,8 +24,13 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
     description: data.metaDescription,
     url: canonicalUrl,
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-05-29',
     author: { '@type': 'Organization', name: 'Romans Building Services' },
+    reviewedBy: {
+      '@type': 'Person',
+      name: 'Minas Romanakis',
+      jobTitle: 'Founder and stonemason',
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -96,6 +101,19 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
               Call Minas — 0414 922 276
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-b border-stone-200">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-amber mb-3">
+            Quick answer
+          </p>
+          <p className="font-body text-text-secondary text-lg leading-relaxed">
+            Romans Building Services restores {data.name.toLowerCase()} across Sydney with
+            materials and repair methods matched to the building era, suburb and original fabric.
+          </p>
+          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
         </div>
       </section>
 

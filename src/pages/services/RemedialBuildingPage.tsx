@@ -8,7 +8,7 @@ const RemedialBuildingPage = () => {
   return (
   <ServicePageTemplate
     title="Remedial Building"
-    metaTitle="Remedial Building Services Sydney | Roman Building Services"
+    metaTitle="Remedial Building Services Sydney | Romans Building Services"
     metaDescription="Structural assessments, remedial engineering, and building compliance work in Sydney. Working with engineers and strata managers. Call Minas."
     heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
     intro={[

@@ -7,7 +7,7 @@ const StructuralCrackRepairPage = () => {
   return (
     <ServicePageTemplate
       title="Structural Crack Repair"
-      metaTitle="Structural Crack Repair Sydney | Helibar Stitching, Epoxy Injection | Romans Building Services"
+      metaTitle="Structural Crack Repair Sydney | Romans"
       metaDescription="Sydney structural crack repair by Minas Romanakis. Helical stitching, epoxy injection, resin grouting. Diagnose the cause, fix it properly. Engineer signed off."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
