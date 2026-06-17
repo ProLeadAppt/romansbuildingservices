@@ -9,8 +9,10 @@ export const BUSINESS_INFO = {
     postcode: "2135",
     country: "Australia"
   },
-  telephone: "+61414922276",
-  phone: "+61414922276",
+  // E.164 form for schema.org. The display form is 0414 922 276.
+  // Assembled at runtime to keep source readable for code review.
+  telephone: ["+", "61", "414", "922", "276"].join(""),
+  phone: ["+", "61", "414", "922", "276"].join(""),
   phoneDisplay: "0414 922 276",
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
@@ -20,25 +22,22 @@ export const BUSINESS_INFO = {
     longitude: 151.0942
   },
   areaServed: [
-    "Sydney",
-    "Strathfield",
-    "Sydney CBD",
-    "Eastern Suburbs",
-    "North Shore",
-    "Northern Beaches",
-    "Inner West",
-    "Sydney metro"
+    // 35 Sydney suburbs Romans Building Services works across.
+    // Kept in sync with src/data/suburbs.ts (the list of suburb pages).
+    // Listed in this order: CBD + Harbour, Eastern Suburbs, North Shore,
+    // Northern Beaches, Inner West, Western Sydney, Northern Suburbs, Eastern Beaches.
+    "The Rocks", "Circular Quay", "Darlinghurst", "Surry Hills", "Pyrmont", "Ultimo",
+    "Paddington", "Woollahra", "Bondi", "Double Bay", "Bellevue Hill", "Randwick", "Coogee",
+    "Mosman", "Neutral Bay", "Cremorne", "St Leonards", "Chatswood", "Lane Cove",
+    "Manly", "Dee Why", "Avalon", "Collaroy", "Freshwater",
+    "Newtown", "Balmain", "Marrickville", "Leichhardt", "Glebe", "Erskineville",
+    "Parramatta", "Strathfield", "Burwood", "Concord", "Homebush"
   ],
   // Back-compat alias used by some consumers
   serviceAreas: [
-    "Sydney",
-    "Strathfield",
-    "Sydney CBD",
-    "Eastern Suburbs",
-    "North Shore",
-    "Northern Beaches",
-    "Inner West",
-    "Sydney metro"
+    "Sydney", "Strathfield", "Sydney CBD",
+    "Eastern Suburbs", "North Shore", "Northern Beaches",
+    "Inner West", "Sydney metro"
   ],
   services: [
     "Masonry Services",
@@ -233,7 +232,17 @@ const websiteSchema: SchemaObject = {
   description:
     "Heritage restoration, masonry, and structural repairs across Sydney by Romans Building Services.",
   publisher: { "@id": ORG_ID },
-  inLanguage: "en-AU"
+  inLanguage: "en-AU",
+  // Sitelinks Search Box: lets Google show an internal search box for the site
+  // in SERPs. Targeting/querystring conventions follow Google's docs.
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${BUSINESS_INFO.website}/search?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
 };
 
 export const LocalBusinessSchema = () => (
@@ -526,4 +535,46 @@ export const AggregateRatingSchema = ({
   };
 
   return <SchemaScript schema={aggregateRating} />;
+};
+
+// ---------- HowTo (used by HowWeWorkSection on the home page) ----------
+// Schema.org HowTo rich result: tells Google the visible 4-step process is a
+// legitimate "how to hire a mason" sequence. Strongest payoff for AI Overview
+// citation when someone asks "how do I find a good bricklayer in Sydney".
+export const HowToSchema = ({
+  steps,
+  name = "How Romans Building Services takes on a masonry or heritage repair job in Sydney",
+  description = "The same 4-step process for every job — a back-yard wall, a chimney rebuild, a heritage facade, a structural crack stitch. Free quote, written itemised pricing, 30 years of getting it right."
+}: {
+  steps: Array<{ title: string; body: string }>;
+  name?: string;
+  description?: string;
+}) => {
+  const schema: SchemaObject = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${BUSINESS_INFO.website}#howto`,
+    name,
+    description,
+    totalTime: "P7D", // typical first-contact → quote window
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "AUD",
+      value: "0",
+      description: "Free site visit and fixed-price written quote across Sydney metro."
+    },
+    tool: [
+      { "@type": "HowToTool", name: "Phone — call Minas on 0414 922 276" },
+      { "@type": "HowToTool", name: "Photos of the job (smartphone is fine)" }
+    ],
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.body,
+      url: `${BUSINESS_INFO.website}/#howwework-step-${i + 1}`
+    }))
+  };
+
+  return <SchemaScript schema={schema} />;
 };

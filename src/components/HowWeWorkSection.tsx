@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '@/utils/animations';
+import { HowToSchema } from './LocalSEO/StructuredData';
 
 const steps = [
   {
@@ -23,6 +24,10 @@ const steps = [
 export const HowWeWorkSection = () => {
   return (
     <section className="py-16 md:py-24 px-4 bg-bg-light">
+      {/* HowTo rich-result schema. Targets AI Overview + Google "how to hire
+          a mason" queries, and gives the visible 4-step process a machine-
+          readable anchor. */}
+      <HowToSchema steps={steps} />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +53,12 @@ export const HowWeWorkSection = () => {
           className="space-y-8"
         >
           {steps.map((step, i) => (
-            <motion.li key={step.title} variants={fadeUp} className="flex gap-5">
+            <motion.li
+              key={step.title}
+              id={`howwework-step-${i + 1}`}
+              variants={fadeUp}
+              className="flex gap-5"
+            >
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy text-white font-heading flex items-center justify-center text-lg">
                 {i + 1}
               </div>
