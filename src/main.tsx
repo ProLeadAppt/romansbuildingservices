@@ -15,6 +15,7 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const GalleryPage = lazy(() => import('./pages/ProjectsPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const ServicesAreasPage = lazy(() => import('./pages/ServicesAreasPage'))
+const SearchPage = lazy(() => import('./pages/SearchPage'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Tier 1 service pages
@@ -125,6 +126,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/gallery" element={<L><GalleryPage /></L>} />
           <Route path="/contact" element={<L><ContactPage /></L>} />
           <Route path="/areas" element={<L><ServicesAreasPage /></L>} />
+          <Route path="/search" element={<L><SearchPage /></L>} />
 
           {/* Redirects */}
           <Route path="/projects" element={<Navigate to="/gallery" replace />} />

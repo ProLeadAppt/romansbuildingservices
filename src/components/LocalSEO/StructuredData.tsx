@@ -79,7 +79,8 @@ export const BUSINESS_INFO = {
   },
   sameAs: [
     "https://www.instagram.com/romansstone",
-    "https://www.facebook.com/RomansBuildingServicesStrathfield"
+    "https://www.facebook.com/RomansBuildingServicesStrathfield",
+    "https://maps.app.goo.gl/UpfsPkQJJpw5avzw6"
   ],
   socialMedia: {
     facebook: "https://www.facebook.com/RomansBuildingServicesStrathfield",

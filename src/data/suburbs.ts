@@ -1584,6 +1584,15 @@ export function getSuburb(slug: string): SuburbPageProps | undefined {
 
 export const SUBURB_SLUGS = Object.keys(SUBURBS);
 
+export function getAllSuburbs(): Array<{ name: string; slug: string; parentAreaName: string; metaDescription: string }> {
+  return Object.values(SUBURBS).map((s) => ({
+    name: s.name,
+    slug: s.slug,
+    parentAreaName: s.parentAreaName,
+    metaDescription: s.metaDescription
+  }));
+}
+
 // Convenience export: suburbs grouped by parent area slug (without the /areas/ prefix)
 export function getSuburbsForArea(parentHref: string): Array<{ name: string; slug: string }> {
   return Object.values(SUBURBS)
