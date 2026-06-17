@@ -7,6 +7,7 @@ import { QuoteCTAButton } from '@/components/quote';
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Case Studies', to: '/case-studies' },
   { label: 'Common Problems', to: '/problems' },
   { label: 'Heritage Eras', to: '/heritage' },
   { label: 'Areas', to: '/areas' },

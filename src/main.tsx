@@ -100,6 +100,10 @@ const ProblemAreaPage = lazy(() => import('./pages/problems/ProblemAreaPage'))
 const HeritageHubPage = lazy(() => import('./pages/heritage/HeritageHubPage'))
 const HeritageEraPage = lazy(() => import('./pages/heritage/HeritageEraPage'))
 
+// Case studies (dynamic — rendered from data/caseStudies.ts)
+const CaseStudiesIndexPage = lazy(() => import('./pages/case-studies/CaseStudiesIndexPage'))
+const CaseStudyPage = lazy(() => import('./pages/case-studies/CaseStudyPage'))
+
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="w-8 h-8 border-2 border-navy border-t-amber rounded-full animate-spin" />
@@ -212,6 +216,10 @@ createRoot(document.getElementById('root')!).render(
           {/* Heritage era pages (dynamic) */}
           <Route path="/heritage" element={<L><HeritageHubPage /></L>} />
           <Route path="/heritage/:era" element={<L><HeritageEraPage /></L>} />
+
+          {/* Case studies (dynamic) */}
+          <Route path="/case-studies" element={<L><CaseStudiesIndexPage /></L>} />
+          <Route path="/case-studies/:slug" element={<L><CaseStudyPage /></L>} />
 
           {/* 404 */}
           <Route path="*" element={<L><NotFound /></L>} />
