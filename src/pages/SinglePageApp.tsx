@@ -8,7 +8,7 @@ import { SectionDivider } from '@/components/SectionDivider';
 import { ProcessStrip } from '@/components/ProcessStrip';
 import { HowWeWorkSection } from '@/components/HowWeWorkSection';
 import { HomeFAQSection } from '@/components/HomeFAQSection';
-import { LocalBusinessSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { LocalBusinessSchema, SpeakableSchema, PersonSchema } from '@/components/LocalSEO/StructuredData';
 
 const SinglePageApp = () => {
   return (
@@ -21,6 +21,7 @@ const SinglePageApp = () => {
       />
       <LocalBusinessSchema />
       <SpeakableSchema url="https://romansbuildingservices.com/" cssSelectors={['h1', 'h2']} />
+      <PersonSchema />
 
       {/* Hero — full-bleed, cinematic, credential strip included */}
       <RomansPremiumHeroSection />
