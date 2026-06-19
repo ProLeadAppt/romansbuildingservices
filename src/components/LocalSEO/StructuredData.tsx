@@ -62,13 +62,13 @@ export const BUSINESS_INFO = {
     "Retaining walls"
   ],
   businessHours: {
-    monday: "07:00-18:00",
-    tuesday: "07:00-18:00",
-    wednesday: "07:00-18:00",
-    thursday: "07:00-18:00",
-    friday: "07:00-18:00",
-    saturday: "08:00-16:00",
-    sunday: "Priority Only"
+    monday: "Closed",
+    tuesday: "Closed",
+    wednesday: "Closed",
+    thursday: "09:00-17:00",
+    friday: "Closed",
+    saturday: "Closed",
+    sunday: "Closed"
   },
   established: "1995",
   foundingDate: "1995-01-01",
@@ -149,18 +149,12 @@ const localBusinessSchema: SchemaObject = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "07:00",
-      closes: "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "08:00",
-      closes: "16:00"
+      dayOfWeek: "Thursday",
+      opens: "09:00",
+      closes: "17:00"
     }
   ],
-  openingHours: ["Mo-Fr 07:00-18:00", "Sa 08:00-16:00"],
+  openingHours: ["Th 09:00-17:00"],
   image: [BUSINESS_INFO.images.main, BUSINESS_INFO.images.masonry, BUSINESS_INFO.images.heritage],
   logo: BUSINESS_INFO.logo,
   sameAs: BUSINESS_INFO.sameAs,

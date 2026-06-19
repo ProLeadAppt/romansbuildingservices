@@ -12,13 +12,13 @@ const featuredServices = [
   },
   {
     title: 'Stone & Masonry',
-    description: 'Walls, chimneys, feature stone, retaining walls. New builds and repairs.',
+    description: 'Walls, chimneys, feature stone, retaining walls. New builds, repairs, and remedial masonry.',
     image: '/gallery/thumbs/romansstone_1452415091_1159264269511646168_2394650725.webp',
     link: '/services/masonry',
   },
   {
     title: 'Structural Repairs',
-    description: 'Crack stitching, lintel replacement, load-bearing wall repairs.',
+    description: 'Crack stitching, lintel replacement, load-bearing wall repairs, and remediation.',
     image: '/gallery/thumbs/romansstone_1575487721_2191672319871916475_2394650725.webp',
     link: '/services/structural-repairs',
   },
@@ -40,7 +40,7 @@ const secondaryServices = [
   {
     icon: Shield,
     title: 'Concrete & Remedial',
-    description: 'Concrete cancer, spalling repairs, render replacement.',
+    description: 'Concrete cancer, spalling repairs, render replacement, and defect rectification.',
     link: '/services/concrete-repairs',
   },
 ];
@@ -59,7 +59,7 @@ export const InteractiveServicesSection = () => {
           <h2 className="font-heading text-3xl lg:text-4xl text-white">What We Do</h2>
           <span className="accent-line mt-4 mb-6" />
           <p className="font-body text-lg text-white/60 max-w-xl">
-            Masonry, restoration, and structural repairs across Sydney. 30 years of getting it right.
+            Sydney masonry and remedial construction, plus restoration and structural repairs. 30 years of getting it right.
           </p>
         </motion.div>
 

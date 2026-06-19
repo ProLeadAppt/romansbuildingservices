@@ -127,7 +127,7 @@ async function prerenderRoute(browser, route, port) {
   });
 
   const url = `http://127.0.0.1:${port}${route}`;
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   // Wait for React + Suspense to resolve. The PageLoader uses .animate-spin;
   // when that's gone, the route's real component has mounted.
   try {

@@ -100,7 +100,7 @@ export default function ContactPage() {
                     </span>
                   </div>
                   <p className="text-text-primary font-semibold">
-                    Monday to Saturday, 7am to 5pm
+                    Thursday, 9am to 5pm
                   </p>
                 </div>
 

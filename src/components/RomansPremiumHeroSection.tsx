@@ -66,9 +66,9 @@ export const RomansPremiumHeroSection = () => {
             variants={fadeUpBlur}
             className="font-heading text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight text-shadow-strong"
           >
-            Sydney Heritage Restoration
+            Sydney Masonry &
             <br className="hidden md:block" />
-            {' '}&amp; Masonry{' '}
+            Remedial Construction
             <br />
             Done Properly.
           </motion.h1>
@@ -78,8 +78,8 @@ export const RomansPremiumHeroSection = () => {
             variants={fadeUp}
             className="font-body text-lg lg:text-xl text-white/75 mt-6 max-w-lg"
           >
-            Minas Romanakis. 30 years across Sydney. Stone, brick, block.
-            If it's masonry, we've done it.
+            Minas Romanakis. 30 years across Sydney. Stone, brick, block, remediation.
+            If it needs masonry or remedial construction, we've done it.
           </motion.p>
 
           {/* CTAs */}

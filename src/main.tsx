@@ -16,6 +16,10 @@ const GalleryPage = lazy(() => import('./pages/ProjectsPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const ServicesAreasPage = lazy(() => import('./pages/ServicesAreasPage'))
 const SearchPage = lazy(() => import('./pages/SearchPage'))
+const LearnPage = lazy(() => import('./pages/LearnPage'))
+const MasonryVsRemedialPage = lazy(() => import('./pages/learn/MasonryVsRemedialPage'))
+const RepointingSignsPage = lazy(() => import('./pages/learn/RepointingSignsPage'))
+const ConcreteCancerSydneyPage = lazy(() => import('./pages/learn/ConcreteCancerSydneyPage'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Tier 1 service pages
@@ -131,6 +135,10 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/contact" element={<L><ContactPage /></L>} />
           <Route path="/areas" element={<L><ServicesAreasPage /></L>} />
           <Route path="/search" element={<L><SearchPage /></L>} />
+          <Route path="/learn" element={<L><LearnPage /></L>} />
+          <Route path="/learn/masonry-vs-remedial-building" element={<L><MasonryVsRemedialPage /></L>} />
+          <Route path="/learn/repointing-signs" element={<L><RepointingSignsPage /></L>} />
+          <Route path="/learn/concrete-cancer-sydney" element={<L><ConcreteCancerSydneyPage /></L>} />
 
           {/* Redirects */}
           <Route path="/projects" element={<Navigate to="/gallery" replace />} />
