@@ -8,8 +8,8 @@ const ConcreteRepairsPage = () => {
   return (
   <ServicePageTemplate
     title="Concrete Repairs"
-    metaTitle="Concrete Repairs Sydney | Romans Building Services"
-    metaDescription="Concrete cancer, spalling, and carbonation repairs in Sydney. Proper diagnosis and lasting fixes. Call Minas for a quote."
+    metaTitle="Sydney Concrete Repairs | Romans"
+    metaDescription="Concrete cancer, spalling and structural concrete repairs across Sydney by Minas Romanakis. Steel treatment, patch repairs and protective coatings that last."
     heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
     intro={[
       "Concrete cancer is one of the most common problems in Sydney buildings. Water gets in, the steel reinforcement rusts, and the concrete starts to crack and fall apart. It looks bad and it is a real structural risk if left alone.",

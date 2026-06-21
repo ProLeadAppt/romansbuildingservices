@@ -1,6 +1,4 @@
-import { motion } from 'framer-motion';
 import { Phone, Search, FileText, Hammer } from 'lucide-react';
-import { fadeUp, staggerContainer } from '@/utils/animations';
 
 const steps = [
   { icon: Phone, label: 'You Call' },
@@ -12,23 +10,16 @@ const steps = [
 export const ProcessStrip = () => {
   return (
     <section className="bg-navy texture-grain py-12">
-      <motion.div
-        variants={staggerContainer(0.1, 0.2)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-        className="max-w-4xl mx-auto px-6"
-      >
+      <div
+        className="max-w-4xl mx-auto px-6">
         <div className="flex items-center justify-between relative">
           {/* Connecting line */}
           <div className="absolute top-5 left-[10%] right-[10%] h-[1px] bg-white/15 z-0" />
 
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.label}
-              variants={fadeUp}
-              className="relative z-10 flex flex-col items-center gap-2"
-            >
+              className="relative z-10 flex flex-col items-center gap-2">
               <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
                 <step.icon className="w-4 h-4 text-white/70" />
               </div>
@@ -40,10 +31,10 @@ export const ProcessStrip = () => {
                   &#8250;
                 </span>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

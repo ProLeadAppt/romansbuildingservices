@@ -8,7 +8,7 @@ const StructuralFoundationPage = () => {
   return (
     <ServicePageTemplate
       title="Structural Foundation Repairs"
-      metaTitle="Structural Foundation Repairs Sydney | Romans"
+      metaTitle="Sydney Structural Foundation Repairs | Romans"
       metaDescription="Sydney structural foundation repairs by Minas Romanakis. Cracked footings, foundation walls, drainage, waterproofing. Engineer-designed, council-approved."
       heroImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}

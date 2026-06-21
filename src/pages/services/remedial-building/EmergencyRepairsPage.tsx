@@ -8,7 +8,7 @@ const EmergencyRepairsPage = () => {
   return (
     <ServicePageTemplate
       title="Emergency Building Repairs"
-      metaTitle="Emergency Building Repairs Sydney | Romans"
+      metaTitle="Sydney Emergency Building Repairs | Romans"
       metaDescription="Sydney emergency building repairs by Minas Romanakis. Storm damage, structural failure, vehicle impact, fire damage. Make-safe within hours, permanent."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}

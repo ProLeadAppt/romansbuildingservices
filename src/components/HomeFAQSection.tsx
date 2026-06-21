@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 
 const homeFaqs = [
   {
-    question: 'Are you licensed and insured?',
+    question: 'Are you licenced and insured?',
     answer:
-      'Yes. Romans holds a full NSW builders licence and we carry public liability and workers compensation. Licence and insurance details on request before any work starts.',
+      'Yes. Romans holds a full NSW builders licence and we carry public liability and workers compensation. Licence and insurance details are available on request before any work starts.',
   },
   {
     question: 'How much does masonry work cost?',
@@ -35,34 +34,24 @@ export const HomeFAQSection = () => {
       <FAQSchema faqs={homeFaqs} />
       <section className="py-16 md:py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div
+            className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl text-navy mb-3">
               Common questions before you call
             </h2>
             <p className="font-body text-text-muted max-w-2xl mx-auto">
               The stuff people ask first. If yours is not here, just ring Minas.
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-4">
             {homeFaqs.map((faq, i) => (
-              <motion.div
+              <div
                 key={faq.question}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-bg-light p-6 rounded-md"
-              >
+                className="bg-bg-light p-6 rounded-md">
                 <h3 className="font-heading text-lg text-navy mb-2">{faq.question}</h3>
                 <p className="font-body text-text-muted leading-relaxed">{faq.answer}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

@@ -25,8 +25,7 @@ export const AreaServiceLinks = ({ areaSlug }: { areaSlug: string }) => {
               <Link
                 key={combo.serviceSlug}
                 to={`/services/${combo.serviceSlug}/${area.slug}`}
-                className="flex items-start gap-3 p-4 bg-stone-50 border border-stone-200 rounded-md hover:border-amber transition-colors group"
-              >
+                className="flex items-start gap-3 p-4 bg-stone-50 border border-stone-200 rounded-md hover:border-amber transition-colors group">
                 <Hammer className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" />
                 <div className="flex-1 min-w-0">
                   <div className="font-heading text-navy">

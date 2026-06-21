@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { ProblemsLinksSection } from '@/components/ProblemsLinksSection';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 import { QuoteCTAButton } from '@/components/quote';
 import {
   Hammer,
@@ -97,7 +97,7 @@ const servicesFaqs = [
       'Yes. Most heritage jobs do. A Federation terrace might need repointing, structural crack repair, foundation work and concrete repair to the front porch all on the one job. We quote it as one job and run it as one job.',
   },
   {
-    question: 'Are you licensed for structural work?',
+    question: 'Are you licenced for structural work?',
     answer:
       'Yes. Romans holds a full NSW builders licence covering structural masonry. For engineered work we coordinate with structural engineers and certifiers as part of the job.',
   },
@@ -112,13 +112,13 @@ export default function ServicesPage() {
   return (
     <>
       <SEO
-        title="Masonry, Heritage & Structural Repair Services Sydney | Romans Building Services"
-        description="Sydney masonry, heritage restoration, structural and concrete repairs by Minas Romanakis. 30 years on the tools. Licensed, insured, work to AS 3700."
+        title="Sydney Masonry, Heritage & Structural Repairs | Romans"
+        description="Sydney masonry, heritage restoration, structural, concrete and foundation repair services by Minas Romanakis. Licenced and built for long-term results."
         canonical="/services"
       />
       <CollectionPageSchema
         name="Our Services"
-        description="All masonry, heritage, structural, concrete, foundation and remedial building services offered by Romans Building Services across Sydney."
+        description="Masonry, heritage, structural, concrete, foundation and remedial building services from Romans Building Services across Sydney."
         url="https://romansbuildingservices.com/services"
         items={services.map((s) => ({
           name: s.title,
@@ -132,24 +132,15 @@ export default function ServicesPage() {
         {/* Hero Banner */}
         <section className="bg-navy texture-grain py-24">
           <div className="container mx-auto px-4 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-4xl md:text-5xl text-white mb-4"
-            >
+            <h1
+              className="font-heading text-4xl md:text-5xl text-white mb-4">
               Our Services
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-white/80 text-lg max-w-2xl mx-auto"
-            >
+            </h1>
+            <p
+              className="text-white/80 text-lg max-w-2xl mx-auto">
               Masonry, restoration, and structural repairs. Whatever the job, the standard is the
               same.
-            </motion.p>
+            </p>
           </div>
         </section>
 
@@ -185,14 +176,9 @@ export default function ServicesPage() {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => (
-                <motion.div
+                <div
                   key={service.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white rounded-lg p-7 flex flex-col"
-                >
+                  className="bg-white rounded-lg p-7 flex flex-col">
                   <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="w-6 h-6 text-navy" />
                   </div>
@@ -204,11 +190,10 @@ export default function ServicesPage() {
                   </p>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="mt-auto text-navy font-semibold hover:text-navy-light transition-colors"
-                  >
+                    className="mt-auto text-navy font-semibold hover:text-navy-light transition-colors">
                     Learn more &rarr;
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -218,6 +203,21 @@ export default function ServicesPage() {
           heading="Got a problem? Here's what it might be."
           intro="Plain-English diagnosis of the most common masonry, concrete and structural issues we see across Sydney. Pick what matches what you are seeing."
           background="off-white"
+        />
+
+        <RelatedLinksBlock
+          heading="Still deciding what page to read next?"
+          intro="Start with the answer-first hub, then move to areas, case studies and problem guides. That path matches how people actually search."
+          items={[
+            { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English guides and SEO support' },
+            { label: 'Areas we service', href: '/areas', sublabel: 'Sydney suburbs and regions' },
+            { label: 'Case studies', href: '/case-studies', sublabel: 'Proof from real jobs' },
+            { label: 'Building problems', href: '/problems', sublabel: 'Diagnostic guides for common defects' },
+            { label: 'Heritage hub', href: '/heritage', sublabel: 'Era-specific restoration authority' },
+            { label: 'About Romans', href: '/about', sublabel: 'The owner, the history and the crew' },
+          ]}
+          columns={3}
+          background="white"
         />
 
         {/* FAQ */}
@@ -243,18 +243,13 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <section className="bg-bg-light py-16">
           <div className="container mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="font-heading text-3xl text-text-primary mb-6">Need a quote?</h2>
               <QuoteCTAButton
-                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
-              >
+                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity">
                 Get in Touch
               </QuoteCTAButton>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

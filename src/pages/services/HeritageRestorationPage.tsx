@@ -8,8 +8,8 @@ const HeritageRestorationPage = () => {
   return (
   <ServicePageTemplate
     title="Heritage Restoration"
-    metaTitle="Heritage Restoration Sydney | Romans Building Services"
-    metaDescription="Specialised heritage restoration across Sydney. Sandstone, convict brick, period details. Working with councils and heritage architects. Call Minas."
+    metaTitle="Sydney Heritage Restoration | Romans"
+    metaDescription="Heritage masonry, sandstone, brick and lime mortar restoration across Sydney by Minas Romanakis, using period-correct methods that suit the building."
     heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
     intro={[
       "Sydney has some of the finest heritage buildings in the country. Sandstone terraces, convict-era brickwork, Federation homes, and Victorian commercial buildings. They all need care from someone who understands how they were built in the first place.",

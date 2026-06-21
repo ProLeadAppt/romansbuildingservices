@@ -17,8 +17,7 @@ export const SectionDivider = ({
         <svg
           viewBox="0 0 1440 80"
           className="w-full h-12 md:h-16 lg:h-20 block"
-          preserveAspectRatio="none"
-        >
+          preserveAspectRatio="none">
           <path d="M0,0 L1440,80 L1440,80 L0,80 Z" fill={to} />
         </svg>
       </div>
@@ -31,8 +30,7 @@ export const SectionDivider = ({
         <svg
           viewBox="0 0 1440 80"
           className="w-full h-12 md:h-16 lg:h-20 block"
-          preserveAspectRatio="none"
-        >
+          preserveAspectRatio="none">
           <path d="M0,80 L1440,0 L1440,80 L0,80 Z" fill={to} />
         </svg>
       </div>
@@ -45,8 +43,7 @@ export const SectionDivider = ({
       <svg
         viewBox="0 0 1440 60"
         className="w-full h-10 md:h-14 block"
-        preserveAspectRatio="none"
-      >
+        preserveAspectRatio="none">
         <path
           d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,30 L1440,60 L0,60 Z"
           fill={to}

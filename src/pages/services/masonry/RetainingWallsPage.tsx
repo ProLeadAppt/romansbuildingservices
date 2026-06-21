@@ -8,8 +8,8 @@ const RetainingWallsPage = () => {
   return (
     <ServicePageTemplate
       title="Retaining Wall Construction"
-      metaTitle="Retaining Wall Construction Sydney | Romans"
-      metaDescription="Sydney retaining walls in sandstone, brick, block and reinforced concrete. Proper drainage, engineering and heritage-matched finishes by Minas."
+      metaTitle="Sydney Retaining Wall Construction | Romans"
+      metaDescription="Sydney retaining walls in sandstone, brick, block and reinforced concrete by Minas Romanakis. Proper drainage, engineering and heritage-matched finishes."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
       siblingServices={siblings}

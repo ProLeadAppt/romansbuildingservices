@@ -8,8 +8,8 @@ const TraditionalStoneworkPage = () => {
   return (
     <ServicePageTemplate
       title="Traditional Stonework Methods"
-      metaTitle="Traditional Stonemasonry Sydney | Romans"
-      metaDescription="Sydney traditional stonemasonry by Minas Romanakis. Hand-cut stone, hot lime mortar, carved profiles, period methods. Heritage work as it was originally done."
+      metaTitle="Sydney Traditional Stonemasonry | Romans"
+      metaDescription="Sydney traditional stonemasonry by Minas Romanakis. Hand-cut stone, hot lime mortar, carved profiles and period methods for heritage work done properly."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}
@@ -137,7 +137,7 @@ const TraditionalStoneworkPage = () => {
         {
           question: 'Is traditional stonework more expensive?',
           answer:
-            'Yes. Hand work is slower so labour is higher. Specialty materials like quicklime cost more than bag lime. Custom-carved pieces can be days of work each. Traditional restoration usually costs 30 to 60 percent more than equivalent modern repair. The trade-off is heritage-correctness and a repair that will outlast modern equivalents by decades.',
+            'Yes. Hand work is slower so labour is higher. Specialist materials like quicklime cost more than bag lime. Custom-carved pieces can be days of work each. Traditional restoration usually costs 30 to 60 percent more than equivalent modern repair. The trade-off is heritage-correctness and a repair that will outlast modern equivalents by decades.',
         },
         {
           question: 'Do all heritage jobs need traditional methods?',

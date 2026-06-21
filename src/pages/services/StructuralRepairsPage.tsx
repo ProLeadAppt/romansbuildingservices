@@ -8,8 +8,8 @@ const StructuralRepairsPage = () => {
   return (
   <ServicePageTemplate
     title="Structural Repairs"
-    metaTitle="Structural Repairs Sydney | Romans Building Services"
-    metaDescription="Crack stitching, lintel replacement, and load-bearing wall repairs in Sydney. Fixing the things that hold buildings together. Call Minas."
+    metaTitle="Sydney Structural Repairs | Romans"
+    metaDescription="Sydney structural repairs by Minas Romanakis. Crack stitching, lintel replacement, load-bearing wall repairs and structural reinforcement done properly."
     heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
     intro={[
       "Cracks in walls, sagging lintels, bulging brickwork. These are not cosmetic problems. They are signs that something structural needs attention. Ignoring them only makes the repair bigger and more expensive down the track.",

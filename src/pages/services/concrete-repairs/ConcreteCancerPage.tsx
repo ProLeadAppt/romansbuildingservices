@@ -8,7 +8,7 @@ const ConcreteCancerPage = () => {
   return (
     <ServicePageTemplate
       title="Concrete Cancer Treatment"
-      metaTitle="Concrete Cancer Treatment Sydney | Romans"
+      metaTitle="Sydney Concrete Cancer Treatment | Romans"
       metaDescription="Sydney concrete cancer repair by Minas Romanakis. Chloride testing, rebar treatment, structural patching, anti-carbonation. Strata-experienced."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}

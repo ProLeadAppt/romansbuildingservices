@@ -8,8 +8,8 @@ const HeritageMasonryPage = () => {
   return (
     <ServicePageTemplate
       title="Heritage Masonry Restoration"
-      metaTitle="Heritage Masonry Restoration Sydney | Romans"
-      metaDescription="Sydney heritage masonry restoration by Minas Romanakis. Lime mortar, period brick matching, council-approved methods. Federation, Victorian, Colonial. 30 years."
+      metaTitle="Sydney Heritage Masonry Restoration | Romans"
+      metaDescription="Sydney heritage masonry restoration by Minas Romanakis. Lime mortar, period brick matching and council-approved methods for Federation, Victorian and Colonial work."
       heroImage="/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}

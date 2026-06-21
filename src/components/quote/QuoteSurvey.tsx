@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   Landmark,
   Hammer,
@@ -194,15 +193,11 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
         </div>
       )}
 
-      <AnimatePresence mode="wait">
+      <div>
         {/* STEP 1 — Service */}
         {step === 1 && (
-          <motion.div
+          <div
             key="step1"
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.2 }}
           >
             <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
               What needs doing?
@@ -228,17 +223,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* STEP 2 — Where, when, photos */}
         {step === 2 && (
-          <motion.div
+          <div
             key="step2"
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.2 }}
           >
             <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
               Where and when?
@@ -354,17 +345,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* STEP 3 — Contact */}
         {step === 3 && (
           <motion.form
             key="step3"
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.2 }}
             onSubmit={handleSubmit}
           >
             <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
@@ -473,11 +460,8 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
 
         {/* SUCCESS */}
         {step === 'success' && (
-          <motion.div
+          <div
             key="success"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
             className="text-center py-4"
           >
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/15 mb-5">
@@ -495,7 +479,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 If it is urgent, call Minas directly:
               </p>
               <a
-                href="tel:+61414922276"
+                href="tel:0414922276"
                 onClick={() => trackQuoteEvent('quote_success_call_click', {})}
                 className="inline-flex items-center gap-2 font-heading text-2xl text-navy hover:text-navy/70"
               >
@@ -521,9 +505,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 Send another enquiry
               </button>
             )}
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      </div>
     </div>
   );
 };

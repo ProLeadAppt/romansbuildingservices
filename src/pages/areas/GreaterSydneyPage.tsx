@@ -1,5 +1,4 @@
 import { SEO } from '@/components/SEO';
-import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
@@ -19,7 +18,7 @@ const services = [
 const GreaterSydneyPage = () => (
   <>
     <SEO
-      title="Sydney Metro Masonry Services | Romans Building Services"
+      title="Sydney Metro Masonry Services | Romans"
       description="Masonry, structural repairs and restoration across Sydney metro suburbs from Strathfield to Parramatta, Burwood, Concord, Homebush and nearby areas."
       canonical="/areas/greater-sydney"
     />
@@ -37,34 +36,21 @@ const GreaterSydneyPage = () => (
     {/* Hero */}
     <section className="bg-navy py-24">
       <div className="container mx-auto px-4 text-center">
-        <motion.h1
-          className="font-heading text-4xl md:text-5xl text-white mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <h1
+          className="font-heading text-4xl md:text-5xl text-white mb-4">
           Sydney Metro Masonry Services
-        </motion.h1>
-        <motion.p
-          className="font-body text-white/70 max-w-xl mx-auto text-lg"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        </h1>
+        <p
+          className="font-body text-white/70 max-w-xl mx-auto text-lg">
           Masonry, restoration and structural repairs for commercial and residential properties across the Sydney metro.
-        </motion.p>
+        </p>
       </div>
     </section>
 
     {/* Content */}
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <p className="font-body text-text-secondary mb-6">
             Romans Building Services is based in Strathfield and works across the Sydney metro for masonry, restoration and remedial building jobs. This page covers the suburbs around our home base, including Parramatta, Burwood, Concord, Homebush and nearby streets where older brick homes, apartment blocks and retaining walls need proper assessment.
           </p>
@@ -74,15 +60,10 @@ const GreaterSydneyPage = () => (
           <p className="font-body text-text-secondary mb-10">
             Parramatta and Homebush bring a mix of commercial facade repairs, strata concrete problems and period-home masonry. The work is still Sydney-local: real site visit, clear scope, materials matched to the building, and no promise to travel beyond the metro unless the job genuinely makes sense.
           </p>
-        </motion.div>
+        </div>
 
         {/* Services list */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        <div>
           <h2 className="font-heading text-2xl text-navy mb-6">What we do across Sydney metro suburbs</h2>
           <ul className="space-y-3 mb-12">
             {services.map((s) => (
@@ -92,23 +73,17 @@ const GreaterSydneyPage = () => (
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
         <AreaSuburbsLinks parentAreaHref="/areas/greater-sydney" parentAreaName="Sydney metro" />
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
+        <div>
           <QuoteCTAButton
-            className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
-          >
+            className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors">
             Get a Sydney metro quote <ArrowRight className="w-4 h-4" />
           </QuoteCTAButton>
-        </motion.div>
+        </div>
       </div>
     </section>
 

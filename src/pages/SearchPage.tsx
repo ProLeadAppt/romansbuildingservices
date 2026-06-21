@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
 import { Search as SearchIcon, MapPin, Hammer } from 'lucide-react';
 import { serviceHierarchy } from '@/data/serviceHierarchy';
@@ -102,7 +101,7 @@ const SearchPage = () => {
   return (
     <>
       <SEO
-        title="Search | Romans Building Services"
+        title="Search | Romans"
         description="Search Romans Building Services for masonry, heritage restoration, structural repairs and Sydney suburb service pages."
         canonical="/search"
       />
@@ -110,13 +109,10 @@ const SearchPage = () => {
       <div className="min-h-screen font-body bg-white">
         <section className="bg-navy texture-grain py-20">
           <div className="container mx-auto px-4 max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="font-heading text-4xl md:text-5xl text-white mb-4 text-center"
-            >
+            <h1
+              className="font-heading text-4xl md:text-5xl text-white mb-4 text-center">
               Search Romans Building Services
-            </motion.h1>
+            </h1>
             <p className="text-white/80 text-center mb-8">
               Find a service, suburb or area page across Sydney.
             </p>
@@ -144,7 +140,7 @@ const SearchPage = () => {
               </div>
             )}
 
-            {query.trim().length >= 2 && results.length === 0 && (
+            {query.trim().length>= 2 && results.length === 0 && (
               <div className="text-text-muted text-center py-12">
                 No matches for &ldquo;{query}&rdquo;. Try a suburb name (e.g. Paddington) or a service (e.g. repointing).
               </div>
@@ -158,8 +154,7 @@ const SearchPage = () => {
                     <li key={r.href}>
                       <Link
                         to={r.href}
-                        className="flex items-start gap-4 p-4 hover:bg-bg-light transition-colors"
-                      >
+                        className="flex items-start gap-4 p-4 hover:bg-bg-light transition-colors">
                         <span className="mt-1 text-navy shrink-0">
                           {r.type === 'suburb' || r.type === 'area' ? (
                             <MapPin className="w-5 h-5" />

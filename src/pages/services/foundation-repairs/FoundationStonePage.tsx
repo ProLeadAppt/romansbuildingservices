@@ -8,7 +8,7 @@ const FoundationStonePage = () => {
   return (
     <ServicePageTemplate
       title="Foundation Stone Repairs"
-      metaTitle="Heritage Foundation Stone Repairs Sydney | Romans"
+      metaTitle="Sydney Heritage Foundation Stone Repairs | Romans"
       metaDescription="Sydney foundation stone repair by Minas Romanakis. Sandstone replacement, brick rebuilding, lime mortar repointing, damp course. Heritage-correct methods."
       heroImage="/gallery/thumbs/romansstone_1451642255_1152781246863726646_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}

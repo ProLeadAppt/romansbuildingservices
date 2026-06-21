@@ -8,8 +8,8 @@ const FoundationRepairsPage = () => {
   return (
   <ServicePageTemplate
     title="Foundation Repairs"
-    metaTitle="Foundation Repairs Sydney | Romans Building Services"
-    metaDescription="Underpinning, restumping, and foundation crack repairs in Sydney. The bit you cannot see but cannot ignore. Call Minas for a quote."
+    metaTitle="Sydney Foundation Repairs | Romans"
+    metaDescription="Underpinning, restumping, settlement stabilisation and foundation crack repairs across Sydney by Minas Romanakis. Stop movement before it spreads."
     heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
     intro={[
       "Cracks in the walls, doors that stick, floors that slope. These are usually signs of foundation movement. It is the bit you cannot see but it holds everything up. If the foundation is failing, everything above it is at risk.",

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, Phone, Calendar } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
@@ -47,7 +46,7 @@ const HeritageHubPage = () => {
   return (
     <>
       <SEOHead
-        title="Sydney Heritage Restoration by Era | Federation, Victorian, Colonial | Romans Building Services"
+        title="Sydney Heritage Restoration by Era | Federation, Victorian, Colonial | Romans"
         description="Heritage restoration guides for Sydney's main building eras. Colonial sandstone, Victorian terraces, Federation homes, Art Deco, Inter-war cottages."
         canonical="/heritage"
       />
@@ -65,7 +64,7 @@ const HeritageHubPage = () => {
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i > 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
@@ -81,21 +80,14 @@ const HeritageHubPage = () => {
 
       <section className="bg-navy py-20 md:py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl text-white mb-5"
-          >
+          <h1
+            className="font-heading text-4xl md:text-5xl text-white mb-5">
             Heritage building restoration, by era
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto"
-          >
+          </h1>
+          <p
+            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
             Every era of Sydney heritage building has its own materials, construction methods and failure modes. Find the era that matches your property.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -130,17 +122,11 @@ const HeritageHubPage = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {eras.map((era, i) => (
-              <motion.div
-                key={era.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-              >
+              <div
+                key={era.slug}>
                 <Link
                   to={`/heritage/${era.slug}`}
-                  className="block p-6 bg-white border border-stone-200 rounded-lg hover:border-amber transition-colors h-full"
-                >
+                  className="block p-6 bg-white border border-stone-200 rounded-lg hover:border-amber transition-colors h-full">
                   <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber/10 text-amber text-xs font-body mb-3">
                     <Calendar className="w-3 h-3" />
                     <span>{era.era}</span>
@@ -151,7 +137,7 @@ const HeritageHubPage = () => {
                     Read the guide <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -184,9 +170,8 @@ const HeritageHubPage = () => {
             Call Minas. We will work out what you have and what it needs, over the phone or on site.
           </p>
           <a
-            href="tel:+61414922276"
-            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors"
-          >
+            href="tel:0414922276"
+            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors">
             <Phone className="w-5 h-5" />
             0414 922 276
           </a>

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { CheckCircle, ChevronRight, Phone, ArrowRight, Calendar } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
@@ -51,7 +50,7 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i > 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
@@ -68,35 +67,23 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
       {/* Hero */}
       <section className="bg-navy py-20 md:py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber/15 text-amber text-xs font-body mb-6"
-          >
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber/15 text-amber text-xs font-body mb-6">
             <Calendar className="w-3.5 h-3.5" />
             <span>{data.era}</span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="font-heading text-4xl md:text-5xl text-white mb-5"
-          >
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl text-white mb-5">
             {data.name}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto"
-          >
+          </h1>
+          <p
+            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
             {data.heroTagline}
-          </motion.p>
+          </p>
           <div className="mt-8">
             <a
-              href="tel:+61414922276"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-amber text-navy font-body font-medium hover:bg-amber-light transition-colors"
-            >
+              href="tel:0414922276"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-amber text-navy font-body font-medium hover:bg-amber-light transition-colors">
               <Phone className="w-4 h-4" />
               Call Minas — 0414 922 276
             </a>
@@ -121,15 +108,11 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           {data.intro.map((para, i) => (
-            <motion.p
+            <p
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-body text-text-secondary text-lg leading-relaxed mb-6"
-            >
+              className="font-body text-text-secondary text-lg leading-relaxed mb-6">
               {para}
-            </motion.p>
+            </p>
           ))}
         </div>
       </section>
@@ -161,16 +144,12 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
           </p>
           <div className="space-y-8">
             {data.commonIssues.map((issue, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="border-l-2 border-amber pl-5"
-              >
+                className="border-l-2 border-amber pl-5">
                 <h3 className="font-heading text-xl text-navy mb-2">{issue.title}</h3>
                 <p className="font-body text-text-secondary leading-relaxed">{issue.detail}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -217,8 +196,7 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
               <Link
                 key={s.href}
                 to={s.href}
-                className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors group"
-              >
+                className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors group">
                 <div className="flex items-center justify-between">
                   <span className="font-heading text-navy">{s.title}</span>
                   <ArrowRight className="w-4 h-4 text-text-muted group-hover:text-amber transition-colors" />
@@ -239,9 +217,8 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
             Call Minas for a real assessment. 30 years of heritage work across Sydney — no rushing, no cutting corners.
           </p>
           <a
-            href="tel:+61414922276"
-            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors"
-          >
+            href="tel:0414922276"
+            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors">
             <Phone className="w-5 h-5" />
             0414 922 276
           </a>

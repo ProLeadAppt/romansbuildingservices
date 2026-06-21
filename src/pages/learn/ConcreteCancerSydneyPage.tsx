@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 const faqs = [
   {
@@ -26,6 +25,11 @@ const faqs = [
     answer:
       'Very often, yes. On apartment blocks it commonly affects balconies, facades, parapets and car parks, so strata managers usually need an assessment and a proper repair scope.',
   },
+  {
+    question: 'How urgent is concrete cancer?',
+    answer:
+      'If steel is exposed or concrete is falling, it should be assessed quickly. The longer moisture and salt stay in the structure, the more the repair grows.',
+  },
 ];
 
 const steps = [
@@ -47,11 +51,71 @@ const steps = [
   },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Concrete Cancer in Sydney Apartments | What It Is and What to Do',
+  description: 'A practical guide to concrete cancer in Sydney apartments and strata buildings: the warning signs, the cause, and the right repair process.',
+  url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
+  },
+  isPartOf: {
+    '@type': 'CollectionPage',
+    '@id': 'https://romansbuildingservices.com/learn',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    url: 'https://romansbuildingservices.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    logo: { '@type': 'ImageObject', url: 'https://romansbuildingservices.com/og-image.png' },
+  },
+  about: [
+    { '@type': 'Thing', name: 'Concrete cancer' },
+    { '@type': 'Thing', name: 'Reinforced concrete' },
+    { '@type': 'Thing', name: 'Sydney apartments' },
+  ],
+  keywords: ['concrete cancer', 'spalling', 'Sydney', 'strata buildings'],
+};
+
 const ConcreteCancerSydneyPage = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'Learn', href: '/learn' },
     { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney' },
+  ];
+
+  const relatedPages = [
+    {
+      name: 'Learn hub',
+      url: 'https://romansbuildingservices.com/learn',
+      description: 'The main SEO / GEO / AEO authority hub for the site.',
+    },
+    {
+      name: 'Case studies index',
+      url: 'https://romansbuildingservices.com/case-studies',
+      description: 'Proof pages that show the work behind the advice.',
+    },
+    {
+      name: 'Masonry vs remedial building',
+      url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+      description: 'Helps users decide whether the job is a masonry repair or a broader remedial scope.',
+    },
+    {
+      name: 'Signs you need repointing',
+      url: 'https://romansbuildingservices.com/learn/repointing-signs',
+      description: 'The mortar-failure guide that often sits next to concrete repair intent.',
+    },
+    {
+      name: 'Remedial building service',
+      url: 'https://romansbuildingservices.com/services/remedial-building',
+      description: 'The broader service page for strata, defect and structural remediation.',
+    },
   ];
 
   return (
@@ -60,6 +124,14 @@ const ConcreteCancerSydneyPage = () => {
         title="Concrete Cancer in Sydney Apartments | What It Is and What to Do"
         description="A practical guide to concrete cancer in Sydney apartments and strata buildings: the warning signs, the cause, and the right repair process."
         canonical="/learn/concrete-cancer-sydney"
+        ogType="article"
+        schemaJson={articleSchema}
+      />
+      <CollectionPageSchema
+        name="Concrete cancer in Sydney apartments — related guides and service pages"
+        description="Supporting pages for concrete cancer diagnosis, remedial building and mortar failure in Sydney."
+        url="https://romansbuildingservices.com/learn/concrete-cancer-sydney"
+        items={relatedPages}
       />
       <SpeakableSchema url="https://romansbuildingservices.com/learn/concrete-cancer-sydney" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -72,15 +144,15 @@ const ConcreteCancerSydneyPage = () => {
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
+          <p className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
             Learn / remediation guide
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="font-heading text-4xl md:text-5xl text-white mb-5">
+          </p>
+          <h1 className="font-heading text-4xl md:text-5xl text-white mb-5">
             Concrete cancer in Sydney apartments
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          </h1>
+          <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             If the concrete is cracking, rusting or falling away from a balcony or facade, the damage is usually bigger than the patch you can see.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -153,6 +225,32 @@ const ConcreteCancerSydneyPage = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-20 px-4 bg-bg-light">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">Related pages</h2>
+            <p className="text-text-muted leading-relaxed">
+              Once you know the concrete is breaking down, these pages help you move to the right service or next question.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {relatedPages.map((page) => (
+              <Link
+                key={page.url}
+                to={page.url.replace('https://romansbuildingservices.com', '')}
+                className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="font-heading text-xl text-text-primary group-hover:text-navy transition-colors">
+                    {page.name}
+                  </h3>
+                  <ArrowRight className="w-5 h-5 text-navy shrink-0" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20 px-4 bg-navy text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl mb-4">If you’re seeing spalling, get it checked</h2>
@@ -166,6 +264,22 @@ const ConcreteCancerSydneyPage = () => {
             </a>
             <Link to="/services/concrete-repairs" className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
               Concrete repairs <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-16 px-4 bg-bg-light">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-heading text-2xl md:text-3xl text-navy mb-6 text-center">Related reading</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link to="/learn/masonry-vs-remedial-building" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
+              <p className="font-heading text-xl text-text-primary mb-2">Masonry vs remedial building</p>
+              <p className="text-text-muted leading-relaxed">Use this when the customer is not sure which service bucket the job belongs in.</p>
+            </Link>
+            <Link to="/learn/repointing-signs" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
+              <p className="font-heading text-xl text-text-primary mb-2">Signs you need repointing</p>
+              <p className="text-text-muted leading-relaxed">A useful adjacent guide when mortar failure and water entry show up at the same time.</p>
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
+import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 import {
   ArrowRight,
@@ -47,58 +47,68 @@ const contentPillars = [
 const priorityPages = [
   {
     name: 'Masonry vs remedial building',
-    url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+    href: '/learn/masonry-vs-remedial-building',
     description: 'Decision guide for buyers who do not know which service they actually need.',
   },
   {
     name: 'Signs you need repointing',
-    url: 'https://romansbuildingservices.com/learn/repointing-signs',
+    href: '/learn/repointing-signs',
     description: 'Diagnosis guide for powdering mortar, missing joints and water entry.',
   },
   {
     name: 'Concrete cancer in Sydney apartments',
-    url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
+    href: '/learn/concrete-cancer-sydney',
     description: 'Strata and apartment remediation guide for spalling and corrosion.',
   },
   {
     name: 'Masonry service pillar',
-    url: 'https://romansbuildingservices.com/services/masonry',
+    href: '/services/masonry',
     description: 'Primary page for masonry, brickwork, repointing, sandstone and retaining walls.',
   },
   {
     name: 'Heritage restoration pillar',
-    url: 'https://romansbuildingservices.com/services/heritage-restoration',
+    href: '/services/heritage-restoration',
     description: 'Use this for heritage-listed homes, terraces and period masonry work.',
   },
   {
     name: 'Structural repairs pillar',
-    url: 'https://romansbuildingservices.com/services/structural-repairs',
+    href: '/services/structural-repairs',
     description: 'Targets crack repair, load-bearing wall issues and serious structural intent.',
   },
   {
     name: 'Remedial building pillar',
-    url: 'https://romansbuildingservices.com/services/remedial-building',
+    href: '/services/remedial-building',
     description: 'Captures strata, defects, compliance and remediation jobs.',
   },
   {
     name: 'Sydney CBD area page',
-    url: 'https://romansbuildingservices.com/areas/sydney-cbd',
+    href: '/areas/sydney-cbd',
     description: 'Local authority for sandstone, heritage and commercial masonry in the CBD.',
   },
   {
     name: 'Eastern Suburbs area page',
-    url: 'https://romansbuildingservices.com/areas/eastern-suburbs',
+    href: '/areas/eastern-suburbs',
     description: 'Strong for terrace restoration, coastal masonry and premium residential intent.',
   },
   {
     name: 'Concrete cancer problem page',
-    url: 'https://romansbuildingservices.com/problems/concrete-cancer',
+    href: '/problems/concrete-cancer',
     description: 'High-intent diagnostic page for strata and apartment block searches.',
   },
   {
     name: 'Cracked brick walls problem page',
-    url: 'https://romansbuildingservices.com/problems/cracked-brick-walls',
+    href: '/problems/cracked-brick-walls',
     description: 'Answer-engine friendly page for the common “what does this crack mean?” query.',
+  },
+  {
+    name: 'Case studies index',
+    href: '/case-studies',
+    description: 'Proof pages that show the real jobs behind the service and problem pages.',
+  },
+  {
+    name: 'Heritage restoration hub',
+    href: '/heritage',
+    description: 'Era-based authority hub for Victorian, Federation, Colonial and Art Deco work.',
   },
 ];
 
@@ -111,7 +121,7 @@ const faqItems = [
   {
     question: 'What should rank first: masonry or remedial building?',
     answer:
-      'Masonry should usually be the primary category because it is broader and captures the base demand. Remedial building should be the higher-intent specialty layer for structural, strata and defect work.',
+      'Masonry should usually be the primary category because it is broader and captures the base demand. Remedial building should be the higher-intent specialist layer for structural, strata and defect work.',
   },
   {
     question: 'Why does GEO / AEO need a different page structure?',
@@ -150,17 +160,23 @@ const howToSteps = [
 ];
 
 const LearnPage = () => {
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Learn', href: '/learn' },
+  ];
+
   return (
     <>
       <SEO
-        title="Sydney Masonry & Remedial Construction SEO Hub | Romans Building Services"
-        description="A practical hub for improving SEO, GEO and AEO for Romans Building Services. Use this to own masonry, heritage restoration and remedial construction in Sydney."
+        title="Sydney Masonry & Remedial Construction Guides | Romans"
+        description="Practical guides on masonry, heritage restoration, remedial construction and local SEO for Sydney property owners, strata managers and builders."
         canonical="/learn"
       />
+      <BreadcrumbSchema items={breadcrumbs} />
       <SpeakableSchema url="https://romansbuildingservices.com/learn" cssSelectors={['h1', 'h2', 'p']} />
       <CollectionPageSchema
         name="Romans Building Services Learn Hub"
-        description="Authority hub for masonry, heritage restoration, remedial construction, Sydney area pages and problem pages."
+        description="Authority hub for masonry, heritage restoration, remedial construction, Sydney area pages and building problem guides."
         url="https://romansbuildingservices.com/learn"
         items={priorityPages}
       />
@@ -170,34 +186,21 @@ const LearnPage = () => {
       <div className="min-h-screen bg-white font-body">
         <section className="bg-navy texture-grain py-24 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-amber font-semibold uppercase tracking-[0.22em] text-sm mb-4"
-            >
+            <p
+              className="text-amber font-semibold uppercase tracking-[0.22em] text-sm mb-4">
               SEO / GEO / AEO playbook
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-4xl md:text-6xl text-white mb-6"
-            >
+            </p>
+            <h1
+              className="font-heading text-4xl md:text-6xl text-white mb-6">
               How to own masonry and remedial construction in Sydney
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-            >
+            </h1>
+            <p
+              className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               If the goal is to make Romans the obvious answer for masonry, heritage restoration and
               remedial building in Sydney, this is the structure: one strong service pillar, one
               answer-first hub, suburb pages, problem pages, and proof that sounds like the actual
               job.
-            </motion.p>
+            </p>
           </div>
         </section>
 
@@ -205,14 +208,9 @@ const LearnPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
               {contentPillars.map((pillar, index) => (
-                <motion.div
+                <div
                   key={pillar.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.06 }}
-                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
-                >
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                   <div className="w-12 h-12 rounded-lg bg-navy/10 flex items-center justify-center mb-4">
                     <pillar.icon className="w-6 h-6 text-navy" />
                   </div>
@@ -220,11 +218,10 @@ const LearnPage = () => {
                   <p className="text-text-secondary leading-relaxed mb-5">{pillar.description}</p>
                   <Link
                     to={pillar.href}
-                    className="inline-flex items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors"
-                  >
+                    className="inline-flex items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors">
                     Use this pillar <ArrowRight className="w-4 h-4" />
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -233,12 +230,8 @@ const LearnPage = () => {
         <section className="py-16 md:py-20 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 items-start">
             <div className="lg:col-span-3">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="space-y-5"
-              >
+              <div
+                className="space-y-5">
                 <h2 className="font-heading text-3xl md:text-4xl text-navy">What to do next</h2>
                 <p className="text-text-muted leading-relaxed text-lg">
                   If the site wants to dominate category terms, the next wins are not more fluffy
@@ -284,7 +277,7 @@ const LearnPage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             <aside className="lg:col-span-2 bg-navy text-white rounded-2xl p-6 md:p-7">
@@ -320,11 +313,10 @@ const LearnPage = () => {
 
             <div className="grid md:grid-cols-2 gap-4">
               {priorityPages.map((page) => (
-                <a
-                  key={page.url}
-                  href={page.url.replace('https://romansbuildingservices.com', '')}
-                  className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all"
-                >
+                <Link
+                  key={page.href}
+                  to={page.href}
+                  className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="font-heading text-xl text-text-primary mb-2 group-hover:text-navy transition-colors">
@@ -334,7 +326,7 @@ const LearnPage = () => {
                     </div>
                     <ArrowRight className="w-5 h-5 text-navy shrink-0 mt-1" />
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -362,8 +354,7 @@ const LearnPage = () => {
                 <Link
                   key={area.href}
                   to={area.href}
-                  className="group bg-bg-light rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all"
-                >
+                  className="group bg-bg-light rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
                   <h3 className="font-heading text-xl text-text-primary mb-2 group-hover:text-navy transition-colors">
                     {area.name}
                   </h3>
@@ -406,8 +397,7 @@ const LearnPage = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-7 py-3 rounded-lg hover:opacity-90 transition-opacity"
-            >
+              className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-7 py-3 rounded-lg hover:opacity-90 transition-opacity">
               Build the next layer <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

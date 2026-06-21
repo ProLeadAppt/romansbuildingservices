@@ -27,15 +27,13 @@ export const StickyMobileCTA = () => {
       <div className="grid grid-cols-2 gap-3">
         <a
           href="tel:0414922276"
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white text-sm font-semibold text-navy"
-        >
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white text-sm font-semibold text-navy">
           <Phone className="h-4 w-4" />
           Call Minas
         </a>
         <QuoteCTAButton
           initialService={quoteTypeForPath(pathname)}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-amber text-sm font-semibold text-navy"
-        >
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-amber text-sm font-semibold text-navy">
           <ClipboardList className="h-4 w-4" />
           Quote
         </QuoteCTAButton>

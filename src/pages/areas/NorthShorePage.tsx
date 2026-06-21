@@ -1,5 +1,4 @@
 import { SEO } from '@/components/SEO';
-import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { PlaceSchema, ServiceSchema } from '@/components/LocalSEO/StructuredData';
 import { AreaSuburbsLinks } from '@/components/AreaSuburbsLinks';
@@ -19,8 +18,8 @@ const services = [
 const NorthShorePage = () => (
   <>
     <SEO
-      title="North Shore Masonry and Building Services | Romans Building Services"
-      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licensed and insured since 1995."
+      title="North Shore Masonry and Building Services | Romans"
+      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licenced and insured since 1995."
       canonical="/areas/north-shore"
     />
     <PlaceSchema
@@ -37,34 +36,21 @@ const NorthShorePage = () => (
     {/* Hero */}
     <section className="bg-navy py-24">
       <div className="container mx-auto px-4 text-center">
-        <motion.h1
-          className="font-heading text-4xl md:text-5xl text-white mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <h1
+          className="font-heading text-4xl md:text-5xl text-white mb-4">
           North Shore
-        </motion.h1>
-        <motion.p
-          className="font-body text-white/70 max-w-xl mx-auto text-lg"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        </h1>
+        <p
+          className="font-body text-white/70 max-w-xl mx-auto text-lg">
           Residential masonry, heritage homes and federation-era repairs across the North Shore.
-        </motion.p>
+        </p>
       </div>
     </section>
 
     {/* Content */}
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <p className="font-body text-text-secondary mb-6">
             The North Shore has some of the finest residential properties in Sydney. We work across Mosman, Neutral Bay and Cremorne, looking after federation homes, sandstone features and ageing brickwork. Many of these homes were built over a hundred years ago and they need tradespeople who understand how they were put together.
           </p>
@@ -74,15 +60,10 @@ const NorthShorePage = () => (
           <p className="font-body text-text-secondary mb-10">
             We take pride in doing careful work that respects the original character of each home. If your North Shore property needs masonry attention, we are happy to come out and take a look.
           </p>
-        </motion.div>
+        </div>
 
         {/* Services list */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        <div>
           <h2 className="font-heading text-2xl text-navy mb-6">What we do on the North Shore</h2>
           <ul className="space-y-3 mb-12">
             {services.map((s) => (
@@ -92,23 +73,17 @@ const NorthShorePage = () => (
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
         <AreaSuburbsLinks parentAreaHref="/areas/north-shore" parentAreaName="North Shore" />
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
+        <div>
           <QuoteCTAButton
-            className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors"
-          >
+            className="inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-8 py-4 rounded-lg hover:bg-amber/90 transition-colors">
             Get a quote for North Shore <ArrowRight className="w-4 h-4" />
           </QuoteCTAButton>
-        </motion.div>
+        </div>
       </div>
     </section>
 

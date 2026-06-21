@@ -8,7 +8,7 @@ const HistoricStuccosPage = () => {
   return (
     <ServicePageTemplate
       title="Historic Stuccos & Renders"
-      metaTitle="Historic Lime Render & Stucco Sydney | Romans"
+      metaTitle="Sydney Historic Lime Render & Stucco | Romans"
       metaDescription="Sydney heritage lime render and stucco by Minas Romanakis. Multi-coat lime render, decorative cornices, period finishes. Breathable, era-correct. 30 years."
       heroImage="/gallery/thumbs/romansstone_1574278523_2181528827132774103_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}

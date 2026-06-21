@@ -3,7 +3,6 @@ export const BUSINESS_INFO = {
   name: "Romans Building Services",
   legalName: "Romans Building Services",
   address: {
-    streetAddress: "Strathfield",
     suburb: "Strathfield",
     state: "NSW",
     postcode: "2135",
@@ -61,15 +60,6 @@ export const BUSINESS_INFO = {
     "Tuckpointing",
     "Retaining walls"
   ],
-  businessHours: {
-    monday: "Closed",
-    tuesday: "Closed",
-    wednesday: "Closed",
-    thursday: "09:00-17:00",
-    friday: "Closed",
-    saturday: "Closed",
-    sunday: "Closed"
-  },
   established: "1995",
   foundingDate: "1995-01-01",
   founder: {
@@ -116,7 +106,7 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Sydney. Licensed stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+    "Professional stonework, masonry restoration and structural repair services in Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
   url: BUSINESS_INFO.website,
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
@@ -124,7 +114,6 @@ const localBusinessSchema: SchemaObject = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: BUSINESS_INFO.address.streetAddress,
     addressLocality: BUSINESS_INFO.address.suburb,
     addressRegion: BUSINESS_INFO.address.state,
     postalCode: BUSINESS_INFO.address.postcode,
@@ -136,25 +125,16 @@ const localBusinessSchema: SchemaObject = {
     longitude: BUSINESS_INFO.coordinates.longitude
   },
   areaServed: BUSINESS_INFO.areaServed.map((area) => ({
-    "@type": "City",
+    "@type": "Place",
     name: area,
     containedInPlace: {
       "@type": "State",
       name: "New South Wales"
     }
   })),
-  serviceType: BUSINESS_INFO.services,
+  serviceType: BUSINESS_INFO.services.join(", "),
   currenciesAccepted: "AUD",
   paymentAccepted: "Cash, Credit Card, Bank Transfer",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Thursday",
-      opens: "09:00",
-      closes: "17:00"
-    }
-  ],
-  openingHours: ["Th 09:00-17:00"],
   image: [BUSINESS_INFO.images.main, BUSINESS_INFO.images.masonry, BUSINESS_INFO.images.heritage],
   logo: BUSINESS_INFO.logo,
   sameAs: BUSINESS_INFO.sameAs,
@@ -167,8 +147,8 @@ const localBusinessSchema: SchemaObject = {
   },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
-    name: "NSW Masonry Contractor License",
-    credentialCategory: "Professional License",
+    name: "NSW Masonry Contractor Licence",
+    credentialCategory: "Professional Licence",
     recognizedBy: {
       "@type": "Organization",
       name: "NSW Fair Trading"
@@ -269,7 +249,7 @@ export const ServiceSchema = ({
       url: BUSINESS_INFO.website
     },
     areaServed: BUSINESS_INFO.areaServed.map((area) => ({
-      "@type": "City",
+      "@type": "Place",
       name: area
     })),
     availableChannel: {
@@ -506,12 +486,12 @@ export const AggregateRatingSchema = ({
     url: BUSINESS_INFO.website,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: ratingValue.toFixed(1),
+      ratingValue,
       reviewCount,
       bestRating,
       worstRating
     },
-    ...(reviews && reviews.length > 0
+    ...(reviews && reviews.length> 0
       ? {
           review: reviews.map((r) => ({
             "@type": "Review",
@@ -551,11 +531,10 @@ export const HowToSchema = ({
     "@id": `${BUSINESS_INFO.website}#howto`,
     name,
     description,
-    totalTime: "P7D", // typical first-contact → quote window
     estimatedCost: {
       "@type": "MonetaryAmount",
       currency: "AUD",
-      value: "0",
+      value: 0,
       description: "Free site visit and fixed-price written quote across Sydney metro."
     },
     tool: [

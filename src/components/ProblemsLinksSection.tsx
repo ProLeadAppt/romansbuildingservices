@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { AlertCircle, ArrowRight } from 'lucide-react';
 import { PROBLEMS_LIST } from '@/data/problems';
 
@@ -28,29 +27,19 @@ export const ProblemsLinksSection = ({
   return (
     <section className={`py-16 ${bgClass}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
+        <div
+          className="text-center mb-10">
           <h2 className="font-heading text-2xl md:text-3xl text-navy mb-3">{heading}</h2>
           <p className="font-body text-text-secondary max-w-2xl mx-auto">{intro}</p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {problems.map((problem, i) => (
-            <motion.div
-              key={problem.slug}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-            >
+            <div
+              key={problem.slug}>
               <Link
                 to={`/problems/${problem.slug}`}
-                className="group flex items-start gap-3 bg-white rounded-lg p-5 shadow-premium hover:shadow-premium-lg transition-shadow h-full"
-              >
+                className="group flex items-start gap-3 bg-white rounded-lg p-5 shadow-premium hover:shadow-premium-lg transition-shadow h-full">
                 <AlertCircle className="w-5 h-5 text-amber mt-0.5 shrink-0" />
                 <div className="flex-1">
                   <h3 className="font-body text-base font-semibold text-text-primary mb-1 group-hover:text-navy transition-colors">
@@ -61,16 +50,15 @@ export const ProblemsLinksSection = ({
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        {limit && PROBLEMS_LIST.length > limit && (
+        {limit && PROBLEMS_LIST.length> limit && (
           <div className="text-center mt-8">
             <Link
               to="/problems"
-              className="inline-flex items-center gap-2 font-body text-navy hover:text-navy-light transition-colors font-medium"
-            >
+              className="inline-flex items-center gap-2 font-body text-navy hover:text-navy-light transition-colors font-medium">
               See all building problems <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

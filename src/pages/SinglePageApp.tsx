@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import { SEO } from '@/components/SEO';
 import { RomansPremiumHeroSection } from '@/components/RomansPremiumHeroSection';
 import { OptimizedAnimatedAboutSection } from '@/components/OptimizedAnimatedAboutSection';
 import { InteractiveServicesSection } from '@/components/InteractiveServicesSection';
-import { ProjectGallerySection } from '@/components/ProjectGallerySection';
-import { ModernContactSection } from '@/components/ModernContactSection';
 import { SectionDivider } from '@/components/SectionDivider';
-import { ProcessStrip } from '@/components/ProcessStrip';
-import { HowWeWorkSection } from '@/components/HowWeWorkSection';
-import { HomeFAQSection } from '@/components/HomeFAQSection';
 import { LocalBusinessSchema, SpeakableSchema, PersonSchema } from '@/components/LocalSEO/StructuredData';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
+
+const ProjectGallerySection = lazy(() => import('@/components/ProjectGallerySection'));
+const ProcessStrip = lazy(() => import('@/components/ProcessStrip'));
+const HowWeWorkSection = lazy(() => import('@/components/HowWeWorkSection'));
+const HomeFAQSection = lazy(() => import('@/components/HomeFAQSection'));
+const ModernContactSection = lazy(() => import('@/components/ModernContactSection'));
 
 const SinglePageApp = () => {
   return (
     <>
       <SEO
-        title="Sydney Masonry & Remedial Construction | Romans Building Services"
-        description="Sydney masonry and remedial construction by Minas Romanakis. 30 years of stonework, brick repairs, heritage restoration, and structural building services across Sydney."
+        title="Sydney Masonry, Remedial & Heritage Construction | Romans"
+        description="Sydney masonry, remedial and heritage construction by Minas Romanakis. Licenced builders for brick, stone, concrete and structural repairs across Sydney."
         canonical="/"
         ogImage="/og-image.png"
       />
@@ -27,11 +30,48 @@ const SinglePageApp = () => {
       {/* Hero — full-bleed, cinematic, credential strip included */}
       <RomansPremiumHeroSection />
 
+      <section className="bg-white py-6 px-4 border-b border-border">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-3">
+          {[
+            { to: '/services', label: 'All services' },
+            { to: '/services/masonry', label: 'Masonry' },
+            { to: '/services/heritage-restoration', label: 'Heritage restoration' },
+            { to: '/services/remedial-building', label: 'Remedial building' },
+            { to: '/areas', label: 'Sydney areas' },
+            { to: '/case-studies', label: 'Case studies' },
+            { to: '/learn', label: 'Learn hub' },
+          ].map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="inline-flex items-center rounded-full border border-navy/15 bg-bg-light px-4 py-2 text-sm font-medium text-navy hover:border-navy/30 hover:bg-navy/5 transition-colors">
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* About — spacious, grid-breaking, personal */}
       <OptimizedAnimatedAboutSection />
 
       {/* Angled transition into navy services section */}
       <SectionDivider from="#F5F5F5" to="#0A2E76" variant="angle-down" />
+
+
+      <RelatedLinksBlock
+        heading="Start with the main pathways"
+        intro="The quickest way into the site: core services, key problem guides, service areas and the answer-first learn hub."
+        items={[
+          { label: 'Services', href: '/services', sublabel: 'All seven service lines' },
+          { label: 'Problems', href: '/problems', sublabel: 'What the damage usually means' },
+          { label: 'Areas', href: '/areas', sublabel: 'Sydney suburbs and regions' },
+          { label: 'Case studies', href: '/case-studies', sublabel: 'Real jobs, real detail' },
+          { label: 'Heritage hub', href: '/heritage', sublabel: 'Era-specific restoration guides' },
+          { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English SEO hub' },
+        ]}
+        columns={3}
+        background="off-white"
+      />
 
       {/* Services — tiered with photography, navy background */}
       <InteractiveServicesSection />
@@ -40,13 +80,19 @@ const SinglePageApp = () => {
       <SectionDivider from="#0A2E76" to="#F1F5F9" variant="angle-up" />
 
       {/* Gallery preview — horizontal portfolio carousel */}
-      <ProjectGallerySection />
+      <Suspense fallback={null}>
+        <ProjectGallerySection />
+      </Suspense>
 
       {/* Process strip — tight, navy, breaks the rhythm */}
-      <ProcessStrip />
+      <Suspense fallback={null}>
+        <ProcessStrip />
+      </Suspense>
 
       {/* How we work — detailed steps with prose */}
-      <HowWeWorkSection />
+      <Suspense fallback={null}>
+        <HowWeWorkSection />
+      </Suspense>
 
       <section className="bg-white py-10 px-4">
         <div className="max-w-4xl mx-auto">
@@ -60,8 +106,7 @@ const SinglePageApp = () => {
             </div>
             <Link
               to="/learn"
-              className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity shrink-0"
-            >
+              className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity shrink-0">
               Open the hub
             </Link>
           </div>
@@ -69,10 +114,14 @@ const SinglePageApp = () => {
       </section>
 
       {/* Common questions — homepage FAQ with schema */}
-      <HomeFAQSection />
+      <Suspense fallback={null}>
+        <HomeFAQSection />
+      </Suspense>
 
       {/* Contact — phone-first, trust-building */}
-      <ModernContactSection />
+      <Suspense fallback={null}>
+        <ModernContactSection />
+      </Suspense>
     </>
   );
 };

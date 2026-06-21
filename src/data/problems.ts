@@ -4,9 +4,9 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'concrete-cancer': {
     name: 'Concrete Cancer',
     slug: 'concrete-cancer',
-    metaTitle: 'Concrete Cancer Sydney | Signs, Causes & Proper Repair | Romans',
+    metaTitle: 'Sydney Concrete Cancer Repair | Signs, Causes & Fix | Romans',
     metaDescription:
-      'Concrete cancer explained in plain English. Learn the signs, why it happens in Sydney, how urgent it is, and how a proper repair works. 30 years fixing it.',
+      'Concrete cancer in Sydney explained clearly: signs, causes, urgency and the repair sequence that actually lasts on balconies and walls.',
     heroTagline:
       'Rusting steel inside concrete walls and balconies — the most common structural problem in Sydney apartment blocks.',
     quickAnswer:
@@ -96,9 +96,9 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'cracked-brick-walls': {
     name: 'Cracked Brick Walls',
     slug: 'cracked-brick-walls',
-    metaTitle: 'Cracked Brick Walls Sydney | Romans Building Services',
+    metaTitle: 'Sydney Cracked Brick Walls | Causes, Signs & Repair | Romans',
     metaDescription:
-      'Cracks in your brick wall? Learn what different crack patterns mean, which ones matter, and how we fix them properly. 30 years of masonry across Sydney.',
+      'Cracked brick wall? Learn which crack patterns matter, what causes them in Sydney and how to fix the wall properly.',
     heroTagline:
       'Not every crack is serious — but some absolutely are. Here is how to tell the difference.',
     quickAnswer:
@@ -198,9 +198,9 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'failing-retaining-walls': {
     name: 'Failing Retaining Walls',
     slug: 'failing-retaining-walls',
-    metaTitle: 'Failing Retaining Walls Sydney | Romans',
+    metaTitle: 'Sydney Failing Retaining Walls | Drainage & Rebuild | Romans',
     metaDescription:
-      'Retaining wall leaning, bulging or cracking? Learn why it happens, what proper repair looks like, and when you need to rebuild. Sydney masonry since 1995.',
+      'Leaning or cracking retaining wall? Learn the drainage and footing issues behind failure and when rebuilding is the right fix.',
     heroTagline:
       'Leaning, bulging, cracking — retaining walls fail for a reason, and patching the symptom never works.',
     quickAnswer:
@@ -291,7 +291,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'rising-damp': {
     name: 'Rising Damp',
     slug: 'rising-damp',
-    metaTitle: 'Rising Damp in Brick Walls Sydney | Signs & Proper Fix | Romans',
+    metaTitle: 'Sydney Rising Damp | Signs, Causes & Fix | Romans',
     metaDescription:
       'Damp at the base of a brick wall? Learn the difference between rising damp and other moisture problems, and how a proper lime mortar fix works.',
     heroTagline:
@@ -384,7 +384,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'spalling-render': {
     name: 'Spalling & Falling Render',
     slug: 'spalling-render',
-    metaTitle: 'Render Falling Off Walls Sydney | Romans',
+    metaTitle: 'Sydney Render Spalling | Repair & Recoat | Romans',
     metaDescription:
       'Render bubbling, cracking or falling off your walls? Here is what is really happening and what a proper repair looks like. Sydney masonry since 1995.',
     heroTagline:
@@ -476,7 +476,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'crumbling-mortar': {
     name: 'Crumbling Mortar Joints',
     slug: 'crumbling-mortar',
-    metaTitle: 'Crumbling Mortar Sydney | Repointing | Romans',
+    metaTitle: 'Sydney Crumbling Mortar | Repointing & Repair | Romans',
     metaDescription:
       'Mortar crumbling out of brick joints? Learn why it happens, why cement pointing damages old bricks, and what proper lime repointing looks like.',
     heroTagline:
@@ -569,7 +569,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'foundation-movement': {
     name: 'Foundation Movement & Settlement',
     slug: 'foundation-movement',
-    metaTitle: 'Foundation Movement Sydney | Romans Building Services',
+    metaTitle: 'Sydney Foundation Movement | Signs, Causes & Repair | Romans',
     metaDescription:
       'House settling, walls cracking, doors sticking? Learn the signs of foundation movement, when it is serious, and how underpinning works.',
     heroTagline:
@@ -664,7 +664,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'chimney-cracks': {
     name: 'Chimney Cracks & Leaks',
     slug: 'chimney-cracks',
-    metaTitle: 'Chimney Cracks & Leaks Sydney | Romans',
+    metaTitle: 'Sydney Chimney Cracks & Leaks | Repair | Romans',
     metaDescription:
       'Chimney cracked, leaking or leaning? Learn why chimneys fail, how to tell if yours is dangerous, and what a proper rebuild involves.',
     heroTagline:
@@ -764,7 +764,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'efflorescence-salt-damage': {
     name: 'Efflorescence & Salt Damage',
     slug: 'efflorescence-salt-damage',
-    metaTitle: 'Salt Damage & Efflorescence Sydney | Romans',
+    metaTitle: 'Sydney Salt Damage & Efflorescence | Repair | Romans',
     metaDescription:
       'White salt crystals on brickwork, crumbling mortar, spalling brick faces — salt damage explained. Coastal Sydney specialists.',
     heroTagline:
@@ -857,7 +857,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'leaking-balconies': {
     name: 'Leaking Balconies',
     slug: 'leaking-balconies',
-    metaTitle: 'Leaking Balconies Sydney | Romans Building Services',
+    metaTitle: 'Sydney Leaking Balconies | Waterproofing & Repairs | Romans',
     metaDescription:
       'Leaking balconies in Sydney apartments. Learn whether the membrane, tile bed, drainage or concrete is failing, and how to repair it properly.',
     heroTagline:
@@ -952,7 +952,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'tuckpointing-restoration': {
     name: 'Tuckpointing Restoration',
     slug: 'tuckpointing-restoration',
-    metaTitle: 'Tuckpointing Restoration Sydney | Romans',
+    metaTitle: 'Sydney Tuckpointing Restoration | Repointing & Lime Mortar | Romans',
     metaDescription:
       'Tuckpointing restoration on Victorian and Federation terraces across Sydney. Colour-matched lime mortar with fine white fillet. 30 years of heritage work.',
     heroTagline:
@@ -1043,7 +1043,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'sandstone-weathering': {
     name: 'Sandstone Weathering & Erosion',
     slug: 'sandstone-weathering',
-    metaTitle: 'Sandstone Weathering Sydney | Romans Building Services',
+    metaTitle: 'Sydney Sandstone Weathering | Repair & Restoration | Romans',
     metaDescription:
       'Sandstone walls eroding, flaking or losing detail? Learn the causes and proper restoration for Sydney heritage sandstone. 30 years of heritage stone work.',
     heroTagline:
@@ -1137,7 +1137,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'damaged-lintels': {
     name: 'Damaged Lintels Above Windows & Doors',
     slug: 'damaged-lintels',
-    metaTitle: 'Damaged Lintels Sydney | Rusting Steel & Brick Cracking | Romans',
+    metaTitle: 'Sydney Damaged Lintels | Rusting Steel & Brick Cracks | Romans',
     metaDescription:
       'Rust stains above your window, cracks radiating from door corners? That is a failing lintel. Learn the signs, causes and proper replacement for Sydney homes.',
     heroTagline:
@@ -1231,7 +1231,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
   'cavity-wall-tie-failure': {
     name: 'Cavity Wall Tie Failure',
     slug: 'cavity-wall-tie-failure',
-    metaTitle: 'Cavity Wall Tie Failure Sydney | Romans',
+    metaTitle: 'Sydney Cavity Wall Tie Failure | Repair | Romans',
     metaDescription:
       'Horizontal cracks at regular intervals, bowing walls? Your cavity wall ties may be failing. Romans Building Services remedies tie failure across Sydney homes.',
     heroTagline:

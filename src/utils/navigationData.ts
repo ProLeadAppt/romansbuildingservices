@@ -1,9 +1,11 @@
+import type { LucideIcon } from 'lucide-react';
+
 export interface NavigationItem {
   id: string;
   label: string;
   href: string;
   description?: string;
-  icon?: any;
+  icon?: LucideIcon | string;
   badge?: string;
   children?: NavigationItem[];
 }
@@ -12,7 +14,7 @@ export interface ServiceCategory {
   id: string;
   label: string;
   description: string;
-  icon: any;
+  icon: LucideIcon | string;
   services: NavigationItem[];
 }
 

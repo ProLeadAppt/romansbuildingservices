@@ -5,6 +5,7 @@ interface SEOHeadProps {
   description: string;
   canonical: string;
   ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile' | 'product';
   noIndex?: boolean;
   schemaJson?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
@@ -24,6 +25,7 @@ export const SEOHead = ({
   description,
   canonical,
   ogImage,
+  ogType = 'website',
   noIndex = false,
   schemaJson,
 }: SEOHeadProps) => {
@@ -47,7 +49,7 @@ export const SEOHead = ({
       <meta property="og:title" content={title} />
       <meta property="og:locale" content="en_AU" />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:site_name" content="Romans Building Services" />

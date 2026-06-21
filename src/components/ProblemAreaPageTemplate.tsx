@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle, ChevronRight, Phone, MapPin, ArrowRight } from 'lucide-react';
 import type { ProblemPageProps } from '@/components/ProblemPageTemplate';
 import type { AreaProfile } from '@/data/areas';
@@ -23,7 +22,7 @@ const urgencyBadge = {
 
 export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemAreaPageProps) => {
   const canonicalUrl = `${SITE_URL}/problems/${problem.slug}/${area.slug}`;
-  const metaTitle = `${problem.name} in ${area.name} | Romans Building Services`;
+  const metaTitle = `${problem.name} in ${area.name} | Romans`;
   const metaDescription = `${problem.name} in ${area.name}: signs, causes specific to local housing stock, and how we fix it properly. ${problem.urgency === 'high' ? 'Urgent assessment available. ' : ''}Romans Building Services — 30 years across Sydney.`;
 
   const breadcrumbs = [
@@ -83,7 +82,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i > 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
@@ -100,41 +99,28 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       {/* Hero */}
       <section className="bg-navy py-20 md:py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber/15 text-amber text-xs font-body mb-6"
-          >
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber/15 text-amber text-xs font-body mb-6">
             <MapPin className="w-3.5 h-3.5" />
             <span>{area.name}, Sydney</span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="font-heading text-4xl md:text-5xl text-white mb-5"
-          >
+          </div>
+          <h1
+            className="font-heading text-4xl md:text-5xl text-white mb-5">
             {problem.name} in {area.name}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto"
-          >
+          </h1>
+          <p
+            className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
             {problem.heroTagline}
-          </motion.p>
+          </p>
           <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
             <span
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-body border ${urgency.classes}`}
-            >
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-body border ${urgency.classes}`}>
               <AlertCircle className="w-4 h-4" />
               {urgency.label}
             </span>
             <a
-              href="tel:+61414922276"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-amber text-navy font-body font-medium hover:bg-amber-light transition-colors"
-            >
+              href="tel:0414922276"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-amber text-navy font-body font-medium hover:bg-amber-light transition-colors">
               <Phone className="w-4 h-4" />
               Call Minas — 0414 922 276
             </a>
@@ -158,30 +144,18 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       {/* Area-specific context — the unique content for this combo */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-heading text-3xl text-navy mb-6"
-          >
+          <h2
+            className="font-heading text-3xl text-navy mb-6">
             Why we see this constantly in {area.shortName}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-body text-text-secondary text-lg leading-relaxed mb-6"
-          >
+          </h2>
+          <p
+            className="font-body text-text-secondary text-lg leading-relaxed mb-6">
             {areaNote}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-body text-text-secondary leading-relaxed"
-          >
+          </p>
+          <p
+            className="font-body text-text-secondary leading-relaxed">
             {area.housingProfile}
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -225,8 +199,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
                 <Link
                   key={slug}
                   to={`/suburbs/${slug}`}
-                  className="font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-white border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between"
-                >
+                  className="font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-white border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between">
                   <span>{name}</span>
                   <ArrowRight className="w-4 h-4 opacity-50" />
                 </Link>
@@ -260,15 +233,13 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
           <div className="grid sm:grid-cols-2 gap-4">
             <Link
               to={`/problems/${problem.slug}`}
-              className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors"
-            >
+              className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors">
               <div className="font-heading text-navy mb-1">Full {problem.name.toLowerCase()} guide</div>
               <div className="font-body text-sm text-text-muted">Causes, fix process, costs and FAQs.</div>
             </Link>
             <Link
               to={area.href}
-              className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors"
-            >
+              className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors">
               <div className="font-heading text-navy mb-1">{area.name} area page</div>
               <div className="font-body text-sm text-text-muted">All the services we offer across {area.name}.</div>
             </Link>
@@ -276,8 +247,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
               <Link
                 key={s.href}
                 to={s.href}
-                className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors"
-              >
+                className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors">
                 <div className="font-heading text-navy mb-1">{s.title}</div>
                 <div className="font-body text-sm text-text-muted">Service detail and how we work.</div>
               </Link>
@@ -296,9 +266,8 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
             Call Minas for a real assessment. We give straight answers and proper quotes — no high-pressure sales.
           </p>
           <a
-            href="tel:+61414922276"
-            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors"
-          >
+            href="tel:0414922276"
+            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-md bg-amber text-navy font-body font-semibold hover:bg-amber-light transition-colors">
             <Phone className="w-5 h-5" />
             0414 922 276
           </a>

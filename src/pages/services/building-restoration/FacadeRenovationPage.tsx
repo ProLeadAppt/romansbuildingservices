@@ -7,7 +7,7 @@ const FacadeRenovationPage = () => {
   return (
     <ServicePageTemplate
       title="Facade Renovation & Repair"
-      metaTitle="Building Facade Renovation Sydney | Romans"
+      metaTitle="Sydney Building Facade Renovation | Romans"
       metaDescription="Sydney facade renovation by Minas Romanakis. Brick, stone, render, cornices, parapets. Heritage and modern. Scaffold, swing stage, rope access."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}

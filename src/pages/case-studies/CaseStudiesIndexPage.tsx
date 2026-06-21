@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Calendar } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 import { caseStudies } from '@/data/caseStudies';
@@ -19,6 +18,7 @@ const CollectionPageSchema = () => {
     url: `${SITE_URL}/case-studies`,
     mainEntity: {
       '@type': 'ItemList',
+      numberOfItems: caseStudies.length,
       itemListElement: caseStudies.map((cs, i) => ({
         '@type': 'ListItem',
         position: i + 1,
@@ -48,17 +48,13 @@ const CaseStudiesIndexPage = () => {
         canonical="/case-studies"
       />
       <CollectionPageSchema />
-      <BreadcrumbSchema items={[{ label: 'Case Studies', href: '/case-studies' }]} />
+      <BreadcrumbSchema items={[{ label: 'Home', href: '/' }, { label: 'Case Studies', href: '/case-studies' }]} />
 
       {/* Hero */}
       <section className="bg-navy text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
+          <div
+            className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full text-xs font-body mb-6 border border-white/20">
               <span className="w-2 h-2 bg-accent rounded-full" />
               Case Studies
@@ -71,7 +67,31 @@ const CaseStudiesIndexPage = () => {
               No stock photos, no AI renders. The problem, the method, and the result —
               written the way we would tell a client over the phone.
             </p>
-          </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Authority hubs */}
+      <section className="py-12 bg-white border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              { label: 'Learn hub', href: '/learn', note: 'Answer-first guides for masonry, heritage and remedial intent.' },
+              { label: 'Heritage hub', href: '/heritage', note: 'Era-led restoration pages for period homes and listed buildings.' },
+              { label: 'Masonry service', href: '/services/masonry', note: 'Primary service page for brick, block, stone and repointing.' },
+              { label: 'Remedial building', href: '/services/remedial-building', note: 'Broader defect and strata remediation authority page.' },
+            ].map((page) => (
+              <Link
+                key={page.href}
+                to={page.href}
+                className="group bg-bg-light rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
+                <h3 className="font-heading text-xl text-text-primary mb-2 group-hover:text-navy transition-colors">
+                  {page.label}
+                </h3>
+                <p className="text-text-muted leading-relaxed text-sm">{page.note}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -80,14 +100,9 @@ const CaseStudiesIndexPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs, i) => (
-              <motion.article
+              <article
                 key={cs.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border flex flex-col"
-              >
+                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border flex flex-col">
                 <Link to={`/case-studies/${cs.slug}`} className="block aspect-[4/3] overflow-hidden bg-bg-light">
                   <img
                     src={cs.hero.src}
@@ -121,14 +136,13 @@ const CaseStudiesIndexPage = () => {
                     </div>
                     <Link
                       to={`/case-studies/${cs.slug}`}
-                      className="text-navy hover:text-accent font-semibold inline-flex items-center gap-1 transition-colors"
-                    >
+                      className="text-navy hover:text-accent font-semibold inline-flex items-center gap-1 transition-colors">
                       Read
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>
@@ -146,15 +160,13 @@ const CaseStudiesIndexPage = () => {
           <div className="flex flex-wrap gap-3 justify-center">
             <QuoteCTAButton
               service="not-sure"
-              className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2"
-            >
+              className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2">
               Get a quote
               <ArrowRight className="w-4 h-4" />
             </QuoteCTAButton>
             <a
               href="tel:0414922276"
-              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-8 py-4 rounded transition-colors"
-            >
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-8 py-4 rounded transition-colors">
               Call 0414 922 276
             </a>
           </div>

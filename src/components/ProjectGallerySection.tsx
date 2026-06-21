@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { fadeUp, staggerContainer, premiumEase } from '@/utils/animations';
 
 const galleryImages = [
   {
@@ -46,68 +44,38 @@ const galleryImages = [
   },
 ];
 
-const cardVariant = {
-  hidden: { opacity: 0, x: 60 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: premiumEase, delay: i * 0.08 },
-  }),
-};
-
 export const ProjectGallerySection = () => {
   return (
     <section className="bg-bg-light py-20">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-end mb-10">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div>
           <h2 className="font-heading text-3xl text-text-primary">Our Work</h2>
           <p className="font-body text-base text-text-muted mt-2">
             Real projects. Real craftsmanship. No stock photos.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div>
           <Link
             to="/gallery"
-            className="link-animated text-navy font-body font-medium inline-flex items-center gap-2 hover:text-navy-light transition"
-          >
+            className="link-animated text-navy font-body font-medium inline-flex items-center gap-2 hover:text-navy-light transition">
             View All Projects
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </div>
       </div>
 
       {/* Full-bleed horizontal carousel */}
-      <motion.div
-        className="overflow-x-auto scrollbar-hide"
-        variants={staggerContainer(0.08, 0.1)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
+      <div
+        className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-5 px-6">
           {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariant}
-              viewport={{ once: true }}
-            >
+            <div
+              key={index}>
               <Link
                 to="/gallery"
-                className="flex-shrink-0 w-[300px] md:w-[380px] aspect-[3/4] rounded-xl overflow-hidden relative group cursor-pointer block"
-              >
+                className="flex-shrink-0 w-[300px] md:w-[380px] aspect-[3/4] rounded-xl overflow-hidden relative group cursor-pointer block">
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -122,10 +90,10 @@ export const ProjectGallerySection = () => {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

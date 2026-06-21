@@ -100,85 +100,99 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+async function launchBrowser() {
+  return puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
+}
+
+async function closePage(page) {
+  if (!page || page.isClosed()) return;
+  try {
+    await page.close();
+  } catch {
+    // Ignore page-close races after browser crashes.
+  }
+}
+
 async function prerenderRoute(browser, route, port) {
   const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 800 });
-  // Block third-party scripts and heavy media during prerender. The HTML we
-  // capture doesn't need them and they cause networkidle to never settle.
-  // Real visitors still load everything normally — this is build-time only.
-  await page.setRequestInterception(true);
-  page.on('request', (req) => {
-    const url = req.url();
-    const type = req.resourceType();
-    if (
-      url.includes('googletagmanager.com') ||
-      url.includes('google-analytics.com') ||
-      url.includes('clarity.ms') ||
-      url.includes('leadconnector') ||
-      url.includes('fonts.googleapis.com') ||
-      url.includes('fonts.gstatic.com') ||
-      type === 'image' ||
-      type === 'media' ||
-      type === 'font'
-    ) {
-      return req.abort();
-    }
-    req.continue();
-  });
-
-  const url = `http://127.0.0.1:${port}${route}`;
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  // Wait for React + Suspense to resolve. The PageLoader uses .animate-spin;
-  // when that's gone, the route's real component has mounted.
   try {
-    await page.waitForFunction(
-      () => !document.querySelector('.animate-spin') && !!document.querySelector('h1, [role="main"], main'),
-      { timeout: 15000 },
-    );
-  } catch {
-    // Best-effort: capture whatever rendered.
-  }
-  // Settle long enough for Framer Motion enter animations to complete.
-  await new Promise((r) => setTimeout(r, 800));
-
-  // Force Framer Motion's initial inline styles to their final visible state
-  // before capture. Without this, crawlers see h1/h2/h3 etc with opacity:0
-  // and report "missing H1" warnings (Bing in particular). Real visitors are
-  // unaffected — the React app re-mounts on hydration and animations replay.
-  await page.evaluate(() => {
-    document.querySelectorAll('[style]').forEach((el) => {
-      const style = el.getAttribute('style') || '';
+    await page.setViewport({ width: 1280, height: 800 });
+    page.setDefaultNavigationTimeout(30000);
+    // Block third-party scripts and heavy media during prerender. The HTML we
+    // capture doesn't need them and they cause networkidle to never settle.
+    // Real visitors still load everything normally — this is build-time only.
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+      const url = req.url();
+      const type = req.resourceType();
       if (
-        style.includes('opacity: 0') ||
-        style.includes('opacity:0') ||
-        style.includes('translateY') ||
-        style.includes('translateX') ||
-        style.includes('blur(') ||
-        style.includes('scale(')
+        url.includes('googletagmanager.com') ||
+        url.includes('google-analytics.com') ||
+        url.includes('clarity.ms') ||
+        url.includes('leadconnector') ||
+        url.includes('fonts.googleapis.com') ||
+        url.includes('fonts.gstatic.com') ||
+        type === 'image' ||
+        type === 'media' ||
+        type === 'font'
       ) {
-        el.style.opacity = '';
-        el.style.transform = '';
-        el.style.filter = '';
+        return req.abort();
       }
+      req.continue();
     });
-  });
 
-  let html = await page.content();
-  if (!html.startsWith('<!DOCTYPE')) {
-    html = '<!DOCTYPE html>\n' + html;
+    const url = `http://127.0.0.1:${port}${route}`;
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    // Wait briefly for the React route to paint its main content.
+    try {
+      await page.waitForSelector('main, h1', { timeout: 1500 });
+    } catch {
+      // Best-effort: capture whatever rendered.
+    }
+    await new Promise((r) => setTimeout(r, 150));
+
+    // Force Framer Motion's initial inline styles to their final visible state
+    // before capture. Without this, crawlers see h1/h2/h3 etc with opacity:0
+    // and report "missing H1" warnings (Bing in particular). Real visitors are
+    // unaffected — the React app re-mounts on hydration and animations replay.
+    await page.evaluate(() => {
+      document.querySelectorAll('[style]').forEach((el) => {
+        const style = el.getAttribute('style') || '';
+        if (
+          style.includes('opacity: 0') ||
+          style.includes('opacity:0') ||
+          style.includes('translateY') ||
+          style.includes('translateX') ||
+          style.includes('blur(') ||
+          style.includes('scale(')
+        ) {
+          el.style.opacity = '';
+          el.style.transform = '';
+          el.style.filter = '';
+        }
+      });
+    });
+
+    let html = await page.content();
+    if (!html.startsWith('<!DOCTYPE')) {
+      html = '<!DOCTYPE html>\n' + html;
+    }
+    // Strip the placeholder meta tags that came from index.html so search
+    // engines don't see two competing <meta name="description"> etc.
+    // react-helmet-async marks its tags with data-rh="true"; we drop any
+    // matching default tag if a helmet-managed one exists.
+    html = dedupeHelmetTags(html);
+
+    const outDir = route === '/' ? DIST : path.join(DIST, route);
+    ensureDir(outDir);
+    const outPath = path.join(outDir, 'index.html');
+    fs.writeFileSync(outPath, html);
+  } finally {
+    await closePage(page);
   }
-  // Strip the placeholder meta tags that came from index.html so search
-  // engines don't see two competing <meta name="description"> etc.
-  // react-helmet-async marks its tags with data-rh="true"; we drop any
-  // matching default tag if a helmet-managed one exists.
-  html = dedupeHelmetTags(html);
-
-  await page.close();
-
-  const outDir = route === '/' ? DIST : path.join(DIST, route);
-  ensureDir(outDir);
-  const outPath = path.join(outDir, 'index.html');
-  fs.writeFileSync(outPath, html);
 }
 
 function dedupeHelmetTags(html) {
@@ -217,27 +231,52 @@ async function main() {
   const server = await startServer();
   const port = server.address().port;
   console.log(`[prerender] static server on http://127.0.0.1:${port}`);
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  });
+  let browser = await launchBrowser();
 
   const startedAt = Date.now();
   let done = 0;
+  let staleBrowserErrors = 0;
   for (const route of routes) {
-    try {
-      await prerenderRoute(browser, route, port);
-      done++;
-      if (done % 10 === 0 || done === routes.length) {
-        console.log(`[prerender] ${done}/${routes.length}`);
+    let success = false;
+    for (let attempt = 1; attempt <= 2 && !success; attempt++) {
+      if (!browser.isConnected()) {
+        browser = await launchBrowser();
       }
-    } catch (err) {
-      console.error(`[prerender] FAILED ${route}: ${err.message}`);
+      try {
+        await prerenderRoute(browser, route, port);
+        done++;
+        success = true;
+        if (done % 10 === 0 || done === routes.length) {
+          console.log(`[prerender] ${done}/${routes.length}`);
+        }
+      } catch (err) {
+        const message = err?.message || String(err);
+        console.error(`[prerender] FAILED ${route} (attempt ${attempt}): ${message}`);
+        const recoverable = /detached Frame|Connection closed|Target closed|Execution context was destroyed/i.test(message);
+        if (!recoverable || attempt === 2) {
+          break;
+        }
+        staleBrowserErrors += 1;
+        try {
+          await browser.close();
+        } catch {
+          // ignore
+        }
+        browser = await launchBrowser();
+      }
     }
   }
 
-  await browser.close();
+  try {
+    await browser.close();
+  } catch {
+    // ignore
+  }
   server.close();
+
+  if (staleBrowserErrors > 0) {
+    console.log(`[prerender] browser relaunched ${staleBrowserErrors} time(s) to finish unstable routes`);
+  }
 
   const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
   console.log(`[prerender] done — ${done}/${routes.length} routes in ${elapsed}s`);

@@ -7,8 +7,8 @@ const LoadBearingWallsPage = () => {
   return (
     <ServicePageTemplate
       title="Load-Bearing Wall Repairs"
-      metaTitle="Load-Bearing Wall Repairs Sydney | Romans"
-      metaDescription="Sydney load-bearing wall repairs by Minas Romanakis. Crack stitching, pier rebuilds, lintel replacement, helibar reinforcement. Engineer-certified, AS 3700."
+      metaTitle="Sydney Load-Bearing Wall Repairs | Romans"
+      metaDescription="Sydney load-bearing wall repairs by Minas Romanakis. Crack stitching, pier rebuilds, lintel replacement and helibar reinforcement. Engineer-certified."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}

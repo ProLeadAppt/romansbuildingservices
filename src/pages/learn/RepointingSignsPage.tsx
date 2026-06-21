@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 
 const faqs = [
   {
@@ -47,11 +46,71 @@ const steps = [
   },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Signs You Need Repointing in Sydney | Crumbling Mortar, Gaps and Water Entry',
+  description: 'How to spot failed mortar before the wall gets worse. A plain-English guide to the signs you need repointing on Sydney brick and stone walls.',
+  url: 'https://romansbuildingservices.com/learn/repointing-signs',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://romansbuildingservices.com/learn/repointing-signs',
+  },
+  isPartOf: {
+    '@type': 'CollectionPage',
+    '@id': 'https://romansbuildingservices.com/learn',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    url: 'https://romansbuildingservices.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    logo: { '@type': 'ImageObject', url: 'https://romansbuildingservices.com/og-image.png' },
+  },
+  about: [
+    { '@type': 'Thing', name: 'Repointing' },
+    { '@type': 'Thing', name: 'Mortar deterioration' },
+    { '@type': 'Thing', name: 'Sydney masonry' },
+  ],
+  keywords: ['repointing', 'mortar', 'Sydney', 'brick repair'],
+};
+
 const RepointingSignsPage = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'Learn', href: '/learn' },
     { label: 'Signs you need repointing', href: '/learn/repointing-signs' },
+  ];
+
+  const relatedPages = [
+    {
+      name: 'Learn hub',
+      url: 'https://romansbuildingservices.com/learn',
+      description: 'The main SEO / GEO / AEO authority hub for the site.',
+    },
+    {
+      name: 'Case studies index',
+      url: 'https://romansbuildingservices.com/case-studies',
+      description: 'Proof pages that show how the advice plays out on real jobs.',
+    },
+    {
+      name: 'Masonry vs remedial building',
+      url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+      description: 'Useful when repointing is only part of a bigger repair scope.',
+    },
+    {
+      name: 'Concrete cancer in Sydney',
+      url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
+      description: 'Helpful when mortar failure and concrete spalling sit on the same property.',
+    },
+    {
+      name: 'Masonry service',
+      url: 'https://romansbuildingservices.com/services/masonry',
+      description: 'The primary service page for repointing and brick/stone repair work.',
+    },
   ];
 
   return (
@@ -60,6 +119,14 @@ const RepointingSignsPage = () => {
         title="Signs You Need Repointing in Sydney | Crumbling Mortar, Gaps and Water Entry"
         description="How to spot failed mortar before the wall gets worse. A plain-English guide to the signs you need repointing on Sydney brick and stone walls."
         canonical="/learn/repointing-signs"
+        ogType="article"
+        schemaJson={articleSchema}
+      />
+      <CollectionPageSchema
+        name="Signs you need repointing — related guides and service pages"
+        description="Supporting pages for mortar failure, masonry repair and remedial construction in Sydney."
+        url="https://romansbuildingservices.com/learn/repointing-signs"
+        items={relatedPages}
       />
       <SpeakableSchema url="https://romansbuildingservices.com/learn/repointing-signs" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -72,15 +139,15 @@ const RepointingSignsPage = () => {
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
+          <p className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
             Learn / diagnosis guide
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="font-heading text-4xl md:text-5xl text-white mb-5">
+          </p>
+          <h1 className="font-heading text-4xl md:text-5xl text-white mb-5">
             Signs you need repointing
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          </h1>
+          <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Failed mortar usually shows itself before the wall properly falls apart. The trick is spotting it early enough to fix it before water and movement do more damage.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -149,6 +216,22 @@ const RepointingSignsPage = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-16 px-4 bg-bg-light">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-heading text-2xl md:text-3xl text-navy mb-6 text-center">Related reading</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link to="/learn/masonry-vs-remedial-building" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
+              <p className="font-heading text-xl text-text-primary mb-2">Masonry vs remedial building</p>
+              <p className="text-text-muted leading-relaxed">Work out whether the wall needs a masonry repair or a broader remedial scope.</p>
+            </Link>
+            <Link to="/learn/concrete-cancer-sydney" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
+              <p className="font-heading text-xl text-text-primary mb-2">Concrete cancer in Sydney</p>
+              <p className="text-text-muted leading-relaxed">A close cousin page for buildings where mortar failure and spalling appear together.</p>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layers, Home, Shield } from 'lucide-react';
-import { fadeUpBlur, scaleReveal, slideFromRight, staggerContainer } from '@/utils/animations';
 
 const featuredServices = [
   {
@@ -50,33 +48,21 @@ export const InteractiveServicesSection = () => {
     <section className="bg-navy texture-grain py-28 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading — left-aligned */}
-        <motion.div
-          variants={fadeUpBlur}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div>
           <h2 className="font-heading text-3xl lg:text-4xl text-white">What We Do</h2>
           <span className="accent-line mt-4 mb-6" />
           <p className="font-body text-lg text-white/60 max-w-xl">
             Sydney masonry and remedial construction, plus restoration and structural repairs. 30 years of getting it right.
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured services — large photo cards */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12"
-          variants={staggerContainer(0.12)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12">
           {featuredServices.map((service) => (
-            <motion.div
+            <div
               key={service.title}
-              variants={scaleReveal}
-              className="relative aspect-[3/4] md:aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer"
-            >
+              className="relative aspect-[3/4] md:aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer">
               <img
                 src={service.image}
                 alt={service.title}
@@ -89,43 +75,34 @@ export const InteractiveServicesSection = () => {
                 <p className="font-body text-sm text-white/70 mt-1">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="inline-block text-white/60 hover:text-white text-sm mt-3 link-animated"
-                >
+                  className="inline-block text-white/60 hover:text-white text-sm mt-3 link-animated">
                   Learn more
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Secondary services — compact horizontal cards */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8"
-          variants={staggerContainer(0.08)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           {secondaryServices.map((service) => (
-            <motion.div
+            <div
               key={service.title}
-              variants={slideFromRight}
-              className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-lg p-5"
-            >
+              className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-lg p-5">
               <service.icon className="text-blue-bright w-6 h-6 mt-1 shrink-0" />
               <div>
                 <h3 className="font-body text-base font-medium text-white">{service.title}</h3>
                 <p className="font-body text-sm text-white/50 mt-1">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="inline-block text-white/50 hover:text-white text-sm mt-2 link-animated"
-                >
+                  className="inline-block text-white/50 hover:text-white text-sm mt-2 link-animated">
                   Learn more
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

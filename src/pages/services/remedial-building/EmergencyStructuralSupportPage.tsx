@@ -8,7 +8,7 @@ const EmergencyStructuralSupportPage = () => {
   return (
     <ServicePageTemplate
       title="Emergency Structural Support"
-      metaTitle="Emergency Structural Propping & Shoring Sydney | Romans"
+      metaTitle="Sydney Emergency Structural Propping & Shoring | Romans"
       metaDescription="Sydney emergency structural support by Minas Romanakis. Acrow propping, steel shoring, wall bracing, engineer-designed. Stabilises buildings until permanent."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}
@@ -84,7 +84,7 @@ const EmergencyStructuralSupportPage = () => {
         {
           title: 'Engineer documentation',
           detail:
-            'Engineer-prepared temporary works design: prop schedule, layout drawing, load calculations, sequence of installation, removal sequence. Required for any prolonged propping.',
+            'Engineer-prepared temporary works design: prop schedule, drawing, load calculations, sequence of installation, removal sequence. Required for any prolonged propping.',
         },
       ]}
       processSteps={[
@@ -94,7 +94,7 @@ const EmergencyStructuralSupportPage = () => {
             'On site, we look at what has failed and what is at risk of failing next. Hazard zone established. Photos taken. Engineer called if the structure is significant.',
         },
         {
-          step: 'Plan the support layout',
+          step: 'Plan the support',
           detail:
             'Quick design (or engineer detailed design for significant work). Prop positions chosen to take the load without blocking access for permanent repair. Sequence planned.',
         },

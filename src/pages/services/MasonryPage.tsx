@@ -8,8 +8,8 @@ const MasonryPage = () => {
   return (
     <ServicePageTemplate
       title="Stone & Masonry"
-      metaTitle="Sydney Masonry Services | Brick, Stone & Repointing | Romans Building Services"
-      metaDescription="Sydney masonry services for brick, stone, retaining walls, repointing and heritage repairs. Built for homeowners, strata and commercial sites across Sydney."
+      metaTitle="Sydney Masonry Services | Romans"
+      metaDescription="Brick, stone, block and repointing work across Sydney for homes, strata and commercial sites by Minas Romanakis. Repairs, rebuilding and new masonry."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Services', href: '/services' }}
       siblingServices={[

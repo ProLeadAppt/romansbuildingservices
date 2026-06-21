@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ChevronRight, Phone, CheckCircle2, MapPin, Calendar, ArrowRight, Quote } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
@@ -35,6 +34,11 @@ const CaseStudySchema = ({ cs }: { cs: CaseStudy }) => {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/case-studies/${cs.slug}`,
     },
+    isPartOf: {
+      '@type': 'CollectionPage',
+      '@id': `${SITE_URL}/case-studies`,
+    },
+    keywords: [cs.primaryService, cs.suburbName, cs.parentAreaName, 'case study'],
     about: {
       '@type': 'Service',
       name: cs.primaryService,
@@ -69,14 +73,16 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
         description={cs.metaDescription}
         canonical={canonical}
         ogImage={cs.hero.src.startsWith('http') ? cs.hero.src : `${SITE_URL}${cs.hero.src.startsWith('/') ? cs.hero.src : `/${cs.hero.src}`}`}
+        ogType="article"
       />
       <CaseStudySchema cs={cs} />
       <FAQSchema faqs={cs.faqs} />
       <BreadcrumbSchema
         items={[
+          { label: 'Home', href: '/' },
           { label: 'Case Studies', href: '/case-studies' },
           { label: cs.suburbName, href: `/suburbs/${cs.suburbSlug}` },
-          { label: cs.primaryService, href: cs.primaryServiceHref },
+          { label: 'Case Study', href: canonical },
         ]}
       />
 
@@ -92,6 +98,8 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
           </Link>
           <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
           <span className="font-body text-text-primary whitespace-nowrap">{cs.suburbName}</span>
+          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <span className="font-body text-text-primary whitespace-nowrap">Case Study</span>
         </div>
       </div>
 
@@ -107,12 +115,8 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
           <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
+          <div
+            className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full text-xs font-body mb-6 border border-white/20">
               <span className="w-2 h-2 bg-accent rounded-full" />
               Case Study
@@ -150,20 +154,18 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                   : cs.primaryService.toLowerCase().includes('brick') || cs.primaryService.toLowerCase().includes('repoint')
                   ? 'brickwork-repointing'
                   : 'stonework'}
-                className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-6 py-3 rounded transition-colors inline-flex items-center gap-2"
-              >
+                className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-6 py-3 rounded transition-colors inline-flex items-center gap-2">
                 Get a quote for similar work
                 <ArrowRight className="w-4 h-4" />
               </QuoteCTAButton>
               <a
                 href="tel:0414922276"
-                className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-6 py-3 rounded transition-colors inline-flex items-center gap-2"
-              >
+                className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-6 py-3 rounded transition-colors inline-flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 0414 922 276
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -194,12 +196,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
       {/* The Problem */}
       <section className="py-20 bg-bg-light">
         <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="inline-block font-body text-sm text-accent uppercase tracking-wider mb-3">
               The Problem
             </div>
@@ -211,24 +208,19 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                 <p key={i}>{para}</p>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Gallery between sections */}
-      {cs.gallery.length > 0 && (
+      {cs.gallery.length> 0 && (
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {cs.gallery.map((img, i) => (
-                <motion.figure
+                <figure
                   key={i}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative overflow-hidden rounded-lg shadow-md bg-bg-light aspect-[4/3]"
-                >
+                  className="relative overflow-hidden rounded-lg shadow-md bg-bg-light aspect-[4/3]">
                   <img
                     src={img.src}
                     alt={img.alt}
@@ -240,7 +232,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                       {img.caption}
                     </figcaption>
                   )}
-                </motion.figure>
+                </figure>
               ))}
             </div>
           </div>
@@ -250,12 +242,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
       {/* The Solution */}
       <section className="py-20 bg-navy text-white">
         <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="inline-block font-body text-sm text-accent uppercase tracking-wider mb-3">
               What We Did
             </div>
@@ -267,19 +254,14 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                 <p key={i}>{para}</p>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* The Result + Testimonial */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="inline-block font-body text-sm text-accent uppercase tracking-wider mb-3">
               The Result
             </div>
@@ -291,16 +273,11 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                 <p key={i}>{para}</p>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {cs.testimonial && (
-            <motion.figure
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-12 relative bg-bg-light border-l-4 border-accent p-8 md:p-10 rounded-r-lg"
-            >
+            <figure
+              className="mt-12 relative bg-bg-light border-l-4 border-accent p-8 md:p-10 rounded-r-lg">
               <Quote className="absolute top-6 left-6 w-10 h-10 text-accent/20" />
               <blockquote className="relative pl-10">
                 <p className="font-body text-xl md:text-2xl text-text-primary leading-relaxed italic mb-4">
@@ -310,7 +287,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                   — {cs.testimonial.attribution}
                 </figcaption>
               </blockquote>
-            </motion.figure>
+            </figure>
           )}
         </div>
       </section>
@@ -326,8 +303,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="group bg-white border border-border hover:border-accent rounded-lg p-5 transition-colors"
-              >
+                className="group bg-white border border-border hover:border-accent rounded-lg p-5 transition-colors">
                 <div className="font-heading font-semibold text-navy group-hover:text-accent transition-colors flex items-center justify-between">
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -344,8 +320,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
             </div>
             <Link
               to="/case-studies"
-              className="inline-flex items-center gap-2 font-body text-navy hover:text-accent transition-colors"
-            >
+              className="inline-flex items-center gap-2 font-body text-navy hover:text-accent transition-colors">
               <span>See all case studies</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -353,8 +328,44 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
         </div>
       </section>
 
+      {/* Related reading */}
+      <section className="py-16 bg-white border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-2">
+                Read the explainer version
+              </h2>
+              <p className="font-body text-text-muted leading-relaxed max-w-2xl">
+                These guides answer the “what is it?” questions that usually come before someone is ready to look at a project page.
+              </p>
+            </div>
+            <Link to="/learn" className="inline-flex items-center gap-2 font-body text-navy hover:text-accent transition-colors">
+              <span>Go to the Learn hub</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building' },
+              { label: 'Signs you need repointing', href: '/learn/repointing-signs' },
+              { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney' },
+            ].map((page) => (
+              <Link
+                key={page.href}
+                to={page.href}
+                className="group bg-bg-light rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
+                <h3 className="font-heading text-xl text-text-primary group-hover:text-navy transition-colors">
+                  {page.label}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
-      {cs.faqs.length > 0 && (
+      {cs.faqs.length> 0 && (
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6">
             <div className="inline-block font-body text-sm text-accent uppercase tracking-wider mb-3">
@@ -365,19 +376,14 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
             </h2>
             <div className="space-y-6">
               {cs.faqs.map((faq, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="border-b border-border pb-6 last:border-b-0"
-                >
+                  className="border-b border-border pb-6 last:border-b-0">
                   <h3 className="font-heading text-xl font-semibold text-navy mb-3">
                     {faq.question}
                   </h3>
                   <p className="font-body text-text-primary leading-relaxed">{faq.answer}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -406,15 +412,13 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
                 : cs.primaryService.toLowerCase().includes('brick') || cs.primaryService.toLowerCase().includes('repoint')
                 ? 'brickwork-repointing'
                 : 'stonework'}
-              className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2"
-            >
+              className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2">
               Get a quote
               <ArrowRight className="w-4 h-4" />
             </QuoteCTAButton>
             <a
               href="tel:0414922276"
-              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2"
-            >
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2">
               <Phone className="w-4 h-4" />
               Call Minas on 0414 922 276
             </a>

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
@@ -48,6 +47,41 @@ const steps = [
   },
 ];
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Masonry vs Remedial Building in Sydney | What’s the Difference?',
+  description: 'Plain-English guide to the difference between masonry and remedial building in Sydney. Know which one you actually need before you call a builder.',
+  url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+  },
+  isPartOf: {
+    '@type': 'CollectionPage',
+    '@id': 'https://romansbuildingservices.com/learn',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    url: 'https://romansbuildingservices.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Romans Building Services',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://romansbuildingservices.com/og-image.png',
+    },
+  },
+  about: [
+    { '@type': 'Thing', name: 'Masonry' },
+    { '@type': 'Thing', name: 'Remedial building' },
+    { '@type': 'Thing', name: 'Sydney building repairs' },
+  ],
+  keywords: ['masonry', 'remedial building', 'Sydney', 'repair scope'],
+};
+
 const MasonryVsRemedialPage = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -61,6 +95,8 @@ const MasonryVsRemedialPage = () => {
         title="Masonry vs Remedial Building in Sydney | What’s the Difference?"
         description="Plain-English guide to the difference between masonry and remedial building in Sydney. Know which one you actually need before you call a builder."
         canonical="/learn/masonry-vs-remedial-building"
+        ogType="article"
+        schemaJson={articleSchema}
       />
       <SpeakableSchema url="https://romansbuildingservices.com/learn/masonry-vs-remedial-building" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -73,15 +109,15 @@ const MasonryVsRemedialPage = () => {
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
+          <p className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
             Learn / decision guide
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="font-heading text-4xl md:text-5xl text-white mb-5">
+          </p>
+          <h1 className="font-heading text-4xl md:text-5xl text-white mb-5">
             Masonry vs remedial building
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          </h1>
+          <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Masonry is the craft. Remedial building is the broader repair scope. The right answer depends on whether you are fixing one wall, or solving a building problem.
-          </motion.p>
+          </p>
         </div>
       </section>
 

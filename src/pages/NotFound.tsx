@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="Page Not Found | Romans Building Services"
+        title="Page Not Found | Romans"
         description="This page doesn't exist. Maybe it was demolished. Head back to the home page or call Minas for a quote."
         canonical="/404"
         noIndex
@@ -18,8 +18,7 @@ const NotFound = () => {
           </p>
           <Link
             to="/"
-            className="inline-block bg-navy text-white font-body font-medium px-6 py-3 rounded-md hover:bg-navy-light transition-colors"
-          >
+            className="inline-block bg-navy text-white font-body font-medium px-6 py-3 rounded-md hover:bg-navy-light transition-colors">
             Back to Home
           </Link>
         </div>

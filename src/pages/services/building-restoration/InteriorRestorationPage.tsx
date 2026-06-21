@@ -7,8 +7,8 @@ const InteriorRestorationPage = () => {
   return (
     <ServicePageTemplate
       title="Interior Restoration"
-      metaTitle="Interior Masonry Restoration Sydney | Romans"
-      metaDescription="Sydney interior masonry restoration by Minas Romanakis. Sandstone fireplaces, exposed brick walls, internal stone features, paint stripping. Heritage and."
+      metaTitle="Sydney Interior Masonry Restoration | Romans"
+      metaDescription="Sydney interior masonry restoration by Minas Romanakis. Sandstone fireplaces, exposed brick walls and internal stone features with minimal dust and disruption."
       heroImage="/gallery/thumbs/romansstone_1451942270_1155297957273885284_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}
       siblingServices={siblings}

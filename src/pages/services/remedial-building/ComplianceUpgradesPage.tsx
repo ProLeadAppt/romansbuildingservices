@@ -8,7 +8,7 @@ const ComplianceUpgradesPage = () => {
   return (
     <ServicePageTemplate
       title="Building Compliance Upgrades"
-      metaTitle="Building Compliance Upgrades Sydney | Romans"
+      metaTitle="Sydney Building Compliance Upgrades | Romans"
       metaDescription="Sydney building compliance upgrades by Minas Romanakis. BCA compliance, fire safety, balustrade replacement, structural retrofit. Certifier-coordinated."
       heroImage="/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}

@@ -8,7 +8,7 @@ const SpallingRepairPage = () => {
   return (
     <ServicePageTemplate
       title="Spalling Concrete Repair"
-      metaTitle="Spalling Concrete Repair Sydney | Romans"
+      metaTitle="Sydney Spalling Concrete Repair | Romans"
       metaDescription="Sydney spalling concrete repair by Minas Romanakis. Delamination cut-back, rebar treatment, structural patching, protective coating. Balconies, facades."
       heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}

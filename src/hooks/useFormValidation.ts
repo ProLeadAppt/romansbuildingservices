@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 
 interface ValidationRule {
   required?: boolean;
@@ -15,7 +15,7 @@ interface ValidationRules {
 export const useFormValidation = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const rules: ValidationRules = {
+  const rules: ValidationRules = useMemo(() => ({
     phone: {
       required: true,
       pattern: /^(\+61|0)[2-9]\d{8}$/,
@@ -61,7 +61,7 @@ export const useFormValidation = () => {
         return null;
       }
     }
-  };
+  }), []);
 
   const validateField = useCallback((fieldName: string, value: string) => {
     const rule = rules[fieldName];
@@ -75,7 +75,7 @@ export const useFormValidation = () => {
     }));
 
     return error;
-  }, []);
+  }, [rules]);
 
   const validateForm = useCallback((formData: Record<string, string>) => {
     const newErrors: Record<string, string> = {};
@@ -111,7 +111,7 @@ export const useFormValidation = () => {
     if (rule.maxLength && value.length > rule.maxLength) return false;
     
     return true;
-  }, []);
+  }, [rules]);
 
   const clearErrors = useCallback(() => {
     setErrors({});

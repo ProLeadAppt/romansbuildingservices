@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer } from '@/utils/animations';
 import { HowToSchema } from './LocalSEO/StructuredData';
 
 const steps = [
@@ -29,13 +27,8 @@ export const HowWeWorkSection = () => {
           readable anchor. */}
       <HowToSchema steps={steps} />
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <div
+          className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl text-navy mb-3">
             How we work
           </h2>
@@ -43,22 +36,15 @@ export const HowWeWorkSection = () => {
             Same process for a back-yard wall and a heritage facade. The size of the job changes, the
             way we run it does not.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.ol
-          variants={staggerContainer(0.08, 0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="space-y-8"
-        >
+        <ol
+          className="space-y-8">
           {steps.map((step, i) => (
-            <motion.li
+            <li
               key={step.title}
               id={`howwework-step-${i + 1}`}
-              variants={fadeUp}
-              className="flex gap-5"
-            >
+              className="flex gap-5">
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy text-white font-heading flex items-center justify-center text-lg">
                 {i + 1}
               </div>
@@ -66,9 +52,9 @@ export const HowWeWorkSection = () => {
                 <h3 className="font-heading text-xl text-navy mb-2">{step.title}</h3>
                 <p className="font-body text-text-muted leading-relaxed">{step.body}</p>
               </div>
-            </motion.li>
+            </li>
           ))}
-        </motion.ol>
+        </ol>
       </div>
     </section>
   );

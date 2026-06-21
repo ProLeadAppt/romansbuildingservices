@@ -5,7 +5,8 @@ import { Toaster } from '@/components/ui/sonner'
 import { lazy, Suspense } from 'react'
 import { Layout } from '@/components/Layout'
 import { ScrollToTop } from '@/components/ScrollToTop'
-import { QuoteModalProvider, QuoteSurveyModal } from '@/components/quote'
+import { QuoteModalProvider } from '@/components/quote'
+const QuoteSurveyModal = lazy(() => import('@/components/quote').then((m) => ({ default: m.QuoteSurveyModal })))
 import SinglePageApp from './pages/SinglePageApp'
 import './index.css'
 
@@ -122,7 +123,9 @@ createRoot(document.getElementById('root')!).render(
       <ScrollToTop />
       <QuoteModalProvider>
         <Toaster position="bottom-right" />
-        <QuoteSurveyModal />
+        <Suspense fallback={null}>
+          <QuoteSurveyModal />
+        </Suspense>
         <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Home */}

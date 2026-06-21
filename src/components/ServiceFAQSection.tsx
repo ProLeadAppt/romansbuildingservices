@@ -52,7 +52,7 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
     },
     {
       icon: Award,
-      label: "Licensed & Insured",
+      label: "Licenced & Insured",
       value: "Fully Certified",
       color: "text-purple-600"
     }
@@ -117,7 +117,7 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
               <CardContent>
                 {Object.entries(groupedFAQs).map(([category, categoryFAQs]) => (
                   <div key={category} className="mb-6 last:mb-0">
-                    {Object.keys(groupedFAQs).length > 1 && (
+                    {Object.keys(groupedFAQs).length> 1 && (
                       <h3 className="text-lg font-semibold mb-4 text-primary border-b border-border pb-2">
                         {category}
                       </h3>
@@ -128,8 +128,7 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
                         <AccordionItem 
                           key={`${category}-${index}`} 
                           value={`${category}-${index}`}
-                          className="border border-border rounded-lg px-4"
-                        >
+                          className="border border-border rounded-lg px-4">
                           <AccordionTrigger className="text-left hover:no-underline py-4">
                             <span className="text-sm font-medium">{faq.question}</span>
                           </AccordionTrigger>
@@ -157,16 +156,14 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+61414922276" 
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-50 transition-colors touch-target"
-              >
+                href="tel:0414922276" 
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-50 transition-colors touch-target">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Expert Now
               </a>
               <a 
                 href="#contact" 
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors touch-target"
-              >
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors touch-target">
                 Get Free Quote
               </a>
             </div>
@@ -186,7 +183,7 @@ export const masonryFAQs: FAQ[] = [
   },
   {
     question: "What types of masonry services do you offer?",
-    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. All work is performed by licensed masons with 30+ years experience.",
+    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. All work is performed by licenced masons with 30+ years experience.",
     category: "Services"
   },
   {
@@ -196,7 +193,7 @@ export const masonryFAQs: FAQ[] = [
   },
   {
     question: "Can you match existing bricks and mortar?",
-    answer: "Yes, we specialize in matching existing materials for seamless repairs. We analyze the existing brick type, color, and mortar composition to ensure perfect color and texture matching, especially important for heritage buildings.",
+    answer: "Yes, we specialise in matching existing materials for seamless repairs. We assess the existing brick type, colour, and mortar composition to ensure a close colour and texture match, especially important for heritage buildings.",
     category: "Materials"
   },
   {
@@ -218,8 +215,8 @@ export const masonryFAQs: FAQ[] = [
 
 export const restorationFAQs: FAQ[] = [
   {
-    question: "What types of building restoration do you specialize in?",
-    answer: "We specialize in heritage building restoration, structural repairs, facade restoration, stonework restoration, and weatherproofing. Our team has experience with Victorian, Federation, and Art Deco buildings across Sydney.",
+    question: "What types of building restoration do you specialise in?",
+    answer: "We specialise in heritage building restoration, structural repairs, facade restoration, stonework restoration, and weatherproofing. Our team has experience with Victorian, Federation, and Art Deco buildings across Sydney.",
     category: "Services"
   },
   {
@@ -242,7 +239,7 @@ export const restorationFAQs: FAQ[] = [
 export const structuralFAQs: FAQ[] = [
   {
     question: "What structural issues do you repair?",
-    answer: "We repair foundation problems, cracked walls, settlement issues, load-bearing wall damage, beam and lintel repairs, and earthquake damage. All work is performed by licensed structural repair specialists.",
+    answer: "We repair foundation problems, cracked walls, settlement issues, load-bearing wall damage, beam and lintel repairs, and earthquake damage. All work is performed by licenced structural repair specialists.",
     category: "Services"
   },
   {

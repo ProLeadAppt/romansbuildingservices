@@ -8,7 +8,7 @@ const SettlementStabilisationPage = () => {
   return (
     <ServicePageTemplate
       title="Settlement Stabilisation"
-      metaTitle="Building Settlement Stabilisation Sydney | Romans"
+      metaTitle="Sydney Building Settlement Stabilisation | Romans"
       metaDescription="Sydney settlement stabilisation by Minas Romanakis. Underpinning, resin injection, screw piles, drainage. Stop the movement, fix the cause, repair the cracks."
       heroImage="/gallery/thumbs/romansstone_1451942270_1155297957273885284_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}

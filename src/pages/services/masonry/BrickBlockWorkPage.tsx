@@ -8,7 +8,7 @@ const BrickBlockWorkPage = () => {
   return (
     <ServicePageTemplate
       title="Brick & Block Work"
-      metaTitle="Brick & Block Work Sydney | Romans Building Services"
+      metaTitle="Sydney Brick & Block Work | Romans"
       metaDescription="Sydney brick and block work by Minas Romanakis. New builds, extensions, boundary walls and repairs across Sydney metro suburbs."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
@@ -50,7 +50,7 @@ const BrickBlockWorkPage = () => {
         },
         {
           icon: Shield,
-          title: 'Licensed and to standard',
+          title: 'Licenced and to standard',
           description:
             'Full NSW builder licence covering structural brickwork. Work meets AS 3700 masonry standards. Engineer-signed where the job calls for it.',
         },

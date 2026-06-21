@@ -1,5 +1,4 @@
 import { SEO } from '@/components/SEO';
-import { motion } from 'framer-motion';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import { galleryImages } from '@/data/galleryImages';
 import galleryVideo from '@/assets/videos/romansstone_1704887055_3277152517439331908_2394650725.mp4';
@@ -98,7 +97,7 @@ const GalleryPage = () => {
   return (
     <>
       <SEO
-        title="Our Work | Real Sydney Masonry & Heritage Projects | Romans Building Services"
+        title="Our Work | Real Sydney Masonry & Heritage Projects | Romans"
         description="Real projects by Romans Building Services. 30 years of sandstone, heritage, and structural masonry across Sydney. Every photo is from one of our job sites."
         canonical="/gallery"
         ogImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
@@ -115,24 +114,19 @@ const GalleryPage = () => {
           playsInline
           preload="none"
           poster="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
+          className="absolute inset-0 w-full h-full object-cover">
           <source src={galleryVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-navy/75" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center px-4 py-24"
-        >
+        <div
+          className="relative z-10 text-center px-4 py-24">
           <h1 className="font-heading text-4xl md:text-5xl text-white mb-4 text-shadow">
             See Our Work
           </h1>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto">
             30 years of real projects across Sydney. Every photo is from an actual job site.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Intro essay */}
@@ -287,8 +281,7 @@ const GalleryPage = () => {
             <p className="mb-4">Got a project in mind? Give Minas a call.</p>
             <a
               href="tel:0414922276"
-              className="inline-block bg-navy text-white font-heading text-lg px-8 py-3 rounded-md hover:bg-navy/90 transition-colors"
-            >
+              className="inline-block bg-navy text-white font-heading text-lg px-8 py-3 rounded-md hover:bg-navy/90 transition-colors">
               0414 922 276
             </a>
           </div>

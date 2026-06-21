@@ -8,8 +8,8 @@ const BuildingRestorationPage = () => {
   return (
   <ServicePageTemplate
     title="Building Restoration"
-    metaTitle="Building Restoration Sydney | Romans Building Services"
-    metaDescription="Full building restoration in Sydney. Facade repairs, render replacement, structural upgrades, and complete makeovers. Call Minas for a quote."
+    metaTitle="Sydney Building Restoration | Romans"
+    metaDescription="Facade repairs, render replacement, structural upgrades and full restorations across Sydney by Minas Romanakis. Fix the cause, restore the finish."
     heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
     intro={[
       "Buildings wear out. Render cracks, brickwork deteriorates, facades start looking tired. A proper restoration brings them back to life and adds decades to their lifespan. That is what we do.",
@@ -29,7 +29,7 @@ const BuildingRestorationPage = () => {
       { question: "Do you work on strata buildings?", answer: "Yes. We work with strata managers and owners corporations regularly. We provide detailed scopes, staged payment options, all insurance and WHS documentation, and keep all parties informed throughout the project." },
       { question: "Can you match the existing render or finish?", answer: "Yes. We take samples and match colour, texture and profile of the original finish — roughcast, bagged, float-finished, whatever is there. For heritage buildings we use breathable lime-based systems instead of modern cement render." },
       { question: "Will scaffolding be needed?", answer: "For most facade work, yes. We organise all scaffolding, council permits for footpath occupation, and WHS requirements. It is all included in the quote — no surprise add-ons." },
-      { question: "What is the difference between restoration and renovation?", answer: "Restoration brings a building back to its original condition using original or matched materials and techniques. Renovation updates or modifies a building for modern use. Heritage work is always restoration; general building upgrades are often renovation. We do both but our specialty is restoration." },
+      { question: "What is the difference between restoration and renovation?", answer: "Restoration brings a building back to its original condition using original or matched materials and techniques. Renovation updates or modifies a building for modern use. Heritage work is always restoration; general building upgrades are often renovation. We do both but our speciality is restoration." },
       { question: "How much does a full facade restoration cost?", answer: "For a terrace, typical front facade restoration (repointing, render repairs, balcony work, paint) runs $25,000 to $80,000. Full external $60,000 to $150,000. Commercial facades on apartment blocks can run $100,000 to $500,000+. Scope varies enormously — firm quote after inspection." },
       { question: "Do we need to move out during restoration work?", answer: "No. Almost all building restoration is external and tenants stay in place throughout. We stage work, manage dust and noise, and coordinate to minimise disruption." }
     ]}

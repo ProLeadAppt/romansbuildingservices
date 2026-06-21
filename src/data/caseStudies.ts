@@ -82,9 +82,9 @@ const HERITAGE_DECORATIVE_IMG = 'romansstone_1451942270_1155297957273885284_2394
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'heritage-church-brick-restoration-sydney-cbd',
-    metaTitle: 'Heritage Church Brick Restoration Sydney CBD | Case Study',
+    metaTitle: 'Sydney CBD Heritage Brick Restoration | Case Study',
     metaDescription:
-      'A heritage-listed Sydney CBD church with failing brickwork and repointing. Case study: matching period brick, lime mortar repointing, and facade restoration completed without disturbing services.',
+      'Sydney CBD heritage church with failing brickwork, lime mortar repointing and facade restoration completed without disturbing services.',
     clientType: 'Heritage-listed Anglican church, Sydney CBD',
     suburbName: 'Sydney CBD',
     suburbSlug: 'sydney-cbd',
@@ -145,9 +145,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'sandstone-seawall-restoration-mosman',
-    metaTitle: 'Sandstone Seawall Restoration Mosman | Case Study',
+    metaTitle: 'Mosman Sandstone Seawall Restoration | Case Study',
     metaDescription:
-      'A failing sandstone seawall on a Mosman waterfront property. Case study: hand-dressed sandstone block replacement, salt-resistant lime mortar, and rebuilt foreshore wall completed in tidal windows.',
+      'Mosman waterfront sandstone seawall rebuilt with hand-dressed blocks, salt-resistant mortar and tidal-window staging.',
     clientType: 'Waterfront heritage home, Mosman',
     suburbName: 'Mosman',
     suburbSlug: 'mosman',
@@ -197,15 +197,15 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'How long does a sandstone seawall restoration take?',
         answer:
-          'For a typical waterfront property in Mosman or Vaucluse, three to five weeks depending on tide windows and weather. We give a real schedule before we start, including the tidal windows, so you know when the lawn is out of action.',
+          'For a typical waterfront property in Mosman, three to five weeks depending on tide windows and weather. We give a real schedule before we start, including the tidal windows, so you know when the lawn is out of action.',
       },
     ],
   },
   {
     slug: 'sandstone-chimney-rebuild-eastern-suburbs',
-    metaTitle: 'Sandstone Chimney Rebuild Eastern Suburbs | Case Study',
+    metaTitle: 'Eastern Suburbs Sandstone Chimney Rebuild | Case Study',
     metaDescription:
-      'A Federation-era sandstone chimney in the Eastern Suburbs rebuilt from the flashing up. Case study: matched sandstone, hand-dressed courses, and rebuild finished without lifting roof tiles.',
+      'Federation-era sandstone chimney rebuilt from the flashing up with matched stone and no roof tiles lifted.',
     clientType: 'Federation-era home, Eastern Suburbs',
     suburbName: 'Woollahra',
     suburbSlug: 'woollahra',
@@ -260,9 +260,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'stone-veneer-fireplace-inner-west',
-    metaTitle: 'Stone Veneer Fireplace Inner West | Case Study',
+    metaTitle: 'Inner West Stone Veneer Fireplace | Case Study',
     metaDescription:
-      'A sandstone-veneer fireplace surround installed in an Inner West renovation. Case study: lightweight stone veneer on a timber-framed wall, finished with a matching hearth and mantel.',
+      'Inner West sandstone-veneer fireplace installed in a renovation with lightweight wall mounting and a matching hearth.',
     clientType: 'Renovation of a 1920s California bungalow, Inner West',
     suburbName: 'Marrickville',
     suburbSlug: 'marrickville',
@@ -316,9 +316,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'concrete-cancer-repair-strata-north-shore',
-    metaTitle: 'Concrete Cancer Repair Strata North Shore | Case Study',
+    metaTitle: 'North Shore Concrete Cancer Repair | Case Study',
     metaDescription:
-      'A North Shore strata apartment block with concrete cancer on the balcony columns. Case study: full chloride remediation, sacrificial concrete replacement, and anti-carbonation coating.',
+      'North Shore strata apartment block concrete cancer repaired with chloride remediation, concrete replacement and anti-carbonation coating.',
     clientType: 'Strata apartment block, North Shore',
     suburbName: 'Chatswood',
     suburbSlug: 'chatswood',
@@ -374,9 +374,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'foundation-underpinning-heritage-terrace-inner-west',
-    metaTitle: 'Foundation Underpinning Heritage Terrace Inner West | Case Study',
+    metaTitle: 'Inner West Heritage Terrace Underpinning | Case Study',
     metaDescription:
-      'A heritage brick terrace in the Inner West suffering from differential settlement. Case study: traditional underpinning, brickwork stitching, and re-levelling completed without disturbing the heritage facade.',
+      'Inner West heritage brick terrace stabilised with traditional underpinning, brick stitching and re-levelling.',
     clientType: 'Late-Victorian terrace, Inner West',
     suburbName: 'Newtown',
     suburbSlug: 'newtown',
@@ -431,11 +431,11 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: 'heritage-sandstone-seawall-vaucluse',
-    metaTitle: 'Heritage Sandstone Seawall Vaucluse | Case Study',
+    slug: 'heritage-sandstone-seawall-mosman',
+    metaTitle: 'Mosman Heritage Sandstone Seawall | Case Study',
     metaDescription:
-      'A Vaucluse waterfront heritage property with a sandstone block seawall in urgent need of restoration. Case study: salt-resistant mortar mix, hand-laid sandstone, and original character preserved.',
-    clientType: 'Waterfront heritage estate, Vaucluse',
+      'Mosman waterfront heritage sandstone seawall restored with salt-resistant mortar, hand-laid stone and original character preserved.',
+    clientType: 'Waterfront heritage estate, Mosman',
     suburbName: 'Mosman',
     suburbSlug: 'mosman',
     parentAreaName: 'North Shore',
@@ -455,7 +455,7 @@ export const caseStudies: CaseStudy[] = [
       imageEntry(HERITAGE_BATTLESHIP_IMG, 'Sandstone block walls finished to match original'),
     ],
     problem: [
-      'A Vaucluse waterfront property had a 1940s sandstone block seawall that had been repointed with cement mortar in the 1970s. The cement had failed in long runs and the wall was shedding sand.',
+      'A Mosman waterfront property had a 1940s sandstone block seawall that had been repointed with cement mortar in the 1970s. The cement had failed in long runs and the wall was shedding sand.',
       'Three separate sections — each about 4m long — had visible leaning. The wall had moved about 80mm outward at the top across the worst section.',
       'The owners wanted the wall rebuilt without losing the original character. A marine engineer had specified a concrete pile and panel wall, which would have been permanent but would have changed the look of the foreshore.',
     ],
@@ -490,9 +490,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'brick-repointing-victorian-terrace-paddington',
-    metaTitle: 'Brick Repointing Victorian Terrace Paddington | Case Study',
+    metaTitle: 'Paddington Victorian Terrace Repointing | Case Study',
     metaDescription:
-      'A Victorian terrace in Paddington with failed brick pointing and rising damp. Case study: full raking out, lime mortar repointing, and damp-course remediation without disturbing the facade.',
+      'Paddington Victorian terrace restored with full raking out, lime mortar repointing and damp-course remediation.',
     clientType: 'Victorian terrace, Paddington',
     suburbName: 'Paddington',
     suburbSlug: 'paddington',

@@ -7,7 +7,7 @@ const HistoricUpgradesPage = () => {
   return (
     <ServicePageTemplate
       title="Historic Building Upgrades"
-      metaTitle="Historic Building Upgrades Sydney | Romans"
+      metaTitle="Sydney Historic Building Upgrades | Romans"
       metaDescription="Sydney historic building upgrades by Minas Romanakis. Structural, fire, BCA compliance, adaptive reuse. Discreet reinforcement that preserves heritage fabric."
       heroImage="/gallery/thumbs/romansstone_1574278523_2181528827132774103_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}

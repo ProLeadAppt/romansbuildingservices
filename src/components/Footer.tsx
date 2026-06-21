@@ -1,12 +1,11 @@
-import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { fadeUp, staggerContainer } from '@/utils/animations';
 import { QuoteCTAButton } from '@/components/quote';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Learn', to: '/learn' },
   { label: 'Case Studies', to: '/case-studies' },
   { label: 'Common Problems', to: '/problems' },
   { label: 'Heritage Eras', to: '/heritage' },
@@ -52,13 +51,11 @@ export const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <a
               href="tel:0414922276"
-              className="font-heading text-xl text-white hover:text-white/80 transition"
-            >
+              className="font-heading text-xl text-white hover:text-white/80 transition">
               0414 922 276
             </a>
             <QuoteCTAButton
-              className="btn-premium bg-amber text-white font-body font-medium px-8 py-3 rounded-md hover:bg-amber/90 transition-colors inline-flex items-center gap-2"
-            >
+              className="btn-premium bg-amber text-white font-body font-medium px-8 py-3 rounded-md hover:bg-amber/90 transition-colors inline-flex items-center gap-2">
               Get a Quote <ArrowRight className="w-4 h-4" />
             </QuoteCTAButton>
           </div>
@@ -73,8 +70,7 @@ export const Footer = () => {
               <Link
                 key={i}
                 to="/gallery"
-                className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
-              >
+                className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
                 <img
                   src={img}
                   alt="Project showcase"
@@ -88,16 +84,11 @@ export const Footer = () => {
       </div>
 
       {/* Main footer columns */}
-      <motion.div
-        variants={staggerContainer(0.1)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 py-14 relative z-10"
-      >
+      <div
+        className="max-w-7xl mx-auto px-6 py-14 relative z-10">
         <div className="lg:grid lg:grid-cols-4 gap-12">
           {/* Column 1: Company */}
-          <motion.div variants={fadeUp}>
+          <div>
             <Link to="/">
               <img
                 src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
@@ -109,10 +100,10 @@ export const Footer = () => {
               Heritage restoration and masonry across Sydney since 1995.
               Minas Romanakis. 30 years of doing things properly.
             </p>
-          </motion.div>
+          </div>
 
           {/* Column 2: Quick Links */}
-          <motion.div variants={fadeUp} className="mt-10 lg:mt-0">
+          <div className="mt-10 lg:mt-0">
             <h3 className="font-body text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-5">
               Quick Links
             </h3>
@@ -121,17 +112,16 @@ export const Footer = () => {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="font-body text-sm text-white/60 hover:text-white transition link-animated"
-                  >
+                    className="font-body text-sm text-white/60 hover:text-white transition link-animated">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Column 3: Popular Suburbs */}
-          <motion.div variants={fadeUp} className="mt-10 lg:mt-0">
+          <div className="mt-10 lg:mt-0">
             <h3 className="font-body text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-5">
               Popular Suburbs
             </h3>
@@ -140,17 +130,16 @@ export const Footer = () => {
                 <li key={suburb.to}>
                   <Link
                     to={suburb.to}
-                    className="font-body text-sm text-white/60 hover:text-white transition link-animated"
-                  >
+                    className="font-body text-sm text-white/60 hover:text-white transition link-animated">
                     {suburb.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Column 4: Contact */}
-          <motion.div variants={fadeUp} className="mt-10 lg:mt-0">
+          <div className="mt-10 lg:mt-0">
             <h3 className="font-body text-xs font-medium text-white/40 uppercase tracking-[0.15em] mb-5">
               Contact
             </h3>
@@ -158,8 +147,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="tel:0414922276"
-                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition"
-                >
+                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition">
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   0414 922 276
                 </a>
@@ -167,8 +155,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="mailto:romanspropertyservices@gmail.com"
-                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition"
-                >
+                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition">
                   <Mail className="w-4 h-4 flex-shrink-0" />
                   romanspropertyservices@gmail.com
                 </a>
@@ -182,16 +169,15 @@ export const Footer = () => {
                   href="https://www.instagram.com/romansstone/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition"
-                >
+                  className="flex items-center gap-3 font-body text-sm text-white/60 hover:text-white transition">
                   <Instagram className="w-4 h-4 flex-shrink-0" />
                   @romansstone
                 </a>
               </li>
             </ul>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 relative z-10">
@@ -208,8 +194,7 @@ export const Footer = () => {
               href="https://munyal.com.au"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-xs text-white/25 hover:text-white/40 transition-colors"
-            >
+              className="font-body text-xs text-white/25 hover:text-white/40 transition-colors">
               Built by Munyal
             </a>
           </div>

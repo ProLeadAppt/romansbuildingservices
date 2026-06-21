@@ -8,8 +8,8 @@ const HeritageStoneRestorationPage = () => {
   return (
     <ServicePageTemplate
       title="Heritage Stone Restoration"
-      metaTitle="Heritage Sandstone Restoration Sydney | Romans"
-      metaDescription="Sydney heritage stone restoration by Minas Romanakis. Sandstone cleaning, dutchman repairs, hand-dressed replacement, lime repointing. 30 years on heritage."
+      metaTitle="Sydney Heritage Stone Restoration | Romans"
+      metaDescription="Sydney heritage stone restoration by Minas Romanakis. Sandstone cleaning, dutchman repairs, hand-dressed replacement and lime repointing for long-life repairs."
       heroImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}
@@ -28,7 +28,7 @@ const HeritageStoneRestorationPage = () => {
           icon: Gem,
           title: 'Sandstone facades and features',
           description:
-            'Heritage sandstone facades, columns, sills, copings, balustrades, decorative mouldings, harbour seawalls. Hawkesbury and Gosford stone is our specialty.',
+            'Heritage sandstone facades, columns, sills, copings, balustrades, decorative mouldings, harbour seawalls. Hawkesbury and Gosford stone is our speciality.',
         },
         {
           icon: Search,

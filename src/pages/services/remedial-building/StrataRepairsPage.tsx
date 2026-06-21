@@ -8,8 +8,8 @@ const StrataRepairsPage = () => {
   return (
     <ServicePageTemplate
       title="Strata Building Repairs"
-      metaTitle="Strata Building Repairs Sydney | Romans"
-      metaDescription="Sydney strata remedial work by Minas Romanakis. Concrete cancer, balconies, facades, carparks. Defect reports, AGM-ready quotes, staged works around tenant."
+      metaTitle="Sydney Strata Building Repairs | Romans"
+      metaDescription="Sydney strata remedial work by Minas Romanakis. Concrete cancer, balconies, facades and car parks. AGM-ready quotes and staged tenant-safe repairs."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}
       siblingServices={siblings}

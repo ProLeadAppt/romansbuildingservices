@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { galleryImages, type GalleryCategory } from '@/data/galleryImages';
@@ -26,7 +25,7 @@ const hash = (s: string): number => {
     h ^= s.charCodeAt(i);
     h = Math.imul(h, 16777619);
   }
-  return h >>> 0;
+  return h>>> 0;
 };
 
 interface SuburbGalleryProps {
@@ -65,14 +64,9 @@ export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: S
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
           {photos.map((photo, i) => (
-            <motion.div
+            <div
               key={photo.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-              className="relative aspect-square overflow-hidden rounded-md bg-stone-100"
-            >
+              className="relative aspect-square overflow-hidden rounded-md bg-stone-100">
               <img
                 src={photo.thumb}
                 alt={photo.alt}
@@ -80,15 +74,14 @@ export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: S
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
 
         <div className="text-center mt-8">
           <Link
             to="/gallery"
-            className="inline-flex items-center gap-2 font-body text-navy hover:text-amber transition-colors"
-          >
+            className="inline-flex items-center gap-2 font-body text-navy hover:text-amber transition-colors">
             See the full project gallery <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

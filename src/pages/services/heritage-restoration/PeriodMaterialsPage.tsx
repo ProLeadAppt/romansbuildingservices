@@ -8,8 +8,8 @@ const PeriodMaterialsPage = () => {
   return (
     <ServicePageTemplate
       title="Period-Appropriate Materials"
-      metaTitle="Period Materials Sourcing Sydney | Romans"
-      metaDescription="Sydney heritage materials sourced and supplied. Period brick, hand-cut sandstone, hydraulic lime, era-correct fittings. 30 years of supplier relationships."
+      metaTitle="Sydney Period Materials Sourcing | Romans"
+      metaDescription="Sydney heritage materials sourced and supplied by Minas Romanakis. Period brick, hand-cut sandstone, hydraulic lime and era-correct fittings."
       heroImage="/gallery/thumbs/romansstone_1451942270_1155297957273885284_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}

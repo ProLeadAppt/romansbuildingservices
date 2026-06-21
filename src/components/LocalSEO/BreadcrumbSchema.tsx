@@ -6,17 +6,21 @@ interface BreadcrumbItem {
 const SITE_URL = 'https://romansbuildingservices.com';
 
 export const BreadcrumbSchema = ({ items }: { items: BreadcrumbItem[] }) => {
-  const validItems = items.filter((item) => item.href);
-  if (validItems.length === 0) return null;
+  if (items.length === 0) return null;
+
+  const currentUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${window.location.pathname}${window.location.search}${window.location.hash}`
+      : SITE_URL;
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: validItems.map((item, index) => ({
+    itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      item: `${SITE_URL}${item.href}`,
+      item: item.href ? `${SITE_URL}${item.href}` : currentUrl,
     })),
   };
 

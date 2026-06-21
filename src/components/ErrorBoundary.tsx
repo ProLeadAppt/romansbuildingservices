@@ -42,8 +42,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <Button 
             onClick={() => this.setState({ hasError: false })}
             variant="outline"
-            size="sm"
-          >
+            size="sm">
             <RefreshCw className="w-4 h-4 mr-2" />
             Try Again
           </Button>

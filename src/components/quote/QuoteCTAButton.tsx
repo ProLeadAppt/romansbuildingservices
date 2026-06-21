@@ -18,8 +18,7 @@ export const QuoteCTAButton = forwardRef<HTMLButtonElement, Props>(
           open(initialService);
           onClick?.(e);
         }}
-        {...rest}
-      >
+        {...rest}>
         {children}
       </button>
     );

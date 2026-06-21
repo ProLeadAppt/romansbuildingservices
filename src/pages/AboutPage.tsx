@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
 import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
 import { PersonSchema, SpeakableSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { QuoteCTAButton } from '@/components/quote';
+import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 
 const values = [
   {
@@ -57,8 +57,8 @@ export default function AboutPage() {
   return (
     <>
       <SEO
-        title="About Romans Building Services | Minas Romanakis, Sydney Stonemason Since 1995"
-        description="Romans Building Services is run by Minas Romanakis. 30 years of heritage restoration and masonry across Sydney. Family-run, licensed, owner on every job."
+        title="About Romans | Minas Romanakis, Sydney Stonemason Since 1995"
+        description="Romans Building Services is run by Minas Romanakis. 30 years of heritage restoration and masonry across Sydney. Family-run, licenced, owner on every job."
         canonical="/about"
         ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       />
@@ -70,25 +70,17 @@ export default function AboutPage() {
         {/* Hero Banner */}
         <section className="bg-navy texture-grain py-24">
           <div className="container mx-auto px-4 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-4xl md:text-5xl text-white"
-            >
+            <h1
+              className="font-heading text-4xl md:text-5xl text-white">
               About Romans Building Services
-            </motion.h1>
+            </h1>
           </div>
         </section>
 
         {/* At a glance */}
         <section className="bg-bg-light py-12 border-b border-border">
           <div className="container mx-auto px-4 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="font-body text-xs font-semibold text-text-muted uppercase tracking-widest mb-6 text-center">
                 Romans Building Services at a glance
               </h2>
@@ -124,7 +116,7 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center">
                   <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
-                    Specialty
+                    Speciality
                   </dt>
                   <dd className="font-heading text-base text-navy leading-tight">
                     Heritage &amp; Masonry
@@ -134,7 +126,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </dl>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -143,25 +135,17 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Left: Image */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
+              <div>
                 <img
                   src="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
                   alt="Minas Romanakis working on a masonry project"
                   className="rounded-lg w-full object-cover"
                 />
-              </motion.div>
+              </div>
 
               {/* Right: Story */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
+              <div
+                className="space-y-6">
                 <h2 className="font-heading text-3xl text-text-primary">
                   Built on handshakes, not sales pitches
                 </h2>
@@ -197,7 +181,7 @@ export default function AboutPage() {
                   companies, and homeowners across Sydney metro suburbs. The job size does not matter. The
                   standard does.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -236,34 +220,38 @@ export default function AboutPage() {
         {/* Values Section */}
         <section className="bg-white py-16 px-4">
           <div className="container mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-3xl text-text-primary text-center mb-12"
-            >
+            <h2
+              className="font-heading text-3xl text-text-primary text-center mb-12">
               How we work
-            </motion.h2>
+            </h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {values.map((value, index) => (
-                <motion.div
+                <div
                   key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-bg-light rounded-lg p-8"
-                >
+                  className="bg-bg-light rounded-lg p-8">
                   <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-4">
                     <value.icon className="w-6 h-6 text-navy" />
                   </div>
                   <h3 className="font-heading text-xl text-text-primary mb-3">{value.title}</h3>
                   <p className="text-text-secondary leading-relaxed">{value.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </section>
+
+        <RelatedLinksBlock
+          heading="Where to go next"
+          intro="If you landed here to check who we are, these are the pages that usually matter next."
+          items={[
+            { label: 'Services', href: '/services', sublabel: 'What we actually do on site' },
+            { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first guides and SEO authority' },
+            { label: 'Case studies', href: '/case-studies', sublabel: 'Real jobs, not stock photos' },
+            { label: 'Areas we service', href: '/areas', sublabel: 'Sydney suburbs and regions' },
+          ]}
+          columns={2}
+          background="off-white"
+        />
 
         {/* FAQ */}
         <section className="bg-bg-light py-16 md:py-20 px-4">
@@ -288,20 +276,15 @@ export default function AboutPage() {
         {/* CTA Section */}
         <section className="bg-navy py-16">
           <div className="container mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="font-heading text-3xl text-white mb-6">
                 Ready to talk about your project?
               </h2>
               <QuoteCTAButton
-                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
-              >
+                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity">
                 Get in Touch
               </QuoteCTAButton>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

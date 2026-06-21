@@ -11,7 +11,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'the-rocks',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Heritage Restoration The Rocks | Romans',
+    metaTitle: 'The Rocks Masonry & Heritage Restoration | Romans',
     metaDescription:
       'Sandstone restoration, heritage repointing and masonry repairs in The Rocks. Romans works on colonial sandstone buildings and heritage-listed properties.',
     heroTagline:
@@ -55,7 +55,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'circular-quay',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Sandstone Restoration Circular Quay | Romans',
+    metaTitle: 'Circular Quay Masonry & Sandstone Restoration | Romans',
     metaDescription:
       'Heritage masonry, sandstone restoration and commercial facade repairs in Circular Quay. Romans handles historic buildings and waterfront properties.',
     heroTagline:
@@ -99,7 +99,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'darlinghurst',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Terrace Restoration Darlinghurst | Romans',
+    metaTitle: 'Darlinghurst Masonry & Terrace Restoration | Romans',
     metaDescription:
       'Victorian terrace restoration, brick repointing and heritage masonry in Darlinghurst. Romans works on period homes and converted warehouses.',
     heroTagline:
@@ -145,7 +145,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'paddington',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Terrace Restoration & Tuckpointing Paddington | Romans',
+    metaTitle: 'Paddington Terrace Restoration & Tuckpointing | Romans',
     metaDescription:
       'Victorian terrace restoration, tuckpointing and heritage masonry in Paddington. Romans handles period brick and sandstone across the Eastern Suburbs.',
     heroTagline:
@@ -189,7 +189,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'woollahra',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Masonry & Stone Restoration Woollahra | Romans',
+    metaTitle: 'Woollahra Heritage Masonry & Stone Restoration | Romans',
     metaDescription:
       'Heritage terrace restoration, sandstone and brick masonry in Woollahra. Romans works on period homes and retaining walls across the Eastern Suburbs.',
     heroTagline:
@@ -233,7 +233,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'bondi',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Masonry & Salt Damage Repair Bondi | Romans',
+    metaTitle: 'Bondi Masonry & Salt Damage Repair | Romans',
     metaDescription:
       'Coastal masonry repairs, salt damage treatment and retaining walls in Bondi. Romans handles apartment blocks and homes across Sydney\'s east.',
     heroTagline:
@@ -277,7 +277,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'double-bay',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Masonry & Stone Restoration Double Bay | Romans',
+    metaTitle: 'Double Bay Heritage Masonry & Stone Restoration | Romans',
     metaDescription:
       'Heritage stone restoration, period home masonry and retaining walls in Double Bay. Romans works on high-end properties in Sydney\'s east.',
     heroTagline:
@@ -323,7 +323,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'mosman',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Heritage Masonry & Federation Home Restoration Mosman | Romans',
+    metaTitle: 'Mosman Heritage Masonry & Federation Home Restoration | Romans',
     metaDescription:
       'Federation home restoration, sandstone masonry and retaining walls in Mosman. Romans works on heritage properties across Sydney\'s Lower North Shore.',
     heroTagline:
@@ -367,7 +367,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'neutral-bay',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Brick Restoration Neutral Bay | Romans',
+    metaTitle: 'Neutral Bay Masonry & Brick Restoration | Romans',
     metaDescription:
       'Period home masonry, brick restoration and retaining walls in Neutral Bay. Romans works on Federation and Interwar homes across the Lower North Shore.',
     heroTagline:
@@ -411,7 +411,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'chatswood',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Structural Repairs Chatswood | Romans',
+    metaTitle: 'Chatswood Masonry & Structural Repairs | Romans',
     metaDescription:
       'Residential masonry, structural repairs and brickwork in Chatswood. Romans handles homes, apartments and commercial buildings on the Upper North Shore.',
     heroTagline:
@@ -455,7 +455,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'lane-cove',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Masonry & Home Restoration Lane Cove | Romans',
+    metaTitle: 'Lane Cove Masonry & Home Restoration | Romans',
     metaDescription:
       'Home masonry, brick repointing and retaining walls in Lane Cove. Romans handles period homes and concrete repairs across the Lower North Shore.',
     heroTagline:
@@ -501,7 +501,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'manly',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Coastal Masonry & Salt Damage Repair Manly | Romans',
+    metaTitle: 'Manly Coastal Masonry & Salt Damage Repair | Romans',
     metaDescription:
       'Coastal masonry, salt damage treatment and concrete cancer repair in Manly. Romans handles apartment blocks and homes on Sydney\'s Northern Beaches.',
     heroTagline:
@@ -545,7 +545,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'dee-why',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Concrete Cancer & Coastal Masonry Dee Why | Romans',
+    metaTitle: 'Dee Why Concrete Cancer & Coastal Masonry | Romans',
     metaDescription:
       'Concrete cancer repair, salt damage treatment and apartment block masonry in Dee Why. Romans works on strata buildings across the Northern Beaches.',
     heroTagline:
@@ -589,7 +589,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'avalon',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Retaining Walls & Coastal Masonry Avalon | Romans',
+    metaTitle: 'Avalon Retaining Walls & Coastal Masonry | Romans',
     metaDescription:
       'Retaining walls, sandstone restoration and coastal masonry in Avalon. Romans handles sloped blocks and period homes on Sydney\'s Northern Beaches.',
     heroTagline:
@@ -635,7 +635,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'newtown',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Brick Repointing Newtown | Romans',
+    metaTitle: 'Newtown Terrace Restoration & Brick Repointing | Romans',
     metaDescription:
       'Victorian terrace restoration, tuckpointing and heritage brick repair in Newtown. Romans handles period homes across Sydney\'s Inner West.',
     heroTagline:
@@ -679,7 +679,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'balmain',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Heritage Masonry & Sandstone Restoration Balmain | Romans',
+    metaTitle: 'Balmain Heritage Masonry & Sandstone Restoration | Romans',
     metaDescription:
       'Heritage terrace masonry, sandstone and brick restoration in Balmain. Romans handles period homes and waterfront properties across the Inner West.',
     heroTagline:
@@ -723,7 +723,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'marrickville',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace & Warehouse Masonry Marrickville | Romans',
+    metaTitle: 'Marrickville Terrace & Warehouse Masonry | Romans',
     metaDescription:
       'Terrace restoration, warehouse conversion masonry and brick repointing in Marrickville. Romans handles period homes and commercial buildings in the Inner West.',
     heroTagline:
@@ -767,7 +767,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'leichhardt',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Masonry Leichhardt | Romans',
+    metaTitle: 'Leichhardt Terrace Restoration & Masonry | Romans',
     metaDescription:
       'Victorian terrace restoration, tuckpointing and heritage masonry in Leichhardt. Romans handles period homes across Sydney\'s Inner West.',
     heroTagline:
@@ -813,7 +813,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'parramatta',
     parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Commercial & Heritage Masonry Parramatta | Romans',
+    metaTitle: 'Parramatta Commercial & Heritage Masonry | Romans',
     metaDescription:
       'Commercial masonry, heritage restoration and structural repairs in Parramatta. Romans handles brick, sandstone and facade repairs across Sydney\'s second CBD.',
     heroTagline:
@@ -857,7 +857,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'strathfield',
     parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Heritage Home Restoration Strathfield | Romans',
+    metaTitle: 'Strathfield Masonry & Heritage Home Restoration | Romans',
     metaDescription:
       'Heritage home restoration, brick repointing and stonework in Strathfield. Romans Building Services is based in Strathfield — local masonry experts since 1995.',
     heroTagline:
@@ -903,7 +903,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'pyrmont',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Masonry & Warehouse Conversion Work Pyrmont | Romans',
+    metaTitle: 'Pyrmont Masonry & Warehouse Conversion Work | Romans',
     metaDescription:
       'Warehouse conversion brickwork, heritage sandstone and apartment concrete repairs in Pyrmont. Romans handles industrial-era buildings across the inner city.',
     heroTagline:
@@ -947,7 +947,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'ultimo',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
-    metaTitle: 'Terrace & Warehouse Masonry Ultimo | Romans',
+    metaTitle: 'Ultimo Terrace & Warehouse Masonry | Romans',
     metaDescription:
       'Victorian terrace brick restoration, warehouse conversion masonry and heritage repointing in Ultimo. Romans Building Services works across Sydney\'s inner city.',
     heroTagline:
@@ -993,7 +993,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'coogee',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Concrete Cancer & Coastal Masonry Coogee | Romans',
+    metaTitle: 'Coogee Concrete Cancer & Coastal Masonry | Romans',
     metaDescription:
       'Concrete cancer treatment, salt damage repair and coastal masonry in Coogee. Romans handles apartment blocks and homes across Sydney\'s east.',
     heroTagline:
@@ -1037,7 +1037,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'randwick',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Masonry & Heritage Home Restoration Randwick | Romans',
+    metaTitle: 'Randwick Masonry & Heritage Home Restoration | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and retaining walls in Randwick. Romans handles period properties across Sydney\'s east.',
     heroTagline:
@@ -1081,7 +1081,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'bellevue-hill',
     parentAreaName: 'Eastern Suburbs',
     parentAreaHref: '/areas/eastern-suburbs',
-    metaTitle: 'Heritage Stone & Masonry Bellevue Hill | Romans',
+    metaTitle: 'Bellevue Hill Heritage Stone & Masonry | Romans',
     metaDescription:
       'Heritage stone restoration, period home masonry and retaining walls in Bellevue Hill. Romans works on high-end Eastern Suburbs properties.',
     heroTagline:
@@ -1127,7 +1127,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'cremorne',
     parentAreaName: 'Lower North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Heritage Masonry & Brick Restoration Cremorne | Romans',
+    metaTitle: 'Cremorne Heritage Masonry & Brick Restoration | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and retaining walls in Cremorne. Romans Building Services works across Sydney\'s Lower North Shore.',
     heroTagline:
@@ -1171,7 +1171,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'st-leonards',
     parentAreaName: 'North Shore',
     parentAreaHref: '/areas/north-shore',
-    metaTitle: 'Commercial Masonry & Facade Repair St Leonards | Romans',
+    metaTitle: 'St Leonards Commercial Masonry & Facade Repair | Romans',
     metaDescription:
       'Commercial facade repair, concrete cancer treatment and remedial masonry in St Leonards. Romans handles office buildings and apartments.',
     heroTagline:
@@ -1217,7 +1217,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'collaroy',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Coastal Masonry & Concrete Cancer Collaroy | Romans',
+    metaTitle: 'Collaroy Coastal Masonry & Concrete Cancer | Romans',
     metaDescription:
       'Concrete cancer repair, salt damage treatment and coastal masonry in Collaroy. Romans handles beachfront apartments and homes.',
     heroTagline:
@@ -1261,7 +1261,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'freshwater',
     parentAreaName: 'Northern Beaches',
     parentAreaHref: '/areas/northern-beaches',
-    metaTitle: 'Coastal Masonry & Heritage Home Restoration Freshwater | Romans',
+    metaTitle: 'Freshwater Coastal Masonry & Heritage Home Restoration | Romans',
     metaDescription:
       'Coastal masonry repairs, heritage home restoration and concrete work in Freshwater. Romans handles salt damage and period homes.',
     heroTagline:
@@ -1307,7 +1307,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'glebe',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Victorian Terrace Restoration Glebe | Romans',
+    metaTitle: 'Glebe Victorian Terrace Restoration | Romans',
     metaDescription:
       'Victorian terrace brick restoration, tuckpointing and heritage repointing in Glebe. Romans works on period homes in Sydney\'s Inner West.',
     heroTagline:
@@ -1351,7 +1351,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'surry-hills',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace & Warehouse Masonry Surry Hills | Romans',
+    metaTitle: 'Surry Hills Terrace & Warehouse Masonry | Romans',
     metaDescription:
       'Victorian terrace restoration, warehouse conversion masonry and heritage brickwork in Surry Hills. Romans handles period buildings.',
     heroTagline:
@@ -1395,7 +1395,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'erskineville',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Terrace Restoration & Repointing Erskineville | Romans',
+    metaTitle: 'Erskineville Terrace Restoration & Repointing | Romans',
     metaDescription:
       'Victorian terrace restoration, heritage brick repointing and tuckpointing in Erskineville. Romans handles period homes in Sydney\'s Inner West.',
     heroTagline:
@@ -1441,7 +1441,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'burwood',
     parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Heritage Home Restoration Burwood | Romans',
+    metaTitle: 'Burwood Masonry & Heritage Home Restoration | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and retaining walls in Burwood. Romans handles heritage masonry, period homes and structural repairs.',
     heroTagline:
@@ -1485,7 +1485,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'concord',
     parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Period Home Restoration Concord | Romans',
+    metaTitle: 'Concord Masonry & Period Home Restoration | Romans',
     metaDescription:
       'Federation home restoration, brick repointing and structural repairs in Concord. Romans Building Services works across Sydney\'s inner west.',
     heroTagline:
@@ -1529,7 +1529,7 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'homebush',
     parentAreaName: 'Sydney Metro',
     parentAreaHref: '/areas/greater-sydney',
-    metaTitle: 'Masonry & Home Restoration Homebush | Romans',
+    metaTitle: 'Homebush Masonry & Home Restoration | Romans',
     metaDescription:
       'Heritage home restoration, brick repointing and retaining walls in Homebush. Romans Building Services is local — based in neighbouring Strathfield.',
     heroTagline:
