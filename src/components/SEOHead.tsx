@@ -8,10 +8,18 @@ interface SEOHeadProps {
   ogType?: 'website' | 'article' | 'profile' | 'product';
   noIndex?: boolean;
   schemaJson?: Record<string, unknown> | Array<Record<string, unknown>>;
+  preloadHero?: string; // absolute or root-relative URL of the LCP image (homepage hero poster)
+  heroPreloadAs?: 'image' | 'video';
+  heroType?: string; // mime type for the preload tag (e.g. 'image/webp', 'image/avif')
 }
 
 const SITE_URL = 'https://romansbuildingservices.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+
+// Set VITE_GSC_VERIFICATION in .env / Netlify env to wire Google Search Console.
+// Leave empty in dev — the meta tag is omitted entirely so it never emits
+// `content=""` (which GSC rejects as "tag present but value missing").
+const GSC_VERIFICATION = (import.meta.env.VITE_GSC_VERIFICATION as string | undefined)?.trim();
 
 const toAbsolute = (url: string) => {
   if (!url) return url;
@@ -28,9 +36,13 @@ export const SEOHead = ({
   ogType = 'website',
   noIndex = false,
   schemaJson,
+  preloadHero,
+  heroPreloadAs = 'image',
+  heroType,
 }: SEOHeadProps) => {
   const canonicalUrl = toAbsolute(canonical);
   const imageUrl = toAbsolute(ogImage || DEFAULT_OG_IMAGE);
+  const heroHref = preloadHero ? toAbsolute(preloadHero) : undefined;
 
   return (
     <Helmet>
@@ -40,6 +52,12 @@ export const SEOHead = ({
       <link rel="alternate" hrefLang="en-AU" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
       <html lang="en-AU" />
+      {GSC_VERIFICATION && (
+        <meta name="google-site-verification" content={GSC_VERIFICATION} />
+      )}
+      {heroHref && (
+        <link rel="preload" as={heroPreloadAs} href={heroHref} type={heroType} fetchpriority="high" />
+      )}
       {noIndex ? (
         <meta name="robots" content="noindex, follow" />
       ) : (

@@ -8,11 +8,15 @@ import { SectionDivider } from '@/components/SectionDivider';
 import { LocalBusinessSchema, SpeakableSchema, PersonSchema } from '@/components/LocalSEO/StructuredData';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 
-const ProjectGallerySection = lazy(() => import('@/components/ProjectGallerySection'));
-const ProcessStrip = lazy(() => import('@/components/ProcessStrip'));
-const HowWeWorkSection = lazy(() => import('@/components/HowWeWorkSection'));
-const HomeFAQSection = lazy(() => import('@/components/HomeFAQSection'));
-const ModernContactSection = lazy(() => import('@/components/ModernContactSection'));
+// Home page sections export named components, not defaults, so wrap each
+// dynamic import in a `.then` that maps the named export to { default }.
+// Without this, lazy() resolves to { default: undefined } and React
+// throws error #306 ("Element type is invalid") on the home route.
+const ProjectGallerySection = lazy(() => import('@/components/ProjectGallerySection').then((m: any) => ({ default: m.ProjectGallerySection })));
+const ProcessStrip = lazy(() => import('@/components/ProcessStrip').then((m: any) => ({ default: m.ProcessStrip })));
+const HowWeWorkSection = lazy(() => import('@/components/HowWeWorkSection').then((m: any) => ({ default: m.HowWeWorkSection })));
+const HomeFAQSection = lazy(() => import('@/components/HomeFAQSection').then((m: any) => ({ default: m.HomeFAQSection })));
+const ModernContactSection = lazy(() => import('@/components/ModernContactSection').then((m: any) => ({ default: m.ModernContactSection })));
 
 const SinglePageApp = () => {
   return (
@@ -22,6 +26,9 @@ const SinglePageApp = () => {
         description="Sydney masonry, remedial and heritage construction by Minas Romanakis. Licenced builders for brick, stone, concrete and structural repairs across Sydney."
         canonical="/"
         ogImage="/og-image.png"
+        preloadHero="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
+        heroPreloadAs="image"
+        heroType="image/webp"
       />
       <LocalBusinessSchema />
       <SpeakableSchema url="https://romansbuildingservices.com/" cssSelectors={['h1', 'h2']} />

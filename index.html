@@ -72,14 +72,21 @@
     <!-- <meta name="yandex-verification" content="REPLACE_WITH_YANDEX_CODE" /> -->
 
     <!-- Microsoft Clarity -->
-    <script type="text/javascript">
+    <script type="text/javascript" nowprocket nitro-exclude>
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "t6v9xkgrej");
     </script>
-    <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="3bc881e3-23ac-4d54-84d3-056a31ac9906" src="data:text/javascript;base64,dmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpO3NjcmlwdC5zZXRBdHRyaWJ1dGUoIm5vd3Byb2NrZXQiLCAiIik7c2NyaXB0LnNldEF0dHJpYnV0ZSgibml0cm8tZXhjbHVkZSIsICIiKTtzY3JpcHQuc3JjID0gImh0dHBzOi8vZGFzaGJvYXJkLnNlYXJjaGF0bGFzLmNvbS9zY3JpcHRzL2R5bmFtaWNfb3B0aW1pemF0aW9uLmpzIjtzY3JpcHQuZGF0YXNldC51dWlkID0gIjNiYzg4MWUzLTIzYWMtNGQ1NC04NGQzLTA1NmEzMWFjOTkwNiI7c2NyaXB0LmlkID0gInNhLWR5bmFtaWMtb3B0aW1pemF0aW9uLWxvYWRlciI7ZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChzY3JpcHQpOw=="></script>
+    <!--
+      SearchAtlas dynamic optimisation is loaded by a React effect in
+      src/main.tsx. Loading it from index.html caused Vite to duplicate
+      the script tag (data: URI gets resolved to a real URL, AND the
+      base64 loader also appends one at runtime), which redeclared a
+      global var and killed the whole JS context — leaving <div id=root>
+      empty and breaking the home page hydration.
+    -->
   </head>
 
   <body>

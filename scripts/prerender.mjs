@@ -118,6 +118,18 @@ async function closePage(page) {
 
 async function prerenderRoute(browser, route, port) {
   const page = await browser.newPage();
+  const errors = [];
+  page.on('pageerror', (err) => {
+    errors.push(err.message);
+  });
+  page.on('requestfailed', (req) => {
+    // SearchAtlas, fonts, images, etc. are blocked on purpose during
+    // prerender. Only log failures for first-party resources.
+    const url = req.url();
+    if (url.startsWith('http://127.0.0.1')) {
+      errors.push(`requestfailed ${url} (${req.failure()?.errorText})`);
+    }
+  });
   try {
     await page.setViewport({ width: 1280, height: 800 });
     page.setDefaultNavigationTimeout(30000);
@@ -135,6 +147,7 @@ async function prerenderRoute(browser, route, port) {
         url.includes('leadconnector') ||
         url.includes('fonts.googleapis.com') ||
         url.includes('fonts.gstatic.com') ||
+        url.includes('searchatlas.com') ||
         type === 'image' ||
         type === 'media' ||
         type === 'font'
@@ -146,13 +159,31 @@ async function prerenderRoute(browser, route, port) {
 
     const url = `http://127.0.0.1:${port}${route}`;
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    // Wait briefly for the React route to paint its main content.
+    // Wait for the React route to paint its main content. The previous
+    // 1500ms hard timeout was too short for the home page (5 lazy
+    // components + video hero + 162KB JS chunk), and the pageerror
+    // handler above would surface a fatal JS error if the route
+    // never produced content. We wait up to 8s for either an h1
+    // OR an application/ld+json schema block to appear — both
+    // indicate the React tree has mounted and produced content.
+    const isHome = route === '/';
     try {
-      await page.waitForSelector('main, h1', { timeout: 1500 });
+      await page.waitForSelector('main, h1, script[type="application/ld+json"]', {
+        timeout: isHome ? 8000 : 4000
+      });
     } catch {
-      // Best-effort: capture whatever rendered.
+      // Best-effort: capture whatever rendered and let the post-process
+      // logging below surface what was missing.
     }
-    await new Promise((r) => setTimeout(r, 150));
+    // Additional settle for late-arriving schema scripts (helmet injects
+    // them on mount). Home gets a longer settle because it's the heaviest
+    // route and lazy components resolve sequentially.
+    const settleMs = isHome ? 1200 : 250;
+    await new Promise((r) => setTimeout(r, settleMs));
+
+    if (errors.length) {
+      console.error(`[prerender] ${route} pageerror(s): ${errors.join(' | ').slice(0, 300)}`);
+    }
 
     // Force Framer Motion's initial inline styles to their final visible state
     // before capture. Without this, crawlers see h1/h2/h3 etc with opacity:0

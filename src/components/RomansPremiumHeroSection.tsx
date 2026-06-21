@@ -15,6 +15,7 @@ export const RomansPremiumHeroSection = () => {
             playsInline
             preload="metadata"
             poster="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
+            fetchPriority="high"
             className="w-full h-[120%] object-cover"
           >
             <source src={heroVideo} type="video/mp4" />

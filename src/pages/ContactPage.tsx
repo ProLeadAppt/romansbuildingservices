@@ -1,7 +1,40 @@
 import { SEO } from '@/components/SEO';
 import { Phone, Mail, Clock, MapPin, Instagram } from 'lucide-react';
-import { ContactPageSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { ContactPageSchema, SpeakableSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { QuoteSurvey } from '@/components/quote';
+
+const contactFaqs = [
+  {
+    question: 'How quickly can Minas come out for a quote?',
+    answer:
+      'Most Sydney metro quote visits happen within 2 to 5 business days. For active leaks or unsafe structural issues we can usually be on-site within 24 hours. Call 0414 922 276 directly to lock in a time.'
+  },
+  {
+    question: 'Is the quote really free?',
+    answer:
+      'Yes — site visits and written quotes are free across the Sydney metro area. You get a fixed-price written scope, not an hourly-rate estimate, so there are no surprise add-ons once work starts.'
+  },
+  {
+    question: 'Do you do small jobs or only full restorations?',
+    answer:
+      'Both. Pointing a single chimney, replacing a few bricks, sealing a crack, fixing a small garden wall — same care as a full heritage facade. Romans does not have a minimum job size.'
+  },
+  {
+    question: 'Are you licenced and insured?',
+    answer:
+      'Yes. Romans Building Services holds an NSW masonry contractor licence, full public liability insurance, and workers compensation. Documentation is provided with every quote for strata, body corporate and insurance work.'
+  },
+  {
+    question: 'Which Sydney areas do you service?',
+    answer:
+      'All Sydney metro suburbs, with a focus on the Inner West, Eastern Suburbs, North Shore, Northern Beaches, Hills District and CBD. Common service areas include Strathfield, Paddington, Newtown, Balmain, Glebe, Mosman, Willoughby, Castle Hill and Parramatta.'
+  },
+  {
+    question: 'How do I pay?',
+    answer:
+      'Bank transfer, credit card or cash. For strata and commercial jobs we offer staged progress payments tied to written milestones. A small deposit secures the booking, balance on completion.'
+  }
+];
 
 export default function ContactPage() {
   return (
@@ -13,6 +46,7 @@ export default function ContactPage() {
       />
       <ContactPageSchema />
       <SpeakableSchema url="https://romansbuildingservices.com/contact" cssSelectors={['h1', 'p', 'a[href^="tel:"]', 'a[href^="mailto:"]']} />
+      <FAQSchema faqs={contactFaqs} />
 
       <div className="min-h-screen font-body">
         {/* Hero Banner */}
@@ -110,6 +144,44 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ block — readable on-page AND emitted as FAQPage schema */}
+        <section className="bg-bg-light py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="font-heading text-3xl md:text-4xl text-navy mb-2 text-center">
+              Common Questions Before You Call
+            </h2>
+            <p className="text-text-muted text-center mb-10 max-w-2xl mx-auto">
+              Quick answers about quotes, jobs, licensing and service areas.
+              Need something specific?{' '}
+              <a href="tel:0414922276" className="text-navy underline underline-offset-4 font-semibold">
+                Call Minas on 0414 922 276
+              </a>
+              .
+            </p>
+            <div className="space-y-3">
+              {contactFaqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group bg-white rounded-lg border border-navy/10 overflow-hidden"
+                >
+                  <summary className="cursor-pointer px-5 py-4 font-heading text-navy text-lg flex items-center justify-between gap-4 select-none">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden
+                      className="text-navy/50 group-open:rotate-45 transition-transform text-2xl leading-none"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <div className="px-5 pb-5 text-text-primary leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>

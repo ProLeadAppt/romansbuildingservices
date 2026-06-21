@@ -2,13 +2,46 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from '@/components/ui/sonner'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Layout } from '@/components/Layout'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { QuoteModalProvider } from '@/components/quote'
 const QuoteSurveyModal = lazy(() => import('@/components/quote').then((m) => ({ default: m.QuoteSurveyModal })))
 import SinglePageApp from './pages/SinglePageApp'
 import './index.css'
+
+/**
+ * Loads SearchAtlas dynamic optimisation EXACTLY ONCE, after mount,
+ * and only when the browser is idle. Loading this from index.html
+ * caused Vite to duplicate the script tag (the data: URI loader and
+ * the resolved real URL both got emitted), which redeclared a global
+ * var and broke initial JS execution. By moving it into a React
+ * effect, we (a) guarantee one instance, (b) keep it off the
+ * critical render path, and (c) avoid pre-render clobbering.
+ */
+function SearchAtlasDynamicOptimization() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (document.getElementById('sa-dynamic-optimization-loader')) return
+    const inject = () => {
+      if (document.getElementById('sa-dynamic-optimization-loader')) return
+      const s = document.createElement('script')
+      s.id = 'sa-dynamic-optimization-loader'
+      s.setAttribute('nowprocket', '')
+      s.setAttribute('nitro-exclude', '')
+      s.src = 'https://dashboard.searchatlas.com/scripts/dynamic_optimization.js'
+      s.dataset.uuid = '3bc881e3-23ac-4d54-84d3-056a31ac9906'
+      s.async = true
+      document.head.appendChild(s)
+    }
+    if ('requestIdleCallback' in window) {
+      ;(window as any).requestIdleCallback(inject, { timeout: 4000 })
+    } else {
+      setTimeout(inject, 1500)
+    }
+  }, [])
+  return null
+}
 
 // Lazy-load main pages
 const AboutPage = lazy(() => import('./pages/AboutPage'))
@@ -123,6 +156,7 @@ createRoot(document.getElementById('root')!).render(
       <ScrollToTop />
       <QuoteModalProvider>
         <Toaster position="bottom-right" />
+        <SearchAtlasDynamicOptimization />
         <Suspense fallback={null}>
           <QuoteSurveyModal />
         </Suspense>

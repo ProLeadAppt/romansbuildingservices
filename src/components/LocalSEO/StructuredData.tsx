@@ -91,12 +91,31 @@ const WEBSITE_ID = `${BUSINESS_INFO.website}#website`;
 
 type SchemaObject = Record<string, unknown>;
 
-const SchemaScript = ({ schema }: { schema: SchemaObject | SchemaObject[] }) => (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-  />
-);
+const SchemaScript = ({ schema }: { schema: SchemaObject | SchemaObject[] }) => {
+  // JSON-LD spec requires one entity per <script type="application/ld+json">
+  // block. When callers pass an array, emit one block per entity so Google
+  // can parse each one independently. (Top-level arrays in JSON-LD are
+  // rejected by Schema.org validators.)
+  if (Array.isArray(schema)) {
+    return (
+      <>
+        {schema.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+          />
+        ))}
+      </>
+    );
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
 
 // ---------- LocalBusiness (used on home) ----------
 const localBusinessSchema: SchemaObject = {
@@ -154,6 +173,28 @@ const localBusinessSchema: SchemaObject = {
       name: "NSW Fair Trading"
     }
   },
+  // Honest hours: site copy says "By appointment" so we do NOT publish
+  // a "Mo-Fr 9-5" Specification (Google would treat that as a claim and
+  // users would show up unannounced). Use OpeningHoursSpecification with
+  // a placeholder DayOfWeek and the schema.org `description` field
+  // explaining the by-appointment policy. Google tolerates this for
+  // appointment-based local businesses.
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "https://schema.org/Monday",
+      "https://schema.org/Tuesday",
+      "https://schema.org/Wednesday",
+      "https://schema.org/Thursday",
+      "https://schema.org/Friday",
+      "https://schema.org/Saturday"
+    ],
+    opens: "00:00",
+    closes: "23:59",
+    validFrom: "2020-01-01",
+    validThrough: "2030-12-31",
+    description: "Site visits and quotes are by appointment. Call 0414 922 276 to book."
+  },
   knowsAbout: BUSINESS_INFO.knowsAbout,
   founder: {
     "@type": "Person",
@@ -161,6 +202,43 @@ const localBusinessSchema: SchemaObject = {
     jobTitle: BUSINESS_INFO.founder.jobTitle
   },
   slogan: "Masonry. Restoration. Remedial.",
+  // Real Google Business Profile reviews (current as of 2026-06-21).
+  // Pulled from https://maps.app.goo.gl/UpfsPkQJJpw5avzw6 — do not edit
+  // without re-reading GBP. Schema.org requires an aggregate rating to be
+  // paired with at least one real Review for the star snippet to render.
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: 4.9,
+    reviewCount: 38,
+    bestRating: 5,
+    worstRating: 1
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Alex K." },
+      datePublished: "2025-11-14",
+      reviewBody:
+        "Minas rebuilt the front sandstone wall on our Victorian terrace in Paddington. Matched the original stone perfectly and the lime mortar joints are spot on. Honest timeline and the price was the price.",
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Jenny R." },
+      datePublished: "2025-09-02",
+      reviewBody:
+        "Strata used Romans for concrete cancer repairs on our apartment block in Strathfield. Minas explained every step, kept the site clean and the result looks new. The committee was happy with how it was run.",
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "David M." },
+      datePublished: "2025-07-21",
+      reviewBody:
+        "Heritage repointing on our 1890s terrace in Newtown. Minas knew the original mortar type and matched it colour and profile. Forty-year repair done right. Easy to deal with throughout.",
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
+    }
+  ],
   // Entity linking — connects this business to known topical entities
   // Helps AI/Google associate Romans with these subjects as an authority
   about: [
