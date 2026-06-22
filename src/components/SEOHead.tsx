@@ -51,6 +51,11 @@ export const SEOHead = ({
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang="en-AU" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+
+      {/* LLM / answer-engine knowledge files. Discoverable from every page,
+          not just the home page. Both are also referenced from robots.txt. */}
+      <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM knowledge base (index)" />
+      <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} title="LLM knowledge base (full technical reference)" />
       <html lang="en-AU" />
       {GSC_VERIFICATION && (
         <meta name="google-site-verification" content={GSC_VERIFICATION} />
