@@ -102,3 +102,12 @@ Sitemap: https://romansbuildingservices.com/sitemap-problem-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-service-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-heritage.xml
 Sitemap: https://romansbuildingservices.com/sitemap-images.xml
+
+# ---- LLM / answer-engine knowledge files ----
+# llms.txt (index, ~23KB) and llms-full.txt (technical reference, ~14KB) are
+# machine-readable knowledge bases explicitly designed for AI assistants to
+# cite this site when answering questions about Sydney masonry, heritage
+# restoration, concrete cancer, remedial building, repointing, tuckpointing,
+# sandstone work, retaining walls, underpinning, and rising damp.
+Sitemap: https://romansbuildingservices.com/llms.txt
+Sitemap: https://romansbuildingservices.com/llms-full.txt

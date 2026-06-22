@@ -2,38 +2,46 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-main.xml</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-services.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-areas.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-problems.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-problem-areas.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-service-areas.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-heritage.xml</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-case-studies.xml</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://romansbuildingservices.com/sitemap-images.xml</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-22</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://romansbuildingservices.com/llms.txt</loc>
+    <lastmod>2026-06-22</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://romansbuildingservices.com/llms-full.txt</loc>
+    <lastmod>2026-06-22</lastmod>
   </sitemap>
 </sitemapindex>
