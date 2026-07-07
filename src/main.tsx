@@ -264,6 +264,7 @@ createRoot(document.getElementById('root')!).render(
 
           {/* Case studies (dynamic) */}
           <Route path="/case-studies" element={<L><CaseStudiesIndexPage /></L>} />
+          <Route path="/case-studies/heritage-sandstone-seawall-vaucluse" element={<Navigate to="/case-studies/heritage-sandstone-seawall-mosman/" replace />} />
           <Route path="/case-studies/:slug" element={<L><CaseStudyPage /></L>} />
 
           {/* 404 */}
