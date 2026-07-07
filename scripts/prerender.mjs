@@ -44,7 +44,7 @@ const MIME = {
 function loadRoutes() {
   const files = fs
     .readdirSync(PUBLIC)
-    .filter((f) => f.startsWith('sitemap-') && f.endsWith('.xml') && f !== 'sitemap-images.xml');
+    .filter((f) => f.startsWith('sitemap-') && f.endsWith('.xml') && !['sitemap-images.xml', 'sitemap-llms.xml'].includes(f));
   // sitemap-images.xml's <loc> values overlap with the others (they are page
   // URLs that contain images), so excluding it avoids duplicate work without
   // missing any routes.
@@ -124,8 +124,11 @@ async function prerenderRoute(browser, route, port) {
   });
   page.on('requestfailed', (req) => {
     // SearchAtlas, fonts, images, etc. are blocked on purpose during
-    // prerender. Only log failures for first-party resources.
+    // prerender. Only log first-party document/script/style failures.
     const url = req.url();
+    const type = req.resourceType();
+    if (['image', 'media', 'font'].includes(type)) return;
+    if (url.includes('googletagmanager.com') || url.includes('google-analytics.com') || url.includes('clarity.ms') || url.includes('searchatlas.com')) return;
     if (url.startsWith('http://127.0.0.1')) {
       errors.push(`requestfailed ${url} (${req.failure()?.errorText})`);
     }
@@ -216,6 +219,7 @@ async function prerenderRoute(browser, route, port) {
     // react-helmet-async marks its tags with data-rh="true"; we drop any
     // matching default tag if a helmet-managed one exists.
     html = dedupeHelmetTags(html);
+    html = normalizeInternalIndexableUrls(html);
 
     const outDir = route === '/' ? DIST : path.join(DIST, route);
     ensureDir(outDir);
@@ -224,6 +228,39 @@ async function prerenderRoute(browser, route, port) {
   } finally {
     await closePage(page);
   }
+}
+
+function normalizeUrlMaybe(value) {
+  if (!value) return value;
+  if (value.startsWith('mailto:') || value.startsWith('tel:') || value.startsWith('#')) return value;
+  if (/\.[a-z0-9]{2,8}(?:[?#].*)?$/i.test(value)) return value;
+  if (value.startsWith('/')) {
+    const [pathOnly, suffix = ''] = value.split(/(?=[?#])/);
+    if (pathOnly !== '/' && !pathOnly.endsWith('/')) return pathOnly + '/' + suffix;
+    return value;
+  }
+  if (value.startsWith('https://romansbuildingservices.com')) {
+    try {
+      const u = new URL(value);
+      if (u.pathname !== '/' && !u.pathname.endsWith('/') && !/\.[a-z0-9]{2,8}$/i.test(u.pathname)) {
+        u.pathname += '/';
+        u.hash = '';
+        return u.toString();
+      }
+    } catch {
+      // Keep original if URL parsing fails.
+    }
+  }
+  return value;
+}
+
+function normalizeInternalIndexableUrls(html) {
+  return html
+    .replace(/\b(href|src|content|url)=(['"])(https:\/\/romansbuildingservices\.com\/[^'"]+|\/[^'"]+)\2/gi, (m, attr, q, value) => {
+      if ((attr === 'src' || attr === 'content') && /\.[a-z0-9]{2,8}(?:[?#].*)?$/i.test(value)) return m;
+      return `${attr}=${q}${normalizeUrlMaybe(value)}${q}`;
+    })
+    .replace(/https:\/\/romansbuildingservices\.com\/([A-Za-z0-9_\-/]+)(?=[\"'\s<])/g, (m) => normalizeUrlMaybe(m));
 }
 
 function dedupeHelmetTags(html) {

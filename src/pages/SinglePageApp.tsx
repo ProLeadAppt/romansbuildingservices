@@ -12,11 +12,11 @@ import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 // dynamic import in a `.then` that maps the named export to { default }.
 // Without this, lazy() resolves to { default: undefined } and React
 // throws error #306 ("Element type is invalid") on the home route.
-const ProjectGallerySection = lazy(() => import('@/components/ProjectGallerySection').then((m: any) => ({ default: m.ProjectGallerySection })));
-const ProcessStrip = lazy(() => import('@/components/ProcessStrip').then((m: any) => ({ default: m.ProcessStrip })));
-const HowWeWorkSection = lazy(() => import('@/components/HowWeWorkSection').then((m: any) => ({ default: m.HowWeWorkSection })));
-const HomeFAQSection = lazy(() => import('@/components/HomeFAQSection').then((m: any) => ({ default: m.HomeFAQSection })));
-const ModernContactSection = lazy(() => import('@/components/ModernContactSection').then((m: any) => ({ default: m.ModernContactSection })));
+const ProjectGallerySection = lazy(() => import('@/components/ProjectGallerySection').then((m) => ({ default: m.ProjectGallerySection })));
+const ProcessStrip = lazy(() => import('@/components/ProcessStrip').then((m) => ({ default: m.ProcessStrip })));
+const HowWeWorkSection = lazy(() => import('@/components/HowWeWorkSection').then((m) => ({ default: m.HowWeWorkSection })));
+const HomeFAQSection = lazy(() => import('@/components/HomeFAQSection').then((m) => ({ default: m.HomeFAQSection })));
+const ModernContactSection = lazy(() => import('@/components/ModernContactSection').then((m) => ({ default: m.ModernContactSection })));
 
 const SinglePageApp = () => {
   return (

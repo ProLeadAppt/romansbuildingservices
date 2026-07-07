@@ -35,7 +35,7 @@ function SearchAtlasDynamicOptimization() {
       document.head.appendChild(s)
     }
     if ('requestIdleCallback' in window) {
-      ;(window as any).requestIdleCallback(inject, { timeout: 4000 })
+      ;(window as Window & { requestIdleCallback: (callback: () => void, options?: { timeout: number }) => void }).requestIdleCallback(inject, { timeout: 4000 })
     } else {
       setTimeout(inject, 1500)
     }

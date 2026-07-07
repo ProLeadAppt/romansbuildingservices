@@ -25,7 +25,7 @@
   </url>
 
   <url>
-    <loc>https://romansbuildingservices.com/gallery</loc>
+    <loc>https://romansbuildingservices.com/gallery/</loc>
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1574104761_2180071211265247711_2394650725.webp</image:loc>
       <image:caption><![CDATA[Real Sydney masonry project from the Romans Building Services gallery]]></image:caption>
@@ -53,7 +53,7 @@
   </url>
 
   <url>
-    <loc>https://romansbuildingservices.com/services/masonry</loc>
+    <loc>https://romansbuildingservices.com/services/masonry/</loc>
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1576003161_2195996136622601152_2394650725.webp</image:loc>
       <image:caption><![CDATA[Stone wall rebuild and masonry repair by Romans Building Services in Sydney]]></image:caption>
@@ -63,7 +63,7 @@
   </url>
 
   <url>
-    <loc>https://romansbuildingservices.com/services/building-restoration</loc>
+    <loc>https://romansbuildingservices.com/services/building-restoration/</loc>
     <image:image>
       <image:loc>https://romansbuildingservices.com/gallery/full/romansstone_1576440613_2199665757989086550_2394650725.webp</image:loc>
       <image:caption><![CDATA[Building restoration project completed by Romans Building Services in Sydney]]></image:caption>

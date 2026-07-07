@@ -12,7 +12,19 @@ Allow: /
 User-agent: Googlebot-News
 Allow: /
 
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
 Allow: /
 
 User-agent: DuckDuckBot
@@ -82,6 +94,21 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+User-agent: MistralAI
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: xAI-Bot
+Allow: /
+
+User-agent: GrokBot
+Allow: /
+
 # ---- Default ----
 User-agent: *
 Allow: /
@@ -90,7 +117,7 @@ Allow: /
 # Kept as a safety net in case future routes are added.
 Disallow: /admin
 Disallow: /api/
-Disallow: /*.json$
+# Public JSON knowledge assets are allowed for answer engines.
 
 # ---- Sitemaps ----
 Sitemap: https://romansbuildingservices.com/sitemap.xml
@@ -102,6 +129,7 @@ Sitemap: https://romansbuildingservices.com/sitemap-problem-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-service-areas.xml
 Sitemap: https://romansbuildingservices.com/sitemap-heritage.xml
 Sitemap: https://romansbuildingservices.com/sitemap-images.xml
+Sitemap: https://romansbuildingservices.com/sitemap-llms.xml
 
 # ---- LLM / answer-engine knowledge files ----
 # llms.txt (index, ~23KB) and llms-full.txt (technical reference, ~14KB) are
@@ -109,5 +137,4 @@ Sitemap: https://romansbuildingservices.com/sitemap-images.xml
 # cite this site when answering questions about Sydney masonry, heritage
 # restoration, concrete cancer, remedial building, repointing, tuckpointing,
 # sandstone work, retaining walls, underpinning, and rising damp.
-Sitemap: https://romansbuildingservices.com/llms.txt
-Sitemap: https://romansbuildingservices.com/llms-full.txt
+# llms.txt is discoverable as an alternate link on every page and included in sitemap-llms.xml.

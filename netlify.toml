@@ -12,6 +12,16 @@
   # Cache Chrome between builds in Netlify's persistent cache dir.
   PUPPETEER_CACHE_DIR = "/opt/build/cache/puppeteer"
 
+[[redirects]]
+  from = "/case-studies/heritage-sandstone-seawall-vaucluse"
+  to = "/case-studies/heritage-sandstone-seawall-mosman/"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies/heritage-sandstone-seawall-vaucluse/"
+  to = "/case-studies/heritage-sandstone-seawall-mosman/"
+  status = 301
+
 # Redirect old /projects path to /gallery
 [[redirects]]
   from = "/projects"
@@ -46,3 +56,24 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Make answer-engine knowledge files fast, explicit and crawlable.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
