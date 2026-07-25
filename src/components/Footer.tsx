@@ -55,7 +55,7 @@ export const Footer = () => {
               0414 922 276
             </a>
             <QuoteCTAButton
-              className="btn-premium bg-amber text-white font-body font-medium px-8 py-3 rounded-md hover:bg-amber/90 transition-colors inline-flex items-center gap-2">
+              className="btn-premium bg-amber text-navy font-body font-semibold px-8 py-3 rounded-md hover:bg-amber/90 transition-colors inline-flex items-center gap-2">
               Get a Quote <ArrowRight className="w-4 h-4" />
             </QuoteCTAButton>
           </div>

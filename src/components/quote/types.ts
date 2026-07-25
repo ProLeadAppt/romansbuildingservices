@@ -24,6 +24,7 @@ export interface QuoteData {
   phone: string;
   email: string;
   message: string;
+  companyWebsite: string;
 }
 
 export const SERVICE_LABELS: Record<QuoteService, string> = {

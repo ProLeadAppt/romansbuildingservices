@@ -26,6 +26,14 @@ import { submitQuote, trackQuoteEvent } from './submitQuote';
 
 const MAX_PHOTOS = 3;
 const MAX_PHOTO_BYTES = 2 * 1024 * 1024;
+const MAX_TOTAL_PHOTO_BYTES = 4 * 1024 * 1024;
+const ALLOWED_PHOTO_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/heic',
+  'image/heif',
+]);
 
 const SERVICE_OPTIONS: Array<{ value: QuoteService; icon: typeof Hammer }> = [
   { value: 'heritage-restoration', icon: Landmark },
@@ -48,6 +56,7 @@ const emptyData = (): QuoteData => ({
   phone: '',
   email: '',
   message: '',
+  companyWebsite: '',
 });
 
 interface QuoteSurveyProps {
@@ -65,6 +74,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const photoInputRef = useRef<HTMLInputElement>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const phoneInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -99,9 +111,18 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
     const remaining = MAX_PHOTOS - data.photos.length;
     const newOnes = Array.from(files).slice(0, remaining);
     const next: QuotePhoto[] = [];
+    let selectedBytes = data.photos.reduce((total, photo) => total + photo.size, 0);
     for (const file of newOnes) {
+      if (!ALLOWED_PHOTO_TYPES.has(file.type)) {
+        setError(`${file.name} is not a supported photo. Use JPG, PNG, WebP, HEIC or HEIF.`);
+        continue;
+      }
       if (file.size > MAX_PHOTO_BYTES) {
-        setError(`${file.name} is too large. Max 2MB per photo.`);
+        setError(`${file.name} is too large. Maximum 2 MB per photo.`);
+        continue;
+      }
+      if (selectedBytes + file.size > MAX_TOTAL_PHOTO_BYTES) {
+        setError('Photos are too large together. Keep the total under 4 MB.');
         continue;
       }
       try {
@@ -112,6 +133,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
           reader.readAsDataURL(file);
         });
         next.push({ filename: file.name, dataUrl, size: file.size });
+        selectedBytes += file.size;
       } catch {
         setError(`Could not read ${file.name}.`);
       }
@@ -128,13 +150,15 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
   };
 
   const validateStep3 = () => {
-    if (!data.name.trim()) return 'Please enter your name.';
+    if (!data.name.trim()) return { message: 'Please enter your name.', target: nameInputRef };
     const phone = data.phone.trim();
-    if (!phone) return 'Please enter a phone number.';
-    if (phone.replace(/\D/g, '').length < 8) return 'That phone number looks too short.';
-    if (!data.email.trim()) return 'Please enter an email address.';
+    if (!phone) return { message: 'Please enter a phone number.', target: phoneInputRef };
+    if (phone.replace(/\D/g, '').length < 8) {
+      return { message: 'That phone number looks too short.', target: phoneInputRef };
+    }
+    if (!data.email.trim()) return { message: 'Please enter an email address.', target: emailInputRef };
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim());
-    if (!emailOk) return 'That email address does not look right.';
+    if (!emailOk) return { message: 'That email address does not look right.', target: emailInputRef };
     return null;
   };
 
@@ -142,7 +166,8 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
     e.preventDefault();
     const validationError = validateStep3();
     if (validationError) {
-      setError(validationError);
+      setError(validationError.message);
+      validationError.target.current?.focus();
       return;
     }
     setError(null);
@@ -157,7 +182,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
       });
       setStep('success');
     } else {
-      setError(result.error ?? 'Something went wrong. Please call 0414 922 276.');
+      setError(result.error ?? 'Something went wrong. Please call Minas on 0414 922 276.');
     }
   };
 
@@ -187,7 +212,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
               />
             ))}
           </div>
-          <p className="font-body text-xs text-text-muted">
+          <p
+            className="font-body text-xs text-text-muted"
+            role="progressbar"
+            aria-label="Quote progress"
+            aria-valuemin={1}
+            aria-valuemax={3}
+            aria-valuenow={step as number}>
             Step {step} of 3 &middot; Takes about 60 seconds
           </p>
         </div>
@@ -245,12 +276,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 </label>
                 <input
                   id="qs-suburb"
+                  name="suburb"
                   type="text"
+                  autoComplete="address-level2"
                   value={data.suburb}
                   onChange={(e) => setData((d) => ({ ...d, suburb: e.target.value }))}
                   placeholder="e.g. Paddington or 2021"
                   className="w-full border-2 border-stone-200 rounded-lg px-4 py-3 font-body text-navy focus:outline-none focus:border-navy"
-                  autoFocus
                 />
               </div>
 
@@ -258,11 +290,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 <p className="block font-body text-sm font-semibold text-navy mb-2">
                   How soon do you need this done? <span className="text-red-500">*</span>
                 </p>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Job timeline">
                   {URGENCY_OPTIONS.map((u) => (
                     <button
                       key={u}
                       type="button"
+                      role="radio"
+                      aria-checked={data.urgency === u}
                       onClick={() => setData((d) => ({ ...d, urgency: u }))}
                       className={`p-3 rounded-lg border-2 font-body text-sm transition-colors ${
                         data.urgency === u
@@ -278,12 +312,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
 
               <div>
                 <p className="block font-body text-sm font-semibold text-navy mb-2">
-                  Photos <span className="font-normal text-text-muted">(optional, up to 3)</span>
+                  Photos <span className="font-normal text-text-muted">(optional, up to 3, 4 MB total)</span>
                 </p>
                 <input
                   ref={photoInputRef}
                   type="file"
-                  accept="image/*"
+                  name="photos"
+                  accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
                   multiple
                   onChange={(e) => handlePhotoSelect(e.target.files)}
                   className="hidden"
@@ -311,7 +346,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                           type="button"
                           onClick={() => removePhoto(i)}
                           aria-label="Remove photo"
-                          className="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80"
+                          className="absolute top-1 right-1 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                         >
                           <X className="w-3 h-3" />
                         </button>
@@ -323,7 +358,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
             </div>
 
             {error && (
-              <p className="mt-4 text-red-600 font-body text-sm">{error}</p>
+              <p id="quote-error" role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
             )}
 
             <div className="mt-8 flex items-center justify-between gap-3">
@@ -350,7 +385,7 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
 
         {/* STEP 3 — Contact */}
         {step === 3 && (
-          <motion.form
+          <form
             key="step3"
             onSubmit={handleSubmit}
           >
@@ -368,12 +403,14 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 </label>
                 <input
                   id="qs-name"
+                  ref={nameInputRef}
+                  name="name"
                   type="text"
                   required
+                  autoComplete="name"
                   value={data.name}
                   onChange={(e) => setData((d) => ({ ...d, name: e.target.value }))}
                   className="w-full border-2 border-stone-200 rounded-lg px-4 py-3 font-body text-navy focus:outline-none focus:border-navy"
-                  autoFocus
                 />
               </div>
 
@@ -383,6 +420,8 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 </label>
                 <input
                   id="qs-phone"
+                  ref={phoneInputRef}
+                  name="phone"
                   type="tel"
                   required
                   inputMode="tel"
@@ -400,10 +439,13 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 </label>
                 <input
                   id="qs-email"
+                  ref={emailInputRef}
+                  name="email"
                   type="email"
                   required
                   inputMode="email"
                   autoComplete="email"
+                  spellCheck={false}
                   value={data.email}
                   onChange={(e) => setData((d) => ({ ...d, email: e.target.value }))}
                   placeholder="you@example.com"
@@ -417,17 +459,30 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 </label>
                 <textarea
                   id="qs-message"
+                  name="message"
                   rows={3}
                   value={data.message}
                   onChange={(e) => setData((d) => ({ ...d, message: e.target.value }))}
-                  placeholder="Access issues, deadline, anything specific..."
+                  placeholder="Access issues, deadline, anything specific…"
                   className="w-full border-2 border-stone-200 rounded-lg px-4 py-3 font-body text-navy focus:outline-none focus:border-navy resize-none"
+                />
+              </div>
+              <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+                <label htmlFor="qs-company-website">Company website</label>
+                <input
+                  id="qs-company-website"
+                  name="companyWebsite"
+                  type="url"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={data.companyWebsite}
+                  onChange={(e) => setData((d) => ({ ...d, companyWebsite: e.target.value }))}
                 />
               </div>
             </div>
 
             {error && (
-              <p className="mt-4 text-red-600 font-body text-sm">{error}</p>
+              <p id="quote-error" role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
             )}
 
             <div className="mt-8 flex items-center justify-between gap-3">
@@ -448,14 +503,14 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
                 {submitting ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    Sending
+                    Sending…
                   </>
                 ) : (
                   'Send to Minas'
                 )}
               </button>
             </div>
-          </motion.form>
+          </form>
         )}
 
         {/* SUCCESS */}

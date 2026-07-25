@@ -2,7 +2,7 @@ import type { QuoteData } from './types';
 import { SERVICE_LABELS, URGENCY_LABELS } from './types';
 
 const WEBHOOK_URL = import.meta.env.VITE_QUOTE_WEBHOOK_URL as string | undefined;
-const PRODUCTION_QUOTE_ENDPOINT = '/.netlify/functions/quote-email';
+const PRODUCTION_QUOTE_ENDPOINT = '/api/quote';
 
 interface SubmitResult {
   ok: boolean;
@@ -30,6 +30,7 @@ export async function submitQuote(data: QuoteData, pageOrigin: string): Promise<
     pageOrigin,
     submittedAt: new Date().toISOString(),
     userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+    companyWebsite: data.companyWebsite,
   };
 
   const endpoint = WEBHOOK_URL || (import.meta.env.PROD ? PRODUCTION_QUOTE_ENDPOINT : undefined);

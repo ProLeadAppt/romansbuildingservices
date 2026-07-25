@@ -43,6 +43,33 @@ function SearchAtlasDynamicOptimization() {
   return null
 }
 
+function ConversionClickTracking() {
+  useEffect(() => {
+    const trackPhoneClick = (event: MouseEvent) => {
+      const target = event.target
+      if (!(target instanceof Element)) return
+      const link = target.closest<HTMLAnchorElement>('a[href^="tel:"]')
+      if (!link) return
+
+      const analytics = window as Window & {
+        gtag?: (...args: unknown[]) => void
+        clarity?: (...args: unknown[]) => void
+      }
+      const params = {
+        event_category: 'conversion',
+        page_path: window.location.pathname,
+        link_text: 'Business phone',
+      }
+      analytics.gtag?.('event', 'phone_click', params)
+      analytics.clarity?.('event', 'phone_click')
+    }
+
+    document.addEventListener('click', trackPhoneClick)
+    return () => document.removeEventListener('click', trackPhoneClick)
+  }, [])
+  return null
+}
+
 // Lazy-load main pages
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ServicesPage = lazy(() => import('./pages/ServicesPage'))
@@ -154,6 +181,7 @@ createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <BrowserRouter>
       <ScrollToTop />
+      <ConversionClickTracking />
       <QuoteModalProvider>
         <Toaster position="bottom-right" />
         <SearchAtlasDynamicOptimization />
