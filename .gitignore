@@ -18,6 +18,9 @@ dist-ssr
 .idea
 .DS_Store
 *.suo
+playwright-report/
+test-results/
+.netlify/
 *.ntvs*
 *.njsproj
 *.sln

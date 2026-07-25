@@ -1,404 +1,260 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 import {
   ArrowRight,
-  CheckCircle2,
-  MapPinned,
-  MessageSquareQuote,
-  Shield,
-  Wrench,
-  Landmark,
   Building2,
+  CircleDollarSign,
+  Landmark,
+  SearchCheck,
+  ShieldCheck,
+  Wrench,
 } from 'lucide-react';
 
-const contentPillars = [
+const guidePaths = [
+  {
+    icon: SearchCheck,
+    title: 'Diagnose the problem',
+    description: 'Start with the signs you can see: cracking, powdering mortar, water entry, movement or fretting sandstone.',
+    href: '/problems',
+    label: 'View problem guides',
+  },
   {
     icon: Wrench,
-    title: 'Masonry & repointing',
-    href: '/services/masonry',
-    description:
-      'Own the core search terms first: masonry Sydney, repointing, brick restoration, sandstone repair, retaining walls.',
+    title: 'Understand the repair',
+    description: 'Learn when repointing, masonry repair, structural work or a specialist assessment may be appropriate.',
+    href: '/services',
+    label: 'Compare repair services',
   },
   {
-    icon: Landmark,
-    title: 'Heritage restoration',
-    href: '/services/heritage-restoration',
-    description:
-      'Own the heritage intent layer with era pages, material guides, and clear answers for period homes and listed buildings.',
+    icon: CircleDollarSign,
+    title: 'Plan cost and timing',
+    description: 'See the access, material, scaffold and scope factors that change a masonry or remedial quote.',
+    href: '/learn/masonry-vs-remedial-building',
+    label: 'Plan the right scope',
   },
   {
-    icon: Shield,
-    title: 'Structural & remedial',
-    href: '/services/remedial-building',
-    description:
-      'Capture the higher-value jobs: defects, concrete cancer, structural movement, and strata remediation.',
-  },
-  {
-    icon: MapPinned,
-    title: 'Sydney location pages',
-    href: '/areas',
-    description:
-      'Build local trust with suburb and area pages that match real building stock, council rules, and exposure.',
+    icon: ShieldCheck,
+    title: 'Choose the right contractor',
+    description: 'Know what to ask about method, exclusions, matching materials, engineering and heritage requirements.',
+    href: '/learn/repointing-signs',
+    label: 'Prepare for an assessment',
   },
 ];
 
-const priorityPages = [
+const featuredGuides = [
   {
-    name: 'Masonry vs remedial building',
+    name: 'Masonry repair or remedial building?',
     href: '/learn/masonry-vs-remedial-building',
-    description: 'Decision guide for buyers who do not know which service they actually need.',
+    description: 'A practical starting point when the cause or trade is not yet clear.',
   },
   {
-    name: 'Signs you need repointing',
+    name: 'Signs your brickwork needs repointing',
     href: '/learn/repointing-signs',
-    description: 'Diagnosis guide for powdering mortar, missing joints and water entry.',
+    description: 'What failing joints look like and why the mortar choice matters.',
   },
   {
-    name: 'Concrete cancer in Sydney apartments',
+    name: 'Concrete cancer in Sydney buildings',
     href: '/learn/concrete-cancer-sydney',
-    description: 'Strata and apartment remediation guide for spalling and corrosion.',
+    description: 'Visible warning signs, common causes and the usual assessment path.',
   },
   {
-    name: 'Masonry service pillar',
-    href: '/services/masonry',
-    description: 'Primary page for masonry, brickwork, repointing, sandstone and retaining walls.',
-  },
-  {
-    name: 'Heritage restoration pillar',
-    href: '/services/heritage-restoration',
-    description: 'Use this for heritage-listed homes, terraces and period masonry work.',
-  },
-  {
-    name: 'Structural repairs pillar',
-    href: '/services/structural-repairs',
-    description: 'Targets crack repair, load-bearing wall issues and serious structural intent.',
-  },
-  {
-    name: 'Remedial building pillar',
-    href: '/services/remedial-building',
-    description: 'Captures strata, defects, compliance and remediation jobs.',
-  },
-  {
-    name: 'Sydney CBD area page',
-    href: '/areas/sydney-cbd',
-    description: 'Local authority for sandstone, heritage and commercial masonry in the CBD.',
-  },
-  {
-    name: 'Eastern Suburbs area page',
-    href: '/areas/eastern-suburbs',
-    description: 'Strong for terrace restoration, coastal masonry and premium residential intent.',
-  },
-  {
-    name: 'Concrete cancer problem page',
-    href: '/problems/concrete-cancer',
-    description: 'High-intent diagnostic page for strata and apartment block searches.',
-  },
-  {
-    name: 'Cracked brick walls problem page',
+    name: 'Cracked brick walls',
     href: '/problems/cracked-brick-walls',
-    description: 'Answer-engine friendly page for the common “what does this crack mean?” query.',
+    description: 'How to distinguish a mortar problem from movement that needs specialist advice.',
   },
   {
-    name: 'Case studies index',
-    href: '/case-studies',
-    description: 'Proof pages that show the real jobs behind the service and problem pages.',
-  },
-  {
-    name: 'Heritage restoration hub',
+    name: 'Heritage restoration',
     href: '/heritage',
-    description: 'Era-based authority hub for Victorian, Federation, Colonial and Art Deco work.',
+    description: 'Guidance for period brick, sandstone, stucco and traditional materials.',
+  },
+  {
+    name: 'Sydney masonry services',
+    href: '/services/masonry',
+    description: 'Brickwork, repointing, stone repairs, structural brickwork and retaining walls.',
   },
 ];
 
 const faqItems = [
   {
-    question: 'What is the fastest way to improve SEO for a masonry company in Sydney?',
+    question: 'How do I know whether I need a mason, remedial builder or engineer?',
     answer:
-      'Build a clear service hierarchy, then support it with local area pages, problem pages, FAQs and a proper authority hub. That gives Google, Bing and AI tools a clean path from broad intent to exact answer.',
+      'Start with the visible symptom and how quickly it is changing. Local mortar failure or isolated damaged masonry may be suitable for a masonry assessment. Widespread movement, displaced structural elements, active leaks or recurring repairs may need a remedial builder, structural engineer or both. Romans can review photos and tell you the most sensible next step.',
   },
   {
-    question: 'What should rank first: masonry or remedial building?',
+    question: 'Why does the mortar type matter on older Sydney brickwork?',
     answer:
-      'Masonry should usually be the primary category because it is broader and captures the base demand. Remedial building should be the higher-intent specialist layer for structural, strata and defect work.',
+      'Older brickwork was often built with softer, more vapour-permeable mortar. A hard cement-rich replacement can force moisture and movement into the brick faces instead of the joints. The correct mix depends on the existing material, exposure and condition, so it should be matched rather than guessed.',
   },
   {
-    question: 'Why does GEO / AEO need a different page structure?',
+    question: 'What changes the cost of masonry repair?',
     answer:
-      'Answer engines prefer pages that give the direct answer first, then supporting detail, then proof. If the site only has sales copy, it is harder for AI tools to quote it confidently.',
+      'The main cost drivers are access and scaffolding, the amount of material that must be removed, replacement-brick or stone matching, structural support, waste handling, protection of occupied areas and any engineering or heritage requirements. Photos can establish an initial direction, but a firm scope may require a site visit.',
   },
   {
-    question: 'How do you make a Sydney builder feel like the obvious choice?',
+    question: 'Should damaged brickwork be repointed, rendered or rebuilt?',
     answer:
-      'Use real job language, real suburb language, and real problem language. Back it up with experience, process, and local examples so the site reads like the best subject-matter source rather than generic marketing copy.',
+      'Repointing is appropriate when the masonry units remain sound and the joints are failing. Local rebuilding may be needed when bricks or stones have lost integrity or the wall has moved. Rendering can hide the face but does not correct an underlying moisture or structural problem. The cause should be diagnosed before choosing the finish.',
   },
   {
-    question: 'What comes after the hub page?',
+    question: 'What should I send with a quote request?',
     answer:
-      'Usually: 1) a few diagnostic problem pages, 2) one suburb cluster for the strongest location, 3) era-specific heritage pages, and 4) a tighter internal linking system from the homepage and service pages.',
-  },
-];
-
-const howToSteps = [
-  {
-    title: 'Answer the query in the first paragraph',
-    body: 'Start with the exact service or problem in plain English. Do not make people hunt for the answer.',
-  },
-  {
-    title: 'Add the Sydney-specific context',
-    body: 'Mention the suburb, building type, council or material issue that changes the job.',
-  },
-  {
-    title: 'Link to the right supporting page',
-    body: 'Send readers to the service, area or problem page that matches their intent instead of stuffing everything onto one page.',
-  },
-  {
-    title: 'Finish with a low-friction next step',
-    body: 'Give them a call, quote request or assessment option so the site turns attention into leads.',
+      'Send a wide photo showing the whole wall, close photos of the damage, the suburb, approximate height and access, when you first noticed the issue and whether it changes after rain. Romans will either suggest the next step, arrange a site assessment or tell you when another specialist is better suited.',
   },
 ];
 
 const LearnPage = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Learn', href: '/learn' },
+    { label: 'Advice', href: '/learn' },
   ];
 
   return (
     <>
       <SEO
-        title="Sydney Masonry & Remedial Construction Guides | Romans"
-        description="Practical guides on masonry, heritage restoration, remedial construction and local SEO for Sydney property owners, strata managers and builders."
+        title="Sydney Masonry & Heritage Repair Advice | Romans"
+        description="Practical Sydney guides for diagnosing masonry problems, understanding repair options, planning costs and choosing the right contractor."
         canonical="/learn"
       />
       <BreadcrumbSchema items={breadcrumbs} />
       <SpeakableSchema url="https://romansbuildingservices.com/learn" cssSelectors={['h1', 'h2', 'p']} />
       <CollectionPageSchema
-        name="Romans Building Services Learn Hub"
-        description="Authority hub for masonry, heritage restoration, remedial construction, Sydney area pages and building problem guides."
+        name="Sydney Masonry and Heritage Repair Advice"
+        description="Practical advice for diagnosing, pricing and planning masonry, heritage and remedial repairs in Sydney."
         url="https://romansbuildingservices.com/learn"
-        items={priorityPages}
+        items={featuredGuides}
       />
       <FAQSchema faqs={faqItems} />
-      <HowToSchema name="How to build authority for masonry and remedial construction in Sydney" steps={howToSteps} />
 
       <div className="min-h-screen bg-white font-body">
-        <section className="bg-navy texture-grain py-24 px-4">
+        <section className="bg-navy texture-grain py-20 md:py-28 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <p
-              className="text-amber font-semibold uppercase tracking-[0.22em] text-sm mb-4">
-              SEO / GEO / AEO playbook
+            <p className="text-amber font-semibold uppercase tracking-[0.2em] text-sm mb-4">
+              Practical Sydney building advice
             </p>
-            <h1
-              className="font-heading text-4xl md:text-6xl text-white mb-6">
-              How to own masonry and remedial construction in Sydney
+            <h1 className="font-heading text-4xl md:text-6xl text-white mb-6">
+              Understand the problem before choosing the repair
             </h1>
-            <p
-              className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              If the goal is to make Romans the obvious answer for masonry, heritage restoration and
-              remedial building in Sydney, this is the structure: one strong service pillar, one
-              answer-first hub, suburb pages, problem pages, and proof that sounds like the actual
-              job.
+            <p className="text-white/85 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Practical advice for diagnosing, pricing and planning masonry, heritage and remedial repairs in Sydney. Start with what you can see, then follow the path to the right method and specialist.
             </p>
           </div>
         </section>
 
-        <section className="bg-bg-light py-16 md:py-20 px-4">
+        <section className="bg-bg-light py-16 md:py-20 px-4" aria-labelledby="start-heading">
           <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-10">
+              <p className="text-navy font-semibold uppercase tracking-[0.16em] text-sm mb-3">Where to start</p>
+              <h2 id="start-heading" className="font-heading text-3xl md:text-4xl text-navy mb-4">
+                Choose the question closest to your job
+              </h2>
+              <p className="text-text-muted text-lg leading-relaxed">
+                You do not need to know the trade or technical term first. Begin with the decision you are trying to make.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-              {contentPillars.map((pillar, index) => (
-                <div
-                  key={pillar.title}
-                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="w-12 h-12 rounded-lg bg-navy/10 flex items-center justify-center mb-4">
-                    <pillar.icon className="w-6 h-6 text-navy" />
+              {guidePaths.map((path) => (
+                <article key={path.title} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
+                  <div className="w-12 h-12 rounded-lg bg-navy/10 flex items-center justify-center mb-4" aria-hidden="true">
+                    <path.icon className="w-6 h-6 text-navy" />
                   </div>
-                  <h2 className="font-heading text-2xl text-text-primary mb-3">{pillar.title}</h2>
-                  <p className="text-text-secondary leading-relaxed mb-5">{pillar.description}</p>
-                  <Link
-                    to={pillar.href}
-                    className="inline-flex items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors">
-                    Use this pillar <ArrowRight className="w-4 h-4" />
+                  <h3 className="font-heading text-2xl text-text-primary mb-3">{path.title}</h3>
+                  <p className="text-text-secondary leading-relaxed mb-5 flex-1">{path.description}</p>
+                  <Link to={path.href} className="inline-flex min-h-11 items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors">
+                    {path.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20 px-4">
-          <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 items-start">
-            <div className="lg:col-span-3">
-              <div
-                className="space-y-5">
-                <h2 className="font-heading text-3xl md:text-4xl text-navy">What to do next</h2>
-                <p className="text-text-muted leading-relaxed text-lg">
-                  If the site wants to dominate category terms, the next wins are not more fluffy
-                  homepage copy. They are pages that answer specific buying questions and specific
-                  problem questions better than anyone else in Sydney.
-                </p>
-                <div className="grid gap-4">
-                  <div className="rounded-xl border border-gray-200 p-5 bg-white">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-1 shrink-0" />
-                      <div>
-                        <h3 className="font-heading text-xl text-text-primary mb-2">Build the answer stack</h3>
-                        <p className="text-text-muted leading-relaxed">
-                          Keep the current service pages, then support them with problem pages,
-                          suburb pages, and a learn hub that explains the difference between
-                          masonry, heritage restoration, structural repair and remedial work.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 p-5 bg-white">
-                    <div className="flex items-start gap-3">
-                      <Building2 className="w-5 h-5 text-navy mt-1 shrink-0" />
-                      <div>
-                        <h3 className="font-heading text-xl text-text-primary mb-2">Write like a specialist, not a brochure</h3>
-                        <p className="text-text-muted leading-relaxed">
-                          Use materials, failure modes, suburbs, and building eras. That is what both
-                          people and AI systems use to judge whether the page actually knows the job.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 p-5 bg-white">
-                    <div className="flex items-start gap-3">
-                      <MessageSquareQuote className="w-5 h-5 text-navy mt-1 shrink-0" />
-                      <div>
-                        <h3 className="font-heading text-xl text-text-primary mb-2">Lead with direct answers</h3>
-                        <p className="text-text-muted leading-relaxed">
-                          The first paragraph should answer the question in plain English. The rest of
-                          the page can then prove it with detail, examples and next steps.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <aside className="lg:col-span-2 bg-navy text-white rounded-2xl p-6 md:p-7">
-              <h2 className="font-heading text-2xl md:text-3xl mb-4">The short version</h2>
-              <ul className="space-y-4 text-white/85 leading-relaxed">
-                <li>1. Own the main service pages first.</li>
-                <li>2. Add pages that answer real problems and buying questions.</li>
-                <li>3. Split Sydney by area and building stock, not by vague suburbs.</li>
-                <li>4. Keep the copy human, local and technical.</li>
-                <li>5. Give AI tools a page that looks like the best source in the category.</li>
-              </ul>
-              <div className="mt-6 pt-6 border-t border-white/15">
-                <p className="text-white/75 text-sm leading-relaxed">
-                  That is the quickest path to becoming the obvious Sydney result for masonry and
-                  remedial construction.
-                </p>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section className="bg-bg-light py-16 md:py-20 px-4">
+        <section className="py-16 md:py-20 px-4" aria-labelledby="guides-heading">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">
-                Priority pages to build and strengthen
-              </h2>
-              <p className="text-text-muted leading-relaxed">
-                These are the pages that should sit under the hub and carry most of the ranking and
-                answer-engine weight.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              {priorityPages.map((page) => (
-                <Link
-                  key={page.href}
-                  to={page.href}
-                  className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="font-heading text-xl text-text-primary mb-2 group-hover:text-navy transition-colors">
-                        {page.name}
-                      </h3>
-                      <p className="text-text-muted leading-relaxed">{page.description}</p>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-navy shrink-0 mt-1" />
-                  </div>
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
+              <div className="lg:sticky lg:top-28">
+                <p className="text-navy font-semibold uppercase tracking-[0.16em] text-sm mb-3">Popular guides</p>
+                <h2 id="guides-heading" className="font-heading text-3xl md:text-4xl text-navy mb-5">
+                  Clear answers for common repair decisions
+                </h2>
+                <p className="text-text-muted text-lg leading-relaxed mb-7">
+                  These guides explain warning signs, repair options and the information a useful quote should contain. They are a starting point, not a substitute for inspecting a serious defect.
+                </p>
+                <Link to="/contact" className="inline-flex min-h-11 items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-md hover:bg-navy-light transition-colors">
+                  Ask about your property <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
-              ))}
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {featuredGuides.map((guide) => (
+                  <Link key={guide.href} to={guide.href} className="group rounded-xl border border-gray-200 p-6 hover:border-amber-dark hover:shadow-md transition-all min-h-44">
+                    <h3 className="font-heading text-xl text-navy mb-3 group-hover:text-navy-light">{guide.name}</h3>
+                    <p className="text-text-muted leading-relaxed mb-4">{guide.description}</p>
+                    <span className="inline-flex items-center gap-2 text-navy font-semibold">
+                      Read guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20 px-4 bg-white">
+        <section className="bg-navy py-16 md:py-20 px-4" aria-labelledby="audiences-heading">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">
-                Build the suburb cluster next
-              </h2>
-              <p className="text-text-muted leading-relaxed">
-                Sydney authority grows faster when the site speaks to the strongest building stock by
-                area — not just by suburb name. These are the clusters that already match the work.
-              </p>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <h2 id="audiences-heading" className="font-heading text-3xl md:text-4xl text-white mb-4">Advice for the way you manage the job</h2>
+              <p className="text-white/75 text-lg">A homeowner, strata committee and consultant need different information before work can begin.</p>
             </div>
-            <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-4">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: 'Sydney CBD', href: '/areas/sydney-cbd', note: 'Heritage sandstone, commercial masonry, strict access.' },
-                { name: 'Eastern Suburbs', href: '/areas/eastern-suburbs', note: 'Terraces, coastal exposure, concrete cancer.' },
-                { name: 'Inner West', href: '/areas/inner-west', note: 'Terraces, lime mortar, settlement cracks.' },
-                { name: 'North Shore', href: '/areas/north-shore', note: 'Federation homes, retaining walls, balconies.' },
-                { name: 'Northern Beaches', href: '/areas/northern-beaches', note: 'Salt exposure, spalling, balcony remediation.' },
-              ].map((area) => (
-                <Link
-                  key={area.href}
-                  to={area.href}
-                  className="group bg-bg-light rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
-                  <h3 className="font-heading text-xl text-text-primary mb-2 group-hover:text-navy transition-colors">
-                    {area.name}
-                  </h3>
-                  <p className="text-text-muted leading-relaxed text-sm">{area.note}</p>
-                </Link>
+                { icon: Landmark, title: 'Home and heritage owners', body: 'Diagnose the visible issue, preserve sound material and understand the practical repair path.', href: '/heritage' },
+                { icon: Building2, title: 'Strata and building managers', body: 'Clarify scope, access, staged works, consultant input and what the committee needs to decide.', href: '/services/remedial-building/strata-repairs' },
+                { icon: ShieldCheck, title: 'Architects and consultants', body: 'Review masonry, heritage and remedial capabilities before discussing specifications and site constraints.', href: '/contact' },
+              ].map((audience) => (
+                <article key={audience.title} className="rounded-xl border border-white/15 bg-white/5 p-6">
+                  <audience.icon className="w-7 h-7 text-amber mb-4" aria-hidden="true" />
+                  <h3 className="font-heading text-2xl text-white mb-3">{audience.title}</h3>
+                  <p className="text-white/75 leading-relaxed mb-5">{audience.body}</p>
+                  <Link to={audience.href} className="inline-flex min-h-11 items-center gap-2 text-amber font-semibold hover:text-white transition-colors">
+                    Explore this path <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </Link>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20 px-4 bg-white">
+        <section className="py-16 md:py-20 px-4" aria-labelledby="faq-heading">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">
-                Questions the page should answer instantly
-              </h2>
-              <p className="text-text-muted leading-relaxed">
-                These are the kinds of questions answer engines pull. The site should answer them
-                without forcing a click around the whole place.
-              </p>
+            <div className="text-center mb-10">
+              <p className="text-navy font-semibold uppercase tracking-[0.16em] text-sm mb-3">Before you request a quote</p>
+              <h2 id="faq-heading" className="font-heading text-3xl md:text-4xl text-navy">Common first questions</h2>
             </div>
             <div className="space-y-4">
-              {faqItems.map((faq) => (
-                <div key={faq.question} className="bg-bg-light rounded-xl p-6">
-                  <h3 className="font-heading text-xl text-navy mb-2">{faq.question}</h3>
-                  <p className="text-text-muted leading-relaxed">{faq.answer}</p>
-                </div>
+              {faqItems.map((item) => (
+                <details key={item.question} className="group rounded-xl border border-gray-200 bg-white p-5 open:shadow-sm">
+                  <summary className="cursor-pointer list-none font-heading text-xl text-navy flex items-center justify-between gap-4 min-h-11">
+                    {item.question}
+                    <span className="text-navy text-2xl group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+                  </summary>
+                  <p className="text-text-muted leading-relaxed pt-4 pr-8">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-navy py-16 px-4 text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-3xl md:text-4xl mb-4">Next move</h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
-              Turn this hub into a content cluster: more problem pages, more suburb-specific
-              supporting pages, and one or two era guides that speak directly to how Sydney actually
-              builds.
+        <section className="bg-bg-light py-16 px-4">
+          <div className="max-w-4xl mx-auto rounded-2xl bg-white border border-gray-200 p-8 md:p-12 text-center shadow-sm">
+            <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">Still not sure what the job needs?</h2>
+            <p className="text-text-muted text-lg leading-relaxed max-w-2xl mx-auto mb-7">
+              Send a wide photo, a close photo, the suburb and a short description. Romans can suggest the next step, arrange an assessment or tell you when another specialist is better suited.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-7 py-3 rounded-lg hover:opacity-90 transition-opacity">
-              Build the next layer <ArrowRight className="w-4 h-4" />
+            <Link to="/contact" className="inline-flex min-h-11 items-center gap-2 bg-navy text-white font-semibold px-7 py-3 rounded-md hover:bg-navy-light transition-colors">
+              Send photos for an assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </section>
