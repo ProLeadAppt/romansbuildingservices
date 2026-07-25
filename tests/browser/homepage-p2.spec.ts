@@ -23,9 +23,14 @@ test.beforeEach(async ({ page }) => {
 test('homepage follows the evidence-led P2 decision sequence', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-  // Scroll through the full page to trigger lazy sections
+  // Wait for React hydration to replace any prerendered Suspense markup, then
+  // query and scroll the current conversion node in one page-context operation.
   const conversionSection = page.locator('[data-p2-section="conversion"]');
-  await conversionSection.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
+  await expect.poll(() => conversionSection.count(), { timeout: 10_000 }).toBe(1);
+  await page.evaluate(() => {
+    document.querySelector('[data-p2-section="conversion"]')?.scrollIntoView({ block: 'center' });
+  });
   await expect(conversionSection).toBeVisible({ timeout: 10_000 });
 
   const orderedSections = [
@@ -127,4 +132,38 @@ test('reduced-motion visitors receive the full journey without non-essential ani
     expect(styles.opacity).toBe('1');
     expect(styles.transform).toBe('none');
   }
+
+  const videos = page.locator('[data-p2-section="hero"] video, [data-p2-section="founder-standard"] video');
+  await expect(videos).toHaveCount(2);
+  for (let index = 0; index < 2; index += 1) {
+    await expect(videos.nth(index)).toBeVisible();
+    const mediaState = await videos.nth(index).evaluate((video: HTMLVideoElement) => ({
+      display: getComputedStyle(video).display,
+      poster: video.poster,
+      paused: video.paused,
+    }));
+    expect(mediaState.display).not.toBe('none');
+    expect(mediaState.poster).not.toBe('');
+    expect(mediaState.paused).toBe(true);
+  }
+});
+
+test('keyboard users can bypass the persistent navigation', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+  const skipLink = page.getByRole('link', { name: 'Skip to main content' });
+  const isFirstFocusable = await page.evaluate(() => {
+    const focusable = document.querySelector<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
+    return focusable?.textContent?.trim() === 'Skip to main content';
+  });
+  expect(isFirstFocusable).toBe(true);
+
+  await skipLink.focus();
+  await expect(skipLink).toBeFocused();
+  await page.keyboard.press('Enter');
+
+  await expect(page.locator('main#main-content')).toBeFocused();
+  expect(new URL(page.url()).hash).toBe('#main-content');
 });

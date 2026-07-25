@@ -121,6 +121,36 @@ test('home page speaks to customers rather than exposing search-marketing langua
   assert.match(home, /HomeCapabilitiesSection/);
 });
 
+test('home process schema stays aligned with approved visible claims', () => {
+  const schema = read('src/components/LocalSEO/StructuredData.tsx');
+  const footer = read('src/components/Footer.tsx');
+
+  assert.doesNotMatch(schema, /4-step process|30 years|free site visit|fixed-price|value:\s*0/i);
+  assert.match(schema, /Established in Sydney in 1995/);
+  assert.doesNotMatch(footer, /\b\d{2}\s+years\b/i);
+});
+
+test('shared layout preserves keyboard, reduced-motion and media accessibility', () => {
+  const layout = read('src/components/Layout.tsx');
+  const styles = read('src/index.css');
+  const footer = read('src/components/Footer.tsx');
+  const survey = read('src/components/quote/QuoteSurvey.tsx');
+  const contactSection = read('src/components/ModernContactSection.tsx');
+  const contactPage = read('src/pages/ContactPage.tsx');
+  const surveyModal = read('src/components/quote/QuoteSurveyModal.tsx');
+
+  assert.match(layout, /href="#main-content"/);
+  assert.match(layout, /<header>/);
+  assert.match(layout, /<main id="main-content" tabIndex=\{-1\}/);
+  assert.doesNotMatch(styles, /video\s*\{\s*display:\s*none/);
+  assert.doesNotMatch(footer, /alt="Project showcase"/);
+  assert.match(footer, /Structural acrow props supporting stone wall during repairs/);
+  assert.match(survey, /headingLevel: 'h2' \| 'h3' \| 'h4'/);
+  assert.match(contactSection, /headingLevel="h4"/);
+  assert.match(contactPage, /headingLevel="h2"/);
+  assert.match(surveyModal, /headingLevel="h3"/);
+});
+
 test('analytics and hero video network providers are deferred beyond initial HTML', () => {
   const shell = read('index.html');
   assert.doesNotMatch(shell, /<script\b[^>]*src="https:\/\/www\.googletagmanager\.com\/gtag\/js/i);

@@ -27,11 +27,26 @@ const popularSuburbs = [
 ];
 
 const galleryPreview = [
-  '/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp',
-  '/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp',
-  '/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp',
-  '/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp',
-  '/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp',
+  {
+    src: '/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp',
+    alt: 'Structural acrow props supporting stone wall during repairs',
+  },
+  {
+    src: '/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp',
+    alt: 'Earthworks and site preparation for stone wall construction',
+  },
+  {
+    src: '/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp',
+    alt: 'Roof level brick and structural repair on residential home',
+  },
+  {
+    src: '/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp',
+    alt: 'Sandstone heritage wall with new pointing repairs',
+  },
+  {
+    src: '/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp',
+    alt: 'Retaining wall construction with block work and drainage',
+  },
 ];
 
 export const Footer = () => {
@@ -66,14 +81,14 @@ export const Footer = () => {
       <div className="border-b border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex gap-3 overflow-x-auto scrollbar-hide">
-            {galleryPreview.map((img, i) => (
+            {galleryPreview.map((image) => (
               <Link
-                key={i}
+                key={image.src}
                 to="/gallery"
                 className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
                 <img
-                  src={img}
-                  alt="Project showcase"
+                  src={image.src}
+                  alt={image.alt}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -98,7 +113,7 @@ export const Footer = () => {
             </Link>
             <p className="font-body text-sm text-white/40 leading-relaxed max-w-xs">
               Heritage restoration and masonry across Sydney since 1995.
-              Minas Romanakis. 30 years of doing things properly.
+              Minas Romanakis. Doing things properly from the start.
             </p>
           </div>
 

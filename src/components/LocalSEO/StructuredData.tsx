@@ -591,13 +591,12 @@ export const AggregateRatingSchema = ({
 };
 
 // ---------- HowTo (used by HowWeWorkSection on the home page) ----------
-// Schema.org HowTo rich result: tells Google the visible 4-step process is a
-// legitimate "how to hire a mason" sequence. Strongest payoff for AI Overview
-// citation when someone asks "how do I find a good bricklayer in Sydney".
+// Schema.org HowTo markup mirrors the visible process exactly. Keep the
+// description step-count-neutral so future content edits cannot drift from it.
 export const HowToSchema = ({
   steps,
   name = "How Romans Building Services takes on a masonry or heritage repair job in Sydney",
-  description = "The same 4-step process for every job — a back-yard wall, a chimney rebuild, a heritage facade, a structural crack stitch. Free quote, written itemised pricing, 30 years of getting it right."
+  description = "The same clear process for each job: show Romans the problem, identify what is actually failing, then receive a written repair quote. Established in Sydney in 1995."
 }: {
   steps: Array<{ title: string; body: string }>;
   name?: string;
@@ -609,12 +608,6 @@ export const HowToSchema = ({
     "@id": `${BUSINESS_INFO.website}#howto`,
     name,
     description,
-    estimatedCost: {
-      "@type": "MonetaryAmount",
-      currency: "AUD",
-      value: 0,
-      description: "Free site visit and fixed-price written quote across Sydney metro."
-    },
     tool: [
       { "@type": "HowToTool", name: "Phone — call Minas on 0414 922 276" },
       { "@type": "HowToTool", name: "Photos of the job (smartphone is fine)" }

@@ -71,7 +71,7 @@ export default function ContactPage() {
               <div
                 className="lg:col-span-2">
                 <div className="bg-bg-light rounded-lg p-6 md:p-8">
-                  <QuoteSurvey variant="inline" />
+                  <QuoteSurvey variant="inline" headingLevel="h2" />
                 </div>
               </div>
 

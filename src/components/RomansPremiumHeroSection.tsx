@@ -9,23 +9,14 @@ export const RomansPremiumHeroSection = () => {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    let timer: number | undefined;
     const enableVideo = () => {
-      if (timer) window.clearTimeout(timer);
       setLoadVideo(true);
     };
-    const scheduleVideo = () => {
-      timer = window.setTimeout(enableVideo, 3500);
-    };
 
-    if (document.readyState === 'complete') scheduleVideo();
-    else window.addEventListener('load', scheduleVideo, { once: true });
     window.addEventListener('pointerdown', enableVideo, { once: true, passive: true });
     window.addEventListener('keydown', enableVideo, { once: true });
 
     return () => {
-      if (timer) window.clearTimeout(timer);
-      window.removeEventListener('load', scheduleVideo);
       window.removeEventListener('pointerdown', enableVideo);
       window.removeEventListener('keydown', enableVideo);
     };

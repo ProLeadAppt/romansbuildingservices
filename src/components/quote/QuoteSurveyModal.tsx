@@ -16,6 +16,7 @@ export const QuoteSurveyModal = () => {
         </DialogDescription>
         <QuoteSurvey
           variant="modal"
+          headingLevel="h3"
           onClose={close}
           initialService={state.initialService}
         />

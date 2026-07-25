@@ -58,7 +58,7 @@ export const HomeFounderStandardSection = () => {
         </div>
 
         <div className="relative bg-white p-7 shadow-[0_24px_70px_rgba(10,46,118,0.12)] sm:p-10 lg:-ml-14 lg:p-14">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/60">The Romans standard</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/80">The Romans standard</p>
           <h2 className="font-heading text-4xl leading-[1.06] text-navy sm:text-5xl">Good repair work starts with knowing what not to replace.</h2>
           <div className="mt-6 space-y-4 text-base leading-7 text-slate-600">
             <p>Minas Romanakis started Romans Building Services in 1995. The work remains focused on brick, stone, block, concrete and the structures they form.</p>

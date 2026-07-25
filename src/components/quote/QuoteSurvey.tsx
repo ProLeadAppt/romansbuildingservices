@@ -61,11 +61,13 @@ const emptyData = (): QuoteData => ({
 
 interface QuoteSurveyProps {
   variant: 'modal' | 'inline';
+  headingLevel: 'h2' | 'h3' | 'h4';
   onClose?: () => void;
   initialService?: QuoteService;
 }
 
-export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyProps) => {
+export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: QuoteSurveyProps) => {
+  const StepHeading = headingLevel;
   const [step, setStep] = useState<1 | 2 | 3 | 'success'>(1);
   const [data, setData] = useState<QuoteData>(() => ({
     ...emptyData(),
@@ -230,9 +232,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
           <div
             key="step1"
           >
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
               What needs doing?
-            </h2>
+            </StepHeading>
             <p className="font-body text-text-muted mb-6">
               Pick the closest match. If nothing fits, hit Not Sure and we will work it out.
             </p>
@@ -262,9 +264,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
           <div
             key="step2"
           >
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
               Where and when?
-            </h2>
+            </StepHeading>
             <p className="font-body text-text-muted mb-6">
               We work right across Sydney. Photos help us quote faster but are optional.
             </p>
@@ -389,9 +391,9 @@ export const QuoteSurvey = ({ variant, onClose, initialService }: QuoteSurveyPro
             key="step3"
             onSubmit={handleSubmit}
           >
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
               How do we reach you?
-            </h2>
+            </StepHeading>
             <p className="font-body text-text-muted mb-6">
               Minas will call you back within 24 hours. Your details are sent straight to him.
             </p>
