@@ -39,11 +39,35 @@
   to = "/services/building-restoration"
   status = 301
 
-# SPA fallback
+# Preserve the query-dependent search route as a noindex SPA entry.
 [[redirects]]
-  from = "/*"
+  from = "/search"
   to = "/index.html"
   status = 200
+
+# All indexable application routes are prerendered. Unknown paths must return
+# a real HTTP 404 rather than a soft-404 copy of the home-page shell.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/search"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 # Cache gallery images aggressively (1 year)
 [[headers]]

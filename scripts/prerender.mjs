@@ -116,7 +116,7 @@ async function closePage(page) {
   }
 }
 
-async function prerenderRoute(browser, route, port) {
+async function prerenderRoute(browser, route, port, outputPath = null) {
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', (err) => {
@@ -220,10 +220,11 @@ async function prerenderRoute(browser, route, port) {
     // matching default tag if a helmet-managed one exists.
     html = dedupeHelmetTags(html);
     html = normalizeInternalIndexableUrls(html);
+    html = stripRuntimeCaptureArtifacts(html);
 
     const outDir = route === '/' ? DIST : path.join(DIST, route);
-    ensureDir(outDir);
-    const outPath = path.join(outDir, 'index.html');
+    const outPath = outputPath || path.join(outDir, 'index.html');
+    ensureDir(path.dirname(outPath));
     fs.writeFileSync(outPath, html);
   } finally {
     await closePage(page);
@@ -261,6 +262,24 @@ function normalizeInternalIndexableUrls(html) {
       return `${attr}=${q}${normalizeUrlMaybe(value)}${q}`;
     })
     .replace(/https:\/\/romansbuildingservices\.com\/([A-Za-z0-9_\-/]+)(?=[\"'\s<])/g, (m) => normalizeUrlMaybe(m));
+}
+
+function stripRuntimeCaptureArtifacts(html) {
+  return html
+    // Browser-captured dynamic import hints preload every lazy route chunk and
+    // undo the application's intended loading boundaries. Keep Vite's original
+    // build-time modulepreloads, which do not carry as="script".
+    .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])(?=[^>]*\bas=["']script["'])[^>]*>/gi, '')
+    // Clarity's inline bootstrap and the SearchAtlas React effect recreate
+    // their runtime tags after hydration. Serializing injected tags duplicates
+    // third-party requests on every prerendered document.
+    .replace(/<script\b(?=[^>]*\bsrc=["']https:\/\/www\.clarity\.ms\/tag\/)[^>]*><\/script>/gi, '')
+    .replace(/<script\b(?=[^>]*\bid=["']sa-dynamic-optimization-loader["'])[^>]*><\/script>/gi, '')
+    // Sonner injects this stylesheet at runtime. Capturing it adds tens of
+    // kilobytes to every HTML document and it is injected again on hydration.
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, (tag) =>
+      tag.includes('data-sonner-toaster') ? '' : tag,
+    );
 }
 
 function dedupeHelmetTags(html) {
@@ -334,6 +353,11 @@ async function main() {
       }
     }
   }
+
+  // Capture the React catch-all route as Netlify's static error document. The
+  // host serves this file with status 404 for unknown paths, while known
+  // sitemap routes retain their prerendered fresh-document entry points.
+  await prerenderRoute(browser, '/__not-found__', port, path.join(DIST, '404.html'));
 
   try {
     await browser.close();
