@@ -30,8 +30,10 @@ test('quote survey reaches contact details without a runtime failure', async ({ 
     }
   });
 
-  await page.goto('/', { waitUntil: 'networkidle' });
-  await page.getByRole('button', { name: 'Get a Sydney Quote' }).click();
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  const openQuote = page.getByRole('button', { name: 'Get a Sydney Quote' });
+  await expect(openQuote).toBeVisible({ timeout: 15_000 });
+  await openQuote.click();
   await expect(page.getByRole('dialog')).toBeVisible();
 
   await page.getByRole('button', { name: 'Heritage Restoration' }).click();
@@ -62,7 +64,8 @@ test('hero video waits for interaction instead of competing with the initial pag
 });
 
 test('phone links emit a conversion event without per-link wiring', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('a[href^="tel:"]').first()).toBeAttached({ timeout: 15_000 });
   await page.evaluate(() => {
     document.addEventListener('click', (event) => {
       const target = event.target;
