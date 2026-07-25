@@ -183,7 +183,7 @@ export const Footer = () => {
       <div className="border-t border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-white/30">
-            &copy; 2025 Romans Building Services. All rights reserved.
+            &copy; {new Date().getFullYear()} Romans Building Services. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <p className="font-body text-xs text-white/30">

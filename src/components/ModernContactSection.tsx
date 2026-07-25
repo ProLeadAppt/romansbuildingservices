@@ -1,118 +1,32 @@
-import { Phone, Calendar, Shield, CheckCircle, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { CheckCircle, Phone } from 'lucide-react';
 import { QuoteSurvey } from '@/components/quote';
 
-const trustBadges = [
-  { icon: Calendar, label: '30+ Years Experience' },
-  { icon: Shield, label: 'Licenced & Insured' },
-  { icon: CheckCircle, label: 'Free Quotes, No Obligation' },
-];
+const trustPoints = ['Sydney masonry work since 1995', 'Licenced and insured', 'Free quote, no obligation'];
 
-const thumbnailImages = [
-  '/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp',
-  '/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp',
-  '/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp',
-  '/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp',
-];
-
-const badgeVariant = {
-  hidden: { opacity: 0, x: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: premiumEase, delay: i * 0.1 },
-  }),
-};
-
-export const ModernContactSection = () => {
-  return (
-    <section id="contact">
-      {/* Phone CTA Strip */}
-      <div className="bg-navy texture-grain py-10 text-center">
-        <p className="font-body text-lg text-white/60 mb-2">Give us a ring</p>
-        <div>
-          <a
-            href="tel:0414922276"
-            className="font-heading text-4xl md:text-5xl text-white tracking-tight hover:text-white/90 transition inline-block">
-            0414 922 276
-          </a>
-        </div>
-        <div
-          className="mt-4">
-          <a
-            href="tel:0414922276"
-            className="btn-premium bg-amber text-navy px-10 py-4 rounded-lg text-lg font-body font-semibold inline-flex items-center gap-2 hover:bg-amber/90 transition-colors">
-            <Phone className="w-5 h-5" />
-            Call Minas
-          </a>
-        </div>
+export const ModernContactSection = () => (
+  <section id="contact" data-p2-section="conversion" className="bg-navy px-5 py-16 text-white sm:px-6 md:py-24">
+    <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+      <div className="lg:sticky lg:top-28 lg:self-start">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-amber">Show us the problem</p>
+        <h2 className="font-heading text-4xl leading-[1.05] sm:text-5xl">A few details and clear photos are enough to start.</h2>
+        <p className="mt-5 max-w-xl text-base leading-7 text-white/70">Use the short form or call Minas directly. You do not need to diagnose the work before getting in touch.</p>
+        <a href="tel:0414922276" className="mt-8 inline-flex min-h-12 items-center gap-3 font-heading text-3xl text-white underline decoration-amber decoration-2 underline-offset-8">
+          <Phone className="h-6 w-6 text-amber" aria-hidden="true" /> 0414 922 276
+        </a>
+        <ul className="mt-9 space-y-3">
+          {trustPoints.map((point) => (
+            <li key={point} className="flex items-center gap-3 text-sm text-white/75">
+              <CheckCircle className="h-5 w-5 flex-none text-amber" aria-hidden="true" /> {point}
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Form + Trust Panel */}
-      <div className="bg-white py-16 px-6">
-        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-5 gap-12">
-          {/* Left: Contact Form (col-span-3) */}
-          <div
-            className="lg:col-span-3">
-            <h2 className="font-heading text-3xl text-text-primary mb-3">
-              Get in Touch
-            </h2>
-            <p className="font-body text-sm text-text-muted mb-8">
-              Quick 60-second form. Minas will call you back within 24 hours.
-            </p>
-
-            <div className="bg-bg-light rounded-lg p-6 md:p-8">
-              <QuoteSurvey variant="inline" />
-            </div>
-          </div>
-
-          {/* Right: Trust Panel (col-span-2) */}
-          <div
-            className="lg:col-span-2 mt-12 lg:mt-0">
-            {/* Trust Badges */}
-            <div
-              className="space-y-5 mb-8">
-              {trustBadges.map((badge, index) => (
-                <div
-                  key={badge.label}
-                  className="flex items-center gap-3">
-                  <badge.icon className="w-5 h-5 text-green flex-shrink-0" />
-                  <span className="font-body text-sm font-medium text-text-primary">
-                    {badge.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Gallery Thumbnails */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              {thumbnailImages.map((src, index) => (
-                <Link
-                  key={index}
-                  to="/gallery"
-                  className="rounded-lg overflow-hidden group">
-                  <img
-                    src={src}
-                    alt={`Project showcase ${index + 1}`}
-                    className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </Link>
-              ))}
-            </div>
-
-            {/* Instagram Link */}
-            <a
-              href="https://www.instagram.com/romansstone/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-body text-sm text-text-muted hover:text-navy-light transition">
-              <Instagram className="w-5 h-5" />
-              Follow @romansstone
-            </a>
-          </div>
-        </div>
+      <div className="bg-white p-5 text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.22)] sm:p-8">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/60">Sydney quote enquiry</p>
+        <h3 className="mb-6 font-heading text-3xl text-navy">Tell us what you are looking at.</h3>
+        <QuoteSurvey variant="inline" />
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
