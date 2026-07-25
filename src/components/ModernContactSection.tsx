@@ -23,7 +23,7 @@ export const ModernContactSection = () => (
       </div>
 
       <div className="bg-white p-5 text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.22)] sm:p-8">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/60">Sydney quote enquiry</p>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/80">Sydney quote enquiry</p>
         <h3 className="mb-6 font-heading text-3xl text-navy">Tell us what you are looking at.</h3>
         <QuoteSurvey variant="inline" />
       </div>

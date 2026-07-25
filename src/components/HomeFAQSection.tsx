@@ -25,7 +25,7 @@ export const HomeFAQSection = () => (
     <FAQSchema faqs={faqs} />
     <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
       <div>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/60">Before you call</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/80">Before you call</p>
         <h2 className="font-heading text-4xl leading-[1.05] text-navy sm:text-5xl">Straight answers to the first questions.</h2>
         <p className="mt-5 max-w-md text-base leading-7 text-slate-600">For deeper technical guidance, the Learn hub covers common masonry, heritage and remedial problems in plain English.</p>
         <Link to="/learn" className="mt-6 inline-flex min-h-11 items-center font-semibold text-navy underline decoration-amber decoration-2 underline-offset-8">Open the Learn hub</Link>
@@ -33,7 +33,7 @@ export const HomeFAQSection = () => (
       <div className="border-t border-navy/15">
         {faqs.map((faq, index) => (
           <article key={faq.question} className="grid gap-3 border-b border-navy/15 py-7 sm:grid-cols-[3.5rem_1fr]">
-            <span className="text-xs font-semibold tracking-[0.2em] text-amber">0{index + 1}</span>
+            <span className="text-xs font-semibold tracking-[0.2em] text-navy/80">0{index + 1}</span>
             <div>
               <h3 className="font-heading text-2xl text-navy">{faq.question}</h3>
               <p className="mt-3 text-base leading-7 text-slate-600">{faq.answer}</p>
