@@ -23,9 +23,14 @@ test.beforeEach(async ({ page }) => {
 test('homepage follows the evidence-led P2 decision sequence', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-  // Scroll through the full page to trigger lazy sections
+  // Wait for React hydration to replace any prerendered Suspense markup, then
+  // query and scroll the current conversion node in one page-context operation.
   const conversionSection = page.locator('[data-p2-section="conversion"]');
-  await conversionSection.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
+  await expect.poll(() => conversionSection.count(), { timeout: 10_000 }).toBe(1);
+  await page.evaluate(() => {
+    document.querySelector('[data-p2-section="conversion"]')?.scrollIntoView({ block: 'center' });
+  });
   await expect(conversionSection).toBeVisible({ timeout: 10_000 });
 
   const orderedSections = [

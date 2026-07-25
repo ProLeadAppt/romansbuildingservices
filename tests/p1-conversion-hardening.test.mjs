@@ -121,6 +121,15 @@ test('home page speaks to customers rather than exposing search-marketing langua
   assert.match(home, /HomeCapabilitiesSection/);
 });
 
+test('home process schema stays aligned with approved visible claims', () => {
+  const schema = read('src/components/LocalSEO/StructuredData.tsx');
+  const footer = read('src/components/Footer.tsx');
+
+  assert.doesNotMatch(schema, /4-step process|30 years|free site visit|fixed-price|value:\s*0/i);
+  assert.match(schema, /Established in Sydney in 1995/);
+  assert.doesNotMatch(footer, /\b\d{2}\s+years\b/i);
+});
+
 test('analytics and hero video network providers are deferred beyond initial HTML', () => {
   const shell = read('index.html');
   assert.doesNotMatch(shell, /<script\b[^>]*src="https:\/\/www\.googletagmanager\.com\/gtag\/js/i);

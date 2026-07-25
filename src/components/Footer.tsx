@@ -98,7 +98,7 @@ export const Footer = () => {
             </Link>
             <p className="font-body text-sm text-white/40 leading-relaxed max-w-xs">
               Heritage restoration and masonry across Sydney since 1995.
-              Minas Romanakis. 30 years of doing things properly.
+              Minas Romanakis. Doing things properly from the start.
             </p>
           </div>
 

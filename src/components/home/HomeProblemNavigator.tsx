@@ -33,7 +33,7 @@ export const HomeProblemNavigator = () => (
     <div className="mx-auto max-w-7xl">
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.65fr] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/60">Start with what you can see</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/80">Start with what you can see</p>
           <h2 className="font-heading text-4xl leading-[1.05] text-navy sm:text-5xl">
             You do not need to know the trade name for the problem.
           </h2>
