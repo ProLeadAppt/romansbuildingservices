@@ -40,14 +40,13 @@ export const config = {
 
 class RequestError extends Error {}
 
-const json = (statusCode, body) => ({
-  statusCode,
+const json = (status, body) => new Response(JSON.stringify(body), {
+  status,
   headers: {
     'Content-Type': 'application/json',
     'Cache-Control': 'no-store',
     'X-Content-Type-Options': 'nosniff',
   },
-  body: JSON.stringify(body),
 });
 
 const escapeHtml = (value) =>
@@ -219,15 +218,15 @@ const getTransport = () => {
   });
 };
 
-export const handler = async (event) => {
-  if (event.path && event.path !== config.path) {
+export default async (request) => {
+  if (new URL(request.url).pathname !== config.path) {
     return json(404, { ok: false, error: 'Not found.' });
   }
-  if (event.httpMethod === 'OPTIONS') return json(200, { ok: true });
-  if (event.httpMethod !== 'POST') return json(405, { ok: false, error: 'Method not allowed.' });
+  if (request.method === 'OPTIONS') return json(200, { ok: true });
+  if (request.method !== 'POST') return json(405, { ok: false, error: 'Method not allowed.' });
 
   try {
-    const body = event.body || '';
+    const body = await request.text();
     if (Buffer.byteLength(body, 'utf8') > MAX_BODY_BYTES) {
       throw new RequestError('The quote request is too large. Please attach fewer or smaller photos.');
     }

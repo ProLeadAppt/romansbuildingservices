@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { handler, config } from '../netlify/functions/quote-email.mjs';
+import quoteHandler, { config } from '../netlify/functions/quote-email.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -21,9 +21,21 @@ const validLead = {
   companyWebsite: '',
 };
 
-const post = (body) => handler({
-  httpMethod: 'POST',
-  headers: { host: 'romansbuildingservices.com', origin: 'https://romansbuildingservices.com' },
+const invoke = async ({ method = 'POST', pathname = '/api/quote', body = '' } = {}) => {
+  const request = new Request(`https://romansbuildingservices.com${pathname}`, {
+    method,
+    headers: { 'Content-Type': 'application/json', origin: 'https://romansbuildingservices.com' },
+    body: method === 'GET' || method === 'HEAD' ? undefined : body,
+  });
+  const response = await quoteHandler(request);
+  return {
+    statusCode: response.status,
+    headers: Object.fromEntries(response.headers.entries()),
+    body: await response.text(),
+  };
+};
+
+const post = (body) => invoke({
   body: typeof body === 'string' ? body : JSON.stringify(body),
 });
 
@@ -77,9 +89,8 @@ test('Netlify function declares an IP-based rate limit on the public quote path'
 });
 
 test('legacy direct function URL cannot bypass the public-path rate limit', async () => {
-  const response = await handler({
-    httpMethod: 'POST',
-    path: '/.netlify/functions/quote-email',
+  const response = await invoke({
+    pathname: '/.netlify/functions/quote-email',
     body: JSON.stringify(validLead),
   });
   assert.equal(response.statusCode, 404);
