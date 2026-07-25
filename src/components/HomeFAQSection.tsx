@@ -1,61 +1,46 @@
-import { FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { Link } from 'react-router-dom';
+import { FAQSchema } from './LocalSEO/StructuredData';
 
-const homeFaqs = [
+const faqs = [
   {
-    question: 'Are you licenced and insured?',
-    answer:
-      'Yes. Romans holds a full NSW builders licence and we carry public liability and workers compensation. Licence and insurance details are available on request before any work starts.',
+    question: 'What kind of work should I contact Romans about?',
+    answer: 'Romans focuses on brick, stone, block, concrete and the structures they form. Typical enquiries include failing mortar, sandstone deterioration, cracked brickwork, damaged chimneys, retaining walls, concrete damage and heritage masonry repairs.',
   },
   {
-    question: 'How much does masonry work cost?',
-    answer:
-      'Depends on the job. A small repointing patch can be a few hundred. A heritage chimney rebuild is usually a few thousand. A full sandstone seawall can run into tens of thousands. We give a fixed price after a site visit so you know exactly where you stand before the work starts.',
+    question: 'Do I need to know what is causing the damage?',
+    answer: 'No. Tell us what you can see and include a few clear photos if possible. The first conversation is used to decide whether the likely cause is clear, whether a site visit is needed or whether another specialist should investigate first.',
   },
   {
-    question: 'Do you do small jobs or only big ones?',
-    answer:
-      'Both. We do back-yard garden walls, single chimney repairs, small repointing patches, and we do heritage facades, multi-storey structural work and harbour seawalls. Same standard either way.',
+    question: 'Can Romans work on heritage buildings?',
+    answer: 'Yes. Romans carries out heritage brick and stone repairs, repointing and restoration work. Where a heritage consultant, engineer or formal approval is required, that role remains separate and should be identified before work begins.',
   },
   {
-    question: 'How long until you can start?',
-    answer:
-      'For small jobs, usually two to four weeks out from the quote. For larger heritage or structural work it can be six to ten weeks depending on the season. We try to fit emergency work in within a week when something is failing.',
-  },
-  {
-    question: 'Where in Sydney do you work?',
-    answer:
-      'Sydney metro. Our home base is Strathfield and our regular work is across the Inner West, Eastern Suburbs, North Shore, Northern Beaches, Parramatta, Burwood, Concord and Homebush. Outer fringe jobs are quoted case by case.',
+    question: 'What should I expect in the quote?',
+    answer: 'The quote should describe the repair scope, proposed materials and practical sequence for the work. Final timing and price depend on access, condition and what an assessment shows, rather than a generic online estimate.',
   },
 ];
 
-export const HomeFAQSection = () => {
-  return (
-    <>
-      <FAQSchema faqs={homeFaqs} />
-      <section className="py-16 md:py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <div
-            className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl text-navy mb-3">
-              Common questions before you call
-            </h2>
-            <p className="font-body text-text-muted max-w-2xl mx-auto">
-              The stuff people ask first. If yours is not here, just ring Minas.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {homeFaqs.map((faq, i) => (
-              <div
-                key={faq.question}
-                className="bg-bg-light p-6 rounded-md">
-                <h3 className="font-heading text-lg text-navy mb-2">{faq.question}</h3>
-                <p className="font-body text-text-muted leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
+export const HomeFAQSection = () => (
+  <section data-p2-section="questions" className="bg-white px-5 py-16 sm:px-6 md:py-24">
+    <FAQSchema faqs={faqs} />
+    <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+      <div>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/60">Before you call</p>
+        <h2 className="font-heading text-4xl leading-[1.05] text-navy sm:text-5xl">Straight answers to the first questions.</h2>
+        <p className="mt-5 max-w-md text-base leading-7 text-slate-600">For deeper technical guidance, the Learn hub covers common masonry, heritage and remedial problems in plain English.</p>
+        <Link to="/learn" className="mt-6 inline-flex min-h-11 items-center font-semibold text-navy underline decoration-amber decoration-2 underline-offset-8">Open the Learn hub</Link>
+      </div>
+      <div className="border-t border-navy/15">
+        {faqs.map((faq, index) => (
+          <article key={faq.question} className="grid gap-3 border-b border-navy/15 py-7 sm:grid-cols-[3.5rem_1fr]">
+            <span className="text-xs font-semibold tracking-[0.2em] text-amber">0{index + 1}</span>
+            <div>
+              <h3 className="font-heading text-2xl text-navy">{faq.question}</h3>
+              <p className="mt-3 text-base leading-7 text-slate-600">{faq.answer}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);

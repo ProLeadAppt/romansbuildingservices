@@ -115,7 +115,10 @@ test('quote conversion UI has no undefined motion wrapper or white-on-amber CTA 
 test('home page speaks to customers rather than exposing search-marketing language', () => {
   const home = read('src/pages/SinglePageApp.tsx');
   assert.doesNotMatch(home, /SEO hub|AI Overviews|answer-first version of the site/i);
-  assert.match(home, /practical building advice/i);
+  assert.match(home, /HomeProblemNavigator/);
+  assert.match(home, /HomeCaseStudiesSection/);
+  assert.match(home, /HomeFounderStandardSection/);
+  assert.match(home, /HomeCapabilitiesSection/);
 });
 
 test('analytics and hero video network providers are deferred beyond initial HTML', () => {
