@@ -79,7 +79,7 @@ export const RomansPremiumHeroSection = () => {
             <QuoteCTAButton className="inline-flex min-h-12 items-center justify-center rounded-md bg-amber px-7 py-3 font-body font-semibold text-navy transition-colors hover:bg-amber/90">
               Get a Sydney Quote
             </QuoteCTAButton>
-            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-white/60 px-7 py-3 font-body font-medium text-white transition-colors hover:border-white hover:bg-white/10">
+            <a href="tel:0414922276" className="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-white/60 px-7 py-3 font-body font-medium text-white transition-colors hover:border-white hover:bg-white/10">
               Call Minas
             </a>
           </div>

@@ -50,6 +50,11 @@ test('homepage follows the evidence-led P2 decision sequence', async ({ page }) 
 
   await expect(page.locator('[data-p2-section="process"]')).toHaveCount(1);
   await expect(page.getByRole('button', { name: 'Get a Sydney Quote' }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Call Minas', exact: true }).first()).toHaveAttribute('href', 'tel:0414922276');
+
+  const caseStudyImages = page.locator('[data-p2-section="case-studies"] img');
+  await page.locator('[data-p2-section="case-studies"]').scrollIntoViewIfNeeded();
+  await expect.poll(async () => caseStudyImages.evaluateAll((images) => images.every((image) => (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
 });
 
 test('founder video is deferred until its evidence section approaches the viewport', async ({ page, browserName }) => {
