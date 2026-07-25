@@ -1,24 +1,63 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import heroVideo from '@/assets/videos/romansstone_1705577418_3282943687956227913_2394650725.mp4';
 import { QuoteCTAButton } from '@/components/quote';
 
 export const RomansPremiumHeroSection = () => {
+  const [loadVideo, setLoadVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let timer: number | undefined;
+    const enableVideo = () => {
+      if (timer) window.clearTimeout(timer);
+      setLoadVideo(true);
+    };
+    const scheduleVideo = () => {
+      timer = window.setTimeout(enableVideo, 3500);
+    };
+
+    if (document.readyState === 'complete') scheduleVideo();
+    else window.addEventListener('load', scheduleVideo, { once: true });
+    window.addEventListener('pointerdown', enableVideo, { once: true, passive: true });
+    window.addEventListener('keydown', enableVideo, { once: true });
+
+    return () => {
+      if (timer) window.clearTimeout(timer);
+      window.removeEventListener('load', scheduleVideo);
+      window.removeEventListener('pointerdown', enableVideo);
+      window.removeEventListener('keydown', enableVideo);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loadVideo || !videoRef.current) return;
+    videoRef.current.load();
+    void videoRef.current.play().catch(() => {
+      // The poster remains visible if a browser blocks autoplay.
+    });
+  }, [loadVideo]);
+
   return (
     <>
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
           <video
-            autoPlay
+            ref={videoRef}
+            autoPlay={loadVideo}
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
+            aria-hidden="true"
             poster="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
             fetchPriority="high"
             className="w-full h-[120%] object-cover"
           >
-            <source src={heroVideo} type="video/mp4" />
+            {loadVideo && <source src={heroVideo} type="video/mp4" />}
           </video>
         </div>
 
@@ -52,7 +91,7 @@ export const RomansPremiumHeroSection = () => {
             >
               Browse Projects
             </Link>
-            <QuoteCTAButton className="btn-premium bg-amber text-white hover:bg-amber/90 rounded-md px-8 py-3 font-body font-medium transition-colors">
+            <QuoteCTAButton className="btn-premium bg-amber text-navy hover:bg-amber/90 rounded-md px-8 py-3 font-body font-semibold transition-colors">
               Get a Sydney Quote
             </QuoteCTAButton>
           </div>

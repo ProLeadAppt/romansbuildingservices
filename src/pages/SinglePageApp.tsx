@@ -74,7 +74,7 @@ const SinglePageApp = () => {
           { label: 'Areas', href: '/areas', sublabel: 'Sydney suburbs and regions' },
           { label: 'Case studies', href: '/case-studies', sublabel: 'Real jobs, real detail' },
           { label: 'Heritage hub', href: '/heritage', sublabel: 'Era-specific restoration guides' },
-          { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English SEO hub' },
+          { label: 'Learn hub', href: '/learn', sublabel: 'Practical building advice' },
         ]}
         columns={3}
         background="off-white"
@@ -106,9 +106,9 @@ const SinglePageApp = () => {
           <div className="rounded-2xl bg-navy text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div>
               <p className="text-amber font-semibold uppercase tracking-[0.2em] text-xs mb-2">Learn hub</p>
-              <h2 className="font-heading text-2xl md:text-3xl mb-2">Need the answer-first version of the site?</h2>
+              <h2 className="font-heading text-2xl md:text-3xl mb-2">Need a straight answer before you call?</h2>
               <p className="text-white/80 leading-relaxed max-w-2xl">
-                The Learn hub is where the site explains masonry, heritage and remedial work in plain English for Google, AI Overviews and humans.
+                Read practical guides to masonry, heritage restoration and remedial work, written in plain English.
               </p>
             </div>
             <Link

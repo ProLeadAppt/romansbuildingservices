@@ -189,7 +189,7 @@ export const ModernNavigation = () => {
             {PHONE_NUMBER}
           </a>
           <QuoteCTAButton
-            className="bg-amber hover:bg-amber/90 text-white font-body font-semibold text-sm px-5 py-2.5 rounded-md transition-colors">
+            className="bg-amber hover:bg-amber/90 text-navy font-body font-semibold text-sm px-5 py-2.5 rounded-md transition-colors">
             Get a Quote
           </QuoteCTAButton>
         </div>
@@ -250,7 +250,7 @@ export const ModernNavigation = () => {
               </a>
               <QuoteCTAButton
                 onClick={() => setMobileOpen(false)}
-                className="bg-amber hover:bg-amber/90 text-white font-body font-semibold text-base px-5 py-3 rounded-md transition-colors text-center w-full">
+                className="bg-amber hover:bg-amber/90 text-navy font-body font-semibold text-base px-5 py-3 rounded-md transition-colors text-center w-full">
                 Get a Quote
               </QuoteCTAButton>
             </div>

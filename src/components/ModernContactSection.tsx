@@ -41,7 +41,7 @@ export const ModernContactSection = () => {
           className="mt-4">
           <a
             href="tel:0414922276"
-            className="btn-premium bg-amber text-white px-10 py-4 rounded-lg text-lg font-body font-medium inline-flex items-center gap-2 hover:bg-amber/90 transition">
+            className="btn-premium bg-amber text-navy px-10 py-4 rounded-lg text-lg font-body font-semibold inline-flex items-center gap-2 hover:bg-amber/90 transition-colors">
             <Phone className="w-5 h-5" />
             Call Minas
           </a>
