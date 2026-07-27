@@ -38,7 +38,7 @@
       "Bash(npx tsc:*)",
       "Read(//tmp/**)",
       "Read(//c/Users/domin/.claude/projects/d--Dev-Roman-Building-Services/b3af6372-c0fc-4441-9e2a-0d513c80287f/subagents/**)",
-      "Bash(sort -t'│' -k1 -rn)",
+      "Bash(sort -t'\u2502' -k1 -rn)",
       "Bash(shuf)",
       "WebSearch",
       "Bash(grep -rh \"import.*from ''''lucide-react''''\" src/pages/services/*/)",
@@ -57,5 +57,16 @@
       "Bash(node -e \"const s=require\\('sharp'\\); ['12ca1977-0622-414c-a4b7-fa428cde1018','03e057ec-f76b-425e-99fd-289e0c734fa3','ef614a43-ee83-488e-b50e-313f60198a45','fca9df0e-1672-43ed-a1a0-4d254b541a48'].forEach\\(n=>s\\('public/lovable-uploads/'+n+'.png'\\).metadata\\(\\).then\\(m=>console.log\\(n, m.width+'x'+m.height, m.format, m.hasAlpha?'alpha':'opaque'\\)\\)\\);\")",
       "Read(//d/tmp/**)"
     ]
+  },
+  "extraKnownMarketplaces": {
+    "agricidaniel-claude-seo": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "claude-seo@agricidaniel-claude-seo": true
   }
 }
