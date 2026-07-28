@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 
 const faqs = [
   {
@@ -128,14 +128,8 @@ const RepointingSignsPage = () => {
         url="https://romansbuildingservices.com/learn/repointing-signs"
         items={relatedPages}
       />
-      <SpeakableSchema url="https://romansbuildingservices.com/learn/repointing-signs" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
-      <HowToSchema
-        name="How to tell if a wall needs repointing"
-        description="A quick way to check whether the mortar joints are failing and the wall needs repointing."
-        steps={steps}
-      />
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">

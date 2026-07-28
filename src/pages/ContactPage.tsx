@@ -1,6 +1,6 @@
 import { SEO } from '@/components/SEO';
 import { Phone, Mail, Clock, MapPin, Instagram } from 'lucide-react';
-import { ContactPageSchema, SpeakableSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { ContactPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { QuoteSurvey } from '@/components/quote';
 
 const contactFaqs = [
@@ -45,7 +45,6 @@ export default function ContactPage() {
         canonical="/contact"
       />
       <ContactPageSchema />
-      <SpeakableSchema url="https://romansbuildingservices.com/contact" cssSelectors={['h1', 'p', 'a[href^="tel:"]', 'a[href^="mailto:"]']} />
       <FAQSchema faqs={contactFaqs} />
 
       <div className="min-h-screen font-body">

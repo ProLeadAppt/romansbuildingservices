@@ -135,20 +135,6 @@ const buildProblemSchema = (props: ProblemPageProps) => {
   const entities = PROBLEM_ENTITY_MAP[props.slug] ?? [];
   const aboutRefs = entities.map((e) => ({ '@type': 'Thing', name: e.name, sameAs: e.sameAs }));
 
-  // HowTo schema for "how we fix it" — improves chances of rich results
-  const howToSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: `How we fix ${props.name.toLowerCase()}`,
-    description: props.metaDescription,
-    step: props.howWeFixIt.map((s, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      name: s.step,
-      text: s.detail,
-    })),
-  };
-
   // Article schema — helps the page show up for informational queries
   const articleSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -182,7 +168,7 @@ const buildProblemSchema = (props: ProblemPageProps) => {
     ...(aboutRefs.length> 0 ? { about: aboutRefs } : {}),
   };
 
-  return [howToSchema, articleSchema];
+  return [articleSchema];
 };
 
 export const ProblemPageTemplate = (props: ProblemPageProps) => {

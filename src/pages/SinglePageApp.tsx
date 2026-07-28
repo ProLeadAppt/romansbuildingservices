@@ -7,7 +7,7 @@ import { HomeFounderStandardSection } from '@/components/home/HomeFounderStandar
 import { HomeCapabilitiesSection } from '@/components/home/HomeCapabilitiesSection';
 import { HowWeWorkSection } from '@/components/HowWeWorkSection';
 import { HomeFAQSection } from '@/components/HomeFAQSection';
-import { LocalBusinessSchema, PersonSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { LocalBusinessSchema, PersonSchema } from '@/components/LocalSEO/StructuredData';
 
 const ModernContactSection = lazy(() =>
   import('@/components/ModernContactSection').then((module) => ({ default: module.ModernContactSection })),
@@ -25,7 +25,6 @@ const SinglePageApp = () => (
       heroType="image/webp"
     />
     <LocalBusinessSchema />
-    <SpeakableSchema url="https://romansbuildingservices.com/" cssSelectors={['h1', 'h2']} />
     <PersonSchema />
 
     <RomansPremiumHeroSection />

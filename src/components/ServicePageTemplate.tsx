@@ -72,35 +72,6 @@ interface ServicePageProps {
   processSteps?: ProcessStep[];
 }
 
-const HowToSchema = ({
-  title,
-  description,
-  steps,
-}: {
-  title: string;
-  description: string;
-  steps: ProcessStep[];
-}) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: `How we do ${title.toLowerCase()}`,
-    description,
-    step: steps.map((s, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      name: s.step,
-      text: s.detail,
-    })),
-  };
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-};
-
 export const ServicePageTemplate = ({
   title,
   metaTitle,
@@ -215,9 +186,6 @@ export const ServicePageTemplate = ({
       />
       {faqs.length> 0 && <FAQSchema faqs={faqs} />}
       {breadcrumbs.length> 0 && <BreadcrumbSchema items={breadcrumbs} />}
-      {processSteps.length> 0 && (
-        <HowToSchema title={title} description={metaDescription} steps={processSteps} />
-      )}
 
       {/* Breadcrumb bar */}
       {breadcrumbs.length> 0 && (

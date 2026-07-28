@@ -1,5 +1,3 @@
-import { HowToSchema } from './LocalSEO/StructuredData';
-
 const steps = [
   {
     title: 'Show us the problem',
@@ -17,7 +15,6 @@ const steps = [
 
 export const HowWeWorkSection = () => (
   <section data-p2-section="process" className="bg-stone-50 px-5 py-16 sm:px-6 md:py-24">
-    <HowToSchema steps={steps} />
     <div className="mx-auto max-w-7xl">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>

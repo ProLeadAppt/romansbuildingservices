@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import {
   ArrowRight,
   Building2,
@@ -118,7 +118,6 @@ const LearnPage = () => {
         canonical="/learn"
       />
       <BreadcrumbSchema items={breadcrumbs} />
-      <SpeakableSchema url="https://romansbuildingservices.com/learn" cssSelectors={['h1', 'h2', 'p']} />
       <CollectionPageSchema
         name="Sydney Masonry and Heritage Repair Advice"
         description="Practical advice for diagnosing, pricing and planning masonry, heritage and remedial repairs in Sydney."

@@ -1,6 +1,6 @@
 import { SEO } from '@/components/SEO';
 import { MessageSquare, PackageCheck, HardHat } from 'lucide-react';
-import { PersonSchema, SpeakableSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { PersonSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { QuoteCTAButton } from '@/components/quote';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 
@@ -63,7 +63,6 @@ export default function AboutPage() {
         ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       />
       <PersonSchema />
-      <SpeakableSchema url="https://romansbuildingservices.com/about" cssSelectors={['h1', 'h2', 'p']} />
       <FAQSchema faqs={aboutFaqs} />
 
       <div className="min-h-screen font-body">
