@@ -126,7 +126,12 @@ test('home process schema stays aligned with approved visible claims', () => {
   const footer = read('src/components/Footer.tsx');
 
   assert.doesNotMatch(schema, /4-step process|30 years|free site visit|fixed-price|value:\s*0/i);
-  assert.match(schema, /Established in Sydney in 1995/);
+  // The approved founding claim used to be asserted against the HowTo
+  // description string. HowTo was removed on 2026-07-28 (Google withdrew the
+  // rich result in September 2023), so the claim is now checked where it
+  // actually belongs: the structured foundingDate emitted on LocalBusiness
+  // and Organization. Same guard, canonical source.
+  assert.match(schema, /foundingDate: "1995-01-01"/);
   assert.doesNotMatch(footer, /\b\d{2}\s+years\b/i);
 });
 

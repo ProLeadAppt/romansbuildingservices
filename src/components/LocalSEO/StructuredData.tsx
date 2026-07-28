@@ -513,26 +513,6 @@ export const ImageGallerySchema = ({
   return <SchemaScript schema={schema} />;
 };
 
-// ---------- Speakable (for voice search on key pages) ----------
-export const SpeakableSchema = ({
-  url,
-  cssSelectors = ["h1", "h2", "p"]
-}: {
-  url: string;
-  cssSelectors?: string[];
-}) => {
-  const schema: SchemaObject = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    url,
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: cssSelectors
-    }
-  };
-  return <SchemaScript schema={schema} />;
-};
-
 // ---------- AggregateRating (for when reviews are wired in) ----------
 // Ready-to-use scaffold. Pass ratingValue + reviewCount when testimonials are live.
 // Google requires at least one Review alongside AggregateRating for rich results.
@@ -590,36 +570,12 @@ export const AggregateRatingSchema = ({
   return <SchemaScript schema={aggregateRating} />;
 };
 
-// ---------- HowTo (used by HowWeWorkSection on the home page) ----------
-// Schema.org HowTo markup mirrors the visible process exactly. Keep the
-// description step-count-neutral so future content edits cannot drift from it.
-export const HowToSchema = ({
-  steps,
-  name = "How Romans Building Services takes on a masonry or heritage repair job in Sydney",
-  description = "The same clear process for each job: show Romans the problem, identify what is actually failing, then receive a written repair quote. Established in Sydney in 1995."
-}: {
-  steps: Array<{ title: string; body: string }>;
-  name?: string;
-  description?: string;
-}) => {
-  const schema: SchemaObject = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "@id": `${BUSINESS_INFO.website}#howto`,
-    name,
-    description,
-    tool: [
-      { "@type": "HowToTool", name: "Phone — call Minas on 0414 922 276" },
-      { "@type": "HowToTool", name: "Photos of the job (smartphone is fine)" }
-    ],
-    step: steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.title,
-      text: s.body,
-      url: `${BUSINESS_INFO.website}/#howwework-step-${i + 1}`
-    }))
-  };
+// ---------- Removed 2026-07-28 ----------
+// SpeakableSchema (SpeakableSpecification) and HowToSchema were removed.
+// Google limits speakable to a small set of approved news publishers, so it
+// never applied to a building contractor. HowTo rich results were withdrawn
+// for all surfaces in September 2023 and the reporting retired in 2025, so the
+// markup produced nothing while still having to be kept in lockstep with the
+// visible process copy. The visible steps are unchanged and remain what
+// featured snippets and AI answer engines extract.
 
-  return <SchemaScript schema={schema} />;
-};

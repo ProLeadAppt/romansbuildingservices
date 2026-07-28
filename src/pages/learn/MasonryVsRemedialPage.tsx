@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
-import { HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const faqs = [
@@ -98,14 +97,8 @@ const MasonryVsRemedialPage = () => {
         ogType="article"
         schemaJson={articleSchema}
       />
-      <SpeakableSchema url="https://romansbuildingservices.com/learn/masonry-vs-remedial-building" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
-      <HowToSchema
-        name="How to tell masonry work from remedial building"
-        description="A simple way to decide whether the job is a masonry repair or a broader remedial building scope."
-        steps={steps}
-      />
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">

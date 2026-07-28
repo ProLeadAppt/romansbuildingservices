@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema, HowToSchema, SpeakableSchema } from '@/components/LocalSEO/StructuredData';
+import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 
 const faqs = [
   {
@@ -133,14 +133,8 @@ const ConcreteCancerSydneyPage = () => {
         url="https://romansbuildingservices.com/learn/concrete-cancer-sydney"
         items={relatedPages}
       />
-      <SpeakableSchema url="https://romansbuildingservices.com/learn/concrete-cancer-sydney" cssSelectors={['h1', 'h2', 'p']} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
-      <HowToSchema
-        name="How to deal with concrete cancer in a Sydney apartment building"
-        description="A simple process for spotting concrete cancer, checking the extent of the damage and fixing it properly."
-        steps={steps}
-      />
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
