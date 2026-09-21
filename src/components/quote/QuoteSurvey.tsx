@@ -68,7 +68,7 @@ interface QuoteSurveyProps {
 
 export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: QuoteSurveyProps) => {
   const StepHeading = headingLevel;
-  const [step, setStep] = useState<1 | 2 | 3 | 'success'>(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 'success'>(initialService ? 2 : 1);
   const [data, setData] = useState<QuoteData>(() => ({
     ...emptyData(),
     service: initialService ?? null,
