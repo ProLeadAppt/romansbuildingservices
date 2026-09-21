@@ -122,7 +122,11 @@ const LearnPage = () => {
         name="Sydney Masonry and Heritage Repair Advice"
         description="Practical advice for diagnosing, pricing and planning masonry, heritage and remedial repairs in Sydney."
         url="https://romansbuildingservices.com/learn"
-        items={featuredGuides}
+        items={featuredGuides.map(({ name, href, description }) => ({
+          name,
+          url: `https://romansbuildingservices.com${href}/`,
+          description,
+        }))}
       />
       <FAQSchema faqs={faqItems} />
 

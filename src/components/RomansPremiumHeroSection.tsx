@@ -43,7 +43,6 @@ export const RomansPremiumHeroSection = () => {
           preload="none"
           aria-hidden="true"
           poster="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
-          fetchPriority="high"
           className="w-full h-full object-cover"
         >
           {loadVideo && <source src={heroVideo} type="video/mp4" />}

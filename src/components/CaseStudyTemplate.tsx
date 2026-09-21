@@ -144,7 +144,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
             </div>
             <div className="flex flex-wrap gap-3">
               <QuoteCTAButton
-                service={cs.primaryService.toLowerCase().includes('heritage')
+                initialService={cs.primaryService.toLowerCase().includes('heritage')
                   ? 'heritage-restoration'
                   : cs.primaryService.toLowerCase().includes('concrete')
                   ? 'concrete-repair'
@@ -402,7 +402,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <QuoteCTAButton
-              service={cs.primaryService.toLowerCase().includes('heritage')
+              initialService={cs.primaryService.toLowerCase().includes('heritage')
                 ? 'heritage-restoration'
                 : cs.primaryService.toLowerCase().includes('concrete')
                 ? 'concrete-repair'

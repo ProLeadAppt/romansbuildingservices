@@ -15,6 +15,8 @@ interface SEOHeadProps {
 
 const SITE_URL = 'https://romansbuildingservices.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+// React 18 forwards this standard HTML attribute in lowercase.
+const heroPreloadPriority = { fetchpriority: 'high' };
 
 // Set VITE_GSC_VERIFICATION in .env / Netlify env to wire Google Search Console.
 // Leave empty in dev — the meta tag is omitted entirely so it never emits
@@ -76,7 +78,7 @@ export const SEOHead = ({
         <meta name="google-site-verification" content={GSC_VERIFICATION} />
       )}
       {heroHref && (
-        <link rel="preload" as={heroPreloadAs} href={heroHref} type={heroType} fetchpriority="high" />
+        <link rel="preload" as={heroPreloadAs} href={heroHref} type={heroType} {...heroPreloadPriority} />
       )}
       {noIndex ? (
         <meta name="robots" content="noindex, follow" />
