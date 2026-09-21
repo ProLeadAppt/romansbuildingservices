@@ -65,6 +65,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
   const canonical = `/case-studies/${cs.slug}`;
   const fullUrl = `${SITE_URL}${canonical}`;
   const allImages = [cs.hero, ...cs.gallery];
+  const locationHref = cs.locationHref ?? `/suburbs/${cs.suburbSlug}/`;
 
   return (
     <>
@@ -81,7 +82,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
         items={[
           { label: 'Home', href: '/' },
           { label: 'Case Studies', href: '/case-studies' },
-          { label: cs.suburbName, href: `/suburbs/${cs.suburbSlug}` },
+          { label: cs.suburbName, href: locationHref },
           { label: 'Case Study', href: canonical },
         ]}
       />
@@ -314,7 +315,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
 
           <div className="mt-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
             <div className="font-body text-text-muted">
-              <Link to={`/suburbs/${cs.suburbSlug}`} className="text-navy hover:text-accent underline">
+              <Link to={locationHref} className="text-navy hover:text-accent underline">
                 More work we have done in {cs.suburbName}
               </Link>
             </div>
