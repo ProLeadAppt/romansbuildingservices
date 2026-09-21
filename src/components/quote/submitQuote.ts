@@ -68,10 +68,14 @@ export function trackQuoteEvent(eventName: string, params: Record<string, unknow
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
   };
-  if (typeof w.gtag === 'function') {
-    w.gtag('event', eventName, params);
+  try {
+    w.gtag?.('event', eventName, params);
+  } catch {
+    // Analytics cannot prevent a delivered quote from reaching its success screen.
   }
-  if (typeof w.clarity === 'function') {
-    w.clarity('event', eventName);
+  try {
+    w.clarity?.('event', eventName);
+  } catch {
+    // Keep optional providers independent; do not retry possibly accepted events.
   }
 }
