@@ -21,17 +21,22 @@ try {
     }
   });
   const cases = [
-    ['/case-studies/', 'Get a quote'],
-    ['/case-studies/heritage-church-brick-restoration-sydney-cbd/', 'Get a quote for similar work'],
-    ['/case-studies/concrete-cancer-repair-strata-north-shore/', 'Get a quote for similar work'],
+    ['/', 'Get a Sydney Quote', '1'],
+    ['/case-studies/', 'Get a quote', '2'],
+    ['/case-studies/heritage-church-brick-restoration-sydney-cbd/', 'Get a quote for similar work', '2'],
+    ['/case-studies/concrete-cancer-repair-strata-north-shore/', 'Get a quote for similar work', '2'],
   ];
-  for (const [route, label] of cases) {
-    await page.goto(origin + route, { waitUntil: 'domcontentloaded' });
+  for (const [route, label, expectedStep] of cases) {
+    await page.goto(origin + route, { waitUntil: 'networkidle0' });
     await page.waitForFunction((text) => [...document.querySelectorAll('button')].some((b) => b.textContent.trim() === text), {}, label);
     await page.evaluate((text) => [...document.querySelectorAll('button')].find((b) => b.textContent.trim() === text).click(), label);
     await page.waitForSelector('[role="dialog"]');
-    await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.textContent.includes('Where and when?'), { timeout: 10000 });
-    assert.equal(await page.$eval('[role="dialog"] [role="progressbar"]', (e) => e.getAttribute('aria-valuenow')), '2');
+    await page.waitForFunction((step) => document.querySelector('[role="dialog"] [role="progressbar"]')?.getAttribute('aria-valuenow') === step, { timeout: 10000 }, expectedStep);
+    assert.equal(await page.$eval('[role="dialog"] [role="progressbar"]', (e) => e.getAttribute('aria-valuenow')), expectedStep);
+    if (expectedStep === '1') {
+      console.log(`[quote-prefill] PASS ${route}: generic enquiry starts with service choice`);
+      continue;
+    }
     // Back remains available so visitors can change the preselected service.
     await page.evaluate(() => [...document.querySelectorAll('[role="dialog"] button')].find((b) => b.textContent.trim() === 'Back').click());
     await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.textContent.includes('What needs doing?'));
