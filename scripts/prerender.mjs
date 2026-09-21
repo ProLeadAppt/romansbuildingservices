@@ -326,7 +326,7 @@ async function main() {
   for (const route of routes) {
     let success = false;
     for (let attempt = 1; attempt <= 2 && !success; attempt++) {
-      if (!browser.isConnected()) {
+      if (!browser.connected) {
         browser = await launchBrowser();
       }
       try {
