@@ -24,6 +24,7 @@ export interface CaseStudy {
   clientType: string;
   suburbName: string;
   suburbSlug: string;
+  locationHref?: string;
   parentAreaName: string;
   parentAreaHref: string;
   completedYear: string;
@@ -88,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
     clientType: 'Heritage-listed Anglican church, Sydney CBD',
     suburbName: 'Sydney CBD',
     suburbSlug: 'sydney-cbd',
+    locationHref: '/areas/sydney-cbd/',
     parentAreaName: 'Sydney CBD',
     parentAreaHref: '/areas/sydney-cbd',
     completedYear: '2024',
