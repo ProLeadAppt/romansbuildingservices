@@ -102,7 +102,7 @@ function ensureDir(dir) {
 
 async function launchBrowser() {
   return puppeteer.launch({
-    headless: 'new',
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
   });
 }
@@ -326,7 +326,7 @@ async function main() {
   for (const route of routes) {
     let success = false;
     for (let attempt = 1; attempt <= 2 && !success; attempt++) {
-      if (!browser.isConnected()) {
+      if (!browser.connected) {
         browser = await launchBrowser();
       }
       try {
