@@ -46,8 +46,8 @@ const HeritageHubPage = () => {
   return (
     <>
       <SEOHead
-        title="Sydney Heritage Restoration by Era | Federation, Victorian, Colonial | Romans"
-        description="Heritage restoration guides for Sydney's main building eras. Colonial sandstone, Victorian terraces, Federation homes, Art Deco, Inter-war cottages."
+        title="Heritage Building Restoration Sydney: Era Guide | Romans"
+        description="Explore Sydney heritage building restoration by era, from Victorian brickwork to Federation homes. Find repair services and an existing project case study."
         canonical="/heritage"
       />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -82,7 +82,7 @@ const HeritageHubPage = () => {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h1
             className="font-heading text-4xl md:text-5xl text-white mb-5">
-            Heritage building restoration, by era
+            Heritage building restoration in Sydney, by era
           </h1>
           <p
             className="font-body text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -95,11 +95,9 @@ const HeritageHubPage = () => {
       <section className="bg-white py-16 md:py-20 px-4">
         <div className="max-w-3xl mx-auto font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            Most heritage work in Sydney is done badly. Not from lack of trying. Most builders are
-            good builders. They just learn the methods in trade school that work for the houses
-            being built in the year they trained. Heritage work needs methods that were standard 80
-            or 120 years ago. The materials are different, the mortar mixes are different, the
-            timber sizes are different. Modern fixes on old buildings fail.
+            Heritage building restoration starts with understanding the original brickwork,
+            stone, mortar and earlier repairs. Use these era guides to identify the questions
+            to ask about your property, then explore the repair service that matches its condition.
           </p>
           <p>
             Minas spent the early years of the business pulling apart bad heritage fixes and putting
@@ -140,6 +138,24 @@ const HeritageHubPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 px-4" aria-labelledby="heritage-next-steps">
+        <div className="max-w-3xl mx-auto">
+          <h2 id="heritage-next-steps" className="font-heading text-3xl text-navy mb-5">
+            From an era guide to a repair plan
+          </h2>
+          <p className="font-body text-text-muted leading-relaxed mb-6">
+            A building's age is a starting point, rather than a diagnosis. Explore the relevant
+            service and see how an existing heritage project was approached before discussing your property.
+          </p>
+          <ul className="font-body space-y-4 list-disc pl-6">
+            <li><Link className="text-navy underline" to="/services/heritage-restoration/">Heritage restoration services</Link> — compare the types of repair work.</li>
+            <li><Link className="text-navy underline" to="/services/heritage-restoration/heritage-brick-repairs/">Heritage brick repairs</Link> — explore repairs to older brickwork.</li>
+            <li><Link className="text-navy underline" to="/services/masonry/repointing/">Masonry repointing</Link> — understand work on deteriorating mortar joints.</li>
+            <li><Link className="text-navy underline" to="/case-studies/heritage-church-brick-restoration-sydney-cbd/">Sydney CBD heritage church case study</Link> — read the published project account.</li>
+          </ul>
         </div>
       </section>
 
