@@ -159,7 +159,7 @@ const CaseStudiesIndexPage = () => {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <QuoteCTAButton
-              service="not-sure"
+              initialService="not-sure"
               className="bg-accent hover:bg-accent/90 text-navy font-body font-semibold px-8 py-4 rounded transition-colors inline-flex items-center gap-2">
               Get a quote
               <ArrowRight className="w-4 h-4" />

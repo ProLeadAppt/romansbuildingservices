@@ -1,9 +1,15 @@
-import test from 'node:test';
+import test, { mock } from 'node:test';
+import nodemailer from 'nodemailer';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import quoteHandler, { config } from '../netlify/functions/quote-email.mjs';
+
+// Builds can have real SMTP settings. Tests must never open a mail transport.
+mock.method(nodemailer, 'createTransport', () => {
+  throw new Error('SMTP transport disabled in tests');
+});
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
