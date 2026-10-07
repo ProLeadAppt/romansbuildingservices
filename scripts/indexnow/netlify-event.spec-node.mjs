@@ -1,17 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import handler from './event-wrapper.mjs';
 import { handleDeploy } from './netlify-event.mjs';
 import { host } from './site.mjs';
+const forbidden=()=>{throw new Error('External operation forbidden');};
+const noOperations={fetcher:forbidden,storeFactory:forbidden,wait:forbidden};
 const payload={context:'production',state:'ready',published_at:'2026-10-07T00:00:00Z',site_id:'f9bfacde-e273-4e83-bb68-4364c5df9f51',ssl_url:`https://${host}`,commit_ref:'a'.repeat(40)};
-const noRequests={fetcher:()=>{throw Error('No request permitted');},storeFactory:()=>{throw Error('No store permitted');},wait:()=>{throw Error('No wait permitted');}};
-test('disabled, preview, unpublished, wrong site/host and missing SHA produce no requests',async()=>{
-  assert.match((await handleDeploy(payload,{...noRequests,env:{}})).skipped,/disabled/);
-  for(const patch of [{context:'deploy-preview'},{state:'error'},{published_at:null},{site_id:'other'},{ssl_url:'https://other.example'},{commit_ref:null}])assert.ok((await handleDeploy({...payload,...patch},{...noRequests,env:{INDEXNOW_ENABLED:'true'}})).skipped);
+test('production-shaped publication cannot access any runtime operation in any externally enabled mode',async()=>{
+ for(const INDEXNOW_MODE of ['baseline','dry-run','single-url','submit'])assert.match((await handleDeploy(payload,{...noOperations,env:{INDEXNOW_ENABLED:'true',INDEXNOW_MODE}})).skipped,/Publication locked/);
 });
-test('invalid operation fails before waiting/network/storage',async()=>{
-  await assert.rejects(handleDeploy(payload,{...noRequests,env:{INDEXNOW_ENABLED:'true',INDEXNOW_MODE:'invalid'}}),/Invalid/);
+test('preview or forged event is inert regardless of external configuration',async()=>{
+ for(const patch of [{context:'deploy-preview'},{site_id:'other'},{published_at:null},{ssl_url:'https://other.example'},{commit_ref:null}])assert.match((await handleDeploy({...payload,...patch},{...noOperations,env:{INDEXNOW_ENABLED:'true',INDEXNOW_MODE:'baseline'}})).skipped,/Publication locked/);
 });
-test('superseded event stops before store access',async()=>{
-  let waited;const result=await handleDeploy(payload,{...noRequests,env:{INDEXNOW_ENABLED:'true'},wait:ms=>{waited=ms;},fetcher:async()=>new Response(JSON.stringify({host,release:'b'.repeat(40)}))});
-  assert.equal(waited,60000);assert.match(result.skipped,/superseded/);
-});
+test('actual function wrapper returns before body parsing or store binding',async()=>{await handler({json:forbidden});});

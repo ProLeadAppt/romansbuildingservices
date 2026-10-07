@@ -1,8 +1,9 @@
 import { getText, snapshot, run } from './core.mjs';
 import { withStore } from './netlify-store.mjs';
-import { host } from './site.mjs';
+import { host, publicationLocked } from './site.mjs';
 
 export async function handleDeploy(payload, { env = process.env, fetcher = fetch, storeFactory, wait = ms => new Promise(r => setTimeout(r, ms)) } = {}) {
+  if (publicationLocked) return { skipped: 'Publication locked; separate operation approval required' };
   // The platform signature protects this event endpoint. Additional payload scope checks fail closed.
   if (payload.context !== 'production' || payload.state !== 'ready' || !payload.published_at || payload.site_id !== 'f9bfacde-e273-4e83-bb68-4364c5df9f51' || new URL(payload.ssl_url).hostname !== host || !/^[a-f0-9]{40}$/.test(payload.commit_ref || '')) return { skipped: 'not a verified production publication' };
   if (env.INDEXNOW_ENABLED !== 'true') return { skipped: 'IndexNow disabled' };

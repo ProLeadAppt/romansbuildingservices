@@ -1,7 +1,9 @@
 import { getStore } from '@netlify/blobs';
-import { handleDeploy } from '../../scripts/indexnow/netlify-event.mjs';
+import { publicationLocked } from './site.mjs';
+import { handleDeploy } from './netlify-event.mjs';
 export const config = { background: true };
 export default async function handler(request) {
+  if (publicationLocked) return;
   const { payload } = await request.json();
   try {
     const result = await handleDeploy(payload, { storeFactory: () => getStore({ name: 'indexnow-production-state', consistency: 'strong' }) });
