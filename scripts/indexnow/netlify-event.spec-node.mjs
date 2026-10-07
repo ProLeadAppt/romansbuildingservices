@@ -8,8 +8,8 @@ test('disabled, preview, unpublished, wrong site/host and missing SHA produce no
   assert.match((await handleDeploy(payload,{...noRequests,env:{}})).skipped,/disabled/);
   for(const patch of [{context:'deploy-preview'},{state:'error'},{published_at:null},{site_id:'other'},{ssl_url:'https://other.example'},{commit_ref:null}])assert.ok((await handleDeploy({...payload,...patch},{...noRequests,env:{INDEXNOW_ENABLED:'true'}})).skipped);
 });
-test('enabled submission missing key fails before waiting/network/storage',async()=>{
-  await assert.rejects(handleDeploy(payload,{...noRequests,env:{INDEXNOW_ENABLED:'true',INDEXNOW_MODE:'submit'}}),/Missing/);
+test('invalid operation fails before waiting/network/storage',async()=>{
+  await assert.rejects(handleDeploy(payload,{...noRequests,env:{INDEXNOW_ENABLED:'true',INDEXNOW_MODE:'invalid'}}),/Invalid/);
 });
 test('superseded event stops before store access',async()=>{
   let waited;const result=await handleDeploy(payload,{...noRequests,env:{INDEXNOW_ENABLED:'true'},wait:ms=>{waited=ms;},fetcher:async()=>new Response(JSON.stringify({host,release:'b'.repeat(40)}))});
