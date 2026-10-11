@@ -151,6 +151,8 @@ const EasternSuburbsPage = lazy(() => import('./pages/areas/EasternSuburbsPage')
 const NorthShorePage = lazy(() => import('./pages/areas/NorthShorePage'))
 const NorthernBeachesPage = lazy(() => import('./pages/areas/NorthernBeachesPage'))
 const InnerWestPage = lazy(() => import('./pages/areas/InnerWestPage'))
+const HawkesburyWesternSydneyPage = lazy(() => import('./pages/areas/HawkesburyWesternSydneyPage'))
+const RepairQuotesPage = lazy(() => import('./pages/learn/RepairQuotesPage'))
 const GreaterSydneyPage = lazy(() => import('./pages/areas/GreaterSydneyPage'))
 
 // Suburb pages (dynamic — rendered from data/suburbs.ts)
@@ -276,6 +278,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/areas/north-shore" element={<L><NorthShorePage /></L>} />
           <Route path="/areas/northern-beaches" element={<L><NorthernBeachesPage /></L>} />
           <Route path="/areas/inner-west" element={<L><InnerWestPage /></L>} />
+          <Route path="/areas/hawkesbury-western-sydney" element={<L><HawkesburyWesternSydneyPage /></L>} />
+          <Route path="/learn/brick-sandstone-repair-quotes-hawkesbury" element={<L><RepairQuotesPage /></L>} />
           <Route path="/areas/greater-sydney" element={<L><GreaterSydneyPage /></L>} />
 
           {/* Suburb pages (dynamic) */}

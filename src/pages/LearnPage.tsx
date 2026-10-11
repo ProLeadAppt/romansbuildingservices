@@ -44,6 +44,7 @@ const guidePaths = [
 ];
 
 const featuredGuides = [
+ { name: 'Brick and sandstone repair quotes: a Hawkesbury owner’s guide', href: '/learn/brick-sandstone-repair-quotes-hawkesbury', description: 'Owner-review draft: photographs, scope, materials and questions to compare repair quotes.' },
   {
     name: 'Masonry repair or remedial building?',
     href: '/learn/masonry-vs-remedial-building',

@@ -5,6 +5,7 @@ import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/Structure
 import { QuoteCTAButton } from '@/components/quote';
 
 const areas = [
+  { name: 'Hawkesbury & Western Sydney', short: 'Our current service focus.', long: 'North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Prepare photographs and repair details to discuss an assessment.', href: '/areas/hawkesbury-western-sydney' },
   {
     name: 'Sydney CBD',
     short: 'Heritage and commercial sandstone in the city centre.',
@@ -31,8 +32,8 @@ const areas = [
   },
   {
     name: 'Inner West',
-    short: 'Victorian terraces and Federation streets. Our home turf.',
-    long: 'Victorian terraces, Federation brick, heritage streetscapes from Newtown to Strathfield. This is where Minas lives and where most of our long-running jobs are. Plenty of original tuck-pointed brick that needs proper repointing.',
+    short: 'Victorian terraces and Federation streets.',
+    long: 'Victorian terraces, Federation brick, heritage streetscapes from Newtown to Strathfield. Plenty of original tuck-pointed brick that needs proper repointing.',
     href: '/areas/inner-west',
   },
   {
@@ -47,7 +48,7 @@ const areasFaqs = [
   {
     question: 'Do you really cover all of Sydney?',
     answer:
-      'Sydney metro, yes. We are based in Strathfield and regularly work the inner-ring suburbs, Parramatta, Burwood, Concord and Homebush. Outer fringe jobs are quoted case by case before anyone travels.',
+      'Our focus is Hawkesbury and Western Sydney, including North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Existing Sydney area guides remain useful; contact Minas to discuss your suburb, repair and availability.',
   },
   {
     question: 'How do I know which area my suburb is in?',
@@ -57,7 +58,7 @@ const areasFaqs = [
   {
     question: 'Do you charge call-out fees?',
     answer:
-      'No call-out fee for the initial site visit within Sydney metro suburbs. For far-out jobs we discuss travel before we come out so there are no surprises. Site visit and quote are free.',
+      'Ask what the proposed assessment includes and whether there is a fee before arranging it. Access, location and the repair scope affect the practical next steps.',
   },
   {
     question: 'Are area pages different to service pages?',
@@ -70,12 +71,12 @@ const ServicesAreasPage = () => (
   <>
     <SEO
       title="Sydney Areas We Cover | Masonry & Heritage Restoration | Romans"
-      description="Romans Building Services works across Sydney metro suburbs. CBD, Eastern Suburbs, North Shore, Northern Beaches, Inner West, Parramatta and Strathfield."
+      description="Masonry and restoration in Hawkesbury and Western Sydney: North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor and Blacktown."
       canonical="/areas"
     />
     <CollectionPageSchema
       name="Areas We Service"
-      description="Romans Building Services covers all of Sydney. Pick an area to see the masonry, heritage and remedial work we do there."
+      description="Explore our Hawkesbury and Western Sydney service focus and existing Sydney masonry, heritage and remedial guides."
       url="https://romansbuildingservices.com/areas"
       items={areas.map((a) => ({
         name: a.name,

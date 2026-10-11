@@ -1,3 +1,6 @@
+// Current service-area hub is linked separately from legacy suburb pages.
+export const CURRENT_SERVICE_AREA_HREF = '/areas/hawkesbury-western-sydney';
+
 // Maps each tier-1 service (by title) to the problems most relevant to it.
 // Used to render "Problems we fix" blocks on service pages.
 

@@ -108,7 +108,7 @@ export default function AboutPage() {
                   <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
                     Based in
                   </dt>
-                  <dd className="font-heading text-base text-navy leading-tight">Strathfield</dd>
+                  <dd className="font-heading text-base text-navy leading-tight">The Slopes, NSW</dd>
                   <p className="font-body text-xs text-text-muted mt-1">
                     Servicing all of Sydney
                   </p>

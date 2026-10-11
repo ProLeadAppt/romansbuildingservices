@@ -23,6 +23,7 @@ const popularSuburbs = [
   { label: 'Manly', to: '/suburbs/manly' },
   { label: 'Newtown', to: '/suburbs/newtown' },
   { label: 'Balmain', to: '/suburbs/balmain' },
+  { label: 'Hawkesbury & Western Sydney', to: '/areas/hawkesbury-western-sydney' },
   { label: 'Strathfield', to: '/suburbs/strathfield' },
 ];
 
@@ -177,7 +178,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 font-body text-sm text-white/40">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                Strathfield, NSW
+                The Slopes, NSW — serving Hawkesbury and Western Sydney
               </li>
               <li>
                 <a

@@ -135,6 +135,7 @@ export const serviceCategories: ServiceCategory[] = [
 
 // Service areas with geographic logic
 export const serviceAreas: ServiceArea[] = [
+ { id: 'hawkesbury-western-sydney', label: 'Hawkesbury & Western Sydney', description: 'Current masonry and restoration service focus', suburbs: ['North Richmond', 'Richmond', 'Kurmond', 'Kurrajong', 'Penrith', 'Windsor', 'Blacktown'], href: '/areas/hawkesbury-western-sydney' },
   {
     id: 'sydney-cbd',
     label: 'Sydney CBD',

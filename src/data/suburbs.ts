@@ -859,13 +859,13 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Strathfield Masonry & Heritage Home Restoration | Romans',
     metaDescription:
-      'Heritage home restoration, brick repointing and stonework in Strathfield. Romans Building Services is based in Strathfield — local masonry experts since 1995.',
+      'Brick repointing, sandstone and heritage masonry repair enquiries in Strathfield. Discuss materials, access and scope with Romans Building Services.',
     heroTagline:
-      'Heritage home restoration, brick repointing and stonework in Strathfield — our home base since 1995.',
+      'Brick repointing, sandstone and heritage masonry repair enquiries in Strathfield. Discuss materials, access and scope with Romans Building Services.',
     intro: [
-      'Strathfield is our home. Minas has been based here for 30 years and has worked on more homes in this suburb than anywhere else. The Federation and Interwar mansions along The Boulevarde, Homebush Road and the streets around Strathfield Park are the sort of buildings we specialise in.',
+      'For a Strathfield period home, show original brick or stone details and any previous repointing in your photographs. Material matching and conservation requirements should be considered before agreeing the scope.',
       'Heritage repointing, sandstone restoration, retaining walls, chimney rebuilds — these are all everyday jobs for us in Strathfield. Many of the grand homes here have significant decorative stonework: columns, balustrades, window surrounds, entrance porches. Keeping these intact needs the right materials and the patience to match original work.',
-      'Being local means we\'re on site faster, we know the council requirements inside out, and we\'ve probably already done work on a house near yours. If you\'re in Strathfield and need masonry work, we\'re the logical call.',
+      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
     ],
     housingContext:
       'Strathfield has Federation mansions from 1900-1915, Interwar homes from 1920s-40s, Victorian and some mid-century builds. Significant stonework is common — columns, balustrades, retaining walls, decorative detailing. Brick is usually handmade or early pressed. Clay soils cause foundation movement in some pockets. Heritage conservation covers many streets.',
@@ -879,9 +879,9 @@ const SUBURBS: Record<string, SuburbData> = {
     ],
     faqs: [
       {
-        question: 'Are you actually based in Strathfield?',
+        question: 'Can I enquire about a repair in Strathfield?',
         answer:
-          'Yes. Romans has been based in Strathfield since 1995. Minas lives locally. If you\'re in the suburb we can often be on site same-day for inspections.',
+          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
       },
       {
         question: 'Do you work on Strathfield Council heritage-listed homes?',
@@ -1447,9 +1447,9 @@ const SUBURBS: Record<string, SuburbData> = {
     heroTagline:
       'Federation home restoration, heritage repointing and retaining walls across Burwood and Croydon.',
     intro: [
-      'Burwood is our back yard. We are based in Strathfield and work across Burwood, Croydon, Enfield and the surrounding suburbs constantly. The Federation and Interwar homes along Burwood Road and the leafy streets behind them are exactly the sort of buildings we specialise in.',
+      'For a Burwood masonry enquiry, show the affected wall, original detailing and any nearby openings. Mention heritage status, earlier repairs and access restrictions when discussing a site assessment.',
       'Our Burwood work is mostly heritage repointing, chimney rebuilds, sandstone restoration on steps and detailing, and retaining walls on sloped blocks. Reactive clay soils in parts of Burwood cause foundation movement on some properties — we stitch cracks with helical bars after diagnosing whether the movement is active or finished.',
-      'Being local means we can be on site fast, we know Burwood Council heritage requirements, and we have probably already worked on a home near yours. If your Burwood property needs masonry attention, we are a natural call.',
+      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
     ],
     housingContext:
       'Burwood has Federation mansions from 1900s, Victorian homes, Interwar houses, and newer infill. Reactive clay soils cause some foundation movement. Mature gardens mean tree root issues on some blocks. Burwood Council heritage areas cover significant streets. Significant stonework on period homes — columns, balustrades, retaining walls.',
@@ -1463,9 +1463,9 @@ const SUBURBS: Record<string, SuburbData> = {
     ],
     faqs: [
       {
-        question: 'Are you actually based near Burwood?',
+        question: 'Can I enquire about a repair in Burwood?',
         answer:
-          'Yes — Romans Building Services is based in Strathfield, about 10 minutes from Burwood. We work across this area constantly. Same-day inspections are usually possible.',
+          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
       },
       {
         question: 'Do you work on Burwood Council heritage-listed homes?',
@@ -1493,7 +1493,7 @@ const SUBURBS: Record<string, SuburbData> = {
     intro: [
       'Concord is Federation and Interwar territory. Large blocks, big homes, lots of brick and sandstone detailing. Our work here is similar to Burwood and Strathfield — heritage repointing, chimney repair, retaining walls on sloped streets, and structural crack stitching where foundations have moved over the decades.',
       'Concord has good quality original brickwork on most homes, which means proper lime mortar repointing keeps them in shape for another 50+ years. Cement repointing done in past decades is a common problem we reverse — removing the hard cement and repointing with lime that lets the bricks breathe.',
-      'We are 15 minutes from our Strathfield base to most parts of Concord, so response is quick and we know the area well.',
+      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
     ],
     housingContext:
       'Concord has Federation homes from 1900s, Interwar houses from 1920s–40s, Victorian properties, and newer builds. Reactive clay in some pockets causes foundation movement. Sandstone detailing common on period homes. Canada Bay Council covers the area with its own heritage policies.',
@@ -1531,11 +1531,11 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Homebush Masonry & Home Restoration | Romans',
     metaDescription:
-      'Heritage home restoration, brick repointing and retaining walls in Homebush. Romans Building Services is local — based in neighbouring Strathfield.',
+      'Brick repointing, sandstone and masonry repairs. Discuss your property, access and repair scope with Romans Building Services.',
     heroTagline:
       'Heritage home restoration, brick repointing and retaining walls across Homebush and Homebush West.',
     intro: [
-      'Homebush is next door to our Strathfield base. We work across Homebush constantly — Federation and Interwar homes on the quieter streets, Victorian terraces in pockets, and the occasional heritage restoration project. Being local means fast response and deep familiarity with the area.',
+      'For a Homebush repair, include a wide view of the facade and close photographs of failing mortar, damaged brick or sandstone. Note occupancy and access so an assessment can be planned around the property.',
       'Our Homebush jobs are mostly repointing, chimney repair, sandstone work and retaining walls. The building stock is similar to Strathfield and Burwood — good quality period homes that need proper heritage-grade materials to stay in shape.',
       'Reactive clay soils in parts of Homebush cause foundation movement on some properties. We diagnose with crack monitors, stitch cracks with helical bars, and underpin where the movement is still active.',
     ],
@@ -1551,9 +1551,9 @@ const SUBURBS: Record<string, SuburbData> = {
     ],
     faqs: [
       {
-        question: 'Are you local to Homebush?',
+        question: 'Can I enquire about a repair in Homebush?',
         answer:
-          'Yes — we are based in Strathfield, about 5 minutes from Homebush. Same-day inspections are usually possible and we know the area intimately.',
+          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
       },
       {
         question: 'How much does heritage repointing cost on a Homebush Federation home?',

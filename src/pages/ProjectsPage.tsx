@@ -44,7 +44,7 @@ const galleryFaqs = [
   {
     question: 'Where do you work?',
     answer:
-      'Across Sydney metro. Our home turf is Strathfield, the Inner West and Eastern Suburbs, and we regularly work north to the Northern Beaches and west through Parramatta, Burwood, Concord and Homebush.',
+      'Our current service focus is Hawkesbury and Western Sydney: North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. The gallery also preserves earlier Sydney projects.',
   },
 ];
 

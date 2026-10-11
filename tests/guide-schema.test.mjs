@@ -13,7 +13,7 @@ test('prerendered advice collection identifies every featured guide with its can
   const collection = schemas.find((schema) => schema['@type'] === 'CollectionPage');
   assert.ok(collection, 'Advice page must expose its guide collection');
   const items = collection.mainEntity.itemListElement;
-  assert.equal(items.length, 6);
+  assert.equal(items.length, 7);
   assert.equal(collection.mainEntity.numberOfItems, items.length);
   for (const item of items) {
     assert.equal(typeof item.url, 'string', `${item.name} is missing its destination`);

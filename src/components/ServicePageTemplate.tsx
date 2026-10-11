@@ -5,7 +5,7 @@ import { ServiceSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { SEOHead } from '@/components/SEOHead';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
-import { SERVICE_TO_PROBLEMS, SERVICE_TO_SUBURBS } from '@/data/serviceProblemMap';
+import { CURRENT_SERVICE_AREA_HREF, SERVICE_TO_PROBLEMS, SERVICE_TO_SUBURBS } from '@/data/serviceProblemMap';
 import { getProblem } from '@/data/problems';
 import { getSuburb } from '@/data/suburbs';
 import { QuoteCTAButton } from '@/components/quote';
@@ -252,8 +252,8 @@ export const ServicePageTemplate = ({
           </div>
           <dl className="grid grid-cols-2 gap-3 text-sm">
             <div className="rounded-md bg-bg-light p-4">
-              <dt className="font-body text-text-muted">Base</dt>
-              <dd className="font-body font-semibold text-navy">Strathfield</dd>
+              <dt className="font-body text-text-muted">Service focus</dt>
+              <dd className="font-body font-semibold text-navy"><Link to={CURRENT_SERVICE_AREA_HREF} className="underline">Hawkesbury &amp; Western Sydney</Link></dd>
             </div>
             <div className="rounded-md bg-bg-light p-4">
               <dt className="font-body text-text-muted">Updated</dt>

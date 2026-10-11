@@ -2,12 +2,7 @@
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
   legalName: "Romans Building Services",
-  address: {
-    suburb: "Strathfield",
-    state: "NSW",
-    postcode: "2135",
-    country: "Australia"
-  },
+  serviceLocality: "The Slopes, NSW",
   // E.164 form for schema.org. The display form is 0414 922 276.
   // Assembled at runtime to keep source readable for code review.
   telephone: ["+", "61", "414", "922", "276"].join(""),
@@ -16,28 +11,9 @@ export const BUSINESS_INFO = {
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
   abn: "49 641 892 677",
-  coordinates: {
-    latitude: -33.8796,
-    longitude: 151.0942
-  },
-  areaServed: [
-    // 35 Sydney suburbs Romans Building Services works across.
-    // Kept in sync with src/data/suburbs.ts (the list of suburb pages).
-    // Listed in this order: CBD + Harbour, Eastern Suburbs, North Shore,
-    // Northern Beaches, Inner West, Western Sydney, Northern Suburbs, Eastern Beaches.
-    "The Rocks", "Circular Quay", "Darlinghurst", "Surry Hills", "Pyrmont", "Ultimo",
-    "Paddington", "Woollahra", "Bondi", "Double Bay", "Bellevue Hill", "Randwick", "Coogee",
-    "Mosman", "Neutral Bay", "Cremorne", "St Leonards", "Chatswood", "Lane Cove",
-    "Manly", "Dee Why", "Avalon", "Collaroy", "Freshwater",
-    "Newtown", "Balmain", "Marrickville", "Leichhardt", "Glebe", "Erskineville",
-    "Parramatta", "Strathfield", "Burwood", "Concord", "Homebush"
-  ],
+  areaServed: ["North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown", "Hawkesbury", "Western Sydney"],
   // Back-compat alias used by some consumers
-  serviceAreas: [
-    "Sydney", "Strathfield", "Sydney CBD",
-    "Eastern Suburbs", "North Shore", "Northern Beaches",
-    "Inner West", "Sydney metro"
-  ],
+  serviceAreas: ["Hawkesbury", "Western Sydney", "Surrounding areas by enquiry"],
   services: [
     "Masonry Services",
     "Building Restoration",
@@ -125,24 +101,13 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
   url: BUSINESS_INFO.website,
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
   foundingDate: BUSINESS_INFO.foundingDate,
   priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: BUSINESS_INFO.address.suburb,
-    addressRegion: BUSINESS_INFO.address.state,
-    postalCode: BUSINESS_INFO.address.postcode,
-    addressCountry: BUSINESS_INFO.address.country
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: BUSINESS_INFO.coordinates.latitude,
-    longitude: BUSINESS_INFO.coordinates.longitude
-  },
+  // Service-area business: no public street address or home coordinates.
   areaServed: BUSINESS_INFO.areaServed.map((area) => ({
     "@type": "Place",
     name: area,
@@ -162,7 +127,7 @@ const localBusinessSchema: SchemaObject = {
     telephone: BUSINESS_INFO.telephone,
     contactType: "customer service",
     availableLanguage: "English",
-    areaServed: "Sydney, NSW"
+    areaServed: BUSINESS_INFO.areaServed
   },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",

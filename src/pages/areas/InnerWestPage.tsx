@@ -42,7 +42,7 @@ const InnerWestPage = () => (
         </h1>
         <p
           className="font-body text-white/70 max-w-xl mx-auto text-lg">
-          Terrace houses, brick restoration and heritage streetscapes. This is our home turf.
+          Terrace houses, brick restoration and heritage streetscapes. Explore our existing Inner West service guide.
         </p>
       </div>
     </section>
@@ -52,7 +52,7 @@ const InnerWestPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            The Inner West is where we are based, and we know it inside out. From the rows of Victorian terraces in Newtown and Marrickville to the grand old homes around Strathfield, this area is full of character buildings that need proper care. We have been looking after them for over 30 years.
+            Our earlier Sydney work includes the Inner West. From the rows of Victorian terraces in Newtown and Marrickville to the grand old homes around Strathfield, this area is full of character buildings that need proper care. We have been looking after them for over 30 years.
           </p>
           <p className="font-body text-text-secondary mb-6">
             In Leichhardt and Balmain, a lot of our work is tuckpointing and brick restoration on terraces. The original lime mortar breaks down over time and needs to be carefully raked out and replaced. We match the colour and profile of the original joints so the finished job looks as it should.

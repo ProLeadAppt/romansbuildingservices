@@ -398,7 +398,7 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
             Have a job like this one?
           </h2>
           <p className="font-body text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Send a few photos and a short description. Minas calls back the same day with either a quote, a site visit time, or an honest "not our job."
+            Send a few photos and a short description. Minas can discuss the scope, whether a site assessment is needed, and practical next steps.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <QuoteCTAButton

@@ -7,12 +7,12 @@ const contactFaqs = [
   {
     question: 'How quickly can Minas come out for a quote?',
     answer:
-      'Most Sydney metro quote visits happen within 2 to 5 business days. For active leaks or unsafe structural issues we can usually be on-site within 24 hours. Call 0414 922 276 directly to lock in a time.'
+      'Call Minas on 0414 922 276 with your suburb, photographs and repair details. Assessment timing depends on the scope, access and availability; discuss the next step before arranging a visit.'
   },
   {
     question: 'Is the quote really free?',
     answer:
-      'Yes — site visits and written quotes are free across the Sydney metro area. You get a fixed-price written scope, not an hourly-rate estimate, so there are no surprise add-ons once work starts.'
+      'Before arranging an assessment, ask what it includes and whether there is a fee. A repair quote and a diagnostic investigation can involve different work; clarify scope, exclusions and any specialist advice at the start.'
   },
   {
     question: 'Do you do small jobs or only full restorations?',
@@ -25,9 +25,9 @@ const contactFaqs = [
       'Yes. Romans Building Services holds an NSW masonry contractor licence, full public liability insurance, and workers compensation. Documentation is provided with every quote for strata, body corporate and insurance work.'
   },
   {
-    question: 'Which Sydney areas do you service?',
+    question: 'Which local areas do you service?',
     answer:
-      'All Sydney metro suburbs, with a focus on the Inner West, Eastern Suburbs, North Shore, Northern Beaches, Hills District and CBD. Common service areas include Strathfield, Paddington, Newtown, Balmain, Glebe, Mosman, Willoughby, Castle Hill and Parramatta.'
+      'North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Include your suburb and a description of the repair so we can discuss the scope and practical next steps.'
   },
   {
     question: 'How do I pay?',
@@ -40,8 +40,8 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Romans | Sydney Quote"
-        description="Call Minas on 0414 922 276 for a Sydney quote. Romans handles masonry, heritage, structural and remedial work from Strathfield."
+        title="Contact Romans | Hawkesbury & Western Sydney"
+        description="Call Minas on 0414 922 276 for a masonry repair enquiry. Romans handles masonry, heritage, structural and remedial work across Hawkesbury and Western Sydney."
         canonical="/contact"
       />
       <ContactPageSchema />
@@ -57,7 +57,7 @@ export default function ContactPage() {
             </h1>
             <p
               className="text-white/80 text-lg max-w-2xl mx-auto">
-              Call Minas directly, or fill in the quick form. We will get back to you within 24 hours.
+              Call Minas directly, or fill in the quick form with your suburb and repair details to discuss the next step.
             </p>
           </div>
         </section>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       Service Area
                     </span>
                   </div>
-                  <p className="text-text-primary font-semibold">Sydney metro suburbs</p>
+                  <p className="text-text-primary font-semibold">Hawkesbury &amp; Western Sydney</p>
                 </div>
 
                 <div className="bg-bg-light rounded-lg p-6">

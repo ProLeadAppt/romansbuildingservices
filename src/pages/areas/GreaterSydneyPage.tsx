@@ -52,7 +52,7 @@ const GreaterSydneyPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            Romans Building Services is based in Strathfield and works across the Sydney metro for masonry, restoration and remedial building jobs. This page covers the suburbs around our home base, including Parramatta, Burwood, Concord, Homebush and nearby streets where older brick homes, apartment blocks and retaining walls need proper assessment.
+            Romans Building Services focuses on Hawkesbury and Western Sydney. This existing Sydney metro guide remains available for enquiries about older brick homes, apartment blocks and retaining walls in Parramatta, Burwood, Concord, Homebush and surrounding suburbs. Include your suburb when discussing availability and scope.
           </p>
           <p className="font-body text-text-secondary mb-6">
             Around Strathfield, Burwood and Concord, we see reactive clay movement, old lime mortar, cracked brickwork and failing retaining walls. Some jobs need structural crack stitching, some need drainage fixed first, and some need underpinning. Minas checks the cause before recommending the repair.

@@ -18,6 +18,17 @@ export interface AreaProfile {
 }
 
 export const AREAS: Record<string, AreaProfile> = {
+  // One useful hub; no automatic problem × area pages for this new coverage.
+  'hawkesbury-western-sydney': {
+    slug: 'hawkesbury-western-sydney',
+    name: 'Hawkesbury and Western Sydney',
+    shortName: 'Hawkesbury and Western Sydney',
+    href: '/areas/hawkesbury-western-sydney',
+    housingProfile: 'Repair scope depends on the individual building, material, access, drainage and any heritage or engineering requirements. Share photographs and existing reports before an assessment.',
+    suburbs: [],
+    topProblems: [],
+    problemNotes: {},
+  },
   'sydney-cbd': {
     slug: 'sydney-cbd',
     name: 'Sydney CBD',
