@@ -2,12 +2,26 @@ import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 
+const articleSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'Article',
+ headline: "Brick and sandstone repair quotes: a Hawkesbury owner's guide",
+ description: 'Prepare photographs, compare repair scopes and ask about mortar, access and heritage requirements for a brick or sandstone repair quote.',
+ datePublished: '2026-10-11',
+ dateModified: '2026-10-11',
+ url: 'https://romansbuildingservices.com/learn/brick-sandstone-repair-quotes-hawkesbury/',
+ mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://romansbuildingservices.com/learn/brick-sandstone-repair-quotes-hawkesbury/' },
+ author: { '@type': 'Organization', name: 'Romans Building Services', url: 'https://romansbuildingservices.com' },
+ publisher: { '@type': 'Organization', name: 'Romans Building Services', url: 'https://romansbuildingservices.com' },
+ inLanguage: 'en-AU',
+};
+
 export default function RepairQuotesPage() {
  return <>
- <SEO title="Brick & Sandstone Repair Quotes in Hawkesbury | Romans" description="Prepare photographs, compare repair scopes and ask about mortar, access and heritage requirements for a brick or sandstone repair quote." canonical="/learn/brick-sandstone-repair-quotes-hawkesbury" />
+ <SEO title="Brick & Sandstone Repair Quotes in Hawkesbury | Romans" description="Prepare photographs, compare repair scopes and ask about mortar, access and heritage requirements for a brick or sandstone repair quote." canonical="/learn/brick-sandstone-repair-quotes-hawkesbury" schemaJson={articleSchema} />
  <BreadcrumbSchema items={[{ label: 'Home', href: '/' }, { label: 'Learn', href: '/learn' }, { label: 'Repair quote preparation', href: '/learn/brick-sandstone-repair-quotes-hawkesbury' }]} />
  <article className="container mx-auto px-4 py-20 max-w-3xl font-body text-text-secondary leading-7 [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:text-navy [&_h1]:mb-6 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:text-navy [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_li]:mb-2 [&_a]:underline">
- <p>Draft for owner review — not published</p>
+ <p>Published <time dateTime="2026-10-11">11 October 2026</time></p>
  <h1>Brick and sandstone repair quotes: a Hawkesbury owner's guide</h1>
  <p>When mortar starts falling out or a crack appears in a wall, it can be hard to know what to ask for. Repointing? Brick replacement? Sandstone repair? An engineer?</p>
  <p>You do not need to diagnose the problem before contacting a contractor. A useful first enquiry describes what you can see, where it is and whether it has changed. That gives the contractor a starting point for deciding what needs closer inspection and what a repair quote should include.</p>

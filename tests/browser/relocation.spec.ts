@@ -28,13 +28,14 @@ for (const path of ['/contact/', '/about/', '/areas/', '/areas/hawkesbury-wester
   });
 }
 
-test('hub covers the agreed areas and draft has no publication date', async ({ page }) => {
+test('hub covers agreed areas and approved article has truthful publication date', async ({ page }) => {
   await page.goto('/areas/hawkesbury-western-sydney/');
   for (const area of ['North Richmond', 'Richmond', 'Kurmond', 'Kurrajong', 'Penrith', 'Windsor', 'Blacktown']) {
     await expect(page.getByRole('heading', { name: area, exact: true })).toBeVisible();
   }
   await page.goto('/learn/brick-sandstone-repair-quotes-hawkesbury/');
-  await expect(page.locator('main')).toContainText('Draft for owner review');
+  await expect(page.locator('main')).not.toContainText('Draft for owner review');
+  await expect(page.locator('time[datetime="2026-10-11"]')).toHaveText('11 October 2026');
   const typography = await page.locator('article').evaluate(article => ({
     headingSize: parseFloat(getComputedStyle(article.querySelector('h1')!).fontSize),
     paragraphSpacing: parseFloat(getComputedStyle(article.querySelector('p')!).marginBottom),
@@ -43,6 +44,6 @@ test('hub covers the agreed areas and draft has no publication date', async ({ p
   expect(typography.headingSize).toBeGreaterThanOrEqual(28);
   expect(typography.paragraphSpacing).toBeGreaterThanOrEqual(16);
   expect(typography.listStyle).toBe('disc');
-  expect((await page.locator('script[type="application/ld+json"]').allTextContents()).join('')).not.toContain('datePublished');
+  expect((await page.locator('script[type="application/ld+json"]').allTextContents()).join('')).toContain('"datePublished":"2026-10-11"');
   await expect(page.getByRole('link', { name: 'Discuss your repair with Romans' })).toHaveAttribute('href', /^\/contact\/?$/);
 });
