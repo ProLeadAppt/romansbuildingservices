@@ -1,93 +1,118 @@
 import { useEffect, useRef, useState } from 'react';
-import heroVideo from '@/assets/videos/romansstone_1705577418_3282943687956227913_2394650725.mp4';
+import { Pause, Play } from 'lucide-react';
 import { QuoteCTAButton } from '@/components/quote';
 
-export const RomansPremiumHeroSection = () => {
-  const [loadVideo, setLoadVideo] = useState(false);
+export const HERO_STILL = '/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp';
+// Verified authentic-photo camera loop; local review only until owner approval.
+const REVIEW_HERO_LOOP = '/videos/minas-sandstone-hero-loop.mp4';
+
+type Connection = EventTarget & { saveData?: boolean };
+
+export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { videoSrc?: string } = {}) => {
+  const [eligible, setEligible] = useState(false);
+  const [requested, setRequested] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const enableVideo = () => {
-      setLoadVideo(true);
-    };
-
-    window.addEventListener('pointerdown', enableVideo, { once: true, passive: true });
-    window.addEventListener('keydown', enableVideo, { once: true });
-
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const connection = (navigator as Navigator & { connection?: Connection }).connection;
+    const update = () => setEligible(!motion.matches && !connection?.saveData);
+    update();
+    motion.addEventListener('change', update);
+    connection?.addEventListener('change', update);
     return () => {
-      window.removeEventListener('pointerdown', enableVideo);
-      window.removeEventListener('keydown', enableVideo);
+      motion.removeEventListener('change', update);
+      connection?.removeEventListener('change', update);
     };
   }, []);
 
   useEffect(() => {
-    if (!loadVideo || !videoRef.current) return;
-    videoRef.current.load();
-    void videoRef.current.play().catch(() => {
-      // The poster remains visible if a browser blocks autoplay.
+    if (!videoSrc || !eligible || !visible) return;
+    const request = () => setRequested(true);
+    window.addEventListener('pointerdown', request, { once: true, passive: true });
+    window.addEventListener('keydown', request, { once: true });
+    return () => {
+      window.removeEventListener('pointerdown', request);
+      window.removeEventListener('keydown', request);
+    };
+  }, [videoSrc, eligible, visible]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting);
+      if (!entry.isIntersecting) videoRef.current?.pause();
+    }, { threshold: 0.1 });
+    if (mediaRef.current) observer.observe(mediaRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const loadVideo = Boolean(videoSrc && eligible && requested);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !loadVideo) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting || document.hidden) video.pause();
     });
+    if (mediaRef.current) observer.observe(mediaRef.current);
+    const visibility = () => { if (document.hidden) video.pause(); };
+    document.addEventListener('visibilitychange', visibility);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', visibility);
+      video.pause();
+    };
   }, [loadVideo]);
 
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) void video.play().catch(() => setPlaying(false));
+    else video.pause();
+  };
+
   return (
-    <section data-p2-section="hero" className="relative min-h-screen flex items-center overflow-hidden bg-navy">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          ref={videoRef}
-          autoPlay={loadVideo}
-          muted
-          loop
-          playsInline
-          preload="none"
-          aria-hidden="true"
-          poster="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
-          className="w-full h-full object-cover"
-        >
-          {loadVideo && <source src={heroVideo} type="video/mp4" />}
-        </video>
-      </div>
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/88 via-navy/68 to-navy/28" />
-
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-28 lg:py-32">
-        <div className="max-w-2xl lg:max-w-[55%]">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-amber">Sydney masonry and remedial construction since 1995</p>
-
-          <h1 className="font-heading text-4xl leading-[1.06] text-white sm:text-5xl lg:text-6xl">
-            Repair the problem. Preserve what is still doing its job.
+    <section data-p2-section="hero" aria-labelledby="hero-heading" className="bg-navy text-white">
+      <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.08fr_1fr]">
+        <div data-hero-copy className="relative z-10 flex flex-col justify-center bg-navy px-6 pb-10 pt-28 sm:px-10 lg:px-12 lg:pb-16 lg:pt-36">
+          <p className="mb-5 font-body text-sm font-semibold uppercase tracking-[0.16em] text-amber">Hawkesbury &amp; Western Sydney</p>
+          <h1 id="hero-heading" className="max-w-xl font-heading text-[2.5rem] leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-[3.6rem]">
+            Brick, stone &amp; sandstone repairs.
           </h1>
-
-          <p className="mt-5 max-w-lg text-base leading-7 text-white/70 sm:text-lg">
-            Minas Romanakis. Brick, stone, sandstone, block and concrete work across Sydney. Owner-led, straight-talking and built for repairs that last.
+          <p className="mt-6 max-w-lg font-body text-base leading-7 text-white sm:text-lg">
+            Talk directly with Minas Romanakis about masonry repairs, structural work and heritage restoration. Owner-led since 1995.
           </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <QuoteCTAButton className="inline-flex min-h-12 items-center justify-center rounded-md bg-amber px-7 py-3 font-body font-semibold text-navy transition-colors hover:bg-amber/90">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <QuoteCTAButton className="inline-flex min-h-12 items-center justify-center rounded-md bg-amber px-7 py-3 font-body font-semibold text-navy transition-colors hover:bg-amber-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               Get a Sydney Quote
             </QuoteCTAButton>
-            <a href="tel:0414922276" className="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-white/60 px-7 py-3 font-body font-medium text-white transition-colors hover:border-white hover:bg-white/10">
+            <a href="tel:0414922276" className="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-white px-6 py-3 font-body font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber">
               Call Minas
             </a>
           </div>
-
-          <div className="mt-4 font-body text-sm text-white/50">
-            Or browse the <a href="/case-studies" className="underline decoration-white/30 underline-offset-4 hover:decoration-white">case studies</a> and <a href="/problems" className="underline decoration-white/30 underline-offset-4 hover:decoration-white">problem guides</a>.
+          <p className="mt-6 max-w-md font-body text-sm leading-6 text-white">
+            North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/30 pt-5 font-body text-sm text-white">
+            <span>Established 1995</span><span>Owner-led</span><span>Licenced &amp; insured</span>
           </div>
         </div>
-      </div>
-
-      {/* Credential strip */}
-      <div className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-navy/90 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-8 gap-y-1 px-6 py-3 lg:justify-start">
-          {['Est. 1995', 'Owner-led', 'Sydney-wide', 'Licenced & insured'].map((item) => (
-            <span key={item} className="font-body text-xs uppercase tracking-[0.2em] text-white/55">
-              {item}
-            </span>
-          ))}
+        <div ref={mediaRef} data-hero-media className="relative isolate aspect-[720/846] overflow-hidden bg-navy lg:aspect-auto lg:min-h-[680px]">
+          <img src={HERO_STILL} alt="Minas Romanakis working sandstone by hand with a mallet and chisel" width="720" height="846" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-[50%_58%] lg:object-[50%_50%]" />
+          {loadVideo && (
+            <video ref={videoRef} src={videoSrc} muted loop playsInline autoPlay preload="none" aria-hidden="true" tabIndex={-1} poster={HERO_STILL} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} className="absolute inset-0 h-full w-full object-cover object-[50%_58%] lg:object-[50%_50%]" />
+          )}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-8">
+            <p className="rounded bg-navy px-3 py-2 font-body text-sm leading-5 text-white">Minas Romanakis<br /><span className="font-semibold">Owner &amp; stonemason</span></p>
+            {loadVideo && (
+              <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause background video' : 'Play background video'} aria-pressed={!playing} className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-full border-2 border-white bg-navy text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber">
+                {playing ? <Pause size={20} aria-hidden="true" /> : <Play size={20} aria-hidden="true" />}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>

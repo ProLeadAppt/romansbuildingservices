@@ -50,7 +50,7 @@ test('quote survey reaches contact details without a runtime failure', async ({ 
 test('hero video waits for interaction instead of competing with the initial page load', async ({ page }) => {
   const videoRequests: string[] = [];
   page.on('request', (request) => {
-    if (request.url().includes('romansstone_1705577418') && /\.mp4(?:\?|$)/i.test(request.url())) {
+    if (request.url().includes('minas-sandstone-hero-loop') && /\.mp4(?:\?|$)/i.test(request.url())) {
       videoRequests.push(request.url());
     }
   });
@@ -59,8 +59,10 @@ test('hero video waits for interaction instead of competing with the initial pag
   await page.waitForTimeout(500);
   expect(videoRequests).toEqual([]);
 
+  await page.locator('[data-hero-media]').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(150);
   await page.keyboard.press('Tab');
-  await expect(page.locator('video source[src*="romansstone_1705577418"]')).toHaveCount(1);
+  await expect(page.locator('[data-hero-media] video[src*="minas-sandstone-hero-loop"]')).toHaveCount(1);
 });
 
 test('phone links emit a conversion event without per-link wiring', async ({ page }) => {

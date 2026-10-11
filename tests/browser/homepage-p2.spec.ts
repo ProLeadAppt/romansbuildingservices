@@ -133,9 +133,13 @@ test('reduced-motion visitors receive the full journey without non-essential ani
     expect(styles.transform).toBe('none');
   }
 
-  const videos = page.locator('[data-p2-section="hero"] video, [data-p2-section="founder-standard"] video');
-  await expect(videos).toHaveCount(2);
-  for (let index = 0; index < 2; index += 1) {
+  const hero = page.locator('[data-p2-section="hero"]');
+  await expect(hero.locator('img')).toBeVisible();
+  await expect(hero.locator('img')).toHaveAttribute('src', /romansstone_1572378831/);
+  await expect(hero.locator('video')).toHaveCount(0);
+  const videos = page.locator('[data-p2-section="founder-standard"] video');
+  await expect(videos).toHaveCount(1);
+  for (let index = 0; index < 1; index += 1) {
     await expect(videos.nth(index)).toBeVisible();
     const mediaState = await videos.nth(index).evaluate((video: HTMLVideoElement) => ({
       display: getComputedStyle(video).display,
