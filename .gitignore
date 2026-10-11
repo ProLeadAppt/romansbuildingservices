@@ -29,3 +29,5 @@ test-results/
 .hermes/evidence/*.png
 
 *.tsbuildinfo
+
+review-dist/
