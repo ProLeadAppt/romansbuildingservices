@@ -1,285 +1,129 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
+import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 
 const faqs = [
   {
-    question: 'What is concrete cancer?',
-    answer:
-      'Concrete cancer is the breakdown of reinforced concrete when moisture and contaminants reach the steel reinforcement, causing the steel to rust and expand and the surrounding concrete to crack and spall.',
+    "question": "Can I paint over concrete cancer?",
+    "answer": "Painting does not treat corroded reinforcement or restore damaged concrete. A coating may form part of an appropriate repair system after the underlying condition has been assessed."
   },
   {
-    question: 'Why does it happen so often in Sydney apartments?',
-    answer:
-      'Sydney’s coastal exposure, older apartment stock, balconies and slab edges are a common combination for corrosion and spalling if the concrete has not been maintained properly.',
+    "question": "Is concrete cancer only a coastal problem?",
+    "answer": "No. Marine exposure is one risk factor, but carbonation, moisture and other building conditions can also contribute. Inland buildings can be affected."
   },
   {
-    question: 'Can I just patch the broken bit?',
-    answer:
-      'Usually not. If the corrosion source is still active, a patch alone will fail again. The repair needs to address the steel, the surrounding concrete and the water pathway.',
+    "question": "Can it be diagnosed from a photo?",
+    "answer": "Photos can help start an enquiry. They cannot establish the extent of hidden damage or confirm structural safety."
   },
   {
-    question: 'Is concrete cancer a strata issue?',
-    answer:
-      'Very often, yes. On apartment blocks it commonly affects balconies, facades, parapets and car parks, so strata managers usually need an assessment and a proper repair scope.',
+    "question": "Will a repair last a set number of years?",
+    "answer": "That depends on the cause, the repair design, workmanship, exposure and ongoing maintenance. Ask about the proposed system and its specific terms; a general article cannot promise a fixed lifespan."
   },
   {
-    question: 'How urgent is concrete cancer?',
-    answer:
-      'If steel is exposed or concrete is falling, it should be assessed quickly. The longer moisture and salt stay in the structure, the more the repair grows.',
-  },
+    "question": "Can Romans help with the next step?",
+    "answer": "Romans works on concrete, masonry and remedial repairs. Describe the building, the visible issue and the suburb so the team can discuss whether a site assessment or another specialist is needed."
+  }
 ];
-
-const steps = [
-  {
-    title: 'Find the spalling and rust staining',
-    body: 'Look for cracked concrete, rust marks, delamination, exposed steel and chunks falling from slab edges or balcony undersides.',
-  },
-  {
-    title: 'Check how far the corrosion has spread',
-    body: 'The visible damage is often only the bit you can see. The repair has to account for the steel and concrete beyond the surface patch.',
-  },
-  {
-    title: 'Stop the water getting back in',
-    body: 'Without sealing the source — drainage, waterproofing, joints or coating — the problem usually comes back.',
-  },
-  {
-    title: 'Repair the concrete and the steel properly',
-    body: 'A proper job includes breaking out damaged concrete, treating or replacing corroded reinforcement, then reinstating the structure.',
-  },
-];
-
 const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Concrete Cancer in Sydney Apartments | What It Is and What to Do',
-  description: 'A practical guide to concrete cancer in Sydney apartments and strata buildings: the warning signs, the cause, and the right repair process.',
-  url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
-  },
-  isPartOf: {
-    '@type': 'CollectionPage',
-    '@id': 'https://romansbuildingservices.com/learn',
-  },
-  author: {
-    '@type': 'Organization',
-    name: 'Romans Building Services',
-    url: 'https://romansbuildingservices.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Romans Building Services',
-    logo: { '@type': 'ImageObject', url: 'https://romansbuildingservices.com/og-image.png' },
-  },
-  about: [
-    { '@type': 'Thing', name: 'Concrete cancer' },
-    { '@type': 'Thing', name: 'Reinforced concrete' },
-    { '@type': 'Thing', name: 'Sydney apartments' },
-  ],
-  keywords: ['concrete cancer', 'spalling', 'Sydney', 'strata buildings'],
+ '@context': 'https://schema.org', '@type': 'Article',
+ headline: "What causes concrete cancer?",
+ description: "Learn what causes concrete cancer, which signs need attention and what Sydney owners should ask before repairs. A clear guide from Romans Building Services.",
+ url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney/',
+ mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://romansbuildingservices.com/learn/concrete-cancer-sydney/' },
+ dateModified: '2026-10-12',
+ inLanguage: 'en-AU',
+ author: { '@type': 'Organization', name: 'Romans Building Services', url: 'https://romansbuildingservices.com' },
+ publisher: { '@type': 'Organization', name: 'Romans Building Services', logo: { '@type': 'ImageObject', url: 'https://romansbuildingservices.com/og-image.png' } },
+ image: { '@type': 'ImageObject', url: 'https://romansbuildingservices.com/images/learn/concrete-cancer/concrete-cutaway-text-free-1536.webp', width: 1536, height: 1024, caption: "AI-generated educational cutaway showing how reinforcement corrosion can crack and spall concrete. Cover is partly removed to reveal the steel. Not to scale or a construction detail." },
 };
 
-const ConcreteCancerSydneyPage = () => {
-  const breadcrumbs = [
-    { label: 'Home', href: '/' },
-    { label: 'Learn', href: '/learn' },
-    { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney' },
-  ];
-
-  const relatedPages = [
-    {
-      name: 'Learn hub',
-      url: 'https://romansbuildingservices.com/learn',
-      description: 'The main SEO / GEO / AEO authority hub for the site.',
-    },
-    {
-      name: 'Case studies index',
-      url: 'https://romansbuildingservices.com/case-studies',
-      description: 'Proof pages that show the work behind the advice.',
-    },
-    {
-      name: 'Masonry vs remedial building',
-      url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
-      description: 'Helps users decide whether the job is a masonry repair or a broader remedial scope.',
-    },
-    {
-      name: 'Signs you need repointing',
-      url: 'https://romansbuildingservices.com/learn/repointing-signs',
-      description: 'The mortar-failure guide that often sits next to concrete repair intent.',
-    },
-    {
-      name: 'Remedial building service',
-      url: 'https://romansbuildingservices.com/services/remedial-building',
-      description: 'The broader service page for strata, defect and structural remediation.',
-    },
-  ];
-
-  return (
-    <>
-      <SEOHead
-        title="Concrete Cancer in Sydney Apartments | What It Is and What to Do"
-        description="A practical guide to concrete cancer in Sydney apartments and strata buildings: the warning signs, the cause, and the right repair process."
-        canonical="/learn/concrete-cancer-sydney"
-        ogType="article"
-        schemaJson={articleSchema}
-      />
-      <CollectionPageSchema
-        name="Concrete cancer in Sydney apartments — related guides and service pages"
-        description="Supporting pages for concrete cancer diagnosis, remedial building and mortar failure in Sydney."
-        url="https://romansbuildingservices.com/learn/concrete-cancer-sydney"
-        items={relatedPages}
-      />
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} />
-
-      <section className="bg-navy py-24 texture-grain">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <p className="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-4">
-            Learn / remediation guide
-          </p>
-          <h1 className="font-heading text-4xl md:text-5xl text-white mb-5">
-            Concrete cancer in Sydney apartments
-          </h1>
-          <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            If the concrete is cracking, rusting or falling away from a balcony or facade, the damage is usually bigger than the patch you can see.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 md:py-20 px-4">
-        <div className="max-w-3xl mx-auto space-y-5 font-body text-text-muted text-base md:text-lg leading-relaxed">
-          <p>
-            Concrete cancer is the name people use when reinforced concrete starts breaking down and exposing rusted steel. Once the steel expands, the concrete around it cracks and falls away. On apartment buildings and strata assets, that can show up on balconies, slab edges, parapets, staircases and car park structures.
-          </p>
-          <p>
-            Sydney gets this problem a lot because many buildings are exposed to moisture, coastal air and older detailing that was never intended to last forever without maintenance. The visible damage is only part of the story — the steel behind it is usually what needs attention.
-          </p>
-          <p>
-            The right response is not cosmetic patching. It is a proper assessment, a repair scope that addresses the steel and concrete, and then a way to keep water out so it does not come back.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 bg-bg-light px-4">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl p-7 border border-gray-100">
-            <h2 className="font-heading text-2xl text-navy mb-4">Common warning signs</h2>
-            <ul className="space-y-3 text-text-muted leading-relaxed">
-              {[
-                'Rust staining running out of cracks or slab edges.',
-                'Concrete pieces spalling or dropping off balconies and facades.',
-                'Exposed or bulging reinforcement steel.',
-                'Hollow sounding concrete when tapped.',
-                'Cracks that keep coming back after a patch.',
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white rounded-2xl p-7 border border-gray-100">
-            <h2 className="font-heading text-2xl text-navy mb-4">What a proper repair needs</h2>
-            <ul className="space-y-3 text-text-muted leading-relaxed">
-              {[
-                'Identify the source of water and corrosion.',
-                'Remove damaged concrete back to sound material.',
-                'Treat, clean or replace corroded reinforcement steel.',
-                'Rebuild the section with the right repair system and finish.',
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl text-navy mb-10 text-center">How to deal with it properly</h2>
-          <div className="space-y-4">
-            {steps.map((step, index) => (
-              <div key={step.title} className="bg-bg-light rounded-xl p-6 flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center font-heading shrink-0">{index + 1}</div>
-                <div>
-                  <h3 className="font-heading text-xl text-text-primary mb-2">{step.title}</h3>
-                  <p className="text-text-muted leading-relaxed">{step.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 px-4 bg-bg-light">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">Related pages</h2>
-            <p className="text-text-muted leading-relaxed">
-              Once you know the concrete is breaking down, these pages help you move to the right service or next question.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {relatedPages.map((page) => (
-              <Link
-                key={page.url}
-                to={page.url.replace('https://romansbuildingservices.com', '')}
-                className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-navy/30 hover:shadow-sm transition-all">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-heading text-xl text-text-primary group-hover:text-navy transition-colors">
-                    {page.name}
-                  </h3>
-                  <ArrowRight className="w-5 h-5 text-navy shrink-0" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 px-4 bg-navy text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl mb-4">If you’re seeing spalling, get it checked</h2>
-          <p className="text-white/80 text-lg leading-relaxed mb-8">
-            On apartment buildings, delay usually makes the repair bigger and more expensive. An early assessment is the cheapest way to keep the structure under control.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:0414922276" className="inline-flex items-center gap-2 bg-white text-navy font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors">
-              <Phone className="w-4 h-4" />
-              Call Minas
-            </a>
-            <Link to="/services/concrete-repairs" className="inline-flex items-center gap-2 bg-amber text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
-              Concrete repairs <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 md:py-16 px-4 bg-bg-light">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-heading text-2xl md:text-3xl text-navy mb-6 text-center">Related reading</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Link to="/learn/masonry-vs-remedial-building" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
-              <p className="font-heading text-xl text-text-primary mb-2">Masonry vs remedial building</p>
-              <p className="text-text-muted leading-relaxed">Use this when the customer is not sure which service bucket the job belongs in.</p>
-            </Link>
-            <Link to="/learn/repointing-signs" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
-              <p className="font-heading text-xl text-text-primary mb-2">Signs you need repointing</p>
-              <p className="text-text-muted leading-relaxed">A useful adjacent guide when mortar failure and water entry show up at the same time.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default ConcreteCancerSydneyPage;
+export default function ConcreteCancerSydneyPage() {
+ return <>
+ <SEOHead title="What Causes Concrete Cancer? Sydney Guide | Romans" description="Learn what causes concrete cancer, which signs need attention and what Sydney owners should ask before repairs. A clear guide from Romans Building Services." canonical="/learn/concrete-cancer-sydney" ogType="article" ogImage="/images/learn/concrete-cancer/concrete-cutaway-text-free-1536.webp" schemaJson={articleSchema} />
+ <BreadcrumbSchema items={[{label:'Home',href:'/'},{label:'Learn',href:'/learn'},{label:'Concrete cancer in Sydney',href:'/learn/concrete-cancer-sydney'}]} />
+ <FAQSchema faqs={faqs} />
+ <article aria-labelledby="concrete-guide-title">
+ <header className="bg-navy px-5 pb-12 pt-28 text-white md:pb-16 md:pt-32">
+ <div className="mx-auto max-w-4xl text-center"><p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.16em] text-amber">Learn / concrete repairs</p>
+ <h1 id="concrete-guide-title" className="mb-5 font-heading text-4xl leading-tight md:text-5xl">What causes concrete cancer?</h1>
+ <p className="mx-auto max-w-2xl font-body text-lg leading-8">{"A Sydney owner’s guide to rust stains, spalling concrete and the next step before repair."}</p>
+ <p className="mt-5 font-body text-sm">Updated <time dateTime="2026-10-12">12 October 2026</time></p></div></header>
+ <figure className="mx-auto my-8 max-w-6xl overflow-hidden rounded-xl border border-border bg-white md:my-12">
+ <div className="relative aspect-[3/5] bg-navy md:aspect-[3/2]"><picture>
+ <source media="(max-width: 767px)" type="image/avif" srcSet="/images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-540.avif 540w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-720.avif 720w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-1080.avif 1080w" sizes="100vw" width="1080" height="1800" />
+ <source media="(max-width: 767px)" type="image/webp" srcSet="/images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-540.webp 540w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-720.webp 720w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-mobile-1080.webp 1080w" sizes="100vw" width="1080" height="1800" />
+ <source type="image/avif" srcSet="/images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-900.avif 900w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-1350.avif 1350w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-1800.avif 1800w" sizes="(max-width: 1152px) 100vw, 1152px" width="1800" height="1200" />
+ <source type="image/webp" srcSet="/images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-900.webp 900w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-1350.webp 1350w, /images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-1800.webp 1800w" sizes="(max-width: 1152px) 100vw, 1152px" width="1800" height="1200" />
+ <img src="/images/learn/concrete-cancer/romans-concrete-cancer-premium-desktop-900.webp" alt="Educational cutaway illustration of a reinforcing bar, corrosion and cracking within a concrete specimen." width="1800" height="1200" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-contain" />
+ </picture></div>
+ <figcaption className="px-5 py-5 font-body text-sm leading-6 text-text-muted md:px-8">{"AI-generated educational cutaway showing how reinforcement corrosion can crack and spall concrete. Cover is partly removed to reveal the steel. Not to scale or a construction detail."}<ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 font-semibold text-navy"><li>Steel can corrode</li><li>Rust can create pressure</li><li>Concrete can crack or spall</li></ul></figcaption></figure>
+ <div className="mx-auto max-w-[68ch] px-5 pb-16 font-body text-lg leading-8 text-text-secondary [&_p]:mb-6 [&_h2]:mb-5 [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:leading-tight [&_h2]:text-navy [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-2xl [&_h3]:text-navy [&_ul]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2 [&_a]:font-semibold [&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a:focus-visible]:outline [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-navy">
+<p>{"Concrete cancer is a common name for damage caused by corrosion of steel reinforcement inside concrete. Rust can occupy more space than the steel it replaces, creating pressure that cracks the surrounding concrete or causes pieces to break away, known as spalling."}</p>
+<p>{"Common triggers include chlorides reaching the steel and carbonation reducing the concrete’s protective alkalinity. Moisture and oxygen allow corrosion to develop when the steel’s protection is compromised. A rust mark or photograph alone cannot establish the cause, extent of damage or structural safety."}</p>
+<p>{"If concrete is loose or falling, keep people away from the affected area and arrange prompt professional advice. Do not stand beneath damaged balconies, parapets or concrete edges to inspect them."}</p>
+<p>{"Need to discuss an affected area? "}<Link to="/contact/">{"Tell Romans what you have noticed"}</Link>{" or "}<a href="tel:0414922276">{"call Minas on 0414 922 276"}</a>{"."}</p>
+<h2 id="what-allows-the-steel-inside-concrete-to-corrode">{"What allows the steel inside concrete to corrode?"}</h2>
+<p>{"Concrete normally helps protect the reinforcing steel within it. That protection can be reduced by the conditions around the steel."}</p>
+<h3>{"Chlorides"}</h3>
+<p>{"Chlorides can enter concrete in marine environments and contribute to corrosion when they reach the reinforcement. This is one reason coastal exposure matters in an assessment. Distance from the water alone does not determine a building’s condition."}</p>
+<h3>{"Carbonation"}</h3>
+<p>{"Over time, carbon dioxide can react with the concrete and reduce its alkalinity. If that change reaches the reinforcement, the steel can become more vulnerable to corrosion."}</p>
+<h3>{"Water entry and the building’s condition"}</h3>
+<p>{"Cracks, failed joints, drainage problems or deteriorated waterproofing can contribute to wet conditions around an affected element. The depth and quality of concrete covering the steel also matter."}</p>
+<p>{"A useful assessment considers these factors together. Simply covering a visible patch does not establish which conditions need to be addressed."}</p>
+<p>{"The "}<a href="https://www.concrete.org/topicsinconcrete/topicdetail.aspx?search=concrete+corrosion">{"American Concrete Institute’s corrosion overview"}</a>{" explains how chlorides can affect the steel’s protection and how expanding corrosion products stress the surrounding concrete. "}<a href="https://www.concrete.org.uk/fingertips/carbonation-of-concrete/">{"The Concrete Society’s carbonation guide"}</a>{" explains the loss of alkalinity and the conditions in which corrosion becomes possible."}</p>
+<h2 id="what-signs-should-an-owner-notice">{"What signs should an owner notice?"}</h2>
+<p>{"Signs that deserve attention include:"}</p>
+<ul><li>{"Rust-coloured staining from a concrete edge or crack"}</li><li>{"Flaking concrete or pieces breaking away"}</li><li>{"Exposed reinforcement"}</li><li>{"Cracking or bulging around an affected area"}</li><li>{"Damage that returns after a previous repair"}</li></ul>
+<p>{"Peeling paint or a surface crack does not, by itself, confirm concrete cancer. Other causes are possible, and the condition behind the surface may differ from what is visible."}</p>
+<p>{"Keep any observation to a safe position. Leave tapping, opening up and close inspection of suspect concrete to the people assessing it. NSW Government’s "}<a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home/after/safety-and-standards">{"building safety guidance"}</a>{" explains the need for regular inspection and maintenance of balconies, decks and railings."}</p>
+<h2 id="is-spalling-the-same-as-concrete-cancer">{"Is spalling the same as concrete cancer?"}</h2>
+<p>{"Spalling describes concrete breaking or flaking away. Corroding reinforcement is one possible cause, but the appearance of spalling does not establish the whole diagnosis."}</p>
+<p>{"The practical question is what caused the damage in this particular location. A repair scope should follow that assessment rather than assuming every broken surface needs the same treatment."}</p>
+<h2 id="what-should-i-do-first">{"What should I do first?"}</h2>
+<h3>{"1. Take the immediate safety concern seriously"}</h3>
+<p>{"If material is loose or falling, avoid the affected area and tell the building manager or responsible owner. Keep away from the area below it as well. If there is an immediate danger to people, contact emergency services."}</p>
+<p>{"A building professional may need to arrange exclusion zones, temporary measures or engineering advice. Do not climb, chip away loose concrete or test the area yourself."}</p>
+<h3>{"2. Record what you can safely see"}</h3>
+<p>{"Useful information includes the suburb, the affected part of the building, when you first noticed the damage and whether it has changed. Photographs from a safe position can provide context."}</p>
+<p>{"Mention known leaks, earlier repairs and any existing inspection reports. A wider photograph can be as useful as a close detail, but safety comes first."}</p>
+<h3>{"3. Arrange the right assessment"}</h3>
+<p>{"An inspection should help establish the extent of the affected concrete, the condition of the reinforcement and the likely causes. Some jobs need testing or a structural engineer before the repair can be specified."}</p>
+<p>{"Ask what the proposed inspection includes, who will carry it out and whether there is a separate fee. An initial quote conversation and a detailed technical investigation may involve different work."}</p>
+<p>{"For balconies and handrails, the "}<a href="https://www.cityofsydney.nsw.gov.au/guides/building-maintenance">{"City of Sydney recommends regular structural-engineer inspections"}</a>{"."}</p>
+<h2 id="what-should-a-repair-plan-address">{"What should a repair plan address?"}</h2>
+<p>{"A site-specific plan may involve removing unsound concrete, assessing and treating affected reinforcement, reinstating the concrete with suitable repair materials, and addressing relevant water-entry or protection issues."}</p>
+<p>{"The details depend on the condition and engineering requirements. Ask the contractor to explain:"}</p>
+<ul><li>{"How the extent of deterioration has been assessed"}</li><li>{"Which parts will be retained, repaired or replaced"}</li><li>{"Whether engineering design or further testing is needed"}</li><li>{"How access and safety around the building will be managed"}</li><li>{"What is proposed for relevant drainage, joints, waterproofing or protective finishes"}</li><li>{"How unexpected findings will be handled"}</li><li>{"What completion records and maintenance advice will be provided"}</li></ul>
+<p>{"Romans provides "}<Link to="/services/concrete-repairs/">{"concrete repairs"}</Link>{", including work on damaged concrete and reinforcement. Where a structural element needs an engineer’s specification, that requirement should be established before the repair proceeds."}</p>
+<h2 id="how-much-does-concrete-cancer-repair-cost">{"How much does concrete-cancer repair cost?"}</h2>
+<p>{"A generic price cannot account for the differences between two buildings. Cost can be affected by the repair area and depth, reinforcement condition, access equipment, working height, waterproofing, protection for occupants and the finishes that need to be reinstated."}</p>
+<p>{"A small visible patch may be part of a wider issue. Equally, a photograph cannot establish that a whole building needs the same repair. Ask for a written scope and clear assumptions, rather than comparing prices before the extent of work is understood."}</p>
+<p>{"If you are seeking quotes, identify what is included, what is excluded and what may change after investigation. No price in a general article can replace a project-specific assessment."}</p>
+<h2 id="what-if-i-live-in-a-strata-building">{"What if I live in a strata building?"}</h2>
+<p>{"Tell the strata manager or committee about the damage and provide the location, photographs taken safely and any earlier reports. Responsibility depends on the affected element, the strata plan and any relevant by-laws."}</p>
+<p>{"NSW Government explains the roles of owners and the owners corporation in its "}<a href="https://www.nsw.gov.au/housing-and-construction/strata/living/repairs-and-maintenance">{"strata repairs and maintenance guidance"}</a>{"."}</p>
+<p>{"Before work is arranged, the responsible parties should establish who is authorising the investigation, how urgent safety measures will be handled and what approvals or specialist input the proposed work needs."}</p>
+<h2 id="quick-answers">{"Quick answers"}</h2>
+<h3>{"Can I paint over concrete cancer?"}</h3>
+<p>{"Painting does not treat corroded reinforcement or restore damaged concrete. A coating may form part of an appropriate repair system after the underlying condition has been assessed."}</p>
+<h3>{"Is concrete cancer only a coastal problem?"}</h3>
+<p>{"No. Marine exposure is one risk factor, but carbonation, moisture and other building conditions can also contribute. Inland buildings can be affected."}</p>
+<h3>{"Can it be diagnosed from a photo?"}</h3>
+<p>{"Photos can help start an enquiry. They cannot establish the extent of hidden damage or confirm structural safety."}</p>
+<h3>{"Will a repair last a set number of years?"}</h3>
+<p>{"That depends on the cause, the repair design, workmanship, exposure and ongoing maintenance. Ask about the proposed system and its specific terms; a general article cannot promise a fixed lifespan."}</p>
+<h3>{"Can Romans help with the next step?"}</h3>
+<p>{"Romans works on concrete, masonry and remedial repairs. Describe the building, the visible issue and the suburb so the team can discuss whether a site assessment or another specialist is needed."}</p>
+<h2 id="discuss-the-condition-before-choosing-the-repair">{"Discuss the condition before choosing the repair"}</h2>
+<p>{"You do not need to diagnose the problem yourself. Share what you have noticed, any existing reports and photographs taken from a safe position."}</p>
+<p>{""}<Link to="/contact/">{"Tell Romans about the repair"}</Link>{" or "}<a href="tel:0414922276">{"call Minas on 0414 922 276"}</a>{" to discuss your building and the next step."}</p>
+<p>{"This guide provides general information. It does not determine the safety of a building or replace property-specific engineering advice."}</p>
+ </div></article>
+ <section aria-labelledby="related-reading" className="bg-bg-light px-5 py-12"><div className="mx-auto max-w-5xl"><h2 id="related-reading" className="mb-6 font-heading text-3xl text-navy">Related reading</h2><div className="grid gap-4 md:grid-cols-2">
+ <Link to="/learn/masonry-vs-remedial-building" className="rounded-xl border border-border bg-white p-6 text-text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"><h3 className="mb-3 font-heading text-2xl text-navy">Masonry vs remedial building</h3><p>How masonry repairs and remedial building differ, and what to consider before choosing the next step.</p></Link>
+ <Link to="/learn/repointing-signs" className="rounded-xl border border-border bg-white p-6 text-text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"><h3 className="mb-3 font-heading text-2xl text-navy">Signs you need repointing</h3><p>Common signs of worn mortar joints and the questions to ask before repointing.</p></Link>
+ </div></div></section>
+ </>;
+}
