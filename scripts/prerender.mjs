@@ -178,6 +178,17 @@ async function prerenderRoute(browser, route, port, outputPath = null) {
       // Best-effort: capture whatever rendered and let the post-process
       // logging below surface what was missing.
     }
+    // Wait for route-specific metadata rather than capturing the index shell.
+    // Layout/main can mount before a lazy page and Helmet have finished.
+    if (!outputPath) {
+      await page.waitForFunction((expectedPath) => {
+        const canonical = document.querySelector('link[data-rh="true"][rel="canonical"]');
+        const description = document.querySelector('meta[data-rh="true"][name="description"]');
+        return canonical && new URL(canonical.href).pathname === expectedPath
+          && description?.content && document.querySelector('main h1');
+      }, { timeout: 15000 }, route);
+    }
+
     // Additional settle for late-arriving schema scripts (helmet injects
     // them on mount). Home gets a longer settle because it's the heaviest
     // route and lazy components resolve sequentially.
