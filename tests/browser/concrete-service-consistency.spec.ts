@@ -9,6 +9,9 @@ test.beforeEach(async ({ page }) => {
 
 test('concrete repair visible FAQs exactly match JSON-LD and avoid unsupported general claims', async ({ page }) => {
   await page.goto('/services/concrete-repairs/');
+  await expect(page.locator('main h1')).toHaveText('Concrete Repairs');
+  await expect.poll(async () => (await page.locator('script[type="application/ld+json"]').allTextContents())
+    .filter(schema => JSON.parse(schema)['@type'] === 'FAQPage').length).toBe(1);
   const schemas = (await page.locator('script[type="application/ld+json"]').allTextContents()).map(s => JSON.parse(s));
   const faqs = schemas.filter(s => s['@type'] === 'FAQPage');
   expect(faqs).toHaveLength(1); expect(faqs[0].mainEntity).toHaveLength(7);

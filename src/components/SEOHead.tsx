@@ -71,8 +71,6 @@ export const SEOHead = ({
       <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM knowledge base (index)" />
       <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} title="LLM knowledge base (full technical reference)" />
       <link rel="alternate" type="application/xml" href={`${SITE_URL}/sitemap.xml`} title="XML sitemap index" />
-      <meta name="date" content="2026-07-07" />
-      <meta name="last-modified" content="2026-07-07" />
       <html lang="en-AU" />
       {GSC_VERIFICATION && (
         <meta name="google-site-verification" content={GSC_VERIFICATION} />

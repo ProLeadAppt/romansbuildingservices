@@ -15,8 +15,6 @@ const CaseStudySchema = ({ cs }: { cs: CaseStudy }) => {
     headline: cs.metaTitle,
     description: cs.metaDescription,
     image: [`${SITE_URL}${cs.hero.src.startsWith('/') ? cs.hero.src : `/${cs.hero.src}`}`],
-    datePublished: `${cs.completedYear}-01-01`,
-    dateModified: `${cs.completedYear}-12-31`,
     author: {
       '@type': 'Organization',
       name: 'Romans Building Services',

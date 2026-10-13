@@ -152,7 +152,6 @@ const buildProblemSchema = (props: ProblemPageProps) => {
       name: 'Minas Romanakis',
       jobTitle: 'Founder and stonemason',
     },
-    dateModified: '2026-05-29',
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -278,7 +277,6 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
               {quickAnswer} Romans Building Services assesses {name.toLowerCase()} across Sydney
               before recommending repair, so the visible damage and the cause are both dealt with.
             </p>
-            <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
           </div>
         </div>
       </section>

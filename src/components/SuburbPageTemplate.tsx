@@ -141,7 +141,6 @@ export const SuburbPageTemplate = ({
             {` ${name}, Sydney`}, with work matched to the suburb's building age, materials and
             common movement or salt-damage patterns.
           </p>
-          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
         </div>
       </section>
 

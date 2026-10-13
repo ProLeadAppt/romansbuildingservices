@@ -22,8 +22,6 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
     headline: data.metaTitle,
     description: data.metaDescription,
     url: canonicalUrl,
-    datePublished: '2026-05-15',
-    dateModified: '2026-05-29',
     author: { '@type': 'Organization', name: 'Romans Building Services' },
     reviewedBy: {
       '@type': 'Person',
@@ -100,7 +98,6 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
             Romans Building Services restores {data.name.toLowerCase()} across Sydney with
             materials and repair methods matched to the building era, suburb and original fabric.
           </p>
-          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
         </div>
       </section>
 

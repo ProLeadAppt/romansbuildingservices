@@ -138,28 +138,7 @@ const localBusinessSchema: SchemaObject = {
       name: "NSW Fair Trading"
     }
   },
-  // Honest hours: site copy says "By appointment" so we do NOT publish
-  // a "Mo-Fr 9-5" Specification (Google would treat that as a claim and
-  // users would show up unannounced). Use OpeningHoursSpecification with
-  // a placeholder DayOfWeek and the schema.org `description` field
-  // explaining the by-appointment policy. Google tolerates this for
-  // appointment-based local businesses.
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "https://schema.org/Monday",
-      "https://schema.org/Tuesday",
-      "https://schema.org/Wednesday",
-      "https://schema.org/Thursday",
-      "https://schema.org/Friday",
-      "https://schema.org/Saturday"
-    ],
-    opens: "00:00",
-    closes: "23:59",
-    validFrom: "2020-01-01",
-    validThrough: "2030-12-31",
-    description: "Site visits and quotes are by appointment. Call 0414 922 276 to book."
-  },
+  // Visits are by appointment; omit clock times until actual hours are confirmed.
   knowsAbout: BUSINESS_INFO.knowsAbout,
   founder: {
     "@type": "Person",

@@ -10,6 +10,7 @@ import { getProblem } from '@/data/problems';
 import { getSuburb } from '@/data/suburbs';
 import { QuoteCTAButton } from '@/components/quote';
 import type { QuoteService } from '@/components/quote';
+import { serviceImageMetadata } from '@/data/serviceImageMetadata';
 
 interface ServiceFeature {
   icon: LucideIcon;
@@ -42,7 +43,6 @@ interface ProcessStep {
   detail: string;
 }
 
-const LAST_UPDATED = '2026-05-29';
 
 const serviceToQuoteType = (title: string): QuoteService => {
   const lower = title.toLowerCase();
@@ -216,7 +216,9 @@ export const ServicePageTemplate = ({
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
         <img
           src={heroImage}
-          alt={title}
+          alt={serviceImageMetadata[heroImage]?.alt || title}
+          width={serviceImageMetadata[heroImage]?.width}
+          height={serviceImageMetadata[heroImage]?.height}
           className="absolute inset-0 w-full h-full object-cover img-enhanced"
           loading="eager"
         />
@@ -254,10 +256,6 @@ export const ServicePageTemplate = ({
             <div className="rounded-md bg-bg-light p-4">
               <dt className="font-body text-text-muted">Service focus</dt>
               <dd className="font-body font-semibold text-navy"><Link to={CURRENT_SERVICE_AREA_HREF} className="underline">Hawkesbury &amp; Western Sydney</Link></dd>
-            </div>
-            <div className="rounded-md bg-bg-light p-4">
-              <dt className="font-body text-text-muted">Updated</dt>
-              <dd className="font-body font-semibold text-navy">{LAST_UPDATED}</dd>
             </div>
             <div className="rounded-md bg-bg-light p-4">
               <dt className="font-body text-text-muted">Established</dt>
@@ -413,7 +411,9 @@ export const ServicePageTemplate = ({
                   className="rounded-lg overflow-hidden">
                   <img
                     src={img}
-                    alt={`${title} project ${i + 1}`}
+                    alt={serviceImageMetadata[img]?.alt || `${title} work`}
+                    width={serviceImageMetadata[img]?.width}
+                    height={serviceImageMetadata[img]?.height}
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover hover-scale img-enhanced"
                   />

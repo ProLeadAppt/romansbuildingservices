@@ -62,7 +62,6 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       name: 'Minas Romanakis',
       jobTitle: 'Founder and stonemason',
     },
-    dateModified: '2026-05-29',
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -137,7 +136,6 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
             Romans Building Services fixes {problem.name.toLowerCase()} in {area.name}, Sydney,
             using repair methods matched to local housing stock, salt exposure, age and movement.
           </p>
-          <p className="font-body text-xs text-text-muted mt-4">Last updated: 2026-05-29</p>
         </div>
       </section>
 

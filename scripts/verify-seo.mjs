@@ -66,13 +66,14 @@ const checks = {
   badInternalLinks: badLinks.length,
   robotsBlocksJson: /Disallow:\s*\/\*\.json/.test(robots),
   hasLlmSitemap: fs.existsSync('public/sitemap-llms.xml'),
-  hasOpenAI: /GPTBot|OAI-SearchBot|ChatGPT-User/.test(robots),
-  hasClaude: /ClaudeBot|Claude-Web|anthropic-ai/.test(robots),
-  hasPerplexity: /PerplexityBot/.test(robots),
-  hasGeminiGoogle: /Googlebot|GoogleOther|Google-Extended|Google-InspectionTool/.test(robots),
-  hasGrok: /GrokBot|xAI-Bot/.test(robots),
+  explicitlyNamesOpenAI: /GPTBot|OAI-SearchBot|ChatGPT-User/.test(robots),
+  explicitlyNamesClaude: /ClaudeBot|Claude-Web|anthropic-ai/.test(robots),
+  explicitlyNamesPerplexity: /PerplexityBot/.test(robots),
+  explicitlyNamesGoogle: /Googlebot|GoogleOther|Google-Extended|Google-InspectionTool/.test(robots),
+  explicitlyNamesGrok: /GrokBot|xAI-Bot/.test(robots),
 };
 console.log(JSON.stringify(checks, null, 2));
+console.log('explicitlyNames flags describe text only; wildcard groups also apply. Run crawler-policy tests for access rules.');
 if (badSitemap.length) console.log('badSitemap', badSitemap.slice(0, 10));
 if (badCanon.length) console.log('badCanon', badCanon.slice(0, 10));
 if (missingDesc.length) console.log('shortDesc', missingDesc.slice(0, 10));
