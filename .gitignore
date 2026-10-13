@@ -29,3 +29,7 @@ test-results/
 .hermes/evidence/*.png
 
 *.tsbuildinfo
+
+# IndexNow local state and generated public revision (never keys)
+/.indexnow/
+/public/.well-known/indexnow-release.json
