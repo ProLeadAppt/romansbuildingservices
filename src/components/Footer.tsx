@@ -203,7 +203,7 @@ export const Footer = () => {
           </p>
           <div className="flex items-center gap-4">
             <p className="font-body text-xs text-white/30">
-              ABN: 49 641 892 677
+              ABN: 85 004 290 080
             </p>
             <span className="text-white/15">|</span>
             <a

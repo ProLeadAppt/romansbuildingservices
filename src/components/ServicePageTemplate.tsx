@@ -263,7 +263,7 @@ export const ServicePageTemplate = ({
             </div>
             <div className="rounded-md bg-bg-light p-4">
               <dt className="font-body text-text-muted">ABN</dt>
-              <dd className="font-body font-semibold text-navy">49 641 892 677</dd>
+              <dd className="font-body font-semibold text-navy">85 004 290 080</dd>
             </div>
           </dl>
         </div>

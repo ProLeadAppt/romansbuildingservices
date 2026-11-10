@@ -12,7 +12,7 @@ export const BUSINESS_INFO = {
   phoneDisplay: "0414 922 276",
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
-  abn: "49 641 892 677",
+  abn: "85 004 290 080",
   areaServed: ["North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown", "Hawkesbury", "Western Sydney"],
   // Back-compat alias used by some consumers
   serviceAreas: ["Hawkesbury", "Western Sydney", "Surrounding areas by enquiry"],
