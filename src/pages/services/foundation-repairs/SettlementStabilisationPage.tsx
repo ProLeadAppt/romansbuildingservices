@@ -9,7 +9,7 @@ const SettlementStabilisationPage = () => {
     <ServicePageTemplate
       title="Settlement Stabilisation"
       metaTitle="Sydney Building Settlement Stabilisation | Romans"
-      metaDescription="Sydney settlement stabilisation by Minas Romanakis. Underpinning, resin injection, screw piles, drainage. Stop the movement, fix the cause, repair the cracks."
+      metaDescription="Sydney settlement investigation and repair enquiries. Movement assessment, ground and drainage considerations, and engineer-led stabilisation planning."
       heroImage="/gallery/thumbs/romansstone_1451942270_1155297957273885284_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,106 @@ const SettlementStabilisationPage = () => {
         { label: 'Settlement Stabilisation', href: '' },
       ]}
       intro={[
-        'Settlement is when the soil under the building compresses, washes out, shrinks, or shifts. The building drops or tilts because the foundation is no longer evenly supported. You see it as diagonal stepped cracks in brick walls, doors going out of square, floors that slope, render fracturing the same way every winter. Active settlement gets worse every season until the cause is dealt with.',
-        'In Sydney the most common causes are reactive clay soils (shrinking in dry summers and swelling in wet winters), large eucalypt or paperbark roots within 5 to 10 metres of the building drawing moisture out of the soil, plumbing leaks under or alongside the building washing out fines, and poor surface drainage delivering rainwater straight to the footing line. Most settlement jobs involve a combination.',
-        'We stabilise settled buildings with underpinning (extending the foundation to deeper, more stable ground), resin injection (geopolymer or polyurethane expanding resin injected under the footing to fill voids and stabilise the soil), screw piles (driven to stable strata), or drainage improvements depending on the cause and soil type. Engineer involvement on every stabilisation job. Most jobs also need crack repair above once the building is stable.',
+        "Ground movement and inadequate support can cause parts of a building to settle unevenly. Cracks, changes in floor level and distorted openings can be signs, but they can also arise from other defects. A visual symptom is a starting point for investigation, not proof of the cause or the required repair.",
+        "Assessment may consider the original foundations, soil, drainage, plumbing, trees and nearby work. Monitoring can help explain movement where it is safe to wait, but a period without visible change does not by itself establish that a building is stable. Sudden movement, leaning walls or falling material require prompt safety advice.",
+        "Contact Romans to discuss an assessed settlement repair scope. Depending on the findings, the response may involve drainage or plumbing work, monitoring, foundation strengthening or specialist ground treatment. The method and the contractor responsibilities need confirmation before pricing or scheduling the repair."
       ]}
       features={[
         {
           icon: Search,
-          title: 'Settlement investigation',
-          description:
-            'Crack monitors installed for 3 to 6 months to confirm whether movement is active or stable. Level surveys, soil sampling, drainage and plumbing investigation. Engineer report on findings.',
+          title: "Investigate movement",
+          description: "Record when symptoms appeared and any known changes to drainage or nearby ground. Structural and geotechnical assessment can identify what further investigation is needed."
         },
         {
           icon: ArrowDownToLine,
-          title: 'Foundation stabilisation',
-          description:
-            'Underpinning, resin injection, screw piles or mini piles depending on soil and access. Each method engineered for the specific site. Foundation locked in place against further movement.',
+          title: "Select the repair",
+          description: "Underpinning is one possible response, not an automatic requirement for every crack. The engineer considers the existing structure, ground conditions and cause before recommending a method."
         },
         {
           icon: Droplets,
-          title: 'Drainage and water control',
-          description:
-            'Subsoil ag drainage, surface stormwater diversion, leaking plumbing fixes. Removing the water that caused the settlement so it does not happen again.',
+          title: "Water and services",
+          description: "Leaks or poorly managed surface water may affect foundation support. Qualified trades investigate services and design any drainage changes with a suitable lawful discharge route."
         },
         {
           icon: ShieldCheck,
-          title: 'Crack repair after stabilisation',
-          description:
-            'Once foundation movement has stopped, structural cracks are stitched with helical rods and cosmetic cracks are repointed or filled. We wait 3 to 6 months after stabilisation to confirm movement has stopped.',
+          title: "Plan masonry repairs",
+          description: "Repairing visible cracks alone may not address ongoing movement. Agree the foundation response and any monitoring before specifying stitching, rebuilding or cosmetic reinstatement."
         },
         {
           icon: FileCheck,
-          title: 'Monitoring and documentation',
-          description:
-            'Crack monitors before and after work, level surveys at each stage, photos throughout. Documentation handed over for the property file. Useful for any future buyer or insurer.',
-        },
+          title: "Record and monitor",
+          description: "Where monitoring is appropriate, the engineer defines locations, frequency, duration and triggers for reassessment. Records support decisions but do not replace structural assessment."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Avongard crack monitors',
-          detail:
-            'Two-piece transparent plastic monitors mounted across cracks. Calibrated grid shows movement to within 0.1mm. We read monthly and produce a movement chart. Three to six months establishes whether settlement is ongoing.',
+          title: "Level and crack records",
+          detail: "Measurements can help show change over time when taken consistently and interpreted professionally. Do not attach monitors to unstable masonry or enter unsafe areas to obtain readings."
         },
         {
-          title: 'Soil sampling and borehole investigation',
-          detail:
-            'Hand auger or test pit excavation by geotechnical engineer. Soil identification (clay, sand, fill), moisture content, bearing capacity, depth to stable strata. Informs the choice of stabilisation method.',
+          title: "Ground investigation",
+          detail: "Geotechnical investigation may be needed to understand fill, soil variability, moisture and bearing conditions. The scope and testing methods depend on the site and proposed repair."
         },
         {
-          title: 'Mass concrete or screw pile underpinning',
-          detail:
-            'Standard stabilisation method where existing footings have settled. See underpinning page for detail. Method chosen to suit soil and access.',
+          title: "Foundation strengthening",
+          detail: "Mass concrete underpinning, piles or other strengthening may be considered after investigation. Design must address load transfer, temporary works, services and neighbouring structures."
         },
         {
-          title: 'Expanding resin injection (Uretek, Geobear)',
-          detail:
-            'Polyurethane or geopolymer resin injected through small holes drilled through the slab or footing. Expands to fill voids and stabilise soil. Works well on sand and gravel. Limited effect on heavy clay.',
+          title: "Specialist ground treatment",
+          detail: "Resin injection or other ground treatment may suit some conditions, but requires specialist assessment of the ground, loads and installation effects. No brand affiliation or universal soil-based suitability is assumed."
         },
         {
-          title: 'Stormwater and subsoil drainage',
-          detail:
-            'Ag pipe in gravel and geofabric along foundations. Surface stormwater outlets and diversion. Connected to street stormwater. Often the most cost-effective intervention if the cause is water.',
-        },
-        {
-          title: 'Plumbing leak detection and repair',
-          detail:
-            'Acoustic leak detection or video inspection of underfloor plumbing. Failed cast iron, copper or AC pipes replaced before any structural work. Surprisingly common cause of settlement and easy to miss.',
-        },
+          title: "Drainage and leak repairs",
+          detail: "Investigate the source before installing drainage or replacing pipes. Licensed trades should handle relevant plumbing work, and suspected asbestos-containing pipes require appropriate assessment and controls."
+        }
       ]}
       processSteps={[
         {
-          step: 'Initial assessment and monitoring',
-          detail:
-            'Site visit. Crack pattern photographed and measured. Crack monitors installed. Level survey done. Drainage and plumbing inspected. Initial cause hypothesis formed.',
+          step: "Triage and assess",
+          detail: "Identify immediate safety concerns before arranging inspection. Keep people away from unstable areas and contact emergency services if anyone is in immediate danger."
         },
         {
-          step: 'Monitor for 3 to 6 months',
-          detail:
-            'Movement read monthly. If active, the cause needs to be addressed before stabilisation. If now stable, just the structural repair is needed without major foundation work. This step saves money on the right cases.',
+          step: "Investigate or monitor",
+          detail: "Obtain professional advice on ground, drainage and structural investigations. Monitor only where the assessed risk allows it, using a plan with clear review and escalation points."
         },
         {
-          step: 'Engineer scope',
-          detail:
-            'Engineer specifies the stabilisation method based on soil conditions, settlement extent, cause, and access. Soil testing done where needed. Repair method documented.',
+          step: "Design the response",
+          detail: "Select measures that address the identified cause and structural requirements. Confirm approvals, specialist responsibilities and any implications for trees, neighbours or underground services."
         },
         {
-          step: 'Address the cause first',
-          detail:
-            'Plumbing leaks fixed, drainage installed, trees removed or root barriers installed. Failing to address the cause means the new foundation work will be undermined too.',
+          step: "Carry out agreed works",
+          detail: "Use the specified sequence and inspection hold points. Changes in ground conditions or unexpected damage require review rather than automatic continuation with the original method."
         },
         {
-          step: 'Execute stabilisation',
-          detail:
-            'Underpinning or resin injection or piles, per engineer scope. Engineer inspects at key stages. Building is now structurally locked in place against further movement.',
-        },
-        {
-          step: 'Continued monitoring then crack repair',
-          detail:
-            'Crack monitors stay in place for a further 3 to 6 months after stabilisation. Once readings confirm zero movement, structural cracks are stitched and cosmetic repairs completed. Building handed over fully repaired.',
-        },
+          step: "Review before finishes",
+          detail: "Assess performance and any further movement under the agreed monitoring plan. Complete masonry and finish repairs when the responsible professionals consider them appropriate; zero future movement cannot be guaranteed."
+        }
       ]}
       faqs={[
         {
-          question: 'What is the difference between settlement and subsidence?',
-          answer:
-            'Both refer to ground movement under a building, but settlement usually means compression of the soil under the weight of the building over time. Subsidence usually means ground movement from external causes like erosion, tree roots, undermining or mining. The repairs are similar but the cause investigation is different. In practice we use the terms fairly interchangeably.',
+          question: "Are settlement and subsidence the same thing?",
+          answer: "The terms are used differently in building, engineering and insurance contexts. Settlement often describes compression under load, while subsidence can describe other downward ground movement. The investigation should identify the actual mechanism rather than relying on the label alone."
         },
         {
-          question: 'Can resin injection fix settlement?',
-          answer:
-            'In some cases, yes. Expanding polyurethane or geopolymer resin is injected under the slab or footing through small drilled holes. It expands, fills voids, and compresses the surrounding soil. Works well on sandy and gravelly soils where the resin can spread and densify. Limited effect on heavy reactive clay. Engineer specifies whether resin is appropriate for the soil.',
+          question: "Can resin injection help?",
+          answer: "It may be an option for certain ground or void conditions, but suitability depends on investigation and specialist design. Ask about the evidence supporting the method, installation effects, verification and limitations. It should not be selected solely from a general description of the soil."
         },
         {
-          question: 'How quickly does settlement need to be fixed?',
-          answer:
-            'Active settlement (ongoing movement) needs prompt attention because it usually gets worse. Each season of movement opens cracks further and damages more wall connections. Settlement that has stabilised (no movement for 6+ months) is less urgent but still worth repairing before any future event reactivates it. We use crack monitors to distinguish active from stable.',
+          question: "How urgently should movement be assessed?",
+          answer: "New or worsening movement warrants professional assessment. Sudden changes, instability or falling material may need immediate safety action. Do not rely on a fixed crack width or a period without visible movement to decide that the building is safe."
         },
         {
-          question: 'What about the trees nearby?',
-          answer:
-            'Large eucalypts and paperbarks within 5 to 10 metres of the building are a major cause of settlement on reactive clay soils. Tree removal is one option but it can cause heave (the opposite problem) when the clay rehydrates. Root barriers (vertical HDPE membrane installed in a trench between the tree and the building) are usually a better solution. Engineer guides the decision.',
+          question: "Should trees near the building be removed?",
+          answer: "Tree proximity alone does not establish the cause. Seek engineering and arboricultural advice before removing a tree, cutting roots or installing a root barrier. Changes can affect ground moisture and tree stability, and council controls or approvals may apply."
         },
         {
-          question: 'How long does settlement stabilisation take?',
-          answer:
-            'Investigation and monitoring: 3 to 6 months. Engineer scope and council approval: 4 to 12 weeks. Underpinning or other stabilisation work: 2 to 12 weeks depending on method and extent. Post-work monitoring before crack repair: 3 to 6 months. Total project from first assessment to final repair: 9 to 18 months for a thorough job.',
+          question: "How long does stabilisation take?",
+          answer: "Investigation, monitoring where appropriate, design, approvals and the selected repair all affect the programme. Different buildings need different observation periods. Ask for a staged plan and review points rather than assuming a standard duration proves movement has stopped."
         },
         {
-          question: 'What does settlement stabilisation cost?',
-          answer:
-            'Investigation and monitoring: 3000 to 8000 dollars. Engineer scope: 2500 to 6000 dollars. Mass concrete underpinning: 30,000 to 120,000 dollars depending on extent. Resin injection: 15,000 to 60,000 dollars. Screw piles: 25,000 to 90,000 dollars. Drainage improvements: 5,000 to 30,000 dollars. Crack repair after stabilisation: 5,000 to 30,000 dollars. Total project costs typically 40,000 to 200,000 dollars for a residential settlement scope.',
-        },
+          question: "What will the work cost?",
+          answer: "Costs depend on the investigation findings and the selected response. Request separate allowances for design, monitoring, specialist work, approvals and reinstatement. Some problems may need targeted water management while others require extensive foundation work; generic totals cannot distinguish them."
+        }
       ]}
     />
   );

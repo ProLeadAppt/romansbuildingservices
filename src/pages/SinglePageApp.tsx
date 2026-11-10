@@ -2,9 +2,7 @@ import { lazy, Suspense } from 'react';
 import { SEO } from '@/components/SEO';
 import { RomansPremiumHeroSection } from '@/components/RomansPremiumHeroSection';
 import { HomeProblemNavigator } from '@/components/home/HomeProblemNavigator';
-import { HomeCaseStudiesSection } from '@/components/home/HomeCaseStudiesSection';
-import { HomeFounderStandardSection } from '@/components/home/HomeFounderStandardSection';
-import { HomeCapabilitiesSection } from '@/components/home/HomeCapabilitiesSection';
+import { CraftHomeSections } from '@/components/home/CraftHomeSections';
 import { HowWeWorkSection } from '@/components/HowWeWorkSection';
 import { HomeFAQSection } from '@/components/HomeFAQSection';
 import { LocalBusinessSchema, PersonSchema } from '@/components/LocalSEO/StructuredData';
@@ -16,22 +14,20 @@ const ModernContactSection = lazy(() =>
 const SinglePageApp = () => (
   <>
     <SEO
-      title="Sydney Masonry, Remedial & Heritage Construction | Romans"
-      description="Sydney masonry, remedial and heritage construction by Minas Romanakis. Licenced builders for brick, stone, concrete and structural repairs across Sydney."
+      title="Masonry & Restoration in Hawkesbury | Romans Building Services"
+      description="Speak with Minas Romanakis about masonry, heritage restoration and structural repairs across Hawkesbury and Western Sydney. Based in The Slopes."
       canonical="/"
       ogImage="/og-image.png"
-      preloadHero="/gallery/thumbs/romansstone_1572378831_2165593056404182319_2394650725.webp"
+      preloadHero="/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp"
       heroPreloadAs="image"
       heroType="image/webp"
     />
     <LocalBusinessSchema />
     <PersonSchema />
 
-    <RomansPremiumHeroSection />
+    <RomansPremiumHeroSection videoSrc="" />
+    <CraftHomeSections />
     <HomeProblemNavigator />
-    <HomeCaseStudiesSection />
-    <HomeFounderStandardSection />
-    <HomeCapabilitiesSection />
     <HowWeWorkSection />
     <HomeFAQSection />
     <Suspense fallback={<div className="min-h-96 bg-navy" aria-hidden="true" />}>

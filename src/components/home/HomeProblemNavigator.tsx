@@ -46,8 +46,8 @@ export const HomeProblemNavigator = () => (
         </div>
 
         <div className="divide-y divide-navy/15 border-y border-navy/15">
-          {problems.map(({ title, body, to, icon: Icon }, index) => (
-            <Link key={to} to={to} className="group grid min-h-40 gap-5 py-7 sm:grid-cols-[3rem_1fr_auto] sm:items-center">
+          {problems.map(({ title, body, to, icon: Icon }) => (
+            <Link key={to} to={to} className="group grid min-h-40 gap-5 py-7 sm:grid-cols-[3rem_1fr] sm:items-center">
               <span className="flex h-12 w-12 items-center justify-center rounded-full border border-navy/15 bg-white text-navy transition-colors group-hover:border-amber group-hover:bg-amber/10">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -55,7 +55,6 @@ export const HomeProblemNavigator = () => (
                 <span className="mb-2 block font-heading text-2xl text-navy">{title}</span>
                 <span className="block max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">{body}</span>
               </span>
-              <span className="hidden text-xs font-semibold tracking-[0.18em] text-navy/40 sm:block">0{index + 1}</span>
             </Link>
           ))}
         </div>

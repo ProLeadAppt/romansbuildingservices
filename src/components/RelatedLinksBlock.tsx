@@ -39,7 +39,7 @@ export const RelatedLinksBlock = ({
     columns === 2
       ? 'grid-cols-1 sm:grid-cols-2'
       : columns === 4
-        ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+        ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
         : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
 
   const isDark = background === 'navy';
@@ -62,7 +62,7 @@ export const RelatedLinksBlock = ({
         </div>
 
         <div className={`grid ${gridClass} gap-3`}>
-          {items.map((item, i) => (
+          {items.map((item) => (
             <div
               key={item.href}>
               <Link
@@ -84,13 +84,13 @@ export const RelatedLinksBlock = ({
                   </span>
                   {item.sublabel && (
                     <span
-                      className={`font-body text-xs ${isDark ? 'text-white/60' : 'text-text-muted'}`}>
+                      className={`font-body text-xs ${isDark ? 'text-white/80' : 'text-text-muted'}`}>
                       {item.sublabel}
                     </span>
                   )}
                 </div>
                 <ArrowRight
-                  className={`w-4 h-4 mt-1 shrink-0 ${isDark ? 'text-white/60' : 'text-text-muted'} group-hover:translate-x-0.5 transition-transform`}
+                  className={`w-4 h-4 mt-1 shrink-0 ${isDark ? 'text-white/80' : 'text-text-muted'} group-hover:translate-x-0.5 transition-transform`}
                 />
               </Link>
             </div>

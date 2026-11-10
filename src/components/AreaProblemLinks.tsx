@@ -11,16 +11,16 @@ export const AreaProblemLinks = ({ areaSlug }: { areaSlug: string }) => {
 
   const items = area.topProblems
     .map((slug) => ({ slug, problem: PROBLEMS[slug] }))
-    .filter((x) => x.problem);
+    .filter((x) => x.problem && area.problemNotes[x.slug]);
 
   if (items.length === 0) return null;
 
   return (
     <section className="py-16 bg-stone-50">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="font-heading text-2xl text-navy mb-2">Common problems we see in {area.name}</h2>
+        <h2 className="font-heading text-2xl text-navy mb-2">Repair problem guides for {area.name}</h2>
         <p className="font-body text-text-muted mb-6">
-          The structural and masonry issues that come up most often across {area.name} housing stock.
+          Start with the signs you can see. These guides provide background; they do not diagnose the condition of an individual building.
         </p>
         <div className="grid sm:grid-cols-2 gap-3">
           {items.map(({ slug, problem }) => (

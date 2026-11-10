@@ -27,19 +27,19 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
     { label: area.name, href: `/services/${service.slug}/${area.slug}` },
   ];
 
-  // FAQ specific to this combo — surfaces in SERP and AI answers
+  // Visible enquiry guidance shared with schema. A route is not evidence of a local job.
   const localFaqs = [
     {
       question: `Do you do ${service.title.toLowerCase()} in ${area.name}?`,
-      answer: `Yes. We've worked across ${area.name} for years. ${combo.context.split('. ').slice(0, 2).join('. ')}.`,
+      answer: `Send your suburb in ${area.name}, photographs taken from a safe position and a short description of the work. We can discuss the scope, access and current availability before arranging an assessment.`,
     },
     {
-      question: `What makes ${service.title.toLowerCase()} in ${area.name} different from elsewhere in Sydney?`,
-      answer: `${combo.context.split('. ').slice(2, 4).join('. ')}.`,
+      question: 'What information helps establish the repair scope?',
+      answer: 'The material, age and condition of the building, previous repairs, access and any engineering or heritage requirements all matter. A suburb name or photograph alone cannot establish the cause of damage or the right repair.',
     },
     {
-      question: `Are you licenced to do ${service.title.toLowerCase()} on heritage properties?`,
-      answer: `Yes. We hold the NSW Masonry Contractor Licence and have worked on heritage-listed and conservation-zone properties across Sydney for over 20 years. Council heritage approval documentation is part of the job — we handle it.`,
+      question: 'What should I check before work on a heritage property?',
+      answer: 'Confirm the property’s listing or conservation-area status and the proposed work with council or a heritage adviser. Ask for the current licence and insurance details relevant to the building scope. Specialist assessments, engineering and approvals may need separate professionals.',
     },
   ];
 
@@ -55,18 +55,18 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
       <FAQSchema faqs={localFaqs} />
 
       {/* Breadcrumb strip */}
-      <nav className="bg-stone-50 border-b border-stone-200">
+      <nav aria-label="Breadcrumb" className="bg-stone-50 border-b border-stone-200 pt-20">
         <div className="container mx-auto px-4 py-3">
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight aria-hidden="true" className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
                   </Link>
                 ) : (
-                  <span className="text-navy">{c.label}</span>
+                  <span aria-current="page" className="text-navy">{c.label}</span>
                 )}
               </li>
             ))}
@@ -106,7 +106,7 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
         <div className="container mx-auto px-4 max-w-3xl">
           <h2
             className="font-heading text-3xl text-navy mb-6">
-            {service.title} in {area.shortName}, the way we do it
+            Planning {service.title.toLowerCase()} in {area.shortName}
           </h2>
           <p
             className="font-body text-text-secondary text-lg leading-relaxed mb-6">
@@ -148,9 +148,9 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl text-navy mb-2">Where we work in {area.name}</h2>
           <p className="font-body text-text-muted mb-6">
-            We cover {service.title.toLowerCase()} across {area.name}. Click a suburb for site-specific notes.
+            Explore the existing suburb guides, then confirm the work and availability for your property. A guide does not replace a site assessment.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {area.suburbs.map((slug) => {
               const name = slug
                 .split('-')
@@ -160,7 +160,7 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
                 <Link
                   key={slug}
                   to={`/suburbs/${slug}`}
-                  className="font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-stone-50 border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between">
+                  className="min-h-11 font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-stone-50 border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between">
                   <span>{name}</span>
                   <ArrowRight className="w-4 h-4 opacity-50" />
                 </Link>
@@ -202,6 +202,14 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
               <div className="font-heading text-navy mb-1">{area.name} services</div>
               <div className="font-body text-sm text-text-muted">All the services we cover across {area.name}.</div>
             </Link>
+            <Link to="/learn/brick-sandstone-repair-quotes-hawkesbury" className="block p-5 bg-stone-50 border border-stone-200 rounded-md hover:border-amber transition-colors">
+              <div className="font-heading text-navy mb-1">Prepare a repair enquiry</div>
+              <div className="font-body text-sm text-text-muted">Photographs, access, reports and questions for a clear scope.</div>
+            </Link>
+            <Link to="/areas/hawkesbury-western-sydney" className="block p-5 bg-stone-50 border border-stone-200 rounded-md hover:border-amber transition-colors">
+              <div className="font-heading text-navy mb-1">Hawkesbury &amp; Western Sydney</div>
+              <div className="font-body text-sm text-text-muted">Our current service focus and local enquiry guidance.</div>
+            </Link>
           </div>
         </div>
       </section>
@@ -213,7 +221,7 @@ export const ServiceAreaPageTemplate = ({ combo, service, area }: ServiceAreaPag
             {service.title} project in {area.name}?
           </h2>
           <p className="font-body text-white/80 text-lg mb-8">
-            Call Minas for a real assessment. 30 years across Sydney — straight answers, proper quotes, no high-pressure sales.
+            Call Minas with your suburb and repair details to discuss the scope, access and current availability.
           </p>
           <a
             href="tel:0414922276"

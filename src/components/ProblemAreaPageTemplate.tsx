@@ -5,6 +5,7 @@ import type { AreaProfile } from '@/data/areas';
 import { SEOHead } from '@/components/SEOHead';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
+import { toCanonicalPageUrl } from '@/lib/seoUrls';
 
 const SITE_URL = 'https://romansbuildingservices.com';
 
@@ -21,9 +22,9 @@ const urgencyBadge = {
 };
 
 export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemAreaPageProps) => {
-  const canonicalUrl = `${SITE_URL}/problems/${problem.slug}/${area.slug}`;
+  const canonicalUrl = toCanonicalPageUrl(`/problems/${problem.slug}/${area.slug}`);
   const metaTitle = `${problem.name} in ${area.name} | Romans`;
-  const metaDescription = `${problem.name} in ${area.name}: signs, causes specific to local housing stock, and how we fix it properly. ${problem.urgency === 'high' ? 'Urgent assessment available. ' : ''}Romans Building Services — 30 years across Sydney.`;
+  const metaDescription = `${problem.name} in ${area.name}: warning signs, repair considerations and information to prepare for a property-specific assessment with Romans.`;
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -40,7 +41,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
   const localFaqs = [
     {
       question: `Do you fix ${problem.name.toLowerCase()} in ${area.name}?`,
-      answer: `Yes. We've worked across ${area.name} for years and ${problem.name.toLowerCase()} is one of the issues we see most often here. ${areaNote.split('. ').slice(0, 2).join('. ')}.`,
+      answer: `Contact Minas with your suburb in ${area.name} and a description of what you can see. Photographs taken from a safe position can help explain the enquiry. The cause, repair scope and current availability need to be discussed for the individual property.`,
     },
     ...problem.faqs.slice(0, 3),
   ];
@@ -57,11 +58,6 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       name: s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
     })),
     author: { '@type': 'Organization', name: 'Romans Building Services' },
-    reviewedBy: {
-      '@type': 'Person',
-      name: 'Minas Romanakis',
-      jobTitle: 'Founder and stonemason',
-    },
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -76,18 +72,18 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
       <FAQSchema faqs={localFaqs} />
 
       {/* Breadcrumb strip */}
-      <nav className="bg-stone-50 border-b border-stone-200">
+      <nav aria-label="Breadcrumb" className="bg-stone-50 border-b border-stone-200 pt-20">
         <div className="container mx-auto px-4 py-3">
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight aria-hidden="true" className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
                   </Link>
                 ) : (
-                  <span className="text-navy">{c.label}</span>
+                  <span aria-current="page" className="text-navy">{c.label}</span>
                 )}
               </li>
             ))}
@@ -133,8 +129,8 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
             Quick answer
           </p>
           <p className="font-body text-text-secondary text-lg leading-relaxed">
-            Romans Building Services fixes {problem.name.toLowerCase()} in {area.name}, Sydney,
-            using repair methods matched to local housing stock, salt exposure, age and movement.
+            If you are concerned about {problem.name.toLowerCase()} at a property in {area.name},
+            record what you can see from a safe position. The building’s condition and the cause of damage need assessment before a repair method is chosen.
           </p>
         </div>
       </section>
@@ -144,7 +140,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
         <div className="container mx-auto px-4 max-w-3xl">
           <h2
             className="font-heading text-3xl text-navy mb-6">
-            Why we see this constantly in {area.shortName}
+            Property considerations in {area.shortName}
           </h2>
           <p
             className="font-body text-text-secondary text-lg leading-relaxed mb-6">
@@ -185,9 +181,9 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl text-navy mb-2">Suburbs we cover in {area.name}</h2>
           <p className="font-body text-text-muted mb-6">
-            We work right across {area.name}. Click a suburb for site-specific notes on housing stock and common issues.
+            Use the existing suburb guides for background, then discuss your actual property, access and repair needs. A locality name does not establish a diagnosis.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {area.suburbs.map((slug) => {
               const name = slug
                 .split('-')
@@ -197,7 +193,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
                 <Link
                   key={slug}
                   to={`/suburbs/${slug}`}
-                  className="font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-white border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between">
+                  className="min-h-11 font-body text-navy hover:text-amber px-4 py-2 rounded-md bg-white border border-stone-200 hover:border-amber transition-colors inline-flex items-center justify-between">
                   <span>{name}</span>
                   <ArrowRight className="w-4 h-4 opacity-50" />
                 </Link>
@@ -221,6 +217,20 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="craft-section bg-bg-light" aria-labelledby="local-questions-heading">
+        <div className="mx-auto max-w-3xl">
+          <h2 id="local-questions-heading" className="text-navy mb-8">Questions before arranging an assessment</h2>
+          <div className="space-y-4">
+            {localFaqs.map((faq) => (
+              <details key={faq.question} className="craft-card">
+                <summary className="min-h-11 cursor-pointer font-semibold text-lg text-navy">{faq.question}</summary>
+                <p className="mt-4 text-text-secondary leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -250,6 +260,10 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
                 <div className="font-body text-sm text-text-muted">Service detail and how we work.</div>
               </Link>
             ))}
+            <Link to="/learn/brick-sandstone-repair-quotes-hawkesbury" className="block p-5 bg-white border border-stone-200 rounded-md hover:border-amber transition-colors">
+              <div className="font-heading text-navy mb-1">Prepare your repair enquiry</div>
+              <div className="font-body text-sm text-text-muted">What to photograph safely and include with existing reports.</div>
+            </Link>
           </div>
         </div>
       </section>
@@ -261,7 +275,7 @@ export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemArea
             Got {problem.name.toLowerCase()} in {area.name}?
           </h2>
           <p className="font-body text-white/80 text-lg mb-8">
-            Call Minas for a real assessment. We give straight answers and proper quotes — no high-pressure sales.
+            Contact Minas to discuss the work and availability. Keep away from unstable masonry or loose overhead material. If there is immediate danger, contact emergency services rather than waiting for a quote.
           </p>
           <a
             href="tel:0414922276"

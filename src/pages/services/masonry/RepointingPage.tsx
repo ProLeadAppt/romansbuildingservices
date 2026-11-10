@@ -9,141 +9,107 @@ const RepointingPage = () => {
     <ServicePageTemplate
       title="Repointing & Brick Pointing"
       metaTitle="Sydney Repointing & Brick Pointing | Romans"
-      metaDescription="Sydney repointing by Minas Romanakis. Lime mortar for heritage walls, cement-based for modern brick. Colour and profile matched on site. 30 years of pointing."
+      metaDescription="Repointing and tuckpointing across Sydney. Mortar repairs with compatible materials, colour and joint profiles for older and modern masonry."
       heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
-      siblingServices={siblings}
+      siblingServices={[...siblings, { title: 'Heritage Restoration', href: '/services/heritage-restoration' }]}
       breadcrumbs={[
         { label: 'Services', href: '/services' },
         { label: 'Stonemasonry & Masonry', href: '/services/masonry' },
         { label: 'Repointing & Brick Pointing', href: '' },
       ]}
       intro={[
-        'Mortar joints wear out before the bricks do. Water gets into the gaps, the wall starts to move, and the bricks behind the failing mortar slowly cop the weight that the mortar should have been carrying. Repointing replaces the old failed mortar with new, set deep into the joint, matched to the original.',
-        'We rake out the old joints by hand to a depth of two to three times the joint width. Power tools are quicker but they cut the brick faces. On heritage brick that just makes the next job worse. After the joints are raked, we pack new mortar in firm and tool it to whatever profile your wall had to start with. Flush, raked, struck, weathered, or tuck pointed.',
-        'Minas has been pointing brick across Sydney since 1995. From three-metre garden walls in Strathfield to Federation terraces in Paddington and heritage churches in the inner city. Every job gets the right mortar for the brick it goes against.',
+        "Repointing replaces deteriorated mortar in the joints between bricks or stones. Open joints can let rain into the wall, but damp, cracking and loose masonry can have other causes. We assess the condition before deciding whether repointing alone is suitable.",
+        "Sound masonry should be retained where possible. Failed mortar is carefully removed to a depth suited to the joint and repair specification, then replaced with compatible mortar. The method needs to protect the edges of the existing bricks or stone.",
+        "Romans has worked on Sydney masonry since 1995. For older walls, we consider mortar strength, moisture behaviour, colour and joint profile together. Heritage requirements may also affect the repair method and whether approval is needed."
       ]}
       features={[
         {
           icon: Paintbrush,
-          title: 'Colour matched on site',
-          description:
-            'Mortar mixed in front of you to match what is already on the wall. For heritage we use lime, sand and natural oxides. Sample patches go up before the full job starts so you can see the match.',
+          title: "Mortar colour and texture",
+          description: "Sand, binder and joint finish all affect the appearance. A sample patch helps compare the proposed repair with the existing wall after curing."
         },
         {
           icon: Eye,
-          title: 'Joint profile copied',
-          description:
-            'Flush, raked, struck, weathered, tuck pointed. We copy whatever your wall had originally. Wrong profile changes the whole look of the building.',
+          title: "Joint profiles",
+          description: "Flush, raked, struck, weathered and tuckpointed finishes require different detailing. The agreed profile should suit the wall and any heritage requirements."
         },
         {
           icon: Clock,
-          title: 'Lasts 40 to 60 years',
-          description:
-            'Properly mixed and properly applied repointing will outlive most of the bricks around it. Cheap repointing fails inside ten years and takes the bricks with it.',
+          title: "Curing and aftercare",
+          description: "Fresh mortar needs protection suited to the mix and weather. We discuss curing arrangements and maintenance rather than promise a fixed service life."
         },
         {
           icon: ShieldCheck,
-          title: 'Heritage council approved',
-          description:
-            'We work to council heritage scopes regularly. Lime mortar mixes, salvaged sand, era-correct tools. The job gets photographed and documented as we go for the heritage report.',
-        },
+          title: "Heritage repair methods",
+          description: "For listed buildings, confirm approvals and any heritage-adviser requirements before removing mortar. Work should follow the approved repair scope where one applies."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Lime mortar for anything pre-1940',
-          detail:
-            'Hydraulic lime, sand and water. No cement. Lets the wall breathe so moisture leaves through the joints instead of being trapped against soft handmade brick. Takes longer to cure but matches the original material.',
+          title: "Lime-rich mortar where compatible",
+          detail: "Lime-rich mixes may suit older soft brick and stone. The existing materials and exposure guide selection, not an assumed construction-date cutoff."
         },
         {
-          title: 'Cement mortar for post-1940 brick',
-          detail:
-            'Type N or Type S depending on whether it is structural or weather-facing. Modern brick is harder fired and can take a harder mortar without spalling.',
+          title: "Cement-containing mortar where appropriate",
+          detail: "Some masonry suits a cement-containing mix. Strength, permeability and compatibility matter; a structural or conservation specification may be needed."
         },
         {
-          title: 'Sand sourced to match colour',
-          detail:
-            'We sample sand from yards in Marrickville, Castle Hill and the Hawkesbury depending on the colour we need. Heritage jobs sometimes need river sand instead of crushed.',
+          title: "Sand and sample patches",
+          detail: "Sand colour and grading influence the result. Compare the cured sample with the existing joints and agree the finish before wider work."
         },
         {
-          title: 'Hand tools for raking out',
-          detail:
-            'Plugging chisels, joint rakers, finger trowels. Power tools save time but they cut into the brick face. On a wall built before the 1950s, that is permanent damage.',
+          title: "Careful joint preparation",
+          detail: "Hand tools can help protect fragile masonry. The removal method and depth should suit the joint condition without unnecessarily damaging sound material."
         },
         {
-          title: 'Sample patches before the full job',
-          detail:
-            'We put up two or three test patches in different mixes, let them cure for a few days, and have you confirm the colour and texture before we point the whole wall.',
-        },
-        {
-          title: 'Hessian or plastic for curing',
-          detail:
-            'Lime mortar needs slow curing or it cracks. Hessian sheets sprayed with water in summer. Plastic in winter. Not optional.',
-        },
+          title: "Curing protection",
+          detail: "Protection against rapid drying, rain and temperature extremes is selected for the mortar and site conditions. Curing time varies with the mix and weather."
+        }
       ]}
       processSteps={[
         {
-          step: 'We look at the wall and quote',
-          detail:
-            'On-site visit. We poke at the existing mortar, look at the brick condition, work out which mortar profile you have and whether the wall has been repointed badly in the past. Quote comes within a few days, itemised.',
+          step: "Assess the joints and surrounding wall",
+          detail: "Check mortar loss, brick condition, damp, salts, movement and previous repairs. Loose or moving masonry may require a separate structural assessment."
         },
         {
-          step: 'Sample patches go up',
-          detail:
-            'Before the full job, we put up two or three small test patches in different mortar mixes and colours. Cure for two to three days, then you pick the one that matches best.',
+          step: "Agree the repair and sample",
+          detail: "Define the areas to repoint, mortar and joint profile. Allow suitable time to review the sample, especially where heritage approval is involved."
         },
         {
-          step: 'Old mortar gets raked out',
-          detail:
-            'Hand tools, joint by joint, raked back to two or three times the joint width. Slow work. A skilled pointer can do five to ten square metres a day on heritage brick. We sheet up the ground and work top to bottom.',
+          step: "Prepare and refill the joints",
+          detail: "Remove failed mortar carefully, clean and prepare the joints, then compact compatible replacement mortar in accordance with the repair method."
         },
         {
-          step: 'New mortar gets packed in',
-          detail:
-            'Mixed on site in small batches because lime mortar starts curing as soon as it is mixed. Packed firm into the joints with finger trowels. No gaps, no air pockets.',
-        },
-        {
-          step: 'Joints get tooled to profile',
-          detail:
-            'Once the mortar is leather-hard, we tool each joint to the profile your wall had originally. This is what controls how the finished wall looks more than the colour does.',
-        },
-        {
-          step: 'Site cleaned, wall cured',
-          detail:
-            'Brick faces brushed clean. Sheeting taken away. For lime work the wall gets hessian sheets sprayed with water for the first week so the mortar cures slowly. We come back at one week to check it.',
-        },
+          step: "Finish, protect and review",
+          detail: "Tool the joints, clean the faces without damaging them and protect the new mortar during curing. Agree any inspection or aftercare arrangements in the scope."
+        }
       ]}
       faqs={[
         {
-          question: 'How do I know if my wall needs repointing?',
-          answer:
-            'Look for crumbling or missing mortar between bricks. If you can poke a key into the joints and mortar falls out, it is time. Water stains on interior walls, salt deposits on the outside, or bricks starting to come loose are all signs the mortar has failed.',
+          question: "How do I know if my wall needs repointing?",
+          answer: "Missing or crumbling joints, gaps around bricks and weathered mortar are reasons to arrange an inspection. Damp patches and salt deposits can have several causes. Do not pull out loose masonry or probe an unstable wall to test it."
         },
         {
-          question: 'What is the difference between repointing and tuck pointing?',
-          answer:
-            'Repointing is the general term for replacing mortar joints. Tuck pointing is a specific Victorian-era decorative style where a thin line of contrasting white lime is applied over the mortar to make the joints look fine and uniform. We do both. Tuck pointing is much slower and costs more.',
+          question: "What is the difference between repointing and tuckpointing?",
+          answer: "Repointing replaces defective mortar joints. Tuckpointing is a decorative finish using a narrow contrasting line to give the appearance of fine, regular joints. Romans carries out both; the existing finish and repair needs guide the choice."
         },
         {
-          question: 'Do you use cement or lime mortar?',
-          answer:
-            'Depends on the wall. Anything built before the 1940s gets lime mortar because the brick is soft and needs to breathe. Modern brick walls built since the 1950s usually get a cement mortar. Using the wrong one is one of the biggest mistakes in masonry repair. Cement mortar against soft heritage brick traps moisture and the bricks start blowing out in ten to fifteen years.',
+          question: "Do you use cement or lime mortar?",
+          answer: "The mix depends on the brick or stone, existing mortar, exposure and any repair specification. Hard, incompatible mortar can damage softer masonry. Building age is a useful clue, but it is not enough on its own to choose the mix."
         },
         {
-          question: 'How long does a repointing job take?',
-          answer:
-            'A small garden wall is one to two days. A full Federation terrace facade is one to two weeks. A heritage church or commercial building can be six to twelve weeks. Lime work is slower than cement because the mortar cures slowly.',
+          question: "How long does repointing take?",
+          answer: "Area, joint depth, access, preparation and curing affect the programme. Scaffolding and heritage approvals can add separate stages. Timing is discussed after assessing the wall and the proposed mortar."
         },
         {
-          question: 'What does repointing cost?',
-          answer:
-            'Cement repointing on modern brick is usually around 100 to 180 dollars per square metre. Lime mortar on heritage brick runs 180 to 350 dollars per square metre depending on profile and access. Tuck pointing is more. Fixed quote after a site visit so you know exactly where you stand.',
+          question: "What does repointing cost?",
+          answer: "Cost depends on the amount of mortar removal, condition of the masonry, access, profile and chosen mix. Tuckpointing and detailed heritage work involve different labour from straightforward joint replacement. The quote should separate any brick repairs or access equipment."
         },
         {
-          question: 'How long will the repointing last?',
-          answer:
-            'Done properly, 40 to 60 years for lime mortar and 30 to 50 years for cement mortar. The thing that kills repointing early is the wrong mortar mix, joints not raked deep enough, or curing rushed in hot weather. We do not rush any of those.',
-        },
+          question: "How long will the repointing last?",
+          answer: "Service life depends on the mortar compatibility, preparation, curing, exposure and underlying wall condition. A fixed lifespan cannot be promised. Continuing movement or water entry needs attention alongside the joint repair."
+        }
       ]}
     />
   );

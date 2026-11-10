@@ -1,7 +1,6 @@
-// Area profiles for the Problem × Area programmatic SEO matrix.
-// Each area has hand-written notes for the problems most common in that
-// area's housing stock + climate. Pages combine these notes with the
-// existing rich problem data from problems.ts to stay genuinely unique.
+// Existing regional guide data. Routes and relationships are preserved.
+// Regional context helps prepare an enquiry; it does not establish a defect
+// rate, local project history or the correct treatment for a property.
 
 export interface AreaProfile {
   slug: string;
@@ -10,162 +9,197 @@ export interface AreaProfile {
   href: string;
   housingProfile: string;
   suburbs: string[];
-  // Problems prioritised for this area — first 5 get a programmatic page.
+  // Existing guide topics for this area; this is not a prevalence ranking.
   // Use slugs from PROBLEMS in src/data/problems.ts.
   topProblems: string[];
-  // Hand-written context paragraph per problem. ~70–120 words each.
+  // Property-assessment context; not proof of local projects or a diagnosis.
   problemNotes: Record<string, string>;
 }
 
 export const AREAS: Record<string, AreaProfile> = {
-  // One useful hub; no automatic problem × area pages for this new coverage.
-  'hawkesbury-western-sydney': {
-    slug: 'hawkesbury-western-sydney',
-    name: 'Hawkesbury and Western Sydney',
-    shortName: 'Hawkesbury and Western Sydney',
-    href: '/areas/hawkesbury-western-sydney',
-    housingProfile: 'Repair scope depends on the individual building, material, access, drainage and any heritage or engineering requirements. Share photographs and existing reports before an assessment.',
-    suburbs: [],
-    topProblems: [],
-    problemNotes: {},
+  "hawkesbury-western-sydney": {
+    "slug": "hawkesbury-western-sydney",
+    "name": "Hawkesbury and Western Sydney",
+    "shortName": "Hawkesbury and Western Sydney",
+    "href": "/areas/hawkesbury-western-sydney",
+    "housingProfile": "Repair scope depends on the individual building, material, access, drainage and any heritage or engineering requirements. Share photographs and existing reports before an assessment.",
+    "suburbs": [],
+    "topProblems": [],
+    "problemNotes": {}
   },
-  'sydney-cbd': {
-    slug: 'sydney-cbd',
-    name: 'Sydney CBD',
-    shortName: 'the CBD',
-    href: '/areas/sydney-cbd',
-    housingProfile:
-      'Sydney CBD is dominated by 19th-century sandstone commercial buildings, Victorian-era warehouses converted to apartments, and pockets of colonial brickwork around The Rocks. Most heritage buildings here use soft lime mortars and Hawkesbury or Pyrmont sandstone. The mix of foot traffic, tight access, and strict heritage controls means jobs need careful planning.',
-    suburbs: ['the-rocks', 'circular-quay', 'darlinghurst', 'pyrmont', 'ultimo'],
-    topProblems: ['tuckpointing-restoration', 'sandstone-weathering', 'crumbling-mortar', 'damaged-lintels', 'rising-damp'],
-    problemNotes: {
-      'tuckpointing-restoration':
-        "Tuckpointing in the CBD is mostly heritage work — Victorian-era warehouses, terraces near The Rocks, and old commercial buildings around Pyrmont and Ultimo. The original lime tuckpointing on these buildings is usually 100+ years old and the fine white fillet line has worn or flaked away. Modern cementitious tuckpointing on heritage walls is a known failure mode, so we mix traditional lime putty mortars on site. Council and heritage approvals are part of every job here.",
-      'sandstone-weathering':
-        "Most pre-1900 buildings in the CBD are Hawkesbury or Pyrmont sandstone, and after 130+ years of weather, exhaust fumes and foot traffic, the surface stone is often soft, sugary or flaking. We see this constantly on plinth stones, sills, lintels and ornamental detailing in The Rocks and Circular Quay. Cleaning and consolidation has to be done carefully — high-pressure cleaning destroys soft stone — and any replacement blocks need to match the original quarry and weather in.",
-      'crumbling-mortar':
-        "Mortar in CBD heritage buildings is almost always lime-based and now over a century old. Years of weather, traffic vibration and previous bad repairs (cement repointing on top of lime mortar) leave joints crumbling and open. Around Pyrmont, Ultimo and the Rocks we routinely find walls where the mortar is so soft you can scrape it out with a key. The fix is full rake-out and repointing with a matched lime mortar — never cement, which destroys the surrounding brick or stone.",
-      'damaged-lintels':
-        "Older CBD buildings often have sandstone or timber lintels above windows that have failed under decades of load. Rusted steel lintels in early-20th-century commercial buildings are another constant — the steel expands as it rusts and cracks the brickwork above. We see this through the Pyrmont and Ultimo warehouse stock and across heritage shopfronts. Replacement needs structural steel sized to the load and proper corrosion protection so we are not back in 30 years.",
-      'rising-damp':
-        "CBD heritage buildings predate damp-proof courses, and many of the ones that had retrofitted DPCs have seen those fail. Combined with cement renders trapping moisture in the wall, we see rising damp patterns regularly through The Rocks, Darlinghurst and the older terraces near Pyrmont. The fix needs to allow the wall to breathe — chemical DPC injection plus removal of any cementitious render, followed by a lime-based render that lets moisture escape.",
-    },
+  "sydney-cbd": {
+    "slug": "sydney-cbd",
+    "name": "Sydney CBD",
+    "shortName": "the CBD",
+    "href": "/areas/sydney-cbd",
+    "housingProfile": "For an older shopfront, warehouse conversion or commercial facade in the CBD, start with the building’s records and existing fabric. Public footpaths, neighbouring tenancies, loading access and any heritage controls need consideration alongside the repair itself. The exact property and proposed work determine the permissions and protection required.",
+    "suburbs": [
+      "the-rocks",
+      "circular-quay",
+      "darlinghurst",
+      "pyrmont",
+      "ultimo"
+    ],
+    "topProblems": [
+      "tuckpointing-restoration",
+      "sandstone-weathering",
+      "crumbling-mortar",
+      "damaged-lintels",
+      "rising-damp"
+    ],
+    "problemNotes": {
+      "tuckpointing-restoration": "For a facade in The Rocks, Pyrmont or Ultimo, identify whether the visible joints are original tuckpointing, later repointing or a painted finish before planning restoration. Surviving details and historic photographs can help establish an appropriate joint profile. Discuss a small trial and material compatibility with a heritage adviser where needed. Confirm the property’s approval requirements before stripping coatings or altering significant fabric.",
+      "sandstone-weathering": "On a CBD shopfront or street-facing stone facade, the first question is whether loose material could fall onto people below. Keep clear of affected areas and arrange professional assessment. Stone condition, water paths and earlier repairs guide the scope. Cleaning, consolidation and replacement are different options; none should be selected simply because the stone looks discoloured. Access and pedestrian protection need planning before work at height.",
+      "crumbling-mortar": "Open joints on a warehouse facade or older commercial wall need inspection for water entry, movement and the condition of the surrounding masonry. A colour match alone does not establish a suitable replacement mortar. Retain sound material where appropriate and agree the joint profile and repair extent before work. For shared or street-facing walls, include occupant access, protection and any heritage requirements in the written scope.",
+      "damaged-lintels": "Cracking above a CBD shopfront or warehouse opening may involve its lintel, but a photograph cannot establish the load path or cause. An engineer should assess structural concerns and any temporary support before masonry is disturbed. Existing drawings, previous alterations and access to the inside of the opening are useful. The design and heritage context determine whether repair, strengthening or replacement is appropriate.",
+      "rising-damp": "Damp at the base of an older CBD wall can involve several moisture sources. Record whether it changes after rain and share information about gutters, drains, plumbing, basement use and past coatings. Assessment should distinguish ground moisture from leaks, condensation or other causes before choosing a treatment. Chemical injection or render removal is not an automatic solution, particularly where significant original finishes would be affected."
+    }
   },
-
-  'eastern-suburbs': {
-    slug: 'eastern-suburbs',
-    name: 'Eastern Suburbs',
-    shortName: 'the Eastern Suburbs',
-    href: '/areas/eastern-suburbs',
-    housingProfile:
-      "The Eastern Suburbs run from Paddington's Victorian terraces through Bondi's apartment blocks to the period homes of Woollahra, Double Bay and Bellevue Hill. Sandstone, Sydney red brick and stucco render dominate. Salt air from the coast accelerates damage on everything from balconies to lintels — anything within a couple of kilometres of the water sees noticeably faster deterioration.",
-    suburbs: ['paddington', 'woollahra', 'bondi', 'double-bay', 'bellevue-hill', 'coogee', 'randwick'],
-    topProblems: ['concrete-cancer', 'sandstone-weathering', 'efflorescence-salt-damage', 'cracked-brick-walls', 'tuckpointing-restoration'],
-    problemNotes: {
-      'concrete-cancer':
-        "Concrete cancer is the number-one structural problem in Eastern Suburbs apartment blocks, especially the 1960s–1990s walk-ups in Bondi, Coogee and Randwick. Salt air drives chloride into the concrete, rusting the steel reinforcement and cracking balconies, parapets and facade panels from the inside out. We work on strata buildings here constantly — full inspection, sound concrete removal, salt-resistant patch mortar and a breathable protective coating. Cheap patch jobs fail within a few years in this environment.",
-      'sandstone-weathering':
-        "Sandstone is everywhere in the Eastern Suburbs — Paddington's plinths and string courses, Woollahra's gateposts and retaining walls, Bondi's older homes — and salt makes it worse. Salt crystallisation inside the stone breaks it apart from within. We see sugaring, contour scaling and surface loss most badly on south-east-facing facades and any stonework within a block of the water. Repair means careful cleaning, consolidation, and dutchman or full-block replacement with matched sandstone.",
-      'efflorescence-salt-damage':
-        "Walls within a few kilometres of Bondi, Bronte and Coogee carry a constant salt load. Efflorescence — the white powder bloom on brick and stone — is the visible sign, but the real damage is sub-florescence (salt crystallising under the surface) which spalls brick faces and crumbles mortar. We see it most on rendered walls and exposed brickwork on the eastern facades. Treatment is multi-step: removing soluble salts, repairing damaged units, and applying a breathable salt-blocking treatment.",
-      'cracked-brick-walls':
-        "Paddington and Woollahra terraces are usually 130–150 years old, built before modern footings. Hairline cracks are normal; cracks wider than 5 mm or running in step patterns through the brickwork need investigation. Common causes here are settlement on reactive clay soils, leaking stormwater under footings, or root damage from established street trees. We assess every crack against actual movement before recommending whether it's cosmetic repair, crack stitching or underpinning.",
-      'tuckpointing-restoration':
-        "Paddington and Surry Hills border terraces are the textbook tuckpointing job — Victorian-era Sydney red brick with the original white fillet line either worn off or never restored. Many were rendered or painted over the original tuckpointing in the 1960s–80s. Stripping back and re-tuckpointing brings the building back to its original look and dramatically lifts the value. We mix proper lime tuckpointing mortar matched to the brick colour.",
-    },
+  "eastern-suburbs": {
+    "slug": "eastern-suburbs",
+    "name": "Eastern Suburbs",
+    "shortName": "the Eastern Suburbs",
+    "href": "/areas/eastern-suburbs",
+    "housingProfile": "Enquiries across Paddington, Woollahra, Bondi, Coogee and surrounding suburbs can involve terraces, houses, apartments or retaining walls. Record the actual wall material, exposure, previous repairs and access. A coastal address does not establish the cause of deterioration, and a period appearance does not establish heritage status. Check the individual property before choosing a repair.",
+    "suburbs": [
+      "paddington",
+      "woollahra",
+      "bondi",
+      "double-bay",
+      "bellevue-hill",
+      "coogee",
+      "randwick"
+    ],
+    "topProblems": [
+      "concrete-cancer",
+      "sandstone-weathering",
+      "efflorescence-salt-damage",
+      "cracked-brick-walls",
+      "tuckpointing-restoration"
+    ],
+    "problemNotes": {
+      "concrete-cancer": "For an apartment balcony or facade in Bondi, Coogee or Randwick, send the strata manager’s reports and photographs taken from a safe position. Cracking, rust staining and loose concrete warrant assessment of deterioration and falling-material risks. Exposure, moisture paths and reinforcement condition inform the repair specification. Agree investigation access, engineering responsibilities and resident protection before setting a staged programme; the suburb alone cannot determine urgency.",
+      "sandstone-weathering": "Sandstone steps, gateposts and facade details need different assessments because their loads, water exposure and consequences of failure differ. For a property in Paddington, Woollahra or the coastal suburbs, show where the damaged stone sits and whether loose fragments have appeared. Avoid aggressive cleaning before its condition is understood. Any replacement should be assessed for compatibility and appearance, with heritage advice where the fabric is significant.",
+      "efflorescence-salt-damage": "White deposits on an Eastern Suburbs wall should be considered alongside moisture entry, drainage, existing coatings and the material beneath. Proximity to Bondi or Coogee is useful context, but it does not identify the salts or their source. Record when the marks appear and whether the surface is also flaking. Ask for assessment before repeated washing or a new coating obscures the evidence.",
+      "cracked-brick-walls": "For a terrace in Paddington or Woollahra, photographs of the whole wall, adjoining openings and any corresponding internal damage are more useful than a close-up alone. Include when the crack appeared and any recent building, drainage or landscaping work. Its width cannot by itself establish safety or the correct repair. Structural concerns require professional assessment before stitching, opening the wall or investigating foundations.",
+      "tuckpointing-restoration": "On an older terrace facade, check for surviving fillet lines, earlier pointing and paint layers before deciding what restoration should reproduce. The brick condition and mortar compatibility matter as much as colour. A carefully agreed trial can help compare the finish without committing the whole facade. Check heritage requirements and the effect of coating removal first; restoration is not a promise of a particular increase in property value."
+    }
   },
-
-  'north-shore': {
-    slug: 'north-shore',
-    name: 'North Shore',
-    shortName: 'the North Shore',
-    href: '/areas/north-shore',
-    housingProfile:
-      "The North Shore mixes Federation and California bungalow homes around Mosman, Neutral Bay and Cremorne with newer apartment stock through Chatswood, St Leonards and Lane Cove. Sandstone retaining walls, brick chimneys and rendered facades are common. Mosman and Neutral Bay sit close enough to the water that salt drives concrete and brick damage; further inland the issues are more about age, mortar failure and settlement.",
-    suburbs: ['mosman', 'neutral-bay', 'chatswood', 'lane-cove', 'cremorne', 'st-leonards'],
-    topProblems: ['concrete-cancer', 'sandstone-weathering', 'leaking-balconies', 'efflorescence-salt-damage', 'cracked-brick-walls'],
-    problemNotes: {
-      'concrete-cancer':
-        "Concrete cancer hits North Shore strata buildings consistently — Chatswood and St Leonards apartment towers, the 1970s–80s walk-ups across Mosman and Neutral Bay, even the converted commercial buildings around Lane Cove. Balconies and parapets near the water in Mosman and Cremorne are the worst. We've staged whole-building programs for strata committees here, working through the worst areas first and budgeting follow-up stages over 2–3 years.",
-      'sandstone-weathering':
-        "Mosman and Neutral Bay are full of sandstone retaining walls, gate posts and terrace facings, many over a century old. South-facing and shaded sandstone develops moss and biological growth that holds moisture against the stone and accelerates breakdown. Anywhere within the waterfront streets — Cremorne Point, Mosman Bay — we also see salt-driven sugaring. Treatment is careful cleaning, consolidation and dutchman repairs with matched stone.",
-      'leaking-balconies':
-        "Strata balconies across Chatswood, St Leonards and Mosman fail at the membrane and at the wall junction. Often the original waterproofing was builder-grade and was never properly upgraded. The leaks show as efflorescence on the soffit below, rust streaks, or paint blowing off the unit below. Repair means lifting the balcony tiles, replacing the membrane properly, addressing the wall-floor junction with a coved fillet, and reinstating — patch-repair from above never lasts.",
-      'efflorescence-salt-damage':
-        "Waterfront streets in Mosman, Neutral Bay and Cremorne carry the same salt-load profile as the coast. We see efflorescence on south-east-facing walls and the salt crystallisation damage that follows. Even a couple of kilometres back from the water, rising damp combined with cement renders trap salts inside walls and produce the same surface damage. Diagnosis matters here — treating efflorescence without finding the moisture source guarantees it comes back.",
-      'cracked-brick-walls':
-        "North Shore Federation and California bungalow homes were built on the sandstone shelf in many parts, which is generally stable. Where we see real crack issues it's usually on the clay edges — Lane Cove, parts of Chatswood — or where stormwater has been undermining footings. The other common one: chimney cracks where the chimney has rotated outward from the wall over a century. We assess against actual movement before specifying repair.",
-    },
+  "north-shore": {
+    "slug": "north-shore",
+    "name": "North Shore",
+    "shortName": "the North Shore",
+    "href": "/areas/north-shore",
+    "housingProfile": "For North Shore enquiries, identify the property type and the element needing repair: a house wall, apartment balcony, chimney, step or retaining wall. Harbour exposure, vegetation, drainage and access vary between sites. Share available drawings and reports, and check any heritage or strata requirements before defining the work.",
+    "suburbs": [
+      "mosman",
+      "neutral-bay",
+      "chatswood",
+      "lane-cove",
+      "cremorne",
+      "st-leonards"
+    ],
+    "topProblems": [
+      "concrete-cancer",
+      "sandstone-weathering",
+      "leaking-balconies",
+      "efflorescence-salt-damage",
+      "cracked-brick-walls"
+    ],
+    "problemNotes": {
+      "concrete-cancer": "An apartment-building enquiry in Chatswood, St Leonards, Mosman or Neutral Bay benefits from a clear record of affected levels and earlier repairs. An engineer can assess structural concerns and help distinguish urgent protection from longer-term repair planning. A staged budget must follow the assessed risk, rather than postponing an unsafe area. Confirm how residents, entrances and neighbouring property will be protected during investigation and work.",
+      "sandstone-weathering": "For a North Shore sandstone wall, gatepost or set of steps, note whether the affected stone carries load, retains ground or sits above a path. Moisture, drainage, past repairs and vegetation are useful assessment details. Surface staining alone does not show how sound the stone is. The scope should distinguish care of retained fabric from structural repair, and identify any engineering or heritage input before cleaning or replacement.",
+      "leaking-balconies": "For a balcony leak in a North Shore apartment building, include the location of the stain below, its relationship to rainfall and any earlier waterproofing work. Drains, thresholds, wall junctions and the slab may all need investigation. The visible stain does not locate the entry point. Coordinate access with strata and affected occupants, and let the findings determine whether a local repair or wider replacement is appropriate.",
+      "efflorescence-salt-damage": "A harbour-facing wall and a sheltered wall can show different symptoms even on the same North Shore property. Record the wall’s position, drainage, coatings and when deposits return. Salt staining needs assessment with the moisture source and masonry condition; it is not enough to select a product from the suburb name. Discuss a suitable trial before cleaning or treating significant stone or brickwork.",
+      "cracked-brick-walls": "North Shore crack enquiries should include previous alterations, any nearby excavation and the movement history, alongside photographs of the wall and openings. Ground conditions cannot be assumed from a broad regional description. Chimneys, retaining walls and ordinary house walls carry different risks and may need different specialists. If movement is sudden or masonry is unstable, keep away from the affected area and seek prompt professional safety advice."
+    }
   },
-
-  'northern-beaches': {
-    slug: 'northern-beaches',
-    name: 'Northern Beaches',
-    shortName: 'the Northern Beaches',
-    href: '/areas/northern-beaches',
-    housingProfile:
-      "Manly, Dee Why, Collaroy, Freshwater and Avalon are some of the most salt-exposed neighbourhoods in Sydney. Brick veneer homes, mid-century beach houses, and a heavy stock of 1970s–90s strata blocks dominate. Anything with exposed steel, concrete or untreated brickwork degrades faster here than anywhere else in the metro area. Wind-driven salt also damages render and paint coatings far more aggressively than inland sites.",
-    suburbs: ['manly', 'dee-why', 'avalon', 'collaroy', 'freshwater'],
-    topProblems: ['concrete-cancer', 'efflorescence-salt-damage', 'sandstone-weathering', 'leaking-balconies', 'spalling-render'],
-    problemNotes: {
-      'concrete-cancer':
-        "The Northern Beaches sees more concrete cancer per kilometre of buildings than any other part of Sydney. Manly, Dee Why, Collaroy — almost every strata building over 20 years old has it somewhere. Beachfront balconies are the textbook case: salt spray drives chloride into the concrete, rusts the reinforcement, and the slab edges spall off. We work on whole-building remediation programs here regularly. Anything less than a full cut-back and salt-resistant repair fails fast in this environment.",
-      'efflorescence-salt-damage':
-        "Salt damage on the Northern Beaches goes beyond cosmetic — it's structural. Brick faces spall, mortar joints crumble, and rendered walls bubble and lift, especially on south-east-facing aspects through Manly to Avalon. Sub-florescence (salt crystallising inside the wall) does most of the damage you can't see. Proper treatment removes the salt, repairs the substrate, and seals with a salt-blocking system that's still breathable — non-breathable coatings trap moisture and accelerate the next round of damage.",
-      'sandstone-weathering':
-        "Older sandstone buildings and retaining walls along the Beaches — Manly's original cottages, the sandstone outcrops through Avalon and Collaroy — take a beating from salt and wind. Sugaring, contour scaling and surface loss are routine on exposed faces. Cleaning has to be done with low-pressure methods (high pressure destroys the stone) and consolidation treatments can extend life on stone too far gone to replace economically. Replacement blocks need to match weather pattern and tone, which takes time.",
-      'leaking-balconies':
-        "Northern Beaches strata buildings have some of the highest balcony leak rates in Sydney because of the combined salt and water exposure. We see failed membranes, deteriorated drainage outlets, and wall-junction failures across blocks in Manly, Dee Why and Collaroy. The leak below is usually the visible symptom — by the time water shows on the soffit, the membrane has been failing for years. Proper repair means full membrane replacement and corrected drainage falls, not patching.",
-      'spalling-render':
-        "Rendered walls don't last on the Beaches without proper specification. Cementitious render over brick traps salt and moisture, and within 10–20 years the render is bubbling, lifting and falling off in sheets. We see this on whole streetfronts in Dee Why, Collaroy and Freshwater. The fix is to strip the failed render, repair the brick or block substrate properly, and re-render with a breathable, salt-tolerant system specified for marine exposure — not standard render.",
-    },
+  "northern-beaches": {
+    "slug": "northern-beaches",
+    "name": "Northern Beaches",
+    "shortName": "the Northern Beaches",
+    "href": "/areas/northern-beaches",
+    "housingProfile": "For a Northern Beaches property, record actual exposure and access rather than assuming all damage is salt-related. A beachfront apartment, sheltered house and retaining wall need different investigations. Photographs of the affected element, drainage and previous repairs help establish the next step. Strata coordination, safe access and any planning constraints should be discussed early.",
+    "suburbs": [
+      "manly",
+      "dee-why",
+      "avalon",
+      "collaroy",
+      "freshwater"
+    ],
+    "topProblems": [
+      "concrete-cancer",
+      "efflorescence-salt-damage",
+      "sandstone-weathering",
+      "leaking-balconies",
+      "spalling-render"
+    ],
+    "problemNotes": {
+      "concrete-cancer": "On a balcony or facade near the coast, exposure is one factor in an assessment of cracking, corrosion and loose concrete. For Manly, Dee Why or Collaroy strata enquiries, share existing engineering reports and the location of affected areas. Keep people away from falling-material hazards. Testing and structural assessment inform the repair scope; neither the building’s age nor a regional label proves that every slab has the same defect.",
+      "efflorescence-salt-damage": "For a wall between Manly and Avalon, show both the deposits and the wider setting, including drains, ground levels and nearby water paths. Salts can affect appearance and material condition, but white staining alone does not establish structural damage. Assessment should identify the moisture mechanism and suitable treatment. Avoid choosing a generic “salt-blocking” coating before its compatibility and effect on drying have been considered.",
+      "sandstone-weathering": "A sandstone retaining wall, garden feature and facade detail need separate repair decisions. At a Northern Beaches property, explain whether the stone is shedding fragments, leaning or supporting ground, and whether a path or neighbour lies below. Cleaning and surface treatments cannot correct a structural defect. Retain sound original fabric where appropriate and have proposed repairs assessed for compatibility, access and any required engineering.",
+      "leaking-balconies": "For a Northern Beaches balcony, record whether water appears after wind-driven rain, routine rain or another event, and which rooms or units are affected. Existing drainage, thresholds, junctions and previous repairs help guide investigation. Do not assume a complete membrane replacement is always needed or that a surface patch will solve the problem. Agree diagnostic access and the repair specification with the relevant specialists and strata representatives.",
+      "spalling-render": "Loose render above a Northern Beaches entrance, balcony or public path needs attention to the risk of falling material before its appearance. Moisture, adhesion, the substrate and earlier coatings can all influence the investigation. Avoid knocking off material to test it. The repair scope should identify safe access, treatment of the underlying defect and a compatible finish, rather than promise a lifespan based only on coastal exposure."
+    }
   },
-
-  'inner-west': {
-    slug: 'inner-west',
-    name: 'Inner West',
-    shortName: 'the Inner West',
-    href: '/areas/inner-west',
-    housingProfile:
-      "Newtown, Balmain, Marrickville, Leichhardt, Glebe and Surry Hills are dominated by Victorian and Edwardian terraces, workers' cottages, and converted warehouses. The brickwork is mostly Sydney red brick on lime mortar, often with original tuckpointing under decades of paint or render. Reactive clay soils under many streets cause footing movement, and the age of the housing stock means almost every job involves heritage-appropriate materials.",
-    suburbs: ['newtown', 'balmain', 'marrickville', 'leichhardt', 'glebe', 'surry-hills', 'erskineville'],
-    topProblems: ['tuckpointing-restoration', 'cracked-brick-walls', 'crumbling-mortar', 'rising-damp', 'foundation-movement'],
-    problemNotes: {
-      'tuckpointing-restoration':
-        "The Inner West is the heartland of Sydney tuckpointing work. Newtown, Balmain, Surry Hills and Erskineville have streets of Victorian-era terraces where the original tuckpointing was painted over in the 1950s–80s. Stripping and re-tuckpointing brings the original detail back and adds real value. We use proper lime putty mortars, mixed and applied the way the original work was done. Matching mortar colour to the brick takes test panels before we commit to the full wall.",
-      'cracked-brick-walls':
-        "Inner West terraces and cottages were built on shallow stone or brick footings, and many sit on reactive clay or fill. Cracking is common — most of it cosmetic, but enough is real movement that every crack needs assessment. Drought followed by heavy rain causes the worst movement in Newtown, Marrickville and Glebe, where clay soils swell and shrink seasonally. Repair depends on whether the movement is active or settled — there's no point patching cracks until the cause is addressed.",
-      'crumbling-mortar':
-        "Lime mortar on 100+ year-old Inner West terraces is exhausted. Joints have been raked out by weather, attacked by salts, or — worst case — repointed with hard cement mortar that's now spalling the brick faces around it. We see this constantly through Balmain, Leichhardt and Glebe. Full rake-out and repointing with a matched lime mortar is the only proper fix. Test sections first, then work in panels to keep the wall serviceable through the job.",
-      'rising-damp':
-        "Inner West terraces and cottages built before about 1920 either had no damp-proof course or had a slate DPC that's failed. Rising damp shows as a tidemark up the inside of skirtings, salt bloom at the wall base, and paint blowing off render. The wrong fix — cement render on the outside, paint on the inside — traps moisture and makes it worse. We do chemical DPC injection plus removal of any non-breathable coatings, then lime-based render that lets the wall dry properly.",
-      'foundation-movement':
-        "Reactive clay soils through Marrickville, Leichhardt and parts of Newtown drive significant seasonal movement. Combined with old timber or shallow brick footings and broken stormwater, foundation movement is the cause behind many of the cracks we see in the Inner West. Diagnosis matters — sometimes the fix is fixing drainage and waiting, sometimes it's targeted underpinning, sometimes the whole side of the building needs work. We level-check and monitor before specifying.",
-    },
+  "inner-west": {
+    "slug": "inner-west",
+    "name": "Inner West",
+    "shortName": "the Inner West",
+    "href": "/areas/inner-west",
+    "housingProfile": "For a terrace, cottage, shopfront or converted building in the Inner West, original fabric and later alterations may need different treatment. Party walls, narrow side access, occupied neighbours and heritage requirements can affect the scope. Confirm the property’s local authority and actual condition; a suburb-wide description cannot establish its mortar, foundations or repair needs.",
+    "suburbs": [
+      "newtown",
+      "balmain",
+      "marrickville",
+      "leichhardt",
+      "glebe",
+      "surry-hills",
+      "erskineville"
+    ],
+    "topProblems": [
+      "tuckpointing-restoration",
+      "cracked-brick-walls",
+      "crumbling-mortar",
+      "rising-damp",
+      "foundation-movement"
+    ],
+    "problemNotes": {
+      "tuckpointing-restoration": "For a terrace in Newtown, Balmain or Erskineville, surviving joints and early photographs can help identify the intended facade finish. Paint removal should be assessed before it becomes part of the scope, because it may affect the masonry beneath. Discuss colour, joint profile and a small trial with the appropriate adviser. Check current heritage requirements for the property; a restored finish does not establish a financial return.",
+      "cracked-brick-walls": "For an Inner West terrace or cottage, include the location of any party wall, recent alterations and changes noticed at doors or windows. Drainage and movement history may help an investigation, but neither building age nor the suburb identifies the cause. Share earlier reports if available. Structural concerns and work near adjoining buildings need the appropriate professional assessment before repair or opening-up is planned.",
+      "crumbling-mortar": "On an older Inner West facade, some joints may remain sound while others have deteriorated or been changed in earlier repairs. The condition of the brick or stone and the existing mortar guides the repair extent and replacement mix. Agree test work and the joint finish where appropriate. Avoid treating every wall as a full rake-out job; disturbance of fragile fabric needs care and any relevant heritage advice.",
+      "rising-damp": "For damp in a terrace or cottage, show where the marks appear and note rainfall, plumbing changes, external levels and ventilation. A tidemark or peeling finish can have more than one cause. Investigation should establish the moisture path before selecting injection, drainage changes or removal of coatings. Party walls and significant finishes may affect access and permissions, so include these in the scope discussion.",
+      "foundation-movement": "For a property in Marrickville, Leichhardt or nearby suburbs, gather any survey, engineering or drainage reports before deciding on foundation work. Record when movement was noticed and whether neighbouring excavation or alterations may be relevant. Soil type and footing depth need site evidence. An engineer can advise on investigation, monitoring and any repair; the approach should also consider adjoining buildings and safe access."
+    }
   },
-
-  'greater-sydney': {
-    slug: 'greater-sydney',
-    name: 'Sydney Metro',
-    shortName: 'Sydney metro',
-    href: '/areas/greater-sydney',
-    housingProfile:
-      "Strathfield, Burwood, Concord, Homebush and Parramatta cover the suburbs from the Inner West out toward Western Sydney. Housing here ranges from Federation and inter-war brick homes through to post-war fibro and brick veneer, plus newer apartment stock around the rail corridors. Reactive clay soils are widespread, and many of the older homes have shallow footings that move with seasonal moisture changes.",
-    suburbs: ['parramatta', 'strathfield', 'burwood', 'concord', 'homebush'],
-    topProblems: ['cracked-brick-walls', 'foundation-movement', 'failing-retaining-walls', 'crumbling-mortar', 'rising-damp'],
-    problemNotes: {
-      'cracked-brick-walls':
-        "Older homes through Strathfield, Burwood and Concord were built on shallow footings over reactive clay. After droughts and heavy rain, the clay swells and shrinks unevenly under the building and cracks appear — usually stepping through the mortar joints, sometimes through bricks. We assess every crack against actual movement using level checks and tell-tales before deciding whether it's cosmetic stitching, structural repair or underpinning.",
-      'foundation-movement':
-        "Foundation movement is the most common structural issue we see around Sydney metro suburbs such as Strathfield, Burwood, Concord and Homebush. Reactive clay soils, broken stormwater, leaking sewer connections and large established trees all drive it. We do full diagnosis before deciding between drainage rectification, root barriers or targeted underpinning. Jumping straight to underpinning without diagnosis wastes money.",
-      'failing-retaining-walls':
-        "Sloping blocks through Strathfield, Burwood and Concord have a lot of retaining walls, many of them 50+ years old and built without proper drainage. Sandstone block, brick or rendered concrete walls bulge, crack or lean as the hydrostatic pressure builds up behind them. Repair depends on the wall type and severity — sometimes weep holes and drainage fix it, sometimes the wall needs partial rebuild, sometimes full replacement with engineered design.",
-      'crumbling-mortar':
-        "Federation-era and inter-war brick homes through Burwood, Concord and Homebush usually have lime-cement mortars that are 80+ years old. Where the original lime content has weathered out, joints crumble away. We also routinely find walls that were repointed in the 1960s–80s with hard cement mortar — that traps moisture and spalls the brick faces. Proper repair is full rake-out and repointing with a matched lime-based mortar appropriate to the brick.",
-      'rising-damp':
-        "Older homes in Strathfield, Burwood and Parramatta predate modern damp-proofing or have slate DPCs that have failed. Rising damp is common, especially where landscaping has raised garden beds against the wall, or cement renders have been added that trap moisture. The fix is chemical DPC injection, lowering external ground levels where possible, and stripping any cement render in favour of a breathable lime-based system.",
-    },
-  },
+  "greater-sydney": {
+    "slug": "greater-sydney",
+    "name": "Sydney Metro",
+    "shortName": "Sydney metro",
+    "href": "/areas/greater-sydney",
+    "housingProfile": "The existing Sydney metro guide includes enquiries from Strathfield, Burwood, Concord, Homebush and Parramatta. Houses, strata buildings and commercial properties have different access, ownership and assessment needs. Include the suburb, building type and affected material when discussing availability. Foundation conditions and repair requirements need property-specific evidence.",
+    "suburbs": [
+      "parramatta",
+      "strathfield",
+      "burwood",
+      "concord",
+      "homebush"
+    ],
+    "topProblems": [
+      "cracked-brick-walls",
+      "foundation-movement",
+      "failing-retaining-walls",
+      "crumbling-mortar",
+      "rising-damp"
+    ],
+    "problemNotes": {
+      "cracked-brick-walls": "For a home in Strathfield, Burwood or Concord, provide a view of the full wall, the crack and any matching internal symptoms. Note when changes began, recent works and relevant plumbing or drainage issues. Stepped cracking does not by itself prove a particular foundation problem. An assessment should determine whether monitoring, masonry repair or further structural investigation is needed before a method is quoted.",
+      "foundation-movement": "For foundation concerns across Sydney metro suburbs, existing drawings, movement records and drainage information can help the assessment. Visible cracking alone does not establish soil conditions or justify underpinning. Engineering and any geotechnical investigation should guide the options and monitoring plan. Do not remove trees, excavate beside footings or alter drainage as an experiment; these changes can affect the building or neighbouring property.",
+      "failing-retaining-walls": "For a retaining wall in Burwood, Concord or another Sydney suburb, explain what it retains and whether a driveway, building, boundary or public path is nearby. Leaning, cracking or sudden change calls for assessment of stability and access restrictions. Drainage may be relevant, but drilling holes or excavating behind the wall without a plan can create risks. The design, ownership and approval requirements need confirmation before work.",
+      "crumbling-mortar": "For brickwork in an older Strathfield, Burwood or Homebush home, identify whether deterioration is localised or affects a larger wall. Previous repairs, moisture and the condition of the bricks are useful details. Mortar composition cannot be established from the suburb or building age alone. Discuss a compatible repair mix, retained sound joints and the intended finish before committing to extensive repointing.",
+      "rising-damp": "For damp walls in Strathfield, Burwood or Parramatta, start with the pattern of moisture and any changes to plumbing, paving, gardens or ventilation. An assessment should consider different sources before assuming a failed damp-proof course. Injection and removal of render are options only where suitable to the findings and fabric. External level changes also need attention to services, foundations and neighbouring drainage."
+    }
+  }
 };
 
 export const getArea = (slug: string): AreaProfile | undefined => AREAS[slug];
@@ -178,8 +212,8 @@ export const getAreasForProblem = (problemSlug: string): AreaProfile[] =>
   getAllAreas().filter((a) => a.topProblems.includes(problemSlug) && !!a.problemNotes[problemSlug]);
 
 // All (problem, area) combinations that should be prerendered.
-// We only ship the top 5 problems per area to keep every page meaningfully
-// unique — the other 9 problems per area aren't worth the thin-content risk.
+// Preserve the existing published route set. New combinations require their
+// own useful evidence and review rather than automatic multiplication.
 export const PROBLEM_AREA_COMBOS = (): Array<{ problem: string; area: string }> => {
   const combos: Array<{ problem: string; area: string }> = [];
   for (const area of getAllAreas()) {

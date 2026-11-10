@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { galleryImages, type GalleryCategory } from '@/data/galleryImages';
-import { getArea } from '@/data/areas';
+import type { GalleryCategory } from '@/data/galleryImages';
+import { projectGalleryImages } from '@/data/projectGallery';
 
-// Which photo categories suit each area's typical housing stock.
-// Sydney CBD = heritage sandstone; Northern Beaches = coastal apartments; etc.
-// Photos aren't tagged by suburb in our source data, so we don't claim
-// "this project was in <suburb>". The framing is "recent work in your area".
+// Category choices vary the examples; source photos are not tagged by suburb.
+// This selection is illustrative, not evidence of local jobs or current activity.
 const AREA_CATEGORIES: Record<string, GalleryCategory[]> = {
   'sydney-cbd': ['heritage', 'stonework', 'on-the-tools'],
   'eastern-suburbs': ['heritage', 'structural', 'stonework', 'concrete'],
@@ -36,9 +34,8 @@ interface SuburbGalleryProps {
 }
 
 export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: SuburbGalleryProps) => {
-  const area = getArea(areaSlug);
   const cats = AREA_CATEGORIES[areaSlug] ?? ['heritage', 'stonework'];
-  const pool = galleryImages.filter((img) => cats.includes(img.category));
+  const pool = projectGalleryImages.filter((img) => cats.includes(img.category));
   if (pool.length === 0) return null;
 
   const seed = hash(suburbSlug);
@@ -48,22 +45,20 @@ export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: S
     .slice(0, count)
     .map((x) => x.img);
 
-  const areaName = area?.name ?? 'Sydney';
-
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="mb-8 text-center">
           <h2 className="font-heading text-2xl md:text-3xl text-navy mb-3">
-            Recent work across the {areaName}
+            Masonry details from the gallery
           </h2>
           <p className="font-body text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            Examples of jobs we've done with the same materials, conditions and craft you'd find on a property in {suburbName}. Photography is from real Romans Building Services projects, not stock.
+            Browse stone finishes, brickwork and repair details from the Romans photo archive while planning work in {suburbName}. These examples are not a record of projects in this suburb or a guide to the condition of your property.
           </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-          {photos.map((photo, i) => (
+          {photos.map((photo) => (
             <div
               key={photo.id}
               className="relative aspect-square overflow-hidden rounded-md bg-stone-100">
@@ -82,7 +77,7 @@ export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: S
           <Link
             to="/gallery"
             className="inline-flex items-center gap-2 font-body text-navy hover:text-amber transition-colors">
-            See the full project gallery <ArrowRight className="w-4 h-4" />
+            Explore the project gallery <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

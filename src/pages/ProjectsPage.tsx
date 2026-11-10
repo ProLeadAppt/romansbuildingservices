@@ -1,12 +1,12 @@
 import { SEO } from '@/components/SEO';
 import { GalleryGrid } from '@/components/GalleryGrid';
-import { galleryImages } from '@/data/galleryImages';
+import { projectGalleryImages } from '@/data/projectGallery';
 import galleryVideo from '@/assets/videos/romansstone_1704887055_3277152517439331908_2394650725.mp4';
 import { ImageGallerySchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { Link } from 'react-router-dom';
 
 const SITE_URL = 'https://romansbuildingservices.com';
-const schemaImages = galleryImages
+const schemaImages = projectGalleryImages
   .filter((img) => img.featured)
   .slice(0, 20)
   .map((img) => ({
@@ -17,29 +17,29 @@ const schemaImages = galleryImages
 
 const galleryFaqs = [
   {
-    question: 'Are these your real photos?',
+    question: 'What does this gallery show?',
     answer:
-      'Yes. Every photo on this page is from one of our jobs. No stock images, no AI renders, no photos pulled off the internet. Most were taken on a phone by Minas or one of the team while the work was happening.',
+      'This is a selection from the Romans photo archive, showing masonry details, work in progress and completed work. Entries identified as inspiration or needing caption and provenance review are not included in this project gallery.',
   },
   {
     question: 'How old is the work shown here?',
     answer:
-      'The oldest jobs on this page are from around 2015. The newest are from this year. Romans has been running since 1995, so there is plenty more we just never photographed.',
+      'The gallery includes earlier Sydney work and is not a dated list of current jobs. Romans has been operating since 1995. Ask about a particular project if its date or details matter to your plans.',
   },
   {
     question: 'Can you do work like this for me?',
     answer:
-      'Most of it, yes. Sandstone walls, heritage repointing, structural brickwork, garden walls, chimneys, seawalls, fireplaces. If you have seen something on this page you want for your place, give Minas a call on 0414 922 276 and we will work out if we can do it for you.',
+      'The gallery covers sandstone, heritage repointing, structural brickwork, garden walls, chimneys, seawalls and fireplaces. If something here resembles your plans, call 0414 922 276 to discuss the location, access and scope. Suitability depends on your property and any design or approval requirements.',
   },
   {
     question: 'Do you only work on big jobs?',
     answer:
-      'No. We do small jobs and big jobs. A two metre garden wall in a back yard gets the same care as a heritage church facade. The standard is the same. The price scales with the size of the job, not the postcode.',
+      'No. Enquiries can cover a small repair or a larger masonry project. Scope, access, materials and the condition of the existing structure all affect the work and its cost.',
   },
   {
     question: 'How long does this kind of work take?',
     answer:
-      'It depends. A small repointing patch can be a day. A full sandstone seawall can be a few weeks. A heritage chimney rebuild is usually one to two weeks. We will give you a real timeframe when we quote, not a vague window.',
+      'Timing depends on the condition of the masonry, access, materials, weather and any engineering or approval requirements. A photograph cannot establish a repair programme. Discuss the scope and current availability before making arrangements.',
   },
   {
     question: 'Where do you work?',
@@ -52,7 +52,7 @@ const featuredProjects: Array<{ id: string; title: string; copy: string }> = [
   {
     id: 'romansstone_1572902412_2169985170382604428_2394650725',
     title: 'Sandstone seawall, Sydney Harbour',
-    copy: 'Hand-laid sandstone seawall along the harbour. Salt and tide chew through standard mortar in a few years. Lime mortar mixed to suit the stone, set up before the next tide came in.',
+    copy: 'Hand-laid sandstone seawall along the harbour. Tidal exposure makes stone condition, joint detailing and the repair specification important. Mortar selection and working arrangements need to suit the particular wall and exposure.',
   },
   {
     id: 'romansstone_1617135591_2541039971017938059_2394650725',
@@ -62,7 +62,7 @@ const featuredProjects: Array<{ id: string; title: string; copy: string }> = [
   {
     id: 'romansstone_1610308835_2483772994075744932_2394650725',
     title: 'Stone veneer fireplace',
-    copy: 'Stone veneer fireplace surround for a living room renovation. Veneer is half the weight of solid block and lets you put real stone on a wall that would never carry the full thing.',
+    copy: 'Stone veneer fireplace surround for a living room renovation. Stone facing brings texture to the surround. Its weight, backing, fixing system and any fireplace clearances need to be checked for the particular installation.',
   },
   {
     id: 'romansstone_1466993917_1281560327394079553_2394650725',
@@ -82,7 +82,7 @@ const featuredProjects: Array<{ id: string; title: string; copy: string }> = [
   {
     id: 'romansstone_1625099894_2607849386215395716_2394650725',
     title: 'Sandstone bathroom',
-    copy: 'Sandstone walls in a renovated bathroom. Stone sealed with a breathable sealer so it can still let moisture out. Standard waterproof sealers trap water behind the face and the stone starts flaking after a few years.',
+    copy: 'Sandstone walls in a renovated bathroom. Stone sealed with a breathable sealer so it can still let moisture out. A stone sealer is not a substitute for wet-area waterproofing. Product compatibility and moisture movement need to be considered for each installation.',
   },
   {
     id: 'romansstone_1571801227_2160747763900813654_2394650725',
@@ -91,14 +91,14 @@ const featuredProjects: Array<{ id: string; title: string; copy: string }> = [
   },
 ];
 
-const featuredById = Object.fromEntries(galleryImages.map((img) => [img.id, img]));
+const featuredById = Object.fromEntries(projectGalleryImages.map((img) => [img.id, img]));
 
 const GalleryPage = () => {
   return (
     <>
       <SEO
         title="Our Work | Real Sydney Masonry & Heritage Projects | Romans"
-        description="Real projects by Romans Building Services. 30 years of sandstone, heritage, and structural masonry across Sydney. Every photo is from one of our job sites."
+        description="Explore sandstone, heritage and structural masonry from the Romans photo archive, including earlier Sydney projects. Now focused on Hawkesbury and Western Sydney."
         canonical="/gallery"
         ogImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       />
@@ -124,7 +124,7 @@ const GalleryPage = () => {
             See Our Work
           </h1>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto">
-            30 years of real projects across Sydney. Every photo is from an actual job site.
+            Masonry details, work in progress and earlier Sydney projects from the Romans archive.
           </p>
         </div>
       </section>
@@ -133,20 +133,17 @@ const GalleryPage = () => {
       <section className="py-16 md:py-20 px-4 bg-bg-light">
         <div className="max-w-3xl mx-auto font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            This page is the work. Not a portfolio Minas put together to look impressive, just photos
-            from the last ten years or so of being on the tools. Some were taken with a phone in
-            between mixing mortar. Some were taken at the end of the day when the scaffold came down
-            and there was finally something worth pointing a camera at.
+            The gallery brings together masonry details, work in progress and completed work from
+            the Romans photo archive. The featured notes give context for selected projects;
+            photographs alone cannot establish the condition or repair needs of another property.
           </p>
           <p>
-            If you came to this page from Google looking for a Sydney stonemason, this is the easiest
-            way to tell whether we know what we are doing. Read the words on a tradie site and they
-            all sound the same. Look at the work and you can see the difference fairly quickly.
+            Browse the stone finishes, joint patterns and construction details to find examples
+            relevant to your plans. Earlier Sydney projects remain here alongside our current
+            service focus in Hawkesbury and Western Sydney.
           </p>
           <p>
-            We do not have a marketing team. Minas does the quotes, runs the jobs and answers the
-            phone. If you see a project on this page that looks like what you need, the easiest thing
-            is to call us on{' '}
+            If you see a project on this page that looks like what you need, call us on{' '}
             <a href="tel:0414922276" className="text-navy underline underline-offset-4">
               0414 922 276
             </a>{' '}
@@ -162,7 +159,7 @@ const GalleryPage = () => {
             What you are looking at
           </h2>
           <p className="font-body text-text-muted text-center mb-12 max-w-2xl mx-auto">
-            The photos sit in five rough categories. Use the filter on the grid below to jump to
+            The filters group photos by type of work and stage of completion. Use the filter on the grid below to jump to
             whichever one matches your project.
           </p>
           <div className="grid md:grid-cols-2 gap-6 font-body text-text-muted">
@@ -188,19 +185,19 @@ const GalleryPage = () => {
               <p className="leading-relaxed">
                 Load-bearing brick and block. Crack stitching, lintel replacements, pier rebuilds,
                 full wall reconstructions. We work to engineers' drawings when the job calls for it
-                and to{' '}
+                with{' '}
                 <Link to="/services/structural-repairs" className="text-navy underline underline-offset-4">
                   AS 3700 masonry standards
                 </Link>{' '}
-                across the board.
+                considered as part of the applicable design and specification.
               </p>
             </div>
             <div className="bg-bg-light p-6 rounded-md">
               <h3 className="font-heading text-xl text-navy mb-2">Concrete and remedial</h3>
               <p className="leading-relaxed">
                 Concrete cancer, spalling, render replacement, waterproofing repairs. The fix-it
-                work. Older buildings need this every twenty to thirty years and most of it is hidden
-                until water shows up where it shouldn't.
+                work. Staining, loose finishes or exposed reinforcement can prompt an assessment,
+                but the cause and extent of damage need to be checked before choosing a repair.
               </p>
             </div>
             <div className="bg-bg-light p-6 rounded-md md:col-span-2">
@@ -254,12 +251,12 @@ const GalleryPage = () => {
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl text-navy mb-3 text-center">
-            The full gallery
+            Browse the gallery
           </h2>
           <p className="font-body text-text-muted text-center mb-12 max-w-2xl mx-auto">
             Filter by category or browse the lot. Click any image to open it full size.
           </p>
-          <GalleryGrid images={galleryImages} />
+          <GalleryGrid images={projectGalleryImages} />
         </div>
       </section>
 

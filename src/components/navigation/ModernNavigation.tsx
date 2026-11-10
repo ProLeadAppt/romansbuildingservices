@@ -53,11 +53,25 @@ export const ModernNavigation = () => {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
     };
   }, [mobileOpen]);
+
+  // Match Tailwind 3's default lg breakpoint: the hidden overlay must not
+  // leave its scroll lock behind when the viewport crosses into desktop.
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const closeAtDesktop = () => {
+      if (desktop.matches) setMobileOpen(false);
+    };
+    closeAtDesktop();
+    desktop.addEventListener('change', closeAtDesktop);
+    return () => desktop.removeEventListener('change', closeAtDesktop);
+  }, []);
 
   // Shrink nav on scroll
   useEffect(() => {
@@ -198,7 +212,11 @@ export const ModernNavigation = () => {
         <button
           type="button"
           className="lg:hidden text-white p-2 -mr-2"
-          onClick={() => setMobileOpen((prev) => !prev)}
+          onClick={() => {
+            if (!window.matchMedia('(min-width: 1024px)').matches) {
+              setMobileOpen((prev) => !prev);
+            }
+          }}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}>
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

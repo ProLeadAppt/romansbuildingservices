@@ -40,8 +40,8 @@ export default {
         'text-primary': '#020817',
         'text-secondary': '#111827',
         'text-muted': '#374151',
-        'bg-light': '#F1F5F9',
-        'bg-off-white': '#F5F5F5',
+        'bg-light': '#EFEFEB',
+        'bg-off-white': '#FAFAF8',
         border: '#E2E8F0',
 
         // shadcn compat (simplified - no HSL indirection)
@@ -79,7 +79,7 @@ export default {
         input: '#E2E8F0',
       },
       fontFamily: {
-        heading: ['Playfair Display', 'Georgia', 'serif'],
+        heading: ['DM Sans', 'Arial', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
       },
       fontSize: {

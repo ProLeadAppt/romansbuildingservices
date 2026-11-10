@@ -100,8 +100,7 @@ export const serviceCategories: ServiceCategory[] = [
         id: 'heritage',
         label: 'Heritage Restoration',
         href: '/services/heritage-restoration',
-        description: 'Specialized heritage building conservation',
-        badge: 'Heritage Certified'
+        description: 'Heritage building conservation and compatible materials'
       },
       {
         id: 'building-restoration',
@@ -182,7 +181,7 @@ export const serviceAreas: ServiceArea[] = [
 
 // Contact and quote services
 export const contactServices = {
-  phone: '+61 483 981 292',
+  phone: '+61 414 922 276',
   label: 'Contact Us',
   description: 'Professional building services consultation',
   href: '/contact'
@@ -193,13 +192,13 @@ export const quickActions = [
   {
     id: 'quote',
     label: 'Get Quote',
-    href: '/quote',
+    href: '/contact',
     primary: true
   },
   {
     id: 'assessment',
     label: 'Building Assessment',
-    href: '/assessment'
+    href: '/contact'
   },
   {
     id: 'contact',

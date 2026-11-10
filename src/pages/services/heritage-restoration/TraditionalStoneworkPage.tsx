@@ -9,7 +9,7 @@ const TraditionalStoneworkPage = () => {
     <ServicePageTemplate
       title="Traditional Stonework Methods"
       metaTitle="Sydney Traditional Stonemasonry | Romans"
-      metaDescription="Sydney traditional stonemasonry by Minas Romanakis. Hand-cut stone, hot lime mortar, carved profiles and period methods for heritage work done properly."
+      metaDescription="Sydney traditional stonework enquiries. Hand tooling, carved profiles and compatible mortar choices for assessed heritage repairs."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}
@@ -19,131 +19,101 @@ const TraditionalStoneworkPage = () => {
         { label: 'Traditional Stonework Methods', href: '' },
       ]}
       intro={[
-        'Some heritage jobs have to be done the old way. Not because we want to make it harder, but because the building was designed and built that way and modern shortcuts will compromise it. Hand-dressed stone, hot lime mortar, traditional pointing profiles, carved mouldings done freehand. The methods used when these buildings went up are the methods we use now to restore them.',
-        'A power tool cuts faster but leaves a smooth machine face that does not match a hand-tooled wall. A modern cement render is harder than the wall behind it and traps moisture. Modern stainless wall ties go in faster than re-bedding stone but on a colonial wall you want the original construction logic preserved. Heritage councils, heritage consultants, ICOMOS Burra Charter principles, they all push toward "do it the way it was originally done."',
-        'Minas trained in traditional stonemasonry in the early years of his career. Banker masonry, hand carving, hot lime work. These skills take years to develop and they are getting rarer in Australia. When a Sydney heritage building needs this level of craft, we have the tools and the time to do it properly.',
+        "Tool marks, joint profiles and carved details can be part of a stone building’s significance. Recording them helps a repair respect the surviving work. Traditional hand techniques may reproduce a texture or profile that a standard machine finish does not match.",
+        "Method selection should consider conservation purpose, material compatibility and safety. Retaining sound original stone may be preferable to recreating it, and a modern method may be appropriate where assessed and approved. Heritage conservation does not mean automatically reproducing every historical construction practice.",
+        "Contact Romans to discuss stone dressing, pointing or carved-detail repairs. The scope should establish the required craft work, samples, specialist input and installation design. Tools, workshop arrangements and particular techniques need confirmation for the project rather than assumptions about a standard service."
       ]}
       features={[
         {
           icon: Hammer,
-          title: 'Hand-cut stone',
-          description:
-            'Stone cut and shaped using hand chisels, mallets, dragging tools and broaches. Pitched face, drag-finish, tooth-chiseled, broached, rock-faced. Each finish needs a different tool and hand.',
+          title: "Hand-tooled finishes",
+          description: "Pitched, broached, drag-finished and other textures have distinct marks. Record the existing finish and use a sample to agree the repair."
         },
         {
           icon: Scaling,
-          title: 'Hot lime mortar',
-          description:
-            'Quicklime slaked on site with sand and water. Stronger and more durable than pre-mixed lime mortar. Standard method for centuries. We use it where the original building would have used it.',
+          title: "Mortar choice",
+          description: "Hot-mixed, putty-based and hydraulic lime mortars have different characteristics. Select the system from the building and repair requirements, not a claim that one is always stronger."
         },
         {
           icon: HandMetal,
-          title: 'Period pointing profiles',
-          description:
-            'Flush, raked, struck, weathered, tuck pointed, beaded. Each profile uses a different tool. We replicate whatever the original wall had, never substitute.',
+          title: "Pointing profiles",
+          description: "Document the surviving joint profile and evidence of earlier work. Retain sound pointing where possible and agree any reinstatement."
         },
         {
           icon: Compass,
-          title: 'Carved mouldings and details',
-          description:
-            'Templated from existing detail, then carved by hand into matching stone. Cornices, string courses, sills, corbels, finials, balusters. For repeated elements we produce matching pieces from a single template.',
-        },
+          title: "Carved details",
+          description: "Templates and measurements can guide repair or replacement of mouldings. The remaining stone, support and significance determine the appropriate extent."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Quicklime for hot lime mortar',
-          detail:
-            'Calcium oxide quicklime, slaked on site by adding to wet sand. Produces a very strong lime mortar used for traditional heritage work. Requires care in handling but has been the standard for over 2,000 years.',
+          title: "Stone and bedding",
+          detail: "Select compatible stone and its bedding orientation for the intended use. Matching the original quarry, where possible, still requires material assessment."
         },
         {
-          title: 'Hand chisels and mallets',
-          detail:
-            'Pitching tools, point chisels, tooth chisels, claw chisels, drags, broaches. Mallets in different weights for fine and rough work. Most of the tools have been in Minas\'s kit for over 20 years.',
+          title: "Tooling samples",
+          detail: "Chisels, drags and other tools create different textures. A sample helps agree appearance before a replacement block is fully dressed."
         },
         {
-          title: 'Banker mason\'s bench',
-          detail:
-            'The traditional stone-cutting workbench. Stone is cut and dressed on the banker, then transported to the wall for installation. We have a banker at the workshop and a portable one for site work.',
+          title: "Profile records",
+          detail: "Photographs, measurements and templates record surviving geometry. Avoid inventing missing details where evidence is insufficient; seek conservation guidance."
         },
         {
-          title: 'Stone matched from the original quarry',
-          detail:
-            'Where possible, replacement stone comes from the same quarry that supplied the original. For Hawkesbury and Gosford sandstone these quarries are still operating. For more obscure stone we work with what is available.',
+          title: "Lime handling",
+          detail: "Quicklime reacts with water, releases heat and is caustic. Hot-lime work requires trained personnel and suitable controls; this page is not a mixing or handling guide."
         },
         {
-          title: 'Templates for carved work',
-          detail:
-            'For carved profiles, we template the existing detail onto plywood or zinc. The template is used to guide the new carving. For repeated elements (balusters, finials) one template produces multiple matched pieces.',
-        },
-        {
-          title: 'Lifting tackle for heavy blocks',
-          detail:
-            'Block and tackle, chain hoists, mechanical advantage rigging for moving stone blocks too heavy to lift. Stone tongs, lewises, clamps. Traditional methods for moving large stone without modern cranes when crane access is impossible.',
-        },
+          title: "Lifting and connections",
+          detail: "Heavy stone needs a planned lifting system and suitable supports and fixings. Traditional tackle is not automatically safer or an alternative to engineered access planning."
+        }
       ]}
       processSteps={[
         {
-          step: 'Survey and template',
-          detail:
-            'On-site survey of the existing stonework. For carved or moulded elements we make templates from the original profile. For straight ashlar we record the dimensions, finish and bedding pattern. Photos throughout.',
+          step: "Survey the detail",
+          detail: "Assess condition and significance, record surviving geometry and identify support or safety issues."
         },
         {
-          step: 'Quarry the stone',
-          detail:
-            'Source stone from the original quarry where possible. For sandstone we work with Wondabyne, Gosford or smaller operators. Stone is selected by hand for grain direction and colour, then cut to rough size.',
+          step: "Agree the intervention",
+          detail: "Compare retention, local repair and replacement with the relevant adviser. Check permissions and specialist capability before settling the scope."
         },
         {
-          step: 'Bench dressing',
-          detail:
-            'At the workshop or on site banker, stone is dressed to size and the face is hand-tooled to match the original finish. Drag-finish, tooth chiseled, broached, whatever the wall has. This is the slow step.',
+          step: "Prepare samples",
+          detail: "Compare stone, tooling, mortar and profile samples. Record the accepted appearance and any unavoidable differences."
         },
         {
-          step: 'Carving (if required)',
-          detail:
-            'For moulded or carved elements, the rough block is shaped first with chisels then refined with the template. Cornices, sills, balusters, capitals. Slow work, hours to days per element.',
+          step: "Fabricate and install",
+          detail: "Carry out the agreed craft work with safe handling and the specified support and connection design. Inspect relevant concealed work."
         },
         {
-          step: 'Mix hot lime mortar',
-          detail:
-            'On the day the stone goes in, quicklime is slaked on site by adding to wet sharp sand. Mixed to a workable consistency. Hot lime sets faster than cold lime putty so batches stay small.',
-        },
-        {
-          step: 'Set, bed and point',
-          detail:
-            'Stone bedded into the wall with hot lime mortar. Stainless cramps where the original wall used iron cramps (replacing them with stainless prevents future rust damage). Joints tooled to the original profile.',
-        },
+          step: "Protect and document",
+          detail: "Provide the required curing protection and final inspection records. Explain maintenance and any continuing monitoring needs."
+        }
       ]}
       faqs={[
         {
-          question: 'Why use traditional methods instead of modern ones?',
-          answer:
-            'Heritage buildings were designed as a system. Stone, lime mortar and iron cramps work together. Modern materials behave differently, trapping moisture, creating stress points, accelerating decay. Traditional methods keep the building working the way it was originally designed to. Plus heritage councils and consultants generally require traditional methods for listed buildings.',
+          question: "Why consider traditional methods?",
+          answer: "They may help preserve characteristic tooling, joint profiles and compatible material behaviour. Their value depends on the building and repair, not age alone. The conservation approach should retain sound fabric and justify the chosen intervention."
         },
         {
-          question: 'What is hot lime mortar and why use it?',
-          answer:
-            'Hot lime mortar is made by mixing quicklime with sand and water on site. The slaking reaction generates heat (hence "hot lime") and produces a stronger mortar than pre-mixed bag lime. It was the standard mortar for traditional masonry for centuries. We use it where the original building would have used it, typically pre-1900 work.',
+          question: "What is hot-lime mortar?",
+          answer: "It involves quicklime in a controlled mixing process that releases heat. Its suitability depends on specification and skilled handling; it is not universally stronger or more durable than other mortars. Do not attempt mixing from general online descriptions."
         },
         {
-          question: 'Can you replicate carved stone details?',
-          answer:
-            'Yes. We template the existing detail, source matching stone, and carve the replacement by hand. For repeated elements like balusters or finials, we produce multiple matched pieces from a single template. Time varies, simple cornices are days per metre, full balustrade carving is weeks. Heritage consultant signs off on the carving before installation.',
+          question: "Can carved details be reproduced?",
+          answer: "A surviving profile or reliable record may support a templated repair or replacement. Confirm the required craft capability, stone and support design for the project. Where evidence is missing, conservation advice should guide how much reconstruction is appropriate."
         },
         {
-          question: 'How long does traditional stonework take?',
-          answer:
-            'Significantly longer than modern methods. Where a power-cut and machine-installed stone might take a day, the same stone hand-dressed and bedded in hot lime mortar is two to four days. The pace is the point. Traditional methods produce work that matches the original and lasts hundreds of years.',
+          question: "How long does hand stonework take?",
+          answer: "Profile complexity, stone properties, samples, access and installation all affect timing. Fabrication and curing requirements should appear in the programme. Neither a standard number of days per piece nor a promised lifespan describes every repair."
         },
         {
-          question: 'Is traditional stonework more expensive?',
-          answer:
-            'Yes. Hand work is slower so labour is higher. Specialist materials like quicklime cost more than bag lime. Custom-carved pieces can be days of work each. Traditional restoration usually costs 30 to 60 percent more than equivalent modern repair. The trade-off is heritage-correctness and a repair that will outlast modern equivalents by decades.',
+          question: "Is traditional work more expensive?",
+          answer: "Hand tooling and bespoke fabrication can add labour, while retaining sound material may reduce replacement work. Compare options against the same conservation and structural requirements. A fixed premium or future cost saving cannot be assumed."
         },
         {
-          question: 'Do all heritage jobs need traditional methods?',
-          answer:
-            'No. State-listed buildings and ICOMOS-charter scopes generally require traditional methods. Locally-listed buildings have lighter requirements. Heritage conservation areas (not listed) typically allow modern methods on hidden work but require traditional on visible faces. We assess each job and recommend the right level of intervention.',
-        },
+          question: "Do listed buildings always require traditional methods?",
+          answer: "Requirements depend on the listing, significance, proposed work and approval conditions. Check with the relevant authority and conservation adviser. A state or local listing alone does not specify every material or exclude all modern techniques."
+        }
       ]}
     />
   );

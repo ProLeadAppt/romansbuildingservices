@@ -114,7 +114,7 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which repair path fits the job?' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Mortar failure and water entry clues' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'When masonry is part of a larger defect' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -123,7 +123,7 @@ export const ServicePageTemplate = ({
         { label: 'Heritage restoration hub', href: '/heritage', sublabel: 'Era guides, material cues and repair logic' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Common mortar failure in older walls' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Where restoration stops and remediation starts' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -132,7 +132,7 @@ export const ServicePageTemplate = ({
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Strata and apartment diagnosis guide' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Sort the repair path first' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Clues that point to broader movement' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -141,7 +141,7 @@ export const ServicePageTemplate = ({
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Why spalling starts and how to stop it' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Concrete repair vs broader remediation' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Look for movement, water and mortar issues' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -150,7 +150,7 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'When foundation issues affect the whole wall' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Useful if cracking links back to structural movement' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Spot the wall symptoms early' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -159,12 +159,12 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which service the job actually needs' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Common strata and balcony defects' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'A fast diagnostic check for wall failure' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
     return [
-      { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+      { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which service fits the job?' },
       { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Common mortar failure signs' },
       { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Strata and apartment diagnosis guide' },
@@ -189,14 +189,14 @@ export const ServicePageTemplate = ({
 
       {/* Breadcrumb bar */}
       {breadcrumbs.length> 0 && (
-        <div className="bg-bg-light border-b border-border">
+        <div role="navigation" aria-label="Breadcrumb" className="bg-bg-light border-b border-border pt-20">
           <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm overflow-x-auto">
             <Link to="/" className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
               Home
             </Link>
             {breadcrumbs.map((crumb, i) => (
               <span key={i} className="flex items-center gap-2">
-                <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+                <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
                 {crumb.href ? (
                   <Link
                     to={crumb.href}
@@ -517,7 +517,7 @@ export const ServicePageTemplate = ({
             Need a quote?
           </h2>
           <p className="font-body text-white/70 mb-8">
-            Call Minas directly or fill in the form. We will get back to you within 24 hours.
+            Call Minas directly or fill in the form with your suburb and repair details. Assessment timing depends on the scope, access and availability.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

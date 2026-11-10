@@ -1,6 +1,6 @@
 import { ServicePageTemplate } from '@/components/ServicePageTemplate';
 import { getSiblingServices } from '@/data/serviceHierarchy';
-import { PaintBucket, Layers, Footprints, Timer, ThumbsUp } from 'lucide-react';
+import { PaintBucket, Layers, ShieldCheck, Droplets, Wrench } from 'lucide-react';
 
 const ConcreteResurfacingPage = () => {
   const siblings = getSiblingServices('concrete-repairs', 'concrete-resurfacing');
@@ -9,7 +9,7 @@ const ConcreteResurfacingPage = () => {
     <ServicePageTemplate
       title="Concrete Resurfacing"
       metaTitle="Sydney Concrete Resurfacing | Romans"
-      metaDescription="Sydney concrete resurfacing by Minas Romanakis. Polymer-modified overlays, non-slip finishes, decorative coatings. Driveways, pool surrounds, balconies."
+      metaDescription="Sydney concrete resurfacing enquiries. Substrate assessment, overlay selection, texture and drainage considerations for existing concrete surfaces."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,106 @@ const ConcreteResurfacingPage = () => {
         { label: 'Concrete Resurfacing', href: '' },
       ]}
       intro={[
-        'If the underlying concrete is structurally sound but the surface is worn, pitted, stained or rough, resurfacing brings it back without ripping out the whole slab. We apply polymer-modified overlay systems that bond to the prepared substrate and give you a new top layer. Driveways, pool surrounds, paths, balconies, carpark decks, commercial floors. Resurfacing is significantly faster and cheaper than full replacement.',
-        'The technique is straightforward but the substrate prep is what makes or breaks the job. The existing concrete has to be ground, scarified or shot-blasted to remove laitance and create a mechanical key. Existing cracks have to be assessed (active cracks come back through any overlay, stable cracks can be sealed). Old coatings have to be stripped. The substrate has to be primed for bonding. Get any of this wrong and the overlay delaminates within a year.',
-        'Most of our resurfacing work is residential driveways and pool surrounds, plus commercial floors and carpark decks. Pool surrounds usually want a non-slip textured finish for safety. Driveways and commercial floors usually want a smooth or lightly textured finish for cleanability. We work with both polymer-modified cementitious overlay systems and acrylic-modified spray-on systems depending on what suits the job.',
+        "Resurfacing can renew the wearing surface of concrete that is suitable to retain. An overlay does not strengthen an inadequate slab or resolve every crack, moisture problem or drainage defect. Assess the existing surface and underlying condition before deciding between local repair, an overlay or replacement.",
+        "Preparation and system selection matter. Existing coatings, contamination, moisture and unsound material can prevent a reliable bond. Cracks and movement joints need a planned detail, and the required thickness, falls and thresholds must be considered together.",
+        "Contact Romans to discuss the intended use and finish, whether for a path, driveway, balcony or another concrete surface. Traffic, wet conditions, access and maintenance affect the specification. Samples and any required slip-resistance testing help establish an appropriate finish without promising a surface can never be slippery."
       ]}
       features={[
         {
           icon: PaintBucket,
-          title: 'Overlay systems',
-          description:
-            'Polymer-modified cementitious overlays from 5mm to 50mm thick. Branded systems from manufacturers like Sika, Mapei and BASF. Trowelled, sprayed or stamped depending on the desired finish.',
+          title: "Overlay selection",
+          description: "Choose a system compatible with the substrate and intended traffic. Minimum thickness, bonding and moisture limits vary by product and must be checked for the site."
         },
         {
           icon: Layers,
-          title: 'Surface preparation',
-          description:
-            'Grinding, scarifying or shot-blasting to remove laitance and create mechanical key. Existing coatings stripped. Cracks repaired. Substrate primed. Done properly because bad prep equals failed overlay.',
+          title: "Surface preparation",
+          description: "Grinding or other preparation may be required after assessment. Dust controls, service protection and assessment of old coatings form part of the work plan."
         },
         {
-          icon: Footprints,
-          title: 'Non-slip finishes',
-          description:
-            'Textured or grit-broadcast finishes for pool surrounds, ramps and high-traffic areas. Meets AS 4586 slip resistance standards. Critical for wet areas.',
+          icon: ShieldCheck,
+          title: "Texture and slip resistance",
+          description: "Wet conditions, footwear and use affect the finish required. Agree a suitable specification and any testing rather than treating a textured appearance as proof of safety."
         },
         {
-          icon: Timer,
-          title: 'Fast turnaround',
-          description:
-            'Most residential overlay jobs are done in two to four days. Rapid-cure options available for commercial spaces that need to be back in service the next morning.',
+          icon: Droplets,
+          title: "Falls and drainage",
+          description: "Overlays change levels and can affect thresholds and drainage. Check falls, ponding and waterproofing interfaces before specifying the finished surface."
         },
         {
-          icon: ThumbsUp,
-          title: 'Cost-effective vs replacement',
-          description:
-            'Typically 30 to 60 percent of the cost of full removal and replacement. Avoids demolition, dust, dumping fees and several weeks of disruption.',
-        },
+          icon: Wrench,
+          title: "Cracks and joints",
+          description: "Existing movement needs assessment. Some cracks can reflect through an overlay, and movement joints generally need designed continuity rather than simply being covered."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Polymer-modified cementitious overlays',
-          detail:
-            'Sika Sikafloor, Mapei Mapefloor, BASF MasterTop or equivalent. 5 to 25mm trowelled or sprayed. Bonds strongly to prepared concrete. Smooth or stamped finish.',
+          title: "Cementitious or resin systems",
+          detail: "Different systems have different traffic, thickness and substrate requirements. Select for the actual use rather than assuming an overlay is always cheaper or more durable than replacement."
         },
         {
-          title: 'Acrylic-modified spray-on systems',
-          detail:
-            'For thinner decorative overlays (1 to 5mm). Spray-applied with hopper gun, textured by knockdown or release paper. Common for pool surrounds with stencilled patterns.',
+          title: "Bonding products",
+          detail: "Primers and bonding layers must be compatible with the chosen system and prepared substrate. Moisture and contamination can affect adhesion even when the surface looks clean."
         },
         {
-          title: 'Shot blast or grinding for prep',
-          detail:
-            'Shot blasting (metal beads thrown at the surface and recovered) for large areas. Diamond grinding for smaller jobs. Removes laitance and creates the CSP (concrete surface profile) needed for proper bonding.',
+          title: "Crack and joint details",
+          detail: "The repair plan distinguishes stable defects from continuing movement. Joint placement and compatible sealants should be coordinated with the overlay specification."
         },
         {
-          title: 'Crack repair before overlay',
-          detail:
-            'Active cracks repaired before overlay goes on, otherwise they reflect through the new surface. Static cracks bridged with fibreglass or geotextile membrane embedded in the overlay.',
+          title: "Finish samples",
+          detail: "Samples help compare colour and texture. Large areas, existing variation and weathering can affect the final appearance; agree realistic expectations before proceeding."
         },
         {
-          title: 'Penetrating bonding primer',
-          detail:
-            'Manufacturer-specified primer applied to prepared substrate before overlay. Penetrates into the prepared surface and provides the chemical key between old concrete and new overlay.',
-        },
-        {
-          title: 'Sealers and topcoats',
-          detail:
-            'Penetrating silane or siloxane sealers for stone-look finishes. Polyurethane or epoxy topcoats for commercial floors needing chemical resistance. UV-stable acrylic for exterior decorative work.',
-        },
+          title: "Curing and protection",
+          detail: "Traffic, water exposure and cleaning restrictions follow the specified system and conditions. A dry-looking surface does not establish readiness for vehicles or other loads."
+        }
       ]}
       processSteps={[
         {
-          step: 'Substrate assessment',
-          detail:
-            'On-site inspection of the existing slab. Sound testing for delamination. Crack mapping to identify active vs static cracks. Cover meter for any structural concerns. Photos and measurements.',
+          step: "Inspect the substrate",
+          detail: "Assess soundness, cracks, moisture, coatings and drainage. Identify any structural or waterproofing work needed before an overlay is considered."
         },
         {
-          step: 'Substrate preparation',
-          detail:
-            'Existing coatings stripped. Shot blasting or diamond grinding to remove laitance and create CSP 3 or CSP 4 (concrete surface profile) per ICRI guidelines. Substrate vacuumed clean of dust.',
+          step: "Agree the finish",
+          detail: "Confirm use, levels, texture, colour and any slip testing. Review access, disruption and the intended maintenance requirements."
         },
         {
-          step: 'Crack repair and detailing',
-          detail:
-            'Active cracks chased out and filled with structural epoxy. Static cracks treated with flexible sealant and bridged with reinforcement. Control joints reinstated in the overlay design.',
+          step: "Prepare and detail",
+          detail: "Carry out suitable preparation with dust and site controls. Complete agreed crack, joint and interface work before placing the overlay."
         },
         {
-          step: 'Prime the substrate',
-          detail:
-            'Manufacturer-specified bonding primer applied to prepared substrate. Penetrating type that soaks into the prepared concrete. Allowed to tack-cure to a specified state before overlay goes on.',
+          step: "Apply the system",
+          detail: "Follow the specified substrate, weather and application limits. Inspect the finish and details against the agreed scope."
         },
         {
-          step: 'Apply the overlay',
-          detail:
-            'Overlay trowelled, sprayed or screeded to design thickness. For decorative work, textured while still wet (stamped, broom-finished, knockdown). For commercial floors, screeded and trowelled to spec.',
-        },
-        {
-          step: 'Cure and finish',
-          detail:
-            'Cured under wet curing membrane or sealed early per manufacturer instruction. Sealer applied after the overlay reaches required strength (typically 7 days). UV-stable topcoat for exterior, traffic-grade for commercial.',
-        },
+          step: "Protect before use",
+          detail: "Observe curing and traffic restrictions and provide maintenance instructions. Confirm the reopening date from actual conditions and product requirements."
+        }
       ]}
       faqs={[
         {
-          question: 'How thick is a concrete overlay?',
-          answer:
-            'Spray-applied decorative overlays are 1 to 5mm. Trowelled cementitious overlays are 5 to 25mm. Self-levelling industrial overlays are 5 to 15mm. Thickness depends on the system, the desired finish, and how uneven the existing substrate is. We recommend based on the job conditions.',
+          question: "Can resurfacing repair a structurally damaged slab?",
+          answer: "An overlay renews a surface; it does not establish structural capacity. The slab needs assessment if there is significant movement, deterioration or loading concern. Structural or ground repairs may be required before resurfacing becomes a suitable option."
         },
         {
-          question: 'Will the overlay crack?',
-          answer:
-            'If the base slab moves, an overlay can reflect that movement. Active cracks in the substrate are addressed before overlay goes on, otherwise they will come through within a year. Static cracks can be bridged with reinforcement embedded in the overlay. We assess the substrate carefully before quoting because crack reflection is the most common cause of overlay failure.',
+          question: "Will cracks show through the new surface?",
+          answer: "They may, particularly where movement continues. Assess the cause and agree crack and joint details before selecting the overlay. No finish can be promised crack-free simply because the existing surface has been filled or primed."
         },
         {
-          question: 'How long does concrete resurfacing last?',
-          answer:
-            'A properly prepared and applied overlay lasts 15 to 30 years on residential surfaces, 10 to 20 years on commercial floors with heavy traffic, 8 to 15 years on pool surrounds (UV and chlorine accelerate wear). The surface prep is the most important factor in lifespan.',
+          question: "Can you provide a non-slip finish?",
+          answer: "Discuss the intended use, wet conditions and applicable requirements so an appropriate texture and any testing can be specified. No surface is slip-proof in every condition; cleaning, wear, water and contaminants continue to affect performance after installation."
         },
         {
-          question: 'Can you match an existing finish or pattern?',
-          answer:
-            'Yes. Decorative overlays can be stamped, textured, stencilled or coloured to match existing surrounds. Sample patches done before bulk work so the colour and texture match is signed off. Concrete-look, sandstone-look, paver-look patterns all possible.',
+          question: "Is a balcony overlay waterproof?",
+          answer: "Not necessarily. A decorative or wearing surface is different from a waterproofing system. Check the membrane, falls, joints, thresholds and drainage before resurfacing. The scope should identify any separate waterproofing work and the trades responsible for it."
         },
         {
-          question: 'How long does the work take?',
-          answer:
-            'A typical residential driveway resurfacing is 2 to 4 days including prep, overlay and curing. A pool surround is 3 to 5 days. Commercial floors depend on area. Rapid-cure systems available where the area needs to be back in service within 24 hours.',
+          question: "When can the surface be used again?",
+          answer: "The system, weather, thickness and intended traffic determine curing and reopening requirements. Walking and vehicle access may need different restrictions. Ask for instructions for the selected product and actual site conditions rather than a universal next-day promise."
         },
         {
-          question: 'What does concrete resurfacing cost?',
-          answer:
-            'Standard cementitious overlay is around 70 to 150 dollars per square metre installed. Decorative stamped overlays are 120 to 250 dollars per square metre. Commercial epoxy or polyurethane systems are 80 to 200 dollars per square metre depending on thickness and topcoat. Fixed quote after site inspection.',
-        },
+          question: "How is resurfacing priced?",
+          answer: "Preparation, coating removal, repairs, access, levels and finish requirements affect the quote as well as area. Ask which crack, joint and drainage work is included, and compare the assessed options before assuming resurfacing is always cheaper than replacing the slab."
+        }
       ]}
     />
   );

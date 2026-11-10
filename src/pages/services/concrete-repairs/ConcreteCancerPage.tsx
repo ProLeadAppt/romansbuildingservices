@@ -1,6 +1,6 @@
 import { ServicePageTemplate } from '@/components/ServicePageTemplate';
 import { getSiblingServices } from '@/data/serviceHierarchy';
-import { Search, Hammer, Shield, FlaskConical, CheckCircle } from 'lucide-react';
+import { Search, Wrench, Layers, ShieldCheck, FileCheck } from 'lucide-react';
 
 const ConcreteCancerPage = () => {
   const siblings = getSiblingServices('concrete-repairs', 'concrete-cancer');
@@ -9,7 +9,7 @@ const ConcreteCancerPage = () => {
     <ServicePageTemplate
       title="Concrete Cancer Treatment"
       metaTitle="Sydney Concrete Cancer Treatment | Romans"
-      metaDescription="Sydney concrete cancer repair by Minas Romanakis. Chloride testing, rebar treatment, structural patching, anti-carbonation. Strata-experienced."
+      metaDescription="Sydney concrete cancer repair enquiries. Corrosion investigation, reinforcement assessment and designed concrete repairs with maintenance planning."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Concrete Repairs', href: '/services/concrete-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,106 @@ const ConcreteCancerPage = () => {
         { label: 'Concrete Cancer Treatment', href: '' },
       ]}
       intro={[
-        'Concrete cancer is what happens when steel reinforcement inside concrete starts to rust. Concrete is supposed to protect the steel chemically (the alkaline environment keeps it passive). When the alkalinity drops below pH 11 from carbonation, or when chloride salts penetrate from the outside, the protection fails. The steel starts rusting. Rust takes up about seven times the volume of the original steel, and that expansion cracks the surrounding concrete from inside. By the time you see rust staining or spalling on the outside, the damage inside is well advanced.',
-        'We treat concrete cancer properly. That means testing first (chloride levels, carbonation depth, cover meter readings) to map the extent of damage. Then we cut the damaged concrete back behind the rusted steel, clean the steel to bright metal, treat with corrosion-inhibitor primer, and patch with structural repair mortar. Finally an anti-carbonation protective coating goes over the entire area to slow future damage. Skip any step and the repair fails within ten years.',
-        'Most of our concrete cancer work is on strata apartment blocks. Carpark soffits, balcony slabs, perimeter beams, parapet walls. Older buildings (1960s to 1980s) are the most common because the original concrete cover was often inadequate and chlorides have had decades to penetrate. We also do balconies on residential terraces and commercial slabs across the CBD and inner suburbs.',
+        "Concrete cancer is a common name for deterioration associated with corrosion of steel reinforcement. Carbonation can reduce concrete’s protective alkalinity, while chlorides can disrupt the protection around the steel. With moisture and oxygen present, corrosion can contribute to cracking, rust staining and spalling.",
+        "The visible damage may not show the full extent of the problem. A repair assessment can require investigation of concrete condition, cover, carbonation, chlorides and reinforcement loss. The engineer or relevant specialist determines which tests are useful and how they inform repair boundaries.",
+        "Contact Romans to discuss an assessed repair scope. Repair may involve concrete removal, reinforcement work and a compatible reinstatement system, with a wider durability strategy where needed. Keep clear of loose or overhead concrete; do not tap or chip suspect areas yourself. Immediate danger requires emergency assistance rather than waiting for a quote."
       ]}
       features={[
         {
           icon: Search,
-          title: 'Diagnostic testing',
-          description:
-            'Chloride content testing (lab analysis), carbonation depth probes (phenolphthalein indicator), cover meter readings, half-cell potential survey for corrosion activity. Maps the full extent before any work starts.',
+          title: "Investigate corrosion",
+          description: "Testing and controlled inspection help distinguish the cause and extent of deterioration. Staining alone does not measure steel loss or establish remaining structural capacity."
         },
         {
-          icon: Hammer,
-          title: 'Rebar treatment',
-          description:
-            'Damaged concrete cut back behind the rusted steel. Rebar wire-brushed or grit-blasted to bright metal. Zinc-rich primer applied to slow future corrosion. Section loss measured to confirm structural capacity.',
+          icon: Wrench,
+          title: "Reinforcement assessment",
+          description: "The design should address section loss, continuity and any replacement or additional steel. Applying a primer does not restore steel that has been lost."
         },
         {
-          icon: FlaskConical,
-          title: 'Structural patching',
-          description:
-            'Polymer-modified cementitious repair mortar (Sika MonoTop, Mapei Mapegrout, BASF Emaco). Built up in 10 to 20mm layers. Profile matched to original concrete.',
+          icon: Layers,
+          title: "Concrete reinstatement",
+          description: "Repair materials and application methods depend on the substrate, geometry and exposure. Bond, shrinkage, curing and access are important alongside strength."
         },
         {
-          icon: Shield,
-          title: 'Anti-carbonation coating',
-          description:
-            'Two-coat anti-carbonation protective coating applied to the full repaired area. Breathable, stops CO2 ingress, lasts 15 to 20 years with manufacturer warranty.',
+          icon: ShieldCheck,
+          title: "Durability planning",
+          description: "Local patching may leave corrosion risks elsewhere. The assessment should consider surrounding concrete, water paths and any protective measures or specialist treatment required."
         },
         {
-          icon: CheckCircle,
-          title: 'Strata experienced',
-          description:
-            'Defect reports, scope of works, owner corporation meetings, staged works around tenant access. Most of our concrete cancer work is strata.',
-        },
+          icon: FileCheck,
+          title: "Inspection records",
+          description: "Agree testing, hold points and completion records before work. A newly finished surface does not itself verify structural capacity or eliminate the need for future inspection."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Chloride and carbonation testing',
-          detail:
-            'Lab analysis of concrete core samples for chloride content (per BS 1881 or AS 1012). Phenolphthalein indicator for carbonation depth. Half-cell potential survey for active corrosion. Maps the extent of damage.',
+          title: "Investigation methods",
+          detail: "Cover surveys, sampling or other testing may be needed. The relevant specialist defines the investigation; service drawings and safe access are checked before drilling or opening the concrete."
         },
         {
-          title: 'Cover meter readings',
-          detail:
-            'Electromagnetic cover meter (Profometer, Hilti Ferroscan) to measure concrete cover over reinforcement and locate rebar before cutting. Critical for planning the cutting depth.',
+          title: "Reinforcement repair",
+          detail: "Cleaning, additional reinforcement and connections follow the designed system. Repair boundaries and any temporary support are established before removal reduces the existing section."
         },
         {
-          title: 'Zinc-rich corrosion inhibitor primer',
-          detail:
-            'Two-component zinc-rich primer applied to cleaned steel after exposure. Slows future corrosion. Sika FerroGard, Mapei Mapefer or equivalent. Industry standard since the 1990s.',
+          title: "Compatible repair materials",
+          detail: "Mortars or concrete systems must suit the element and exposure. Product selection considers stiffness, shrinkage, bond and application limits, not merely a brand name."
         },
         {
-          title: 'Structural repair mortar',
-          detail:
-            'Polymer-modified cementitious mortar with shrinkage compensation. Builds up to original concrete profile. Suitable for vertical and overhead application. R3 or R4 class per EN 1504-3 depending on application.',
+          title: "Protection systems",
+          detail: "Coatings or specialist corrosion-control measures may be appropriate after assessment. No single coating suits every cause or replaces necessary structural repair."
         },
         {
-          title: 'Anti-carbonation coatings',
-          detail:
-            'Two-coat acrylic or silicate elastomeric coatings (Sikagard, Mapelastic Smart, BASF MasterProtect). 200 to 300 micron dry film thickness. Slows future CO2 ingress, breathable, 15 to 20 year manufacturer warranty.',
-        },
-        {
-          title: 'Engineer involvement',
-          detail:
-            'For significant concrete cancer, structural engineer assesses remaining capacity and specifies the repair method. Site inspection during works. Completion certificate for the strata or property file.',
-        },
+          title: "Dust and site controls",
+          detail: "Concrete preparation can produce hazardous dust and falling debris. The work plan needs suitable containment, extraction, access controls and protection of occupants and neighbouring areas."
+        }
       ]}
       processSteps={[
         {
-          step: 'Testing and survey',
-          detail:
-            'Site survey. Core samples taken for chloride testing. Carbonation probes done on site. Cover meter readings across the affected area. Half-cell potential survey on bigger jobs. Engineer report on the findings.',
+          step: "Assess hazards",
+          detail: "Identify loose material and structural concerns and agree access restrictions. Keep occupants away from suspect areas while professional assessment is arranged."
         },
         {
-          step: 'Scope and mobilisation',
-          detail:
-            'Engineer specifies the repair method, including how far each defect needs to be cut back, what cover the new concrete needs, and what protective coating system is to be applied. Quote built from this scope.',
+          step: "Investigate and design",
+          detail: "Determine the deterioration mechanism and repair extent. Confirm testing, structural design, temporary works and any specialist responsibilities."
         },
         {
-          step: 'Cut back to sound concrete',
-          detail:
-            'Diamond blade or pneumatic chipping. Cut back at least 25mm behind the rusted rebar (so the rebar is fully exposed and the repair has somewhere to grip). Edges feathered, not square, so the patch bonds and the profile rebuilds cleanly.',
+          step: "Prepare the repair",
+          detail: "Establish protection and support to the agreed plan. Remove material only within the specified sequence, referring unexpected damage for review."
         },
         {
-          step: 'Treat the steel',
-          detail:
-            'Rebar wire-brushed or grit-blasted to bright metal. Section loss measured. Where loss exceeds 25 percent, new bar is spliced in. Zinc-rich primer applied. Two coats. Allow to cure.',
+          step: "Reinstate and inspect",
+          detail: "Complete reinforcement and concrete work under the specification. Required inspections take place before concealment and before support or load restrictions are released."
         },
         {
-          step: 'Apply repair mortar',
-          detail:
-            'Substrate dampened so it does not suck water out of the mortar. Repair mortar built up in 10 to 20mm layers, allowed to cure between layers. Final layer trowelled to original concrete profile.',
-        },
-        {
-          step: 'Protective coating',
-          detail:
-            'Once the repair has cured (typically 7 to 14 days), the full affected area is coated with anti-carbonation protective coating. Two coats with manufacturer-specified DFT. Warranty registered with manufacturer.',
-        },
+          step: "Protect and maintain",
+          detail: "Complete specified protection and provide records and maintenance guidance. Agree any further inspection or monitoring of adjacent concrete."
+        }
       ]}
       faqs={[
         {
-          question: 'How do I know if I have concrete cancer?',
-          answer:
-            'Rust staining on concrete surfaces (brown streaks running down from rebar locations), cracking parallel to the rebar lines, spalling concrete (chunks falling off), exposed rusty rebar visible at the surface. Common locations are apartment balconies (especially the undersides), carpark soffits, perimeter beams, and any concrete in coastal locations. The earlier you catch it the cheaper the fix.',
+          question: "Is every patch of spalling concrete concrete cancer?",
+          answer: "No. Corrosion can cause spalling, but impact, fire, material defects and other mechanisms can also break concrete. The cause needs investigation because a corrosion-focused repair may not address a different form of damage."
         },
         {
-          question: 'Can concrete cancer be fixed permanently?',
-          answer:
-            'Yes if the repair is done properly. Cut back behind the rusted rebar, treat the steel, patch with proper structural mortar, apply anti-carbonation coating. Done right, the repair outlasts the surrounding concrete. We have repairs we did 20 years ago that are still in excellent condition. Done badly (just patching the surface without treating the steel), the cancer returns within 5 to 10 years.',
+          question: "Can I test the area by tapping it?",
+          answer: "Do not tap, chip or pull at suspect concrete, particularly overhead or near a public area. Loose pieces may fall without warning. Keep clear and arrange professional assessment; photographs should only be taken from a safe position."
         },
         {
-          question: 'How much does concrete cancer repair cost?',
-          answer:
-            'Per square metre of affected area: 600 to 1200 dollars for small localised repair, 800 to 1500 dollars for medium scope on a balcony, 500 to 1000 dollars per square metre on a large carpark project (cheaper per metre because of scale). Testing and engineer fees add 3000 to 8000 dollars at the front. Anti-carbonation coating adds 60 to 120 dollars per square metre on top of repair.',
+          question: "Is a surface patch enough?",
+          answer: "It depends on the cause and extent. A patch can conceal continuing deterioration if reinforcement and surrounding concrete are not assessed. The repair scope should explain the investigation, any steel work and the plan for the wider affected area."
         },
         {
-          question: 'How long does concrete cancer treatment take?',
-          answer:
-            'A single localised balcony patch repair is 3 to 7 days. A full balcony or apartment-block carpark repair is 2 to 4 months. Time is mostly in the curing periods between steps (primer cure, mortar cure, coating cure). The actual cutting and patching is fast, but you cannot rush the chemistry.',
+          question: "Does a coating stop corrosion permanently?",
+          answer: "A suitable coating may reduce particular exposure pathways, but it cannot replace missing steel or guarantee corrosion will never recur. The design should address existing contamination, moisture and ongoing maintenance as well as the repaired surface."
         },
         {
-          question: 'Do strata buildings need concrete cancer treatment?',
-          answer:
-            'Most Sydney strata buildings older than 25 years have or will have concrete cancer somewhere. Carparks, balconies, perimeter beams. Maintenance scope every 10 to 15 years is normal. Strata committees that ignore it end up with much bigger bills later (failed slabs, balcony bans, structural restrictions on the building).',
+          question: "How long does treatment take?",
+          answer: "Investigation, safe access, temporary support, repair extent and product curing affect the programme. Occupancy restrictions and specialist testing may add stages. Ask for a site-specific schedule with inspection points rather than relying on a standard treatment duration."
         },
         {
-          question: 'Will the building need to be vacated during repairs?',
-          answer:
-            'Usually no. Balcony repairs are typically external and can be done with residents in place (one balcony at a time, residents lose access to that balcony for the work duration). Carpark repairs are staged with sections closed off in rotation. Major perimeter beam work may require temporary relocation of affected units, this is rare.',
-        },
+          question: "What affects cost?",
+          answer: "Access equipment, investigation, reinforcement loss, concrete removal, reinstatement and protection can all change the cost. Request a written scope and clear concealed-condition allowances. Comparing patch areas alone can overlook important differences in the required repair."
+        }
       ]}
     />
   );

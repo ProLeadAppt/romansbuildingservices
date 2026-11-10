@@ -14,6 +14,7 @@ import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { RelatedLinksBlock } from '@/components/RelatedLinksBlock';
 import { getAreasForProblem } from '@/data/areas';
 import { QuoteCTAButton } from '@/components/quote';
+import { toCanonicalPageUrl } from '@/lib/seoUrls';
 import { PROBLEM_TO_SUBURBS } from '@/data/serviceProblemMap';
 import { getSuburb } from '@/data/suburbs';
 
@@ -141,16 +142,11 @@ const buildProblemSchema = (props: ProblemPageProps) => {
     '@type': 'Article',
     headline: props.metaTitle,
     description: props.metaDescription,
-    url: `${SITE_URL}/problems/${props.slug}`,
+    url: toCanonicalPageUrl(`/problems/${props.slug}`),
     author: {
       '@type': 'Organization',
       name: 'Romans Building Services',
       url: SITE_URL,
-    },
-    reviewedBy: {
-      '@type': 'Person',
-      name: 'Minas Romanakis',
-      jobTitle: 'Founder and stonemason',
     },
     publisher: {
       '@type': 'Organization',
@@ -162,7 +158,7 @@ const buildProblemSchema = (props: ProblemPageProps) => {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/problems/${props.slug}`,
+      '@id': toCanonicalPageUrl(`/problems/${props.slug}`),
     },
     ...(aboutRefs.length> 0 ? { about: aboutRefs } : {}),
   };
@@ -226,17 +222,17 @@ export const ProblemPageTemplate = (props: ProblemPageProps) => {
       ))}
 
       {/* Breadcrumb bar */}
-      <div className="bg-bg-light border-b border-border">
+      <div role="navigation" aria-label="Breadcrumb" className="bg-bg-light border-b border-border pt-20">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm overflow-x-auto">
           <Link
             to="/"
             className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             Home
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
           <span className="font-body text-text-muted whitespace-nowrap">Problems</span>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
-          <span className="font-body text-text-primary whitespace-nowrap">{name}</span>
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <span aria-current="page" className="font-body text-text-primary whitespace-nowrap">{name}</span>
         </div>
       </div>
 

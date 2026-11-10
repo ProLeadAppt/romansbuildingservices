@@ -8,7 +8,7 @@ const FacadeRenovationPage = () => {
     <ServicePageTemplate
       title="Facade Renovation & Repair"
       metaTitle="Sydney Building Facade Renovation | Romans"
-      metaDescription="Sydney facade renovation by Minas Romanakis. Brick, stone, render, cornices, parapets. Heritage and modern. Scaffold, swing stage, rope access."
+      metaDescription="Sydney facade repair enquiries. Brick, stone, render and architectural details, with material matching, safe access and assessed repair methods."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}
       siblingServices={siblings}
@@ -18,137 +18,106 @@ const FacadeRenovationPage = () => {
         { label: 'Facade Renovation & Repair', href: '' },
       ]}
       intro={[
-        'The facade is what gets the building noticed. It is also the first thing to weather, the first thing to fail, and the most expensive thing to ignore. Cracked brick, blown render, sagging cornices, rusted balcony balustrades, failed parapets, leaking pointing. Each one is bad on its own. Combined on a single building, they signal neglect that knocks tens of thousands off the property value.',
-        'We renovate facades in brick, stone, render, mixed materials and heritage. Repointing where the mortar has failed. Brick or stone replacement where individual units have crumbled. Render strip-and-replace where the existing has blown. Architectural detail repair (cornices, copings, string courses, sills, parapets). Protective coatings to slow the next round of weathering.',
-        'We work at every scale. Single-storey shopfronts on suburban high streets, two and three-storey terraces in the inner city, multi-storey commercial buildings and apartment blocks across the CBD and Eastern Suburbs. Scaffold for most of it, swing stage for tall narrow facades, rope access for spot work where scaffold is impractical.',
+        "Facade repairs need to consider both the surface and what holds it in place. Cracked masonry, loose render, corroded metal or damaged copings may affect areas above entrances and footpaths. Keep clear of falling material and seek prompt safety advice where elements appear unstable.",
+        "Brick replacement, repointing, stone repair and render work each call for different materials and preparation. Assess moisture entry and movement before repairing finishes. Sample areas help establish how new work will sit beside weathered original fabric.",
+        "Contact Romans about the facade and its access constraints. Building height, public areas and the extent of work determine what access system and specialist involvement are required. Scaffolding, suspended access and rope access are not interchangeable; capability and arrangements must be confirmed for the project."
       ]}
       features={[
         {
           icon: Building,
-          title: 'Brick facade repair',
-          description:
-            'Cracked and spalled brick replaced, mortar joints repointed, biological staining cleaned, rust runs from steel removed. Heritage matching where the building is listed.',
+          title: "Brick repairs",
+          description: "Assess damaged units and mortar joints, then select compatible replacements and pointing. Investigate rust staining rather than simply cleaning it away."
         },
         {
           icon: Paintbrush,
-          title: 'Render renovation',
-          description:
-            'Failed render stripped and replaced. Lime render on heritage walls, polymer-modified cement on modern. Sample patches for colour and texture matching.',
+          title: "Render repairs",
+          description: "Check adhesion, substrate condition and moisture before deciding what to retain or remove. Select the render from the wall’s properties rather than its age alone."
         },
         {
           icon: Layers,
-          title: 'Stone facade restoration',
-          description:
-            'Sandstone, bluestone, limestone facades. Hand-dressed replacement, dutchman repairs, stone repair mortar for surface erosion. Stainless steel cramps replacing failed iron.',
+          title: "Stone repairs",
+          description: "Consider retention, local repair and replacement for each element. Stone type, condition, structural role and exposure affect the choice."
         },
         {
           icon: Wrench,
-          title: 'Architectural details',
-          description:
-            'Cornices, mouldings, string courses, sills, parapets, balustrades, copings. Repaired in matching material or replicated from templates where damage is too far gone.',
+          title: "Architectural details",
+          description: "Cornices, sills, parapets and copings need suitable support and weathering details. Record surviving profiles before designing repairs."
         },
         {
           icon: ShieldCheck,
-          title: 'Protective coatings',
-          description:
-            'Anti-carbonation coatings on concrete and render. Breathable silane or siloxane sealers on stone. Weatherproofing for parapets, copings and balustrades.',
-        },
+          title: "Protection",
+          description: "Specify coatings or water-repellent treatments only where suitable. Consider their effect on appearance, moisture movement and future maintenance."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Heritage and matching brick',
-          detail:
-            'Salvage yards in Marrickville and Wetherill Park for reclaimed Federation and Victorian brick. New brick from Bowral and similar manufacturers for newer building matching. Stockpile at the workshop.',
+          title: "Matched masonry",
+          detail: "Compare samples for physical compatibility, dimensions, texture and colour. Confirm availability and sourcing rather than assuming workshop or quarry stock."
         },
         {
-          title: 'Hawkesbury and Gosford sandstone',
-          detail:
-            'Active NSW quarries supplying matched stone for heritage facades. Lead time two to four weeks for hand-cut blocks. Reclaimed stone for harder matches.',
+          title: "Repair mortar and render",
+          detail: "Assess existing materials and exposure to select an appropriate mix. Samples and curing conditions help establish the finish; a building date does not specify a lime grade."
         },
         {
-          title: 'Lime or cement render depending on era',
-          detail:
-            'Lime render (NHL 3.5) for any building pre-1940. Polymer-modified cement render for newer buildings. Never cement render against soft brick. Sample patches before bulk work.',
+          title: "Coating system",
+          detail: "Check substrate preparation, application conditions and maintenance requirements. Any manufacturer warranty depends on the actual system and its terms."
         },
         {
-          title: 'Anti-carbonation protective coatings',
-          detail:
-            'Two-coat anti-carbonation system for concrete and render facades. Breathable, slows future carbonation, 15 to 20 year warranty from manufacturer. Pigmented to match.',
+          title: "Access design",
+          detail: "Choose access for the task, loads and site risks. Qualified access specialists and permissions may be required; confirm who supplies and manages the system."
         },
         {
-          title: 'Scaffold, swing stage and rope access',
-          detail:
-            'Heavy scaffold for major facade work. Swing stage for tall narrow facades or where scaffolding the street is impractical. Rope access for spot repairs on multi-storey buildings.',
-        },
-        {
-          title: 'Engineer and heritage signoff',
-          detail:
-            'Structural engineer involvement for any masonry repair affecting load paths. Heritage consultant signoff for listed buildings. Full documentation for council and property file.',
-        },
+          title: "Inspection records",
+          detail: "Agree structural and heritage review points where relevant. Keep records of concealed repairs before finishes cover them."
+        }
       ]}
       processSteps={[
         {
-          step: 'Defect mapping',
-          detail:
-            'Facade photographed in detail. Defects marked up on drawings: cracked brick, blown render, failed pointing, rusted lintels, biological staining, salt deposits. Each defect categorised.',
+          step: "Map defects",
+          detail: "Record accessible damage and identify where close inspection or structural advice is needed. Establish safety restrictions first."
         },
         {
-          step: 'Sample patches',
-          detail:
-            'For each repair type, a sample patch is done in a visible but inconspicuous location. Heritage consultant or owner signs off on the match. Mortar colour, brick match, render texture, paint colour.',
+          step: "Design and approve",
+          detail: "Agree methods, access, samples and any required permissions. Specify temporary support before removing load-bearing or unstable material."
         },
         {
-          step: 'Scaffold or access setup',
-          detail:
-            'Scaffold around the facade or swing stage on tall narrow facades. Protective screens to keep dust in. Footpath protection or hoarding if work is over public access.',
+          step: "Set up safely",
+          detail: "Install the agreed access and public protection with appropriate checks. Coordinate entrances, neighbours and occupant routes."
         },
         {
-          step: 'Strip failed material',
-          detail:
-            'Failed brick cut out, failed render stripped, failed pointing raked out. Loose material removed. Substrate cleaned and prepared. Photos before any new material goes on.',
+          step: "Repair the fabric",
+          detail: "Retain sound material and carry out the specified repair sequence. Review unexpected deterioration before extending removal."
         },
         {
-          step: 'Reinstate',
-          detail:
-            'New brick or stone laid, new render applied in coats, new pointing tooled to original profile. Heritage matching throughout. Engineer or heritage consultant inspects key elements.',
-        },
-        {
-          step: 'Protective coatings and clean-up',
-          detail:
-            'Protective coatings applied to render and concrete. Stone sealed with breathable sealer if exposure justifies. Scaffolding down. Final facade clean. Completion documentation handed over.',
-        },
+          step: "Finish and inspect",
+          detail: "Apply only the specified compatible finishes, complete inspections and agree maintenance. Record any remaining limitations or outstanding work."
+        }
       ]}
       faqs={[
         {
-          question: 'How do you match existing brick or stone?',
-          answer:
-            'For brick we source from salvage yards, demolition contacts and heritage brick suppliers. Our workshop stockpile covers most common eras. For stone we source from active NSW quarries (Hawkesbury, Gosford) for new cut blocks, and reclaimed stone for harder matches. Sample patches are signed off before bulk work.',
+          question: "How is existing brick or stone matched?",
+          answer: "Compare samples for colour, texture, dimensions and physical properties. New and reclaimed materials both need assessment. An exact match may not be available, so agree an acceptable sample before ordering the full quantity."
         },
         {
-          question: 'Do you work on multi-storey facades?',
-          answer:
-            'Yes. We scaffold for most jobs but use swing stage on tall narrow facades or where street scaffolding is impractical. Rope access for spot work on multi-storey buildings. We hold the access tickets and have the safety systems for all three.',
+          question: "Can you consider multi-storey work?",
+          answer: "Provide the height, photographs taken safely and known access restrictions. The repair and access scope must be assessed, with specialist capability and responsibilities confirmed. Do not assume a particular suspended or rope-access arrangement is included."
         },
         {
-          question: 'What causes facade deterioration?',
-          answer:
-            'Water is the primary cause. Water gets through failed pointing, cracked render or porous brick, reaches embedded steel, the steel rusts and expands, the masonry cracks and the facade fails. Secondary causes include salt attack near the coast, atmospheric pollution accelerating carbonation of concrete, and poor original construction with inadequate weatherproofing details.',
+          question: "What causes facade deterioration?",
+          answer: "Moisture, salts, movement, corrosion and incompatible previous repairs can contribute. The same visible crack or stain may have several causes. Investigation should guide the repair rather than assuming a coating or repointing alone will resolve it."
         },
         {
-          question: 'Can you work on heritage facades?',
-          answer:
-            'Yes, it is a large part of what we do. We use period-correct materials (lime mortar, matched brick, hand-dressed stone) and period methods. We work with heritage consultants and council heritage officers regularly. Sample patches and methodology approval are part of every heritage scope.',
+          question: "What about heritage facades?",
+          answer: "Check the listing and conservation requirements before changing materials or finishes. The scope may need heritage advice, samples and authority approval. Discuss which repairs retain original fabric and which elements require a designed replacement."
         },
         {
-          question: 'How long does a facade renovation take?',
-          answer:
-            'A single-storey shopfront is 2 to 4 weeks. A two-storey Federation terrace facade is 4 to 8 weeks. A multi-storey commercial building or strata block facade can be 3 to 9 months. Scaffolding goes up at the start and stays up for the duration. Engineer and heritage approvals can add weeks at the front.',
+          question: "How long will facade work take?",
+          answer: "Height, access, material sourcing, permissions and the amount of concealed damage affect timing. Ask for a programme covering protection, inspections and curing as well as repair work, with an explanation of likely dependencies."
         },
         {
-          question: 'What does facade renovation cost?',
-          answer:
-            'Brick and pointing repair is 200 to 450 dollars per square metre of facade area. Render strip and replace is 250 to 500 dollars per square metre. Stone facade restoration is 800 to 2000 dollars per square metre. Scaffolding is around 25 to 60 dollars per square metre on top. Fixed quote per facade after detailed survey.',
-        },
+          question: "What affects the cost?",
+          answer: "Access and public protection can be significant alongside masonry, render or stone repairs. Ask for an itemised quote with design, specialist work and reinstatement clearly identified. A facade-area rate alone may hide important exclusions."
+        }
       ]}
     />
   );

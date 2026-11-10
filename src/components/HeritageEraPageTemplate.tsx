@@ -4,11 +4,12 @@ import { SEOHead } from '@/components/SEOHead';
 import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import type { HeritageEraData } from '@/data/heritage';
+import { toCanonicalPageUrl } from '@/lib/seoUrls';
 
 const SITE_URL = 'https://romansbuildingservices.com';
 
 export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => {
-  const canonicalUrl = `${SITE_URL}/heritage/${data.slug}`;
+  const canonicalUrl = toCanonicalPageUrl(`/heritage/${data.slug}`);
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -23,11 +24,6 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
     description: data.metaDescription,
     url: canonicalUrl,
     author: { '@type': 'Organization', name: 'Romans Building Services' },
-    reviewedBy: {
-      '@type': 'Person',
-      name: 'Minas Romanakis',
-      jobTitle: 'Founder and stonemason',
-    },
     publisher: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -43,18 +39,18 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
       <FAQSchema faqs={data.faqs} />
 
       {/* Breadcrumb strip */}
-      <nav className="bg-stone-50 border-b border-stone-200">
+      <nav aria-label="Breadcrumb" className="bg-stone-50 border-b border-stone-200 pt-20">
         <div className="container mx-auto px-4 py-3">
           <ol className="flex flex-wrap items-center gap-x-2 text-sm text-text-muted font-body">
             {breadcrumbs.map((c, i) => (
               <li key={c.href} className="flex items-center gap-x-2">
-                {i> 0 && <ChevronRight className="w-4 h-4 text-text-muted/50" />}
+                {i> 0 && <ChevronRight aria-hidden="true" className="w-4 h-4 text-text-muted/50" />}
                 {i < breadcrumbs.length - 1 ? (
                   <Link to={c.href} className="hover:text-navy">
                     {c.label}
                   </Link>
                 ) : (
-                  <span className="text-navy">{c.label}</span>
+                  <span aria-current="page" className="text-navy">{c.label}</span>
                 )}
               </li>
             ))}
@@ -95,8 +91,8 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
             Quick answer
           </p>
           <p className="font-body text-text-secondary text-lg leading-relaxed">
-            Romans Building Services restores {data.name.toLowerCase()} across Sydney with
-            materials and repair methods matched to the building era, suburb and original fabric.
+            Planning {data.name.toLowerCase()} starts with the building’s condition, surviving fabric
+            and proposed scope. Repair methods should follow inspection and material assessment, not age alone.
           </p>
         </div>
       </section>
@@ -135,9 +131,9 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
       {/* Common issues */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="font-heading text-3xl text-navy mb-3">What we see most often</h2>
+          <h2 className="font-heading text-3xl text-navy mb-3">Issues to assess</h2>
           <p className="font-body text-text-muted mb-8">
-            The issues that come up across most {data.name.toLowerCase().replace(' restoration', '')} buildings we assess.
+            Potential issues to investigate in {data.name.toLowerCase().replace(' restoration', '')} buildings; an inspection establishes which apply.
           </p>
           <div className="space-y-8">
             {data.commonIssues.map((issue, i) => (
@@ -211,7 +207,7 @@ export const HeritageEraPageTemplate = ({ data }: { data: HeritageEraData }) => 
             Got a {data.name.toLowerCase().replace(' restoration', '')} project?
           </h2>
           <p className="font-body text-white/80 text-lg mb-8">
-            Call Minas for a real assessment. 30 years of heritage work across Sydney — no rushing, no cutting corners.
+            Call Minas to discuss the building, the work you have in mind and assessment availability.
           </p>
           <a
             href="tel:0414922276"

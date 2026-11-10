@@ -9,7 +9,7 @@ const PeriodMaterialsPage = () => {
     <ServicePageTemplate
       title="Period-Appropriate Materials"
       metaTitle="Sydney Period Materials Sourcing | Romans"
-      metaDescription="Sydney heritage materials sourced and supplied by Minas Romanakis. Period brick, hand-cut sandstone, hydraulic lime and era-correct fittings."
+      metaDescription="Sydney period-material enquiries. Assessing compatible brick, stone, mortar and fittings for heritage repair scopes."
       heroImage="/gallery/thumbs/romansstone_1451942270_1155297957273885284_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}
@@ -19,131 +19,101 @@ const PeriodMaterialsPage = () => {
         { label: 'Period-Appropriate Materials', href: '' },
       ]}
       intro={[
-        'Heritage restoration is only as good as the materials going into the wall. Wrong brick, wrong stone or wrong mortar will read as wrong from across the street, and over time it will damage the surrounding original fabric. Cement render against soft brick blows the brick faces off. Modern brick next to Federation brick reads as a patch forever. Galvanised steel inside a wall rusts and splits stone.',
-        'Sourcing the right materials is most of the work. We have spent 30 years building relationships with quarries, brick yards, salvage operators, lime suppliers and specialist manufacturers across Australia. We know which Hawkesbury quarry to call for a particular stone colour, which salvage yard has Federation brick in stock, which UK importer brings in NHL hydraulic lime.',
-        'If you are planning a heritage project, we can source materials for you whether or not we are doing the labour. Minas has the contacts and the knowledge to identify what your building used originally and find the closest available match.',
+        "Material selection is central to heritage repair. A replacement needs to work with the retained fabric as well as look appropriate. Brick dimensions, stone bedding, mortar strength and the exposure of metal connections can matter as much as colour.",
+        "The original source may be unknown, closed or unable to supply a matching product. New and reclaimed alternatives need assessment for condition, compatibility and provenance. A sample is useful evidence, but not proof that the material will behave exactly like the original.",
+        "Contact Romans about material requirements for a proposed repair. Confirm whether identification, sample sourcing, supply-only assistance or installation can be included in the scope. Supplier availability, quantities, lead times and any heritage requirements should be established before committing to an order."
       ]}
       features={[
         {
           icon: Search,
-          title: 'Material identification',
-          description:
-            'On-site identification of original brick era, stone quarry source, mortar composition, and any era-specific hardware. For complex jobs we send mortar samples to a lab.',
+          title: "Identify existing fabric",
+          description: "Use records, close inspection and testing where needed. Visual inspection alone cannot always establish quarry source, age or mortar composition."
         },
         {
           icon: Package,
-          title: 'Salvage and reclaim',
-          description:
-            'Salvage yards across Sydney plus our own workshop stockpile of period brick, stone, hardware and timber. Built up over 30 years.',
+          title: "Compare replacements",
+          description: "Assess new and reclaimed options for dimensions, condition and performance. Confirm legitimate sourcing and any limitations."
         },
         {
           icon: Truck,
-          title: 'Active supplier network',
-          description:
-            'Hawkesbury and Gosford sandstone quarries, Bowral and Brickworks for heritage brick, specialist lime importers, oxide colour suppliers, era-correct fittings.',
+          title: "Check availability",
+          description: "Confirm quantity, fabrication, transport and storage requirements with the actual supplier before setting the programme."
         },
         {
           icon: CheckCircle,
-          title: 'Heritage-approved',
-          description:
-            'Material specifications prepared for heritage council and consultant sign-off. Samples brought to site for comparison before any material is ordered in bulk.',
-        },
+          title: "Agree samples",
+          description: "Record the accepted sample and specification, with conservation or authority review where required. Sample agreement is not a general heritage certification."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Sandstone from active NSW quarries',
-          detail:
-            'Wondabyne, Gosford and smaller operations cut Hawkesbury and Gosford sandstone to colonial dimensions. Lead time 2 to 4 weeks for hand-cut blocks. We have samples at the workshop from all the active quarries.',
+          title: "Replacement stone",
+          detail: "Compare bedding, texture, strength and moisture behaviour as well as colour. Quarry names or geographic origin alone do not establish a match."
         },
         {
-          title: 'Period brick from salvage and heritage manufacturers',
-          detail:
-            'Reclaimed brick from yards in Marrickville and Wetherill Park. New brick from Bowral and a few heritage manufacturers still firing to old sizes. For convict-era brick we rely on salvage from demolition.',
+          title: "Brick samples",
+          detail: "Reclaimed bricks may have hidden damage or contamination. New manufacture may differ in size and absorption; assess suitability for the intended repair."
         },
         {
-          title: 'Hydraulic lime (NHL)',
-          detail:
-            'NHL 2, NHL 3.5 and NHL 5 grades imported from UK and France. Different grades for different applications. Bag stock at the workshop, no shortage.',
+          title: "Lime and mortar components",
+          detail: "Choose binder, aggregate and any pigment through an appropriate specification. Natural hydraulic lime grades are not interchangeable, and building age alone does not select one."
         },
         {
-          title: 'Quicklime for hot lime mortar',
-          detail:
-            'Calcium oxide quicklime from Australian and New Zealand suppliers. Used for traditional hot lime mortar mixing on heritage scopes.',
+          title: "Traditional lime materials",
+          detail: "Quicklime and hot-mixed mortar require trained handling and suitable controls because the reaction releases heat and the material is caustic. Do not attempt mixing from a website description."
         },
         {
-          title: 'Natural oxide pigments',
-          detail:
-            'Red, yellow, black, brown earth oxides for tinting lime mortar to match original colour. From specialty paint and pigment suppliers. Slow-add for matching, never bulk-coloured.',
-        },
-        {
-          title: 'Stainless steel for any new metalwork',
-          detail:
-            'Wall ties, cramps, dowels, lintels, fixings. Stainless not galvanised. Galv rusts inside the wall after 30 to 50 years. Stainless is the only choice for heritage work.',
-        },
+          title: "Metal fittings",
+          detail: "Select metal grade, protective system and connections for the design and exposure. Stainless steel can be appropriate, but is not the only possible choice or a guarantee against all corrosion."
+        }
       ]}
       processSteps={[
         {
-          step: 'Identify the original materials',
-          detail:
-            'On-site survey. We look at brick size and texture, stone grain and colour, mortar composition and joint profile. Photos taken and a small mortar sample collected if lab analysis is needed.',
+          step: "Document the need",
+          detail: "Identify the repair, existing materials and quantities, including any conservation requirements and investigation still needed."
         },
         {
-          step: 'Specify replacement materials',
-          detail:
-            'Written specification produced. Stone source quarry, brick supplier, mortar mix ratio and lime type, oxide pigments for colour matching, fittings spec. Signed off by heritage consultant before sourcing.',
+          step: "Specify performance",
+          detail: "Agree dimensions, compatibility, finish and any test requirements before comparing suppliers."
         },
         {
-          step: 'Sample procurement',
-          detail:
-            'For stone, sample blocks brought to site for comparison. For brick, a few sample bricks compared against the wall. For mortar, sample patches mixed on site. Heritage consultant inspects before bulk order.',
+          step: "Review samples",
+          detail: "Compare options in context and record the accepted sample and limitations before bulk purchase."
         },
         {
-          step: 'Bulk sourcing and delivery',
-          detail:
-            'Stone cut to size at the quarry (2 to 4 weeks lead time). Brick palletised at the salvage yard or supplier. Lime, sand and pigments delivered to site. Stainless fittings ordered from local supplier.',
+          step: "Confirm supply",
+          detail: "Check actual availability, fabrication, delivery, handling fees and responsibility for unsuitable or damaged material."
         },
         {
-          step: 'Storage and protection on site',
-          detail:
-            'Stone stacked on timber bearers, covered. Brick stored on pallets out of weather. Lime kept dry. Materials protected until they go into the wall. Damaged or wrong material rejected and replaced.',
-        },
-        {
-          step: 'Documentation handover',
-          detail:
-            'Supplier details, batch numbers, mortar mix specs, oxide quantities documented for the heritage file. Future repairs can reproduce the same match.',
-        },
+          step: "Store and record",
+          detail: "Protect materials to supplier requirements and retain specifications and source records for installation and future maintenance."
+        }
       ]}
       faqs={[
         {
-          question: 'What if the original stone is no longer quarried?',
-          answer:
-            'Many original Sydney quarries have closed but the main sandstone sources (Hawkesbury and Gosford) are still operating. For closed quarries we find an alternative with similar grain and colour, or use reclaimed stone from heritage demolitions. We have never failed to find acceptable replacement stone.',
+          question: "What if the original stone is unavailable?",
+          answer: "A compatible alternative or suitable reclaimed stone may be considered after assessment. Compare physical properties as well as appearance, and seek conservation advice where needed. An exact replacement or acceptable source cannot be guaranteed in advance."
         },
         {
-          question: 'Do heritage councils need to approve materials?',
-          answer:
-            'For state-listed and locally-listed buildings, yes. We prepare material specifications and bring physical samples to site for the heritage consultant or council heritage officer to inspect. Councils want evidence the replacement materials match the original in composition, strength and appearance.',
+          question: "Who approves replacement materials?",
+          answer: "Requirements depend on the property, work and approval conditions. Check with the relevant authority and conservation adviser, then agree what samples and specifications are needed. A supplier’s description of a heritage product is not formal approval."
         },
         {
-          question: 'Can you source lime for mortar and render?',
-          answer:
-            'Yes. Hydraulic lime (NHL 2, 3.5 and 5), lime putty for fine work, and quicklime for hot lime mortar mixing. NHL is imported from the UK and France through Australian distributors. We can supply lime to other contractors as well as use it on our own jobs.',
+          question: "Which lime should be used?",
+          answer: "The wall, exposure, original mortar and repair purpose determine the specification. Different binders set and cure differently. Ask the responsible adviser to confirm the mix rather than choosing a lime grade solely by the building’s period."
         },
         {
-          question: 'How do I match the mortar colour exactly?',
-          answer:
-            'Lime mortar colour is determined by the sand and any added oxide pigments. We sample sand from yards across Sydney until we find the closest base colour, then adjust with small amounts of natural oxide pigment if needed. Sample patches are mixed and cured for a week before the final colour is locked in.',
+          question: "Can mortar colour be matched exactly?",
+          answer: "Aggregate, binder, pigments, curing and weathering all affect colour. Trial areas help establish an acceptable match once appropriately cured. Exact colour cannot be guaranteed, and altering pigment does not replace checking the mortar’s physical compatibility."
         },
         {
-          question: 'What does period material sourcing cost?',
-          answer:
-            'Material cost varies. Hand-cut sandstone is 800 to 2000 dollars per cubic metre depending on quarry and finish. Reclaimed Federation brick is 5 to 15 dollars per brick. Hydraulic lime is 70 to 120 dollars per bag. We bill materials at cost plus a small handling fee for sourcing time. Quotes itemise materials separately so you can see exactly where the money goes.',
+          question: "What does sourcing cost?",
+          answer: "Costs depend on investigation, samples, quantity, fabrication and transport, as well as any sourcing service agreed. Ask for a written breakdown of material and handling charges. No standard markup or supplier price is assumed."
         },
         {
-          question: 'Can you source materials only, without the labour?',
-          answer:
-            'Yes. We supply materials to other contractors, heritage architects and DIY heritage owners. We do not undercut other tradespeople on labour, but if you have a heritage project and need materials sourced, we are happy to help with that part regardless of who does the build.',
-        },
+          question: "Can I ask about materials without installation?",
+          answer: "Yes, describe the material and intended use so availability and the service scope can be discussed. Confirm whether supply-only assistance is offered for the enquiry, and who is responsible for specification, ordering and installation suitability."
+        }
       ]}
     />
   );

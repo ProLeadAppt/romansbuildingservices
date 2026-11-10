@@ -1,48 +1,26 @@
+import { toCanonicalPageUrl } from '@/lib/seoUrls';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { CollectionPageSchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
-
-const faqs = [
-  {
-    question: 'What is repointing?',
-    answer:
-      'Repointing is the process of removing failed mortar from the joints between bricks or stone and replacing it with fresh mortar so the wall keeps water out and stays stable.',
-  },
-  {
-    question: 'How do I know if the mortar is too far gone?',
-    answer:
-      'If the mortar is powdery, recessed, cracked, missing or washing out every time it rains, it is usually time to get it looked at.',
-  },
-  {
-    question: 'Can I just seal the wall instead?',
-    answer:
-      'Usually no. Sealing over failed mortar traps moisture and can make the problem worse, especially on older brickwork and heritage masonry.',
-  },
-  {
-    question: 'Do all damaged walls need repointing?',
-    answer:
-      'No. If the bricks themselves are spalling, if the wall is moving, or if there is a structural issue, repointing alone is not enough.',
-  },
-];
+import { CollectionPageSchema } from '@/components/LocalSEO/StructuredData';
 
 const steps = [
   {
     title: 'Check the joints first',
-    body: 'Look for cracked, missing or powdery mortar between the bricks or stones.',
+    body: 'From a safe ground-level position, photograph open joints, loose fragments and changes beside a wider view of the wall. Do not scrape, probe or rub suspect joints.',
   },
   {
     title: 'Look for moisture signs',
-    body: 'Staining, mould, loose paint and internal damp patches often show the mortar is letting water through.',
+    body: 'Record when damp appears and whether it follows rain. Gutters, flashings, plumbing, drainage and condensation can also cause damp; mortar condition alone does not locate the source.',
   },
   {
     title: 'Check whether the bricks are failing too',
-    body: 'If the brick faces are crumbling, you may need brick repair as well as repointing.',
+    body: 'Photograph damaged brick or stone faces without touching them. Stay away from bulging walls or loose overhead masonry, and keep others clear while arranging urgent assessment.',
   },
   {
     title: 'Get the right mortar mix',
-    body: 'Older Sydney masonry often needs softer mortar than modern bag mix. The wrong mix can damage the wall.',
+    body: 'Ask how the existing mortar, brick or stone, exposure and joint profile will inform the mix. A sample panel can help agree colour and finish; heritage requirements may also affect the method.',
   },
 ];
 
@@ -51,19 +29,19 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Signs You Need Repointing in Sydney | Crumbling Mortar, Gaps and Water Entry',
   description: 'How to spot failed mortar before the wall gets worse. A plain-English guide to the signs you need repointing on Sydney brick and stone walls.',
-  url: 'https://romansbuildingservices.com/learn/repointing-signs',
+  url: toCanonicalPageUrl('https://romansbuildingservices.com/learn/repointing-signs'),
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://romansbuildingservices.com/learn/repointing-signs',
+    '@id': toCanonicalPageUrl('https://romansbuildingservices.com/learn/repointing-signs'),
   },
   isPartOf: {
     '@type': 'CollectionPage',
-    '@id': 'https://romansbuildingservices.com/learn',
+    '@id': toCanonicalPageUrl('https://romansbuildingservices.com/learn'),
   },
   author: {
     '@type': 'Organization',
     name: 'Romans Building Services',
-    url: 'https://romansbuildingservices.com',
+    url: toCanonicalPageUrl('https://romansbuildingservices.com'),
   },
   publisher: {
     '@type': 'Organization',
@@ -88,8 +66,8 @@ const RepointingSignsPage = () => {
   const relatedPages = [
     {
       name: 'Learn hub',
-      url: 'https://romansbuildingservices.com/learn',
-      description: 'The main SEO / GEO / AEO authority hub for the site.',
+      url: toCanonicalPageUrl('https://romansbuildingservices.com/learn'),
+      description: 'Practical guides to building defects, repair options and planning an assessment.',
     },
     {
       name: 'Case studies index',
@@ -98,12 +76,12 @@ const RepointingSignsPage = () => {
     },
     {
       name: 'Masonry vs remedial building',
-      url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+      url: toCanonicalPageUrl('https://romansbuildingservices.com/learn/masonry-vs-remedial-building'),
       description: 'Useful when repointing is only part of a bigger repair scope.',
     },
     {
       name: 'Concrete cancer in Sydney',
-      url: 'https://romansbuildingservices.com/learn/concrete-cancer-sydney',
+      url: toCanonicalPageUrl('https://romansbuildingservices.com/learn/concrete-cancer-sydney'),
       description: 'Helpful when mortar failure and concrete spalling sit on the same property.',
     },
     {
@@ -129,7 +107,6 @@ const RepointingSignsPage = () => {
         items={relatedPages}
       />
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} />
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -140,7 +117,7 @@ const RepointingSignsPage = () => {
             Signs you need repointing
           </h1>
           <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Failed mortar usually shows itself before the wall properly falls apart. The trick is spotting it early enough to fix it before water and movement do more damage.
+            Open joints and loose mortar are reasons to arrange an assessment. Repointing may be appropriate, but damp, cracked bricks and wall movement need their causes checked before a repair is chosen.
           </p>
         </div>
       </section>
@@ -148,13 +125,13 @@ const RepointingSignsPage = () => {
       <section className="bg-white py-16 md:py-20 px-4">
         <div className="max-w-3xl mx-auto space-y-5 font-body text-text-muted text-base md:text-lg leading-relaxed">
           <p>
-            Repointing is one of the most common masonry repairs in Sydney. When mortar gets old, it starts to crack, powder out or fall away from the joints. Once that happens, the wall loses its weather seal and the damage usually speeds up.
+            Repointing replaces deteriorated mortar in brick or stone joints. Sound joints help manage weather exposure, but the wall also relies on details such as flashings, drainage and openings. New mortar cannot correct every source of water entry.
           </p>
           <p>
-            The signs are usually easy to see. The wall might look tired, but the real clues are in the joints: gaps, loose mortar, staining, and bits of mortar on the ground after rain or wind.
+            Look for missing mortar, separation at joint edges and fallen fragments from a safe position. Some joints were built with a recessed profile, and older lime mortar can be softer than modern cement mortar. Appearance alone does not establish the depth or cause of deterioration.
           </p>
           <p>
-            Good repointing is not just “smearing new mortar over the top”. The old joint needs to be cut out to the right depth, cleaned, and filled with a mortar that suits the age and material of the wall.
+            A repair scope should identify which joints need work, how deteriorated mortar will be removed without damaging the masonry, and the compatible mortar and curing method. Ask how adjoining brick repairs, water-entry work and any structural assessment will be sequenced.
           </p>
         </div>
       </section>
@@ -165,10 +142,10 @@ const RepointingSignsPage = () => {
             <h2 className="font-heading text-2xl text-navy mb-4">The main signs</h2>
             <ul className="space-y-3 text-text-muted leading-relaxed">
               {[
-                'Mortar is powdery when you rub it with your finger.',
+                'Loose mortar fragments are visible without touching or disturbing the wall.',
                 'You can see gaps or missing sections in the joints.',
-                'The mortar sits recessed or has pulled away from the brick edge.',
-                'The wall lets water in or shows damp patches after rain.',
+                'Joints appear newly eroded or separated from the brick edge.',
+                'Damp or staining appears after rain and needs its source investigated.',
                 'You can see mortar crumbs on the ground or ledges below the wall.',
               ].map((item) => (
                 <li key={item} className="flex gap-3">
@@ -184,7 +161,7 @@ const RepointingSignsPage = () => {
               {[
                 'The bricks themselves are soft or spalling.',
                 'The wall is bulging, moving or out of plumb.',
-                'There are structural cracks through the wall, not just the joints.',
+                'Cracks cross bricks or joints, change over time, or recur after repair.',
                 'The problem is tied to leaking gutters, flashing or drainage.',
               ].map((item) => (
                 <li key={item} className="flex gap-3">
@@ -224,7 +201,7 @@ const RepointingSignsPage = () => {
             </Link>
             <Link to="/learn/concrete-cancer-sydney" className="bg-white rounded-xl p-5 border border-gray-200 hover:border-navy/30 transition-colors">
               <p className="font-heading text-xl text-text-primary mb-2">Concrete cancer in Sydney</p>
-              <p className="text-text-muted leading-relaxed">A close cousin page for buildings where mortar failure and spalling appear together.</p>
+              <p className="text-text-muted leading-relaxed">Understand concrete spalling where it appears alongside masonry damage.</p>
             </Link>
           </div>
         </div>
@@ -234,7 +211,7 @@ const RepointingSignsPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl mb-4">If the mortar is gone, don’t wait</h2>
           <p className="text-white/80 text-lg leading-relaxed mb-8">
-            Repointing gets more expensive once water starts coming in. If the joints are failing, get the wall assessed before the bricks start taking the damage too.
+            Share safely taken photos, the location of the affected wall and any changes you have noticed. An assessment can establish whether repointing is suitable and what other work should come first.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="tel:0414922276" className="inline-flex items-center gap-2 bg-white text-navy font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors">

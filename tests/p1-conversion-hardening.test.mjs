@@ -122,9 +122,11 @@ test('home page speaks to customers rather than exposing search-marketing langua
   const home = read('src/pages/SinglePageApp.tsx');
   assert.doesNotMatch(home, /SEO hub|AI Overviews|answer-first version of the site/i);
   assert.match(home, /HomeProblemNavigator/);
-  assert.match(home, /HomeCaseStudiesSection/);
-  assert.match(home, /HomeFounderStandardSection/);
-  assert.match(home, /HomeCapabilitiesSection/);
+  assert.match(home, /CraftHomeSections/);
+  const craft = read('src/components/home/CraftHomeSections.tsx');
+  for (const service of ['masonry', 'heritage-restoration', 'structural-repairs', 'concrete-repairs', 'foundation-repairs', 'building-restoration', 'remedial-building']) assert.ok(craft.includes('/services/' + service));
+  assert.match(craft, /QuoteCTAButton/);
+  assert.doesNotMatch(craft, /404 Slopes|guaranteed rankings|AI Overviews/);
 });
 
 test('home process schema stays aligned with approved visible claims', () => {

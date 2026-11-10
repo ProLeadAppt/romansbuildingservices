@@ -3,6 +3,7 @@ import { SERVICE_LABELS, URGENCY_LABELS } from './types';
 
 const WEBHOOK_URL = import.meta.env.VITE_QUOTE_WEBHOOK_URL as string | undefined;
 const PRODUCTION_QUOTE_ENDPOINT = '/api/quote';
+const SUBMISSION_TIMEOUT_MS = 20_000;
 
 interface SubmitResult {
   ok: boolean;
@@ -44,12 +45,23 @@ export async function submitQuote(data: QuoteData, pageOrigin: string): Promise<
     return { ok: false, error: 'Quote submission is not configured. Please call us on 0414 922 276.' };
   }
 
+  const controller = new AbortController();
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  let timedOut = false;
   try {
-    const res = await fetch(endpoint, {
+    const deadline = new Promise<never>((_, reject) => {
+      timeout = setTimeout(() => {
+        timedOut = true;
+        controller.abort();
+        reject(new Error("Quote response timed out"));
+      }, SUBMISSION_TIMEOUT_MS);
+    });
+    const res = await Promise.race([fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
-    });
+      signal: controller.signal,
+    }), deadline]);
     if (!res.ok) {
       return { ok: false, error: `Submission failed (${res.status}). Please call us on 0414 922 276.` };
     }
@@ -57,8 +69,12 @@ export async function submitQuote(data: QuoteData, pageOrigin: string): Promise<
   } catch (err) {
     return {
       ok: false,
-      error: 'Could not reach our servers. Please call Minas on 0414 922 276.',
+      error: timedOut
+        ? 'We have not received confirmation yet. Your quote may have reached Minas. Your details are still here. Please call 0414 922 276 to check before sending again.'
+        : 'Could not reach our servers. Please call Minas on 0414 922 276.',
     };
+  } finally {
+    if (timeout !== undefined) clearTimeout(timeout);
   }
 }
 

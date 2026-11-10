@@ -5,6 +5,7 @@ import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
 import { QuoteCTAButton } from '@/components/quote';
 import type { CaseStudy } from '@/data/caseStudies';
+import { toCanonicalPageUrl, toAbsoluteMediaUrl } from '@/lib/seoUrls';
 
 const SITE_URL = 'https://romansbuildingservices.com';
 
@@ -14,7 +15,7 @@ const CaseStudySchema = ({ cs }: { cs: CaseStudy }) => {
     '@type': 'Article',
     headline: cs.metaTitle,
     description: cs.metaDescription,
-    image: [`${SITE_URL}${cs.hero.src.startsWith('/') ? cs.hero.src : `/${cs.hero.src}`}`],
+    image: [toAbsoluteMediaUrl(cs.hero.src)],
     author: {
       '@type': 'Organization',
       name: 'Romans Building Services',
@@ -30,17 +31,17 @@ const CaseStudySchema = ({ cs }: { cs: CaseStudy }) => {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/case-studies/${cs.slug}`,
+      '@id': toCanonicalPageUrl(`/case-studies/${cs.slug}`),
     },
     isPartOf: {
       '@type': 'CollectionPage',
-      '@id': `${SITE_URL}/case-studies`,
+      '@id': toCanonicalPageUrl('/case-studies'),
     },
     keywords: [cs.primaryService, cs.suburbName, cs.parentAreaName, 'case study'],
     about: {
       '@type': 'Service',
       name: cs.primaryService,
-      url: `${SITE_URL}${cs.primaryServiceHref}`,
+      url: toCanonicalPageUrl(cs.primaryServiceHref),
     },
     contentLocation: {
       '@type': 'Place',
@@ -86,19 +87,19 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
       />
 
       {/* Breadcrumb bar */}
-      <div className="bg-bg-light border-b border-border">
+      <div role="navigation" aria-label="Breadcrumb" className="bg-bg-light border-b border-border pt-20">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm overflow-x-auto">
           <Link to="/" className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             Home
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
           <Link to="/case-studies" className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             Case Studies
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
           <span className="font-body text-text-primary whitespace-nowrap">{cs.suburbName}</span>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
-          <span className="font-body text-text-primary whitespace-nowrap">Case Study</span>
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <span aria-current="page" className="font-body text-text-primary whitespace-nowrap">Case Study</span>
         </div>
       </div>
 
@@ -191,6 +192,12 @@ export const CaseStudyTemplate = ({ cs }: CaseStudyTemplateProps) => {
           </div>
         </div>
       </section>
+
+      <aside className="bg-bg-light border-b border-border" aria-label="Project-specific repair guidance">
+        <p className="max-w-4xl mx-auto px-6 py-6 font-body text-text-secondary leading-relaxed">
+          Methods, dimensions and timings in this project describe that job. They are not a repair specification for another property. Structural work, fireplaces and foreshore structures need assessment of the actual site and the relevant design, permissions and safety requirements.
+        </p>
+      </aside>
 
       {/* The Problem */}
       <section className="py-20 bg-bg-light">

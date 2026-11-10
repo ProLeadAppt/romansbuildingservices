@@ -1,6 +1,6 @@
 import { ServicePageTemplate } from '@/components/ServicePageTemplate';
 import { getSiblingServices } from '@/data/serviceHierarchy';
-import { Landmark, Wrench, ShieldCheck, Hammer, ClipboardCheck } from 'lucide-react';
+import { Landmark, Hammer, Wrench, ShieldCheck, ClipboardCheck } from 'lucide-react';
 
 const BeamColumnPage = () => {
   const siblings = getSiblingServices('structural-repairs', 'beam-column-restoration');
@@ -8,7 +8,7 @@ const BeamColumnPage = () => {
     <ServicePageTemplate
       title="Beam & Column Restoration"
       metaTitle="Sydney Beam & Column Repairs | Romans"
-      metaDescription="Sydney beam and column repairs by Minas Romanakis. Concrete spalling repair, steel lintel replacement and carbon fibre reinforcement for all building types."
+      metaDescription="Sydney beam and column repair enquiries. Assessment-led concrete, steel and masonry repair planning with structural design and safe support."
       heroImage="/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}
@@ -18,137 +18,106 @@ const BeamColumnPage = () => {
         { label: 'Beam & Column Restoration', href: '' },
       ]}
       intro={[
-        'Beams and columns are what hold the building up. Concrete beams in apartment blocks. Brick or stone piers in older buildings. Steel beams in warehouses and commercial. Steel lintels above doors and windows in Federation and Victorian houses. All of them have the same failure mode: rust inside, spalling outside, capacity slowly draining away.',
-        'The cause is almost always water getting in. Water plus oxygen plus steel reinforcement equals rust. Rust takes up about seven times the volume of the original steel, which means it pushes the surrounding concrete or brick apart from inside. By the time the damage is visible on the outside, the steel is well into corrosion and the structural capacity is already compromised.',
-        'We restore beams and columns properly. Cut back to sound material, treat or replace the corroded steel, rebuild the profile, apply protective coatings so it does not happen again. Most of our beam work is on strata blocks (concrete cancer in carpark soffits and balcony slabs). Most of our column work is on older buildings with corroded steel lintels or failed masonry piers.',
+        "Beams, columns and piers transfer loads through a building. They may be concrete, steel, timber, brick or stone, and they do not all deteriorate in the same way. Cracking, corrosion, crushing, deflection or loss of material needs assessment in relation to the element’s loads and connections.",
+        "In reinforced concrete, carbonation or chlorides can reduce the protection around the steel, allowing corrosion where moisture and oxygen are present. Corrosion can contribute to cracking and spalling. Other damage mechanisms are also possible, and surface appearance does not measure remaining structural capacity.",
+        "Contact Romans to discuss an engineer-defined repair scope. The assessment may support repair, strengthening or replacement. Required specialist systems, temporary support and inspection stages must be confirmed before removal of damaged material or changes to the load-bearing element."
       ]}
       features={[
         {
           icon: Landmark,
-          title: 'Concrete beam repair',
-          description:
-            'Spalled and cracked concrete cut back to sound material. Corroded steel exposed, cleaned and treated. Structural repair mortar applied to rebuild the original profile. Protective coating finishes it.',
-        },
-        {
-          icon: Wrench,
-          title: 'Masonry column rebuild',
-          description:
-            'Brick piers and stone columns cut out and rebuilt course by course. Stainless steel reinforcement where the engineering requires it. Matched mortar and pointing to surrounding wall.',
-        },
-        {
-          icon: ShieldCheck,
-          title: 'Steel lintel replacement',
-          description:
-            'Corroded steel lintels above doors and windows cut out and replaced with hot-dip galvanised or stainless steel. Adjacent brickwork cut out, lintel inserted, brick rebuilt over.',
+          title: "Concrete element repairs",
+          description: "Repair boundaries and reinforcement treatment follow assessment of the concrete and steel. Cutting back a loaded element can reduce its capacity, so temporary support may be needed first."
         },
         {
           icon: Hammer,
-          title: 'Carbon fibre reinforcement',
-          description:
-            'For beams that need additional capacity, carbon fibre fabric epoxy-bonded to the underside or sides. Provides significant tensile strength without adding much weight or thickness.',
+          title: "Masonry piers",
+          description: "Check the pier, bearing surfaces and connections before removing damaged bricks or stone. Compatible masonry and a designed repair sequence help retain sound original material."
+        },
+        {
+          icon: Wrench,
+          title: "Steel and lintels",
+          description: "Corrosion, deformation and connections affect whether steel can be repaired or needs replacement. Section choice and protective treatment depend on the design and exposure."
+        },
+        {
+          icon: ShieldCheck,
+          title: "Strengthening options",
+          description: "External steel, section enlargement or fibre-reinforced systems may be considered by an engineer. Suitability, specialist installation and fire or exposure requirements need confirmation."
         },
         {
           icon: ClipboardCheck,
-          title: 'Engineered repair',
-          description:
-            'Every significant beam or column repair is engineered. Scope of works, design certificate, site inspection, completion certificate. Documentation for strata and insurance files.',
-        },
+          title: "Inspection and records",
+          description: "Agree hold points, material records and completion documentation. A repaired surface profile alone does not demonstrate that the element carries the required loads."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Structural repair mortar (Sika, Mapei, BASF)',
-          detail:
-            'Polymer-modified cementitious mortar designed for vertical and overhead application. Sets fast, bonds strongly to old concrete, replicates original profile. Selected to match the engineer specification.',
+          title: "Concrete repair materials",
+          detail: "Choose materials for the specification, substrate, application orientation and exposure. Bond, shrinkage, stiffness and curing matter alongside compressive strength."
         },
         {
-          title: 'Corrosion inhibitor for exposed steel',
-          detail:
-            'Once the steel is exposed and cleaned to bright metal, a corrosion-inhibitor primer goes on. Slows future corrosion if any moisture finds its way back. Standard on all concrete cancer repairs.',
+          title: "Reinforcement treatment",
+          detail: "The engineer assesses steel loss, continuity and any need for replacement or additional reinforcement. Corrosion treatment must suit the wider repair system and remaining concrete conditions."
         },
         {
-          title: 'Hot-dip galvanised or stainless lintels',
-          detail:
-            'Hot-dip galvanised for hidden interior lintels. Stainless for exposed work or coastal locations. Sized to span and load. Bedded into the wall with the same mortar as the surrounding brick.',
+          title: "Replacement steel",
+          detail: "Steel sections, bearings, connections and corrosion protection are specified for the site. Galvanised and stainless systems have different requirements; neither is a universal replacement rule."
         },
         {
-          title: 'Carbon fibre fabric',
-          detail:
-            'Unidirectional carbon fibre fabric, epoxy-saturated and bonded to the structural element. Used on beams where additional tensile capacity is needed and a section enlargement would be impractical.',
+          title: "Strengthening systems",
+          detail: "Carbon fibre and other bonded systems need a sound prepared substrate, designed anchorage and suitable protection. Their use and installation responsibilities should be confirmed in the agreed scope."
         },
         {
-          title: 'Protective surface coatings',
-          detail:
-            'Anti-carbonation coatings applied to repaired concrete to slow future corrosion. Breathable so trapped moisture can leave. Long-life coatings carry 10 to 20 year warranties.',
-        },
-        {
-          title: 'Engineer involvement',
-          detail:
-            'For any beam or column repair we work to a structural engineer scope. Repair method, materials, inspection points. Engineer signs off on completion for the property structural file.',
-        },
+          title: "Protective finishes",
+          detail: "A suitable coating may form part of a durability plan after repairs. It cannot restore lost structural capacity or guarantee a fixed maintenance-free life."
+        }
       ]}
       processSteps={[
         {
-          step: 'Inspection and engineer report',
-          detail:
-            'On-site survey of the affected beams and columns. Visible damage mapped. Engineer comes out for anything significant and writes a report specifying repair method.',
+          step: "Assess condition and loads",
+          detail: "Obtain structural assessment and any testing needed to understand the defect. Identify access restrictions and risks from loose material or reduced capacity."
         },
         {
-          step: 'Hazard control and propping',
-          detail:
-            'Loose concrete chipped down so it does not fall on anyone. Temporary propping if the element has lost significant capacity. Access scaffolding for high work.',
+          step: "Design the repair",
+          detail: "Confirm repair versus replacement, temporary works and inspection requirements. Check permissions and the required specialist responsibilities before agreeing the construction scope."
         },
         {
-          step: 'Cut back to sound concrete',
-          detail:
-            'Damaged concrete cut back behind the corroded steel. Steel exposed all round. Concrete edges feathered so the patch can bond and the original profile can be rebuilt accurately.',
+          step: "Prepare safe access",
+          detail: "Establish the designed support and work area. Protect adjacent structure and services, and arrange any hazardous-material controls before cutting or surface preparation."
         },
         {
-          step: 'Treat the steel',
-          detail:
-            'Corroded steel cleaned to bright metal with wire brush or grit blasting. Heavily corroded sections cut out and spliced with new reinforcement. Corrosion-inhibitor primer applied.',
+          step: "Repair and verify",
+          detail: "Follow the specification for removal, reinforcement and reinstatement. Refer unexpected deterioration to the engineer and inspect required stages before covering the work."
         },
         {
-          step: 'Rebuild the profile',
-          detail:
-            'Structural repair mortar applied in layers up to the original profile. Each layer keys into the previous one. Final layer trowelled flush with the surrounding concrete.',
-        },
-        {
-          step: 'Coat and document',
-          detail:
-            'Anti-carbonation protective coating applied to the full repaired element. Engineer inspects and certifies completion. Photos and material specs handed to strata committee or owner for the file.',
-        },
+          step: "Transfer loads and hand over",
+          detail: "Observe specified strength and inspection requirements before releasing support. Provide agreed records and maintenance advice, with any continuing restrictions or monitoring clearly identified."
+        }
       ]}
       faqs={[
         {
-          question: 'What causes beams and columns to deteriorate?',
-          answer:
-            'Water ingress is the main cause. Water gets through cracks or porous concrete, reaches the steel reinforcement, and the steel starts to rust. Rust expands and cracks the concrete from inside. Carbonation (where CO2 in the air slowly reduces the protective alkalinity of the concrete) accelerates this on older buildings. Poor original cover (steel sitting too close to the surface) is the third common cause.',
+          question: "Does visible corrosion mean replacement is needed?",
+          answer: "Not necessarily. The remaining section, loads, connections and exposure determine the options. A structural assessment should compare repair, strengthening and replacement without relying on a single percentage of visible corrosion or the appearance of the surrounding finish."
         },
         {
-          question: 'Can you repair beams without replacing them entirely?',
-          answer:
-            'Almost always, yes. Spalled or cracked concrete is cut back, the corroded steel is exposed and treated (or spliced if too damaged), and structural repair mortar rebuilds the profile. Full replacement is rare and only used when the steel has lost more than 25 to 30 percent of its cross-section. Repair is significantly cheaper than replacement.',
+          question: "Can concrete beams and columns be repaired?",
+          answer: "Repair may be feasible after assessment, but the capacity of the element during and after work must be addressed. Temporary support, reinforcement changes and specialist materials may be required. The proposed scope should explain the intended structural outcome and verification."
         },
         {
-          question: 'Do you work on strata buildings?',
-          answer:
-            'Yes, a lot. Strata apartment blocks are where most of our concrete beam and column work happens. Carpark soffits, balcony slabs, perimeter beams. We work with strata managers, body corporates and remedial engineers regularly. Documentation prepared for the strata file as part of the job.',
+          question: "Can you discuss a strata repair scope?",
+          answer: "Send the relevant engineer scope, defect locations and access information so the proposed building work can be discussed. Confirm the owners corporation’s authority, contractor responsibilities and required records before work. Resident access and staging need a site-specific plan."
         },
         {
-          question: 'How long do beam repairs last?',
-          answer:
-            'With proper materials and a protective surface coating, repairs typically last 25 to 40 years before any maintenance is needed again. The protective coating is the key. It slows future water ingress and carbonation. Without coating, repair life drops to 10 to 15 years.',
+          question: "How long should a repair last?",
+          answer: "Durability depends on the original damage, repair design, exposure, workmanship and maintenance. Ask for the proposed inspection and maintenance plan and any written product or workmanship terms. A surface coating does not justify a blanket lifespan promise."
         },
         {
-          question: 'How long does the work take?',
-          answer:
-            'A single localised beam patch repair is one to three days. A full carpark soffit or balcony slab repair on a strata block is two to eight weeks depending on the area. Steel lintel replacement above a single window is two to three days. Engineer involvement adds time at the front of every job.',
+          question: "What affects the programme?",
+          answer: "Investigation, design, access equipment, temporary support and material curing can all affect timing. Any specialist system or replacement steel may have procurement requirements. A site-specific programme should identify inspection stages and what happens if concealed damage changes the scope."
         },
         {
-          question: 'What does beam and column repair cost?',
-          answer:
-            'Concrete cancer repair is around 600 to 1200 dollars per square metre of affected area. Steel lintel replacement is 1500 to 3500 dollars per opening including brick removal and reinstatement. Carbon fibre reinforcement is engineered per element. Fixed quote after site visit and engineer report.',
-        },
+          question: "How is beam and column repair priced?",
+          answer: "The quote should include access, temporary works, assessment-related requirements, repair materials and reinstatement. Extent of deterioration and specialist involvement can change the cost substantially. Compare written scopes rather than assuming a price per element includes the same work."
+        }
       ]}
     />
   );

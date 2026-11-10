@@ -8,7 +8,7 @@ const HistoricUpgradesPage = () => {
     <ServicePageTemplate
       title="Historic Building Upgrades"
       metaTitle="Sydney Historic Building Upgrades | Romans"
-      metaDescription="Sydney historic building upgrades by Minas Romanakis. Structural, fire, BCA compliance, adaptive reuse. Discreet reinforcement that preserves heritage fabric."
+      metaDescription="Sydney historic building upgrade enquiries. Coordinating structural repair, conservation advice and project-specific compliance requirements."
       heroImage="/gallery/thumbs/romansstone_1574278523_2181528827132774103_2394650725.webp"
       parentService={{ title: 'Building Restoration', href: '/services/building-restoration' }}
       siblingServices={siblings}
@@ -18,137 +18,106 @@ const HistoricUpgradesPage = () => {
         { label: 'Historic Building Upgrades', href: '' },
       ]}
       intro={[
-        'Older buildings have character but they were built to standards that no longer match what the BCA requires. Floor loads designed for a 1920s office are not enough for a modern commercial fitout. Walls designed for residential are not fire-rated for apartment conversion. Structural systems designed before earthquake standards need bracing to comply with current code. Bringing an old building up to current standards without destroying what makes it worth keeping is the work.',
-        'We handle structural upgrades, fire-rating improvements, seismic strengthening, accessibility modifications, and adaptive reuse. Most of the upgrades are done discreetly: steel reinforcement hidden in floor and ceiling voids, carbon fibre bonded to hidden faces, additional internal masonry behind plaster, fire-rated partitions inside existing walls. The aim is current code compliance with no visible change to the heritage fabric.',
-        'Most of our historic upgrade work is on Victorian and Federation terraces being renovated or converted to apartments, plus older commercial buildings (warehouses, shopfronts, churches) being adapted to new uses. Each one needs an engineer scope and council approval. We work to AS 3600 (concrete), AS 3700 (masonry), AS 1170 (loading), and AS 1170.4 (seismic) depending on the upgrade.',
+        "A proposed change of use or alteration can raise questions about an older building’s structure, fire safety, access and services. Its age alone does not establish that every part must be upgraded. The applicable requirements depend on the proposal, existing conditions and approval pathway.",
+        "Historic upgrades balance required performance with the significance of retained fabric. Structural strengthening, new connections or altered openings may be options, but the design must consider the whole building. Concealing a reinforcement system does not automatically make it compatible with heritage material or sufficient for compliance.",
+        "Contact Romans to discuss the building repair work within a professionally designed upgrade. Confirm which specialists are needed, including structural, fire, access or heritage advisers, and who is responsible for design, construction and certification. No particular seismic, fire or accessibility outcome can be promised before that scope is established."
       ]}
       features={[
         {
           icon: Building,
-          title: 'Structural upgrades',
-          description:
-            'Floor, wall and roof reinforcement to meet current loading standards. Steel beams added in concealed positions. Carbon fibre bonded to hidden concrete faces. Helibar reinforcement to masonry.',
+          title: "Structural assessment",
+          description: "Establish existing capacity and the demands of the proposed use before selecting reinforcement or alterations."
         },
         {
           icon: ShieldCheck,
-          title: 'Seismic strengthening',
-          description:
-            'Tying walls to floors and roofs with concealed connections. Diaphragm bracing in roof structures. Anchor ties through external walls. Brings older masonry buildings into compliance with AS 1170.4.',
+          title: "Stability and connections",
+          description: "Wall, floor and roof connections may need assessment. Any seismic strengthening must be designed for the building, not reduced to a standard anchor detail."
         },
         {
           icon: Scale,
-          title: 'BCA compliance',
-          description:
-            'Fire-rating walls and floors, accessibility upgrades, structural compliance, weatherproofing details. Documented compliance with current code without major visible change.',
+          title: "Compliance coordination",
+          description: "A certifier and relevant specialists identify applicable requirements. A repair contractor cannot establish whole-building compliance from one product or trade scope."
         },
         {
           icon: Wrench,
-          title: 'Adaptive reuse',
-          description:
-            'Conversion of warehouses, churches and commercial buildings to apartments, offices, retail or hospitality. Structural changes to support new loads, openings and services.',
+          title: "Adaptive reuse",
+          description: "Changes of use can affect loads, fire safety, access and services. Coordinate these issues before openings or finishes are altered."
         },
         {
           icon: FileCheck,
-          title: 'Heritage approvals',
-          description:
-            'Heritage impact statements, scope of works, methodology documentation. We work with heritage consultants and councils to get upgrades approved on listed buildings.',
-        },
+          title: "Conservation advice",
+          description: "Identify significant fabric and consider options with minimal necessary change. Authority approval and consultant advice have different roles."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Concealed steel reinforcement',
-          detail:
-            'Steel beams and columns positioned within floor or ceiling voids, behind plaster, or in non-visible service zones. No visible structural change. Engineered to take new loads.',
+          title: "Designed reinforcement",
+          detail: "Steel, masonry reinforcement or other systems need design for load paths, connections and the existing material. Visibility is only one selection factor."
         },
         {
-          title: 'Carbon fibre fabric',
-          detail:
-            'Epoxy-bonded to hidden concrete faces (underside of slabs, back of walls). Adds significant tensile capacity without adding thickness. Perfect for heritage where any external change is restricted.',
+          title: "Composite strengthening",
+          detail: "Fibre-reinforced systems may suit some substrates, but require specialist design, preparation and consideration of fire, moisture and durability. They are not universal heritage solutions."
         },
         {
-          title: 'Helibar masonry reinforcement',
-          detail:
-            'Stainless helical bars set into bed joints. Concealed under new pointing. Reinforces existing masonry walls to current code without visible change to the wall.',
+          title: "Fire protection systems",
+          detail: "Fire performance depends on the complete tested or assessed system, including junctions and penetrations. A lining or paint alone does not establish a required fire rating."
         },
         {
-          title: 'Fire-rated linings',
-          detail:
-            'Fire-rated plasterboard, intumescent paints, fire-rated mortar around penetrations. Brings non-compliant walls and floors up to required fire ratings (FRL 60/60/60 to 90/90/90 typical).',
+          title: "Conservation details",
+          detail: "Drawings and samples should show proposed changes and how retained fabric is protected. Document any agreed loss or alteration of significant material."
         },
         {
-          title: 'Anti-seismic anchor systems',
-          detail:
-            'Stainless steel anchors tying external walls to floors and roof. Diaphragm bracing in roof structures. Brings unreinforced masonry buildings into seismic compliance per AS 1170.4.',
-        },
-        {
-          title: 'Heritage consultant + engineer',
-          detail:
-            'For listed buildings, heritage consultant signs off on what changes are acceptable. Structural engineer designs the upgrade. Both reports inform the council application. Approval before any work starts.',
-        },
+          title: "Approval and inspection plan",
+          detail: "Confirm the required applications, professional appointments and inspection evidence. The relevant authority or certifier determines the approval and certification pathway."
+        }
       ]}
       processSteps={[
         {
-          step: 'Building assessment',
-          detail:
-            'On-site survey of existing structure, fire-rating, accessibility, weatherproofing. Engineer assesses structural capacity against intended new loads. Heritage consultant assesses what can change.',
+          step: "Define the proposal",
+          detail: "Clarify the intended use and alterations, then assess existing conditions and significance."
         },
         {
-          step: 'Upgrade design',
-          detail:
-            'Engineer designs the upgrade method to meet current code. Heritage consultant signs off on the visibility of the proposed changes. Designs are reworked until both are happy.',
+          step: "Coordinate design",
+          detail: "Resolve structural, fire, access and heritage requirements with the appropriate professionals before agreeing construction methods."
         },
         {
-          step: 'Council approval',
-          detail:
-            'Development application or complying development certificate prepared. Engineer certificate, heritage impact statement, BCA report submitted. Approval timeline 6 to 16 weeks depending on council and listing.',
+          step: "Confirm approvals",
+          detail: "Check the applicable pathway and obtain required permissions. Do not assume a standard consent type or processing period."
         },
         {
-          step: 'Site setup and access',
-          detail:
-            'Scaffolding, internal access, dust control. Site secured. Existing finishes protected. Heritage elements documented in detail before any work touches them.',
+          step: "Carry out agreed work",
+          detail: "Follow the approved design and protection plan, with specialist installation and inspections where required."
         },
         {
-          step: 'Install the upgrade',
-          detail:
-            'Concealed steel in floor and ceiling voids. Carbon fibre on hidden concrete faces. Helibar in masonry walls. Fire-rated linings. Seismic anchors. Each item to engineer design, each item signed off as installed.',
-        },
-        {
-          step: 'Reinstate and certify',
-          detail:
-            'Finishes reinstated to match heritage fabric. Engineer issues certificate of compliance. Heritage consultant inspects final state and signs off. BCA compliance certificate issued. Documentation package handed to owner.',
-        },
+          step: "Review and document",
+          detail: "Complete required inspections and provide records for the relevant certifier or authority. Reinstate finishes as agreed and identify any outstanding requirements."
+        }
       ]}
       faqs={[
         {
-          question: 'Can a heritage building be upgraded to meet modern codes?',
-          answer:
-            'Yes. Most heritage buildings can be brought to current code without major visible change. Steel reinforcement hides in floor and ceiling voids, carbon fibre bonds to hidden faces, helibar goes into masonry bed joints, fire-rated linings go behind heritage plaster. It takes careful design and good engineering but it is done regularly.',
+          question: "Can an old building meet new requirements?",
+          answer: "Options depend on the existing building, proposed use and applicable rules. Qualified advisers should assess feasible solutions and conservation impacts. Neither full compliance nor an unchanged appearance can be guaranteed before design and approval review."
         },
         {
-          question: 'Do you need heritage approval for structural upgrades?',
-          answer:
-            'For listed buildings, yes. For buildings in heritage conservation areas, usually yes for any work affecting the external fabric. We prepare the heritage impact statement and the development application together with the engineering scope. Approval timelines vary by council, typically 6 to 16 weeks.',
+          question: "Does every upgrade need heritage approval?",
+          answer: "The property’s listing, conservation controls and proposed work determine the requirements. Check with the council or relevant heritage authority before proceeding. A consultant’s support does not replace any formal consent or exemption determination needed."
         },
         {
-          question: 'What is adaptive reuse?',
-          answer:
-            'Converting a building from its original use to something different. Industrial warehouses converted to apartments. Old offices converted to retail. Churches converted to community centres or homes. The structure usually needs upgrading because new uses bring new loads, new fire requirements, and new accessibility standards.',
+          question: "What does adaptive reuse involve?",
+          answer: "Adaptive reuse gives an existing building a different purpose. That may change loading, fire, access and service requirements. Establish the proposed use early so specialists can coordinate the design and identify the work needed."
         },
         {
-          question: 'How do you hide structural reinforcement in a historic building?',
-          answer:
-            'Concealed steel inside floor and ceiling voids, behind plaster, in service zones. Carbon fibre bonded to non-visible concrete faces. Internal masonry reinforcement using helical bars (concealed under pointing). Fire-rated linings hidden behind original plaster. We design the upgrade so the heritage fabric stays visually unchanged.',
+          question: "Can reinforcement be concealed?",
+          answer: "Sometimes, but concealed work can still affect significant fabric, moisture behaviour and future inspection. Compare options with the engineer and heritage adviser. The repair must meet its design purpose rather than simply remain out of sight."
         },
         {
-          question: 'How long does a historic upgrade take?',
-          answer:
-            'A single-element upgrade (eg seismic anchoring of one wall) is 2 to 4 weeks. A full BCA compliance upgrade of a small building is 8 to 20 weeks. Major adaptive reuse projects can be 6 to 18 months. Engineering and approvals add 8 to 20 weeks at the front.',
+          question: "How long will an upgrade take?",
+          answer: "Design coordination, approvals, specialist availability and the construction scope determine timing. Ask for a staged programme that includes investigations and inspections. A small visible alteration may depend on substantial work elsewhere in the building."
         },
         {
-          question: 'What does a historic upgrade cost?',
-          answer:
-            'Highly variable. Simple seismic anchoring is 8000 to 25,000 dollars for a typical building. BCA compliance upgrade across a small building is 50,000 to 200,000 dollars. Major adaptive reuse projects run into millions. Engineering fees 5 to 12 percent of construction cost. Fixed quote after engineer and heritage consultant scopes.',
-        },
+          question: "What affects the upgrade cost?",
+          answer: "Investigation, design, access, specialist systems and reinstatement all contribute. Request a quote against a coordinated scope, identifying excluded professional fees and approvals. Generic percentages or examples cannot establish the cost of your proposal."
+        }
       ]}
     />
   );

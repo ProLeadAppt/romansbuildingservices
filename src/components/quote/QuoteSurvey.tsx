@@ -69,12 +69,17 @@ interface QuoteSurveyProps {
 export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: QuoteSurveyProps) => {
   const StepHeading = headingLevel;
   const [step, setStep] = useState<1 | 2 | 3 | 'success'>(initialService ? 2 : 1);
+  const previousStepRef = useRef(step);
+  const stepHeadingRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<QuoteData>(() => ({
     ...emptyData(),
     service: initialService ?? null,
   }));
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [readingPhotos, setReadingPhotos] = useState(false);
+  const readingPhotosRef = useRef(false);
   const photoInputRef = useRef<HTMLInputElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const phoneInputRef = useRef<HTMLInputElement>(null);
@@ -91,6 +96,17 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
     }
   }, [step, variant]);
 
+  useEffect(() => {
+    if (previousStepRef.current === step) return;
+    previousStepRef.current = step;
+    // Preserve initial modal autofocus and focus deliberately moved elsewhere
+    // while a request was pending. Removed step controls leave focus on body.
+    const active = document.activeElement;
+    if (active === document.body || containerRef.current?.contains(active)) {
+      stepHeadingRef.current?.focus();
+    }
+  }, [step]);
+
   const selectService = (service: QuoteService) => {
     setData((d) => ({ ...d, service }));
     setStep(2);
@@ -98,6 +114,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
 
   const goNext = () => {
     if (step === 2) {
+      if (readingPhotosRef.current) return;
       if (!data.suburb.trim() || !data.urgency) return;
       setStep(3);
     }
@@ -109,22 +126,26 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
   };
 
   const handlePhotoSelect = async (files: FileList | null) => {
-    if (!files) return;
+    if (!files || readingPhotosRef.current) return;
+    readingPhotosRef.current = true;
+    setReadingPhotos(true);
+    const errors: string[] = [];
     const remaining = MAX_PHOTOS - data.photos.length;
     const newOnes = Array.from(files).slice(0, remaining);
+    if (files.length > remaining) errors.push('Please attach no more than 3 photos.');
     const next: QuotePhoto[] = [];
     let selectedBytes = data.photos.reduce((total, photo) => total + photo.size, 0);
     for (const file of newOnes) {
       if (!ALLOWED_PHOTO_TYPES.has(file.type)) {
-        setError(`${file.name} is not a supported photo. Use JPG, PNG, WebP, HEIC or HEIF.`);
+        errors.push(`${file.name} is not a supported photo. Use JPG, PNG, WebP, HEIC or HEIF.`);
         continue;
       }
       if (file.size > MAX_PHOTO_BYTES) {
-        setError(`${file.name} is too large. Maximum 2 MB per photo.`);
+        errors.push(`${file.name} is too large. Maximum 2 MB per photo.`);
         continue;
       }
       if (selectedBytes + file.size > MAX_TOTAL_PHOTO_BYTES) {
-        setError('Photos are too large together. Keep the total under 4 MB.');
+        errors.push('Photos are too large together. Keep the total under 4 MB.');
         continue;
       }
       try {
@@ -137,17 +158,20 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
         next.push({ filename: file.name, dataUrl, size: file.size });
         selectedBytes += file.size;
       } catch {
-        setError(`Could not read ${file.name}.`);
+        errors.push(`Could not read ${file.name}.`);
       }
     }
     if (next.length) {
-      setError(null);
       setData((d) => ({ ...d, photos: [...d.photos, ...next] }));
     }
+    setError(errors.length ? errors.join(' ') : null);
+    readingPhotosRef.current = false;
+    setReadingPhotos(false);
     if (photoInputRef.current) photoInputRef.current.value = '';
   };
 
   const removePhoto = (idx: number) => {
+    if (readingPhotosRef.current) return;
     setData((d) => ({ ...d, photos: d.photos.filter((_, i) => i !== idx) }));
   };
 
@@ -200,7 +224,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
     : 'w-full max-w-2xl mx-auto';
 
   return (
-    <div className={containerClass}>
+    <div ref={containerRef} className={containerClass}>
       {/* Progress bar */}
       {step !== 'success' && (
         <div className="mb-6">
@@ -232,7 +256,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
           <div
             key="step1"
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               What needs doing?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
@@ -264,7 +288,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
           <div
             key="step2"
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               Where and when?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
@@ -322,6 +346,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                   name="photos"
                   accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
                   multiple
+                  disabled={readingPhotos}
                   onChange={(e) => handlePhotoSelect(e.target.files)}
                   className="hidden"
                   id="qs-photos"
@@ -332,7 +357,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                     className="flex items-center justify-center gap-2 p-4 border-2 border-dashed border-stone-300 rounded-lg cursor-pointer hover:border-amber transition-colors text-text-muted font-body text-sm"
                   >
                     <Camera className="w-5 h-5" />
-                    Add photos of the job
+                    {readingPhotos ? 'Reading photos…' : 'Add photos of the job'}
                   </label>
                 )}
                 {data.photos.length > 0 && (
@@ -346,6 +371,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                         />
                         <button
                           type="button"
+                          disabled={readingPhotos}
                           onClick={() => removePhoto(i)}
                           aria-label="Remove photo"
                           className="absolute top-1 right-1 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
@@ -375,7 +401,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
               <button
                 type="button"
                 onClick={goNext}
-                disabled={!data.suburb.trim() || !data.urgency}
+                disabled={readingPhotos || !data.suburb.trim() || !data.urgency}
                 className="inline-flex items-center gap-1 px-6 py-3 bg-amber text-navy font-body font-semibold rounded-lg hover:bg-amber/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 Next
@@ -391,11 +417,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             key="step3"
             onSubmit={handleSubmit}
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               How do we reach you?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
-              Minas will call you back within 24 hours. Your details are sent straight to him.
+              Leave your contact details so Minas can follow up about the job. For urgent enquiries, call directly.
             </p>
 
             <div className="space-y-4">
@@ -524,12 +550,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/15 mb-5">
               <CheckCircle2 className="w-9 h-9 text-amber" />
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-3">
-              Got it. Minas will be in touch.
+            <h2 ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-3">
+              Enquiry submitted.
             </h2>
             <p className="font-body text-text-muted mb-8 max-w-md mx-auto">
-              Your enquiry has been emailed to Minas with the job details. We will call you back
-              within 24 hours.
+              Your enquiry has been submitted with the job details. Please call if you need to check receipt or discuss timing.
             </p>
             <div className="bg-navy/5 rounded-lg p-5 max-w-md mx-auto">
               <p className="font-body text-sm text-text-muted mb-2">

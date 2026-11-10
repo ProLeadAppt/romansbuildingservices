@@ -131,17 +131,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'How long does heritage brick repointing take on a church-sized facade?',
         answer:
-          'For a single elevation on a typical Sydney CBD church, three to five weeks of working time. Two elevations running together takes five to seven weeks. We give a real timeframe in the quote, not a vague window.',
+          "The programme depends on the surveyed repair extent, scaffold and pedestrian protection, permissions, access around services and the specified mortar’s curing needs. Agree those constraints and any consultant inspections before setting dates. A previous project’s duration is not a schedule for another facade.",
       },
       {
         question: 'Do you handle heritage approval paperwork?',
         answer:
-          'We work with the heritage consultant you already have. We do not lodge DA or Section 60 applications ourselves, but we prepare the method statement, the mortar spec, and the brick sourcing notes the consultant needs to file.',
+          "Confirm who is responsible for the heritage assessment, application, specifications and approvals before work starts. A heritage adviser may need information from the builder about the proposed materials and method. Discuss what Romans can provide for the agreed scope; do not assume a contractor’s quote replaces the required permission.",
       },
       {
         question: 'What does heritage brick repointing cost per square metre?',
         answer:
-          'It depends on the access, the height, and how much brick actually needs replacing. We price per elevation after we have looked at it. A ballpark for a single church elevation on easy scaffold access is $280 to $420 per square metre, materials and labour.',
+          "A useful quote needs the repair area, height, access, masonry condition, proposed materials and any conservation requirements. Scaffold, trial work, specialist advice and disposal can change the total. Ask for an itemised scope and exclusions rather than applying a square-metre rate from a different building.",
       },
     ],
   },
@@ -189,17 +189,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'Can a sandstone seawall be repaired, or does it have to be replaced?',
         answer:
-          'Most can be repaired. A sandstone seawall that has failed because of bad mortar or a blocked drain behind it can almost always be rebuilt course by course. The reason most seawalls get replaced is the wrong mortar was used in the first place, which then damages the stone. If the stone is sound, we can rebuild on the original footings.',
+          "An assessment needs to consider the foundations, retained ground, drainage, stone condition and exposure, not just the visible joints. Sound blocks may be reusable, but that does not establish that the original footing is adequate. A suitably qualified engineer should guide structural options and any temporary protection before dismantling or rebuilding.",
       },
       {
         question: 'Do you need council approval to repair a seawall in Mosman?',
         answer:
-          'For like-for-like repairs on an existing seawall, typically no. If you are changing the height, the footprint, or the material, yes. We work with a marine engineer when the scope crosses that line and we let you know early if a DA is going to be needed.',
+          "Check the exact property and proposed work with council and the relevant foreshore or land authority before starting. Coastal, heritage, environmental and landowner requirements may apply alongside planning controls. Like-for-like wording does not automatically make seawall work exempt, and a change in repair scope may change the permissions needed.",
       },
       {
         question: 'How long does a sandstone seawall restoration take?',
         answer:
-          'For a typical waterfront property in Mosman, three to five weeks depending on tide windows and weather. We give a real schedule before we start, including the tidal windows, so you know when the lawn is out of action.',
+          "Tidal access, weather, protection of adjoining property, engineering inspections and approval conditions can all affect the programme. Establish the designed repair extent and safe work sequence first, then agree the proposed schedule. Keep any urgent safety measures separate from the date for the full repair.",
       },
     ],
   },
@@ -246,17 +246,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'Can a sandstone chimney be repaired, or does it need to be completely rebuilt?',
         answer:
-          'It depends on how far the damage has gone. If only the top three or four courses are spalled and the rest of the chimney is sound, a partial rebuild from the flashing up is usually the right call. If the chimney is leaning or the mortar has failed all the way down, it comes down further. We assess in person and tell you what is actually wrong, not what is easiest for us to quote.',
+          "The chimney needs assessment as a whole, including stability, support, masonry, flashing and any effect on adjacent roof areas. Surface deterioration alone cannot determine where a rebuild should stop. Keep clear of loose or leaning masonry and arrange professional advice. Repairing the external stack does not certify the flue or fireplace as safe to use.",
       },
       {
         question: 'How do you match the original sandstone?',
         answer:
-          'We take a sample of the original stone and source from the same kind of quarry. Most Sydney sandstone is Hawkesbury or Pyrmont, both still quarried in small batches. For older buildings we sometimes have to use a reclaim yard. The match is rarely perfect on day one, but it fades in within a season of weather.',
+          "Compare the original stone’s texture, grain, colour, durability and condition before selecting replacements. A carefully agreed sample may help assess appearance and compatibility, particularly on significant heritage fabric. Availability varies, and new stone will not necessarily weather to an invisible match within a fixed period.",
       },
       {
         question: 'How long does a chimney rebuild take?',
         answer:
-          'Most chimney rebuilds are one to two weeks on the roof, plus the roofer coming in for flashing after. We give you the schedule before we start so the roofer can be booked in for the right day.',
+          "Height, roof access, scaffolding, the assessed rebuild extent and coordination with roofing or flue specialists affect timing. The programme also needs to allow for specified materials and inspections. Agree the work sequence and any restrictions before starting, including separate confirmation of fireplace readiness where it will be used.",
       },
     ],
   },
@@ -294,7 +294,7 @@ export const caseStudies: CaseStudy[] = [
       'The hearth and mantel were cut from the same batch of sandstone. The mantel was a single piece, 1.6m long, hand-checked on the front edge to give it the rough-dressed look of the original bungalow chimneys.',
     ],
     result: [
-      'The fireplace is the centrepiece of the room. The owners sent us a photo six months later with a real fire going in the hearth — the wall had not moved, the stones had not cracked, and the heat from the fire had cured the mortar harder.',
+      'The fireplace is the centrepiece of the room. The owners sent us a photo six months later with a real fire going in the hearth — the wall had not moved, the stones had not cracked. Fireplace use must follow the applicable installation and commissioning requirements; heat is not a substitute for proper curing.',
       'The same veneer system was used on the outdoor kitchen and the bathroom feature wall by the next contractor on the job. We came back for both.',
       'Total cost was about 40% of what a solid sandstone block fireplace would have been, primarily because the structural wall did not need engineering.',
     ],
@@ -302,17 +302,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'Can you put sandstone veneer on a timber-framed wall?',
         answer:
-          'Yes, with a steel stud backup. The total weight — stone, adhesive, and substrate — is about 75 to 90kg per square metre. A standard timber stud wall with one layer of 16mm plywood sheeting will carry that. We do not put stone veneer on standard plasterboard without checking the framing first.',
+          "Only where the complete wall and fixing system are designed and assessed for the stone, adhesive and substrate loads. Timber framing or plywood thickness alone does not establish capacity. Around a working fireplace, heat exposure, clearances and combustible materials also need specific assessment. Follow the relevant product and appliance installation requirements, with appropriate professional input.",
       },
       {
         question: 'Is stone veneer real stone?',
         answer:
-          'The sandstone veneer we use is real sandstone, cut from the same quarries as the full-thickness blocks. The difference is the thickness — 20 to 40mm instead of 100 to 200mm. Cultured stone (cast concrete made to look like stone) is a different product. We do not use it.',
+          "Natural stone veneer is real stone cut into thinner facing pieces. Manufactured stone veneer is a different product made to resemble stone. Confirm the actual product, dimensions, backing and installation system in the quote. A natural-stone label does not by itself establish suitability for a particular wall or fireplace.",
       },
       {
         question: 'How long does a stone veneer fireplace take to install?',
         answer:
-          'For a single living-room fireplace, three to five working days. We do the substrate prep, dry lay, adhesive bed, and grouting over that week. You can use the room the day we finish.',
+          "Timing depends on substrate preparation, framing or support work, stone selection, fixings and the required curing periods. Coordination with the appliance or flue installer may be needed. Agree the programme after assessment. Finished masonry is not permission to light a fire; the installation must be ready for use under the applicable requirements.",
       },
     ],
   },
@@ -352,7 +352,7 @@ export const caseStudies: CaseStudy[] = [
       'The balcony decks above were re-waterproofed by a separate contractor we introduced. The Owners Corporation had been told for years the decks needed it — we made it part of the same scope.',
     ],
     result: [
-      'The engineer signed off the work and the strata committee lodged the long-term maintenance plan revision. The repair is expected to last 15+ years before any maintenance is needed.',
+      'The engineer signed off the work and the strata committee lodged the long-term maintenance plan revision. Ongoing inspection and maintenance remain part of managing the repaired building.',
       'The Owners Corporation has since asked us back to quote on the south elevation, which was showing early signs of the same problem. They want it fixed before it gets to the same stage.',
       'The AGM quote was approved on the first vote. The committee chair said it was the first remediation quote the owners had seen in five years that was a real number, not a guess.',
     ],
@@ -360,17 +360,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'How do you know if concrete spalling is structural?',
         answer:
-          'Visual signs are cracking, displacement of the cover concrete, and rust staining. The real test is a structural engineer\'s hammer tap and covermeter survey — that tells us how much reinforcing has been lost and whether the column can still carry the load. We do not quote concrete cancer repairs without an engineer\'s report.',
+          "Cracking, rust staining and loose concrete warrant professional assessment, including any immediate falling-material risk. A covermeter helps locate reinforcement and estimate cover; a tap survey can help identify delamination. Neither by itself establishes steel loss or load capacity. An engineer should determine the investigation, any opening-up or testing, and the structural assessment needed.",
       },
       {
         question: 'How long does concrete cancer repair last?',
         answer:
-          'A properly specified concrete cancer repair — full chloride remediation, polymer-modified patch, anti-carbonation coating — should last 15 to 25 years before any maintenance is required. Cheap patches (just a cement fill over the rust) fail in two to five years.',
+          "Durability depends on the cause and extent of deterioration, the specified repair system, workmanship, exposure and ongoing maintenance. A patch or coating alone does not establish a maintenance-free lifespan. Agree inspection and maintenance requirements with the responsible professionals, and investigate new cracking or rust staining rather than waiting for a fixed anniversary.",
       },
       {
         question: 'Can strata owners get funding help for concrete cancer repairs?',
         answer:
-          'Yes. The NSW Strata Building Bond Inspection Scheme applies to new buildings, but most strata schemes have a sinking fund that can be drawn on for major repairs. We help the strata committee prepare the scope and the quote for the AGM.',
+          "An owners corporation should review the repair scope, capital works plan, available funds and any levy decisions with its strata manager and relevant advisers. The Strata Building Bond and Inspections Scheme has eligibility and procedural limits; it is not a general grant for older-building repairs. Check current NSW Government guidance for the particular building.",
       },
     ],
   },
@@ -418,17 +418,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'How do you underpin a heritage terrace without damaging the facade?',
         answer:
-          'Traditional mass-concrete underpinning, done by hand in small bays. Each bay is about 1m wide. We open one bay, dig to sound founding soil, pour concrete, let it cure for 72 hours, then move to the next. The wall above is always supported. No demolition, no crack stitching injection that hides the problem.',
+          "A structural engineer should establish whether underpinning is needed and design the work for the building and ground conditions. Investigation, excavation sequence, temporary support, inspections and concrete strength before loading must be specified for the site. Do not apply a standard bay size or curing period from a case study, or excavate beside a footing without the required assessment.",
       },
       {
         question: 'How long does underpinning take on a residential terrace?',
         answer:
-          'For a typical single-storey terrace, four to eight weeks depending on the number of bays. Two-storey terraces take longer. We give a real schedule before we start, including the engineer\'s inspection days, so you know when access is needed.',
+          "The programme depends on investigation, design, access, ground conditions, approvals and the specified sequence and inspections. Adjoining buildings, underground services and occupied rooms may impose additional constraints. Agree timing only after the scope is developed, including any monitoring and restrictions during the work.",
       },
       {
         question: 'Will underpinning stop the cracks from coming back?',
         answer:
-          'Yes, if the cause of the settlement has been fixed first. Underpinning without fixing the underlying cause (a leaking drain, a failed stormwater line, a tree root) is just papering over the problem. We will not quote underpinning without first identifying and fixing the cause.',
+          "Underpinning may address a diagnosed foundation problem, but it does not automatically prevent all future movement or repair existing cracks. Drainage, ground conditions, the building and adjoining work may also matter. An engineer should explain the design objectives, limits and monitoring needed. Do not remove trees or alter drainage on the basis of a general case study.",
       },
     ],
   },
@@ -476,17 +476,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'Can a heritage seawall be repaired with modern engineering behind it?',
         answer:
-          'Yes. We often work with a marine engineer who specifies the structural fix — typically steel piles or a reinforced concrete beam — and we rebuild the sandstone face on the front. The result is a wall with modern structural capacity and a heritage appearance. This is the standard approach on Sydney Harbour foreshore walls.',
+          "In some cases an engineered repair can retain significant sandstone while addressing structural defects. The solution depends on the foundations, retained ground, exposure, access and heritage significance. An appropriately qualified engineer and any required heritage adviser should assess the options together. Piles or beams behind the face are not a standard solution for every foreshore wall.",
       },
       {
         question: 'Why not use cement mortar on a seawall?',
         answer:
-          'Cement is rigid. Sandstone moves with temperature and moisture. The cement mortar cracks, lets salt water in, and the salt crystallises inside the joint and blows the face off the sandstone blocks. Lime mortar moves with the stone and lets the wall breathe. On a seawall, lime mortar will outlast cement by decades.',
+          "Mortar selection needs to suit the stone, existing fabric, exposure and designed function of the wall. An overly hard or incompatible mortar can contribute to damage, but lime and cement labels alone do not determine suitability in a marine setting. Agree a property-specific specification with the relevant professionals rather than assuming one mix will last longer in every seawall.",
       },
       {
         question: 'How do you match replacement sandstone blocks to the existing wall?',
         answer:
-          'We sample the original stone and source from the same kind of quarry. For Sydney Harbour, that is usually Hawkesbury sandstone from a quarry in the Maroota or Hornsby area. The match is rarely perfect on day one, but it fades in within a season of weather and salt spray.',
+          "Assess the existing stone and compare suitable samples for texture, grain, colour and durability. Reclaimed or newly supplied stone may be options, subject to condition and availability. The heritage requirements and repair design also matter. Do not assume a new block will become visually identical after one season of weather or salt exposure.",
       },
     ],
   },
@@ -534,17 +534,17 @@ export const caseStudies: CaseStudy[] = [
       {
         question: 'How do you remove failed pointing without damaging the bricks?',
         answer:
-          'Hand raking with a plugging chisel and a hammer. It is slower than an angle grinder but it does not shatter the arrises on the bricks and it does not leave a grey smear on the face. For a typical terrace, full hand raking takes two to three days per elevation.',
+          "Assess the brick and joint condition before choosing the removal tools and repair depth. Sound original mortar may be retained, and a trial area can help establish a method that limits damage. Hand tools also require care on fragile brickwork. Agree the extent and approach rather than treating the whole facade as a standard rake-out job.",
       },
       {
         question: 'Why does my Victorian terrace have rising damp?',
         answer:
-          'Most Victorian terraces were built with a slate damp course at the base of the walls. Over the years, garden beds, paths, or concrete are built up against the wall above the damp course level. This bridges the damp course and lets moisture from the soil wick up into the brickwork. The fix is to expose the original damp course and keep soil and hard surfaces below it.',
+          "Damp near the base of an older wall can involve drainage, external levels, leaks, condensation or other moisture sources. Bridging a damp-proof course is one possible cause, not a diagnosis for every terrace. Investigate the building before altering levels, excavating or removing finishes, especially beside foundations or significant heritage fabric.",
       },
       {
         question: 'How long does repointing take on a Victorian terrace?',
         answer:
-          'For a single elevation on a typical Paddington or Woollahra terrace, two to three weeks. Two elevations together, three to five weeks. We give a real schedule before we start.',
+          "Timing depends on the surveyed joint condition, repair extent, access, agreed finish and the specified mortar’s protection and curing needs. Paint removal or other repairs may require separate assessment and permissions. Agree a programme after the scope and trial work are settled rather than borrowing the duration of another terrace project.",
       },
     ],
   },

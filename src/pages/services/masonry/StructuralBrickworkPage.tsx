@@ -9,141 +9,115 @@ const StructuralBrickworkPage = () => {
     <ServicePageTemplate
       title="Structural Brickwork"
       metaTitle="Sydney Structural Brickwork | Romans"
-      metaDescription="Sydney structural brickwork by Minas Romanakis. Load-bearing walls, piers, arches, lintels. Engineered repairs, crack stitching, pier rebuilds. AS 3700."
+      metaDescription="Structural brickwork repairs across Sydney, including walls, piers, arches and lintels. Building work to an agreed scope with engineer input where required."
       heroImage="/gallery/thumbs/romansstone_1576003161_2195996136622601152_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
-      siblingServices={siblings}
+      siblingServices={[...siblings, { title: 'Structural Repairs', href: '/services/structural-repairs' }, { title: 'Foundation Repairs', href: '/services/foundation-repairs' }]}
       breadcrumbs={[
         { label: 'Services', href: '/services' },
         { label: 'Stonemasonry & Masonry', href: '/services/masonry' },
         { label: 'Structural Brickwork', href: '' },
       ]}
       intro={[
-        'Structural brickwork carries the weight of the building. When it cracks, leans or fails, the building above it moves. Doors stop closing, ceilings start sagging, render cracks the same way every winter. We build, repair and reinforce load-bearing brick walls, piers, columns and arches across Sydney.',
-        'We work from structural engineers drawings when the job calls for it. For most repairs the engineering is straightforward, for some it needs a full structural assessment first. Crack stitching with stainless helical rods, pier rebuilds, lintel replacements, full wall reconstructions, helibar reinforcement. The right repair depends on what is causing the failure.',
-        'Romans holds a full NSW builders licence covering structural masonry. Minas is on site for any engineered work and we coordinate with the structural engineer through the build. All work signed off and to AS 3700.',
+        "Structural brickwork supports loads through walls, piers, columns, arches and lintels. Cracking, leaning masonry or changes around openings deserve assessment, but a crack pattern alone cannot establish the cause or whether a wall is safe.",
+        "Romans carries out structural brickwork repairs and rebuilds across Sydney. Options can include helical-rod crack stitching, pier rebuilding, lintel replacement and wall reconstruction. The repair must address the cause of the damage rather than simply hide the crack.",
+        "A structural engineer assesses the load path and specifies structural repairs where required. Romans carries out the agreed building work and coordinates around that design. Keep people clear of loose or unstable masonry and seek prompt professional advice if there is movement or a risk of falling material."
       ]}
       features={[
         {
           icon: Building2,
-          title: 'Load-bearing walls',
-          description:
-            'New construction, repairs and rebuilds of failed sections. Double-brick walls, cavity walls, party walls and shared masonry. To AS 3700 with engineered design where required.',
+          title: "Load-bearing walls",
+          description: "Repairs and rebuilding of brick walls, including double-brick, cavity and shared walls. Loads, connections and neighbouring property need consideration in the repair design."
         },
         {
           icon: Columns3,
-          title: 'Piers and columns',
-          description:
-            'Brick piers and columns supporting verandahs, balconies, upper floors. Rebuilds of leaning piers, full replacement of failed piers, retrofit reinforcement with stainless ties.',
+          title: "Piers and columns",
+          description: "Repair or rebuilding of damaged masonry supports for verandahs, balconies and floors. Temporary support and the sequence of work require planning before removal."
         },
         {
           icon: ArrowUpFromLine,
-          title: 'Arches and lintels',
-          description:
-            'Brick arch construction and repair, steel angle lintel replacement, concrete lintels for heavier spans. Common on Federation and Victorian buildings where the original lintel has rusted.',
+          title: "Arches and lintels",
+          description: "Brick arch repair and lintel replacement with attention to bearing, loading, corrosion and the masonry above the opening."
         },
         {
           icon: ShieldCheck,
-          title: 'Engineered repairs',
-          description:
-            'We work with structural engineers on anything carrying significant load. Crack stitching, helibar reinforcement, stitching plates. All work meets BCA and AS 3700.',
-        },
+          title: "Repairs to an agreed design",
+          description: "Crack stitching or reinforcement may be appropriate when specified for the diagnosed defect. Engineer inspections and required records should be agreed in the project scope."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Stainless helical rods (Helifix or similar)',
-          detail:
-            'For crack stitching across structural brickwork. Cut into bed joints, set in epoxy-based grout, tied across the crack to redistribute load. Stainless so it lasts the life of the building.',
+          title: "Stainless helical rods",
+          detail: "Helical rods can be used for specified crack-stitching repairs. Rod layout, anchorage and compatible grout follow the design and system requirements."
         },
         {
-          title: 'Type S structural mortar',
-          detail:
-            'High-strength cement mortar for new load-bearing work. Mixed to the design strength required by the engineer (usually M3 or M4 to AS 3700). Tested with cube samples on bigger jobs.',
+          title: "Mortar suited to the masonry",
+          detail: "The repair mortar must suit the existing brickwork as well as the structural specification. High strength alone does not make a mix appropriate for older masonry."
         },
         {
-          title: 'Hot-dip galvanised lintels',
-          detail:
-            'Steel angle lintels for openings up to 2.4 metres. Hot-dip galv because painted steel rusts at the bedding face inside ten to fifteen years. Concrete lintels for longer spans.',
+          title: "Lintels and supports",
+          detail: "Material, size, bearing and corrosion protection depend on loads, span and exposure. These details should be specified for the opening, not selected by a generic span rule."
         },
         {
-          title: 'Engineered stitch plates',
-          detail:
-            'Stainless steel plate stitches across major cracks where helical rod alone is not enough. Engineered, signed off, fully concealed under the next layer of mortar.',
+          title: "Designed reinforcement",
+          detail: "Ties, rods or stitch plates may form part of a repair where the engineer specifies them. They are not interchangeable solutions for unexplained movement."
         },
         {
-          title: 'Temporary acrow propping',
-          detail:
-            'Adjustable steel props (acrow props) to take the weight off the wall while it is being repaired. Sized to the load above. Mandatory on any work that goes through a load-bearing wall.',
+          title: "Temporary support",
+          detail: "Props and other temporary works must suit the load, ground support and construction sequence. Their installation and removal require a planned method."
         },
         {
-          title: 'Engineer involvement',
-          detail:
-            'For significant structural work, we coordinate with a structural engineer through the job. Scope of works, design certificates, site inspections during construction, completion certificate.',
-        },
+          title: "Engineering documents",
+          detail: "The engineer determines design and inspection requirements within their appointment. Confirm what reports, inspection records and completion documentation are included."
+        }
       ]}
       processSteps={[
         {
-          step: 'Initial assessment',
-          detail:
-            'Site visit. We look at the cracking pattern, check whether the wall is load-bearing, look at what is above it. For visible failure we recommend a structural engineer come out and write a report before any repair starts.',
+          step: "Inspect and gather information",
+          detail: "Review visible damage and any previous repairs, drawings or reports. A building inspection may identify the need for structural investigation before the work can be priced."
         },
         {
-          step: 'Engineer scope (if required)',
-          detail:
-            'For anything more than minor crack stitching, the engineer writes a scope of works specifying the repair method. We quote off that scope. Most jobs need engineering. Some councils require it.',
+          step: "Establish the cause and repair scope",
+          detail: "An engineer may need to assess movement, foundations, lintels or wall ties and specify a repair. Do not assume that a narrow crack needs only cosmetic work."
         },
         {
-          step: 'Propping and protection',
-          detail:
-            'Acrow props go in to take weight off the wall section being repaired. Adjacent floors and finishes are protected with sheeting. Dust extraction set up if we are cutting into masonry inside.',
+          step: "Plan support and access",
+          detail: "Agree temporary support, protection, access and any required approval before disturbing load-bearing masonry."
         },
         {
-          step: 'Cutting out and rebuilding',
-          detail:
-            'For full rebuilds, the failed section is cut out cleanly. New brick laid up course by course, bonded into the existing wall on each side. For crack stitching, helical rods set into bed joints across the crack.',
+          step: "Carry out the specified repair",
+          detail: "Rebuild or reinforce the agreed sections using the design and compatible materials. Unexpected concealed defects may require review before proceeding."
         },
         {
-          step: 'Engineer site inspection',
-          detail:
-            'Before we close up the work, the engineer inspects on site to confirm the repair matches the scope. Sign-off documented for council and for any future buyer.',
-        },
-        {
-          step: 'Reinstate and finish',
-          detail:
-            'Mortar joints pointed to match the original wall. Render or paint reinstated. Props removed in sequence as the wall takes load again. Completion certificate issued.',
-        },
+          step: "Inspect before covering and complete",
+          detail: "Arrange the inspections required by the design or approval before work is concealed. Remove temporary support only in accordance with the planned sequence, then reinstate the agreed finishes."
+        }
       ]}
       faqs={[
         {
-          question: 'How do I know if my brickwork is structural?',
-          answer:
-            'If removing the wall would affect what is above it, it is structural. Double-brick walls, walls running from foundation to roof, walls supporting beams or floor joists are usually load-bearing. Single-skin partition walls between rooms are usually not. We can tell you definitively on a site visit.',
+          question: "How do I know if a wall is load-bearing?",
+          answer: "Appearance and wall thickness alone are not enough. Drawings and investigation of what the wall supports may be needed. Do not remove or cut an opening in a wall until its role and any required design and approvals have been established."
         },
         {
-          question: 'Can cracked structural brickwork be repaired?',
-          answer:
-            'Most of the time, yes. Helical stainless rod stitching is the standard repair for active cracks and works on most cases. For severe damage where bricks have crushed or the wall is leaning, we cut out and rebuild the failed section. Whichever is right depends on what is causing the crack.',
+          question: "Can cracked structural brickwork be repaired?",
+          answer: "Often it can, but the cause and extent of movement determine the method. Crack stitching is not a general remedy for ongoing foundation movement or unstable masonry. The engineer may specify further investigation, monitoring, support work or rebuilding before a repair is chosen."
         },
         {
-          question: 'Do I need an engineer for structural brickwork?',
-          answer:
-            'For significant structural work, yes. We coordinate with structural engineers regularly and can arrange that as part of the job. Council usually requires engineer certification for anything that changes the load path. The engineer fee is usually 1500 to 4000 dollars depending on scope.',
+          question: "Do I need an engineer for structural brickwork?",
+          answer: "Structural concerns should be assessed by a suitably qualified engineer. The need for a design, inspections and certification depends on the proposed work and approval requirements. Confirm the engineer’s appointment and fees separately from the building quote where applicable."
         },
         {
-          question: 'What causes structural cracking in brick walls?',
-          answer:
-            'Most common causes in Sydney are foundation movement on clay soils, rusted steel lintels above doors and windows, failed wall ties in cavity walls, and overloaded piers. The crack pattern tells you which one. Diagonal stepped cracks usually mean settlement. Horizontal cracks at lintel height mean lintel failure. We diagnose before we quote.',
+          question: "What causes structural cracking in brick walls?",
+          answer: "Possible causes include foundation movement, corroding lintels or ties, changes in loading and thermal or moisture movement. Similar cracks can have different causes. Crack pattern, history and investigation must be considered together rather than diagnosing from a photograph alone."
         },
         {
-          question: 'How long does a structural brickwork repair take?',
-          answer:
-            'Crack stitching is one to three days depending on length. A pier rebuild is two to five days. A full wall section reconstruction is one to three weeks including engineering and council sign-off. We give a real timeline with the quote.',
+          question: "How long does structural brickwork repair take?",
+          answer: "Investigation, design, approvals, access, temporary support, material supply and curing affect the programme. Inspections may be needed before work is covered. A construction estimate is discussed after the scope is clear, with third-party stages identified separately."
         },
         {
-          question: 'Do you give a structural warranty?',
-          answer:
-            'Yes. Six years on structural work under the NSW Home Building Act. The engineering certificate stays with the property and gives any future buyer or insurer evidence that the repair was done to spec.',
-        },
+          question: "What documentation should I receive?",
+          answer: "Agree the written building scope, applicable warranty information and any required engineering or inspection records before work. An engineering report or certificate covers the scope stated in it; it is not a guarantee of every part of the property. Refer to current NSW guidance and the contract for statutory rights."
+        }
       ]}
     />
   );

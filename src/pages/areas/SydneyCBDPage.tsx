@@ -52,13 +52,13 @@ const SydneyCBDPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            We have been working in the Sydney CBD for over 30 years. From the sandstone buildings around The Rocks and Circular Quay to the commercial towers along George Street, we know this part of the city well. Heritage rules, tight access and council permits are just part of the job for us.
+            For a Sydney CBD masonry enquiry, include the building type, the affected element and any existing engineering or heritage reports. A street-facing facade, warehouse conversion and commercial tenancy can involve different access and protection needs.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            A lot of our CBD work involves sandstone restoration and repointing on older buildings near Martin Place and Macquarie Street. These buildings need careful, skilled hands. We match the original mortar and stone profiles so the finished result looks right and lasts.
+            Stone profiles, mortar joints and earlier repairs help establish what can be retained and what needs attention. Check the property’s heritage status and relevant permissions before cleaning, repointing or replacing original fabric. A careful assessment should guide the material and finish.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            We also handle concrete cancer repairs and structural fixes on commercial properties across the city centre. If your building has cracks, spalling concrete or damaged facades, we can sort it out properly.
+            For cracks, spalling concrete or loose facade material, keep clear of affected areas and seek appropriate safety advice. Discuss scope, loading access, neighbouring occupants and availability with Romans before arranging an assessment.
           </p>
         </div>
 

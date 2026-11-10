@@ -1,3 +1,5 @@
+import { toCanonicalPageUrl, toAbsoluteMediaUrl } from '@/lib/seoUrls';
+
 // Business information constants for NAP consistency
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
@@ -68,10 +70,8 @@ const WEBSITE_ID = `${BUSINESS_INFO.website}#website`;
 type SchemaObject = Record<string, unknown>;
 
 const SchemaScript = ({ schema }: { schema: SchemaObject | SchemaObject[] }) => {
-  // JSON-LD spec requires one entity per <script type="application/ld+json">
-  // block. When callers pass an array, emit one block per entity so Google
-  // can parse each one independently. (Top-level arrays in JSON-LD are
-  // rejected by Schema.org validators.)
+  // Separate blocks keep entities easy to inspect. JSON-LD also supports
+  // top-level arrays and @graph; this is a presentation choice, not a validity rule.
   if (Array.isArray(schema)) {
     return (
       <>
@@ -102,7 +102,7 @@ const localBusinessSchema: SchemaObject = {
   legalName: BUSINESS_INFO.legalName,
   description:
     "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
-  url: BUSINESS_INFO.website,
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
   foundingDate: BUSINESS_INFO.foundingDate,
@@ -148,8 +148,8 @@ const localBusinessSchema: SchemaObject = {
   slogan: "Masonry. Restoration. Remedial.",
   // Real Google Business Profile reviews (current as of 2026-06-21).
   // Pulled from https://maps.app.goo.gl/UpfsPkQJJpw5avzw6 — do not edit
-  // without re-reading GBP. Schema.org requires an aggregate rating to be
-  // paired with at least one real Review for the star snippet to render.
+  // without re-reading GBP. Markup alone does not establish eligibility
+  // for review stars or any other search-result feature.
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: 4.9,
@@ -204,7 +204,7 @@ const organizationSchema: SchemaObject = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: BUSINESS_INFO.name,
-  url: BUSINESS_INFO.website,
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   logo: {
     "@type": "ImageObject",
     url: BUSINESS_INFO.logo,
@@ -219,19 +219,18 @@ const organizationSchema: SchemaObject = {
   }
 };
 
-// WebSite — enables Google Sitelinks Search Box in future, and is a hub entity
+// WebSite identity and the real on-site search action.
 const websiteSchema: SchemaObject = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": WEBSITE_ID,
-  url: BUSINESS_INFO.website,
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   name: BUSINESS_INFO.name,
   description:
     "Heritage restoration, masonry, and structural repairs across Sydney by Romans Building Services.",
   publisher: { "@id": ORG_ID },
   inLanguage: "en-AU",
-  // Sitelinks Search Box: lets Google show an internal search box for the site
-  // in SERPs. Targeting/querystring conventions follow Google's docs.
+  // Describes the available search function; it does not promise a search-result feature.
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -262,13 +261,13 @@ export const ServiceSchema = ({
     name: service,
     serviceType: service,
     ...(description ? { description } : {}),
-    ...(url ? { url } : {}),
+    ...(url ? { url: toCanonicalPageUrl(url) } : {}),
     provider: {
       "@type": "LocalBusiness",
       "@id": BUSINESS_ID,
       name: BUSINESS_INFO.name,
       telephone: BUSINESS_INFO.telephone,
-      url: BUSINESS_INFO.website
+      url: toCanonicalPageUrl(BUSINESS_INFO.website)
     },
     areaServed: BUSINESS_INFO.areaServed.map((area) => ({
       "@type": "Place",
@@ -276,7 +275,7 @@ export const ServiceSchema = ({
     })),
     availableChannel: {
       "@type": "ServiceChannel",
-      serviceUrl: url || BUSINESS_INFO.website,
+      serviceUrl: toCanonicalPageUrl(url || BUSINESS_INFO.website),
       servicePhone: BUSINESS_INFO.telephone,
       availableLanguage: "English"
     },
@@ -337,7 +336,7 @@ export const PlaceSchema = ({
     "@type": "Place",
     name,
     ...(description ? { description } : {}),
-    ...(url ? { url } : {}),
+    ...(url ? { url: toCanonicalPageUrl(url) } : {}),
     containedInPlace: {
       "@type": "City",
       name: "Sydney",
@@ -375,7 +374,7 @@ export const ContactPageSchema = () => {
     "@type": "ContactPage",
     name: `Contact ${BUSINESS_INFO.name}`,
     description: `Contact Romans Building Services. Call ${BUSINESS_INFO.phoneDisplay} or email ${BUSINESS_INFO.email} for a quote.`,
-    url: `${BUSINESS_INFO.website}/contact`,
+    url: toCanonicalPageUrl('/contact'),
     mainEntity: {
       "@id": BUSINESS_ID
     },
@@ -407,14 +406,14 @@ export const CollectionPageSchema = ({
     "@type": "CollectionPage",
     name,
     ...(description ? { description } : {}),
-    url,
+    url: toCanonicalPageUrl(url),
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: items.length,
       itemListElement: items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        url: item.url,
+        url: toCanonicalPageUrl(item.url),
         name: item.name,
         ...(item.description ? { description: item.description } : {})
       }))
@@ -434,14 +433,14 @@ export const ImageGallerySchema = ({
   const schema: SchemaObject = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    url,
+    url: toCanonicalPageUrl(url),
     name: `${BUSINESS_INFO.name} — Project Gallery`,
     description:
       "Real projects by Romans Building Services. Masonry, heritage restoration, and structural work across Sydney.",
     image: images.map((img) => ({
       "@type": "ImageObject",
-      contentUrl: img.url,
-      url: img.url,
+      contentUrl: toAbsoluteMediaUrl(img.url),
+      url: toAbsoluteMediaUrl(img.url),
       ...(img.caption ? { caption: img.caption } : {}),
       ...(img.location
         ? {
@@ -459,7 +458,7 @@ export const ImageGallerySchema = ({
 
 // ---------- AggregateRating (for when reviews are wired in) ----------
 // Ready-to-use scaffold. Pass ratingValue + reviewCount when testimonials are live.
-// Google requires at least one Review alongside AggregateRating for rich results.
+// Do not infer eligibility for review rich results from this markup alone.
 export const AggregateRatingSchema = ({
   ratingValue,
   reviewCount,
@@ -485,7 +484,7 @@ export const AggregateRatingSchema = ({
     "@type": "LocalBusiness",
     "@id": BUSINESS_ID,
     name: BUSINESS_INFO.name,
-    url: BUSINESS_INFO.website,
+    url: toCanonicalPageUrl(BUSINESS_INFO.website),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue,

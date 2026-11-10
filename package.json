@@ -13,7 +13,9 @@
     "test:browser": "playwright test",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc -b --pretty false"
+    "typecheck": "tsc -b --pretty false",
+    "typecheck:browser": "tsc --project tsconfig.browser.json --pretty false",
+    "audit:source": "node scripts/audit-source-routes.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -52,6 +54,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "jsdom": "26.1.0",
     "postcss": "^8.5.23",
     "puppeteer": "^25.11.0",
     "sharp": "^0.35.3",

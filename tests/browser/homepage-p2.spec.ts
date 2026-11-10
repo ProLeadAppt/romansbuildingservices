@@ -1,26 +1,16 @@
 import { expect, test } from '@playwright/test';
 
-const blockedThirdParties = [
-  'googletagmanager.com',
-  'google-analytics.com',
-  'clarity.ms',
-  'searchatlas.com',
-  'fonts.googleapis.com',
-  'fonts.gstatic.com',
-];
-
-test.beforeEach(async ({ page }) => {
-  await page.route('**/*', async (route) => {
-    const url = route.request().url();
-    if (blockedThirdParties.some((host) => url.includes(host))) {
-      await route.abort();
-      return;
-    }
-    await route.continue();
+test.beforeEach(async ({ page, baseURL }) => {
+  if (!baseURL) throw new Error('Browser checks require an explicit base URL.');
+  const allowedOrigin = new URL(baseURL).origin;
+  // Read-only QA on the configured origin: never contact providers or submit an enquiry.
+  await page.route('**/*', route => {
+    const request = route.request();
+    return new URL(request.url()).origin === allowedOrigin && request.method() === 'GET' ? route.continue() : route.abort();
   });
 });
 
-test('homepage follows the evidence-led P2 decision sequence', async ({ page }) => {
+test('homepage follows the approved grounded decision sequence', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   // Wait for React hydration to replace any prerendered Suspense markup, then
@@ -33,62 +23,50 @@ test('homepage follows the evidence-led P2 decision sequence', async ({ page }) 
   });
   await expect(conversionSection).toBeVisible({ timeout: 10_000 });
 
-  const orderedSections = [
-    'hero',
-    'problem-navigator',
-    'case-studies',
-    'founder-standard',
-    'capabilities',
-    'process',
-    'questions',
-    'conversion',
-  ];
-
-  const sectionOrder = await page.locator('main [data-p2-section]').evaluateAll((sections) =>
-    sections.map((section) => section.getAttribute('data-p2-section')),
+  const sectionOrder = await page.locator('main section').evaluateAll(sections =>
+    sections.map(section => section.getAttribute('data-p2-section') || section.getAttribute('aria-labelledby')),
   );
-  expect(sectionOrder).toEqual(orderedSections);
-
-  await expect(page.locator('[data-p2-section="case-studies"] article')).toHaveCount(3);
-  const caseStudyLinks = page.locator('[data-p2-section="case-studies"] a[href^="/case-studies/"]');
-  await expect(caseStudyLinks).toHaveCount(6); // 3 articles, each with image + text link
-
+  expect(sectionOrder).toEqual([
+    'hero', 'craft-work', 'craft-services', 'craft-areas',
+    'problem-navigator', 'process', 'questions', 'conversion',
+  ]);
+  const workmanship = page.locator('section[aria-labelledby="craft-work"]');
+  await expect(workmanship.locator('figure')).toHaveCount(2);
+  await expect(workmanship.getByRole('link', { name: 'Explore the project gallery' })).toHaveAttribute('href', '/projects');
+  await expect(workmanship.getByRole('link', { name: 'Read the case studies' })).toHaveAttribute('href', '/case-studies');
+  await expect(page.locator('section[aria-labelledby="craft-services"] article')).toHaveCount(7);
+  expect(await page.locator('section[aria-labelledby="craft-services"] h3 a').evaluateAll(links => links.map(link => link.getAttribute('href')))).toEqual([
+    '/services/masonry', '/services/heritage-restoration', '/services/structural-repairs',
+    '/services/building-restoration', '/services/concrete-repairs', '/services/foundation-repairs', '/services/remedial-building',
+  ]);
+  await expect(page.getByRole('link', { name: 'Explore our service area' })).toHaveAttribute('href', '/areas/hawkesbury-western-sydney');
+  await expect(page.getByRole('link', { name: 'Meet Minas Romanakis' })).toHaveAttribute('href', '/about');
   await expect(page.locator('[data-p2-section="process"]')).toHaveCount(1);
-  await expect(page.getByRole('button', { name: 'Get a Sydney Quote' }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Call Minas', exact: true }).first()).toHaveAttribute('href', 'tel:0414922276');
+  await expect(page.locator('[data-hero-copy]').getByRole('button', { name: 'Discuss your project', exact: true })).toBeVisible();
+  await expect(page.locator('[data-hero-copy]').getByRole('link', { name: 'Call Minas', exact: true })).toHaveAttribute('href', 'tel:0414922276');
 
-  const caseStudyImages = page.locator('[data-p2-section="case-studies"] img');
-  await page.locator('[data-p2-section="case-studies"]').scrollIntoViewIfNeeded();
-  await expect.poll(async () => caseStudyImages.evaluateAll((images) => images.every((image) => (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  const images = workmanship.locator('img');
+  for (const image of await images.all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toHaveAttribute('alt', /\S/);
+    await expect.poll(() => image.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
 });
 
-test('founder video is deferred until its evidence section approaches the viewport', async ({ page, browserName }) => {
-  // WebKit IntersectionObserver + video.load() has a known timing quirk where
-  // the network request fires after a longer delay. The test validates the
-  // intent (video not loaded on initial page) and the scroll trigger.
-  const founderRequests: string[] = [];
-  page.on('request', (request) => {
-    if (request.url().includes('romansstone_1702021197') && /\.mp4(?:\?|$)/i.test(request.url())) {
-      founderRequests.push(request.url());
-    }
+test('the complete approved homepage stays still while scrolling and interacting', async ({ page }) => {
+  const videoRequests: string[] = [];
+  page.on('request', request => {
+    if (/\.(mp4|webm)(?:\?|$)/i.test(request.url())) videoRequests.push(request.url());
   });
-
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(500);
-  expect(founderRequests).toEqual([]);
-
-  const founder = page.locator('[data-p2-section="founder-standard"]');
-  await founder.scrollIntoViewIfNeeded();
-
-  if (browserName === 'webkit') {
-    // WebKit triggers the request outside the poll window; verify the
-    // section itself is visible and the video element is in the DOM.
-    await expect(founder).toBeVisible();
-    await expect(page.locator('[data-p2-section="founder-standard"] video')).toBeAttached();
-    return;
+  await page.goto('/');
+  for (const section of await page.locator('main section').all()) {
+    await section.scrollIntoViewIfNeeded();
   }
-
-  await expect.poll(() => founderRequests.length, { timeout: 5_000 }).toBeGreaterThan(0);
+  await page.locator('[data-hero-media]').click({ position: { x: 10, y: 120 } });
+  await page.keyboard.press('Tab');
+  await page.waitForTimeout(500);
+  await expect(page.locator('main video')).toHaveCount(0);
+  expect(videoRequests).toEqual([]);
 });
 
 test('homepage stays within responsive containment and mobile decision-length budgets', async ({ page }) => {
@@ -137,19 +115,14 @@ test('reduced-motion visitors receive the full journey without non-essential ani
   await expect(hero.locator('img')).toBeVisible();
   await expect(hero.locator('img')).toHaveAttribute('src', /romansstone_1572378831/);
   await expect(hero.locator('video')).toHaveCount(0);
-  const videos = page.locator('[data-p2-section="founder-standard"] video');
-  await expect(videos).toHaveCount(1);
-  for (let index = 0; index < 1; index += 1) {
-    await expect(videos.nth(index)).toBeVisible();
-    const mediaState = await videos.nth(index).evaluate((video: HTMLVideoElement) => ({
-      display: getComputedStyle(video).display,
-      poster: video.poster,
-      paused: video.paused,
-    }));
-    expect(mediaState.display).not.toBe('none');
-    expect(mediaState.poster).not.toBe('');
-    expect(mediaState.paused).toBe(true);
+  await expect(page.locator('main video')).toHaveCount(0);
+  // These sections exist even if the current design has no data-reveal nodes.
+  for (const section of await page.locator('main section').all()) {
+    await section.scrollIntoViewIfNeeded();
+    await expect(section).toBeVisible();
+    expect(await section.evaluate(el => getComputedStyle(el).opacity)).toBe('1');
   }
+
 });
 
 test('keyboard users can bypass the persistent navigation', async ({ page }) => {

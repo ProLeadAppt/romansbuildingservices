@@ -64,7 +64,7 @@ test('Learn page is customer-facing, stable and free of broken first-party media
 
   const brokenImages = await page.locator('img').evaluateAll((images) =>
     images
-      .filter((image) => image.complete && image.naturalWidth === 0)
+      .filter((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth === 0)
       .map((image) => image.getAttribute('src')),
   );
   expect(brokenImages).toEqual([]);

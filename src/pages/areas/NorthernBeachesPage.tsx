@@ -52,13 +52,13 @@ const NorthernBeachesPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            The Northern Beaches are beautiful, but the salt air and coastal weather are hard on buildings. We work regularly from Manly up to Palm Beach, fixing the damage that ocean conditions cause to masonry, concrete and stonework. If your mortar is crumbling or your retaining wall is leaning, chances are the salt has played a big part.
+            For a Northern Beaches enquiry, describe the property and the affected wall, balcony, stonework or retaining structure. Coastal exposure may be relevant, but damage should not automatically be attributed to salt. The actual condition and consequences of failure guide the next step.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            In Dee Why and Mona Vale we see a lot of concrete cancer on apartment blocks and older homes. The salt gets into the steel reinforcement and causes the concrete to crack and spall. We cut out the damaged sections, treat the steel and patch it back properly so it holds up long term.
+            For loose concrete or masonry above an entrance or occupied area, keep clear and arrange professional assessment. Existing strata reports and previous repair details are useful for apartment-building enquiries in Manly, Dee Why, Mona Vale and surrounding areas.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            Around Avalon and Palm Beach, retaining walls are a big part of what we do. The hilly terrain and sandy soil mean walls need to be built right from the start. We also handle facade maintenance for homes exposed to the worst of the coastal weather.
+            Retaining walls need assessment of the retained ground, drainage, nearby structures and access. Share the location and any existing reports with Romans to discuss the scope and availability. Engineering and any approval requirements should be resolved before repair or rebuilding.
           </p>
         </div>
 
