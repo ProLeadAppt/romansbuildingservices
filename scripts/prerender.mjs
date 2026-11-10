@@ -319,70 +319,78 @@ function dedupeHelmetTags(html) {
 
 async function main() {
   if (!fs.existsSync(DIST) || !fs.existsSync(path.join(DIST, 'index.html'))) {
-    console.error('[prerender] dist/index.html not found — run `npm run build` first.');
-    process.exit(1);
+    throw new Error('dist/index.html not found — run `npm run build` first.');
   }
 
   const routes = loadRoutes();
+  if (routes.length === 0) {
+    throw new Error('No sitemap routes discovered; refusing an empty prerender.');
+  }
   console.log(`[prerender] discovered ${routes.length} routes from sitemaps`);
 
   const server = await startServer();
   const port = server.address().port;
   console.log(`[prerender] static server on http://127.0.0.1:${port}`);
-  let browser = await launchBrowser();
-
+  let browser;
   const startedAt = Date.now();
   let done = 0;
   let staleBrowserErrors = 0;
-  for (const route of routes) {
-    let success = false;
-    for (let attempt = 1; attempt <= 2 && !success; attempt++) {
-      if (!browser.connected) {
-        browser = await launchBrowser();
-      }
-      try {
-        await prerenderRoute(browser, route, port);
-        done++;
-        success = true;
-        if (done % 10 === 0 || done === routes.length) {
-          console.log(`[prerender] ${done}/${routes.length}`);
-        }
-      } catch (err) {
-        const message = err?.message || String(err);
-        console.error(`[prerender] FAILED ${route} (attempt ${attempt}): ${message}`);
-        const recoverable = /detached Frame|Connection closed|Target closed|Execution context was destroyed/i.test(message);
-        if (!recoverable || attempt === 2) {
-          break;
-        }
-        staleBrowserErrors += 1;
-        try {
-          await browser.close();
-        } catch {
-          // ignore
-        }
-        browser = await launchBrowser();
-      }
-    }
-  }
-
-  // Capture the React catch-all route as Netlify's static error document. The
-  // host serves this file with status 404 for unknown paths, while known
-  // sitemap routes retain their prerendered fresh-document entry points.
-  await prerenderRoute(browser, '/__not-found__', port, path.join(DIST, '404.html'));
+  const failedRoutes = [];
 
   try {
-    await browser.close();
-  } catch {
-    // ignore
-  }
-  server.close();
+    browser = await launchBrowser();
+    for (const route of routes) {
+      let success = false;
+      for (let attempt = 1; attempt <= 2 && !success; attempt++) {
+        if (!browser.connected) {
+          browser = await launchBrowser();
+        }
+        try {
+          await prerenderRoute(browser, route, port);
+          done++;
+          success = true;
+          if (done % 10 === 0 || done === routes.length) {
+            console.log(`[prerender] ${done}/${routes.length}`);
+          }
+        } catch (err) {
+          const message = err?.message || String(err);
+          console.error(`[prerender] FAILED ${route} (attempt ${attempt}): ${message}`);
+          const recoverable = /detached Frame|Connection closed|Target closed|Execution context was destroyed/i.test(message);
+          if (!recoverable || attempt === 2) break;
+          staleBrowserErrors += 1;
+          try {
+            await browser.close();
+          } catch {
+            // Ignore close races while replacing a failed browser.
+          }
+          browser = await launchBrowser();
+        }
+      }
+      if (!success) failedRoutes.push(route);
+    }
 
-  if (staleBrowserErrors > 0) {
-    console.log(`[prerender] browser relaunched ${staleBrowserErrors} time(s) to finish unstable routes`);
-  }
+    // Partial output must never be published as a successful build. The
+    // outer fatal handler exits nonzero, stopping the remaining postbuild.
+    if (done !== routes.length || failedRoutes.length > 0) {
+      throw new Error(`Incomplete prerender: ${done}/${routes.length} routes captured. Failed routes: ${failedRoutes.join(', ')}`);
+    }
 
-  const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
-  console.log(`[prerender] done — ${done}/${routes.length} routes in ${elapsed}s`);
+    // The 404 document is required too; a failure here must reject the build.
+    await prerenderRoute(browser, '/__not-found__', port, path.join(DIST, '404.html'));
+
+    if (staleBrowserErrors > 0) {
+      console.log(`[prerender] browser relaunched ${staleBrowserErrors} time(s) to finish unstable routes`);
+    }
+    const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
+    console.log(`[prerender] done — ${done}/${routes.length} routes and 404.html in ${elapsed}s`);
+  } finally {
+    try {
+      if (browser) await browser.close();
+    } catch {
+      // Ignore close races; preserve the actual render failure.
+    }
+    server.close();
+  }
 }
 
 main().catch((err) => {
