@@ -214,7 +214,7 @@ export const ServicePageTemplate = ({
       )}
 
       {/* Hero */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-navy">
         {!isArchiveImageWithheld(heroImage) && <img
           src={heroImage}
           alt={serviceImageMetadata[heroImage]?.alt || title}

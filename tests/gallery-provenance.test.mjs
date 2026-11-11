@@ -228,6 +228,9 @@ test('service heroes, service galleries and About do not redisplay withheld imag
     assert.ok(!context.helmet.meta.toString().includes(id));
   }
   const dom = new JSDOM(html);
+  const hero = dom.window.document.querySelector('h1').closest('section');
+  assert.ok(hero.classList.contains('bg-navy'), 'withheld-image hero retains a solid navy background behind light text');
+  assert.equal(hero.querySelector('img'), null, 'withheld hero stays hidden without removing its readable background');
   const photo = dom.window.document.querySelector(`img[src="${projectGalleryImages[0].thumb}"]`);
   assert.equal(photo.alt, projectGalleryImages[0].alt);
   dom.window.close();

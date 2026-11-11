@@ -252,3 +252,40 @@ test('unmount does not restore old navigation focus or retain modal restrictions
   assert.equal(document.body.hasAttribute('data-scroll-locked'), false);
   assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), null);
 });
+test('focus wrapping scrolls clipped controls into the menu viewport without moving background', async () => {
+  await mount();
+  await open();
+  const menu = document.querySelector('[role=dialog]');
+  const logo = menu.querySelector('a');
+  const quote = Array.from(menu.querySelectorAll('button')).at(-1);
+  const close = menu.querySelector('[aria-label="Close menu"]');
+  // JSDOM has no layout: supply the measured 316px / 200%-zoom geometry
+  // while exercising actual React focus events and Radix boundary wrapping.
+  const rect = (top, bottom) => ({ top, bottom, left: 0, right: 316, width: 316, height: bottom - top });
+  Object.defineProperty(menu, 'clientHeight', { configurable: true, value: 372 });
+  Object.defineProperty(menu, 'scrollHeight', { configurable: true, value: 674 });
+  menu.getBoundingClientRect = () => rect(0, 372);
+  logo.getBoundingClientRect = () => rect(-menu.scrollTop, 40 - menu.scrollTop);
+  close.getBoundingClientRect = () => rect(16 - menu.scrollTop, 56 - menu.scrollTop);
+  quote.getBoundingClientRect = () => rect(586 - menu.scrollTop, 634 - menu.scrollTop);
+  const backgroundScroll = document.documentElement.scrollTop;
+  const bodyScroll = document.body.scrollTop;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    await change(() => logo.focus());
+    assert.equal(menu.scrollTop, 0);
+    await key('Tab', true);
+    assert.equal(document.activeElement, quote);
+    assert.equal(menu.scrollTop, 262);
+    assert.equal(quote.getBoundingClientRect().bottom, 372);
+    await key('Tab');
+    assert.equal(document.activeElement, logo);
+    assert.equal(menu.scrollTop, 0);
+    await change(() => close.focus());
+    assert.equal(menu.scrollTop, 0, 'already visible controls do not scroll');
+  }
+  assert.equal(document.documentElement.scrollTop, backgroundScroll);
+  assert.equal(document.body.scrollTop, bodyScroll);
+  await key('Escape');
+  await settle();
+  assert.equal(document.activeElement.getAttribute('aria-label'), 'Open menu');
+});

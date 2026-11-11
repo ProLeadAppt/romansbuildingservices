@@ -237,6 +237,22 @@ export const ModernNavigation = () => {
           aria-modal="true"
           aria-describedby={undefined}
           className="fixed inset-0 top-0 bg-navy z-[80] flex flex-col overflow-y-auto lg:hidden"
+          onFocusCapture={(event) => {
+            // Radix wraps focus with preventScroll. Keep the focused control
+            // visible at narrow widths/zoom by scrolling only this menu, never
+            // its background ancestors (as scrollIntoView could do).
+            const menu = event.currentTarget;
+            const target = event.target;
+            if (!(target instanceof HTMLElement) || target === menu) return;
+            const viewportTop = menu.getBoundingClientRect().top + menu.clientTop;
+            const viewportBottom = viewportTop + menu.clientHeight;
+            const control = target.getBoundingClientRect();
+            if (control.top < viewportTop) {
+              menu.scrollTop += control.top - viewportTop;
+            } else if (control.bottom > viewportBottom) {
+              menu.scrollTop += control.bottom - viewportBottom;
+            }
+          }}
           onOpenAutoFocus={(event) => {
             event.preventDefault();
             closeButton.current?.focus();
