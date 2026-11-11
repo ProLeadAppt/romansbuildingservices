@@ -15,7 +15,7 @@ export const AreaServiceLinks = ({ areaSlug }: { areaSlug: string }) => {
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="font-heading text-2xl text-navy mb-2">Service guides for {area.name}</h2>
         <p className="font-body text-text-muted mb-6">
-          Area-specific guides to the services we offer most often across {area.name}.
+          Explore the service guides, then discuss the scope, access and availability for your property.
         </p>
         <div className="grid sm:grid-cols-2 gap-3">
           {combos.map((combo) => {

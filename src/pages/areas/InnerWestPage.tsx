@@ -52,13 +52,13 @@ const InnerWestPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            Our earlier Sydney work includes the Inner West. From the rows of Victorian terraces in Newtown and Marrickville to the grand old homes around Strathfield, this area is full of character buildings that need proper care. We have been looking after them for over 30 years.
+            This existing Inner West guide remains available for enquiries about terraces, cottages, shopfronts and other masonry buildings. Include your suburb, photographs and a short description of the work when discussing scope and availability with Romans.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            In Leichhardt and Balmain, a lot of our work is tuckpointing and brick restoration on terraces. The original lime mortar breaks down over time and needs to be carefully raked out and replaced. We match the colour and profile of the original joints so the finished job looks as it should.
+            On older brickwork, the existing material and joint condition guide repointing and restoration. Later paint, render and repairs can affect the options. Retain sound fabric where appropriate and agree any trial work, material match and finish before extending the repair.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            Heritage streetscapes are a big part of what makes the Inner West special. We take that seriously. Whether it is a single terrace in Newtown or a row of shopfronts in Marrickville, we do the work properly and respect the history of the building.
+            Party walls, narrow access and occupied neighbours can influence the work. Check the individual property’s heritage requirements with the relevant local authority. Structural concerns and significant original fabric may require engineering or heritage advice as part of the scope.
           </p>
         </div>
 

@@ -52,13 +52,13 @@ const EasternSuburbsPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            The Eastern Suburbs are full of beautiful old homes that need proper care. We work regularly across Paddington, Woollahra and Double Bay, repairing sandstone terraces, repointing brickwork and fixing retaining walls. These properties have character and they deserve tradespeople who understand heritage construction.
+            For a terrace in Paddington or Woollahra, stonework in Double Bay or a coastal apartment, start with the individual building and material. Photographs of the whole element, earlier repairs and any existing reports help make the enquiry useful.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            Down in Bondi and Rose Bay, salt air takes its toll on masonry. We see a lot of spalling sandstone, crumbling mortar and rusting lintels. We fix it properly the first time so you are not calling someone back in two years.
+            Moisture and exposure may affect masonry, but a Bondi or Rose Bay address does not establish why a wall has deteriorated. The assessment should identify the cause, condition and any structural concerns before choosing mortar, a coating or replacement stone.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            Whether it is a small repointing job on a Paddington terrace or a full retaining wall rebuild in Woollahra, we bring the same level of care. No rushing, no cutting corners.
+            Discuss whether the work involves pointing, stone repair or a retaining structure, along with access and any heritage requirements. Romans can then discuss the scope and current availability. No standard lifespan or repeat-repair guarantee is assumed.
           </p>
         </div>
 

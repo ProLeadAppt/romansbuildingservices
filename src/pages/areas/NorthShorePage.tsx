@@ -19,7 +19,7 @@ const NorthShorePage = () => (
   <>
     <SEO
       title="North Shore Masonry and Building Services | Romans"
-      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licenced and insured since 1995."
+      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Family business established in 1995."
       canonical="/areas/north-shore"
     />
     <PlaceSchema
@@ -52,13 +52,13 @@ const NorthShorePage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            The North Shore has some of the finest residential properties in Sydney. We work across Mosman, Neutral Bay and Cremorne, looking after federation homes, sandstone features and ageing brickwork. Many of these homes were built over a hundred years ago and they need tradespeople who understand how they were put together.
+            North Shore enquiries can range from a masonry detail at a Mosman house to a larger repair in a Chatswood or Lane Cove building. Identify what needs attention, whether it carries load or retains ground, and whether people pass beneath it.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            Further up in Chatswood and Lane Cove, we handle a mix of older residential repairs and newer structural work. Cracked walls, failing retaining walls and deteriorating mortar joints are common issues we see on the North Shore. We fix them with the right materials and techniques for the building.
+            For older fabric, surviving joints, stone details and previous alterations help inform the repair. Drainage and exposure need consideration at the actual site. A regional description cannot establish the ground conditions, heritage status or correct treatment.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            We take pride in doing careful work that respects the original character of each home. If your North Shore property needs masonry attention, we are happy to come out and take a look.
+            Share photographs taken safely and any earlier reports when contacting Romans. Discuss the next assessment step, engineering or heritage input, practical access and availability before work is arranged.
           </p>
         </div>
 

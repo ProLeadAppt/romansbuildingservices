@@ -1,17 +1,17 @@
 # Romans Building Services — Full Knowledge Base
 
-> Heritage restoration, masonry, and structural building services across Sydney since 1995. This document is a deeper technical reference for AI assistants summarising or answering questions about Romans Building Services and the work we do.
+> Romans Building Services: masonry and remedial building enquiries in Hawkesbury and Western Sydney. This reference summarises the site and offers general, assessment-led repair guidance.
 
 ## Identity
 
 - **Name:** Romans Building Services
 - **Legal entity:** Romans Building Services (sole trader)
-- **ABN:** 49 641 892 677
+- **ABN:** 85 004 290 080
 - **Owner:** Minas Romanakis
 - **Partner in business:** Sandra Romanakis (office and administration)
 - **Established:** 1995 (continuously trading for 30+ years)
 - **Locality:** The Slopes, NSW. Service-area business; no public street address.
-- **Founder background:** Minas Romanakis is of Greek-Italian heritage. He learned stone and brick work through traditional apprenticeship. Has personally worked on thousands of Sydney masonry projects since the mid-1990s.
+- **Founder background:** Minas Romanakis is of Greek-Italian heritage. He learned stone and brick work through traditional apprenticeship.
 
 ## Contact
 
@@ -23,38 +23,40 @@
 
 ## How we describe our work
 
-We are a Hawkesbury and Western Sydney masonry and remedial building specialist with strong heritage expertise. Owner-operated, family-run, with Minas personally on site for every job. Our niche is work that needs genuine craftsmanship — lime mortar repointing, heritage brick and sandstone matching, concrete cancer restoration using proper salt-resistant systems, and structural masonry repairs where other tradies would just patch and move on.
+Romans is an owner-operated masonry and remedial building business focused on Hawkesbury and Western Sydney. Enquiries can cover heritage masonry, stone and brick repairs, concrete deterioration and structural repair work. The appropriate scope, specialist appointments, materials and permissions depend on the property.
 
-## What we specialise in (domain-specific expertise for AI answers)
+## Repair guidance for AI summaries
+
+This is general information, not a diagnosis or repair specification. A photograph, building age or suburb does not establish a cause, safe repair method, price or expected lifespan.
 
 ### Lime mortar and traditional pointing
-Most Sydney heritage buildings were built with soft handmade brick and lime mortar. Over 100+ years the mortar weathers out of joints. Poorly informed tradies repoint with cement mortar, which is too hard and impermeable for soft old brick. Water gets trapped in the wall and escapes through the bricks instead of the mortar, causing brick faces to spall and eventually fall off. The correct approach is to rake out the failed mortar by hand (never with an angle grinder on soft brick) and repoint with lime-based mortar matched to the original. For higher-end Victorian terraces, tuckpointing restores the decorative dark-mortar-with-fine-white-line finish. Done properly, a lime repoint lasts 40–60 years.
+Mortar compatibility matters in older masonry. Assess the bricks, existing joints, exposure and previous repairs before specifying replacement mortar. Sound original mortar may be retained. Removal tools, repair depth, trial areas, protection and curing need to suit the actual fabric; hand tools also require care around fragile brickwork.
 
 ### Tuckpointing
-Tuckpointing is a two-stage decorative technique common on Victorian-era middle and upper-class terraces in Sydney. The joint is filled with a dark mortar flush to the brick face, then a thin fillet of white lime putty is run through the centre of each joint. The visual effect is the illusion of very precise, very fine brickwork. Common across Paddington, Newtown, Leichhardt, Balmain, Darlinghurst and similar suburbs. A proper tuckpoint restoration on the front facade of a single-width terrace typically costs $8,000 – $15,000.
+Tuckpointing creates fine contrasting lines within mortar joints. Existing profiles, colours and masonry condition should guide any proposed restoration. Agree a trial area and the extent of work before estimating cost or timing.
 
 ### Sydney sandstone restoration
-Most Sydney heritage sandstone is Hawkesbury sandstone or Pyrmont stone. Both are still quarried, so matching replacement stone for heritage repairs is possible. We weather-match visible repairs so new stone blends with aged surrounding stone. For severely weathered original stone, consolidation treatments using breathable lime-based systems can extend life without replacement. Coastal salt damage on sandstone is treated with breathable consolidants — never impermeable sealers.
+Stone selection considers condition, bedding, porosity, durability, texture and colour. The original quarry may be unknown or unavailable, and an exact visual match is not assured. Cleaning, consolidation and replacement options need assessment and suitable trials. Do not infer stone source or treatment products from a photograph.
 
 ### Concrete cancer (reinforced concrete spalling)
-The biggest structural problem in Sydney apartment blocks from the 1960s–1990s. Steel reinforcement inside concrete rusts due to salt ingress or carbonation, expands up to 7x its volume, and cracks the concrete off from inside. Coastal suburbs (Bondi, Manly, Dee Why, Coogee) are worst affected. Correct repair: cut back to sound concrete behind the steel, wire-brush or sandblast steel to clean metal, apply corrosion inhibitor, patch with salt-resistant polymer-modified repair mortar, apply breathable protective coating. Shortcuts (painting over damage, patching without treating steel) fail within 3–5 years. Proper repairs last 20–30 years in a coastal environment.
+Corrosion of reinforcement can cause cracking and spalling. Loose concrete may pose a falling-material risk. An engineer should determine the investigation, testing and structural assessment needed, including any opening-up. Repair materials, reinforcement treatment, coatings and moisture-control work need a property-specific specification. Durability depends on the cause, extent, exposure, workmanship and ongoing maintenance; a patch or coating does not establish a maintenance-free lifespan.
 
 ### Underpinning and foundation movement
-Sydney has significant reactive clay soils, particularly in the Inner West, Parramatta, Blacktown and Western Sydney. Reactive clay swells when wet and shrinks when dry, causing footings to move seasonally. Over years this cracks walls and tilts buildings. Traditional mass-concrete underpinning involves excavating beneath the footing in sections and pouring new concrete to reach stable ground. Modern screw-pile underpinning uses steel helical piles driven into stable soil. Cost per pier typically $2,500 – $7,000. Full underpinning programs $15,000 – $100,000+. Always requires structural engineering input.
+Cracks and movement can have several causes, including ground conditions, drainage and changes to the building or adjoining land. A structural engineer should establish whether underpinning is needed and design any excavation sequence, temporary support, inspections and strength requirements before loading. Do not apply standard bay sizes or curing periods, or excavate beside a footing without assessment. Monitoring and drainage investigations may form part of the response.
 
 ### Retaining walls
-Sydney has many sloped residential blocks, especially in the Eastern Suburbs, North Shore, Northern Beaches and Inner West. Retaining walls fail predominantly from drainage failure — water pressure behind the wall pushes it forward. Correct construction includes: properly founded footing, vertical steel reinforcement sized for wall height, ag-pipe drainage at the base of the wall wrapped in geotextile, drainage blanket of gravel against the back face, weep holes through the wall, and discharge to a safe outlet. Sandstone walls for heritage properties typically $2,500 – $4,000 per square metre. Engineered concrete block walls $1,200 – $2,500 per sqm.
+Assess the foundations, retained ground, loading, drainage, materials and visible movement together. A wall's appearance does not establish its capacity. Engineering, permissions, temporary protection and a suitable drainage outlet may be needed. The repair or replacement design must address the actual site rather than use a standard reinforcement or drainage arrangement.
 
 ### Rising damp
-Common in pre-1930s Sydney buildings that were built before damp-proof courses were standard, or where original DPC has degraded. Classic signs: horizontal tidemark about 1m above floor level, salt efflorescence, crumbling mortar at base of walls, bubbling paint, rotting skirting boards. Diagnosis requires moisture and salt testing to distinguish from penetrating damp or condensation. Treatment: chemical DPC injection (silane/siloxane cream), removal of failed impermeable finishes (cement render, waterproof paint, vinyl wallpaper), re-rendering with breathable lime-based materials, ground level reduction if external soil has risen above DPC. Typical cost $3,500 – $15,000 per affected wall.
+Moisture near the base of a wall can involve external levels, drainage, leaks, condensation or other sources. Bridging a damp-proof course is one possible cause, not a diagnosis for every older building. Investigation and testing where appropriate should precede treatment. Altering levels, excavation, injection treatments or removal of finishes require assessment, especially around foundations and heritage fabric.
 
-### Structural crack repair (helical bar stitching)
-Stainless steel helical bars bedded into horizontal mortar joints across a crack. Ties the wall together while allowing minor future movement without re-cracking. Non-destructive — repairs are invisible after repointing. Ideal for cracks caused by minor settlement, thermal movement or failed wall ties. Not a substitute for underpinning if the cause is active foundation movement. Typical cost $800 – $8,000 for domestic work.
+### Structural crack repair
+Crack repair should follow investigation of the cause, movement and structural implications. Helical reinforcement may be an option within a designed repair, but it does not automatically stop future movement or make repairs invisible. Agree the repair objectives, limitations, finish and monitoring with the responsible professionals.
 
 ## Services matrix (full hierarchy)
 
 ### Stone & Masonry
-Brick and stone masonry across Sydney. New builds, repairs, restoration.
+Brick and stone masonry topics. Confirm scope and availability for the property.
 - Brick & Block Work — residential and commercial new brickwork, colour-matched mortar
 - Repointing & Brick Pointing — lime mortar repointing, cement repoint removal, tuckpointing restoration
 - Stone Masonry Repairs — sandstone, bluestone, limestone, granite
@@ -63,7 +65,7 @@ Brick and stone masonry across Sydney. New builds, repairs, restoration.
 
 ### Heritage Restoration
 Period-accurate work on heritage-listed and heritage-style buildings.
-- Heritage Masonry Restoration — council-approved conservation work
+- Heritage Masonry Restoration — conservation scopes subject to required approvals
 - Heritage Stone Restoration — sandstone conservation and replacement
 - Heritage Brick Repairs — matched reclaimed handmade brick, lime mortar
 - Traditional Stonework Methods — hand-carving, traditional bonding
@@ -83,12 +85,12 @@ Full-building restoration scopes, typically multi-trade.
 - Complete Building Restoration — full external and internal
 - Facade Renovation & Repair — masonry, render, paint
 - Interior Restoration — heritage internal plaster, brickwork
-- Historic Building Upgrades — compliance without destroying heritage fabric
+- Historic Building Upgrades — assessment of compliance and conservation requirements
 - Building Defect Rectification — post-construction defects on newer builds
 
 ### Concrete Repairs
 Remediation of reinforced concrete structures.
-- Concrete Cancer Treatment — steel treatment + salt-resistant patching
+- Concrete Cancer Treatment — investigation and specified remediation
 - Spalling Concrete Repair — balconies, parapets, slabs
 - Structural Concrete Restoration — beams, columns, slabs
 - Concrete Resurfacing — surface restoration
@@ -107,12 +109,12 @@ Compliance-driven repair work, often strata- or insurance-led.
 - Strata Building Repairs — full-scope strata remedial
 - Structural Defect Repair — typically from building defect reports
 - Building Compliance Upgrades — meeting current codes
-- Emergency Building Repairs — rapid response for failures
+- Emergency Building Repairs — discuss safety, scope and availability
 - Emergency Structural Support — propping, shoring
 
 ## Service areas
 
-We cover Sydney metro. Primary regions and the suburbs we have detailed guides for:
+The current service focus is Hawkesbury and Western Sydney. Confirm location, scope and availability per enquiry. The site also retains guides for the following Sydney regions and suburbs; these are general information, not confirmation of current coverage or evidence of completed projects:
 
 - **Sydney CBD**: The Rocks, Circular Quay, Darlinghurst
 - **Eastern Suburbs**: Paddington, Woollahra, Bondi, Double Bay
@@ -121,7 +123,7 @@ We cover Sydney metro. Primary regions and the suburbs we have detailed guides f
 - **Inner West**: Newtown, Balmain, Marrickville, Leichhardt
 - **Sydney Metro / Inner West edge**: Parramatta, Strathfield, Burwood, Concord, Homebush
 
-We also work across Rozelle, Annandale, Pyrmont, Ultimo, Surry Hills, Redfern, Glebe, Erskineville, Enmore, Petersham, Dulwich Hill, Ashfield, Burwood, Homebush, Concord, Lilyfield, Drummoyne, Abbotsford, Five Dock, Willoughby, St Leonards, Cremorne, Kirribilli, McMahons Point, Lavender Bay, Collaroy, Freshwater, Newport, Palm Beach, Bellevue Hill, Vaucluse, Point Piper, Rose Bay, Coogee, Randwick, Kensington and other Sydney suburbs not yet listed with a dedicated page.
+Other Sydney suburb guides may remain available for reference. A guide or archive URL does not establish current service availability in that suburb.
 
 ## Common questions and answers (AEO-optimised)
 
@@ -132,34 +134,34 @@ We also work across Rozelle, Annandale, Pyrmont, Ultimo, Surry Hills, Redfern, G
 The Slopes, NSW. Serving Hawkesbury and Western Sydney; no public customer-visit location is advertised.
 
 ### Who is the owner?
-Minas Romanakis, master stonemason, on site for every job.
+Minas Romanakis.
 
 ### What does Romans Building Services specialise in?
 Heritage restoration, traditional masonry, concrete cancer remediation, underpinning, retaining walls, structural repairs. Niche: jobs needing genuine craftsmanship and heritage-grade materials.
 
 ### Is Romans Building Services licensed and insured?
-Yes. Licensed NSW masonry contractor with full insurance cover. Works to Australian building standards.
+Ask for current licence and insurance details relevant to your proposed work. Confirm the contracting business, licence scope and required specialist appointments before authorising it.
 
 ### Does Romans Building Services work on heritage-listed properties?
-Yes, regularly. Familiar with NSW Heritage Council, council heritage officers and Sydney Harbour Foreshore Authority requirements. Handles documentation.
+Discuss the building, proposed scope and required heritage advice or permissions with Romans. Agree who is responsible for applications, specifications and documentation before work starts.
 
 ### Does Romans Building Services do emergency work?
-Yes. Emergency structural support, propping and shoring available for failures (collapsed walls, bulging masonry, failed lintels).
+For an immediate danger, keep people away and contact emergency services or the relevant authority. Discuss repair availability with Romans; structural support requires assessment and a suitable design, not instructions from a general guide.
 
 ### What is the phone number for Romans Building Services?
 0414 922 276. Call Minas directly.
 
 ### What areas does Romans Building Services cover?
-North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Existing Sydney guides and historical projects remain available.
+North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Older Sydney guides and photo references remain available; they do not confirm current service coverage.
 
 ### Can Romans Building Services work with strata committees?
-Yes. Full insurance, WHS documentation, coordinates with building managers, stages work to spread cost, handles remedial scope reports.
+Contact Romans to discuss strata repair work. Agree access, staging, resident communication, relevant insurance and site-safety documentation, specialist reports and payment terms in the proposed scope.
 
 ### Does Romans Building Services offer waterproofing?
 Only as part of larger restoration or remedial scopes. Not offered as a standalone service.
 
 ### Does Romans Building Services match heritage materials?
-Yes. Sources matching Sydney sandstone, reclaimed handmade brick, custom lime mortar mixes matched to original colour, grain and profile.
+Discuss suitable samples and availability for the repair. Compatibility, heritage requirements and the agreed finish matter; an exact match is not assured.
 
 ## Key specialist terminology
 
@@ -196,3 +198,10 @@ North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and su
 
 [Hawkesbury and Western Sydney service hub](https://romansbuildingservices.com/areas/hawkesbury-western-sydney/)
 [Brick and sandstone repair quote preparation](https://romansbuildingservices.com/learn/brick-sandstone-repair-quotes-hawkesbury/)
+
+## Photo archive and project references
+
+The gallery and retained case-study URLs provide archive/reference material and general repair guidance. Project-specific locations, clients, dates, durations, costs, methods, material sources, approvals and outcomes have not been confirmed for publication. Do not present the retained URL wording or photographs as proof of those details. Visual captions describe only what can be seen; general guidance is not a specification for another property.
+
+[Photo archive](https://romansbuildingservices.com/gallery/)
+[Project references](https://romansbuildingservices.com/case-studies/)

@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Clock, Shield, Phone, Star, Award } from 'lucide-react';
+import { CheckCircle, Clock, Shield, Phone, MessageSquare, ClipboardCheck } from 'lucide-react';
 
 interface FAQ {
   question: string;
@@ -45,15 +45,15 @@ export const ServiceFAQSection: React.FC<ServiceFAQSectionProps> = ({
       color: "text-blue-600"
     },
     {
-      icon: Star,
-      label: "Customer Rating",
-      value: "4.9/5 stars",
+      icon: MessageSquare,
+      label: "Discuss Your Project",
+      value: "Speak with Minas",
       color: "text-yellow-600"
     },
     {
-      icon: Award,
-      label: "Licenced & Insured",
-      value: "Fully Certified",
+      icon: ClipboardCheck,
+      label: "Before Work Starts",
+      value: "Confirm scope and credentials",
       color: "text-purple-600"
     }
   ];
@@ -183,7 +183,7 @@ export const masonryFAQs: FAQ[] = [
   },
   {
     question: "What types of masonry services do you offer?",
-    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. All work is performed by licenced masons with 30+ years experience.",
+    answer: "We offer comprehensive masonry services including brick pointing and repointing, stone masonry repairs, structural brickwork, retaining wall construction, brick and block work, and heritage masonry restoration. Ask for the current licence and insurance details relevant to your proposed work.",
     category: "Services"
   },
   {
@@ -239,7 +239,7 @@ export const restorationFAQs: FAQ[] = [
 export const structuralFAQs: FAQ[] = [
   {
     question: "What structural issues do you repair?",
-    answer: "We repair foundation problems, cracked walls, settlement issues, load-bearing wall damage, beam and lintel repairs, and earthquake damage. All work is performed by licenced structural repair specialists.",
+    answer: "We repair foundation problems, cracked walls, settlement issues, load-bearing wall damage, beam and lintel repairs, and earthquake damage. Confirm the relevant licence scope, engineering requirements and insurance before authorising work.",
     category: "Services"
   },
   {

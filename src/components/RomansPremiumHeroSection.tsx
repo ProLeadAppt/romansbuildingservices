@@ -75,18 +75,18 @@ export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { vide
 
   return (
     <section data-p2-section="hero" aria-labelledby="hero-heading" className="bg-navy text-white">
-      <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.08fr_1fr]">
-        <div data-hero-copy className="relative z-10 flex flex-col justify-center bg-navy px-6 pb-10 pt-28 sm:px-10 lg:px-12 lg:pb-16 lg:pt-36">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 pb-10 lg:grid-cols-[1fr_1.15fr]">
+        <div data-hero-copy className="relative z-10 flex flex-col justify-center bg-navy pb-4 pt-28 lg:pb-12 lg:pt-32">
           <p className="mb-5 font-body text-sm font-semibold uppercase tracking-[0.16em] text-amber">Hawkesbury &amp; Western Sydney</p>
           <h1 id="hero-heading" className="max-w-xl font-heading text-[2.5rem] leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-[3.6rem]">
-            Brick, stone &amp; sandstone repairs.
+            Skilled stonework. Careful restoration.
           </h1>
           <p className="mt-6 max-w-lg font-body text-base leading-7 text-white sm:text-lg">
             Talk directly with Minas Romanakis about masonry repairs, structural work and heritage restoration. Owner-led since 1995.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <QuoteCTAButton className="inline-flex min-h-12 items-center justify-center rounded-md bg-amber px-7 py-3 font-body font-semibold text-navy transition-colors hover:bg-amber-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-              Get a Sydney Quote
+              Discuss your project
             </QuoteCTAButton>
             <a href="tel:0414922276" className="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-white px-6 py-3 font-body font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber">
               Call Minas
@@ -96,10 +96,10 @@ export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { vide
             North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas.
           </p>
           <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/30 pt-5 font-body text-sm text-white">
-            <span>Established 1995</span><span>Owner-led</span><span>Licenced &amp; insured</span>
+            <span>Established 1995</span><span>Owner-led</span><span>Discuss your project</span>
           </div>
         </div>
-        <div ref={mediaRef} data-hero-media className="relative isolate aspect-[720/846] overflow-hidden bg-navy lg:aspect-auto lg:min-h-[680px]">
+        <div ref={mediaRef} data-hero-media className="relative isolate mt-0 aspect-[1.08] overflow-hidden rounded bg-navy lg:mt-24">
           <img src={HERO_STILL} alt="Minas Romanakis working sandstone by hand with a mallet and chisel" width="720" height="846" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-[50%_58%] lg:object-[50%_50%]" />
           {loadVideo && (
             <video ref={videoRef} src={videoSrc} muted loop playsInline autoPlay preload="none" aria-hidden="true" tabIndex={-1} poster={HERO_STILL} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)} className="absolute inset-0 h-full w-full object-cover object-[50%_58%] lg:object-[50%_50%]" />

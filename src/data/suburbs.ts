@@ -13,16 +13,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/sydney-cbd',
     metaTitle: 'The Rocks Masonry & Heritage Restoration | Romans',
     metaDescription:
-      'Sandstone restoration, heritage repointing and masonry repairs in The Rocks. Romans works on colonial sandstone buildings and heritage-listed properties.',
+      'The Rocks masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Colonial sandstone restoration, heritage repointing and masonry repairs in Sydney\'s oldest neighbourhood.',
     intro: [
-      'The Rocks has some of the oldest sandstone buildings in Australia. Many of them date back to the 1820s, and most are heritage-listed. Working here means understanding how colonial stonemasons built things, what lime mortars they used, and how to repair damage without destroying what makes these buildings important.',
-      'We have worked in The Rocks for over two decades. Whether it\'s a terrace on Playfair Street, a sandstone pub facade, or a warehouse that\'s been converted into apartments, the job is always the same: match what\'s there, repair properly, and leave it looking as if nothing happened.',
-      'Council and heritage approvals in The Rocks are strict. We handle the paperwork, the sourcing of matching sandstone, and the mortar mix design. You don\'t have to chase us for compliance — it\'s part of the job.',
+      'For a sandstone building in The Rocks, begin with the conservation history: earlier repairs, stone replacements and any conservation management plan. Photographs of the whole elevation help distinguish isolated weathering from a wider pattern.',
+      'Stone grain, bedding, surface tooling and joint profiles matter when specifying a visible repair. Retaining sound original material may be preferable to replacing a whole block; cleaning and repair trials need to suit the particular stone.',
     ],
     housingContext:
-      'Buildings in The Rocks are almost all sandstone or sandstone with brick infill. Mortar is soft lime-based — using modern cement-based mortar on these buildings will trap moisture and destroy the stone over time. We mix traditional lime mortars on site, matched to the original. Sandstone here is typically Hawkesbury or Pyrmont stone, both with distinct grain and colour that need careful matching for any replacement blocks.',
+      'Historic sandstone, brick infill and later alterations can behave differently within one wall. Assess the existing mortar and moisture sources rather than choosing a mix from the age or address alone.',
     services: [
       'Sandstone restoration and cleaning',
       'Heritage repointing with lime mortar',
@@ -35,17 +34,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can you work on heritage-listed buildings in The Rocks?',
         answer:
-          'Yes. We have worked on heritage-listed sandstone buildings in The Rocks for over 20 years. We understand Sydney Harbour Foreshore Authority requirements and prepare the documentation needed for approval.',
+          'A heritage enquiry needs the listing details, conservation documents and proposed repair scope. Confirm the applicable council and Heritage NSW requirements before work; a maintenance exemption has conditions and is not automatic.',
       },
       {
         question: 'Why does my old building need lime mortar instead of cement?',
         answer:
-          'Old sandstone and brick buildings were built to breathe. Cement mortar is too rigid and traps moisture, which accelerates damage to the stone. Lime mortar is softer, flexes with the building, and allows moisture to escape. Using the wrong mortar can halve the life of a heritage wall.',
+          'Mortar needs to be compatible with the masonry. A hard, dense repair can damage softer historic material, but removing it can also cause damage. A conservation assessment should identify which joints need attention and an appropriate replacement mortar.',
       },
       {
         question: 'Can you match original Hawkesbury sandstone?',
         answer:
-          'Yes. We source Hawkesbury sandstone from quarries that still supply it and match the grain, colour and finish to the existing stone. For heritage work, we also patina new stone so it blends with weathered surrounding stone.',
+          'Matching involves more than colour: grain, bedding direction, texture and dimensions also matter. Suitable supply and a sample should be checked before replacement is agreed; an exact aged match cannot be assumed.',
       },
     ],
     nearbySlugs: ['circular-quay', 'darlinghurst', 'paddington'],
@@ -57,16 +56,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/sydney-cbd',
     metaTitle: 'Circular Quay Masonry & Sandstone Restoration | Romans',
     metaDescription:
-      'Heritage masonry, sandstone restoration and commercial facade repairs in Circular Quay. Romans handles historic buildings and waterfront properties.',
+      'Circular Quay masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage sandstone, historic commercial facades and waterfront masonry repairs at Circular Quay.',
     intro: [
-      'Circular Quay is where Sydney began, and the buildings here show it. From the Customs House to the warehouses along the waterfront, almost everything is sandstone, brick, or a mix of both. Salt air and foot traffic take their toll on masonry, and regular maintenance is the difference between a building that stands for another 150 years and one that needs major intervention.',
-      'We do a lot of sandstone facade work at Circular Quay. Salt efflorescence, spalling, mortar erosion — these are normal on waterfront buildings, and they\'re all fixable if you catch them early. We also handle structural cracks, which are common in older commercial buildings that have been renovated multiple times.',
-      'Tight access, tourist foot traffic and strict heritage rules mean Circular Quay jobs take planning. We coordinate with building management, council and heritage authorities so the work gets done without disruption.',
+      'A Circular Quay facade enquiry should identify the building manager, public entrances and the affected elevation. Footpaths, loading areas and occupied commercial spaces can constrain access even when the damaged area is small.',
+      'For waterfront stonework, record where deposits or flaking occur and whether they follow rain or leaks. Repeated surface treatments without investigating moisture can leave the underlying problem unresolved.',
     ],
     housingContext:
-      'Commercial sandstone buildings dominate the area. Many have been extended or altered over 150 years, which creates complex structural situations. Salt crystallisation is a constant issue — stone at the base of buildings often needs replacement every few decades. We use breathable lime-based consolidants to slow salt damage and hand-cut replacement blocks where stone is beyond repair.',
+      'Sandstone facades and altered commercial buildings need assessment of both original fabric and later additions. Salt deposits alone do not establish the depth of deterioration or justify stone replacement.',
     services: [
       'Commercial sandstone facade restoration',
       'Salt damage treatment and consolidation',
@@ -79,17 +77,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How do you handle salt damage on waterfront buildings?',
         answer:
-          'Salt damage needs breathable materials. We use lime-based mortars and breathable consolidants so moisture can escape the stone rather than crystallising inside it. Where stone is too damaged, we cut it out and replace with matching sandstone.',
+          'First investigate moisture pathways, salt sources and the condition of the stone. A conservation specialist can then advise on drainage, mortar repairs or treatment trials. Consolidants and coatings are not a universal salt-damage remedy.',
       },
       {
         question: 'Can you work on commercial buildings while tenants are on site?',
         answer:
-          'Yes. We stage work, use containment where needed and work around tenant hours. Most commercial masonry jobs in Circular Quay are done without tenants noticing much beyond the scaffold.',
+          'Occupancy needs a site-specific access and safety plan. Discuss entrances, business hours, noise, dust controls and any temporary exclusion areas with the building manager before agreeing a programme.',
       },
       {
         question: 'Who approves heritage work at Circular Quay?',
         answer:
-          'Depending on the building, it could be Sydney Harbour Foreshore Authority, City of Sydney Council, or the NSW Heritage Council. We handle the applications and work to the approved scope.',
+          'Check the particular building, land ownership and listing rather than relying on the suburb. Council planning requirements and any State Heritage Register requirements must be considered separately, including the conditions of any exemption.',
       },
     ],
     nearbySlugs: ['the-rocks', 'darlinghurst', 'paddington'],
@@ -101,16 +99,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/sydney-cbd',
     metaTitle: 'Darlinghurst Masonry & Terrace Restoration | Romans',
     metaDescription:
-      'Victorian terrace restoration, brick repointing and heritage masonry in Darlinghurst. Romans works on period homes and converted warehouses.',
+      'Darlinghurst masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace brick restoration, tuckpointing and heritage masonry across Darlinghurst.',
     intro: [
-      'Darlinghurst is one of the most architecturally rich suburbs in inner Sydney. Victorian terraces, Federation-era buildings and old warehouses sit next to each other, and each one has its own quirks. A lot of our Darlinghurst work is brick repointing — the original lime mortar in these terraces has been crumbling for decades, and cement patches made things worse.',
-      'We also handle a lot of tuckpointing restoration in Darlinghurst. That\'s the decorative fine-line pointing you see on higher-end Victorian terraces — black mortar with a thin white line running through it. When it\'s done well, it\'s one of the most beautiful brickwork finishes there is. When it\'s done badly, it ruins the whole facade.',
-      'If you own a terrace in Darlinghurst, the best thing you can do is get the brickwork properly assessed. We\'ll tell you what actually needs doing, what can wait, and roughly what it should cost.',
+      'For a Darlinghurst terrace, photograph any surviving decorative pointing before planning repairs. A close view of sheltered joints can be more useful for matching the original finish than a heavily weathered street-facing section.',
+      'Where a terrace adjoins another building, describe side access and whether the affected wall is shared. Warehouse conversions need a different scope from decorative terrace facades, particularly around altered openings.',
     ],
     housingContext:
-      'Darlinghurst is dominated by Victorian terraces from the 1870s-1890s and Federation buildings from 1900-1915. Most were built with soft handmade bricks and lime mortar. Many have been incorrectly repointed with cement mortar over the decades, which traps moisture and damages the bricks. Proper restoration means removing the bad cement mortar, matching the original lime mix and repointing to the correct profile — often tuckpointed for higher-end terraces.',
+      'Older brickwork may include soft bricks, lime-rich mortar and later cement repairs. The visible finish is only part of the assessment: moisture, joint condition and the risk of damage during removal also matter.',
     services: [
       'Victorian terrace brick restoration',
       'Tuckpointing (traditional decorative pointing)',
@@ -123,17 +120,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'What is tuckpointing and does my terrace have it?',
         answer:
-          'Tuckpointing is a decorative technique where a dark mortar is applied to the joints, then a thin fillet of white putty is run through the centre to create the illusion of very fine, precise brickwork. Many Darlinghurst Victorian terraces have it — if your brickwork has fine white lines running through dark joints, that\'s tuckpointing.',
+          'Tuckpointing creates fine decorative lines over a background joint finish. Surviving lines, sheltered areas and historic photographs can help identify it; not every older terrace originally had tuckpointing.',
       },
       {
         question: 'Should I remove the cement pointing and replace it with lime?',
         answer:
-          'Usually, yes. Cement mortar on old soft brick causes moisture to sit in the bricks and accelerates decay. Removing the cement and repointing with lime is one of the most effective long-term things you can do for a Victorian terrace.',
+          'Not automatically. Check whether the existing pointing is contributing to damage and whether it can be removed without harming the bricks. A compatible mortar and a small trial area should inform any proposed replacement.',
       },
       {
         question: 'Can you match crumbling bricks on a 140-year-old terrace?',
         answer:
-          'Yes. We source reclaimed handmade bricks or cut old bricks to match. For bricks that need to be visible, matching is critical — we colour-match and test samples before any work starts.',
+          'Replacement options need comparison for size, texture, colour and durability. Send photographs of both damaged and sound areas, but leave removal and sample extraction to the person assessing the repair.',
       },
     ],
     nearbySlugs: ['the-rocks', 'paddington', 'woollahra'],
@@ -147,16 +144,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Paddington Terrace Restoration & Tuckpointing | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage masonry in Paddington. Romans handles period brick and sandstone across the Eastern Suburbs.',
+      'Paddington masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace brick restoration and tuckpointing across Paddington\'s heritage streetscapes.',
     intro: [
-      'Paddington has some of the most photographed terrace streetscapes in Australia. Five Ways, Underwood Street, the rows along Hargrave Street — these terraces are the reason Paddington looks the way it does. Looking after them properly takes patience and the right materials.',
-      'We work on Paddington terraces constantly. The big jobs are repointing and tuckpointing restoration. The bricks are usually handmade and soft, and the original lime mortar has weathered out of most joints. Many terraces had cement pointing done in the 70s and 80s, which locks moisture into the bricks and accelerates decay. Removing that cement and repointing properly is one of the most common jobs we do here.',
-      'We also handle sandstone repairs on the grander terraces — steps, window surrounds, decorative details. And retaining walls are common in the hilly sections, especially around the eastern edge of the suburb.',
+      'A Paddington terrace facade can combine decorative pointing, ironwork and sandstone details within a small frontage. Identify which element is deteriorating so the enquiry does not turn into an unnecessary whole-facade replacement.',
+      'For steps and window surrounds, include photographs showing wear, previous patches and nearby drainage. Access to upper facades and protection of neighbouring entrances should be considered alongside the material repair.',
     ],
     housingContext:
-      'Paddington is almost entirely Victorian terraces from 1870-1900, most with cast-iron lacework, sandstone detailing and tuckpointed brickwork. The bricks are soft handmade Sydney sand-struck bricks. Most terraces have had at least one bad repointing attempt — usually cement mortar that traps moisture. Correct restoration means lime mortar matched to the original, and tuckpointed where appropriate. Iron lintel rust and sandstone step wear are common.',
+      'Terrace brickwork and sandstone may need different repair materials. Surviving details should guide the finish, while condition and exposure guide the scope; building age alone is not a repointing schedule.',
     services: [
       'Victorian terrace repointing with lime mortar',
       'Tuckpointing restoration',
@@ -169,17 +165,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How often does a Paddington terrace need repointing?',
         answer:
-          'Properly done lime repointing lasts 40-60 years. If you\'re looking at a Paddington terrace that still has its original lime mortar, it might be ready now. Cement-pointed terraces often need it sooner because the cement causes brick damage that needs fixing too.',
+          'There is no fixed interval that suits every terrace. Localised open joints, loose mortar and associated damp warrant assessment; sound joints do not need replacement just because they are old.',
       },
       {
-        question: 'Do you work on Paddington Council heritage-listed properties?',
+        question: 'What should I check before heritage repairs in Paddington?',
         answer:
-          'Yes. We work to Woollahra Council and NSW Heritage requirements. We\'ll prepare documentation, use approved materials and source matching bricks and sandstone.',
+          'Confirm the property address, council, heritage listing and proposed work first. Check whether consent or an applicable exemption is needed before starting, including any separate State heritage requirements.',
       },
       {
         question: 'Why is my sandstone step flaking and wearing out?',
         answer:
-          'Sandstone wears from foot traffic and weathers from rain. For steps that are still structurally sound, we can consolidate and repair. For steps that have lost too much stone, we cut and install replacement stone matched to the original.',
+          'Wear, moisture, salts and earlier repairs can all affect sandstone steps. Assess the remaining stone, support and safe use before choosing conservation repair or replacement. Keep people away from loose or unstable steps.',
       },
     ],
     nearbySlugs: ['woollahra', 'bondi', 'double-bay'],
@@ -191,16 +187,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Woollahra Heritage Masonry & Stone Restoration | Romans',
     metaDescription:
-      'Heritage terrace restoration, sandstone and brick masonry in Woollahra. Romans works on period homes and retaining walls across the Eastern Suburbs.',
+      'Woollahra masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage masonry, sandstone restoration and retaining walls across Woollahra\'s period streets.',
     intro: [
-      'Woollahra has some of Sydney\'s best-preserved Victorian and Federation streetscapes. Queen Street, Moncur Street, Ocean Street — these streets are full of terraces and freestanding period homes that need careful work to stay in shape. Council takes heritage seriously here, and so do we.',
-      'Our Woollahra work is a mix of heritage repointing, sandstone repair, and retaining walls. A lot of properties sit on sloped blocks, which means retaining walls have been a feature of this suburb for over a century. Many of the old walls are failing and need rebuilding with proper drainage.',
-      'Where a Paddington terrace is often a squeezed row job, a Woollahra property is more likely to be a freestanding home with boundary walls, garden walls and outbuildings. Each one adds complexity and character.',
+      'For a Woollahra property with garden and boundary walls, show how the affected masonry relates to paths, garden levels and adjoining land. A freestanding garden wall and a wall holding back soil need different assessments.',
+      'On a period home, record decorative stonework separately from ordinary wall repairs. Columns, copings and window details may require careful matching without replacing sound neighbouring material.',
     ],
     housingContext:
-      'Woollahra has a mix of Victorian terraces, large freestanding Federation homes and some interwar Georgian revival houses. Many properties have significant sandstone retaining walls and garden features. Brick is a mix of handmade and early pressed. Repointing usually requires lime mortar. Sandstone sourcing for repairs is important — we match to the grain and weathering of existing stone. Hillside movement is a common issue that shows up as cracks in boundary walls.',
+      'Terraces and freestanding homes can contain several generations of brick and stone repair. A visible crack does not establish hillside movement or failed drainage without examining the wall and site.',
     services: [
       'Victorian and Federation terrace restoration',
       'Sandstone retaining wall repair and rebuild',
@@ -213,17 +208,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My sandstone retaining wall is bulging. Is that serious?',
         answer:
-          'Bulging retaining walls usually mean the drainage behind has failed and water pressure is pushing the wall out. It can be serious if left — walls can collapse. We assess the drainage, check the footing, and rebuild or stabilise the wall as needed.',
+          'Bulging can indicate instability and needs prompt professional assessment. Keep clear of the wall and the area below it; do not excavate behind it or attempt to push it back. An engineer should consider support, loads and drainage.',
       },
       {
         question: 'Does Woollahra Council need approval for heritage masonry work?',
         answer:
-          'For most heritage properties, yes. Exempt and complying development covers minor work, but anything that changes the appearance of a heritage building usually needs a development application. We help with documentation.',
+          'Check the address and exact scope with the council before work. Heritage listing or conservation-area status can affect the approval pathway, and minor repair work is not automatically exempt.',
       },
       {
         question: 'Can you match the sandstone on my Federation home?',
         answer:
-          'Yes. Most Eastern Suburbs Federation homes used Sydney sandstone, which is still quarried. We match the grain and tool-marks of the original stone and weather-match where needed for visible repairs.',
+          'Provide views of the whole feature and close details of sound stone. Matching should consider texture, bedding, finish and dimensions as well as colour, with the proposed sample reviewed before work.',
       },
     ],
     nearbySlugs: ['paddington', 'double-bay', 'bondi'],
@@ -235,16 +230,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Bondi Masonry & Salt Damage Repair | Romans',
     metaDescription:
-      'Coastal masonry repairs, salt damage treatment and retaining walls in Bondi. Romans handles apartment blocks and homes across Sydney\'s east.',
+      'Bondi masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Coastal masonry, salt damage repair and retaining walls across Bondi and Bondi Beach.',
     intro: [
-      'Bondi is tough on buildings. The salt air eats mortar, rusts lintels and cracks render. We see a lot of spalling concrete on apartment blocks along Campbell Parade, failing retaining walls in the streets running down to the beach, and crumbling brickwork on older homes in North Bondi.',
-      'The biggest issue is concrete cancer. Apartment blocks built in the 60s and 70s are the worst. The steel reinforcement inside the concrete rusts because of salt, expands, and cracks the concrete off the steel. Left alone, it gets serious. We cut out the damaged concrete, treat the steel, and patch with salt-resistant mortar so it holds up.',
-      'We also do a lot of retaining wall work around Bondi. The hilly blocks mean walls are everywhere, and many are tilting or leaning because the drainage has failed. Proper drainage and ag pipes behind the wall is what makes them last.',
+      'For a Bondi apartment or home, identify whether the affected surface is brick, render or reinforced concrete. Similar-looking cracks and flaking can require very different investigations.',
+      'An enquiry about a balcony should include the location and any existing engineering or strata reports. Do not go beneath loose concrete to obtain photographs; report falling material or exposed reinforcement promptly to building management.',
     ],
     housingContext:
-      'Bondi has a mix of older Federation homes, 1960s-70s apartment blocks, and newer builds. Salt damage affects everything: steel lintels in older homes, reinforced concrete in apartments, and mortar in brickwork. Render is often spalling on coastal-facing walls. Concrete cancer on apartment balconies is a very common job. Retaining walls on sloped streets frequently fail due to drainage issues behind them.',
+      'Coastal exposure is relevant to material selection, but it does not prove that every defect is caused by salt. Leaks, detailing, previous repairs and the condition of concealed reinforcement may need investigation.',
     services: [
       'Concrete cancer treatment and repair',
       'Balcony spalling concrete restoration',
@@ -257,17 +251,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'What is concrete cancer and why does it happen in Bondi?',
         answer:
-          'Concrete cancer is when steel reinforcement inside concrete rusts, expands, and pushes the concrete off. Salt air speeds it up dramatically — most Bondi apartment blocks built before 1990 will have it somewhere. We cut out the damaged concrete, treat the steel with a corrosion inhibitor, and repair with salt-resistant mortar.',
+          'The term commonly describes deterioration associated with corrosion of steel reinforcement. Spalling or rust stains warrant assessment, but the cause and extent cannot be confirmed from a suburb or photograph alone.',
       },
       {
         question: 'How long does a concrete repair last in a coastal environment?',
         answer:
-          'Done properly with anti-corrosion treatment and salt-resistant mortars, 20-30 years is realistic. Done poorly, it can fail in 5 years. The quality of the steel treatment and the patch mortar matters more than anything else.',
+          'No fixed service life can be promised from location alone. Durability depends on the cause, repair design, workmanship, exposure and maintenance. Ask for the proposed scope, limitations and maintenance requirements in writing.',
       },
       {
         question: 'Why does my render keep falling off?',
         answer:
-          'Salt crystallising inside the wall pushes render off from the inside. The fix is to remove the failed render, treat the underlying brick or block, and re-render with a salt-resistant mix. Painting over it just traps more salt.',
+          'Render can detach for several reasons, including moisture, poor adhesion or movement beneath it. Assess the substrate and water entry before choosing a replacement finish; keep clear of loose overhead sections.',
       },
     ],
     nearbySlugs: ['double-bay', 'paddington', 'woollahra'],
@@ -279,16 +273,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Double Bay Heritage Masonry & Stone Restoration | Romans',
     metaDescription:
-      'Heritage stone restoration, period home masonry and retaining walls in Double Bay. Romans works on high-end properties in Sydney\'s east.',
+      'Double Bay masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage stone restoration, period home masonry and retaining walls across Double Bay and Bellevue Hill.',
     intro: [
-      'Double Bay and the surrounding streets — Bellevue Hill, Point Piper, Rose Bay — have some of the most significant period homes in Sydney. These properties need tradespeople who understand heritage work and who can be trusted on site. We\'ve been working in these suburbs for over 20 years.',
-      'Our Double Bay work is mostly heritage restoration on Federation and Interwar homes. Sandstone detailing is big here — columns, window surrounds, steps, retaining walls. A lot of it is badly weathered or has been repaired incorrectly in the past.',
-      'We also do significant retaining wall work. The sloped blocks down to the harbour mean many properties have multiple levels of stone retaining walls. When one fails, it can affect the whole property. We rebuild properly with correct drainage and footings so the job doesn\'t come back.',
+      'For a Double Bay stonework enquiry, separate structural features from decorative ones. A retaining wall, porch column and paving surface may share a stone colour but have different loads and repair needs.',
+      'If the home has been extended, include drawings or photographs of earlier work where available. Junctions between original masonry and later construction can be important when interpreting cracks or damp.',
     ],
     housingContext:
-      'Double Bay and surrounds have Federation, Interwar and some Victorian homes. Most are freestanding on large blocks with significant stonework — retaining walls, garden walls, columned porches. Sandstone is the dominant material, usually Sydney sandstone. Many properties have been renovated multiple times, sometimes badly, which creates layered problems. Heritage conservation areas are strict on what\'s allowed.',
+      'Garden levels, drainage outlets and limited equipment access can shape a stonework project. Record these constraints before comparing repair and rebuilding options.',
     services: [
       'Heritage sandstone restoration',
       'Period home facade repair',
@@ -301,17 +294,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can you match aged sandstone on a 100-year-old home?',
         answer:
-          'Yes. We source Sydney sandstone and weather-match visible repairs so they blend with the aged stone. For non-visible structural repairs, standard new stone is fine.',
+          'A sample can be compared for grain, colour, texture and tooling, but new stone may remain visibly different from weathered material. The repair approach should preserve sound existing stone wherever practical.',
       },
       {
         question: 'Do you work with architects on heritage restoration projects?',
         answer:
-          'Regularly. Many of our Double Bay jobs are run through architects or heritage consultants. We\'re comfortable working to spec, attending site meetings and delivering to the agreed scope.',
+          'Share the architect or consultant scope with the enquiry, including drawings, material specifications and approval conditions. Confirm responsibilities for design, approvals and construction before agreeing the work.',
       },
       {
         question: 'How much does a sandstone retaining wall rebuild cost?',
         answer:
-          'Varies with size, stone sourcing and access, but typically $2,500-4,000 per square metre for heritage-quality work. We quote per job after inspection so you get an accurate figure.',
+          'A useful quote needs wall dimensions, support conditions, access, drainage requirements and the proposed design. Excavation, disposal and protection of adjoining property can materially affect cost; a suburb-wide rate is not reliable.',
       },
     ],
     nearbySlugs: ['woollahra', 'bondi', 'paddington'],
@@ -325,16 +318,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'Mosman Heritage Masonry & Federation Home Restoration | Romans',
     metaDescription:
-      'Federation home restoration, sandstone masonry and retaining walls in Mosman. Romans works on heritage properties across Sydney\'s Lower North Shore.',
+      'Mosman masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Federation home restoration, sandstone walls and heritage masonry across Mosman and Cremorne.',
     intro: [
-      'Mosman is Federation home country. Big blocks, big houses, lots of sandstone and brick. Many of these properties were built between 1900 and 1930, and most have had multiple rounds of renovation over the decades. That creates layered problems — old damage, newer repairs that didn\'t work, and original features that need proper restoration.',
-      'We do a lot of sandstone restoration in Mosman. Feature walls, retaining walls, pillars, steps, window surrounds. The stone is usually Sydney sandstone, and when it\'s weathered badly or been repaired with cement patches, proper restoration means going back to traditional techniques and materials.',
-      'Retaining walls are a constant in Mosman. The sloped blocks and harbour views come with walls everywhere, and when they fail, they take the garden with them. We rebuild with correct drainage so the problem doesn\'t come back.',
+      'For a Mosman home, note whether the enquiry concerns a roof-level chimney, facade or wall beside a sloping garden. These need different access arrangements and may need different specialist input.',
+      'Photographs from safe ground level can show a chimney outline or a retaining wall in relation to the house. Include any earlier engineering reports rather than assuming a recurring crack needs another surface patch.',
     ],
     housingContext:
-      'Mosman has Federation homes from 1900-1915, Interwar homes from 1920s-40s, and some earlier Victorian houses. Sandstone retaining walls, columns and decorative stonework are common. Brick is typically early pressed. Sloped blocks mean water management is critical — most failures come from bad drainage behind walls. Heritage conservation areas cover much of the suburb.',
+      'Stone garden features and period brickwork should be assessed for material condition as well as movement. A slope alone does not identify why a wall is cracking.',
     services: [
       'Federation home restoration',
       'Sandstone retaining wall rebuild',
@@ -347,17 +339,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My Federation home\'s chimney is cracked. Can you repair it?',
         answer:
-          'Yes. We rebuild or partially rebuild Federation chimneys using matched brick and lime mortar. We also install new flashing and cowls so water stops being the cause of the cracks.',
+          'A chimney assessment should consider stability, brick and mortar condition and the surrounding roof details. Do not climb onto the roof or remove loose masonry. Keep clear of falling material and seek urgent advice if the stack appears unstable.',
       },
       {
         question: 'Do you work on heritage-listed properties in Mosman?',
         answer:
-          'Yes. We work to Mosman Council heritage requirements and have done many jobs on heritage-listed homes across the suburb. We prepare the documentation and use matched materials.',
+          'Send the listing information and intended scope so the repair can be discussed against the property requirements. Confirm council and any State heritage approvals or exemptions before work begins.',
       },
       {
         question: 'Why does my sandstone retaining wall keep cracking?',
         answer:
-          'Usually drainage. Water building up behind a wall creates pressure that cracks the stone. The fix is to expose the back of the wall, install ag pipe drainage and a drainage blanket, then rebuild properly. Without drainage, any rebuild will crack again.',
+          'Possible contributors include support movement, loading and water pressure, but a site assessment is needed to distinguish them. Repeated cracking is a reason to review the wall design and site conditions, not simply repoint again.',
       },
     ],
     nearbySlugs: ['neutral-bay', 'chatswood', 'lane-cove'],
@@ -369,16 +361,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'Neutral Bay Masonry & Brick Restoration | Romans',
     metaDescription:
-      'Period home masonry, brick restoration and retaining walls in Neutral Bay. Romans works on Federation and Interwar homes across the Lower North Shore.',
+      'Neutral Bay masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Period home masonry, brick restoration and retaining walls across Neutral Bay and Cremorne.',
     intro: [
-      'Neutral Bay sits between Mosman and North Sydney, and the building stock reflects that. Federation homes on the leafy streets, Interwar apartment blocks closer to the ferry, and a lot of brick-and-stone terraces and duplexes throughout. Each type has its own issues.',
-      'Brick restoration is the big one in Neutral Bay. The handmade bricks used in pre-1940 buildings are soft and need lime mortar to breathe. When those buildings have been repointed with cement, the bricks deteriorate and need attention before they get worse.',
-      'We also do a lot of sandstone work — steps, window surrounds, retaining walls. Neutral Bay has some lovely period sandstone that\'s worth restoring properly.',
+      'For a Neutral Bay flat or apartment building, explain whether damage is inside an individual lot or on an external shared element. Include the building manager or strata contact when arranging access.',
+      'Decorative render needs photographs of surviving profiles and earlier patches, while brick repairs need views of the joints and adjacent openings. Treat a damaged balcony as a structural enquiry rather than a decorative repair.',
     ],
     housingContext:
-      'Neutral Bay has Federation homes from early 1900s, Interwar flats from 1920s-30s, and some 1960s-70s apartment blocks. Pre-war buildings need lime mortar and careful brick matching. Interwar flats often have decorative render that\'s now cracking. Apartment blocks from the 60s-70s commonly have concrete cancer on balconies.',
+      'A building can combine original masonry, later render and concrete balconies. The assessment needs to distinguish these materials and any previous alterations before a repair system is selected.',
     services: [
       'Period home brick restoration',
       'Sandstone step and feature repair',
@@ -391,17 +382,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My apartment block has concrete cancer on the balconies. What\'s the process?',
         answer:
-          'We start with an assessment — how widespread, how deep, how urgent. Then we cut out damaged concrete, treat the exposed steel, and patch with salt-resistant mortar. On a strata property, we coordinate with the committee and building manager.',
+          'Notify the strata manager and arrange professional assessment, including engineering input for structural damage. Existing reports, safe access and a defined repair scope help contractors price the same work. Keep people clear of loose concrete.',
       },
       {
         question: 'Can you match Interwar decorative render?',
         answer:
-          'Yes. Interwar render patterns — roughcast, bagged, float-finished — all have their own technique. We match the profile and colour so repairs blend in.',
+          'Profiles and texture can be recorded and compared with a trial sample. Moisture and the condition of the background need checking first; matching the surface appearance does not resolve an underlying defect.',
       },
       {
         question: 'How do I know if my bricks need repointing?',
         answer:
-          'If you can poke a key into the mortar and it crumbles, the joints are failing. Water stains inside the house, or moss growing on the outside of the wall, are also signs. Get it looked at before water starts causing brick damage.',
+          'Open or eroded joints, loose mortar and damp near joints are reasons to seek assessment. Do not rake or grind joints to test them. The extent of repair should follow inspection rather than the age of the building.',
       },
     ],
     nearbySlugs: ['mosman', 'chatswood', 'lane-cove'],
@@ -413,16 +404,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'Chatswood Masonry & Structural Repairs | Romans',
     metaDescription:
-      'Residential masonry, structural repairs and brickwork in Chatswood. Romans handles homes, apartments and commercial buildings on the Upper North Shore.',
+      'Chatswood masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Residential masonry, structural brickwork and concrete repairs across Chatswood and Artarmon.',
     intro: [
-      'Chatswood mixes older Federation and Interwar homes with a lot of newer residential and commercial builds. On the older properties we do repointing, brick replacement and structural work. On newer builds we handle defect rectification — cracked walls, failed lintels, poor drainage issues that show up a few years after completion.',
-      'The clay soil in parts of Chatswood causes movement. When soil shifts, brick walls crack. We stitch cracks using helical bars, which hold the wall together without major demolition, and we work out what\'s causing the movement so it can be addressed.',
-      'Commercial buildings around the train station and along the Pacific Highway often need facade work, concrete repairs and strata-approved maintenance. We handle the paperwork and the site access coordination so it runs smoothly.',
+      'A Chatswood enquiry may concern an older house, an apartment or an occupied commercial frontage. Identify the building type and which part of the structure has changed before discussing a repair method.',
+      'For cracks, note when they appeared and whether doors, windows or adjacent finishes have also changed. Dated photographs taken safely can support an assessment, but they do not identify the soil or establish structural safety.',
     ],
     housingContext:
-      'Chatswood has a mix of pre-war homes in the quiet streets and modern residential and commercial in the centre. Reactive clay soils in some pockets cause foundation movement, which leads to cracked brick walls. New builds from the past 20 years sometimes have poorly detailed brickwork that fails at the junction of different materials.',
+      'At junctions between brick, concrete and newer additions, movement and detailing need consideration. A stair-step pattern does not by itself prove reactive clay or a need for underpinning.',
     services: [
       'Helical bar crack stitching',
       'Federation home brick restoration',
@@ -435,17 +425,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My brick wall has a stair-step crack. Is it serious?',
         answer:
-          'Stair-step cracks usually mean foundation movement. Small cracks can be monitored and stitched. Large growing cracks may indicate a bigger footing issue — we\'ll assess and advise whether structural engineering input is needed.',
+          'The cause and significance need assessment in context, including the wall support, openings and any recent changes. Seek prompt professional advice for new or worsening cracking, bulging or loose material; do not rely on width alone.',
       },
       {
         question: 'What is helical bar stitching and how long does it last?',
         answer:
-          'Helical bars are stainless steel spiral bars bedded into horizontal mortar joints across the crack. They hold the wall together while allowing small future movements. Done properly, they\'re a permanent repair — the wall stays together for the life of the building.',
+          'Helical bars are one possible engineered masonry repair. Suitability depends on the cause of cracking, ongoing movement and the wall condition; stitching is not a substitute for addressing a foundation or drainage problem.',
       },
       {
         question: 'Can you do commercial work with tenants still operating?',
         answer:
-          'Yes. We stage work around tenant hours, use containment for dust and coordinate with building management. Most commercial masonry work in Chatswood is done without tenants noticing.',
+          'Discuss trading hours, loading access, emergency exits and any areas that may need to close. Occupancy and disruption depend on the assessed risks and agreed staging, not just the size of the visible repair.',
       },
     ],
     nearbySlugs: ['lane-cove', 'mosman', 'neutral-bay'],
@@ -457,16 +447,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'Lane Cove Masonry & Home Restoration | Romans',
     metaDescription:
-      'Home masonry, brick repointing and retaining walls in Lane Cove. Romans handles period homes and concrete repairs across the Lower North Shore.',
+      'Lane Cove masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Home masonry, brick restoration and retaining walls across Lane Cove and Longueville.',
     intro: [
-      'Lane Cove is mostly residential — Federation and Interwar homes on leafy streets, with pockets of newer development. Our work here is usually on the older housing stock: brick repointing, sandstone step repair, retaining walls and chimney work.',
-      'The sloped blocks around Longueville and down toward the river mean retaining walls are a common feature, and many of the older ones are failing. We rebuild with proper drainage so the wall holds up for decades rather than needing repair every few years.',
-      'Lane Cove also has a fair amount of sandstone in garden features, fence walls and house detailing. Keeping these in good condition is about catching weathering early and doing targeted repairs before small problems become big ones.',
+      'For a Lane Cove retaining wall, describe the change in ground level and what sits above and below it. Paths, driveways, neighbouring structures and drainage outlets can all affect the assessment.',
+      'For a house with both stone and brick defects, photograph each material separately and show where they meet. Access through side passages or landscaped gardens should be discussed before equipment and material delivery are planned.',
     ],
     housingContext:
-      'Lane Cove has Federation homes from 1900-1915, Interwar homes from 1920s-40s, some Victorian, and newer infill builds. Sandstone retaining walls are common due to sloped blocks. Clay soils in some pockets cause foundation movement. Older buildings use lime mortar and handmade brick that needs careful treatment.',
+      'A wall retaining soil needs assessment of support, loads and drainage as well as its face. Older mortar and replacement stone should be specified from the existing material rather than from a standard suburban recipe.',
     services: [
       'Period home brick restoration',
       'Sandstone retaining wall repair',
@@ -479,17 +468,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Do I need council approval for a retaining wall repair?',
         answer:
-          'For most like-for-like repairs, no. For walls over 600mm or new construction, usually yes. We\'ll tell you what applies to your specific job and handle the documentation if it\'s needed.',
+          'Requirements depend on the site, wall, proposed work and planning controls. Check with the council or an appropriate certifier before work and obtain engineering advice where structural adequacy is in question; do not rely on a single height threshold.',
       },
       {
         question: 'How long does a brick repoint take on an average Lane Cove home?',
         answer:
-          'Typical single-storey Federation home takes 2-4 weeks depending on size and access. That includes raking out old mortar, cleaning, repointing and curing. We work in stages so the house stays watertight.',
+          'Duration depends on the amount of joint repair, access, preparation, weather and curing needs. Ask for a site-specific programme that states assumptions and any areas that will be unavailable during the work.',
       },
       {
         question: 'Can you do stonework and brickwork on the same job?',
         answer:
-          'Yes. Most Lane Cove period homes have both, and we handle the full scope in one engagement — brick repointing, stone step repair, chimney work, retaining walls as needed.',
+          'Include both elements in the enquiry so their relationship can be assessed. The eventual scope should distinguish materials, repair methods and any engineering requirements rather than treating every surface with the same mortar.',
       },
     ],
     nearbySlugs: ['chatswood', 'mosman', 'neutral-bay'],
@@ -503,16 +492,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Manly Coastal Masonry & Salt Damage Repair | Romans',
     metaDescription:
-      'Coastal masonry, salt damage treatment and concrete cancer repair in Manly. Romans handles apartment blocks and homes on Sydney\'s Northern Beaches.',
+      'Manly masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Coastal masonry, salt damage treatment and concrete cancer repair across Manly and Fairlight.',
     intro: [
-      'Manly is tough on buildings. Salt, wind and sun attack mortar, concrete and render constantly. Apartment blocks along the Corso and the beachfront all show signs of coastal wear — spalling concrete on balconies, rusting lintels, crumbling render, crystallised salt on brickwork.',
-      'Concrete cancer is the biggest job in Manly. Most apartment buildings from the 1960s-80s have it somewhere, and once it starts, it accelerates. We cut out the damaged concrete, treat the exposed reinforcement, and repair with salt-resistant mortars so the fix holds up in a coastal environment.',
-      'We also do a lot of render and brick work on older Federation and Interwar homes around Fairlight and the older parts of Manly. These buildings have been taking salt hits for 100 years — proper restoration with breathable materials is what keeps them in good shape.',
+      'For a Manly balcony or external facade, describe the exposure and any recurring leaks as well as the visible damage. Building age alone does not establish the condition of concrete or reinforcement.',
+      'Strata enquiries are easier to scope with the available condition report, affected elevations and access restrictions. Use existing photographs or safe ground-level views rather than approaching loose overhead material.',
     ],
     housingContext:
-      'Manly has a mix of older Federation and Interwar homes, 1960s-80s apartment blocks and newer builds. Coastal exposure is severe. Concrete cancer is common on apartment balconies and parapets. Brickwork suffers from salt crystallisation. Render often fails in patches where salt has built up behind. Steel lintels in older homes rust and cause brick cracking.',
+      'Marine exposure may be relevant to brick, render and reinforced concrete in different ways. A repair specification needs to address the actual defect and water pathways rather than relying on a coastal-labelled product.',
     services: [
       'Concrete cancer treatment and repair',
       'Salt-resistant rendering',
@@ -525,17 +513,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My apartment balcony has crumbling concrete. How serious is it?',
         answer:
-          'Depends on how far it\'s progressed. If you can see rusty steel, water in the concrete or large patches spalling off, it needs action soon. We inspect, assess the reinforcement condition, and recommend repair scope.',
+          'Crumbling balcony concrete may present falling-material and structural risks. Keep clear of the affected balcony and the area below, alert building management and arrange prompt professional assessment. Call emergency services if there is immediate danger.',
       },
       {
-        question: 'How do you repair concrete in a way that lasts in Manly\'s salt air?',
+        question: 'What matters when planning concrete repairs in Manly?',
         answer:
-          'Proper preparation is everything. We cut back to sound concrete, treat the steel with corrosion inhibitor, use salt-resistant patch mortar, and apply a breathable protective coating. Shortcuts on any of those steps means the repair fails in a few years.',
+          'The repair design should follow investigation of the deterioration, reinforcement and water entry. Material choice, preparation, protective details and maintenance all matter; a patch alone does not establish that the underlying problem is resolved.',
       },
       {
         question: 'Can you work on strata-managed apartment buildings?',
         answer:
-          'Regularly. We\'re set up for strata jobs — insurance, WHS documentation, scaffolding, working with building managers and strata committees. Many of our Manly jobs are strata-run.',
+          'Send the strata contact, existing reports and proposed scope with the enquiry. Confirm approvals, design responsibilities, resident access and safety restrictions before contracting the work.',
       },
     ],
     nearbySlugs: ['dee-why', 'avalon', 'mosman'],
@@ -547,16 +535,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Dee Why Concrete Cancer & Coastal Masonry | Romans',
     metaDescription:
-      'Concrete cancer repair, salt damage treatment and apartment block masonry in Dee Why. Romans works on strata buildings across the Northern Beaches.',
+      'Dee Why masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Concrete cancer repair, coastal masonry and apartment block restoration across Dee Why and Collaroy.',
     intro: [
-      'Dee Why has a lot of mid-century apartment blocks, and a lot of them have concrete cancer. It\'s what we spend most of our time on in this suburb. Balconies, parapets, columns — if the concrete is exposed to salt air and hasn\'t been maintained, it\'s cracking somewhere.',
-      'Strata committees call us in regularly to assess buildings. We prepare a scope, give a realistic budget and staging plan, and handle the work with all the documentation strata needs. The goal is always to fix properly the first time — salt-resistant materials, correct steel treatment, proper protective coatings.',
-      'We also do residential work in Dee Why — retaining walls, brick repointing, render repairs. The hilly sections back from the beach mean retaining walls are a regular job.',
+      'For a Dee Why apartment building, distinguish damage at balconies, slab edges and render surfaces. A condition report and a marked-up elevation can make the scope clearer than isolated close-up photographs.',
+      'If residents need to remain on site, identify entrances, parking and areas below the proposed work. A quotation should explain access and protection allowances as well as the visible repairs.',
     ],
     housingContext:
-      'Dee Why has 1960s-80s apartment blocks, some Interwar homes, and newer residential. Apartment concrete cancer is widespread. Salt air affects everything within a kilometre of the beach. Hillside blocks have retaining walls that need drainage. Brickwork suffers from salt crystallisation in coastal-facing walls.',
+      'Coastal position is one exposure factor, not a diagnosis. Inspection should consider leaks, previous patches and the condition of the affected material before deciding on local repair or broader work.',
     services: [
       'Concrete cancer assessment and repair',
       'Apartment balcony restoration',
@@ -569,17 +556,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How do strata committees get a proper concrete cancer quote?',
         answer:
-          'We start with a site inspection — usually free for strata-managed buildings. We identify all visible damage, probe to find hidden damage, and provide a written scope and budget. Many jobs are staged over 2-3 years to spread cost.',
+          'Obtain an appropriate condition assessment and defined scope, with engineering input where structural elements are affected. Give each contractor the same documents and ask them to identify access allowances, exclusions and uncertain quantities.',
       },
       {
         question: 'What is the difference between spalling and concrete cancer?',
         answer:
-          'Spalling is the visible damage — flaking, chunks of concrete falling off. Concrete cancer is the cause — rusting steel reinforcement expanding inside the concrete. Treating spalling without treating the steel means the problem comes back.',
+          'Spalling describes material breaking away from a surface. Concrete cancer is an informal term often used for reinforcement-corrosion damage. Spalling can have other causes, so the terms do not replace an assessment.',
       },
       {
         question: 'Do you provide warranties on concrete repair work?',
         answer:
-          'Yes. Standard 5-year workmanship warranty on our repairs. Materials typically have manufacturer warranties of 10-15 years. We document everything so strata has a clear record.',
+          'Ask for any proposed contractual warranty, exclusions and maintenance requirements in writing before acceptance. A marketing statement should not substitute for the contract or applicable statutory rights, and no specific warranty is promised here.',
       },
     ],
     nearbySlugs: ['manly', 'avalon', 'chatswood'],
@@ -591,16 +578,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Avalon Retaining Walls & Coastal Masonry | Romans',
     metaDescription:
-      'Retaining walls, sandstone restoration and coastal masonry in Avalon. Romans handles sloped blocks and period homes on Sydney\'s Northern Beaches.',
+      'Avalon masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Retaining walls, sandstone work and coastal masonry across Avalon, Palm Beach and Newport.',
     intro: [
-      'Avalon and the northern end of the Northern Beaches is retaining wall country. The steep blocks running down to the beaches mean most properties have multiple levels of retaining, and many of the old walls are failing. Salt air plus hilly terrain plus sandy soil is a hard combination for any wall.',
-      'We build and repair retaining walls with proper drainage — ag pipes, drainage blankets, weep holes. That\'s what makes the difference between a 50-year wall and a 10-year wall. Stone is our specialty, whether it\'s natural sandstone blocks or engineered block faced with stone veneer.',
-      'We also do a lot of coastal masonry repair up here — rendered homes with salt damage, brick walls that have lost their mortar, concrete steps and paths that have failed. The right materials and proper detailing is what makes coastal work last.',
+      'For an Avalon wall or stone garden feature, show the slope, access route and nearby structures in the enquiry. Narrow or stepped access can affect excavation, material handling and protection of landscaping.',
+      'A leaning retaining wall needs assessment before choosing between repair and rebuilding. Do not dig behind it to investigate drainage or add loads near the edge while its stability is uncertain.',
     ],
     housingContext:
-      'Avalon has a mix of older homes, newer architect-designed builds and beachfront apartments. Steep, often sandy blocks mean retaining walls are everywhere. Salt air affects everything within a few hundred metres of the beach. Many properties have extensive stonework — retaining, garden walls, pool surrounds, paving.',
+      'Ground conditions, retained height, water management and loads influence retaining-wall design. Neither sandstone selection nor footing depth can be determined from the suburb alone.',
     services: [
       'Sandstone retaining wall construction',
       'Drainage and ag pipe installation',
@@ -613,17 +599,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My retaining wall is leaning. Can it be fixed without full demolition?',
         answer:
-          'Sometimes. If the foundation is sound and the lean is minor, we can stabilise with drainage improvements and tie-backs. If the wall is badly damaged or poorly founded, rebuilding is more cost-effective long-term.',
+          'Possibly, but stability and the cause of movement must be assessed first. An engineer should consider the wall, footings, drainage and loads before deciding whether repair is viable. Keep people clear of an unstable wall.',
       },
       {
         question: 'What\'s the right stone for an Avalon retaining wall?',
         answer:
-          'Most properties match the local Sydney sandstone character. We can supply natural sandstone blocks in a range of finishes. For engineered walls, concrete block with a sandstone veneer gives strength plus the right look.',
+          'Stone selection should follow the wall design, exposure and desired finish. Size, strength, bedding and compatible construction details matter alongside appearance; a supplier sample is not a structural design.',
       },
       {
         question: 'How deep does a retaining wall footing need to be?',
         answer:
-          'Depends on wall height and soil. For a 1m wall on stable ground, often 500-700mm. For taller walls or sandy soil, often deeper with wider pads. We engineer each wall for its specific site.',
+          'Footing dimensions require site-specific design considering ground conditions, wall geometry, loads and drainage. Do not use a generic depth or excavate beside an existing wall without appropriate professional advice.',
       },
     ],
     nearbySlugs: ['dee-why', 'manly', 'lane-cove'],
@@ -637,16 +623,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Newtown Terrace Restoration & Brick Repointing | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage brick repair in Newtown. Romans handles period homes across Sydney\'s Inner West.',
+      'Newtown masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace restoration, tuckpointing and heritage brick repair across Newtown and Enmore.',
     intro: [
-      'Newtown is full of Victorian terraces, and most of them need brick work. The original lime mortar has weathered out of the joints on buildings 120+ years old, and many have had cement repointing done badly in the past. Cement mortar on old soft brick causes the bricks to decay faster than they should.',
-      'We do a lot of repointing in Newtown. Rake out the old mortar, match the lime mix to the original, and repoint to the correct profile. On higher-end Victorian terraces, that includes tuckpointing — the decorative fine white line in dark mortar that\'s a signature of the period.',
-      'Heritage rules are taken seriously here. Inner West Council has strict requirements for anything that changes the appearance of a terrace. We handle the documentation and work to approved materials.',
+      'For a Newtown terrace, identify which elevations can be accessed and whether the damaged wall adjoins another property. Front-facade work may be straightforward to photograph while side and rear conditions remain unknown.',
+      'Surviving pointing, sill details and earlier repair patches help establish a suitable scope. Do not strip paint or remove mortar to uncover the original finish before the material and heritage implications have been considered.',
     ],
     housingContext:
-      'Newtown is almost entirely Victorian terraces from 1870-1900, with some Federation buildings. Handmade soft brick and lime mortar are the norm. Many terraces have had incorrect repointing in past decades. Tuckpointed brickwork is common on higher-end terraces. Iron balcony lacework and sandstone detailing on window surrounds and sills are frequent.',
+      'A narrow terrace can contain different bricks and mortar from successive alterations. Repair choices should reflect those differences and the condition of each wall, not assume a single original mix throughout.',
     services: [
       'Victorian terrace lime mortar repointing',
       'Tuckpointing restoration',
@@ -659,17 +644,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How much does repointing a Newtown terrace cost?',
         answer:
-          'Front facade of a single-width terrace typically $8,000-15,000 depending on condition, height and whether tuckpointing is involved. Full external repointing usually $20,000-40,000. We quote per job after inspection.',
+          'Cost depends on joint condition, access, decorative finishes and the extent of brick replacement. Provide elevations and any conservation scope, then compare written quotes with the same inclusions rather than relying on a typical terrace price.',
       },
       {
         question: 'Does Inner West Council need approval for terrace repointing?',
         answer:
-          'Exempt development covers like-for-like repairs with matching materials. Anything changing appearance or using different materials usually needs approval. We advise on your specific situation.',
+          'Confirm the responsible council for the address and check the heritage status and work proposed. Like-for-like repointing is not automatically exempt; obtain any required confirmation before work starts.',
       },
       {
         question: 'Can you fix crumbling bricks without replacing them?',
         answer:
-          'For minor surface damage, consolidation treatments can extend brick life. For significantly decayed bricks, replacement with matching reclaimed handmade bricks is the proper fix.',
+          'Some damaged faces may be conserved, while other bricks need replacement. The decision depends on depth of decay, structural role and moisture sources. A surface coating or filler should not be assumed to restore a failing brick.',
       },
     ],
     nearbySlugs: ['marrickville', 'leichhardt', 'balmain'],
@@ -681,16 +666,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Balmain Heritage Masonry & Sandstone Restoration | Romans',
     metaDescription:
-      'Heritage terrace masonry, sandstone and brick restoration in Balmain. Romans handles period homes and waterfront properties across the Inner West.',
+      'Balmain masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage terrace masonry, sandstone work and brick restoration across Balmain and Rozelle.',
     intro: [
-      'Balmain has a rich mix of Victorian terraces, workers cottages and freestanding Federation homes. The peninsula means many properties have waterfront exposure and salt damage on top of normal age-related wear. We see a lot of brick decay, sandstone weathering and mortar erosion from the combination of age and salt.',
-      'Most of our Balmain work is heritage brick and sandstone restoration. Repointing with lime mortar, replacing decayed bricks with matched reclaimed ones, and repairing sandstone steps, sills and feature walls. The character of the suburb depends on these details being done properly.',
-      'We also handle retaining walls — Balmain has plenty of sloped blocks, and old sandstone walls from the 1800s are common. Many need full or partial rebuild with proper drainage to last another century.',
+      'For a Balmain cottage or terrace, show sandstone details in relation to adjoining brickwork. Damp at a wall base, a weathered sill and a cracked retaining wall are separate issues even if they occur on the same property.',
+      'Where access is through the house or a narrow side passage, mention that early. Repair planning should account for occupants, shared boundaries and protection of original finishes.',
     ],
     housingContext:
-      'Balmain has Victorian terraces, Workers cottages from 1880s-1910s, Federation homes and later conversions. Sandstone feature walls, steps and retaining walls are widespread. Waterfront salt exposure affects the perimeter of the peninsula. Many older buildings have been repointed with cement in past decades, causing ongoing brick decay.',
+      'Stone, brick and later cement patches may respond differently to moisture. Visible salts need investigation of the moisture source before cleaning, coatings or replacement materials are selected.',
     services: [
       'Heritage terrace brick restoration',
       'Sandstone retaining and feature walls',
@@ -703,17 +687,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My Balmain terrace has salt damage. What can be done?',
         answer:
-          'Treat the cause, then the symptoms. We remove failed render or pointing, treat salts with breathable consolidants, and rebuild with salt-resistant materials. Cement-based renders trap salt and make the problem worse — we always use breathable lime-based systems on older buildings.',
+          'Identify where moisture and salts are entering before selecting a treatment. A conservation assessment can guide drainage and compatible material repairs. Avoid abrasive cleaning or sealing the surface as an assumed cure.',
       },
       {
         question: 'Can you match sandstone on a 140-year-old Balmain workers cottage?',
         answer:
-          'Yes. Sydney sandstone is still quarried and we match grain, colour and tooling. For visible repairs we weather-match so the new stone blends in.',
+          'Compare sound existing stone for grain, texture, tooling and dimensions. A sample and the proposed repair detail should be reviewed before replacement is agreed; retaining sound original stone may be the better option.',
       },
       {
         question: 'How do I know if my terrace needs structural work or just cosmetic?',
         answer:
-          'Cracks that are growing, doors and windows that stick, or walls that bulge are signs of structural movement. We assess, and if structural engineering input is needed we bring in an engineer. Cosmetic-only issues — like weathered pointing — we handle directly.',
+          'A photograph cannot establish whether damage is cosmetic. New or changing cracks, displaced masonry or loose material need professional assessment, particularly around openings and supports. Keep clear if a wall appears unstable.',
       },
     ],
     nearbySlugs: ['newtown', 'leichhardt', 'marrickville'],
@@ -725,16 +709,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Marrickville Terrace & Warehouse Masonry | Romans',
     metaDescription:
-      'Terrace restoration, warehouse conversion masonry and brick repointing in Marrickville. Romans handles period homes and commercial buildings in the Inner West.',
+      'Marrickville masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Terrace restoration, warehouse masonry and brick repointing across Marrickville and Dulwich Hill.',
     intro: [
-      'Marrickville has a strong mix of Victorian and Federation terraces plus a lot of old industrial brick buildings that have been converted or are being converted. Warehouse conversions have their own challenges — old structural brickwork that\'s never had proper maintenance, large spans, and heritage considerations.',
-      'For residential work, our Marrickville jobs are mostly repointing, brick replacement and sandstone step repair. The terraces here are similar to Newtown — Victorian soft brick, lime mortar originally, often cement repointed in the past and now needing proper restoration.',
-      'For the commercial and warehouse buildings, we handle structural brickwork, facade repair, concrete work and full remedial scopes. These buildings are often 100+ years old and need careful work to convert without destroying the character that makes them worth converting.',
+      'A Marrickville warehouse enquiry should identify the intended use and any changes to openings or internal walls. Exposing brick for appearance is different from altering masonry that supports floors or roof elements.',
+      'For an occupied shop or workshop, note delivery access, dust-sensitive areas and operating hours. For a terrace renovation, coordinate masonry assessment with proposed windows, services and drainage changes.',
     ],
     housingContext:
-      'Marrickville has Victorian terraces, Federation homes, Interwar houses and significant industrial/warehouse building stock. Warehouses are typically 1890s-1940s with structural brickwork, timber floors and sawtooth roofs. Residential buildings are mostly soft brick with lime mortar originally. Inner West Council heritage rules apply to many streets.',
+      'Older industrial brickwork can include repairs and alterations that are not obvious beneath finishes. Cleaning trials and structural review should precede assumptions about the finished surface or suitability for conversion.',
     services: [
       'Terrace lime mortar repointing',
       'Warehouse structural brick repair',
@@ -747,17 +730,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can old warehouse brickwork be restored for residential conversion?',
         answer:
-          'Usually, yes. We clean the brickwork, repoint with appropriate mortar and repair any damaged bricks. Exposed internal brickwork is a strong feature in converted warehouses. We also handle any structural reinforcement needed.',
+          'It may be possible, but a conversion needs assessment of the structure, condition and applicable approvals. Cleaning and repointing are only part of the scope; altered openings and changes of use need separate design consideration.',
       },
       {
         question: 'Do you do commercial masonry on buildings in operation?',
         answer:
-          'Yes. We stage work, use containment and coordinate with tenants and building management. Most of our commercial jobs happen without operational disruption.',
+          'An enquiry should set out operating hours, access restrictions and activities that cannot tolerate dust or noise. Safe occupancy and staging need agreement before work, and some areas may require temporary closure.',
       },
       {
         question: 'Is repointing worth it on a terrace that needs a full reno?',
         answer:
-          'Depends on timing. If the reno is years away, sealing the brickwork now stops further damage. If the reno is imminent, it can be timed together. We advise per situation.',
+          'Assess the masonry before finalising the renovation scope. Necessary weatherproofing or structural work may affect other trades, while sound joints can be retained. Repointing is not automatically needed across the entire building.',
       },
     ],
     nearbySlugs: ['newtown', 'leichhardt', 'balmain'],
@@ -769,16 +752,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Leichhardt Terrace Restoration & Masonry | Romans',
     metaDescription:
-      'Victorian terrace restoration, tuckpointing and heritage masonry in Leichhardt. Romans handles period homes across Sydney\'s Inner West.',
+      'Leichhardt masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace restoration, heritage repointing and tuckpointing across Leichhardt and Annandale.',
     intro: [
-      'Leichhardt has some of the finest preserved Victorian streetscapes in the Inner West. Long rows of single and two-storey terraces from the 1880s-90s, tuckpointed brick, cast-iron lacework and sandstone detailing. These buildings need specialised care, and the wrong work can destroy their character.',
-      'Most of our Leichhardt work is tuckpointing and lime mortar repointing. Tuckpointing is a precise decorative technique that takes time to do properly — the dark base mortar, the white putty fillet run through the centre, matched to the original width and profile. Get it wrong and the facade looks off.',
-      'We also do sandstone restoration on steps, window surrounds and garden walls, brick replacement where bricks have decayed past saving, and chimney repairs. The whole point of a Leichhardt terrace is the detail — we keep it intact.',
+      'For a Leichhardt facade, photograph surviving fine-line pointing and sheltered joints before discussing restoration. Small intact sections can be useful references for the pattern and joint profile.',
+      'If only one elevation is affected, identify where a staged repair could finish naturally. Changes in brick, previous patches and adjoining properties can influence how a new section will read.',
     ],
     housingContext:
-      'Leichhardt is dominated by Victorian terraces from 1880-1900, with some Federation. Handmade soft brick with lime mortar, often originally tuckpointed. Iron lintels, sandstone sills and surrounds, decorative cast-iron lacework. Many terraces have been incorrectly repointed with cement in past decades. Heritage conservation applies to most streets.',
+      'Tuckpointing is a decorative finish rather than a cure for unstable or damp masonry. Assess brick condition and moisture first, then decide what original detail can be retained and what needs repair.',
     services: [
       'Tuckpointing restoration',
       'Lime mortar repointing',
@@ -791,17 +773,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'What exactly is tuckpointing and how is it different from normal pointing?',
         answer:
-          'Tuckpointing is two materials applied in layers — a dark coloured mortar flush with the brick face, with a fine thin fillet of white lime putty run through the centre of each joint. It creates the illusion of very precise, very fine brickwork. Normal pointing is just one mortar filling the joint.',
+          'Ordinary repointing renews deteriorated mortar joints. Tuckpointing adds a fine decorative line over a background joint finish. The appropriate treatment depends on the original detail and the condition of the wall.',
       },
       {
         question: 'How do I know if my terrace originally had tuckpointing?',
         answer:
-          'Look closely at the joints. If you can see traces of a thin white line running through dark mortar, or if the brickwork has a particularly refined look, it was probably tuckpointed originally. Most Victorian-era middle and upper-class terraces in Leichhardt were.',
+          'Look for surviving lines in sheltered areas and older photographs without scraping or grinding the wall. A specialist can assess whether traces are original and whether a restoration sample is justified.',
       },
       {
         question: 'Can tuckpointing be done in sections or does the whole facade need doing?',
         answer:
-          'It can be staged. We often do the front facade first, then sides and back as budget allows. Done in stages, it spreads the cost but the work still looks cohesive if we match the mix and profile consistently.',
+          'Localised work may be suitable where surrounding masonry is sound. Agree the stopping points and compare a sample first, because colour and weathering differences can remain visible between stages.',
       },
     ],
     nearbySlugs: ['newtown', 'balmain', 'marrickville'],
@@ -815,16 +797,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Parramatta Commercial & Heritage Masonry | Romans',
     metaDescription:
-      'Commercial masonry, heritage restoration and structural repairs in Parramatta. Romans handles brick, sandstone and facade repairs across Sydney\'s second CBD.',
+      'Parramatta masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Commercial masonry, heritage restoration and structural repairs across Parramatta and Westmead.',
     intro: [
-      'Parramatta is Sydney\'s second CBD and one of the oldest continuously occupied parts of Australia. The mix of heritage colonial buildings, mid-century commercial and modern high-rise creates a wide spread of masonry work. From colonial sandstone at Old Government House to commercial facade repairs on Church Street, we handle it all.',
-      'The heritage work in Parramatta is significant. Buildings like Elizabeth Farm, Experiment Farm Cottage and the row of Georgian sandstone buildings in the old civic core need specialised restoration. We work with heritage consultants and council to keep this work to proper conservation standards.',
-      'For commercial work, Parramatta has a lot of 1970s-90s buildings now reaching the age where concrete cancer, facade repair and structural remediation become necessary. We handle strata, commercial and council-owned buildings across the area.',
+      'A Parramatta enquiry should distinguish a historic stone building from a later commercial facade or suburban brick home. Each needs a scope based on its construction and present condition.',
+      'For commercial repairs, provide available reports and identify public access beneath the affected area. For historic fabric, include listing information and any conservation plan before discussing replacement or cleaning.',
     ],
     housingContext:
-      'Parramatta has colonial sandstone heritage, Victorian and Federation suburban homes, mid-century commercial, and modern high-rise. Clay-rich soils cause foundation movement in some areas. Commercial buildings from 1970s-90s commonly need concrete remediation. Heritage buildings need traditional lime mortars and matched materials.',
+      'Cracks and surface deterioration can have several causes. The age of the building or its location does not determine whether a repair needs mortar work, structural design or investigation of moisture.',
     services: [
       'Heritage colonial sandstone restoration',
       'Commercial facade repair',
@@ -837,17 +818,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Do you work on City of Parramatta Council heritage properties?',
         answer:
-          'Yes. We have worked on heritage-listed buildings in Parramatta and are familiar with council and NSW Heritage requirements. We prepare documentation and work to approved scopes.',
+          'Provide the address, listing information and repair proposal. Confirm the relevant council and Heritage NSW requirements before work, including whether any exemption conditions apply to the particular scope.',
       },
       {
         question: 'My commercial building needs concrete cancer repair. How do we start?',
         answer:
-          'Site inspection first. We assess the damage, identify the scope, and provide a written quote. For larger commercial jobs, we often stage the work across multiple visits to manage disruption and budget.',
+          'Start with a condition assessment and engineering input for affected structural elements. Share reports and access requirements so a proposed scope can distinguish investigation, safety measures and the proposed repairs.',
       },
       {
         question: 'Can you do emergency structural work?',
         answer:
-          'Yes. For emergencies — failed lintels, bulging walls, collapsed retaining — we can mobilise quickly to make safe and then assess proper repair.',
+          'Do not wait for a routine quote if there is immediate danger: move away from unstable masonry and contact emergency services. For non-immediate structural concerns, arrange prompt professional assessment. Emergency attendance or availability is not promised on this page.',
       },
     ],
     nearbySlugs: ['strathfield', 'chatswood', 'lane-cove'],
@@ -859,16 +840,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Strathfield Masonry & Heritage Home Restoration | Romans',
     metaDescription:
-      'Brick repointing, sandstone and heritage masonry repair enquiries in Strathfield. Discuss materials, access and scope with Romans Building Services.',
+      'Strathfield masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Brick repointing, sandstone and heritage masonry repair enquiries in Strathfield. Discuss materials, access and scope with Romans Building Services.',
     intro: [
-      'For a Strathfield period home, show original brick or stone details and any previous repointing in your photographs. Material matching and conservation requirements should be considered before agreeing the scope.',
-      'Heritage repointing, sandstone restoration, retaining walls, chimney rebuilds — these are all everyday jobs for us in Strathfield. Many of the grand homes here have significant decorative stonework: columns, balustrades, window surrounds, entrance porches. Keeping these intact needs the right materials and the patience to match original work.',
-      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+      'For a Strathfield period home, show columns, balustrades and retaining walls separately from ordinary facade joints. A decorative appearance does not mean an element has no structural or safety role.',
+      'Include earlier repair drawings or specifications where available. A replacement stone sample should be considered alongside the support detail and any conservation requirements.',
     ],
     housingContext:
-      'Strathfield has Federation mansions from 1900-1915, Interwar homes from 1920s-40s, Victorian and some mid-century builds. Significant stonework is common — columns, balustrades, retaining walls, decorative detailing. Brick is usually handmade or early pressed. Clay soils cause foundation movement in some pockets. Heritage conservation covers many streets.',
+      'Large features can contain concealed fixings and earlier repairs. Assess stability and material condition before deciding whether conservation, partial replacement or a more extensive intervention is appropriate.',
     services: [
       'Federation and Interwar home restoration',
       'Sandstone column and balustrade repair',
@@ -881,17 +861,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can I enquire about a repair in Strathfield?',
         answer:
-          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+          'Send the suburb, photographs taken safely and a description of the affected masonry. Include access restrictions and any reports so assessment, scope and availability can be discussed.',
       },
       {
         question: 'Do you work on Strathfield Council heritage-listed homes?',
         answer:
-          'Regularly. We know the council requirements, the heritage consultants who work in the area, and we prepare documentation to the standard council expects.',
+          'Share the property listing and intended work, then confirm applicable approvals or exemption conditions before starting. A suburb guide cannot establish consent requirements for an individual property.',
       },
       {
         question: 'Can you restore decorative sandstone columns and balustrades?',
         answer:
-          'Yes. We cut replacement stone to match originals, carve details where needed and install with matched mortar. For heavily weathered original stone, we consolidate where possible rather than replacing entire elements.',
+          'An assessment should consider the stone, joints, fixings and structural role. Do not lean on a loose balustrade or disturb a cracked column; restrict access where stability is uncertain and seek professional advice.',
       },
     ],
     nearbySlugs: ['parramatta', 'newtown', 'chatswood'],
@@ -905,16 +885,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/sydney-cbd',
     metaTitle: 'Pyrmont Masonry & Warehouse Conversion Work | Romans',
     metaDescription:
-      'Warehouse conversion brickwork, heritage sandstone and apartment concrete repairs in Pyrmont. Romans handles industrial-era buildings across the inner city.',
+      'Pyrmont masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Warehouse conversion brickwork, heritage sandstone and apartment concrete work across Pyrmont and Darling Harbour.',
     intro: [
-      'Pyrmont is old industrial Sydney reborn as apartments and offices. A lot of the buildings here are 1890s–1930s warehouses converted to residential and commercial use, and the structural brickwork underneath needs proper care. When these conversions were done in the 90s and 2000s, many of them skipped the proper repointing and structural brick restoration — 20-30 years later, it is catching up.',
-      'We work on the heritage sandstone around Pyrmont Point and the older warehouse conversions throughout the peninsula. Structural brick repair, lintel replacement where steel has corroded, repointing with appropriate mortar, and sandstone restoration on the remaining original frontages.',
-      'The other big job in Pyrmont is concrete cancer on the newer apartment blocks. Salt air comes up the harbour, and many of the blocks built in the 1990s–2000s have concrete issues on balconies, parapets and exposed slabs.',
+      'For a Pyrmont warehouse conversion, separate the wish to expose brick from any structural alterations. Original openings, later infill and finishes can affect what can safely be retained or revealed.',
+      'Apartment enquiries should include the strata contact, available condition reports and the affected level or elevation. Balcony and facade access can be a major part of the scope.',
     ],
     housingContext:
-      'Pyrmont has 1890s–1930s warehouses (many converted), early apartment buildings, and 1990s–present high-density residential. Heritage sandstone along the water edge. Structural brick from the warehouse era often needs repointing with lime-compatible mortar. Newer concrete buildings near the water show early concrete cancer from salt air. Mixed commercial and residential makes strata work common.',
+      'Historic masonry and newer reinforced concrete need different assessment methods. Proximity to the water is relevant to exposure but does not prove corrosion or establish a repair method.',
     services: [
       'Warehouse conversion brick restoration',
       'Heritage sandstone repair (Pyrmont Point)',
@@ -927,17 +906,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can old Pyrmont warehouse brickwork be exposed as a feature?',
         answer:
-          'Yes — it is one of the most sought-after looks in Pyrmont conversions. We clean the brick, repoint with appropriate mortar, and replace any damaged bricks with matched reclaimed stock. Exposed internal brickwork adds character and value if done properly.',
+          'Potentially, following assessment of the brick, finishes and wall function. A small specialist cleaning trial can inform the finish; aggressive blasting or unplanned coating removal can damage original material and create hazardous dust.',
       },
       {
         question: 'Do you work with strata committees in Pyrmont?',
         answer:
-          'Regularly. Pyrmont has a lot of strata-managed apartment blocks, and we are set up for the insurance, WHS documentation and staged work programs strata committees need.',
+          'Include the manager or committee contact and any approved investigation scope. Clarify who can authorise work, arrange access and obtain any required design or approval documents before a programme is agreed.',
       },
       {
         question: 'How serious is concrete cancer on a 20-year-old Pyrmont apartment?',
         answer:
-          'Depends on how close to the water the building is and whether the original concrete cover was adequate. Buildings right on the water edge often show early signs at 15–20 years. Inland Pyrmont blocks tend to last longer. An inspection gives you a real answer rather than a guess.',
+          'Building age does not establish severity. Rust staining, exposed reinforcement or loose concrete should be assessed promptly, with engineering input for structural elements. Keep people clear of the affected area and falling material.',
       },
     ],
     nearbySlugs: ['ultimo', 'the-rocks', 'balmain'],
@@ -949,16 +928,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/sydney-cbd',
     metaTitle: 'Ultimo Terrace & Warehouse Masonry | Romans',
     metaDescription:
-      'Victorian terrace brick restoration, warehouse conversion masonry and heritage repointing in Ultimo. Romans Building Services works across Sydney\'s inner city.',
+      'Ultimo masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace brick, warehouse masonry and heritage repointing across Ultimo and Chippendale.',
     intro: [
-      'Ultimo mixes Victorian terraces, old warehouses and modern apartment blocks in a tight inner-city grid. Our work here is mostly on the pre-war housing stock — terrace rows, converted industrial buildings, and the occasional Federation shopfront. All of it needs proper heritage materials to stay in shape.',
-      'We do a lot of repointing in Ultimo terraces, and quite a few tuckpointing restorations on the higher-end rows. The bricks are usually soft handmade Sydney brick, which means lime mortar is the correct material — cement pointing done decades ago has damaged bricks on many houses here.',
-      'The warehouse conversions around Harris Street and the industrial blocks toward Chippendale need their own approach. Exposed structural brickwork with proper repointing, new lintels where steel has failed, and careful cleaning to preserve character.',
+      'For an Ultimo terrace or converted warehouse, describe street access and whether the ground floor remains in commercial use. Frontage work may need to account for residents, customers and deliveries at the same time.',
+      'If the budget is limited, identify the immediate concern and ask for a scope that separates necessary repairs from optional appearance work. A partial facade repair should still address relevant moisture and structural issues.',
     ],
     housingContext:
-      'Ultimo has Victorian terraces from 1870s–1900s, converted warehouses from 1880s–1920s, Federation shopfronts, and newer apartment blocks. Handmade soft brick with lime mortar is the norm for pre-war work. Incorrectly cement-repointed terraces are common. Mixed-use streets mean both residential and commercial heritage work.',
+      'Mixed-use buildings can contain several phases of brickwork and repair. Review the existing material and heritage status before specifying removal of pointing, render or paint.',
     services: [
       'Victorian terrace repointing',
       'Tuckpointing restoration',
@@ -971,17 +949,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Is my Ultimo terrace heritage-listed?',
         answer:
-          'Much of Ultimo is in a Heritage Conservation Area under City of Sydney Council, even if individual terraces are not separately listed. Work that changes the appearance of the building usually needs council consent. We handle the documentation.',
+          'Check the property address against council heritage mapping and the State Heritage Register. A building can be affected by conservation-area controls without being individually listed; confirm the proposed work requirements before starting.',
       },
       {
         question: 'Can you do just the front facade repointing if budget is tight?',
         answer:
-          'Yes. Front facade is the priority on most terraces — it is what is visible and takes the most weather. Sides and rear can be done later in stages without looking disjointed, as long as the mortar mix is matched consistently.',
+          'A staged scope may be appropriate if the remaining masonry is sound and urgent defects are addressed. Discuss stopping points, access costs and the appearance of repaired sections rather than assuming the front is the only area needing attention.',
       },
       {
         question: 'How long does repointing an Ultimo terrace facade take?',
         answer:
-          'Typical single-width terrace front facade: 2–3 weeks including rake-out, pointing and curing. Full external: 4–6 weeks. We work in stages so the house stays watertight throughout.',
+          'Timing depends on joint condition, access, protection, weather and curing requirements. Ask for a programme based on inspection and the agreed scope, including any restrictions on using entrances or windows.',
       },
     ],
     nearbySlugs: ['pyrmont', 'newtown', 'darlinghurst'],
@@ -995,16 +973,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Coogee Concrete Cancer & Coastal Masonry | Romans',
     metaDescription:
-      'Concrete cancer treatment, salt damage repair and coastal masonry in Coogee. Romans handles apartment blocks and homes across Sydney\'s east.',
+      'Coogee masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Concrete cancer, salt damage and coastal masonry restoration across Coogee, Clovelly and Bronte.',
     intro: [
-      'Coogee takes a battering from the ocean. Salt air chews through mortar, rusts reinforcement and destroys render. Most apartment blocks along the beachfront and the side streets running down to it have concrete cancer somewhere — it is the most common job we do in this pocket of Sydney.',
-      'The older homes in the back streets around Coogee, Clovelly and Bronte are also showing their age. Salt damage on brickwork, failing render, cracked retaining walls on the steep blocks. We fix these with breathable materials that actually hold up in coastal conditions.',
-      'For apartment blocks, we work with strata committees on staged concrete cancer programs — assess the whole building, do the urgent work first, and schedule less urgent repairs for later years to spread cost.',
+      'For a Coogee coastal-facing wall, show the pattern of cracking or flaking across the whole elevation. Include a note about rain-related leaks and earlier repairs rather than assuming salt is the only cause.',
+      'Apartment balcony concerns should go to building management with existing reports or safe photographs. Access below overhead defects needs to be controlled before close inspection.',
     ],
     housingContext:
-      'Coogee has 1960s–80s apartment blocks dominating the beachfront and side streets, with older Federation and Interwar homes through the residential zones. Heavy salt exposure on every building. Concrete cancer is widespread on mid-century apartment blocks. Render fails regularly on coastal-facing walls. Retaining walls on sloped streets often need drainage remediation.',
+      'Render, masonry and reinforced concrete may deteriorate for different reasons. Exposure, moisture paths and substrate condition should inform the specification instead of a single product recommendation for the suburb.',
     services: [
       'Concrete cancer repair on apartment blocks',
       'Balcony and parapet restoration',
@@ -1017,17 +994,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How common is concrete cancer in Coogee apartment blocks?',
         answer:
-          'Very common. Most apartment blocks in Coogee built between 1960 and 1990 have concrete cancer on balconies, parapets or columns. Salt air accelerates steel corrosion dramatically. If your block is in this age range, it is worth an inspection.',
+          'No local prevalence figure is established here. A condition inspection is more useful than building age or location for assessing a particular block. Rust stains, loose concrete and exposed reinforcement warrant prompt professional attention.',
       },
       {
         question: 'Can you work on strata-managed buildings in Coogee?',
         answer:
-          'Regularly. We carry the insurance, do the WHS documentation, work with building managers, and stage work across multiple years when needed to fit strata budgets.',
+          'Send the strata contact, condition report and affected elevations with the enquiry. A proposed scope should address resident access, design requirements and any approval conditions before work is authorised.',
       },
       {
         question: 'Why does my render keep falling off on the ocean-facing wall?',
         answer:
-          'Salt crystallising behind the render pushes it off from inside. The fix is to remove failed render, treat the substrate, and re-render with a breathable salt-resistant system. Standard cement render and waterproof paint make it worse.',
+          'Water entry, salts, poor adhesion and movement are possible contributors. Assess the wall and existing coating before choosing a replacement finish; breathable products alone do not resolve every cause of detachment.',
       },
     ],
     nearbySlugs: ['bondi', 'randwick', 'bellevue-hill'],
@@ -1039,16 +1016,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Randwick Masonry & Heritage Home Restoration | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and retaining walls in Randwick. Romans handles period properties across Sydney\'s east.',
+      'Randwick masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Federation home restoration, heritage brick and retaining walls across Randwick and Kensington.',
     intro: [
-      'Randwick has a big mix of building stock — grand Federation homes, Interwar houses, Victorian terraces and newer apartment blocks. The Federation period homes around the racecourse and the higher streets are what we spend most of our time on: sandstone detailing, brick repointing, chimney work, and retaining walls on the hilly blocks.',
-      'Randwick is far enough back from the coast that salt damage is less aggressive than Coogee or Bondi, but the mature trees and sloped blocks mean foundation movement is common. We see a lot of stair-step cracks in brickwork caused by reactive clay and tree roots — fixable with proper diagnosis and helical bar stitching.',
-      'For heritage properties we work with Randwick Council heritage requirements and use the right materials: lime mortar, matched brick, proper sandstone sourcing. The old homes here deserve better than a cement patch job.',
+      'For a Randwick house with cracks, include the affected openings and any changes to adjoining paving or drainage. Mention recent renovations and when the change was first noticed.',
+      'Retaining-wall enquiries need views of both the wall and the ground it supports, taken from a safe location. Nearby trees and buildings are relevant to assessment but should not be assumed to be the cause of movement.',
     ],
     housingContext:
-      'Randwick has Federation homes 1900–1915, Victorian terraces 1880–1900, Interwar houses 1920s–40s, and modern apartment blocks. Sloped blocks are common — retaining walls everywhere. Mature trees cause foundation movement on some properties. Building Heritage Conservation Areas cover parts of the suburb. Sandstone detailing on period homes is frequent.',
+      'Period masonry, additions and garden structures can have different support conditions. A repair decision should consider those relationships rather than treating every stepped crack as the same foundation problem.',
     services: [
       'Federation home brick restoration',
       'Sandstone detail and step repair',
@@ -1061,17 +1037,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'My Randwick Federation home has stair-step cracks. What causes it?',
         answer:
-          'Most commonly reactive clay soils moving with seasonal moisture, or tree roots drawing water from under the footings. Both cause gentle differential movement that cracks rigid brickwork. We assess whether movement is active or finished, and repair with helical bar stitching and matched pointing.',
+          'Possible causes include support movement, thermal movement or issues around openings, among others. A professional assessment should identify the likely cause and whether engineering or ground investigation is needed before selecting a repair.',
       },
       {
         question: 'Do you work on heritage-listed properties in Randwick?',
         answer:
-          'Yes. We work to Randwick Council heritage requirements and handle the documentation for council consent. Matched materials — lime mortar, reclaimed brick, Sydney sandstone — are standard on heritage work.',
+          'Include the property listing, conservation documents and intended scope. Confirm the applicable consent or exemption pathway before work; matching materials does not by itself establish that approval is unnecessary.',
       },
       {
         question: 'How much does a retaining wall rebuild cost in Randwick?',
         answer:
-          'Heritage sandstone walls typically $2,500–$4,000 per square metre. Engineered block with stone veneer $1,200–$2,500 per sqm. Access affects cost a lot — steep sites with tight access can add 20–30% to the job.',
+          'The quote needs a defined scope, site levels, access and design information. Drainage, excavation, disposal and protection of nearby structures can affect cost, so a general per-metre figure is not a reliable project price.',
       },
     ],
     nearbySlugs: ['coogee', 'bondi', 'woollahra'],
@@ -1083,16 +1059,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/eastern-suburbs',
     metaTitle: 'Bellevue Hill Heritage Stone & Masonry | Romans',
     metaDescription:
-      'Heritage stone restoration, period home masonry and retaining walls in Bellevue Hill. Romans works on high-end Eastern Suburbs properties.',
+      'Bellevue Hill masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage stone restoration, period home masonry and multi-level retaining walls across Bellevue Hill and Rose Bay.',
     intro: [
-      'Bellevue Hill has some of the most significant period homes in Sydney — Federation mansions, Interwar Georgian revivals, Mediterranean villas. These properties need tradespeople who understand the scale, the materials, and the standards. We have worked in this area for over 20 years.',
-      'The work is mostly sandstone restoration and heritage masonry. Columns, balustrades, window surrounds, steps, garden walls, multi-level retaining walls down to the harbour. A lot of it is weathered original stone that needs consolidation rather than replacement, and careful matching where replacement is unavoidable.',
-      'Retaining walls are a constant in Bellevue Hill. Many of the grand homes sit on multiple levels of sandstone retaining — when the drainage fails, whole gardens can shift. We rebuild with proper ag-pipe drainage and engineered footings so the fix lasts.',
+      'For a Bellevue Hill property with extensive stonework, identify which features need assessment: a retaining wall, porch, balustrade or paving. Photograph the relationship between the feature and surrounding ground levels.',
+      'Earlier alterations can affect drainage and support at the junction of old and new work. Drawings, repair records and the architect or consultant scope can help avoid specifying a cosmetic repair over a wider problem.',
     ],
     housingContext:
-      'Bellevue Hill has Federation mansions, Interwar Georgian and Mediterranean Revival homes, with some Victorian. Large blocks with significant stonework — retaining walls, columned porches, balustrades, stone paving. Multiple renovations over the decades often create layered problems. Heritage Conservation Areas are strict about appearance.',
+      'Weathered stone varies across sheltered and exposed faces. A matching sample needs to be considered alongside the structural detail and the amount of original fabric that can be retained.',
     services: [
       'Heritage sandstone restoration',
       'Multi-level retaining wall rebuild',
@@ -1105,17 +1080,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can you work with architects on heritage Bellevue Hill projects?',
         answer:
-          'Regularly. Many of our larger Bellevue Hill and Rose Bay jobs are architect-led. We work to spec, attend site meetings, and deliver on scope and programme.',
+          'Provide the consultant brief, drawings and material requirements with the enquiry. Agree responsibilities for assessment, design, approvals and construction before committing to a repair programme.',
       },
       {
         question: 'How do you match weathered sandstone on a 100-year-old home?',
         answer:
-          'Sydney sandstone is still quarried, so we source matching stone from active quarries. For visible repairs, we weather-match the new stone — either natural aging with time or accelerated patina — so it blends with the surrounding aged stone.',
+          'Compare grain, bedding, texture, dimensions and tooling as well as colour. Trial samples help set realistic expectations; new stone may remain distinguishable from the surrounding weathered fabric.',
       },
       {
         question: 'My sandstone retaining wall is moving. Can it be saved?',
         answer:
-          'Depends on the footing and the extent of movement. If the footing is sound and drainage is the problem, we can often stabilise with drainage works and tie-backs. If the wall has failed structurally, rebuild with matched stone is the right answer.',
+          'An engineer needs to assess the cause and stability before deciding whether repair is viable. Keep clear of moving or bulging sections and avoid excavation or additional loads near the wall while it is being assessed.',
       },
     ],
     nearbySlugs: ['woollahra', 'double-bay', 'randwick'],
@@ -1129,16 +1104,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'Cremorne Heritage Masonry & Brick Restoration | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and retaining walls in Cremorne. Romans Building Services works across Sydney\'s Lower North Shore.',
+      'Cremorne masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Federation home restoration, heritage brick and retaining walls across Cremorne and Cammeray.',
     intro: [
-      'Cremorne is full of beautiful Federation and Interwar homes on leafy streets. Character bricks, sandstone detailing, decorative lacework — all of it needs looking after properly. Most of these homes are 90–120 years old and the mortar, chimneys and sandstone are overdue for attention.',
-      'Our Cremorne work is mostly heritage repointing, chimney repair, and sandstone restoration on steps, pillars and garden walls. We also handle retaining walls on the sloped blocks running toward the harbour — many are failing because the drainage behind them has packed up over the decades.',
-      'We know the Lower North Shore well and have worked across Cremorne, Cammeray, Neutral Bay and Mosman for over 20 years. If your Federation home needs masonry attention, we are a logical call.',
+      'For a Cremorne chimney enquiry, provide a safe ground-level view showing the stack and roofline. Close photographs are useful only if they already exist; do not climb to obtain them.',
+      'For facade mortar repairs, include sheltered joints and visible earlier patches. Where a garden wall is also involved, describe levels and access separately so it is not treated as ordinary facade repointing.',
     ],
     housingContext:
-      'Cremorne has Federation homes from 1900–1915 and Interwar houses from 1920s–40s, with some earlier Victorian. Mature trees on many blocks. Sandstone retaining walls on sloped streets. Character brick with lime mortar on pre-war homes. North Sydney Council heritage rules apply in parts of the suburb.',
+      'Chimneys, brick walls and sandstone features need different assessment of exposure and support. Colour matching alone does not establish mortar compatibility or the extent of repair required.',
     services: [
       'Federation home repointing',
       'Sandstone retaining wall rebuild',
@@ -1151,17 +1125,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How do I know if my chimney needs repair?',
         answer:
-          'Water stains on ceilings near the flue, mortar crumbling at the top, loose bricks, or a visible lean are all signs. If rust stains run down the external brickwork, the internal cramps or flashing may have failed. An inspection gives you a clear scope.',
+          'Visible leaning, loose masonry, open joints or new cracks warrant assessment. Keep clear of any falling-material risk and seek urgent advice if the stack appears unstable; roof access should be left to appropriately equipped professionals.',
       },
       {
         question: 'Does North Sydney Council need approval for heritage repair work?',
         answer:
-          'For properties in Heritage Conservation Areas or separately listed heritage items, yes. Like-for-like minor repairs are usually exempt but anything changing appearance typically needs consent. We handle the documentation.',
+          'Check the address, listing status and proposed scope with the council before work. Heritage exemptions have conditions, and State-listed items may have additional requirements. Do not assume minor repairs are automatically exempt.',
       },
       {
         question: 'Can you match the original mortar colour on a 110-year-old Cremorne home?',
         answer:
-          'Yes. We take samples, mix trial batches, and test against the existing before committing to scope. Lime mortar matched to the original colour, texture and profile is standard on heritage work.',
+          'Colour, texture, aggregate and joint profile should be compared with sound existing work. A trial panel can inform the choice, but compatibility with the brick and exposure is as important as the visual match.',
       },
     ],
     nearbySlugs: ['neutral-bay', 'mosman', 'lane-cove'],
@@ -1173,16 +1147,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/north-shore',
     metaTitle: 'St Leonards Commercial Masonry & Facade Repair | Romans',
     metaDescription:
-      'Commercial facade repair, concrete cancer treatment and remedial masonry in St Leonards. Romans handles office buildings and apartments.',
+      'St Leonards masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Commercial facade work, concrete cancer and remedial masonry across St Leonards and Crows Nest.',
     intro: [
-      'St Leonards is commercial high-rise and mid-century apartment country, with pockets of older residential running toward Crows Nest. Our work here is a mix of commercial facade repair, concrete cancer treatment on apartment blocks, and the occasional heritage home in the quieter streets.',
-      'The commercial buildings along the Pacific Highway and near the train station often need facade remediation — render repair, concrete work, structural brickwork upgrades. We coordinate with building management so tenants keep operating while we work.',
-      'Apartment blocks from the 60s–80s are the other big job. Concrete cancer on balconies and parapets, salt-resistant rendering, and strata-managed programs staged over multiple years.',
+      'For a St Leonards commercial facade, identify entrances, loading bays and areas beneath the affected elevation. Access and protection can be significant even for a small patch high on the building.',
+      'Supply any condition report and distinguish investigation from an agreed repair scope. Tenant hours, dust-sensitive uses and emergency exits should be part of planning rather than an afterthought.',
     ],
     housingContext:
-      'St Leonards has commercial high-rise, mid-century apartment blocks, Interwar houses and some Federation. Commercial facades from the 60s–90s often need concrete and render remediation. Apartment blocks commonly have concrete cancer. Residential work tends to be brick repointing and structural repair on older homes.',
+      'Concrete, render and brickwork need separate assessment. A surface defect does not show the full extent of concealed deterioration, so quotations should identify assumptions and how additional findings would be handled.',
     services: [
       'Commercial facade restoration',
       'Concrete cancer repair',
@@ -1195,17 +1168,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can you do commercial facade work without disrupting tenants?',
         answer:
-          'Yes. We stage work, use containment for dust, and coordinate with building management around tenant hours. Most commercial facade work in St Leonards is done without tenants noticing much beyond the scaffold.',
+          'A disruption-free outcome cannot be assumed. Discuss staging, temporary exclusions, noise and dust controls with management and tenants before agreeing the work; some activities may need areas to close.',
       },
       {
         question: 'How do you price commercial remedial work?',
         answer:
-          'Usually priced against an engineering scope or condition report. If no report exists yet, we inspect and provide a written scoped quote. For larger jobs we often stage the work across multiple years.',
+          'A defined scope, measured areas, access requirements and design documents support a useful quote. Ask for clear allowances, exclusions and a process for additional defects found during investigation or opening up.',
       },
       {
         question: 'Do you work after-hours on commercial properties?',
         answer:
-          'When needed — yes. We can do noisy or high-traffic work outside tenant hours. Costs a bit more but sometimes it is the only way to keep operations running.',
+          'Discuss the required hours with the enquiry. Availability, building rules, consent conditions, noise restrictions and safe access all need confirmation before any after-hours programme is agreed.',
       },
     ],
     nearbySlugs: ['chatswood', 'lane-cove', 'neutral-bay'],
@@ -1219,16 +1192,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Collaroy Coastal Masonry & Concrete Cancer | Romans',
     metaDescription:
-      'Concrete cancer repair, salt damage treatment and coastal masonry in Collaroy. Romans handles beachfront apartments and homes.',
+      'Collaroy masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Concrete cancer, salt damage and coastal masonry across Collaroy and Narrabeen.',
     intro: [
-      'Collaroy is beachfront Northern Beaches country. Salt air is relentless, storm damage is a real thing, and buildings show the wear. Apartment blocks along the beachfront and homes in the sloped streets behind all have the same issues: rusting reinforcement in concrete, render failing in patches, mortar eaten out of brickwork, retaining walls losing their grip.',
-      'Concrete cancer is the biggest job in Collaroy — most apartment blocks built before 1990 have it somewhere. We cut back to sound concrete, treat the steel with corrosion inhibitor, patch with salt-resistant mortar, and apply breathable protective coatings that actually hold up in this environment.',
-      'We also handle coastal render repair, retaining walls and general masonry across the Narrabeen and Collaroy area. The work that lasts here is the work done with the right materials — breathable, salt-resistant, and properly detailed.',
+      'For a Collaroy beachfront property, mention recent storm damage, water entry and changes since earlier inspections. Show the affected element and surrounding area only from a safe position.',
+      'Balconies, parapets and exposed slab edges need attention to falling-material risk as well as appearance. Where damage follows a storm, professional assessment should come before routine patching or coating.',
     ],
     housingContext:
-      'Collaroy has beachfront apartment blocks from 1960s–80s, mid-century homes, and newer beach houses. Heavy coastal salt exposure. Concrete cancer common on apartment balconies, parapets and exposed slabs. Sandy soil on some blocks affects retaining walls. Storm damage from big swells can cause structural issues on beachfront properties.',
+      'Exposure varies with orientation, shelter and building details. A beachfront address alone does not identify the cause or severity of concrete, render or retaining-wall damage.',
     services: [
       'Concrete cancer assessment and repair',
       'Balcony and parapet restoration',
@@ -1241,17 +1213,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How bad is salt damage in beachfront Collaroy apartments?',
         answer:
-          'Severe. Buildings directly on the beachfront take 2–3x the salt load of inland apartments. Reinforcement concrete cancer is often visible by 15–20 years on beachfront blocks if the original concrete cover was marginal. Regular inspections and proactive repair are the only way to keep ahead of it.',
+          'The extent needs inspection of the particular building. Exposure history, leaks and previous repairs are useful context; they do not replace assessment of loose concrete, reinforcement and structural condition.',
       },
       {
         question: 'What is the right render for a Collaroy beachfront home?',
         answer:
-          'A breathable salt-resistant render — lime-based or polymer-modified, never a rigid cement render with acrylic paint. The render needs to let moisture escape from the wall rather than trapping salt inside.',
+          'The render and coating specification should suit the substrate, exposure and moisture behaviour. Investigate why an existing finish failed before choosing another, rather than assuming a particular binder or paint is suitable everywhere.',
       },
       {
         question: 'How often should a Collaroy apartment block have a condition inspection?',
         answer:
-          'For blocks within 500m of the beach, we recommend full condition inspections every 5 years. Sooner if concrete cancer has been identified in any section. Between inspections, keep an eye on balconies and parapets — if you see rust stains or cracks, call for a look.',
+          'Ask the building professional to set an inspection programme based on condition, exposure and repair history. New cracks, loose material or storm damage need attention when they appear rather than waiting for a calendar interval.',
       },
     ],
     nearbySlugs: ['dee-why', 'manly', 'avalon'],
@@ -1263,16 +1235,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/northern-beaches',
     metaTitle: 'Freshwater Coastal Masonry & Heritage Home Restoration | Romans',
     metaDescription:
-      'Coastal masonry repairs, heritage home restoration and concrete work in Freshwater. Romans handles salt damage and period homes.',
+      'Freshwater masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage home restoration, coastal masonry and concrete work across Freshwater and Harbord.',
     intro: [
-      'Freshwater has a mix of older residential — Federation and Interwar homes — plus some apartment blocks and newer builds. The village area and the streets running down to the beach are full of character homes that need proper masonry care.',
-      'Our Freshwater work splits between heritage repointing on older homes and concrete cancer treatment on apartment blocks near the beach. Salt exposure is lighter than directly beachfront Manly but still a factor on any building within a few hundred metres of the ocean.',
-      'Retaining walls are also common here — the sloped blocks and sandy soil mean walls need proper drainage to last. We build and rebuild with ag-pipe drainage and appropriate footings so the job holds up.',
+      'For a Freshwater home, describe which elevation faces the weather and whether the concern is mortar, render or stone steps. Shelter and drainage can differ considerably around one property.',
+      'A step repair enquiry should show the whole flight, edges and adjoining paving. Keep off loose or unstable steps and use another safe route while their condition is assessed.',
     ],
     housingContext:
-      'Freshwater has Federation homes, Interwar houses, 1960s–80s apartment blocks and newer infill. Moderate coastal salt exposure. Sandy soil on some blocks. Older homes often need lime mortar repointing. Apartment blocks within a few hundred metres of the beach show concrete cancer.',
+      'Material selection should follow the existing substrate, exposure and defect. Distance from the beach alone is not enough to prescribe a render system or decide how much masonry needs replacement.',
     services: [
       'Federation home brick restoration',
       'Coastal concrete repair',
@@ -1285,17 +1256,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Do I need the same materials as beachfront Manly for my Freshwater home?',
         answer:
-          'Usually yes — Freshwater is close enough to the coast that salt is a factor on any external work. Breathable systems, salt-resistant renders, and lime-based materials on heritage walls are the right call.',
+          'Not necessarily. The actual exposure, substrate and moisture conditions should guide the specification. A sheltered brick wall and an exposed concrete balcony can need different treatment even on the same property.',
       },
       {
         question: 'Can you repair sandstone steps on a Freshwater Federation home?',
         answer:
-          'Yes. For steps that are structurally sound we consolidate and repair. For steps that have lost too much stone, we cut and install replacement sandstone matched to the original.',
+          'The assessment should consider remaining stone, support, wear and safe use. Conservation repair or partial replacement may be possible, but the method cannot be selected from appearance alone.',
       },
       {
         question: 'How long does a Freshwater coastal render job last?',
         answer:
-          'With proper specification — breathable render, salt-resistant systems, mineral paint — 20–30 years. With wrong materials (cement render + acrylic paint) it can fail in 5–10 years.',
+          'There is no dependable suburb-wide lifespan. The underlying cause, preparation, compatible materials, exposure and maintenance all affect performance. Ask for the proposed specification and maintenance advice rather than a fixed-years promise.',
       },
     ],
     nearbySlugs: ['manly', 'dee-why', 'collaroy'],
@@ -1309,16 +1280,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Glebe Victorian Terrace Restoration | Romans',
     metaDescription:
-      'Victorian terrace brick restoration, tuckpointing and heritage repointing in Glebe. Romans works on period homes in Sydney\'s Inner West.',
+      'Glebe masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace restoration, tuckpointing and heritage repointing across Glebe and Forest Lodge.',
     intro: [
-      'Glebe is one of Sydney\'s most intact Victorian suburbs. Long rows of terraces, many of them tuckpointed, with sandstone detailing and cast-iron lacework. These streetscapes are what make Glebe what it is, and keeping them in shape means proper heritage work.',
-      'Our Glebe jobs are mostly tuckpointing and lime mortar repointing. The original lime has weathered out of joints on most 140-year-old terraces, and many have had badly done cement repointing in past decades. We rake out the bad repair, repoint properly with matched lime mortar, and restore tuckpointing where it was original.',
-      'Sandstone restoration is also common — steps, window surrounds, sills, garden walls. Working with Inner West Council heritage requirements, we use the right materials and get the finish right so the repair blends in.',
+      'For a Glebe terrace, record surviving decorative joints, sandstone sills and earlier repairs before preparing a facade scope. Sheltered sections can help establish the original appearance without disturbing the surface.',
+      'If repointing and sandstone repairs are both proposed, ask for them to be distinguished in the scope. Access, protection of entrances and the setting of any trial panels also need planning.',
     ],
     housingContext:
-      'Glebe is dominated by Victorian terraces 1870s–1900s, with some Federation. Handmade soft brick, lime mortar originally, often tuckpointed on higher-end rows. Iron lintels, sandstone detailing. Many incorrectly cement-repointed. Conservation Areas cover most streets.',
+      'Older terrace walls can include sound original mortar alongside local deterioration. Repair should respond to condition and compatible materials rather than assume every joint needs replacement.',
     services: [
       'Victorian terrace repointing',
       'Tuckpointing restoration',
@@ -1331,17 +1301,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How much does full tuckpointing restoration cost in Glebe?',
         answer:
-          'Front facade of a single-width tuckpointed terrace typically $10,000–$18,000. Full external $25,000–$45,000 depending on size, condition and access. Every job is different — firm quote after inspection.',
+          'Cost depends on the extent of deteriorated joints, decorative detail, brick repairs and access. Request a measured scope and sample requirements before comparing quotes; a frontage price alone can omit important work.',
       },
       {
         question: 'What is the best time of year to repoint in Sydney?',
         answer:
-          'Autumn and spring are ideal — mild temperatures and humidity, no extreme heat, less rain than winter. Summer heat accelerates lime mortar curing too fast and can weaken the bond. We work year-round with adjusted techniques.',
+          'Suitable conditions depend on the specified mortar and protection arrangements. Heat, rain and drying conditions affect planning and curing, so agree the programme around the repair requirements rather than a fixed seasonal rule.',
       },
       {
         question: 'Can you match the original dark-and-white tuckpointing on my Glebe terrace?',
         answer:
-          'Yes. Tuckpointing is our specialty — dark pigmented mortar flush, white lime putty fillet through the centre, matched to original width and profile. We take samples and do test panels before committing to scope.',
+          'A sample can be compared with surviving lines for colour, width and profile. Establish the original detail first, and agree the trial before extending decorative work across the facade.',
       },
     ],
     nearbySlugs: ['newtown', 'balmain', 'leichhardt'],
@@ -1353,16 +1323,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Surry Hills Terrace & Warehouse Masonry | Romans',
     metaDescription:
-      'Victorian terrace restoration, warehouse conversion masonry and heritage brickwork in Surry Hills. Romans handles period buildings.',
+      'Surry Hills masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace restoration, warehouse masonry and heritage brickwork across Surry Hills and Redfern.',
     intro: [
-      'Surry Hills is terraces and old warehouse conversions stacked tight on narrow streets. A huge amount of our Inner East work happens here — repointing, tuckpointing, brick restoration, warehouse exposed-brick work, and the occasional heritage facade restoration.',
-      'The Victorian terraces in Surry Hills have the classic issues: weathered lime mortar, badly done cement repointing from past decades, soft handmade brick that needs proper care. Tuckpointed terraces on higher-end rows need specialist restoration.',
-      'The warehouse conversions around the fringes of Surry Hills and into Redfern are a different job — structural brickwork that has never been properly maintained, new lintels where steel has rusted, interior brick cleaning for exposed-brick features.',
+      'For a Surry Hills terrace or warehouse, describe the frontage, lane access and building use. A repair above a shop entrance needs different protection and staging from work in an unoccupied courtyard.',
+      'If exposed interior brick is the goal, include the existing finish and proposed use of the space. Removing coatings can reveal earlier alterations or fragile surfaces, so a trial should precede a whole-wall cleaning decision.',
     ],
     housingContext:
-      'Surry Hills has Victorian terraces 1870s–1900s, Federation buildings, and converted warehouses. Tight street grid means access is often a factor. Soft handmade brick with lime mortar on pre-war housing. Mixed residential and commercial heritage work. City of Sydney Council heritage rules apply in most of the suburb.',
+      'Terrace facades and warehouse walls can differ in structural role and finish. Access, original material and later alterations need to be understood before choosing a repair or cleaning method.',
     services: [
       'Victorian terrace repointing',
       'Tuckpointing restoration',
@@ -1375,17 +1344,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'How do you handle tight access on Surry Hills terrace work?',
         answer:
-          'Carefully. Many Surry Hills streets are too narrow for full scaffold across the front, so we use tight-access scaffold or split work over stages. Council permits for footpath occupation are arranged up front.',
+          'Identify delivery routes, scaffold space and public access early. The contractor and relevant authorities need to confirm suitable access arrangements and any permits; a narrow street does not establish which system is safe or available.',
       },
       {
         question: 'Can you do warehouse brick cleaning for an exposed-brick interior?',
         answer:
-          'Yes — we clean structural brickwork with appropriate methods (never sandblasting on soft handmade brick — it damages the brick face), repoint where needed, and replace any damaged bricks with matched reclaimed stock.',
+          'Discuss the brick condition, coatings and intended finish first. Specialist trials can identify an appropriate method; abrasive blasting or uncontrolled grinding can damage brick and generate hazardous dust.',
       },
       {
         question: 'Does my Surry Hills terrace need council approval for repointing?',
         answer:
-          'Like-for-like repointing with matched materials is usually exempt development. Changes to mortar colour, profile, or appearance typically need consent. We advise per project and handle documentation where needed.',
+          'Confirm heritage status and the scope with the council before work. Like-for-like work may still require an exemption request or other approval, and State heritage requirements may also apply.',
       },
     ],
     nearbySlugs: ['darlinghurst', 'newtown', 'paddington'],
@@ -1397,16 +1366,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/inner-west',
     metaTitle: 'Erskineville Terrace Restoration & Repointing | Romans',
     metaDescription:
-      'Victorian terrace restoration, heritage brick repointing and tuckpointing in Erskineville. Romans handles period homes in Sydney\'s Inner West.',
+      'Erskineville masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Victorian terrace restoration, heritage repointing and tuckpointing across Erskineville and Alexandria.',
     intro: [
-      'Erskineville and the surrounding streets are full of Victorian worker cottages and terraces. They were built quick and tight for factory workers in the 1880s–90s, with soft handmade brick and lime mortar. 130 years later, most need proper repointing — and many have been repointed badly with cement, causing brick decay.',
-      'We do a lot of repointing in Erskineville. Rake out the old mortar by hand, match the lime mix to the original, repoint to correct profile. On the terraces that originally had tuckpointing, we restore it — the fine white line in dark mortar that defines Victorian streetscapes.',
-      'Sandstone sills, iron lintels, brick replacement — all standard on terraces this age. We source matched reclaimed bricks and proper sandstone for visible repairs so the finished work looks right.',
+      'For an Erskineville cottage or terrace, show the affected wall and the openings around it. Small frontages can still need careful access and protection of adjoining entrances.',
+      'Cracks above a window should be assessed with the support detail and wider wall in view. Do not remove mortar, bricks or a lintel to investigate the cause yourself.',
     ],
     housingContext:
-      'Erskineville has Victorian terraces and workers cottages 1880s–1900s, Federation buildings, and industrial conversions. Soft handmade brick, lime mortar. Many incorrectly cement-repointed. Iron lintels rust and cause brick cracking above windows. Close to industrial areas means some properties have additional pollution-weathering on stonework.',
+      'Older brick, later additions and replacement lintels may coexist within one house. A repair should reflect the actual construction rather than assume the same mortar or support detail throughout.',
     services: [
       'Victorian terrace repointing',
       'Workers cottage restoration',
@@ -1419,17 +1387,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Are Erskineville workers cottages heritage-listed?',
         answer:
-          'Many are in Heritage Conservation Areas under Inner West Council, even where individual properties are not separately listed. Work changing appearance usually needs council consent. We handle documentation where needed.',
+          'Check the address against the relevant council mapping and State Heritage Register. Individual listing and conservation-area status are different, and either may affect proposed work. Confirm the applicable requirements before starting.',
       },
       {
         question: 'How much does repointing an Erskineville worker cottage cost?',
         answer:
-          'Single-width cottage front facade typically $5,000–$10,000. Full external $12,000–$25,000. Cheaper than grander terraces because cottages are smaller, but still quality work with lime mortar and matched pointing.',
+          'A quote needs the affected elevations, condition, access and any decorative pointing or replacement bricks. A smaller cottage is not automatically a simple repair; ask for the scope and exclusions in writing.',
       },
       {
         question: 'Why do my bricks crack above the window?',
         answer:
-          'Almost always a rusting iron lintel. The steel corrodes over decades, expands 7x its volume, and pushes the bricks apart. Replacing the lintel and repairing the brickwork is the fix — ignoring it means the crack grows and eventually the bricks above the window fail.',
+          'Lintel corrosion is one possibility, but support movement and other causes need consideration. Arrange assessment before choosing lintel replacement or crack repair, and keep clear if masonry appears loose or displaced.',
       },
     ],
     nearbySlugs: ['newtown', 'marrickville', 'glebe'],
@@ -1443,16 +1411,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Burwood Masonry & Heritage Home Restoration | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and retaining walls in Burwood. Romans handles heritage masonry, period homes and structural repairs.',
+      'Burwood masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Federation home restoration, heritage repointing and retaining walls across Burwood and Croydon.',
     intro: [
-      'For a Burwood masonry enquiry, show the affected wall, original detailing and any nearby openings. Mention heritage status, earlier repairs and access restrictions when discussing a site assessment.',
-      'Our Burwood work is mostly heritage repointing, chimney rebuilds, sandstone restoration on steps and detailing, and retaining walls on sloped blocks. Reactive clay soils in parts of Burwood cause foundation movement on some properties — we stitch cracks with helical bars after diagnosing whether the movement is active or finished.',
-      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+      'For a Burwood period-home repair, include the whole elevation and any decorative columns, sills or garden walls involved. Show earlier patches and explain whether cracks or damp have changed recently.',
+      'If foundation movement is suspected, share existing reports and recent drainage or renovation history. Monitoring can contribute to investigation, but photographs or a short observation period do not prove that movement has ended.',
     ],
     housingContext:
-      'Burwood has Federation mansions from 1900s, Victorian homes, Interwar houses, and newer infill. Reactive clay soils cause some foundation movement. Mature gardens mean tree root issues on some blocks. Burwood Council heritage areas cover significant streets. Significant stonework on period homes — columns, balustrades, retaining walls.',
+      'Brickwork and stone features may have different supports and repair histories. Neither the suburb nor a stair-step crack identifies the soil type or establishes a need for crack stitching or underpinning.',
     services: [
       'Federation home repointing',
       'Heritage chimney repair',
@@ -1465,17 +1432,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can I enquire about a repair in Burwood?',
         answer:
-          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+          'Send the suburb, safe photographs and a description of the repair. Mention access restrictions, existing reports and any listing information so assessment, scope and availability can be discussed.',
       },
       {
         question: 'Do you work on Burwood Council heritage-listed homes?',
         answer:
-          'Regularly. We know Burwood Council\'s heritage requirements, the typical approval process, and we prepare documentation that meets council standards.',
+          'Provide the listing information and proposed scope for discussion. Confirm council and any State heritage requirements before work, including the conditions of any claimed maintenance exemption.',
       },
       {
         question: 'My Burwood home has stair-step cracks. Is it reactive clay?',
         answer:
-          'Often yes — reactive clay is common across parts of Burwood. Seasonal moisture change causes the soil to swell and shrink, moving footings and cracking brickwork. Crack monitors over a few months confirm whether movement is active or finished, which decides whether underpinning is needed.',
+          'Reactive soil is one possibility, not a diagnosis from the crack pattern. Professional assessment may need information on drainage, footings and ground conditions. Monitoring duration and any further investigation should be set for the particular property.',
       },
     ],
     nearbySlugs: ['strathfield', 'concord', 'homebush'],
@@ -1487,16 +1454,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Concord Masonry & Period Home Restoration | Romans',
     metaDescription:
-      'Federation home restoration, brick repointing and structural repairs in Concord. Romans Building Services works across Sydney\'s inner west.',
+      'Concord masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Federation and Interwar home restoration, repointing and retaining walls across Concord and Five Dock.',
     intro: [
-      'Concord is Federation and Interwar territory. Large blocks, big homes, lots of brick and sandstone detailing. Our work here is similar to Burwood and Strathfield — heritage repointing, chimney repair, retaining walls on sloped streets, and structural crack stitching where foundations have moved over the decades.',
-      'Concord has good quality original brickwork on most homes, which means proper lime mortar repointing keeps them in shape for another 50+ years. Cement repointing done in past decades is a common problem we reverse — removing the hard cement and repointing with lime that lets the bricks breathe.',
-      'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+      'For a Concord home, describe whether the concern is in the original building, an extension or a separate garden wall. Connections between these elements can help explain where investigation should start.',
+      'If doors stick or cracks change with weather, record the dates and relevant conditions without attempting to alter the structure. Existing plans and drainage repairs are useful context for the assessor.',
     ],
     housingContext:
-      'Concord has Federation homes from 1900s, Interwar houses from 1920s–40s, Victorian properties, and newer builds. Reactive clay in some pockets causes foundation movement. Sandstone detailing common on period homes. Canada Bay Council covers the area with its own heritage policies.',
+      'Period brickwork and sandstone details need assessment of both material condition and support. Repointing may address deteriorated joints, but it does not resolve every cause of cracking or damp.',
     services: [
       'Heritage lime mortar repointing',
       'Federation home chimney repair',
@@ -1507,19 +1473,19 @@ const SUBURBS: Record<string, SuburbData> = {
     ],
     faqs: [
       {
-        question: 'Does Canada Bay Council have strict heritage rules?',
+        question: 'How do I check heritage requirements for a Concord property?',
         answer:
-          'For listed heritage items and Conservation Areas, yes. Much of Concord falls under these protections. We prepare documentation and work to approved materials when heritage consent is needed.',
+          'Requirements depend on the address, listing and proposed work rather than a general description of council strictness. Confirm the consent or exemption pathway with the council before repair starts.',
       },
       {
         question: 'How do I know if my Concord home has reactive clay?',
         answer:
-          'Signs include doors and windows sticking after rain, stair-step cracks in brickwork, or cracks that open and close with seasons. A geotechnical test confirms soil type; crack monitors over 3–6 months confirm whether movement is ongoing.',
+          'Seasonal symptoms alone cannot establish soil type or the cause of movement. An appropriate professional can advise whether geotechnical investigation or monitoring is needed and how the findings should inform any repair.',
       },
       {
         question: 'Can you work with my architect or heritage consultant?',
         answer:
-          'Yes — regularly. Many of our larger jobs are run through architects or heritage consultants who prepare the scope and documentation. We deliver the work to spec.',
+          'Share the consultant scope, drawings and approval conditions with the enquiry. Agree who is responsible for design, material samples, approvals and construction before proceeding.',
       },
     ],
     nearbySlugs: ['strathfield', 'burwood', 'homebush'],
@@ -1531,16 +1497,15 @@ const SUBURBS: Record<string, SuburbData> = {
     parentAreaHref: '/areas/greater-sydney',
     metaTitle: 'Homebush Masonry & Home Restoration | Romans',
     metaDescription:
-      'Brick repointing, sandstone and masonry repairs. Discuss your property, access and repair scope with Romans Building Services.',
+      'Homebush masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
     heroTagline:
       'Heritage home restoration, brick repointing and retaining walls across Homebush and Homebush West.',
     intro: [
-      'For a Homebush repair, include a wide view of the facade and close photographs of failing mortar, damaged brick or sandstone. Note occupancy and access so an assessment can be planned around the property.',
-      'Our Homebush jobs are mostly repointing, chimney repair, sandstone work and retaining walls. The building stock is similar to Strathfield and Burwood — good quality period homes that need proper heritage-grade materials to stay in shape.',
-      'Reactive clay soils in parts of Homebush cause foundation movement on some properties. We diagnose with crack monitors, stitch cracks with helical bars, and underpin where the movement is still active.',
+      'For a Homebush masonry enquiry, show the affected facade, nearby openings and any sandstone details. Note whether the issue is isolated or also appears in an extension or boundary wall.',
+      'If the house will be occupied, describe access routes and rooms alongside the proposed work. Scaffold, dust, noise and temporary restrictions need to be considered when agreeing the scope.',
     ],
     housingContext:
-      'Homebush has Federation and Interwar homes, Victorian pockets, and newer infill. Close proximity to Strathfield means similar building stock and heritage character. Reactive clay in some areas. Strathfield Council covers the area with heritage protections in parts.',
+      'Brick, mortar and stone repairs should follow assessment of condition and moisture. Soil-related movement cannot be diagnosed by address, and underpinning should not be treated as the automatic next step for an active crack.',
     services: [
       'Heritage repointing',
       'Chimney repair and rebuild',
@@ -1553,17 +1518,17 @@ const SUBURBS: Record<string, SuburbData> = {
       {
         question: 'Can I enquire about a repair in Homebush?',
         answer:
-          'Romans serves Hawkesbury and Western Sydney and welcomes enquiries about existing Sydney service areas. Send your suburb, photographs and a description of the repair so Minas can discuss assessment, scope and availability.',
+          'Send the suburb, photographs taken safely and a short description of the affected area. Include access restrictions and any existing reports so the assessment, scope and availability can be discussed.',
       },
       {
         question: 'How much does heritage repointing cost on a Homebush Federation home?',
         answer:
-          'Single-storey Federation home front facade typically $6,000–$12,000. Full external $15,000–$35,000 depending on size, condition and access. Every job is different — firm quote after inspection.',
+          'Price depends on the extent of repair, access, brick or stone replacement and any decorative finish. Ask for a written scope following assessment rather than using a standard front-facade or whole-house price.',
       },
       {
         question: 'Can you do the work while we are living in the house?',
         answer:
-          'Yes — almost all external masonry work happens with the house fully occupied. Noise and scaffolding are the main disruptions but the house stays habitable throughout.',
+          'Possibly, but this depends on the work and site risks. Agree safe access, dust and noise controls and any exclusion areas before work. Some rooms or external areas may be unavailable, and continued occupancy cannot be promised in advance.',
       },
     ],
     nearbySlugs: ['strathfield', 'burwood', 'concord'],

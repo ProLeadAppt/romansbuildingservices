@@ -21,7 +21,7 @@ const values = [
     icon: HardHat,
     title: 'Owner on Site',
     description:
-      "Minas does not just quote the job. He does the job. That is why the standard stays the same.",
+      "Minas remains directly involved in assessment and site work. The team and any specialist input depend on the agreed scope.",
   },
 ];
 
@@ -39,12 +39,12 @@ const aboutFaqs = [
   {
     question: 'Who does the actual work?',
     answer:
-      'Minas is on the tools for anything heritage, structural or stonework. For larger jobs we bring in two or three of the senior crew. We do not subcontract the core masonry. Specialists like engineers, certifiers, and scaffolders are brought in as needed.',
+      'Minas remains directly involved in assessment and site work. The team depends on the project scope. Engineers, heritage advisers, certifiers and access specialists provide their own professional input where needed; confirm who is responsible for each part before work starts.',
   },
   {
     question: 'Why is the business called Romans?',
     answer:
-      'Family name shortened. Romanakis to Romans. The Roman builders also happened to be the people who first nailed the use of lime mortar and arches in the second century, which has held up alright. We will take the association.',
+      'Romans is a shortened form of the family name, Romanakis.',
   },
   {
     question: 'Do you have references?',
@@ -58,9 +58,8 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Romans | Minas Romanakis, Sydney Stonemason Since 1995"
-        description="Romans Building Services is run by Minas Romanakis. 30 years of heritage restoration and masonry across Sydney. Family-run, licenced, owner on every job."
+        description="Meet Minas Romanakis and Romans Building Services. Masonry and heritage restoration since 1995, based in The Slopes and serving Hawkesbury, Western Sydney and beyond."
         canonical="/about"
-        ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       />
       <PersonSchema />
       <FAQSchema faqs={aboutFaqs} />
@@ -101,7 +100,7 @@ export default function AboutPage() {
                     Minas Romanakis
                   </dd>
                   <p className="font-body text-xs text-text-muted mt-1">
-                    Master stonemason, on every job
+                    Founder and master stonemason
                   </p>
                 </div>
                 <div className="text-center">
@@ -110,7 +109,7 @@ export default function AboutPage() {
                   </dt>
                   <dd className="font-heading text-base text-navy leading-tight">The Slopes, NSW</dd>
                   <p className="font-body text-xs text-text-muted mt-1">
-                    Servicing all of Sydney
+                    Hawkesbury, Western Sydney and wider enquiries
                   </p>
                 </div>
                 <div className="text-center">
@@ -132,16 +131,7 @@ export default function AboutPage() {
         {/* Story Section */}
         <section className="bg-white py-16">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              {/* Left: Image */}
-              <div>
-                <img
-                  src="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
-                  alt="Minas Romanakis working on a masonry project"
-                  className="rounded-lg w-full object-cover"
-                />
-              </div>
-
+            <div className="max-w-3xl mx-auto">
               {/* Right: Story */}
               <div
                 className="space-y-6">
@@ -150,7 +140,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-text-secondary leading-relaxed">
                   Minas Romanakis started Romans Building Services in 1995 with one goal. Do the
-                  work properly and let it speak for itself. 30 years later that has not changed.
+                  work properly and let it speak for itself. That approach still guides the work.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   He grew up around stone and brick. His heritage gave him a deep respect for
@@ -193,24 +183,22 @@ export default function AboutPage() {
             </h2>
             <div className="font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
               <p>
-                Modern building is fast. The materials are designed to be quick to install and
-                easy to source. For new builds that is mostly fine. For old buildings it is the
-                wrong tool. A 120-year-old wall was built with materials that breathe. Modern
-                cement mortars do not breathe. Put modern cement against old brick and you trap
-                moisture inside the wall. The brick face starts to blow. The wall fails from
-                inside.
+                Older brick and stone can need a different repair approach from new masonry.
+                The replacement mortar must suit the existing material, exposure and moisture
+                behaviour. A mix that is too strong for softer masonry can contribute to damage;
+                choosing lime or cement by age alone is not a reliable specification.
               </p>
               <p>
-                The old methods are slower because they have to be. Lime mortar takes weeks to
-                cure properly. Sandstone has to be hand-dressed because no two blocks are the
-                same shape. Repointing a single course of a Victorian facade can take a full day.
-                There is no shortcut that does not show up later as a problem.
+                Matching starts with the actual wall: the stone or brick, the joint profile,
+                previous repairs and what can safely be retained. Samples or a small trial area
+                can help agree the finish and method before the main work begins. Heritage
+                requirements should be checked for the individual property.
               </p>
               <p>
-                We charge a fair price for slow work because the alternative costs more. Cheap
-                repointing today is a full rebuild in fifteen years. Cement render over old brick
-                is concrete cancer in twenty. Get the materials and the methods right the first
-                time and the work lasts longer than the people who did it.
+                A clear scope explains the repair method, materials, access, specialist input
+                and exclusions. Durability also depends on water management, exposure and
+                ongoing maintenance. No general description can promise a fixed lifespan
+                for a wall or diagnose its condition.
               </p>
             </div>
           </div>
@@ -244,9 +232,9 @@ export default function AboutPage() {
           intro="If you landed here to check who we are, these are the pages that usually matter next."
           items={[
             { label: 'Services', href: '/services', sublabel: 'What we actually do on site' },
-            { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first guides and SEO authority' },
-            { label: 'Case studies', href: '/case-studies', sublabel: 'Real jobs, not stock photos' },
-            { label: 'Areas we service', href: '/areas', sublabel: 'Sydney suburbs and regions' },
+            { label: 'Repair advice', href: '/learn', sublabel: 'Understand symptoms, materials and repair options' },
+            { label: 'Repair references', href: '/case-studies', sublabel: 'Repair questions and related services' },
+            { label: 'Our local service focus', href: '/areas/hawkesbury-western-sydney', sublabel: 'Hawkesbury and Western Sydney enquiry guidance' },
           ]}
           columns={2}
           background="off-white"
@@ -280,7 +268,7 @@ export default function AboutPage() {
                 Ready to talk about your project?
               </h2>
               <QuoteCTAButton
-                className="inline-block bg-amber text-white font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity">
+                className="inline-block bg-amber text-navy font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity">
                 Get in Touch
               </QuoteCTAButton>
             </div>

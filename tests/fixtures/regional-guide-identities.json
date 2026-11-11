@@ -1,0 +1,240 @@
+{
+  "areas": {
+    "hawkesbury-western-sydney": {
+      "slug": "hawkesbury-western-sydney",
+      "name": "Hawkesbury and Western Sydney",
+      "shortName": "Hawkesbury and Western Sydney",
+      "href": "/areas/hawkesbury-western-sydney",
+      "suburbs": [],
+      "topProblems": [],
+      "problemKeys": []
+    },
+    "sydney-cbd": {
+      "slug": "sydney-cbd",
+      "name": "Sydney CBD",
+      "shortName": "the CBD",
+      "href": "/areas/sydney-cbd",
+      "suburbs": [
+        "the-rocks",
+        "circular-quay",
+        "darlinghurst",
+        "pyrmont",
+        "ultimo"
+      ],
+      "topProblems": [
+        "tuckpointing-restoration",
+        "sandstone-weathering",
+        "crumbling-mortar",
+        "damaged-lintels",
+        "rising-damp"
+      ],
+      "problemKeys": [
+        "tuckpointing-restoration",
+        "sandstone-weathering",
+        "crumbling-mortar",
+        "damaged-lintels",
+        "rising-damp"
+      ]
+    },
+    "eastern-suburbs": {
+      "slug": "eastern-suburbs",
+      "name": "Eastern Suburbs",
+      "shortName": "the Eastern Suburbs",
+      "href": "/areas/eastern-suburbs",
+      "suburbs": [
+        "paddington",
+        "woollahra",
+        "bondi",
+        "double-bay",
+        "bellevue-hill",
+        "coogee",
+        "randwick"
+      ],
+      "topProblems": [
+        "concrete-cancer",
+        "sandstone-weathering",
+        "efflorescence-salt-damage",
+        "cracked-brick-walls",
+        "tuckpointing-restoration"
+      ],
+      "problemKeys": [
+        "concrete-cancer",
+        "sandstone-weathering",
+        "efflorescence-salt-damage",
+        "cracked-brick-walls",
+        "tuckpointing-restoration"
+      ]
+    },
+    "north-shore": {
+      "slug": "north-shore",
+      "name": "North Shore",
+      "shortName": "the North Shore",
+      "href": "/areas/north-shore",
+      "suburbs": [
+        "mosman",
+        "neutral-bay",
+        "chatswood",
+        "lane-cove",
+        "cremorne",
+        "st-leonards"
+      ],
+      "topProblems": [
+        "concrete-cancer",
+        "sandstone-weathering",
+        "leaking-balconies",
+        "efflorescence-salt-damage",
+        "cracked-brick-walls"
+      ],
+      "problemKeys": [
+        "concrete-cancer",
+        "sandstone-weathering",
+        "leaking-balconies",
+        "efflorescence-salt-damage",
+        "cracked-brick-walls"
+      ]
+    },
+    "northern-beaches": {
+      "slug": "northern-beaches",
+      "name": "Northern Beaches",
+      "shortName": "the Northern Beaches",
+      "href": "/areas/northern-beaches",
+      "suburbs": [
+        "manly",
+        "dee-why",
+        "avalon",
+        "collaroy",
+        "freshwater"
+      ],
+      "topProblems": [
+        "concrete-cancer",
+        "efflorescence-salt-damage",
+        "sandstone-weathering",
+        "leaking-balconies",
+        "spalling-render"
+      ],
+      "problemKeys": [
+        "concrete-cancer",
+        "efflorescence-salt-damage",
+        "sandstone-weathering",
+        "leaking-balconies",
+        "spalling-render"
+      ]
+    },
+    "inner-west": {
+      "slug": "inner-west",
+      "name": "Inner West",
+      "shortName": "the Inner West",
+      "href": "/areas/inner-west",
+      "suburbs": [
+        "newtown",
+        "balmain",
+        "marrickville",
+        "leichhardt",
+        "glebe",
+        "surry-hills",
+        "erskineville"
+      ],
+      "topProblems": [
+        "tuckpointing-restoration",
+        "cracked-brick-walls",
+        "crumbling-mortar",
+        "rising-damp",
+        "foundation-movement"
+      ],
+      "problemKeys": [
+        "tuckpointing-restoration",
+        "cracked-brick-walls",
+        "crumbling-mortar",
+        "rising-damp",
+        "foundation-movement"
+      ]
+    },
+    "greater-sydney": {
+      "slug": "greater-sydney",
+      "name": "Sydney Metro",
+      "shortName": "Sydney metro",
+      "href": "/areas/greater-sydney",
+      "suburbs": [
+        "parramatta",
+        "strathfield",
+        "burwood",
+        "concord",
+        "homebush"
+      ],
+      "topProblems": [
+        "cracked-brick-walls",
+        "foundation-movement",
+        "failing-retaining-walls",
+        "crumbling-mortar",
+        "rising-damp"
+      ],
+      "problemKeys": [
+        "cracked-brick-walls",
+        "foundation-movement",
+        "failing-retaining-walls",
+        "crumbling-mortar",
+        "rising-damp"
+      ]
+    }
+  },
+  "hawkesbury": {
+    "slug": "hawkesbury-western-sydney",
+    "name": "Hawkesbury and Western Sydney",
+    "shortName": "Hawkesbury and Western Sydney",
+    "href": "/areas/hawkesbury-western-sydney",
+    "housingProfile": "Repair scope depends on the individual building, material, access, drainage and any heritage or engineering requirements. Share photographs and existing reports before an assessment.",
+    "suburbs": [],
+    "topProblems": [],
+    "problemNotes": {}
+  },
+  "servicePairs": [
+    [
+      "heritage-restoration",
+      "sydney-cbd"
+    ],
+    [
+      "heritage-restoration",
+      "eastern-suburbs"
+    ],
+    [
+      "heritage-restoration",
+      "inner-west"
+    ],
+    [
+      "heritage-restoration",
+      "north-shore"
+    ],
+    [
+      "masonry",
+      "sydney-cbd"
+    ],
+    [
+      "masonry",
+      "eastern-suburbs"
+    ],
+    [
+      "masonry",
+      "inner-west"
+    ],
+    [
+      "concrete-repairs",
+      "northern-beaches"
+    ],
+    [
+      "concrete-repairs",
+      "eastern-suburbs"
+    ],
+    [
+      "foundation-repairs",
+      "greater-sydney"
+    ]
+  ],
+  "hubSkeletons": {
+    "src/pages/areas/SydneyCBDPage.tsx": "b8c5a71b327e4510cee394a16e17996c13f412d68be331149c25dda2864a6fe7",
+    "src/pages/areas/EasternSuburbsPage.tsx": "4db117cc3ca29b7b742c0fa555f4ca1683607cd314e22d34a5ccf4440018cc89",
+    "src/pages/areas/NorthShorePage.tsx": "6f163056f1bd792285d860656d264f3267a54836bc84742b28e00df637aabc03",
+    "src/pages/areas/NorthernBeachesPage.tsx": "f00630a348cba95c6670c2daf29a53b3f09daab00e43561568af0ffad5d33ac1",
+    "src/pages/areas/InnerWestPage.tsx": "f67117498a37c03b93001624e30191d4900e0785a4b7ece654a4390f1b820b4e",
+    "src/pages/areas/GreaterSydneyPage.tsx": "5cbf98a5408e554ec5590fa0cb1a9535349554ff7140e855966912622e779be2"
+  }
+}

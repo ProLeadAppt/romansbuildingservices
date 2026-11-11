@@ -122,9 +122,11 @@ test('home page speaks to customers rather than exposing search-marketing langua
   const home = read('src/pages/SinglePageApp.tsx');
   assert.doesNotMatch(home, /SEO hub|AI Overviews|answer-first version of the site/i);
   assert.match(home, /HomeProblemNavigator/);
-  assert.match(home, /HomeCaseStudiesSection/);
-  assert.match(home, /HomeFounderStandardSection/);
-  assert.match(home, /HomeCapabilitiesSection/);
+  assert.match(home, /CraftHomeSections/);
+  const craft = read('src/components/home/CraftHomeSections.tsx');
+  for (const service of ['masonry', 'heritage-restoration', 'structural-repairs', 'concrete-repairs', 'foundation-repairs', 'building-restoration', 'remedial-building']) assert.ok(craft.includes('/services/' + service));
+  assert.match(craft, /QuoteCTAButton/);
+  assert.doesNotMatch(craft, /404 Slopes|guaranteed rankings|AI Overviews/);
 });
 
 test('home process schema stays aligned with approved visible claims', () => {
@@ -155,7 +157,8 @@ test('shared layout preserves keyboard, reduced-motion and media accessibility',
   assert.match(layout, /<main id="main-content" tabIndex=\{-1\}/);
   assert.doesNotMatch(styles, /video\s*\{\s*display:\s*none/);
   assert.doesNotMatch(footer, /alt="Project showcase"/);
-  assert.match(footer, /Structural acrow props supporting stone wall during repairs/);
+  assert.match(footer, /selectArchiveImages/);
+  assert.match(footer, /alt=\{image.alt\}/);
   assert.match(survey, /headingLevel: 'h2' \| 'h3' \| 'h4'/);
   assert.match(contactSection, /headingLevel="h4"/);
   assert.match(contactPage, /headingLevel="h2"/);

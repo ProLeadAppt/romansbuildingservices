@@ -47,7 +47,7 @@ const HeritageHubPage = () => {
     <>
       <SEOHead
         title="Heritage Building Restoration Sydney: Era Guide | Romans"
-        description="Explore Sydney heritage building restoration by era, from Victorian brickwork to Federation homes. Find repair services and an existing project case study."
+        description="Explore Sydney heritage building restoration by era, from Victorian brickwork to Federation homes. Find repair services and general repair reference pages."
         canonical="/heritage"
       />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -154,7 +154,7 @@ const HeritageHubPage = () => {
             <li><Link className="text-navy underline" to="/services/heritage-restoration/">Heritage restoration services</Link> — compare the types of repair work.</li>
             <li><Link className="text-navy underline" to="/services/heritage-restoration/heritage-brick-repairs/">Heritage brick repairs</Link> — explore repairs to older brickwork.</li>
             <li><Link className="text-navy underline" to="/services/masonry/repointing/">Masonry repointing</Link> — understand work on deteriorating mortar joints.</li>
-            <li><Link className="text-navy underline" to="/case-studies/heritage-church-brick-restoration-sydney-cbd/">Sydney CBD heritage church case study</Link> — read the published project account.</li>
+            <li><Link className="text-navy underline" to="/case-studies/heritage-church-brick-restoration-sydney-cbd/">Heritage brick repair reference</Link> — read general repair guidance; project details are withheld pending verification.</li>
           </ul>
         </div>
       </section>

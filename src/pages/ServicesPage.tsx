@@ -38,9 +38,9 @@ const services = [
     title: 'Building Restoration',
     slug: 'building-restoration',
     description:
-      'Full facade restoration, render repairs, interior masonry, and complete building refits where the masonry has gone past patching.',
+      'Facade restoration, render repairs and interior masonry, with coordinated repair stages where several parts of a building need attention.',
     bestFor:
-      'Strata buildings, commercial facades and homes where multiple things have failed at once and you want it all sorted in one job.',
+      'Strata buildings, commercial facades and homes needing a defined restoration scope, access planning and coordination between trades.',
   },
   {
     icon: Wrench,
@@ -65,7 +65,7 @@ const services = [
     title: 'Foundation Repairs',
     slug: 'foundation-repairs',
     description:
-      'Underpinning, restumping, foundation crack repairs, settlement stabilisation. Work below the ground floor to stop further movement.',
+      'Underpinning, restumping, foundation crack repairs, settlement stabilisation. Repairs below the ground floor to an assessed design and scope.',
     bestFor:
       'Homes that have settled or are still moving, especially older terraces and houses on clay soils.',
   },
@@ -74,7 +74,7 @@ const services = [
     title: 'Remedial Building',
     slug: 'remedial-building',
     description:
-      'Structural assessments, compliance upgrades, strata defect repairs, emergency stabilisation. The work that gets buildings back to standard.',
+      'Strata defect repairs, defined compliance upgrade scopes and temporary support work, with engineering or specialist input where required.',
     bestFor:
       'Strata managers, building owners and insurance jobs where a defect report needs to turn into completed work.',
   },
@@ -84,27 +84,27 @@ const servicesFaqs = [
   {
     question: 'Which service do I need?',
     answer:
-      "Easiest way is to tell us what you are seeing and let us work it out. A cracked wall could be structural, foundation, or just cosmetic depending on what is causing it. Send a couple of photos through or give Minas a ring and we will tell you straight.",
+      "Tell us what you are seeing, when it appeared and whether it has changed. Photos taken safely can help plan the first assessment, but cannot establish structural safety or the cause of concealed damage. Include any existing reports and previous repair details.",
   },
   {
     question: 'Do you do residential and commercial?',
     answer:
-      'Both. About 60 percent of our work is residential, 40 percent commercial and strata. Same standards either way. The paperwork is different on commercial jobs but the work is the same.',
+      'We work with homeowners, strata managers and commercial property owners. The scope, access, safety planning and documentation depend on the project, so include the property type and any existing reports with your enquiry.',
   },
   {
     question: 'Can you handle a job that needs more than one of these services?',
     answer:
-      'Yes. Most heritage jobs do. A Federation terrace might need repointing, structural crack repair, foundation work and concrete repair to the front porch all on the one job. We quote it as one job and run it as one job.',
+      'Several services can form part of one repair scope. Discuss the required trades, specialist design, approvals and inspection points before the work is priced. The quote should identify what Romans will undertake, what others will arrange and the sequence between them.',
   },
   {
     question: 'Are you licenced for structural work?',
     answer:
-      'Yes. Romans holds a full NSW builders licence covering structural masonry. For engineered work we coordinate with structural engineers and certifiers as part of the job.',
+      'Ask for current licence and insurance details relevant to the proposed building scope. Structural assessment, design and certification require the appropriate professionals. We work with structural engineers and certifiers where the project requires their input.',
   },
   {
     question: 'What if my problem is not on this list?',
     answer:
-      "Ring us anyway. After 30 years there is not much we have not seen. If we cannot do it we will tell you and usually point you to someone who can.",
+      "Describe the affected part of the building and any immediate safety concerns. We can discuss whether it fits the building work offered here and what further assessment may be needed before a repair can be scoped.",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function ServicesPage() {
     <>
       <SEO
         title="Sydney Masonry, Heritage & Structural Repairs | Romans"
-        description="Sydney masonry, heritage restoration, structural, concrete and foundation repair services by Minas Romanakis. Licenced and built for long-term results."
+        description="Sydney masonry, heritage restoration, structural, concrete and foundation repair services by Minas Romanakis. Discuss your project and repair scope."
         canonical="/services"
       />
       <CollectionPageSchema
@@ -148,18 +148,17 @@ export default function ServicesPage() {
         <section className="bg-white py-16 md:py-20 px-4">
           <div className="max-w-3xl mx-auto font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
             <p>
-              Romans does seven things. They overlap. Most of our jobs touch two or three of them.
-              We list them out so you can find what you are looking for, but in practice they all
-              run together. A heritage facade restoration usually involves stonework, structural
-              repair, concrete patching and repointing. We quote and run it as one job, not four
-              separate trades.
+              The seven services below cover different parts of building repair and restoration.
+              They can overlap: a facade repair may need masonry work, attention to water entry
+              and structural advice. The assessment establishes which work is needed and who
+              should be involved, rather than assuming every property needs the same package.
             </p>
             <p>
               Underneath all of it is masonry. That is what Minas trained in and that is what the
-              business has been doing since 1995. Everything else is masonry support work. Concrete
-              repair so the brickwork above it stops moving. Foundation work so the wall stops
-              cracking. Remedial work so a strata block can get its certification back. The trade is
-              the trade, the names just change with what got damaged.
+              business has been doing since 1995. Concrete, foundation and remedial work each have
+              their own assessment and design requirements. A clear scope should identify
+              responsibility for engineering, approvals, temporary support and inspection records,
+              as well as the physical repair. Building work alone does not certify an entire property.
             </p>
             <p>
               Pick whichever heading below sounds closest to what you have. If you are not sure,
@@ -201,19 +200,19 @@ export default function ServicesPage() {
 
         <ProblemsLinksSection
           heading="Got a problem? Here's what it might be."
-          intro="Plain-English diagnosis of the most common masonry, concrete and structural issues we see across Sydney. Pick what matches what you are seeing."
+          intro="Guides to visible masonry, concrete and structural warning signs, possible causes and what to discuss at an assessment."
           background="off-white"
         />
 
         <RelatedLinksBlock
           heading="Still deciding what page to read next?"
-          intro="Start with the answer-first hub, then move to areas, case studies and problem guides. That path matches how people actually search."
+          intro="Read about repair options, check the service areas or explore project examples before discussing your property."
           items={[
-            { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English guides and SEO support' },
+            { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English repair guides' },
             { label: 'Areas we service', href: '/areas', sublabel: 'Sydney suburbs and regions' },
-            { label: 'Case studies', href: '/case-studies', sublabel: 'Proof from real jobs' },
-            { label: 'Building problems', href: '/problems', sublabel: 'Diagnostic guides for common defects' },
-            { label: 'Heritage hub', href: '/heritage', sublabel: 'Era-specific restoration authority' },
+            { label: 'Repair references', href: '/case-studies', sublabel: 'General repair reference pages' },
+            { label: 'Building problems', href: '/problems', sublabel: 'Warning signs and assessment guidance' },
+            { label: 'Heritage hub', href: '/heritage', sublabel: 'Period materials and restoration guidance' },
             { label: 'About Romans', href: '/about', sublabel: 'The owner, the history and the crew' },
           ]}
           columns={3}

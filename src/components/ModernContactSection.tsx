@@ -1,7 +1,7 @@
 import { CheckCircle, Phone } from 'lucide-react';
 import { QuoteSurvey } from '@/components/quote';
 
-const trustPoints = ['Sydney masonry work since 1995', 'Licenced and insured', 'Free quote, no obligation'];
+const trustPoints = ['Sydney masonry work since 1995', 'Speak with Minas', 'Free quote, no obligation'];
 
 export const ModernContactSection = () => (
   <section id="contact" data-p2-section="conversion" className="bg-navy px-5 py-16 text-white sm:px-6 md:py-24">

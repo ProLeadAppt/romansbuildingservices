@@ -9,7 +9,7 @@ const PierBeamPage = () => {
     <ServicePageTemplate
       title="Pier & Beam Foundation Work"
       metaTitle="Sydney Pier & Beam Foundation | Romans"
-      metaDescription="Sydney restumping and pier beam foundation work by Minas Romanakis. Concrete and steel pier replacement, bearer and joist repair, subfloor levelling."
+      metaDescription="Sydney pier and beam repair enquiries. Subfloor assessment, support repairs, timber selection and carefully planned floor reinstatement."
       heroImage="/gallery/thumbs/romansstone_1569273163_2139540821744323162_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,110 @@ const PierBeamPage = () => {
         { label: 'Pier & Beam Foundation Work', href: '' },
       ]}
       intro={[
-        'A lot of older Sydney homes sit on pier and beam foundations rather than a concrete slab. Timber stumps or concrete piers support timber bearers, which in turn support timber joists, which carry the flooring. It is a great system if it stays dry. It is a problem if water gets in. Timber stumps rot. Concrete piers crack. Steel beams corrode. Bearers sag. Joists droop. Floors get bouncy, sloping, or actively unsafe.',
-        'We restump houses, replace damaged bearers and joists, level subfloors back to plumb, and install new piers for extensions and additions. Most jobs use concrete piers cast in situ or galvanised steel adjustable stumps. The right choice depends on soil type, future re-levelling needs, and budget. We work in tight subfloor spaces (typically 400 to 800mm clearance under old terraces and Federation cottages) where most modern builders will not.',
-        'Restumping a typical Sydney house is a week to ten days of work in the subfloor. We jack the building up section by section, remove the failed stumps, dig new pad footings, set new piers, lower the building onto them, and level as we go. Most homeowners stay in the house throughout. Some minor cracking can occur as the building re-levels but careful sequencing minimises it.',
+        "Raised timber floors rely on a connected system of foundations, piers, bearers, joists and bracing. Deterioration or movement in one part can affect the floor above. Sloping or springy floors, new gaps and sticking doors are reasons for assessment, but do not establish which component needs repair.",
+        "A subfloor assessment should consider moisture, drainage, ventilation, timber condition, pests, connections and ground support. Restricted spaces can contain electrical, structural and other hazards. Do not crawl beneath a suspect floor or try to jack it up to investigate.",
+        "Contact Romans to discuss pier, bearer and joist repair requirements. The agreed scope should identify structural design, any pest or plumbing specialists, access arrangements and the extent of floor reinstatement. Restumping and re-levelling need a planned support sequence; a level finish cannot be promised before the building’s condition is understood."
       ]}
       features={[
         {
           icon: Landmark,
-          title: 'Restumping',
-          description:
-            'Old timber stumps replaced with concrete piers or galvanised steel adjustable stumps. Building jacked up section by section, levelled as work proceeds. Typical residential restump is 5 to 10 days.',
+          title: "Pier and stump repairs",
+          description: "Assess existing support condition and ground bearing before selecting replacement piers or stumps. The chosen system must suit the loads, exposure, connections and required bracing."
         },
         {
           icon: Wrench,
-          title: 'Bearer and joist repair',
-          description:
-            'Failed timber bearers and joists replaced with H3 or H4 treated pine, hardwood, or steel C-section depending on span and load. Termite-treated. Connections to engineer drawing where structural.',
-        },
-        {
-          icon: Home,
-          title: 'Subfloor levelling',
-          description:
-            'Existing piers shimmed and packed back to level. Laser level used for accuracy. For settled buildings, sequenced jacking lifts the structure back to plumb in controlled increments.',
+          title: "Bearer and joist repairs",
+          description: "Damaged timber may need repair, strengthening or replacement. Investigate moisture and pests, and specify structural grade, treatment, connections and compatibility with retained material."
         },
         {
           icon: Ruler,
-          title: 'New pier installation',
-          description:
-            'For extensions, decks and new construction. Bored piers, screw piles, mass concrete footings. Engineered to soil bearing capacity and design loads.',
+          title: "Floor level assessment",
+          description: "A level survey helps explain the extent of movement. Lifting an older building can affect walls, glazing and services; the target levels and tolerances need agreement based on the assessment."
+        },
+        {
+          icon: Home,
+          title: "Temporary support",
+          description: "Plan how loads will be carried while existing supports are repaired or replaced. Props and jacks must not be improvised or adjusted by occupants."
         },
         {
           icon: CheckCircle,
-          title: 'Subfloor inspection',
-          description:
-            'Full report on pier condition, bearer and joist state, termite evidence, ventilation, ground moisture. Useful for property purchases and ongoing maintenance.',
-        },
+          title: "Subfloor conditions",
+          description: "Access, ventilation, water and utilities affect both the repair and future maintenance. Arrange specialist inspections where pests, plumbing faults or electrical hazards are suspected."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Concrete piers cast in situ',
-          detail:
-            '32 MPa reinforced concrete poured into formed pads and column forms. Cast against pre-drilled steel reinforcement. Standard for permanent replacement piers. Cures in 7 days before taking full load.',
+          title: "Designed piers and footings",
+          detail: "Pier dimensions, reinforcement and foundation bearing follow the structural design. Concrete must reach the specified strength before loading; a fixed number of days alone cannot establish readiness."
         },
         {
-          title: 'Galvanised steel adjustable stumps',
-          detail:
-            'Hot-dip galvanised steel posts with threaded adjustment heads. Good for buildings on reactive clay where future re-levelling may be needed. Can be tightened as soil moves to keep floors level.',
+          title: "Adjustable support systems",
+          detail: "Adjustable steel supports may suit some designs, but their capacity, durability and restraint must be assessed. Adjustments change structural loads and should only be made under professional direction."
         },
         {
-          title: 'H3 or H4 treated pine bearers',
-          detail:
-            'Termite-treated structural pine for new or replacement bearers. H3 for in-ground or near-ground, H4 for the highest exposure. Sized to span and load per AS 1684.',
+          title: "Structural timber selection",
+          detail: "Timber species, structural grade and treatment must suit the exposure and design. H3 treatment is for above-ground exposure, not ground contact. Ground-contact applications require an appropriate higher hazard class and suitable detailing."
         },
         {
-          title: 'Hardwood for traditional repair',
-          detail:
-            'Australian hardwood (ironbark, blackbutt, spotted gum) for replacement in heritage buildings or where matching original timber is needed. More expensive than treated pine but the right look for heritage.',
+          title: "Retained heritage timber",
+          detail: "Consider repair and retention where feasible. Replacement timber and connection details should be selected for structural performance and compatibility, with heritage advice where the building or work requires it."
         },
         {
-          title: 'Hydraulic jacks for lifting',
-          detail:
-            'Multiple hydraulic jacks positioned under bearers in sequence. Lifts the building in controlled increments (typically 5 to 10mm at a time) to avoid stressing wall connections above.',
+          title: "Lifting and monitoring plan",
+          detail: "Any lifting requires a site-specific sequence addressing load paths, temporary support and effects on walls and services. Generic jacking increments or a standard bay-per-day rate are not a safe plan."
         },
         {
-          title: 'Laser levels for accuracy',
-          detail:
-            'Rotary laser level set up in the subfloor. New pier heights and bearer positions checked against the laser line. Floor level to within 3 to 5mm across the whole house.',
-        },
+          title: "Survey and inspection records",
+          detail: "Record existing levels and relevant defects before work. Agree inspection stages and final acceptance criteria so the handover distinguishes structural repair from any separate cosmetic reinstatement."
+        }
       ]}
       processSteps={[
         {
-          step: 'Subfloor inspection',
-          detail:
-            'Crawl-through inspection of the existing subfloor. Pier condition assessed. Bearer and joist condition checked for rot, termite damage, sag. Photos and measurements taken. Report produced.',
+          step: "Assess the floor system",
+          detail: "Arrange a safe inspection and level survey. Identify damaged supports, moisture or pest issues and any services that could be affected. Do not enter an unsafe subfloor for photographs."
         },
         {
-          step: 'Quote and scoping',
-          detail:
-            'Quote produced for restumping, bearer or joist replacement, and any structural work. Scope agreed with owner. For significant work, engineer sign-off arranged.',
+          step: "Design and scope the repairs",
+          detail: "Obtain the structural advice and any approval checks needed. Agree replacement or strengthening details, temporary support, specialist involvement and the limits of re-levelling."
         },
         {
-          step: 'Set up and access',
-          detail:
-            'Subfloor access points opened up. Floor coverings protected. Temporary supports installed where needed. Building utilities checked (plumbing under floor especially).',
+          step: "Prepare access and services",
+          detail: "Confirm access, protection of finishes and occupancy restrictions. Relevant qualified trades assess affected services before lifting or changing support arrangements."
         },
         {
-          step: 'Jack and replace piers in sequence',
-          detail:
-            'Section by section, building is jacked up off the old piers, old piers removed, new pads excavated and piers installed, building lowered onto new piers, levelled with laser. Typically one bay per day on a standard house.',
+          step: "Repair to the planned sequence",
+          detail: "Qualified personnel follow the temporary works and repair design. Inspections and concrete-strength requirements must be satisfied before transferring loads onto new work."
         },
         {
-          step: 'Replace bearers and joists',
-          detail:
-            'Failed timber bearers and joists replaced as they become accessible during the restump. Connections to piers via brackets or bolts to engineer detail. New timber matches existing where structural.',
-        },
-        {
-          step: 'Final check and reinstate',
-          detail:
-            'Full level check across all rooms with laser. Any final adjustments made via adjustable stump heads. Subfloor access closed up. Wall cracks above repaired if any have appeared during re-levelling.',
-        },
+          step: "Inspect and hand over",
+          detail: "Check the completed supports, connections and levels against the agreed requirements. Review any movement or damage to finishes, and document maintenance and monitoring recommendations."
+        }
       ]}
       faqs={[
         {
-          question: 'How do I know if my stumps need replacing?',
-          answer:
-            'Bouncy floors when you walk, floors that have a noticeable slope, gaps appearing between skirting boards and walls, doors that have stopped closing properly, cracks above interior doorways. If you can get into the subfloor, look for rotting timber stumps, cracked concrete piers, evidence of termite mudding, or stumps that have visibly sunk into the soil.',
+          question: "How do I know if piers or stumps need repair?",
+          answer: "Sloping or springy floors, gaps and sticking doors can indicate a problem, but several components may be involved. Arrange a safe assessment rather than entering the subfloor yourself. Sudden movement or an unstable floor requires prompt professional safety advice."
         },
         {
-          question: 'What type of pier is best?',
-          answer:
-            'Concrete piers cast in situ are the most common permanent replacement and cheapest. Galvanised steel adjustable stumps are better where the building is on reactive clay and may need future re-levelling. Bored concrete piers on screw bases are best for unstable or sandy soils. We recommend based on the soil type and building conditions.',
+          question: "Which type of replacement pier is best?",
+          answer: "There is no universal best option. Loads, soil conditions, exposure, bracing and access affect the choice between concrete, steel or another designed support. The assessment should explain the recommended system and any specialist installation or maintenance requirements."
         },
         {
-          question: 'How long does restumping take?',
-          answer:
-            'A typical three-bedroom Sydney terrace or Federation cottage is 7 to 12 days. A larger four or five-bedroom house is 2 to 3 weeks. Buildings with difficult subfloor access or termite-damaged bearers take longer. We give a programmed timeline with the quote.',
+          question: "How long does restumping take?",
+          answer: "The programme depends on the number and condition of supports, subfloor access, required design, concrete-strength checks and any concealed timber or service defects. Ask for a site-specific schedule and clarify what could change it during the work."
         },
         {
-          question: 'Will restumping crack my walls?',
-          answer:
-            'Some minor cracking can occur as the building re-levels. We jack in small increments (5 to 10mm per cycle) to minimise stress on the wall connections above. Most cracking is minor and reads as hairline plaster cracks rather than structural damage. We can repair any visible cracks as part of the job.',
+          question: "Can re-levelling damage walls or services?",
+          answer: "Changing floor levels can affect walls, doors, windows, plumbing and other services. The proposed lifting sequence and achievable levels must be assessed beforehand. Agree how existing defects will be recorded and which repairs to finishes are included in the quote."
         },
         {
-          question: 'Can we stay in the house during restumping?',
-          answer:
-            'Yes, most homeowners stay in place. There is noise from jacking and concrete work, but the house remains structurally supported throughout. We work room by room. Plumbing and electrical services need to be coordinated where lines run through the subfloor.',
+          question: "Can we stay in the house during the work?",
+          answer: "Occupancy depends on the structural condition, work sequence, access and service interruptions. The responsible professionals should confirm restrictions before work starts and review them if conditions change. Do not assume temporary supports make every part of the house safe to use."
         },
         {
-          question: 'What does restumping cost?',
-          answer:
-            'Concrete pier replacement is around 600 to 1100 dollars per pier installed. Steel adjustable stumps are 750 to 1300 dollars each. A typical three-bedroom Sydney terrace has 25 to 50 piers and runs 18,000 to 50,000 dollars all up. Bearer or joist replacement and termite damage repair are extra. Fixed quote after subfloor inspection.',
-        },
+          question: "What does pier and beam repair cost?",
+          answer: "Cost depends on investigation, design, access, support replacements, timber repairs and any specialist trades. A price per pier excludes many possible project costs. Request a written quote that identifies reinstatement, temporary works and allowances for concealed damage."
+        }
       ]}
     />
   );

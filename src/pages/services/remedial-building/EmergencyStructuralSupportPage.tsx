@@ -9,7 +9,7 @@ const EmergencyStructuralSupportPage = () => {
     <ServicePageTemplate
       title="Emergency Structural Support"
       metaTitle="Sydney Emergency Structural Propping & Shoring | Romans"
-      metaDescription="Sydney emergency structural support by Minas Romanakis. Acrow propping, steel shoring, wall bracing, engineer-designed. Stabilises buildings until permanent."
+      metaDescription="Sydney structural support enquiries. Understand engineer-designed temporary works, safe access, monitoring and permanent repair planning."
       heroImage="/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp"
       parentService={{ title: 'Remedial Building', href: '/services/remedial-building' }}
       siblingServices={siblings}
@@ -19,137 +19,106 @@ const EmergencyStructuralSupportPage = () => {
         { label: 'Emergency Structural Support', href: '' },
       ]}
       intro={[
-        'When a building element has lost capacity or is at risk of collapse, temporary structural support has to go in before anything else can happen. Engineers cannot safely assess a partially collapsed structure. Permanent repairs cannot be designed without first making the site stable. Tenants cannot return to the building until the risk of further collapse is removed. Temporary propping, shoring and bracing is the first job on every structural emergency.',
-        'We install temporary support using adjustable steel acrow props, structural steel beams, timber shoring, and bracing systems. Engineer designed where the structure being supported is significant. Sized to the load being carried. Positioned to keep access open for the permanent repair work. Stays in place for as long as needed, sometimes weeks while engineering and council approvals are sorted, sometimes months on heritage scopes with longer approval cycles.',
-        'Most of our emergency structural support work is connected to insurance claims after storm damage, structural failures, or vehicle impacts. We make the site safe, document the damage for the insurer, support the engineer assessment, and then carry out the permanent repair scope. Single contractor from emergency call-out through to final completion. Simpler insurance process, less risk of work falling between contractors.',
+        "A leaning wall, damaged beam or partial collapse can create a risk beyond the visibly damaged area. Keep people clear and call 000 if anyone is in immediate danger. Do not enter the building to inspect it, install props or adjust existing supports yourself.",
+        "Temporary structural support requires a site-specific assessment. A structural engineer needs to establish the load paths, condition of the remaining structure, ground or floor bearing capacity and the safe installation sequence. Propping is not a step to improvise before the structure has been assessed.",
+        "Contact Romans to discuss the site and the assessed repair requirements. The temporary works scope, required specialists, equipment availability and timing need confirmation. Support systems must be inspected and maintained for their intended use, and their presence alone does not establish that a building can be occupied."
       ]}
       features={[
         {
           icon: ShieldAlert,
-          title: 'Emergency shoring',
-          description:
-            'Steel and timber shoring installed rapidly to support walls, slabs and beams at risk of collapse. Stock kept ready for immediate deployment. Sized to the load.',
+          title: "Control access",
+          description: "Keep people outside the affected area until the hazards and safe access arrangements have been assessed. Follow emergency-service and authority directions."
         },
         {
           icon: Columns3,
-          title: 'Temporary propping',
-          description:
-            'Adjustable acrow props rated to the load above. Steel beams where wider spans need supporting. Sequenced installation so the structure remains supported throughout.',
+          title: "Engineer-designed support",
+          description: "Prop type, capacity, spacing, bearing and restraint depend on the actual structure and loads. Generic prop sizes or rules of thumb are not a safe specification."
         },
         {
           icon: Wrench,
-          title: 'Wall bracing',
-          description:
-            'External and internal bracing for leaning, bowing or partially collapsed walls. Stops movement, prevents further collapse, gives the engineer time to design the permanent fix.',
+          title: "Wall stability",
+          description: "Leaning or damaged walls may require engineered bracing, controlled dismantling or another response. Assessment must consider adjacent structures and public areas as well as the wall itself."
         },
         {
           icon: HardHat,
-          title: 'Safe inspection access',
-          description:
-            'Once propping is in, we set up safe access for engineers, loss adjusters and other trades to inspect the damaged structure. Scaffolding, edge protection, controlled entry.',
+          title: "Inspection access",
+          description: "Safe access for engineers and trades is planned with the temporary works. Installing props does not automatically remove all collapse, electrical or hazardous-material risks."
         },
         {
           icon: FileCheck,
-          title: 'Engineer designed',
-          description:
-            'For anything significant, structural engineer designs the temporary support: prop sizing, positioning, load ratings. Sign-off on installation before the building can be re-occupied.',
-        },
+          title: "Documented responsibilities",
+          description: "Agree who designs, installs, inspects, monitors and removes the supports. Changes in loading, access or site conditions must be referred back to the responsible professionals."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Acrow props (adjustable steel)',
-          detail:
-            'Stock of acrow props in sizes 600mm to 3 metres extended length. Load-rated up to 30 kN per prop. Heads available for point loads or distributed loads via timber soldiers.',
+          title: "Support system selection",
+          detail: "An engineer specifies suitable props, shoring, bracing or other support for the site. Capacity depends on configuration and installation conditions, not just a product’s nominal rating."
         },
         {
-          title: 'Structural steel beams',
-          detail:
-            'Stock UC and UB steel sections kept for emergency use. Set up over acrow props as needle beams when wider spans need supporting. Engineer-specified sizes for permanent load.',
+          title: "Bearing and load paths",
+          detail: "Loads transferred by temporary supports must be carried safely through floors, foundations or ground. Spreader arrangements and supporting structure need assessment rather than assumed dimensions."
         },
         {
-          title: 'Heavy timber soldiers',
-          detail:
-            '300x100 oregon or hardwood timber soldiers for distributing loads onto floors and slabs. Spreads load over a wide area so the supporting floor does not get point-loaded.',
+          title: "Installation sequence",
+          detail: "The design should address how support can be installed without exposing workers to uncontrolled collapse or destabilising the remaining structure. Access restrictions form part of the plan."
         },
         {
-          title: 'Diagonal bracing system',
-          detail:
-            'Diagonal steel braces for stabilising leaning or bowing walls. Anchored to floor and ceiling structure. Stops lateral movement while waiting for permanent reinforcement.',
+          title: "Inspection and monitoring",
+          detail: "The engineer defines the inspection regime and any movement or load monitoring needed. Weather, impacts, changed loads or signs of movement can require reassessment."
         },
         {
-          title: 'Load monitoring',
-          detail:
-            'For long-term propping (weeks or months), load monitors track whether the props are still taking the design load. Daily or weekly readings depending on risk level.',
-        },
-        {
-          title: 'Engineer documentation',
-          detail:
-            'Engineer-prepared temporary works design: prop schedule, drawing, load calculations, sequence of installation, removal sequence. Required for any prolonged propping.',
-        },
+          title: "Removal plan",
+          detail: "Support removal is designed around the permanent structure’s verified capacity and readiness to take load. It is not an owner maintenance task or simply the reverse of installation."
+        }
       ]}
       processSteps={[
         {
-          step: 'Assess the failure',
-          detail:
-            'On site, we look at what has failed and what is at risk of failing next. Hazard zone established. Photos taken. Engineer called if the structure is significant.',
+          step: "Establish the safety response",
+          detail: "Keep clear of unstable structure and contact emergency services if there is immediate danger. Confirm site restrictions before arranging contractor access."
         },
         {
-          step: 'Plan the support',
-          detail:
-            'Quick design (or engineer detailed design for significant work). Prop positions chosen to take the load without blocking access for permanent repair. Sequence planned.',
+          step: "Obtain assessment and design",
+          detail: "Arrange qualified structural assessment and a temporary works design appropriate to the damage. Confirm who is responsible for design coordination and any required approvals."
         },
         {
-          step: 'Install supports',
-          detail:
-            'Acrow props placed under failed beams or above failing wall sections. Tightened until they engage the load. Timber soldiers distributed loads onto stable floors. Diagonal bracing for walls.',
+          step: "Agree the work scope",
+          detail: "Confirm installation, access controls, inspections, hire, monitoring and removal responsibilities in writing. Check equipment and specialist availability before committing to a programme."
         },
         {
-          step: 'Engineer verify',
-          detail:
-            'Engineer attends to verify props match the design and are positioned correctly. Sign-off issued. Building can now be considered safe for inspection and planning.',
+          step: "Install and inspect",
+          detail: "Qualified personnel install support to the agreed design and sequence. Required inspections and any restrictions are documented; variations need professional review."
         },
         {
-          step: 'Maintain during planning phase',
-          detail:
-            'Props stay in place while engineer scope is finalised, council approval is obtained, insurance claim is processed. Load monitors checked periodically. Adjustments made if anything shifts.',
-        },
-        {
-          step: 'Remove after permanent repair',
-          detail:
-            'Once permanent repair is complete and engineer signs off on the new structure taking load, the temporary props are removed in sequence (load is transferred carefully back to the permanent structure).',
-        },
+          step: "Maintain and remove safely",
+          detail: "Follow the specified inspection regime while permanent repairs are planned and carried out. Remove supports only under the approved sequence once the permanent works are ready to take load."
+        }
       ]}
       faqs={[
         {
-          question: 'How long can temporary props stay in place?',
-          answer:
-            'As long as needed. Weeks for straightforward residential jobs. Months for complex commercial or heritage projects waiting on council approval. We monitor the props for any movement or fatigue throughout. Long-term propping (over 3 months) usually has load monitors installed to confirm the prop is still taking the design load.',
+          question: "How long can temporary supports stay in place?",
+          answer: "The permitted duration depends on the design, equipment, exposure and inspection regime. Longer use or a change in conditions may require reassessment. Confirm hire costs, monitoring duties and the review date before assuming support can remain indefinitely."
         },
         {
-          question: 'Do you remove the props after permanent repairs?',
-          answer:
-            'Yes, removal is part of the job. The new permanent structure takes load gradually as the props are released in sequence per engineer drawing. Last prop comes out once engineer is satisfied the new structure is supporting the full load.',
+          question: "Who removes the supports?",
+          answer: "Removal should be included in the agreed scope and carried out by qualified personnel following the engineer’s sequence. The permanent structure must be confirmed ready to carry the load before temporary support is released."
         },
         {
-          question: 'Can you prop a partially collapsed wall?',
-          answer:
-            'Yes. We stabilise what is left standing with shoring on both sides and bracing as needed. Engineer assesses what can be retained versus what needs demolition. Often more of the original wall can be saved than first appears.',
+          question: "Can a partially collapsed wall be supported?",
+          answer: "Sometimes temporary support is feasible, but the remaining wall may be unsafe to approach or retain. A qualified assessment determines the response. Do not push, pull, prop or remove parts of the wall while waiting for advice."
         },
         {
-          question: 'How quickly can you respond?',
-          answer:
-            'For genuine structural emergencies, on site within 2 to 4 hours during business hours. After hours and weekend cover available for active emergencies. Minas direct: 0414 922 276. If someone is in immediate danger, call 000 first.',
+          question: "How quickly can you attend?",
+          answer: "Call to check current availability and the required specialist response. No fixed attendance time or after-hours service is promised. For immediate danger, move away and call 000 rather than waiting for a building contractor."
         },
         {
-          question: 'How is this different from regular construction propping?',
-          answer:
-            'Regular construction propping is planned in advance for known loads during a planned build. Emergency propping is reactive: figuring out the load on a partially failed structure, getting supports in fast, and adjusting as the engineer assesses. Different gear, different skills, different timeframes.',
+          question: "Is emergency propping different from planned construction support?",
+          answer: "A damaged structure may have uncertain loads, hidden defects and unsafe access. Those uncertainties need assessment and a suitable design. The urgency does not remove the need for engineered planning, competent installation and appropriate inspections."
         },
         {
-          question: 'What does emergency structural support cost?',
-          answer:
-            'Initial call-out and propping for a typical residential emergency: 2500 to 8000 dollars. Larger commercial or strata emergencies with engineered temporary works design: 15,000 to 60,000 dollars. Ongoing prop hire is typically included in the initial cost for the expected duration. Most emergency works are covered by building insurance as part of the claim.',
-        },
+          question: "What does structural support cost?",
+          answer: "The quote depends on design, access, equipment, installation, inspections, hire duration and removal. Ask which costs are included and what happens if the programme changes. Confirm any insurance contribution directly with the insurer; coverage cannot be assumed."
+        }
       ]}
     />
   );

@@ -93,27 +93,27 @@ export const SuburbPageTemplate = ({
       />
 
       {/* Breadcrumb bar */}
-      <div className="bg-bg-light border-b border-border">
+      <div role="navigation" aria-label="Breadcrumb" className="bg-bg-light border-b border-border pt-20">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm overflow-x-auto">
           <Link
             to="/"
             className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             Home
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
           <Link
             to="/areas"
             className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             Areas
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
           <Link
             to={parentAreaHref}
             className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
             {parentAreaName}
           </Link>
-          <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
-          <span className="font-body text-text-primary whitespace-nowrap">{name}</span>
+          <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
+          <span aria-current="page" className="font-body text-text-primary whitespace-nowrap">{name}</span>
         </div>
       </div>
 
@@ -137,9 +137,9 @@ export const SuburbPageTemplate = ({
             Quick answer
           </p>
           <p className="font-body text-lg text-text-secondary leading-relaxed">
-            Romans Building Services provides masonry, heritage restoration and structural repair in
-            {` ${name}, Sydney`}, with work matched to the suburb's building age, materials and
-            common movement or salt-damage patterns.
+            Discuss masonry, heritage restoration and structural repair in {name} with Romans Building Services.
+            Assessment of the property's construction, condition and access informs the proposed scope;
+            age or location alone does not establish the materials, cause of damage or suitable repair.
           </p>
         </div>
       </section>
@@ -222,7 +222,7 @@ export const SuburbPageTemplate = ({
                   <h3 className="font-body text-base font-semibold text-text-primary mb-2">
                     {faq.question}
                   </h3>
-                  <p className="font-body text-sm text-text-secondary leading-relaxed">
+                  <p className="font-body text-base text-text-secondary leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -248,7 +248,7 @@ export const SuburbPageTemplate = ({
                 <Link
                   key={sub.href}
                   to={sub.href}
-                  className="font-body text-sm text-navy bg-white px-4 py-2 rounded-md shadow-premium hover:shadow-premium-lg transition-shadow">
+                  className="min-h-11 inline-flex items-center font-body text-sm text-navy bg-white px-4 py-2 rounded-md shadow-premium hover:shadow-premium-lg transition-shadow">
                   {sub.name}
                 </Link>
               ))}
@@ -271,7 +271,7 @@ export const SuburbPageTemplate = ({
             Need a quote in {name}?
           </h2>
           <p className="font-body text-white/70 mb-8">
-            Call Minas directly or fill in the form. We will get back to you within 24 hours.
+            Call Minas directly or send your suburb and repair details. Assessment timing depends on the scope, access and current availability.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -282,7 +282,7 @@ export const SuburbPageTemplate = ({
             </a>
             <QuoteCTAButton
               className="btn-premium inline-flex items-center gap-2 bg-amber text-navy font-body font-bold px-6 py-3 rounded-md hover:bg-amber/90 transition-colors">
-              Get a Sydney Quote
+              Discuss your repair
             </QuoteCTAButton>
           </div>
         </div>

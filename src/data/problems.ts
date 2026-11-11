@@ -1,1325 +1,1211 @@
 import type { ProblemPageProps } from '@/components/ProblemPageTemplate';
 
 export const PROBLEMS: Record<string, ProblemPageProps> = {
-  'concrete-cancer': {
-    name: 'Concrete Cancer',
-    slug: 'concrete-cancer',
-    metaTitle: 'Sydney Concrete Cancer Repair | Signs, Causes & Fix | Romans',
-    metaDescription:
-      'Concrete cancer in Sydney explained clearly: signs, causes, urgency and the repair sequence that actually lasts on balconies and walls.',
-    heroTagline:
-      'Rusting steel inside concrete walls and balconies — the most common structural problem in Sydney apartment blocks.',
-    quickAnswer:
-      'Concrete cancer is when steel reinforcement inside concrete rusts and expands, cracking the concrete off from the inside. It is widespread in Sydney apartment blocks built between the 1960s and 1990s, especially near the coast. A proper repair means cutting back to sound concrete, treating the exposed steel with a corrosion inhibitor, and patching with a salt-resistant repair mortar — anything less fails within a few years.',
-    whatItIs: [
-      'Concrete cancer is what happens when the steel reinforcement inside concrete starts to rust. As the steel rusts, it expands — up to seven times its original size. That expansion cracks the concrete from the inside out, pushing it off in chunks. Left alone, the structural strength of the concrete drops and the damage accelerates.',
-      'It is by far the most common structural problem we see in Sydney apartment blocks, especially the ones built between the 1960s and the 1990s. Coastal suburbs — Bondi, Manly, Dee Why — get it worst, because salt air speeds everything up. But we also see plenty of it inland, on older car parks, balcony slabs, and commercial buildings.',
-      'The good news: it is fixable, as long as you catch it before the structural steel is too far gone. The bad news: poorly done repairs fail quickly and make the problem worse, because you are trapping moisture and salt against steel that is already compromised.',
+  "concrete-cancer": {
+    "name": "Concrete Cancer",
+    "slug": "concrete-cancer",
+    "metaTitle": "Sydney Concrete Cancer Repair | Signs, Causes & Fix | Romans",
+    "metaDescription": "Understand rust stains, spalling and exposed reinforcement, when to keep clear and what a concrete repair assessment should cover.",
+    "heroTagline": "Rust stains and breaking concrete deserve assessment before a repair is chosen.",
+    "quickAnswer": "Concrete cancer is a common name for damage associated with corroding steel reinforcement. Corrosion products can expand and crack or break away the surrounding concrete. Spalling can also have other causes, so visible damage or a photograph cannot confirm the diagnosis or structural safety. Keep away from loose concrete and the area below it, and arrange a site-specific assessment.",
+    "whatItIs": [
+      "Concrete normally provides an alkaline environment that helps protect reinforcing steel. Chlorides reaching the reinforcement can disrupt that protection, while carbonation can reduce the concrete’s protective alkalinity. When protection is compromised, moisture and oxygen allow corrosion to develop.",
+      "Corrosion products can occupy more space than the steel they replace, creating pressure within the concrete. This can lead to cracking, separation beneath the surface and spalling. Loss of steel section and damage to the surrounding concrete may affect structural performance; surface appearance alone cannot establish remaining capacity.",
+      "Marine exposure, water entry, concrete cover and earlier repairs are relevant to an investigation, but a building’s age or suburb does not establish its condition. An assessment should identify the affected extent, reinforcement condition and likely causes before deciding whether local repairs or a broader repair strategy is appropriate."
     ],
-    signs: [
-      'Rust stains bleeding out of concrete walls or balconies',
-      'Cracks running in straight lines (usually following the steel reinforcement)',
-      'Concrete flaking off in chunks, exposing brown rusty steel underneath',
-      'Hollow sound when you tap the concrete surface',
-      'Bulging or swelling patches on balcony soffits or walls',
-      'Paint or render bubbling and peeling off in sheets',
+    "signs": [
+      "Rust-coloured staining from a concrete edge or crack",
+      "Cracks that appear to follow reinforcement lines",
+      "Concrete flaking or breaking away, sometimes exposing steel",
+      "Bulging areas on walls, balcony edges or soffits",
+      "Peeling finishes or damage returning around an earlier repair; these signs alone do not confirm corrosion",
+      "Loose or fallen concrete, observed only from a safe position; do not approach to inspect it"
     ],
-    causes: [
-      'Salt in the air crystallising inside the concrete (biggest cause in coastal Sydney)',
-      'Water ingress through cracks, failed waterproofing or poor drainage',
-      'Concrete cover over the steel that was too thin when originally built',
-      'Carbonation — the concrete losing alkalinity over decades, letting steel rust',
-      'Previous repairs done with the wrong materials, sealing moisture against the steel',
+    "causes": [
+      "Chlorides reaching reinforcing steel and disrupting its protective layer",
+      "Carbonation reducing the concrete’s protective alkalinity at the reinforcement",
+      "Moisture and oxygen supporting corrosion where steel protection is compromised",
+      "Water entry through cracks, failed joints or waterproofing, and drainage problems",
+      "Inadequate or deteriorated concrete cover leaving reinforcement more exposed to harmful conditions",
+      "Earlier repairs that have not addressed the assessed cause or wider extent of deterioration"
     ],
-    urgency: 'high',
-    urgencyNote:
-      'If you can see exposed rusty steel, the damage is already into the structural layer. For balconies, parapets or anything overhead, get it looked at quickly — concrete can fall. For walls at ground level, you have more time, but every year you wait the repair gets bigger and more expensive.',
-    howWeFixIt: [
+    "urgency": "high",
+    "urgencyNote": "Loose concrete can injure people at any height, including beside ground-level walls. Keep people away from the affected area and the space below loose or overhead material. Do not tap or chip suspect concrete, climb to inspect it or test whether it is secure. Arrange prompt professional advice for exposed reinforcement, bulging or breaking concrete. If there is immediate danger to people, contact emergency services rather than waiting for a quote.",
+    "howWeFixIt": [
       {
-        step: 'Full assessment',
-        detail:
-          'We probe the concrete with sounding hammers to find all the damage, including hidden sections that are hollow behind intact-looking surface. You need to find every bit of compromised concrete before you start cutting, or the repair will fail at the edges.',
+        "step": "Establish safe access and assessment needs",
+        "detail": "The initial review considers visible damage, access and protection for occupants and passers-by. A structural engineer assesses structural concerns and specifies repairs where required; Romans carries out the agreed building work. Temporary support or exclusion arrangements may be needed before investigation."
       },
       {
-        step: 'Cut out damaged concrete',
-        detail:
-          'We cut back to sound, well-bonded concrete — usually behind the steel. All the rusty, spalled or delaminated concrete comes out. Halfway measures do not work.',
+        "step": "Investigate the extent and cause",
+        "detail": "Qualified professionals may use controlled sounding, opening up or specialist testing to assess deterioration, reinforcement condition and exposure. These are not homeowner checks. The scope should account for hidden damage and relevant leaks, joints or drainage problems."
       },
       {
-        step: 'Clean and treat the steel',
-        detail:
-          'Every bit of exposed steel gets wire-brushed or sandblasted back to clean metal, then treated with a corrosion inhibitor and a protective coating. This is the step that decides whether the repair lasts 5 years or 30.',
+        "step": "Specify concrete and reinforcement repairs",
+        "detail": "The assessed condition determines where unsound concrete needs removal and whether reinforcement requires cleaning, treatment, supplementation or replacement. Structural alterations and any temporary support must follow the appropriate engineering design, rather than a standard patch detail."
       },
       {
-        step: 'Apply a proper patch mortar',
-        detail:
-          'We use a salt-resistant, polymer-modified repair mortar matched to the original concrete. Applied in layers with proper curing. We never use builders mix — it shrinks and cracks off.',
+        "step": "Reinstate with a compatible repair system",
+        "detail": "Where patch repair is specified, preparation, reinforcement protection, repair material, placement and curing must suit the existing concrete and exposure. A surface patch alone cannot resolve all corrosion conditions or restore every damaged structural element."
       },
       {
-        step: 'Protective coating',
-        detail:
-          'The repaired area gets a breathable protective coating that keeps water and salt out while letting moisture inside the concrete escape. Without this, the next round of damage starts immediately.',
-      },
+        "step": "Address exposure and plan maintenance",
+        "detail": "Relevant water-entry, drainage or waterproofing defects should be addressed within the agreed scope. Protective coatings may be appropriate as part of a specified system. Ask for completion records, inspection needs and maintenance guidance; a coating does not guarantee against future deterioration."
+      }
     ],
-    costBand:
-      '$2,500 – $15,000+ per balcony, depending on damage. Whole-building programs typically $30k–$300k+ staged over 1–3 years.',
-    faqs: [
+    "costBand": "Cost depends on the assessed repair area and depth, reinforcement condition, access equipment, occupant protection, engineering, waterproofing and finishes. Ask for a written scope identifying investigation fees, exclusions and how hidden damage will be handled before comparing quotes.",
+    "faqs": [
       {
-        question: 'Can concrete cancer spread to other parts of the building?',
-        answer:
-          'Yes, absolutely. The conditions that caused it in one spot usually exist across the building. If one balcony has concrete cancer, the others are probably at different stages of the same process. A full inspection gives you the real picture.',
+        "question": "Can concrete cancer spread to other parts of the building?",
+        "answer": "It is not an infection. Similar exposure or construction conditions may affect other areas, but one damaged balcony does not establish that every balcony needs the same work. Assessment should consider nearby areas and whether wider investigation or testing is warranted."
       },
       {
-        question: 'How long does a proper concrete cancer repair last?',
-        answer:
-          'Done properly — full removal, steel treated with a corrosion inhibitor, salt-resistant patch mortar, breathable protective coating — 20 to 30 years is realistic in a coastal environment. Done badly, repairs can fail in 3 to 5 years.',
+        "question": "How long does a concrete cancer repair last?",
+        "answer": "Service life depends on the diagnosed cause, repair design, workmanship, exposure and maintenance. Ask what the proposed system addresses, what remains outside the scope and which warranty terms apply. A general guide cannot promise a fixed lifespan."
       },
       {
-        question: 'We are a strata committee — how do we budget for this?',
-        answer:
-          'Most strata jobs get staged over 2 or 3 years to spread cost. We inspect the whole building, rank the damage by urgency, and set up a program that deals with critical areas first and less urgent ones in later stages. Happy to work with your strata manager on this.',
+        "question": "We are a strata committee: how do we budget for this?",
+        "answer": "Give the strata manager or committee the location, earlier reports and photographs taken from a safe position. Establish who can authorise investigation and immediate safety measures. A defined scope should distinguish urgent work from work an engineer or relevant specialist considers safe to stage; a budget preference alone cannot determine what can wait."
       },
       {
-        question: 'Is painting over concrete cancer a real fix?',
-        answer:
-          'No. Painting hides the damage and can make it worse by trapping more moisture. You have to cut out the damaged concrete, treat the steel, and patch properly. Paint is a last step, not a fix on its own.',
-      },
+        "question": "Is painting over concrete cancer a real fix?",
+        "answer": "Painting does not treat corroded reinforcement or restore damaged concrete. A coating may be part of an appropriate protection system after assessment and repair, but covering visible damage cannot establish its cause or make an unsafe area safe."
+      }
     ],
-    relatedServices: [
-      { title: 'Concrete Cancer Treatment', href: '/services/concrete-repairs/concrete-cancer' },
-      { title: 'Spalling Concrete Repair', href: '/services/concrete-repairs/spalling-repair' },
-      { title: 'Protective Coatings', href: '/services/concrete-repairs/protective-coatings' },
-      { title: 'Strata Repairs', href: '/services/remedial-building/strata-repairs' },
-    ],
+    "relatedServices": [
+      {
+        "title": "Concrete Cancer Treatment",
+        "href": "/services/concrete-repairs/concrete-cancer"
+      },
+      {
+        "title": "Spalling Concrete Repair",
+        "href": "/services/concrete-repairs/spalling-repair"
+      },
+      {
+        "title": "Protective Coatings",
+        "href": "/services/concrete-repairs/protective-coatings"
+      },
+      {
+        "title": "Strata Repairs",
+        "href": "/services/remedial-building/strata-repairs"
+      }
+    ]
   },
 
-  'cracked-brick-walls': {
-    name: 'Cracked Brick Walls',
-    slug: 'cracked-brick-walls',
-    metaTitle: 'Sydney Cracked Brick Walls | Causes, Signs & Repair | Romans',
-    metaDescription:
-      'Cracked brick wall? Learn which crack patterns matter, what causes them in Sydney and how to fix the wall properly.',
-    heroTagline:
-      'Not every crack is serious — but some absolutely are. Here is how to tell the difference.',
-    quickAnswer:
-      'Cracks in brick walls are usually caused by foundation movement, rusting steel lintels, failed wall ties, or thermal stress. Hairline cracks that follow mortar joints are often just age. Stair-step cracks wider than 5mm, horizontal cracks, or cracks that are actively growing are the ones to take seriously. The right fix depends on the cause — filling the crack without fixing the underlying cause means it comes back.',
-    whatItIs: [
-      'A crack in a brick wall can mean anything from a small cosmetic issue to a serious structural problem. The pattern, width and direction of the crack tell the story. Hairline cracks that follow the mortar joints are usually just age or minor movement. Stair-step cracks that run diagonally through the wall, or cracks that keep widening, are telling you something is moving.',
-      'The most common causes in Sydney are foundation movement from reactive clay soils, rusting steel lintels above windows and doors, failed wall ties in cavity brickwork, and thermal or settlement stress in older buildings. Each cause has a different fix. Filling the crack without fixing the cause means it comes back in 6 to 12 months.',
-      'Our job is to work out what caused the crack, fix the underlying cause, and then stitch the wall back together properly with a repair that will still be holding 50 years from now.',
+  "cracked-brick-walls": {
+    "name": "Cracked Brick Walls",
+    "slug": "cracked-brick-walls",
+    "metaTitle": "Sydney Cracked Brick Walls | Causes, Signs & Repair | Romans",
+    "metaDescription": "Learn which changes in cracked brickwork warrant attention, what an assessment should consider and how the cause guides the repair.",
+    "heroTagline": "The pattern is a clue, not a diagnosis. Assess the wall and its movement before choosing a repair.",
+    "quickAnswer": "Brickwork can crack because of foundation movement, thermal or moisture movement, deteriorated lintels, wall-tie problems or other defects. Crack width alone cannot establish the cause or confirm safety. Widening cracks, distortion, sticking openings or loose masonry warrant assessment. Keep clear of unstable areas; the repair must suit the wall and the cause, not just fill the visible gap.",
+    "whatItIs": [
+      "A crack records movement or separation in masonry, but does not explain why it happened. Pattern, width, location and change over time are useful observations alongside the wall construction, supports and surrounding conditions. A narrow crack is not automatically harmless, and a horizontal or stair-step crack is not a diagnosis on its own.",
+      "An assessment may need to consider footings and drainage, lintels over openings, ties connecting wall elements, movement joints and previous alterations. Different problems can produce similar cracks. Photographs can help start the conversation, but cannot establish hidden conditions or the structural safety of the wall.",
+      "Romans carries out agreed masonry and structural repair work. Structural engineers assess structural concerns and design repairs where required. Repointing, replacing bricks, crack stitching or rebuilding may each suit particular conditions; none is a universal fix for ongoing movement."
     ],
-    signs: [
-      'Stair-step cracks running diagonally through mortar joints',
-      'Horizontal cracks — these are more serious than vertical ones',
-      'Cracks that widen or lengthen over weeks or months',
-      'Doors and windows sticking or no longer closing properly',
-      'Cracks wider than 5mm, or ones you can push a coin into',
-      'Gaps opening up between walls and ceilings or floors',
-      'Rust staining above windows (failing lintel)',
+    "signs": [
+      "Stair-step, horizontal or vertical cracks, including where they begin and end",
+      "Cracks visibly widening, lengthening or returning after an earlier repair",
+      "Bowing, leaning or displacement of the wall",
+      "Doors or windows becoming difficult to operate alongside other changes",
+      "Gaps at wall junctions, ceilings or floors",
+      "Rust staining or distortion around window and door lintels",
+      "Loose masonry or falling fragments; keep away rather than testing them"
     ],
-    causes: [
-      'Foundation movement — reactive clay soils expanding and contracting with moisture',
-      'Rusting steel lintels pushing the brickwork apart as the steel expands',
-      'Failed wall ties in cavity walls (common in 1960s–80s brick veneer)',
-      'Tree roots displacing footings',
-      'Water damage from leaking pipes or poor drainage softening the ground under the wall',
-      'Original construction defects — undersized footings or poor mortar',
+    "causes": [
+      "Foundation movement associated with changing ground conditions or support",
+      "Thermal or moisture movement where the wall cannot accommodate it adequately",
+      "Corrosion or deterioration of lintels affecting the masonry above openings",
+      "Missing, deteriorated or unsuitable wall ties or other restraints",
+      "Leaks or drainage problems affecting the ground near footings",
+      "Trees influencing ground moisture or, in some cases, directly displacing nearby structures",
+      "Construction defects, altered loads or previous work that changed wall support"
     ],
-    urgency: 'medium',
-    urgencyNote:
-      'Hairline cracks along mortar joints can be watched over time. Stair-step or horizontal cracks wider than a credit card, or any crack that is actively growing, should be looked at soon. If doors and windows have started sticking, or if the crack has appeared suddenly after heavy rain, get it assessed now — those are signs of active movement.',
-    howWeFixIt: [
+    "urgency": "medium",
+    "urgencyNote": "Keep people away from loose masonry, leaning or bulging walls and the area beneath unstable material. Sudden movement or visibly worsening distortion needs urgent professional advice; for immediate danger, contact emergency services. Arrange assessment for new or changing cracks, particularly with sticking openings or displacement. Do not rely on a crack-width threshold to decide a wall is safe. Monitoring is appropriate only where the assessed condition supports it, not as a substitute for investigating warning signs.",
+    "howWeFixIt": [
       {
-        step: 'Diagnose the cause',
-        detail:
-          'Before we touch a crack, we work out why it is there. Foundation movement, rusting lintel, failed tie, tree root, drainage issue — the fix depends on the cause. Sometimes we bring in a structural engineer for complex cases.',
+        "step": "Assess the wall and its history",
+        "detail": "Record where cracking occurs, when it appeared, changes noticed, previous repairs and nearby leaks or alterations. Observe and take photographs only from a safe position. An inspection determines what further investigation or structural engineering input is needed."
       },
       {
-        step: 'Stop the cause',
-        detail:
-          'If it is a rusting lintel, we replace it. If it is drainage, we fix the drainage. If it is foundation movement from a leaking pipe, we find and fix the leak first. Repairing the wall without stopping the cause is throwing money away.',
+        "step": "Define the cause and repair scope",
+        "detail": "A structural engineer assesses structural concerns and specifies the necessary repair or support where required. Depending on the findings, drainage, lintels, ties, footings or movement detailing may need attention alongside the cracked masonry. Romans carries out the agreed building work rather than providing engineering certification."
       },
       {
-        step: 'Helical bar stitching',
-        detail:
-          'Stainless steel helical bars bedded into horizontal mortar joints across the crack. They tie the wall back together while letting small future movement happen without re-cracking. A quiet, non-destructive structural repair.',
+        "step": "Choose stitching only where suitable",
+        "detail": "Helical bar stitching beds stainless steel spiral bars into prepared mortar joints across a crack to reinforce the masonry. Suitability and layout depend on the assessed wall and cause of movement. Stitching alone does not stop foundation movement or guarantee that cracks will not recur."
       },
       {
-        step: 'Rebuild or replace damaged bricks',
-        detail:
-          'Where bricks are broken or spalled around the crack, we cut them out and replace with matched bricks (reclaimed handmade for heritage, new pressed for modern). The repair blends so you can barely see it.',
+        "step": "Repair or rebuild affected masonry",
+        "detail": "The scope may include replacing damaged bricks, rebuilding an affected area or repairing supports. Access, temporary support and any required approvals must be established before work. Brick and mortar selection should suit the existing wall, with heritage advice where needed."
       },
       {
-        step: 'Repoint and finish',
-        detail:
-          'New mortar matched to the existing in colour and profile. On heritage walls, lime mortar. On modern, appropriate cement mix. Finished so the wall looks right.',
-      },
+        "step": "Finish and agree follow-up",
+        "detail": "Repointing and making good aim to match the surrounding work, although weathering and material differences can leave repairs visible. Where monitoring is specified, agree who will review it and what changes require further advice. Timing depends on investigation, support, curing and the final scope."
+      }
     ],
-    costBand:
-      '$800 – $8,000 for typical domestic crack repairs. Major structural work with engineer involvement can run $15,000+.',
-    faqs: [
+    "costBand": "Pricing follows the assessed cause, extent of damage, access, engineering, temporary support, required approvals and repair and finishing work. Ask which investigations and making-good work are included, and how unexpected findings will be priced. A visible crack alone is not enough to set a reliable budget.",
+    "faqs": [
       {
-        question: 'How do I know if my cracked wall is dangerous?',
-        answer:
-          'Width over 5mm, horizontal orientation, or cracks that are actively growing are the warning signs. If you can see daylight through the crack, or if the wall is bulging out of line, call someone that day. For smaller cracks, monitor them over a few weeks to see if they are stable or still moving.',
+        "question": "How do I know if my cracked wall is dangerous?",
+        "answer": "Crack width or pattern alone cannot confirm safety. Loose masonry, leaning, bulging or sudden movement require keeping clear and urgent professional advice. If people are in immediate danger, contact emergency services. New or widening cracks and changes around openings also warrant assessment; do not approach an unstable wall to measure a crack."
       },
       {
-        question: 'Will filling the crack with sealant fix it?',
-        answer:
-          'Only if the cause has been fixed. Otherwise the crack just opens up again beside the sealant. We often see old caulked repairs that have failed — the original crack is still there, with new cracks either side of the sealant. Fix the cause first.',
+        "question": "Will filling the crack with sealant fix it?",
+        "answer": "Sealant may suit a specified joint or weather-sealing detail, but it does not restore structural support or resolve an unknown cause of movement. Establish the cause and required repair before covering the evidence. Even after associated defects are addressed, the correct finish depends on the wall and its movement needs."
       },
       {
-        question: 'What is helical bar stitching and is it invisible?',
-        answer:
-          'Helical bars are stainless steel spiral rods bedded into the horizontal mortar joints. After repointing, they are completely hidden. They hold the wall together across a crack while allowing minor future movement without re-cracking. One of the best structural repair techniques for brick.',
+        "question": "What is helical bar stitching and is it invisible?",
+        "answer": "Stitching uses stainless steel spiral bars bedded into prepared mortar joints across a crack where this reinforcement is appropriate. The bars are concealed when the joints are made good, but the finished repair may remain visible. It does not suit every crack or guarantee against future movement; the layout and method should follow the assessed condition and required design."
       },
       {
-        question: 'Do I need a structural engineer?',
-        answer:
-          'For most typical cracks, no. We can diagnose and repair within our scope. For major structural issues — footing failure, wall replacement, significant movement — yes, and we work with engineers regularly. We will tell you up front if yours is one of those cases.',
-      },
+        "question": "Do I need a structural engineer?",
+        "answer": "An engineer may be needed to investigate structural concerns, assess support or capacity and design repairs or temporary works. That decision depends on the wall, movement and proposed work, not a single crack measurement. An initial builder’s review does not replace a formal engineering assessment or certification where these are required."
+      }
     ],
-    relatedServices: [
+    "relatedServices": [
       {
-        title: 'Structural Crack Repair',
-        href: '/services/structural-repairs/structural-crack-repair',
+        "title": "Structural Crack Repair",
+        "href": "/services/structural-repairs/structural-crack-repair"
       },
       {
-        title: 'Load-Bearing Wall Repairs',
-        href: '/services/structural-repairs/load-bearing-walls',
+        "title": "Load-Bearing Wall Repairs",
+        "href": "/services/structural-repairs/load-bearing-walls"
       },
       {
-        title: 'Foundation Repairs',
-        href: '/services/foundation-repairs',
-      },
-    ],
+        "title": "Foundation Repairs",
+        "href": "/services/foundation-repairs"
+      }
+    ]
   },
 
-  'failing-retaining-walls': {
-    name: 'Failing Retaining Walls',
-    slug: 'failing-retaining-walls',
-    metaTitle: 'Sydney Failing Retaining Walls | Drainage & Rebuild | Romans',
-    metaDescription:
-      'Leaning or cracking retaining wall? Learn the drainage and footing issues behind failure and when rebuilding is the right fix.',
-    heroTagline:
-      'Leaning, bulging, cracking — retaining walls fail for a reason, and patching the symptom never works.',
-    quickAnswer:
-      'Retaining walls fail predominantly from drainage failure — water building up behind the wall pushes it forward — or from inadequate footings. Leaning, bulging and cracking are the classic signs. A proper fix requires excavating behind the wall to install ag-pipe drainage and a gravel drainage blanket, then either rebuilding the wall or stabilising it with tie-backs depending on condition. Without drainage, any retaining wall will fail again.',
-    whatItIs: [
-      'A retaining wall holds back soil. When it starts leaning, bulging or cracking, it usually means one of two things: the drainage behind the wall has failed and water pressure is pushing the wall forward, or the footing was never adequate for the load. Sometimes both.',
-      'We see a lot of failed retaining walls across Sydney — especially in the Eastern Suburbs, North Shore and Northern Beaches where sloped blocks are everywhere. Most were built before modern drainage standards, with no ag pipes behind them, and they have been slowly rotating forward for decades.',
-      'Fixing a retaining wall means working out whether a rebuild is needed or whether the wall can be saved with drainage works and stabilisation. A collapsed wall takes the garden with it, damages fences and pools, and can threaten the house above it. It is not something to leave.',
+  "failing-retaining-walls": {
+    "name": "Failing Retaining Walls",
+    "slug": "failing-retaining-walls",
+    "metaTitle": "Sydney Failing Retaining Walls | Drainage & Rebuild | Romans",
+    "metaDescription": "Leaning, cracking or wet retaining walls need assessment of support, drainage and surrounding ground before a repair or rebuild is chosen.",
+    "heroTagline": "A retaining wall supports the ground as well as the garden. Movement needs a closer look.",
+    "quickAnswer": "Leaning, bulging or cracking can indicate problems with a retaining wall, its foundations, drainage or the loads behind it. The visible face does not show the full condition. An assessment should consider the retained ground and nearby structures before choosing drainage work, repair, strengthening or rebuilding.",
+    "whatItIs": [
+      "A retaining wall holds back soil. Its performance depends on the wall, foundation, retained material, drainage and loads around it. Water pressure is one possible contributor to movement, not a diagnosis that can be made from staining alone.",
+      "On a sloping Sydney block, a retaining wall may sit close to a house, driveway, pool or boundary. These relationships matter more to the repair than the suburb name. Supply any drawings and information about nearby excavation or changes to ground levels.",
+      "Excavating behind a distressed wall or removing part of it can change its support. Investigation and building work need a safe sequence, with structural and ground advice where required. A face repair alone may leave the cause untouched."
     ],
-    signs: [
-      'Wall visibly leaning forward at the top',
-      'Bulging or bowing in the middle of the wall',
-      'Cracks running vertically or diagonally through the wall',
-      'Gap opening up between the wall and the ground or structures behind',
-      'Water seeping through or around the wall after rain',
-      'Soil settling or subsiding behind the wall',
-      'Salt staining (efflorescence) on the wall face',
+    "signs": [
+      "New or increasing lean, bulging or displacement",
+      "Cracks through the wall or its joints",
+      "Ground sinking or gaps forming behind the wall",
+      "Water appearing through or around the wall after rain",
+      "Movement in nearby paving, fences or structures"
     ],
-    causes: [
-      'Failed or missing drainage behind the wall — water pressure pushes it forward',
-      'Undersized or poorly founded footings',
-      'Tree root pressure',
-      'Original construction without reinforcement or tie-backs for the wall height',
-      'Poor-quality backfill — heavy clay instead of free-draining gravel',
-      'Water damage from leaking pipes or gutters above the wall',
+    "causes": [
+      "Drainage problems and water pressure behind the wall",
+      "Inadequate or deteriorated foundations or wall elements",
+      "Changes to loads or ground levels above the wall",
+      "Ground movement, erosion or nearby excavation",
+      "Leaks affecting the retained ground"
     ],
-    urgency: 'high',
-    urgencyNote:
-      'A leaning retaining wall is a failing retaining wall. Once it starts moving it rarely stops on its own. Walls can collapse suddenly — usually after heavy rain — and when they go they can take sections of garden, driveway or fence with them. If yours is visibly leaning or bulging, get it inspected soon.',
-    howWeFixIt: [
+    "urgency": "high",
+    "urgencyNote": "Keep people away from a leaning, bulging or moving wall and the affected ground above and below it. Do not dig behind it, push it or clear outlets from an unsafe position. Seek urgent professional advice for visible movement or loose material. Contact emergency services if people are in immediate danger.",
+    "howWeFixIt": [
       {
-        step: 'Inspect and diagnose',
-        detail:
-          'We check the wall, the footing, the drainage and the conditions behind it. We determine whether the wall can be saved with stabilisation and drainage works, or whether rebuild is the honest answer.',
+        "step": "Assess the wall and surroundings",
+        "detail": "Record the wall construction, visible movement, drainage and nearby structures from safe access. An engineer may need to assess stability and specify temporary measures before further investigation."
       },
       {
-        step: 'Expose the back of the wall',
-        detail:
-          'We excavate behind the wall to expose the footing and the drainage zone. This is dirty work but there is no substitute. You cannot fix drainage without getting to it.',
+        "step": "Investigate support and drainage",
+        "detail": "The investigation should establish ground conditions, foundations, water pathways and relevant loads. Opening up or excavation requires a planned method rather than trial digging by the owner."
       },
       {
-        step: 'Install proper drainage',
-        detail:
-          'Ag pipe wrapped in geotextile at the base of the wall, a drainage blanket of gravel against the back, weep holes through the wall, and a discharge point where the water can go away. This is what makes a retaining wall last 60 years instead of 15.',
+        "step": "Compare repair and rebuilding options",
+        "detail": "The findings determine whether drainage improvements, local repairs, engineered strengthening or rebuilding are appropriate. Confirm boundary access and approval requirements before agreeing the work."
       },
       {
-        step: 'Rebuild or stabilise',
-        detail:
-          'For walls past saving: full rebuild with correct footing, reinforcement and tie-backs engineered for the height. For walls with sound footings but drainage failure: drainage works alone may be enough. Helical bar stitching for masonry walls with cracks.',
+        "step": "Carry out the specified work",
+        "detail": "Wall, footing, drainage and backfill details must suit the site and agreed design. Romans can discuss the building scope; engineering design and any specialist work need to be identified separately."
       },
       {
-        step: 'Backfill properly',
-        detail:
-          'Free-draining gravel against the drainage blanket, topsoil only at the top. Proper compaction. No heavy clay against the wall — that is what caused the problem first time around.',
-      },
+        "step": "Agree completion and maintenance checks",
+        "detail": "Record drainage outlets, access for maintenance and any specified inspections or monitoring. Keeping outlets accessible does not replace an assessment of a wall that continues to move."
+      }
     ],
-    costBand:
-      '$2,500 – $4,000 per square metre for heritage-quality sandstone retaining walls. Engineered block walls typically $1,200 – $2,500 per square metre. Site access and wall height affect cost a lot.',
-    faqs: [
+    "costBand": "Cost depends on wall size, retained ground, access for excavation, disposal, temporary support, engineering, drainage and reinstatement of nearby landscaping. Compare written scopes rather than a rate for the visible wall face.",
+    "faqs": [
       {
-        question: 'Can a leaning retaining wall be straightened without rebuilding?',
-        answer:
-          'Sometimes — if the lean is minor, the footing is sound, and the damage is limited. We can install tie-backs and drainage to stop further movement. But if the wall has failed structurally, rebuild is more cost-effective long-term because you are not patching a wall that is going to keep giving you problems.',
+        "question": "Can drainage repairs save a leaning retaining wall?",
+        "answer": "Possibly, but improved drainage does not restore lost support or reverse every form of movement. An assessment must establish whether the wall can remain and what additional work is needed."
       },
       {
-        question: 'Do I need council approval to rebuild a retaining wall?',
-        answer:
-          'For like-for-like repairs on a wall under 600mm, usually no. For walls over 600mm, walls on boundaries, or changes to wall height or position, usually yes. We handle the paperwork if approval is needed.',
+        "question": "Do I need council approval?",
+        "answer": "Check the property and proposed work with the relevant council or certifier before starting. Wall height alone is not enough to determine the approval pathway, especially near boundaries or other structures."
       },
       {
-        question: 'What is the right material for a Sydney retaining wall?',
-        answer:
-          'Depends on the property. Sandstone suits heritage and traditional properties — expensive but right for the look. Engineered block is strong and cost-effective and can be faced with stone veneer for aesthetics. For large structural walls we often spec reinforced concrete core with a stone or brick face.',
+        "question": "What material should replace the wall?",
+        "answer": "Discuss masonry, stone or concrete options against the required design, access, appearance and maintenance needs. A material preference cannot determine the structural design."
       },
       {
-        question: 'How long does a properly built retaining wall last?',
-        answer:
-          'With correct drainage and footings — 50 to 80 years is realistic for masonry walls, longer for reinforced concrete. Without drainage: 10 to 20 years before you are looking at repair again. The drainage is what lasts, or does not.',
-      },
+        "question": "How long will the repaired wall last?",
+        "answer": "That depends on the existing condition, repair design, exposure and maintenance. Ask what the proposed work addresses and which written warranty terms apply rather than relying on a generic lifespan."
+      }
     ],
-    relatedServices: [
-      { title: 'Retaining Walls (Masonry)', href: '/services/masonry/retaining-walls' },
-      { title: 'Stone Masonry Repairs', href: '/services/masonry/stone-masonry-repairs' },
-      { title: 'Structural Foundation Repairs', href: '/services/foundation-repairs/structural-foundation' },
-    ],
+    "relatedServices": [
+      {
+        "title": "Retaining Walls (Masonry)",
+        "href": "/services/masonry/retaining-walls"
+      },
+      {
+        "title": "Stone Masonry Repairs",
+        "href": "/services/masonry/stone-masonry-repairs"
+      },
+      {
+        "title": "Structural Foundation Repairs",
+        "href": "/services/foundation-repairs/structural-foundation"
+      }
+    ]
   },
+  "rising-damp": {
+    "name": "Rising Damp",
+    "slug": "rising-damp",
+    "metaTitle": "Sydney Rising Damp | Signs, Causes & Fix | Romans",
+    "metaDescription": "Damp at the base of a wall can have several causes. Learn what to investigate before choosing damp-course work or replacing finishes.",
+    "heroTagline": "Find the moisture source before covering the stain or choosing a damp treatment.",
+    "quickAnswer": "Rising damp describes ground moisture moving into masonry. Staining, salts and damaged finishes near floor level can also have other causes, including leaks and condensation. Investigation should establish the moisture source and condition of the wall before deciding whether damp-course, drainage or finishing work is suitable.",
+    "whatItIs": [
+      "Ground moisture can carry dissolved salts into masonry. As moisture moves and evaporates, deposits and deterioration may appear, but the height or shape of a stain alone does not confirm rising damp.",
+      "For an older Sydney terrace or house, useful evidence includes the existing damp course, outside ground levels, drainage, ventilation and earlier coatings or repairs. Building age does not establish whether a damp course is absent or defective.",
+      "Treatment should suit the masonry and the source of moisture. A chemical damp course is one possible option, not a standard answer for every damp wall. Original plaster, brick and decorative finishes need consideration before removal."
+    ],
+    "signs": [
+      "Staining or damp patches near the base of a wall",
+      "White deposits on masonry or finishes",
+      "Peeling paint, loose plaster or render",
+      "Deteriorating skirtings or nearby timber",
+      "Damp returning after earlier decoration"
+    ],
+    "causes": [
+      "Missing, damaged or bridged damp-proofing where relevant",
+      "High external ground levels or poor drainage",
+      "Leaks contributing moisture near walls or foundations",
+      "Finishes that affect drying of the existing wall",
+      "Other moisture sources that resemble rising damp"
+    ],
+    "urgency": "medium",
+    "urgencyNote": "Arrange investigation for persistent damp, damaged timber or loose finishes. Keep clear of falling material. If water is near electrical fittings, avoid contact and obtain qualified electrical advice; for immediate danger contact emergency services. Do not scratch or remove finishes to test the wall.",
+    "howWeFixIt": [
+      {
+        "step": "Investigate the moisture pattern",
+        "detail": "Review when damp occurs, rainfall or plumbing links, ground levels and previous repairs. Moisture readings and specialist testing, where needed, should be interpreted alongside the building condition."
+      },
+      {
+        "step": "Identify source-control work",
+        "detail": "The scope may involve drainage, leaks or a bridged damp course. Changes to paving or ground levels need consideration of footings, services and neighbouring property."
+      },
+      {
+        "step": "Choose a damp-course treatment if justified",
+        "detail": "Assess whether a new or repaired damp course is needed and suitable for this wall. Product selection and installation depend on wall construction and condition."
+      },
+      {
+        "step": "Plan compatible making good",
+        "detail": "Specify which finishes can remain and which require repair or replacement. Heritage fabric and salts may call for specialist advice and trial areas before widespread removal."
+      },
+      {
+        "step": "Allow for drying and review",
+        "detail": "Agree how drying and recurring damp will be checked before final decoration. Drying time and finish requirements depend on the assessed wall and chosen system."
+      }
+    ],
+    "costBand": "A quote should separate investigation, moisture-source repairs, damp-course work if needed, removal and reinstatement of finishes, and access. Wall thickness, salts and hidden timber damage can affect the scope.",
+    "faqs": [
+      {
+        "question": "Does a tidemark prove rising damp?",
+        "answer": "No. Its location is useful evidence, but leaks and other moisture conditions need to be considered. A moisture meter reading alone also does not identify the cause."
+      },
+      {
+        "question": "Will painting the wall fix it?",
+        "answer": "Painting does not resolve an unidentified moisture source. Choose finishes after investigation and any necessary repairs, with attention to how the existing wall dries."
+      },
+      {
+        "question": "Does a heritage wall need different treatment?",
+        "answer": "Original masonry and finishes should guide the specification. Seek heritage advice where relevant and confirm any consent requirements before removing original material."
+      },
+      {
+        "question": "How long does a chemical damp course last?",
+        "answer": "Ask about the selected product, suitability for the wall, installation requirements and written warranty exclusions. No single service life or warranty can be assumed before a system is specified."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      },
+      {
+        "title": "Historic Stuccos & Renders",
+        "href": "/services/heritage-restoration/historic-stuccos-renders"
+      },
+      {
+        "title": "Period Materials",
+        "href": "/services/heritage-restoration/period-materials"
+      }
+    ]
+  },
+  "spalling-render": {
+    "name": "Spalling & Falling Render",
+    "slug": "spalling-render",
+    "metaTitle": "Sydney Render Spalling | Repair & Recoat | Romans",
+    "metaDescription": "Loose or falling render needs safe access and investigation. Learn how moisture, movement, bond and the existing masonry influence repair.",
+    "heroTagline": "Look beyond the loose surface, without disturbing it yourself.",
+    "quickAnswer": "Render may crack or detach because of moisture, salts, movement, poor bonding or a material mismatch. Loose render can fall. Keep clear of affected areas and arrange an inspection before choosing patching, wider replacement or a new coating.",
+    "whatItIs": [
+      "Render is a finish over the wall, so a defect may lie in the render, its bond or the masonry behind it. Bubbling and cracking do not establish which layer has failed.",
+      "For a coastal Sydney property, exposure and water pathways are useful assessment questions. On an older rendered terrace, original finishes and later repairs also matter. Neither location nor building age proves that salt or cement is the cause.",
+      "A useful repair scope identifies sound areas to retain, failed material to remove and defects to address before making good. Matching an existing roughcast, float or bagged finish may need a sample area."
+    ],
+    "signs": [
+      "Bulging, cracked or detached render",
+      "Fallen fragments at the base of a wall",
+      "Peeling coatings around damaged patches",
+      "White deposits or damp staining",
+      "Damage returning at an earlier patch"
+    ],
+    "causes": [
+      "Poor adhesion or preparation of the background",
+      "Water entering behind the finish",
+      "Movement in the wall or at junctions",
+      "Salt-related deterioration where established",
+      "An unsuitable render or coating for the substrate"
+    ],
+    "urgency": "medium",
+    "urgencyNote": "Keep people away from loose or bulging render and the area below it, especially at entrances and paths. Do not tap, scrape or pull it to check the bond. Arrange prompt professional advice; immediate danger to people calls for emergency services.",
+    "howWeFixIt": [
+      {
+        "step": "Inspect with safe access",
+        "detail": "Assess visible damage and the need for protection below the work. Any sounding or opening up is controlled professional investigation, not a homeowner test."
+      },
+      {
+        "step": "Define removal limits",
+        "detail": "Identify the material that can remain and a method for removing failed areas without unnecessary damage to the background. Original decorative work may need specialist advice."
+      },
+      {
+        "step": "Address the background",
+        "detail": "Investigate relevant leaks, movement, salts and damaged masonry before specifying repairs. A primer or fresh coat alone cannot resolve every underlying defect."
+      },
+      {
+        "step": "Specify compatible render",
+        "detail": "Choose the repair build-up for the existing masonry, exposure and finish. Use an agreed sample where texture or colour matching matters."
+      },
+      {
+        "step": "Finish and protect the work",
+        "detail": "Curing and coatings should follow the specified system. Confirm drying needs and maintenance guidance rather than promising a fixed finish life."
+      }
+    ],
+    "costBand": "Allow for access equipment, protection below the wall, investigation, removal, background repairs, finish matching and decoration. The visible patch area may not represent the full scope.",
+    "faqs": [
+      {
+        "question": "Can I render over a bubbling patch?",
+        "answer": "Have its bond and underlying condition assessed first. Covering loose material does not secure it, and removal needs a safe method."
+      },
+      {
+        "question": "Is all cement render wrong on old buildings?",
+        "answer": "No single label determines compatibility. Assess the brick or stone, existing mortar, exposure and finish rather than assuming every older wall needs the same treatment."
+      },
+      {
+        "question": "What render suits a coastal home?",
+        "answer": "Select it for the actual substrate, exposure and moisture conditions. The suburb name alone does not specify a suitable product or coating."
+      },
+      {
+        "question": "When is repainting enough?",
+        "answer": "It may suit a sound finish that needs decoration. Cracking, detachment or recurring damp needs investigation before repainting, and the coating must suit the render."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Historic Stuccos & Renders",
+        "href": "/services/heritage-restoration/historic-stuccos-renders"
+      },
+      {
+        "title": "Concrete Resurfacing",
+        "href": "/services/concrete-repairs/concrete-resurfacing"
+      },
+      {
+        "title": "Facade Renovation",
+        "href": "/services/building-restoration/facade-renovation"
+      }
+    ]
+  },
+  "crumbling-mortar": {
+    "name": "Crumbling Mortar Joints",
+    "slug": "crumbling-mortar",
+    "metaTitle": "Sydney Crumbling Mortar | Repointing & Repair | Romans",
+    "metaDescription": "Open or weathered mortar joints need a repair suited to the masonry. Learn what repointing should address and when stability needs assessment.",
+    "heroTagline": "Good repointing starts with the brick, the existing joint and the reason it has deteriorated.",
+    "quickAnswer": "Mortar joints may weather, loosen or deteriorate with moisture and salts. Repointing replaces defective joint material, but cannot by itself resolve unstable masonry or ongoing movement. The repair mix, preparation and joint profile should suit the existing brick or stone.",
+    "whatItIs": [
+      "Mortar fills the joints between masonry units. Deteriorated joints can leave gaps and allow water entry, while a superficial smear may conceal deeper defects rather than repair them.",
+      "Victorian, Federation and later Sydney buildings can have different bricks, mortars and layers of repair. Assess the actual wall and surviving joints rather than specifying a mix from its age or postcode.",
+      "Repointing is careful preparation and placement as well as colour matching. Retain sound original work where practical and establish why joints have failed before choosing the extent of removal."
+    ],
+    "signs": [
+      "Open, recessed or visibly powdering joints",
+      "Mortar fragments below the wall",
+      "Damp patches associated with damaged joints",
+      "Cracked or displaced bricks",
+      "Flaking brick faces beside earlier pointing"
+    ],
+    "causes": [
+      "Weathering of exposed joints",
+      "Leaks or persistent moisture",
+      "Salt-related deterioration",
+      "A previous repair mix unsuitable for the masonry",
+      "Movement affecting joints and bricks"
+    ],
+    "urgency": "low",
+    "urgencyNote": "Arrange assessment for open or deteriorating joints. Loose bricks, bulging or leaning need prompt structural advice and an exclusion area, not routine repointing. Do not push bricks or scratch joints to test them. Keep clear of unstable material and seek emergency help for immediate danger.",
+    "howWeFixIt": [
+      {
+        "step": "Examine masonry and surviving joints",
+        "detail": "Identify brick or stone condition, earlier repairs, joint depth and profile. Sampling may be appropriate where the mortar specification is uncertain."
+      },
+      {
+        "step": "Set the repair scope",
+        "detail": "Separate local joint repairs from wider repointing, masonry replacement and structural work. Check relevant heritage requirements before disturbing original fabric."
+      },
+      {
+        "step": "Prepare without unnecessary damage",
+        "detail": "Agree removal methods suited to the masonry and joint condition. Removal depth and tools are specification decisions, not a universal DIY recipe."
+      },
+      {
+        "step": "Point and match the finish",
+        "detail": "Place compatible mortar and tool it to the agreed profile. A sample panel helps assess colour and texture; an exact invisible match cannot be promised."
+      },
+      {
+        "step": "Protect and review the work",
+        "detail": "Curing and weather protection depend on the mortar system and conditions. Record any associated leak repairs and maintenance or follow-up needs."
+      }
+    ],
+    "costBand": "Pricing depends on joint area and depth, access, previous hard repairs, damaged bricks, finish requirements and any structural or moisture-source work. Ask for a sample and a clear scope of making good.",
+    "faqs": [
+      {
+        "question": "Is hard pointing damaging my bricks?",
+        "answer": "It may be unsuitable, but colour or hardness alone is not enough to diagnose damage. Review the masonry, moisture and existing mortar before deciding whether removal is needed."
+      },
+      {
+        "question": "What is tuckpointing?",
+        "answer": "It is a decorative pointing finish with a fine contrasting line over a coloured joint background. Surviving detail can help identify it and guide a restoration sample."
+      },
+      {
+        "question": "How long will repointing last?",
+        "answer": "Exposure, substrate condition, mortar selection, workmanship and maintenance all matter. Ask for the specified system and warranty terms rather than a generic number of years."
+      },
+      {
+        "question": "Can the new mortar match the old?",
+        "answer": "A trial panel can establish an acceptable colour, texture and profile. Weathering and material differences may leave a repair visible, especially alongside older work."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Repointing & Brick Pointing",
+        "href": "/services/masonry/repointing"
+      },
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      },
+      {
+        "title": "Period Materials",
+        "href": "/services/heritage-restoration/period-materials"
+      }
+    ]
+  },
+  "foundation-movement": {
+    "name": "Foundation Movement & Settlement",
+    "slug": "foundation-movement",
+    "metaTitle": "Sydney Foundation Movement | Signs, Causes & Repair | Romans",
+    "metaDescription": "Changing cracks, sloping floors or sticking openings need assessment. Learn how investigation guides drainage repairs, monitoring or foundation work.",
+    "heroTagline": "Understand the movement before deciding whether the foundations need work.",
+    "quickAnswer": "Foundation movement can relate to ground conditions, water, loads or altered support. Cracks, sticking doors and sloping floors are clues, not proof of the cause or a need for underpinning. Structural assessment, and ground investigation where needed, should guide any monitoring and repair.",
+    "whatItIs": [
+      "Uneven movement can affect footings and the building they support. Similar visible symptoms may also arise from other defects, so a crack pattern or sloping floor alone cannot establish foundation failure.",
+      "For a Sydney property, useful investigation concerns the actual soil, drainage, trees, earlier extensions and nearby excavation. Conditions vary within a suburb; an area label cannot establish the footing design or ground behaviour.",
+      "Options may include dealing with a leak or drainage defect, specified monitoring, foundation work or repair of damaged masonry. Underpinning is not automatically required for every moving building, and crack stitching is not a substitute for assessing its support."
+    ],
+    "signs": [
+      "New, widening or recurring cracks",
+      "Doors or windows becoming difficult to operate",
+      "Changes in floor levels or gaps at skirtings",
+      "Separation at wall or extension junctions",
+      "Visible leaning or displacement of masonry"
+    ],
+    "causes": [
+      "Changes in ground moisture or bearing conditions",
+      "Leaks, drainage problems or erosion near footings",
+      "Inadequate support or poorly compacted fill",
+      "Changes in building loads or adjacent excavation",
+      "Tree-related ground effects where established by investigation"
+    ],
+    "urgency": "high",
+    "urgencyNote": "New or changing cracks and distortion warrant prompt assessment. Keep away from leaning walls, unstable floors or falling material. Do not wait for a monitoring period where safety is uncertain. For sudden serious movement or immediate danger to people, contact emergency services.",
+    "howWeFixIt": [
+      {
+        "step": "Review the changes and site history",
+        "detail": "Gather dates, previous reports, alterations and photographs taken from safe positions. A structural engineer assesses structural concerns and may recommend ground or drainage investigation."
+      },
+      {
+        "step": "Agree investigation and monitoring",
+        "detail": "Monitoring, if appropriate, needs a defined method, review period and response to changes. A stable reading over a short period does not prove that movement has permanently stopped."
+      },
+      {
+        "step": "Design source and support repairs",
+        "detail": "The findings determine whether drainage, leaks, foundations or other support needs work. Tree or ground alterations require suitable advice rather than unplanned removal or digging."
+      },
+      {
+        "step": "Carry out foundation work if specified",
+        "detail": "Where underpinning or other strengthening is required, use the site-specific design and planned sequence, including temporary support and inspections. Confirm access and required approvals."
+      },
+      {
+        "step": "Repair finishes and arrange follow-up",
+        "detail": "Masonry repairs and internal making good should follow the assessed movement and support needs. Agree what further monitoring or inspection is required and who reviews it."
+      }
+    ],
+    "costBand": "Investigation, engineering, access, ground conditions, temporary support, the specified foundation work and making good determine cost. A crack photograph is not enough to price a pier count or a whole-house repair.",
+    "faqs": [
+      {
+        "question": "Can I monitor cracks instead of arranging an assessment?",
+        "answer": "An assessment should decide whether monitoring is safe and useful. Do not use a crack-width threshold, a marble test or a few months without change as proof of structural safety."
+      },
+      {
+        "question": "Do I need a structural engineer?",
+        "answer": "Structural concerns need appropriate engineering assessment. The engineer determines the investigation and design needed; a builder’s initial review does not provide engineering certification."
+      },
+      {
+        "question": "Will insurance cover foundation movement?",
+        "answer": "Coverage depends on the policy, cause and claim assessment. Ask your insurer about evidence and authorisation before commissioning claim-related work; this guide cannot determine coverage."
+      },
+      {
+        "question": "How long will foundation work take?",
+        "answer": "The programme depends on investigation, design, approvals, access, ground findings and repair sequence. Request a staged programme with allowances for hidden conditions before agreeing the scope."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Underpinning",
+        "href": "/services/foundation-repairs/underpinning"
+      },
+      {
+        "title": "Structural Foundation Repairs",
+        "href": "/services/foundation-repairs/structural-foundation"
+      },
+      {
+        "title": "Settlement Stabilisation",
+        "href": "/services/foundation-repairs/settlement-stabilisation"
+      },
+      {
+        "title": "Structural Crack Repair",
+        "href": "/services/structural-repairs/structural-crack-repair"
+      }
+    ]
+  },
+  "chimney-cracks": {
+    "name": "Chimney Cracks & Leaks",
+    "slug": "chimney-cracks",
+    "metaTitle": "Sydney Chimney Cracks & Leaks | Repair | Romans",
+    "metaDescription": "Cracked, leaning or leaking chimneys need safe assessment of masonry, roof junctions and any active flue before repair or reuse.",
+    "heroTagline": "Chimney repairs start with safe access and the condition of the masonry and roof junction.",
+    "quickAnswer": "Chimney cracks and leaks may involve mortar, brickwork, flashing, the top of the stack or movement in its support. A leaning chimney or loose masonry needs urgent assessment. Building repairs do not by themselves confirm that a fireplace, flue or appliance is safe to use.",
+    "whatItIs": [
+      "The exposed chimney above the roof and its junction with the roof need to be assessed together. A stain near a fireplace may help locate a problem, but does not prove which part is leaking.",
+      "An older Sydney chimney may retain decorative brickwork, pots or other original details. Record these from safe positions and check the property’s heritage requirements before planning changes or removal.",
+      "The scope could range from joint and flashing repairs to rebuilding an unstable section. Whether the chimney is in use matters: any work affecting a flue or appliance needs the appropriate specialist assessment."
+    ],
+    "signs": [
+      "Water stains near the chimney or fireplace",
+      "Missing or deteriorated mortar visible from the ground",
+      "Cracked, displaced or fallen bricks",
+      "A visible lean or change in alignment",
+      "Damaged flashing or chimney details visible without climbing"
+    ],
+    "causes": [
+      "Deteriorated roof-junction flashing",
+      "Open joints or damaged brickwork",
+      "Defects at the top of the chimney",
+      "Movement in the stack or its support",
+      "Storm or impact damage"
+    ],
+    "urgency": "high",
+    "urgencyNote": "Keep clear of the chimney and the area beneath loose masonry or a leaning stack. Do not climb onto the roof or disturb bricks to inspect it. Seek urgent professional advice for instability and emergency services for immediate danger. Do not use a suspected damaged chimney or flue until the appropriate specialist has assessed it.",
+    "howWeFixIt": [
+      {
+        "step": "Plan safe inspection",
+        "detail": "Establish access and protection below the chimney before inspecting masonry, roof junctions and visible details. Structural concerns may require an engineer."
+      },
+      {
+        "step": "Define masonry repairs",
+        "detail": "Identify sound fabric to retain and any joints, bricks or sections needing repair. Rebuilding and temporary support must follow the assessed condition."
+      },
+      {
+        "step": "Address roof junctions",
+        "detail": "Specify flashing and associated roof repairs for the actual roof and chimney construction. A patch at a visible stain may not address the water-entry point."
+      },
+      {
+        "step": "Confirm flue and top details",
+        "detail": "Discuss caps, pots and any proposed changes with the relevant specialist, taking account of ventilation and appliance use. Do not assume a generic cap suits every chimney."
+      },
+      {
+        "step": "Complete agreed repairs and records",
+        "detail": "Separate the building scope from any appliance or flue certification needed. Record retained details, materials and future inspection needs."
+      }
+    ],
+    "costBand": "Access equipment, roof protection, stack height, masonry condition, flashing and any engineering or specialist flue work affect price. Removal and internal making good should be quoted separately where proposed.",
+    "faqs": [
+      {
+        "question": "Does an unused chimney still need leak repairs?",
+        "answer": "Yes, water entry still deserves investigation. Disuse does not remove the need to assess masonry stability, roof junctions and ventilation before deciding on repairs or closure."
+      },
+      {
+        "question": "Can I use the fireplace after masonry repairs?",
+        "answer": "Do not assume so. Have the flue and connected appliance assessed by an appropriately qualified specialist before use. Repointing or rebuilding alone does not establish safe operation."
+      },
+      {
+        "question": "How long will the repairs last?",
+        "answer": "That depends on the existing stack, exposure, specified materials and maintenance. Request inspection guidance and the actual warranty terms for the agreed work."
+      },
+      {
+        "question": "Can a damaged chimney be removed?",
+        "answer": "Removal is an option to discuss, not an automatic solution. Structural support, roof and internal making good, heritage requirements and any active flue connections must be resolved first."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Brick & Block Work",
+        "href": "/services/masonry/brick-block-work"
+      },
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      },
+      {
+        "title": "Defect Rectification",
+        "href": "/services/building-restoration/defect-rectification"
+      }
+    ]
+  },
+  "efflorescence-salt-damage": {
+    "name": "Efflorescence & Salt Damage",
+    "slug": "efflorescence-salt-damage",
+    "metaTitle": "Sydney Salt Damage & Efflorescence | Repair | Romans",
+    "metaDescription": "White deposits and damaged masonry need different responses. Learn what salt staining can tell you and what needs further investigation.",
+    "heroTagline": "Surface deposits are a clue to investigate, not a diagnosis of the whole wall.",
+    "quickAnswer": "Efflorescence is a deposit left as moisture carrying dissolved salts evaporates at a surface. A deposit alone does not establish serious damage, but recurring deposits, flaking masonry or loose finishes deserve investigation. Cleaning does not resolve an ongoing moisture source.",
+    "whatItIs": [
+      "White deposits can appear on brick, mortar, render or concrete. Their appearance alone cannot identify the salt, its source or the extent of deterioration behind the surface.",
+      "Salt crystallisation within porous masonry can contribute to deterioration. Assessment should distinguish surface staining from loss of brick, stone, mortar or render and look for relevant water pathways.",
+      "For a coastal Sydney wall, exposure is one factor to investigate alongside drainage, leaks, materials and earlier repairs. Inland walls can also have salt-related problems. Location does not establish either the source or the correct treatment."
+    ],
+    "signs": [
+      "White deposits on masonry or render",
+      "Deposits returning after earlier cleaning",
+      "Flaking or powdering brick or stone faces",
+      "Open or deteriorated joints",
+      "Peeling finishes or damp staining"
+    ],
+    "causes": [
+      "Moisture carrying salts from masonry or mortar",
+      "Ground moisture where established",
+      "Leaks or drainage defects",
+      "Marine exposure where relevant to the site",
+      "Existing finishes and repairs affecting moisture movement"
+    ],
+    "urgency": "medium",
+    "urgencyNote": "Persistent deposits or material loss warrant assessment. Keep clear of loose render, masonry or overhead fragments and obtain prompt advice about falling-material risks. Do not scrape, chip or chemically treat unknown deposits as a diagnostic test.",
+    "howWeFixIt": [
+      {
+        "step": "Distinguish deposits from deterioration",
+        "detail": "Review the affected material, moisture pattern and earlier treatments. Testing may be needed where the deposit or source is uncertain."
+      },
+      {
+        "step": "Investigate water pathways",
+        "detail": "Consider ground moisture, leaks, drainage and exposure. Identify which source-control work is justified rather than assuming every deposit indicates rising damp."
+      },
+      {
+        "step": "Plan cautious cleaning or treatment",
+        "detail": "Select any cleaning method for the substrate and condition, with a trial area where appropriate. Abrasive or chemical treatment can damage vulnerable surfaces."
+      },
+      {
+        "step": "Specify repairs where needed",
+        "detail": "Repair damaged masonry and finishes with compatible materials. Specialist salt-management methods may be considered, but no universal treatment removes every salt problem."
+      },
+      {
+        "step": "Review recurrence",
+        "detail": "Record baseline photographs and agree follow-up after treatment. Further deposits or deterioration may require reassessment rather than repeated surface cleaning."
+      }
+    ],
+    "costBand": "Cost depends on investigation, access, moisture-source work, cleaning trials and the extent of damaged masonry or finishes. Separate cosmetic cleaning from repairs in the written scope.",
+    "faqs": [
+      {
+        "question": "Should I scrub deposits off with a wire brush?",
+        "answer": "Do not assume an abrasive brush is safe for the surface. Establish the material and condition first and agree a suitable cleaning method, especially on soft or decorative masonry."
+      },
+      {
+        "question": "What paint should I use over a salt-affected wall?",
+        "answer": "Investigate moisture and deterioration before selecting a coating. The finish must suit the substrate and repair system; painting over recurring deposits is not source control."
+      },
+      {
+        "question": "Why are deposits appearing on new render?",
+        "answer": "They may relate to the new materials, the background or water entry. Inspect those conditions before assuming the render or damp course has failed."
+      },
+      {
+        "question": "Is this the same as concrete cancer?",
+        "answer": "No. Efflorescence describes surface salt deposits; concrete cancer commonly refers to damage associated with reinforcement corrosion. Deposits alone cannot diagnose corrosion or establish concrete safety."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      },
+      {
+        "title": "Protective Coatings",
+        "href": "/services/concrete-repairs/protective-coatings"
+      },
+      {
+        "title": "Historic Stuccos & Renders",
+        "href": "/services/heritage-restoration/historic-stuccos-renders"
+      }
+    ]
+  },
+  "leaking-balconies": {
+    "name": "Leaking Balconies",
+    "slug": "leaking-balconies",
+    "metaTitle": "Sydney Leaking Balconies | Waterproofing & Repairs | Romans",
+    "metaDescription": "Balcony leaks need investigation of drainage, junctions, waterproofing and any structural damage before a repair scope is agreed.",
+    "heroTagline": "Trace the water before deciding which parts of the balcony need repair.",
+    "quickAnswer": "Balcony leaks can involve waterproofing, outlets, thresholds, wall junctions or cracks. Water may travel before it appears inside, so a stain does not identify the source. Investigation should establish the leak path and any damage before deciding between a local repair and wider replacement.",
+    "whatItIs": [
+      "Staining below or beside a balcony shows where moisture has appeared, not necessarily where it entered. Record when it happens, including rain conditions, and any earlier repairs.",
+      "An apartment balcony may need access from more than one lot and coordination with the strata manager. Existing drawings, previous waterproofing records and reports are useful; building age alone cannot establish that a membrane has expired.",
+      "Where replacement waterproofing is required, the design needs to address the substrate, drainage, junctions, thresholds and finish as a system. Any structural deterioration needs appropriate assessment before it is covered."
+    ],
+    "signs": [
+      "Damp or water stains below or beside a balcony",
+      "Water collecting on the surface",
+      "Damaged tiles, joints or threshold finishes",
+      "Deposits, rust staining or damaged concrete beneath",
+      "Recurring leaks after earlier sealing work"
+    ],
+    "causes": [
+      "Defects in waterproofing or its junctions",
+      "Blocked, damaged or poorly arranged drainage",
+      "Threshold or wall-junction water entry",
+      "Cracking or movement in the supporting construction",
+      "Earlier repairs that did not address the leak path"
+    ],
+    "urgency": "high",
+    "urgencyNote": "Arrange prompt investigation of active leaks. Keep off and clear of balconies with loose concrete, visible distortion or uncertain structural safety, including the area below. Avoid contact with water near electrical fittings and seek qualified electrical advice. For immediate danger to people, contact emergency services.",
+    "howWeFixIt": [
+      {
+        "step": "Trace the leak safely",
+        "detail": "Review the history, drainage, junctions and accessible surfaces. Any testing or opening up should be planned to avoid worsening damage or exposing occupants to hazards."
+      },
+      {
+        "step": "Assess the substrate and structure",
+        "detail": "Determine whether tiles or bedding need removal to inspect the background. Structural concerns and damaged reinforcement require appropriate engineering assessment."
+      },
+      {
+        "step": "Define the waterproofing scope",
+        "detail": "Choose local repairs or replacement based on the findings and compatibility with the existing system. Establish access, approval and design requirements before work."
+      },
+      {
+        "step": "Install the specified system",
+        "detail": "Preparation, junctions, drainage connections, installation and curing must follow the approved design and product requirements. Identify who carries out specialist work and required inspections."
+      },
+      {
+        "step": "Reinstate and document",
+        "detail": "Finishes and falls must suit the specified drainage and waterproofing design. Request installation records, maintenance instructions and the actual warranty terms."
+      }
+    ],
+    "costBand": "Investigation, balcony area, access, substrate repairs, waterproofing details, finishes and coordination across lots affect cost. Ask which temporary protections, inspections and making-good work are included.",
+    "faqs": [
+      {
+        "question": "Will regrouting stop the leak?",
+        "answer": "It may address a specific joint defect, but cannot be assumed to repair a failed membrane or another leak path. Diagnose the source before paying for surface treatment or full replacement."
+      },
+      {
+        "question": "How long will balcony repair take?",
+        "answer": "Investigation, design, approvals, access, substrate drying and system curing all influence the programme. Agree expected access restrictions and sequencing for the actual scope."
+      },
+      {
+        "question": "Is the leak definitely from the balcony above?",
+        "answer": "No. Water can travel before appearing inside. The investigation should consider adjoining junctions and other sources rather than assigning responsibility from the stain location."
+      },
+      {
+        "question": "Who pays in a strata building?",
+        "answer": "Ask the strata manager to review the strata plan, by-laws, relevant records and proposed work. Responsibility and insurance coverage cannot be determined from this general guide; confirm authority before commissioning work."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Concrete Cancer Treatment",
+        "href": "/services/concrete-repairs/concrete-cancer"
+      },
+      {
+        "title": "Strata Building Repairs",
+        "href": "/services/remedial-building/strata-repairs"
+      },
+      {
+        "title": "Spalling Concrete Repair",
+        "href": "/services/concrete-repairs/spalling-repair"
+      },
+      {
+        "title": "Defect Rectification",
+        "href": "/services/building-restoration/defect-rectification"
+      }
+    ]
+  },
+  "tuckpointing-restoration": {
+    "name": "Tuckpointing Restoration",
+    "slug": "tuckpointing-restoration",
+    "metaTitle": "Sydney Tuckpointing Restoration | Repointing & Lime Mortar | Romans",
+    "metaDescription": "Plan tuckpointing repairs around surviving detail, compatible mortar and a sample panel, with heritage requirements checked before work.",
+    "heroTagline": "The fine decorative lines deserve the same care as the brickwork behind them.",
+    "quickAnswer": "Tuckpointing creates fine contrasting lines against a coloured mortar background. Restoration should follow evidence of the original detail and the condition of the joints, rather than applying a standard pattern to every older facade. A sample panel helps agree colour, line and profile.",
+    "whatItIs": [
+      "The contrasting fillet is the distinctive part of tuckpointing. Colour, width and profile vary, so surviving work is more useful than a generic picture of a period house.",
+      "For a Sydney terrace, inspect sheltered joints and earlier records before deciding what belongs on the facade. Neighbouring terraces can provide context, but do not prove that this building originally had the same finish.",
+      "Restoration may involve retaining sound detail, repairing defective joints and reinstating selected areas. Decorative work does not resolve unstable masonry, leaks or ongoing movement beneath it."
+    ],
+    "signs": [
+      "Broken or missing contrasting fillets",
+      "Surviving fine lines beside later plain pointing",
+      "Deteriorated joints behind decorative detail",
+      "Patchy colours or profiles from earlier repairs",
+      "Damaged brick edges around old pointing"
+    ],
+    "causes": [
+      "Weathering of joints and decorative fillets",
+      "Previous repairs that changed the finish",
+      "Abrasive cleaning or damage to the surface",
+      "Water entry affecting the joints",
+      "Movement or underlying masonry defects"
+    ],
+    "urgency": "low",
+    "urgencyNote": "Decorative loss can be planned alongside facade maintenance, but first distinguish it from loose masonry, open joints or movement. Keep clear of unstable material and arrange prompt assessment where those signs are present. Check relevant heritage requirements before removing original detail.",
+    "howWeFixIt": [
+      {
+        "step": "Record surviving evidence",
+        "detail": "Document sound original detail and previous repairs. Historical photographs can help where their relationship to this building is established."
+      },
+      {
+        "step": "Assess the underlying joints",
+        "detail": "Identify what can remain and any moisture or structural defects that need attention before decorative work. Avoid removing sound fabric simply to make the facade uniform."
+      },
+      {
+        "step": "Agree a sample",
+        "detail": "Use a sample panel to review compatible mortar, background colour, fillet appearance and joint profile. Confirm the proposed work against any heritage requirements."
+      },
+      {
+        "step": "Repair and reinstate detail",
+        "detail": "Preparation and placement should suit the masonry condition and agreed sample. The specification determines methods and dimensions rather than a universal joint depth or line width."
+      },
+      {
+        "step": "Protect the finish",
+        "detail": "Provide curing and weather protection suited to the system, and retain records of mixes and samples for future repairs. New work may remain distinguishable from weathered original work."
+      }
+    ],
+    "costBand": "Cost reflects access, joint condition, retained detail, preparation and the extent of decorative work. Ask for a scoped comparison with ordinary repointing rather than assuming a fixed price multiple.",
+    "faqs": [
+      {
+        "question": "How can I tell whether my terrace was tuckpointed?",
+        "answer": "Surviving contrasting lines may be evidence, especially in sheltered areas. Photographs and assessment of the joints can help; the building’s suburb or age alone is not proof."
+      },
+      {
+        "question": "How does tuckpointing differ from ordinary pointing?",
+        "answer": "Ordinary pointing finishes the mortar joint itself. Tuckpointing adds a fine contrasting fillet against a coloured background for a decorative effect."
+      },
+      {
+        "question": "Can restoration be staged?",
+        "answer": "Discuss staging after urgent masonry or moisture defects are addressed. Keep sample and mix records, while allowing for weathering and colour differences between stages."
+      },
+      {
+        "question": "Will it increase my property value?",
+        "answer": "It can restore an evidenced decorative feature, but a financial return cannot be promised. Base the scope on condition, heritage significance and the finish you want to retain."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Repointing & Brick Pointing",
+        "href": "/services/masonry/repointing"
+      },
+      {
+        "title": "Heritage Masonry",
+        "href": "/services/heritage-restoration/heritage-masonry"
+      },
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      }
+    ]
+  },
+  "sandstone-weathering": {
+    "name": "Sandstone Weathering & Erosion",
+    "slug": "sandstone-weathering",
+    "metaTitle": "Sydney Sandstone Weathering | Repair & Restoration | Romans",
+    "metaDescription": "Assess weathered sandstone before cleaning, sealing or replacement. Retain sound stone and choose repairs for the fabric and exposure.",
+    "heroTagline": "Keep sound stone wherever possible, and understand deterioration before treating it.",
+    "quickAnswer": "Sandstone can show surface erosion, deposits, flaking or fractures. Some changes are weathering; others need investigation of moisture, salts, support or previous repairs. Appearance alone cannot establish structural capacity or whether cleaning, local repair or replacement is appropriate.",
+    "whatItIs": [
+      "Sandstone varies in texture and condition. A dark surface, loss of carved detail and a fractured block are different issues and should not receive the same treatment.",
+      "On a Sydney facade, record the stone, joints, drainage details and earlier coatings or repairs. Marine exposure may be relevant at some sites, but locality does not establish the cause of decay or the source of replacement stone.",
+      "Conservation starts with identifying sound fabric to retain. Cleaning, consolidants, coatings and replacement each need a specific justification. A treatment that suits one stone or location may not suit another."
+    ],
+    "signs": [
+      "Flaking, powdering or loose fragments visible without touching",
+      "Loss of carved detail",
+      "Cracks or separation in blocks or joints",
+      "Persistent deposits or damp staining",
+      "Displaced stone or damage to supports"
+    ],
+    "causes": [
+      "Weathering and repeated wetting",
+      "Salt-related deterioration where established",
+      "Leaks or drainage details that keep stone wet",
+      "Unsuitable earlier repairs or coatings",
+      "Movement or loss of support"
+    ],
+    "urgency": "medium",
+    "urgencyNote": "Loose stone, cracked overhead features or displaced load-bearing blocks need prompt assessment and keeping people clear. Do not touch, tap or climb to inspect vulnerable stone. Seek emergency services for immediate danger. Less urgent surface changes still merit investigation before treatment.",
+    "howWeFixIt": [
+      {
+        "step": "Record condition and significance",
+        "detail": "Map deterioration and surviving detail from safe access. Structural or heritage concerns may require an engineer or conservation specialist before a repair is chosen."
+      },
+      {
+        "step": "Investigate moisture and earlier work",
+        "detail": "Consider leaks, joints, salts, coatings and previous repairs. Address relevant water pathways rather than treating the surface in isolation."
+      },
+      {
+        "step": "Trial any cleaning or treatment",
+        "detail": "Only select cleaning or consolidating methods after assessing the stone. A trial area and review help establish whether treatment is justified and how it affects appearance."
+      },
+      {
+        "step": "Repair or replace selectively",
+        "detail": "Retain sound stone where practical. Any replacement needs suitable material and support details, with evidence guiding lost decorative features rather than an invented replica."
+      },
+      {
+        "step": "Finish joints and plan care",
+        "detail": "Specify compatible joints and any justified protective treatment. Agree inspection and maintenance needs; sealing is not a default solution for weathered sandstone."
+      }
+    ],
+    "costBand": "Access, stone condition, retained detail, trials, sourcing, carving and structural support influence cost. A written scope should distinguish conservation, replacement and any specialist design work.",
+    "faqs": [
+      {
+        "question": "Can missing carved detail be restored?",
+        "answer": "Discuss the surviving evidence and extent of loss first. A specialist may advise retention, local repair or replacement, but do not assume a complete replica can be supported by the available evidence."
+      },
+      {
+        "question": "Should I seal weathered sandstone?",
+        "answer": "Do not apply a sealer without advice on the stone and moisture conditions. Some treatments may be unsuitable or unnecessary; a product description alone does not establish compatibility."
+      },
+      {
+        "question": "Can new stone match the old?",
+        "answer": "Samples can help compare colour, grain and texture. Availability and weathering affect the result, so an exact or invisible match cannot be promised."
+      },
+      {
+        "question": "Is weathering a structural concern?",
+        "answer": "It can be, depending on the element, loss of material, cracks and support. An inspection should distinguish surface change from concerns needing structural assessment; a photograph cannot confirm capacity."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Stone Masonry Repairs",
+        "href": "/services/masonry/stone-masonry-repairs"
+      },
+      {
+        "title": "Heritage Stone Restoration",
+        "href": "/services/heritage-restoration/heritage-stone"
+      },
+      {
+        "title": "Traditional Stonework",
+        "href": "/services/heritage-restoration/traditional-stonework"
+      }
+    ]
+  },
+  "damaged-lintels": {
+    "name": "Damaged Lintels Above Windows & Doors",
+    "slug": "damaged-lintels",
+    "metaTitle": "Sydney Damaged Lintels | Rusting Steel & Brick Cracks | Romans",
+    "metaDescription": "Rust staining or cracking above an opening needs assessment of the lintel, masonry and moisture pathways before a repair is selected.",
+    "heroTagline": "Check the support above the opening, not just the crack in the plaster.",
+    "quickAnswer": "A lintel supports masonry over an opening. Rust staining, displacement or cracks around windows and doors can indicate a support problem, but are not proof of a failed lintel. Assessment should establish the lintel condition, bearing and surrounding wall before deciding on repair or replacement.",
+    "whatItIs": [
+      "Lintels can be made from different materials and may be partly concealed. The building’s age cannot establish the material, condition or remaining capacity of a particular lintel.",
+      "Corrosion of steel can damage adjacent masonry, while other movement or water-entry defects may produce similar visible signs. Investigating support and moisture together helps define the repair.",
+      "For an older Sydney facade, matching brickwork and retaining original details may be important alongside structural requirements. The scope is not necessarily confined to one opening and should allow for findings during controlled opening up."
+    ],
+    "signs": [
+      "Rust staining above an opening",
+      "Cracks at corners or through masonry above windows and doors",
+      "Bowing, loose or displaced masonry",
+      "Changes in how a window or door closes",
+      "Visible deterioration at exposed lintel ends"
+    ],
+    "causes": [
+      "Corrosion where moisture reaches steel",
+      "Defective flashing or other water-entry details",
+      "Inadequate or deteriorated bearings",
+      "Movement in the surrounding wall or support",
+      "Alterations affecting loads or openings"
+    ],
+    "urgency": "high",
+    "urgencyNote": "Keep clear of loose or displaced masonry above openings and the area beneath it. Do not remove bricks, scrape the lintel or attempt temporary propping yourself. Seek prompt structural advice for distortion or instability, and contact emergency services if people are in immediate danger.",
+    "howWeFixIt": [
+      {
+        "step": "Assess the opening and support",
+        "detail": "Review masonry, lintel ends where accessible and relevant moisture details. An engineer may need to assess capacity and specify the repair and temporary support."
+      },
+      {
+        "step": "Plan access and opening up",
+        "detail": "Establish safe working and protection for occupants before removing finishes or masonry. The sequence must preserve support throughout the work."
+      },
+      {
+        "step": "Repair or replace as specified",
+        "detail": "The assessed material, condition, load and bearing determine whether repair or replacement is appropriate. A new lintel is selected for the design, not simply the apparent width of the window."
+      },
+      {
+        "step": "Address water-entry details",
+        "detail": "Include relevant flashing, joints and other moisture defects in the scope. A protective finish does not by itself restore a damaged lintel’s capacity."
+      },
+      {
+        "step": "Reinstate masonry and finishes",
+        "detail": "Use compatible masonry and mortar and agree a finish sample where needed. Record inspections and any follow-up requirements; weathering may leave repairs visible."
+      }
+    ],
+    "costBand": "Pricing depends on span and load, access, engineering, temporary support, hidden damage, water-entry repairs and making good. Ask how further defects found during opening up will be handled.",
+    "faqs": [
+      {
+        "question": "Does rust staining prove the lintel has failed?",
+        "answer": "It warrants investigation, but does not establish the source or remaining capacity by itself. Other embedded metal or water pathways may also need checking."
+      },
+      {
+        "question": "Can painting the rust fix the problem?",
+        "answer": "A surface coating cannot restore lost section or resolve an unknown support defect. Assessment determines whether treatment, repair or replacement is justified."
+      },
+      {
+        "question": "How long does replacement take?",
+        "answer": "Timing depends on design, temporary support, access, materials, hidden findings and making good. Agree the programme and restrictions for the actual opening."
+      },
+      {
+        "question": "Will the repair be visible?",
+        "answer": "Matching bricks, mortar and profile can help it blend, but differences in materials and weathering may remain. Agree expectations through samples before work."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Structural Crack Repair",
+        "href": "/services/structural-repairs/structural-crack-repair"
+      },
+      {
+        "title": "Load-Bearing Wall Repairs",
+        "href": "/services/structural-repairs/load-bearing-walls"
+      },
+      {
+        "title": "Heritage Brick Repairs",
+        "href": "/services/heritage-restoration/heritage-brick-repairs"
+      },
+      {
+        "title": "Building Reinforcement",
+        "href": "/services/structural-repairs/building-reinforcement"
+      }
+    ]
+  },
+  "cavity-wall-tie-failure": {
+    "name": "Cavity Wall Tie Failure",
+    "slug": "cavity-wall-tie-failure",
+    "metaTitle": "Sydney Cavity Wall Tie Failure | Repair | Romans",
+    "metaDescription": "Cracking or bowing masonry needs assessment of the wall construction and ties. Learn why repair design must suit the actual backing and condition.",
+    "heroTagline": "Hidden wall connections need investigation, not a diagnosis based on age or crack spacing.",
+    "quickAnswer": "Wall ties connect parts of a wall construction. Cavity masonry has masonry leaves, while brick veneer is tied to a supporting frame; these are different arrangements. Corroded, missing or ineffective ties may require remedial work, but cracks or a building’s age alone cannot establish tie failure.",
+    "whatItIs": [
+      "The first step is identifying the construction and what the ties connect to. A repair intended to connect two masonry leaves cannot automatically be used for a veneer wall with a framed backing.",
+      "Cracking, bulging and displacement may relate to ties or to other support and movement defects. Hidden tie condition, fixing and the strength of the receiving material need assessment rather than inference from a regular crack pattern.",
+      "For a Sydney property, exposure, water entry, previous alterations and accessible records help frame the investigation. Neither a coastal location nor a construction decade proves that most ties have failed or that a particular replacement system will suit."
+    ],
+    "signs": [
+      "Horizontal or other recurring cracks in masonry joints",
+      "Bowing, leaning or separation of a wall face",
+      "Loose or displaced masonry",
+      "Rust staining at some joints",
+      "Changes around openings or wall junctions"
+    ],
+    "causes": [
+      "Corrosion or deterioration of existing ties",
+      "Missing, poorly fixed or unsuitable ties",
+      "Water entry and exposure affecting connections",
+      "Deterioration of the material receiving the ties",
+      "Alterations or movement affecting wall restraint"
+    ],
+    "urgency": "medium",
+    "urgencyNote": "Bowing, leaning or loose masonry may be unstable. Keep people clear of the wall and the area below, and seek urgent professional advice. Do not push the wall, check it with a straight edge or drill to inspect ties. Cracking needs assessment before deciding monitoring is sufficient. For immediate danger, contact emergency services.",
+    "howWeFixIt": [
+      {
+        "step": "Identify the wall construction",
+        "detail": "Establish whether the wall is cavity masonry, veneer or another arrangement, and review visible movement. Structural concerns require engineering assessment."
+      },
+      {
+        "step": "Investigate ties and backing",
+        "detail": "Controlled access, inspection or testing may be needed to establish tie condition and the receiving material. Investigation and any temporary restraint need a safe plan."
+      },
+      {
+        "step": "Specify the remedial design",
+        "detail": "Tie type, spacing, embedment and installation method must suit the assessed construction and loads. Existing defective ties and damaged masonry may need attention as part of the design."
+      },
+      {
+        "step": "Install and verify the work",
+        "detail": "Carry out the specified work with required checks and records. Access may involve internal as well as external areas; a small drilled opening does not make every repair non-destructive."
+      },
+      {
+        "step": "Make good and agree follow-up",
+        "detail": "Match repaired joints or surfaces as closely as practical. Any monitoring, inspection and maintenance schedule should follow the assessed condition and specified system."
+      }
+    ],
+    "costBand": "Cost depends on investigation, wall area and construction, backing condition, design, access, installation checks and associated masonry repairs. A per-tie price without a defined layout is not a reliable project budget.",
+    "faqs": [
+      {
+        "question": "Do regularly spaced cracks prove tie failure?",
+        "answer": "No. They are an observation to report, not a diagnosis. The wall construction, hidden connections and other possible causes need investigation."
+      },
+      {
+        "question": "Is tie failure dangerous?",
+        "answer": "Loss of wall restraint can affect stability. Do not assume slow progression or a safe waiting period from the building’s age. Bowing, leaning or loose masonry requires keeping clear and urgent advice."
+      },
+      {
+        "question": "Will new stainless steel ties last indefinitely?",
+        "answer": "No indefinite service life should be assumed. Suitability, exposure, installation and maintenance matter. Ask for the selected system’s written warranty terms and limitations."
+      },
+      {
+        "question": "Is all the work done from outside?",
+        "answer": "Not necessarily. The wall arrangement, condition and selected system determine access and making good. Confirm internal access, dust protection and occupant disruption in the scope."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Structural Crack Repair",
+        "href": "/services/structural-repairs/structural-crack-repair"
+      },
+      {
+        "title": "Load-Bearing Wall Repairs",
+        "href": "/services/structural-repairs/load-bearing-walls"
+      },
+      {
+        "title": "Building Reinforcement",
+        "href": "/services/structural-repairs/building-reinforcement"
+      },
+      {
+        "title": "Repointing & Brick Pointing",
+        "href": "/services/masonry/repointing"
+      }
+    ]
+  }
 
-  'rising-damp': {
-    name: 'Rising Damp',
-    slug: 'rising-damp',
-    metaTitle: 'Sydney Rising Damp | Signs, Causes & Fix | Romans',
-    metaDescription:
-      'Damp at the base of a brick wall? Learn the difference between rising damp and other moisture problems, and how a proper lime mortar fix works.',
-    heroTagline:
-      'Damp, salty, crumbling brickwork at the base of a wall — rising damp is an old-building problem that needs an old-building fix.',
-    quickAnswer:
-      'Rising damp is groundwater moving up through masonry by capillary action, carrying salts that crystallise and break down bricks and mortar. It is common in pre-1930 Sydney buildings with failed or missing damp-proof courses. The correct fix is injecting a new chemical damp-proof course, removing impermeable modern render and paint, and re-rendering with breathable lime-based materials. Cement render and waterproof paint make rising damp worse, not better.',
-    whatItIs: [
-      'Rising damp is when moisture from the ground moves up through masonry by capillary action — the same way a paper towel soaks up water. It carries dissolved salts with it, and when the moisture evaporates at the wall surface, the salts crystallise and expand, breaking down the mortar and brick faces. Over years it produces the classic tidemark a metre or so above floor level, with salt-crusted, crumbling brickwork below.',
-      'Older Sydney buildings — pre-1930, often pre-1910 — frequently have rising damp because they were built before damp-proof courses were standard. Or the original damp course has degraded. Modern fixes often make it worse: cement render and waterproof paint trap the moisture against the wall, accelerating the decay.',
-      'Proper treatment is about letting the wall breathe while managing the moisture source. That means breathable lime mortars and renders, not modern cement-based products. The fix takes patience, but it holds.',
-    ],
-    signs: [
-      'Tidemark or staining about 1m up from floor level',
-      'Salt efflorescence (white fluffy crystals) on the wall surface',
-      'Paint or render bubbling, flaking or falling off in the affected zone',
-      'Mortar crumbling when you scratch it with a key',
-      'Musty smell in rooms with affected walls',
-      'Damp patches at the base of internal walls',
-      'Timber skirting boards rotting or warping',
-    ],
-    causes: [
-      'No damp-proof course in original construction (common pre-1930)',
-      'Damp-proof course that has failed over time',
-      'External ground levels raised above the damp course over the decades',
-      'Poor drainage against external walls',
-      'Impermeable modern render trapping ground moisture in the wall',
-      'Leaking underground pipes or stormwater',
-    ],
-    urgency: 'medium',
-    urgencyNote:
-      'Rising damp is rarely an emergency but it never stops on its own, and left for years it seriously damages brickwork and internal finishes. The longer you leave it, the bigger the repair scope when you get around to it. If timber skirtings or floorboards are rotting, move it up the list.',
-    howWeFixIt: [
-      {
-        step: 'Confirm it is actually rising damp',
-        detail:
-          'Rising damp is often misdiagnosed. Penetrating damp, condensation, leaking pipes and bridged damp courses all look similar. We test moisture levels and salt profiles to confirm before spending money on the wrong treatment.',
-      },
-      {
-        step: 'Remove failed modern materials',
-        detail:
-          'Cement render, waterproof paint, vinyl wallpaper — anything impermeable in the damp zone comes off. These are what cause the damp to spread and build up salts.',
-      },
-      {
-        step: 'Install a new damp-proof course',
-        detail:
-          'For older buildings we typically inject a chemical DPC — silane or siloxane cream injected into the mortar bed at ground level. Cures and forms a water-repellent barrier. For heritage work with lime mortar, we match the DPC system to the wall.',
-      },
-      {
-        step: 'Re-render with breathable lime',
-        detail:
-          'Lime-based render and plaster let the wall dry out instead of trapping moisture. This is the opposite of modern cement render. It takes longer to cure but the wall breathes the way it was designed to.',
-      },
-      {
-        step: 'Address the ground and drainage',
-        detail:
-          'Lower garden beds and paving so they are below the damp course. Re-direct stormwater away from the wall. Without this the new damp course will eventually be bridged again.',
-      },
-    ],
-    costBand:
-      '$3,500 – $15,000 for typical domestic rising damp treatment per wall, depending on length and whether internal finishes also need redoing.',
-    faqs: [
-      {
-        question: 'How do I know if it is rising damp or something else?',
-        answer:
-          'Rising damp has a classic tidemark — a horizontal stain line, usually about 1m above floor level. It is worse at the bottom and tapers off above. Penetrating damp has isolated patches tied to a specific leak point. Condensation is usually on cold surfaces and windows. We do moisture and salt testing to confirm before treatment.',
-      },
-      {
-        question: 'Will painting the inside wall fix the damp?',
-        answer:
-          'No — and waterproof paint will make it worse by trapping moisture. Paint is a finishing step after the damp course, render and drainage are sorted. Painting without those other steps fails in months.',
-      },
-      {
-        question: 'Does my heritage building need special treatment?',
-        answer:
-          'Yes. Heritage buildings need breathable lime-based systems, not modern cement. Using cement render on an old soft brick wall traps moisture and accelerates damage. We match the system to the age and fabric of the building.',
-      },
-      {
-        question: 'How long does a chemical damp course last?',
-        answer:
-          'Properly injected chemical DPCs typically carry a 20 to 30 year manufacturer warranty. The render and surface finishes need to be done right alongside it — the DPC on its own is not the whole fix.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-      { title: 'Historic Stuccos & Renders', href: '/services/heritage-restoration/historic-stuccos-renders' },
-      { title: 'Period Materials', href: '/services/heritage-restoration/period-materials' },
-    ],
-  },
-
-  'spalling-render': {
-    name: 'Spalling & Falling Render',
-    slug: 'spalling-render',
-    metaTitle: 'Sydney Render Spalling | Repair & Recoat | Romans',
-    metaDescription:
-      'Render bubbling, cracking or falling off your walls? Here is what is really happening and what a proper repair looks like. Sydney masonry since 1995.',
-    heroTagline:
-      'Render does not fall off healthy walls. When it does, the wall underneath is usually the real problem.',
-    quickAnswer:
-      'Render that is bubbling, cracking or falling off is almost always a symptom of something going wrong underneath — salt in the masonry, trapped moisture, or a render mix too rigid for the wall behind it. Coastal Sydney walls and cement render on old soft brick are the most common causes. A proper fix means removing all failed render, treating the substrate, and re-rendering with a breathable system matched to the wall — not smearing new cement render over the same problem.',
-    whatItIs: [
-      'Spalling render is render that is lifting, bubbling, cracking or falling off in patches. It is almost never a render problem on its own — it is a symptom of something happening underneath. The most common causes are salt in the masonry, moisture trapped behind the render, or the render being bonded to a wall that cannot support it properly.',
-      'In coastal parts of Sydney — Bondi, Manly, Dee Why — salt crystallising between the render and the brickwork pushes the render off from behind. In older Inner West and Eastern Suburbs terraces, cement render was applied over soft handmade brick in past decades, and the resulting moisture trap is blowing the render off 30 to 60 years later.',
-      'A proper fix means working out why the render failed, dealing with that cause, and re-rendering with a material matched to the wall. Smearing new cement render over the same problem means it falls off again in a few years.',
-    ],
-    signs: [
-      'Render bubbling or hollow-sounding when tapped',
-      'Large sheets of render detaching from the wall',
-      'Cracks around the edges of render patches',
-      'White salt deposits (efflorescence) on or behind render',
-      'Paint peeling along with the render',
-      'Damp patches inside walls where render has failed outside',
-    ],
-    causes: [
-      'Salt crystallisation behind the render (common in coastal Sydney)',
-      'Cement render on soft old brick, trapping moisture',
-      'Rising damp pushing moisture up through render',
-      'Poor original bond — render applied without proper preparation',
-      'Wrong mix — too strong, too rigid, or poor-quality aggregate',
-      'Failed waterproofing above the rendered area letting water run behind',
-    ],
-    urgency: 'medium',
-    urgencyNote:
-      'If render is only bubbling, you have time. If sections are actively falling off — especially on street frontages or above walkways — it becomes a safety issue. Once it starts going, it usually accelerates. Get it inspected so you know the scope.',
-    howWeFixIt: [
-      {
-        step: 'Full inspection',
-        detail:
-          'We tap every section to find hollow render — the stuff you can see is only part of it. We identify the cause: salt, damp, wrong mix, poor bond. The repair scope depends on the cause.',
-      },
-      {
-        step: 'Remove all failed render',
-        detail:
-          'Everything hollow or loose comes off. We cut back to sound render with clean edges. Leaving weak render next to new work means the new work fails at the join.',
-      },
-      {
-        step: 'Treat the substrate',
-        detail:
-          'Wash out salts, let the wall dry, and apply a salt-resistant primer if needed. On heritage brick, we often apply a breathable lime bedding coat so the render bonds properly without trapping moisture.',
-      },
-      {
-        step: 'Re-render with the right material',
-        detail:
-          'On heritage buildings, lime-based render. On modern masonry, an appropriate cement render with the right flexibility. On coastal walls, salt-resistant render. We match the finish — roughcast, float, bagged — to what is already there.',
-      },
-      {
-        step: 'Apply breathable protective coating',
-        detail:
-          'Breathable masonry coating or mineral paint keeps water out while letting the wall breathe. Acrylic paint on lime render traps moisture — we never use it. The right finish keeps the repair looking right for decades.',
-      },
-    ],
-    costBand:
-      '$150 – $350 per square metre depending on wall type, access, and whether heritage-grade materials are needed.',
-    faqs: [
-      {
-        question: 'Can I just re-render over the bubbling areas?',
-        answer:
-          'No. Render laid over failing render will fail too, usually faster. You have to remove all the failed render, treat the cause, and re-render properly. Shortcutting this step means you pay twice.',
-      },
-      {
-        question: 'Why did cement render get used on my old brick house?',
-        answer:
-          'In the 1960s to 1980s it was common to cement-render older brick houses — seen as modernising them. Nobody thought about the fact that soft lime-mortared brick walls need to breathe. 30 to 50 years later, the damage is showing up. Correcting it means going back to breathable lime-based materials.',
-      },
-      {
-        question: 'What is the right render for a coastal home?',
-        answer:
-          'A salt-resistant, breathable render — lime-based for heritage, polymer-modified for modern. We use products that let moisture escape from the wall without letting salt build up behind. Standard cement render in Bondi or Manly is a 10-year fix.',
-      },
-      {
-        question: 'Can I just paint it instead of re-rendering?',
-        answer:
-          'If the render is sound but just faded or tired, yes — a breathable mineral paint can refresh it. If the render is bubbling, cracking or falling off, painting is pointless. Fix the render first, paint last.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Historic Stuccos & Renders', href: '/services/heritage-restoration/historic-stuccos-renders' },
-      { title: 'Concrete Resurfacing', href: '/services/concrete-repairs/concrete-resurfacing' },
-      { title: 'Facade Renovation', href: '/services/building-restoration/facade-renovation' },
-    ],
-  },
-
-  'crumbling-mortar': {
-    name: 'Crumbling Mortar Joints',
-    slug: 'crumbling-mortar',
-    metaTitle: 'Sydney Crumbling Mortar | Repointing & Repair | Romans',
-    metaDescription:
-      'Mortar crumbling out of brick joints? Learn why it happens, why cement pointing damages old bricks, and what proper lime repointing looks like.',
-    heroTagline:
-      'Soft crumbling joints, gaps between bricks, mortar falling out when you brush it — your wall is overdue for proper repointing.',
-    quickAnswer:
-      'Mortar does not last forever. On Sydney buildings 80+ years old, the original lime mortar weathers out of the joints and needs repointing. Many old buildings have been incorrectly repointed with cement mortar in past decades, which is too rigid for soft heritage brick and actively damages the bricks themselves. The correct fix is lime mortar matched to the original, raked and pointed by hand — it lasts 40–60 years when done properly.',
-    whatItIs: [
-      'Mortar does not last forever. Original lime mortar on a 120-year-old terrace has been weathering for a century, and at some point the joints stop holding water out. When mortar fails, water gets into the wall. Water in the wall damages brick faces, rusts any internal metal, and eventually causes structural problems.',
-      'A huge amount of Sydney brick is around this age — Victorian and Federation terraces, Interwar homes, old warehouses. Most need repointing at some point, and many have already been repointed incorrectly with hard cement mortar, which is now actively damaging the bricks it was meant to protect.',
-      'Proper repointing is about more than just filling the joints. The mortar mix has to match the brick strength (soft brick = soft mortar), the profile has to match the original, and on heritage buildings the aesthetic finish has to be right. Done well, it lasts 40 to 60 years.',
-    ],
-    signs: [
-      'Mortar crumbling or powdering when you scratch it with a key',
-      'Visible gaps in mortar joints, especially on exposed elevations',
-      'Bricks loose in the wall — moving when pushed',
-      'Water stains or damp patches inside appearing where mortar has failed outside',
-      'Plant growth in joints (moss, weeds, small plants)',
-      'Hard grey cement pointing next to softer original mortar',
-      'Brick faces spalling — surface flaking away',
-    ],
-    causes: [
-      'Age — original lime mortar has weathered out over a century',
-      'Cement repointing from past decades now damaging the bricks',
-      'Salt crystallisation in joints breaking down the mortar',
-      'Water ingress from failed flashing, gutters or damp',
-      'Wrong original mortar mix — too weak or too strong for the brick',
-      'Freeze-thaw cycles slowly fracturing the mortar (minor in Sydney but happens)',
-    ],
-    urgency: 'low',
-    urgencyNote:
-      'Crumbling mortar is usually a years-long problem, not an emergency. But it is not going to fix itself, and every year you wait the cost grows as water damage spreads into the bricks themselves. For heritage buildings, doing it properly with lime mortar before the bricks are damaged beyond repair is the right call.',
-    howWeFixIt: [
-      {
-        step: 'Inspect and mix-match',
-        detail:
-          'We assess the existing mortar — age, composition, colour, profile — and work out what the original mix was. We take samples, test them if needed, and mix replacement mortar to match. For heritage work this is the most important step.',
-      },
-      {
-        step: 'Rake out old mortar by hand',
-        detail:
-          'For heritage brick, we rake out joints by hand with chisels or specialist tools — never with angle grinders, which damage soft brick faces. Depth is usually 15–25mm. Slow work but essential for old buildings.',
-      },
-      {
-        step: 'Wet the joints',
-        detail:
-          'Old dry brick sucks water out of fresh mortar too fast, which weakens the bond. We pre-wet joints so the mortar cures properly. Sounds simple but making this step is one of the reasons old repointing jobs fail.',
-      },
-      {
-        step: 'Point the joints correctly',
-        detail:
-          'Lime or lime-cement gauged mortar, pushed into the joints firmly, tooled to match the original profile — flush, raked, struck, weathered, or tuck pointed depending on the building. Colour-matched to the existing.',
-      },
-      {
-        step: 'Cure slowly',
-        detail:
-          'Lime mortar needs slow, damp curing. We cover the work, mist-spray for several days, and protect from direct sun or heavy rain. Rushed curing is why some repoints fail in 5 years instead of 50.',
-      },
-    ],
-    costBand:
-      'Front facade of a single-width terrace typically $8,000 – $15,000. Full external repointing on a terrace usually $20,000 – $40,000 depending on access, condition and tuckpointing.',
-    faqs: [
-      {
-        question: 'Why is cement pointing bad for my old brick house?',
-        answer:
-          'Old bricks are soft and permeable — they need to breathe. Cement mortar is too hard and too impermeable. Water that gets into the wall cannot escape through the hard cement joints, so it escapes through the soft bricks instead, damaging them. In 30–50 years, you end up with cement joints intact and bricks destroyed.',
-      },
-      {
-        question: 'What is tuckpointing and does my terrace have it?',
-        answer:
-          'Tuckpointing is a decorative technique where dark mortar fills the joints, and a fine line of white putty is run through the centre of each joint to create the illusion of very fine, precise brickwork. Common on higher-end Victorian terraces in Paddington, Newtown, Leichhardt and similar areas. If your brickwork has thin white lines running through dark joints, yes.',
-      },
-      {
-        question: 'How long does proper lime repointing last?',
-        answer:
-          '40 to 60 years with proper specification and installation. Some original lime mortar on Sydney terraces has lasted 120+ years — we are just replacing what time has finally worn out. Cement repoints typically fail earlier, often 20–30 years, because the harder mortar accelerates brick decay.',
-      },
-      {
-        question: 'Can you match the original mortar colour and style?',
-        answer:
-          'Yes — on heritage work, matching is central to the job. We take samples, mix trial batches, and test against the existing before committing to the scope. Colour, texture and joint profile all get matched so the repoint is barely noticeable.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Repointing & Brick Pointing', href: '/services/masonry/repointing' },
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-      { title: 'Period Materials', href: '/services/heritage-restoration/period-materials' },
-    ],
-  },
-
-  'foundation-movement': {
-    name: 'Foundation Movement & Settlement',
-    slug: 'foundation-movement',
-    metaTitle: 'Sydney Foundation Movement | Signs, Causes & Repair | Romans',
-    metaDescription:
-      'House settling, walls cracking, doors sticking? Learn the signs of foundation movement, when it is serious, and how underpinning works.',
-    heroTagline:
-      'Cracks appearing in walls, doors that stick, floors that slope — your house may be on the move.',
-    quickAnswer:
-      'Foundation movement happens when soil under a house expands, contracts or sinks unevenly — reactive clay soils in Sydney are a major cause. Signs include stair-step wall cracks, doors that stick, sloping floors, and gaps opening up between walls and skirtings. Active movement needs underpinning to extend footings deeper to stable ground. Minor finished movement can usually be repaired with crack stitching alone. Monitoring cracks over a few months is the cheapest way to work out which you have.',
-    whatItIs: [
-      'Foundation movement happens when the soil under a house expands, contracts or sinks unevenly. The footings — and the walls sitting on them — move with it. Sydney has a lot of reactive clay soils, especially in parts of the Inner West, Parramatta, Blacktown and out west. Reactive clay swells when wet and shrinks when dry, and that cycle over years moves houses.',
-      'The classic signs are stair-step cracks in brickwork, doors that stop closing, gaps between floors and skirtings, and floors that have developed a noticeable slope. Not every house with a crack is moving — thermal movement and minor settlement happen to every house. The question is whether the movement is ongoing.',
-      'Severe or ongoing movement needs structural intervention: usually underpinning, where the footings are extended deeper to reach stable ground. Minor or finished movement can usually be repaired with crack stitching and cosmetic work. Working out which is which is half the job.',
-    ],
-    signs: [
-      'Stair-step cracks running diagonally through brickwork',
-      'Cracks wider than 5mm that continue to grow',
-      'Doors or windows sticking or no longer closing',
-      'Floors sloping — marble test confirms (ball rolls to one side)',
-      'Gaps opening between walls and skirtings or ceilings',
-      'Brick walls tilting out of vertical',
-      'Cracks reappearing after previous repairs',
-    ],
-    causes: [
-      'Reactive clay soils expanding and contracting with moisture changes',
-      'Leaking pipes or drains washing out soil under footings',
-      'Trees drawing water out of clay soil (causes shrinkage)',
-      'Poorly compacted fill from original construction',
-      'Undersized or shallow original footings',
-      'Drainage issues causing soil softening near foundations',
-      'Adjacent excavation (new neighbouring construction)',
-    ],
-    urgency: 'high',
-    urgencyNote:
-      'Ongoing foundation movement does not stop on its own and usually accelerates. If cracks are growing, doors have started sticking recently, or the house feels noticeably different, get it assessed soon. Catching it early means a smaller underpinning scope and less collateral damage to walls, floors and services.',
-    howWeFixIt: [
-      {
-        step: 'Investigate',
-        detail:
-          'Crack monitoring gauges on suspect cracks to measure ongoing movement. Sometimes a drain inspection to rule out leaking services. We usually bring in a structural engineer for anything suspected to be active movement.',
-      },
-      {
-        step: 'Fix the cause',
-        detail:
-          'Leaking pipes get fixed. Tree roots drawing moisture from under the slab may need addressing. Drainage near footings corrected. Without stopping the cause, any structural repair is temporary.',
-      },
-      {
-        step: 'Underpin if required',
-        detail:
-          'For active or severe movement, underpinning extends the footing deeper to reach stable ground. Traditional mass concrete underpinning or modern screw-pile underpinning depending on site. Engineered for the specific situation.',
-      },
-      {
-        step: 'Stitch the cracks',
-        detail:
-          'Once movement has stopped, cracks get structural repair — helical bar stitching tied into the brickwork across the crack. Holds the wall together without needing major demolition.',
-      },
-      {
-        step: 'Repoint and repair',
-        detail:
-          'Damaged bricks replaced, joints repointed to match, interior finishes made good. The work should be invisible when finished.',
-      },
-    ],
-    costBand:
-      'Underpinning typically $2,500 – $7,000 per pier, with houses needing 4 to 20 piers depending on severity. Total jobs often $15,000 – $100,000+. Engineering fees extra.',
-    faqs: [
-      {
-        question: 'How do I know if my house is actively moving?',
-        answer:
-          'Fit crack monitors across suspect cracks. If the gauge reading changes over 3–6 months, the house is moving. If it stays stable, movement has probably finished and you can do a repair without underpinning. Movement monitoring is cheap and saves expensive guessing.',
-      },
-      {
-        question: 'Do I need a structural engineer?',
-        answer:
-          'For suspected active movement, yes. The engineer designs the underpinning, certifies the work, and provides documentation for insurance or resale. We work with engineers regularly and can bring one in or work with one you have engaged.',
-      },
-      {
-        question: 'Will my house insurance cover it?',
-        answer:
-          'Depends on the policy and the cause. Movement from a leaking pipe is often covered. Movement from reactive clay alone is usually not. Check your PDS or ask your insurer. We can provide documentation for claims where relevant.',
-      },
-      {
-        question: 'How long does underpinning take?',
-        answer:
-          'Depends on scope. A 6-pier traditional underpin typically 2–4 weeks. Screw pile underpinning is faster, often 1–2 weeks. Crack repair and finishing after underpinning adds another week or two.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Underpinning', href: '/services/foundation-repairs/underpinning' },
-      { title: 'Structural Foundation Repairs', href: '/services/foundation-repairs/structural-foundation' },
-      { title: 'Settlement Stabilisation', href: '/services/foundation-repairs/settlement-stabilisation' },
-      { title: 'Structural Crack Repair', href: '/services/structural-repairs/structural-crack-repair' },
-    ],
-  },
-
-  'chimney-cracks': {
-    name: 'Chimney Cracks & Leaks',
-    slug: 'chimney-cracks',
-    metaTitle: 'Sydney Chimney Cracks & Leaks | Repair | Romans',
-    metaDescription:
-      'Chimney cracked, leaking or leaning? Learn why chimneys fail, how to tell if yours is dangerous, and what a proper rebuild involves.',
-    heroTagline:
-      'Chimneys take the weather full-on for 100+ years — and they show it before the rest of the house does.',
-    quickAnswer:
-      'Chimney leaks and cracks are almost always caused by weathered mortar, failed flashing at the roof junction, or a missing chimney cap. Older Federation and Interwar chimneys across Sydney need repointing every 40–60 years. A leaning chimney or one with loose bricks can be dangerous in strong wind. Proper repair includes repointing with matched lime mortar, replacing lead flashings, and fitting a chimney cap — if it is beyond saving, partial or full rebuild is the honest answer.',
-    whatItIs: [
-      'Chimneys sit up above the roof line taking everything the weather throws at them — sun, rain, wind, salt in coastal areas — with no protection from the rest of the building. They crack, lean, lose their mortar, and their flashings fail. A lot of the old Federation and Interwar chimneys across Mosman, Woollahra, Strathfield and similar suburbs are now 80+ years into their life and showing it.',
-      'A leaking chimney usually shows up as water stains on ceilings near the flue, damp patches around the fireplace, or rust stains on the external brickwork. Those stains are often weeks or months of water damage inside the roof space before they appear. The fix is rarely just patching the leak — it usually involves repointing, re-flashing, sometimes rebuilding the top section.',
-      'Leaning chimneys are more serious. They can be caused by foundation movement, rusting steel inside the brickwork, or decades of weather eroding the mortar on one side more than the other. A chimney that has lost its plumb is a chimney that can eventually fall — especially in strong wind.',
-    ],
-    signs: [
-      'Water stains on ceilings near the flue',
-      'Damp patches inside the fireplace or around it',
-      'Rust stains running down the external brickwork',
-      'Mortar crumbling or missing from chimney joints',
-      'Chimney visibly leaning out of vertical',
-      'Bricks loose at the top of the chimney',
-      'Flashing around the base torn, lifted or damaged',
-      'White salt deposits (efflorescence) on the brickwork',
-    ],
-    causes: [
-      'Failed or damaged flashing at the roof junction',
-      'Mortar weathered out — most common on older chimneys',
-      'Rusting steel cramps or ties inside the chimney expanding',
-      'Original flue unlined or liner degraded',
-      'Chimney cap missing, allowing water straight in',
-      'Tree impact or high wind damage',
-      'Foundation movement pulling the chimney base out of plumb',
-    ],
-    urgency: 'high',
-    urgencyNote:
-      'A leaning chimney or one with visibly loose bricks is dangerous — in a storm it can fall and do serious damage. Leaks are less urgent but cause accelerating internal damage if left. If you can see bricks moving, the flashing is lifted, or water is entering, it needs attention.',
-    howWeFixIt: [
-      {
-        step: 'Safe access and inspection',
-        detail:
-          'Scaffold or edge protection for safe access. We inspect the full chimney — mortar joints, flue condition, flashing, cap, bricks. Often internal access to check the flue from inside is also needed.',
-      },
-      {
-        step: 'Repoint failing mortar',
-        detail:
-          'Rake out failing joints and repoint with matched mortar. For heritage chimneys, lime mortar. We pay extra attention to the top few courses, which take the worst weather.',
-      },
-      {
-        step: 'Replace loose or damaged bricks',
-        detail:
-          'Any bricks that are loose, cracked or missing get cut out and replaced. Matched handmade or pressed bricks depending on the chimney age. The top 2–4 courses sometimes need full rebuild.',
-      },
-      {
-        step: 'Re-flash properly',
-        detail:
-          'Lead flashings at the roof junction — base, step, and over-flashing. This is where most chimney leaks come from. Done properly with lead dressed into the mortar joints, it lasts as long as the chimney.',
-      },
-      {
-        step: 'Install a chimney cap',
-        detail:
-          'If there is no cap, we fit one — a proper chimney cap keeps water out, stops birds nesting in the flue, and improves draught. Small job, big impact on chimney life.',
-      },
-      {
-        step: 'Straighten if leaning',
-        detail:
-          'For a leaning chimney past saving, partial or full rebuild with reinforced core and new flashings. For chimneys with minor lean but sound fabric, tie-backs to the roof structure can stabilise.',
-      },
-    ],
-    costBand:
-      'Repointing and re-flashing typically $3,500 – $8,500. Top-section rebuild $6,000 – $12,000. Full chimney rebuild $15,000 – $30,000+ depending on height and access.',
-    faqs: [
-      {
-        question: 'My chimney is leaking but I have not had a fire in it for years. Do I still need to fix it?',
-        answer:
-          'Yes. The leak is water getting into your roof space and eventually your ceilings. It does not matter whether the chimney is in use — the damage is the same. And if the chimney is decommissioned, consider getting it capped off properly so it stops being a maintenance item.',
-      },
-      {
-        question: 'Can I keep using the chimney after repairs?',
-        answer:
-          'If the flue is sound or has been re-lined, yes. If the flue is degraded, we recommend re-lining or decommissioning for wood-burning use. Gas fires have different requirements — usually need a flexible flue liner.',
-      },
-      {
-        question: 'How long do chimney repairs last?',
-        answer:
-          'Proper repointing with appropriate mortar: 40–60 years. Lead flashings: 50+ years if installed correctly. Full rebuild: same life as the original chimney, typically 100+ years. Cheap short-cut repairs often fail in 5–10 years.',
-      },
-      {
-        question: 'Can you remove a chimney that is beyond saving?',
-        answer:
-          'Yes. Chimney removal, flue capping, internal make-good and roof patching. Often a cleaner solution for decommissioned chimneys that are failing. We\'ll tell you honestly whether yours is worth saving or whether removal is the right call.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Brick & Block Work', href: '/services/masonry/brick-block-work' },
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-      { title: 'Defect Rectification', href: '/services/building-restoration/defect-rectification' },
-    ],
-  },
-
-  'efflorescence-salt-damage': {
-    name: 'Efflorescence & Salt Damage',
-    slug: 'efflorescence-salt-damage',
-    metaTitle: 'Sydney Salt Damage & Efflorescence | Repair | Romans',
-    metaDescription:
-      'White salt crystals on brickwork, crumbling mortar, spalling brick faces — salt damage explained. Coastal Sydney specialists.',
-    heroTagline:
-      'White crystals on your walls are not just ugly — they are telling you salt is inside the brickwork, and it is destroying it from within.',
-    quickAnswer:
-      'Efflorescence is the white crystalline deposit on masonry — it is salts being carried to the surface by moisture and crystallising as water evaporates. On its own it is harmless, but it signals water is moving through your wall. When salts crystallise inside the wall instead of on the surface — usually because a non-breathable render or paint is trapping them — they expand, spalling bricks and mortar. Fixing it means dealing with the moisture source and using breathable materials.',
-    whatItIs: [
-      'Efflorescence is the white fluffy deposit you see on brick and masonry walls. It is actually salts — natural salts from the bricks, mortar, or ground — being carried to the surface by moisture in the wall and crystallising when the water evaporates. On its own the white deposit is harmless and can usually be brushed off. The problem is what it tells you: water is moving through your wall carrying dissolved salt.',
-      'When salts crystallise inside the wall instead of on the surface — because a non-breathable render or paint is trapping them — they expand. That expansion pushes render off, cracks brick faces, and blows mortar out of joints. This is called salt attack or salt decay, and it is one of the main reasons coastal Sydney brickwork fails.',
-      'The fix is never just cleaning the surface. You have to deal with the moisture source, let the wall breathe, and sometimes apply specific salt-treatment systems so existing salts can leach out without causing more damage.',
-    ],
-    signs: [
-      'White fluffy crystals on the surface of brick or render',
-      'Salt deposits reappearing after you brush them off',
-      'Brick faces flaking, spalling or turning powdery',
-      'Mortar crumbling where salt deposits are worst',
-      'Paint or render bubbling and peeling in patches',
-      'Damp patches inside walls with salt staining on internal finishes',
-      'Worst on coastal-facing walls or walls near the ground',
-    ],
-    causes: [
-      'Salt in the air crystallising in brick pores (coastal suburbs)',
-      'Rising damp carrying ground salts up through the wall',
-      'Leaking pipes or drains depositing salt through the brickwork',
-      'Cement mortars and renders trapping salts against soft brick',
-      'Waterproof paint sealing moisture and salts into the wall',
-      'New building — salts in fresh mortar working their way out (usually self-limiting)',
-    ],
-    urgency: 'medium',
-    urgencyNote:
-      'Minor surface efflorescence on a new wall usually self-resolves within a year or two. Ongoing efflorescence on an older wall, or any signs of brick faces spalling or mortar failing, means there is an active moisture problem that will keep damaging the wall until it is fixed. Not an emergency, but not something to ignore either.',
-    howWeFixIt: [
-      {
-        step: 'Identify the moisture source',
-        detail:
-          'Salt needs moisture to move. We find where the water is coming from — rising damp, leaking pipe, poor drainage, failed waterproofing, coastal exposure. The fix starts with stopping the water.',
-      },
-      {
-        step: 'Remove failed finishes',
-        detail:
-          'Cement render, waterproof paint, impermeable coatings — anything trapping salts in the wall comes off. We use breathable systems in their place.',
-      },
-      {
-        step: 'Allow the wall to dry',
-        detail:
-          'With the moisture source stopped and impermeable finishes removed, the wall needs time to dry out. For heritage walls this can be months, and drying naturally is the right approach rather than trying to force it.',
-      },
-      {
-        step: 'Neutralise salts where needed',
-        detail:
-          'For badly salt-contaminated walls, we apply specialised salt-retarder systems — clay poultices or sacrificial renders that pull salts out of the brick and into material that can be removed.',
-      },
-      {
-        step: 'Restore with breathable materials',
-        detail:
-          'Repointing with appropriate lime mortar, breathable render where needed, and mineral-based paint that lets the wall continue to breathe. Damaged bricks replaced with matched stock.',
-      },
-    ],
-    costBand:
-      'Depends heavily on scope. Cleaning and minor repair $1,500 – $4,000. Full salt-damage restoration on a heritage wall $8,000 – $25,000+.',
-    faqs: [
-      {
-        question: 'Can I just scrub the salt off with a wire brush?',
-        answer:
-          'For cosmetic efflorescence on a new wall, yes — brush it off dry, do not use water (water just dissolves and re-deposits the salt). For ongoing salt damage on an older wall, scrubbing the surface does nothing to the underlying problem. The salts keep coming because the water keeps moving through the wall.',
-      },
-      {
-        question: 'What is the best paint for a coastal brick wall?',
-        answer:
-          'Breathable mineral paint — silicate or lime-based. Never acrylic or waterproof paint on old brick, because they trap moisture and salts behind them, which is exactly what you do not want.',
-      },
-      {
-        question: 'Why does my render have salt coming through even though it is new?',
-        answer:
-          'The salt is either rising from the ground (missing or failed damp course) or coming through from the brick behind the render. New render on a wall with ongoing salt issues will fail again in a few years unless the underlying moisture and salt problem is dealt with first.',
-      },
-      {
-        question: 'Is efflorescence the same as concrete cancer?',
-        answer:
-          'No, but they are related. Efflorescence is salt deposits on masonry. Concrete cancer is rusting steel inside concrete. Both are caused by moisture and salt — but efflorescence is usually a masonry problem, and concrete cancer is a concrete-and-steel problem. A coastal apartment block often has both.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-      { title: 'Protective Coatings', href: '/services/concrete-repairs/protective-coatings' },
-      { title: 'Historic Stuccos & Renders', href: '/services/heritage-restoration/historic-stuccos-renders' },
-    ],
-  },
-
-  'leaking-balconies': {
-    name: 'Leaking Balconies',
-    slug: 'leaking-balconies',
-    metaTitle: 'Sydney Leaking Balconies | Waterproofing & Repairs | Romans',
-    metaDescription:
-      'Leaking balconies in Sydney apartments. Learn whether the membrane, tile bed, drainage or concrete is failing, and how to repair it properly.',
-    heroTagline:
-      'Water coming through from the balcony above is almost always the membrane — and almost never fixed by more silicone.',
-    quickAnswer:
-      'Leaking balconies are usually caused by a failed waterproof membrane beneath the tiles, blocked drainage, or cracked tile bedding allowing water into the slab. Fixing a balcony leak properly means lifting the tiles, removing the failed membrane, treating any concrete damage, installing a new compliant membrane system, and re-bedding tiles with correct falls to drainage. Sealants around tile joints are not a real fix.',
-    whatItIs: [
-      'A leaking balcony is one of the most common and most expensive problems in Sydney apartments. Water comes through the ceiling of the unit below, or shows up as damp patches on internal walls, or rots out window frames over time. The source is almost always a failed waterproof membrane under the balcony tiles, though drainage failures, cracked slabs and wall-junction failures all contribute.',
-      'Balcony waterproofing has a design life of 10–15 years when done properly. Older apartments are well past that, and many balconies have never had a proper membrane replacement since original construction. Even newer buildings often have balcony defects from rushed original waterproofing that fails within 5 years.',
-      'The fix is rarely simple. A proper balcony waterproofing repair means lifting tiles, removing bedding, inspecting the concrete slab, treating any damage, installing a new compliant membrane, and re-bedding tiles to correct falls. Cheap fixes — silicone around the edges, sealer painted on top — delay the real job and usually make it worse.',
-    ],
-    signs: [
-      'Water stains or damp patches on the ceiling below the balcony',
-      'Cracked or loose tiles on the balcony surface',
-      'Efflorescence (white salt deposits) on the underside of the balcony',
-      'Rusty steel reinforcement visible in the balcony soffit (concrete cancer starting)',
-      'Water pooling on the balcony instead of draining away',
-      'Damp patches on internal walls adjacent to balcony door frames',
-      'Timber door and window frames warping or rotting near the balcony',
-    ],
-    causes: [
-      'Failed or perished waterproof membrane under the tiles (most common cause)',
-      'Blocked or badly positioned balcony drainage outlets',
-      'Cracked tile bedding letting water into the slab',
-      'Inadequate or non-existent falls to drainage',
-      'Wall-to-balcony junction leaks (where the balcony meets the building)',
-      'Cracked slab from movement or concrete cancer below the membrane',
-      'Original construction defects — membrane installed over wet concrete or dusty substrate',
-    ],
-    urgency: 'high',
-    urgencyNote:
-      'A balcony leak is damaging the apartment below right now — typically to ceilings, walls, and sometimes electrical systems. It will also be damaging the structural concrete in the balcony slab, which is a much more expensive fix if left. Get it inspected soon so you understand the scope, even if the full repair is staged over months.',
-    howWeFixIt: [
-      {
-        step: 'Inspect and diagnose',
-        detail:
-          'Identify where the water is actually entering — membrane failure, drainage, wall junction, slab cracking. Often a combination. We probe the tile bedding, check falls, inspect drainage outlets and examine the underside of the slab for damage.',
-      },
-      {
-        step: 'Lift tiles and remove failed membrane',
-        detail:
-          'Tiles come up along with bedding and the old membrane. For heritage or expensive tiles we carefully salvage what we can. Everything down to the concrete substrate is exposed and assessed.',
-      },
-      {
-        step: 'Treat the slab',
-        detail:
-          'Any concrete cancer, cracks, or damage in the slab gets repaired before new waterproofing goes on. This is the step where quick jobs fail — if the slab is wet or damaged, the new membrane fails too.',
-      },
-      {
-        step: 'Install a compliant membrane system',
-        detail:
-          'New waterproof membrane applied to manufacturer spec with proper upturns at walls, around penetrations, and into drainage outlets. Multiple coats with inspection between. Warranty-backed system.',
-      },
-      {
-        step: 'Re-bed tiles with correct falls',
-        detail:
-          'Tiles re-laid on new bedding with correct falls to drainage (minimum 1:100). Grout and perimeter sealant to match. Done right, the balcony sheds water properly for the next 15+ years.',
-      },
-    ],
-    costBand:
-      'Typical apartment balcony repair: $8,000 – $25,000. Multiple balconies staged across a strata building $50,000 – $300,000+. Depends on tile area, slab damage, and whether scaffolding is needed.',
-    faqs: [
-      {
-        question: 'Can I just reseal the tile grout to stop the leak?',
-        answer:
-          'No. The water is not coming through the grout — it is coming through the failed membrane underneath. Regrouting or siliconing around the edges is cosmetic at best and often traps moisture, making the damage worse. The membrane has to be replaced.',
-      },
-      {
-        question: 'How long does a proper balcony waterproofing job take?',
-        answer:
-          'For a single apartment balcony: typically 1–2 weeks including curing time between membrane coats. Strata-wide programs run 2–6 months depending on number of balconies and whether they are done sequentially or in parallel.',
-      },
-      {
-        question: 'Is the balcony leak coming from my unit or the one above?',
-        answer:
-          'Almost always the balcony directly above. Water tracks down through the slab and appears below where it entered. Occasionally water can travel sideways within the slab, but in nearly every case the leaking balcony is directly overhead.',
-      },
-      {
-        question: 'Who pays for balcony leak repairs in a strata building?',
-        answer:
-          'Depends on your by-laws. Typically the slab and the waterproof membrane are common property (strata pays) and the tiles are lot property (owner pays). Get advice from your strata manager — bylaws vary and insurance may cover some situations.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Concrete Cancer Treatment', href: '/services/concrete-repairs/concrete-cancer' },
-      { title: 'Strata Building Repairs', href: '/services/remedial-building/strata-repairs' },
-      { title: 'Spalling Concrete Repair', href: '/services/concrete-repairs/spalling-repair' },
-      { title: 'Defect Rectification', href: '/services/building-restoration/defect-rectification' },
-    ],
-  },
-
-  'tuckpointing-restoration': {
-    name: 'Tuckpointing Restoration',
-    slug: 'tuckpointing-restoration',
-    metaTitle: 'Sydney Tuckpointing Restoration | Repointing & Lime Mortar | Romans',
-    metaDescription:
-      'Tuckpointing restoration on Victorian and Federation terraces across Sydney. Colour-matched lime mortar with fine white fillet. 30 years of heritage work.',
-    heroTagline:
-      'The fine-line decorative pointing on Victorian terraces — when it is done well, it defines the facade.',
-    quickAnswer:
-      'Tuckpointing is a decorative heritage pointing technique on Victorian and Federation brickwork: dark pigmented mortar fills the joint flush to the brick, then a thin fillet of white lime putty is run through the centre to create the illusion of very fine, precise brickwork. Proper restoration requires lime-based mortar matched to the original, hand-tooled fillets, and correct width — anything else ruins the facade. Expect $10,000–$18,000 for a front facade of a single-width terrace.',
-    whatItIs: [
-      'Tuckpointing is one of the most beautiful masonry finishes ever developed, and also one of the most misunderstood. On higher-end Victorian and Federation terraces across Paddington, Newtown, Glebe, Leichhardt, Surry Hills and Darlinghurst, the original brickwork was tuckpointed — dark coloured mortar flush to the brick face, with a thin fillet of white lime putty run through the centre of each joint. The visual effect is the illusion of very precise, very fine brickwork.',
-      'On most terraces, the original tuckpointing has weathered away. Worse, many have been repointed in recent decades by tradies who did not understand what tuckpointing was — resulting in plain cement pointing where the original decorative finish used to be. This destroys the character of the facade and devalues the property.',
-      'Proper tuckpointing restoration brings the facade back to what it was. Matched coloured lime mortar filling the joints flush, matched white lime putty running through the centre as a fine fillet, tooled to the correct width and profile. Done properly, it lasts 40+ years and makes the building look the way it was designed to look.',
-    ],
-    signs: [
-      'Front facade brickwork looks flat or featureless compared to neighbouring terraces',
-      'Fine white lines visible in patches where old tuckpointing has worn through',
-      'Modern grey cement pointing is smeared across the brick faces',
-      'Original tuckpointed joints are crumbling or missing',
-      'Mortar colour is a patchy mix of old and recent repairs',
-      'Tuckpointing exists but fillet lines are broken, flaked or missing',
-    ],
-    causes: [
-      'Age — original tuckpointing is often 100–150 years old',
-      'Incorrect modern repointing without restoring the tuckpoint detail',
-      'Weathering of soft lime mortars over decades',
-      'Previous sandblasting or harsh cleaning that damaged the fillets',
-      'Water ingress breaking down the mortar from behind',
-    ],
-    urgency: 'low',
-    urgencyNote:
-      'Tuckpointing restoration is almost never urgent — it is a heritage and aesthetic project. The underlying brickwork is usually still structurally sound. But for heritage-listed properties or homes in Conservation Areas, restoring tuckpointing maintains character and property value. Worth doing while other facade work is scheduled rather than on its own.',
-    howWeFixIt: [
-      {
-        step: 'Assess original specification',
-        detail:
-          'We examine surviving original tuckpointing to determine the dark mortar colour, fillet width, and profile. Samples and test panels before committing to scope. For heritage properties we document this in methodology reports for council.',
-      },
-      {
-        step: 'Rake out by hand',
-        detail:
-          'Old cement or damaged lime mortar is raked out by hand with chisels to 15–20mm depth. Never with angle grinders — they damage soft Victorian brick faces. Slow work but the only way to preserve the bricks.',
-      },
-      {
-        step: 'Point with coloured lime mortar',
-        detail:
-          'Dark pigmented lime mortar pushed into the joints firmly and struck flush to the brick face. Colour matched to surviving original mortar.',
-      },
-      {
-        step: 'Run the white lime putty fillet',
-        detail:
-          'A thin strip of white lime putty is run through the centre of each joint while the base mortar is still green. Tooled to the correct width — often 3mm, sometimes 2mm for finer work. This is the step that makes or breaks the job.',
-      },
-      {
-        step: 'Slow cure and protect',
-        detail:
-          'Lime-based tuckpointing needs slow, damp curing. We cover the work and mist-spray for several days, protecting from direct sun and heavy rain. Rushed curing causes shrinkage cracking and failed fillets.',
-      },
-    ],
-    costBand:
-      'Front facade of a single-width terrace: $10,000 – $18,000. Full external tuckpointing $25,000 – $45,000. Premium pricing reflects specialist skill — not every mason can do it.',
-    faqs: [
-      {
-        question: 'Does my terrace have tuckpointing?',
-        answer:
-          'Look closely at the joints. If you see (or used to see) a thin white line running through dark-coloured joints, yes — it is tuckpointed. Most Victorian-era middle and upper-class terraces in Paddington, Newtown, Glebe, Leichhardt, Surry Hills and similar suburbs originally were.',
-      },
-      {
-        question: 'How is tuckpointing different from normal pointing?',
-        answer:
-          'Normal pointing fills the joint with one material — typically flush, struck, or raked. Tuckpointing uses two materials: a dark mortar fills the joint, then a fine white lime putty fillet is run through the centre. The white line creates the optical illusion of very fine brickwork. It is significantly more labour-intensive and specialised.',
-      },
-      {
-        question: 'Can tuckpointing be done in stages?',
-        answer:
-          'Yes. Front facade first is common — that is what is visible. Sides and rear can follow in later years. If we use the same mix and techniques consistently, staged work looks cohesive.',
-      },
-      {
-        question: 'Why does tuckpointing cost more than regular repointing?',
-        answer:
-          'Two-step process with higher skill requirement. The fillet work is slow, precise, and requires hands that have done it many times. Expect 2–3x the cost of regular lime repointing on the same building.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Repointing & Brick Pointing', href: '/services/masonry/repointing' },
-      { title: 'Heritage Masonry', href: '/services/heritage-restoration/heritage-masonry' },
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-    ],
-  },
-
-  'sandstone-weathering': {
-    name: 'Sandstone Weathering & Erosion',
-    slug: 'sandstone-weathering',
-    metaTitle: 'Sydney Sandstone Weathering | Repair & Restoration | Romans',
-    metaDescription:
-      'Sandstone walls eroding, flaking or losing detail? Learn the causes and proper restoration for Sydney heritage sandstone. 30 years of heritage stone work.',
-    heroTagline:
-      'Sydney sandstone is beautiful but not indestructible — salt, water and poor repairs all wear it down over time.',
-    quickAnswer:
-      'Sandstone weathers through exposure to salt, water, wind and pollution over decades. Signs include flaking surfaces, loss of carved detail, pitting, and dark staining. Proper restoration means cleaning gently, consolidating weakened stone with breathable lime-based consolidants, replacing stone that is beyond saving with matched Sydney sandstone, and never using impermeable sealers that trap moisture. A good sandstone restoration lasts decades.',
-    whatItIs: [
-      'Sydney is one of the great sandstone cities — almost every heritage building around the CBD, The Rocks, Paddington, Woollahra, Mosman and beyond has significant sandstone. It is beautiful stone but it weathers. Salt in the air, rain, wind, pollution and ground moisture all slowly break it down over decades. On heritage buildings that have been standing 100+ years, weathering is often significant.',
-      'The worst damage is usually to decorative carved detail — cornices, window surrounds, capitals, balustrades. Fine detail erodes faster than flat surfaces. Salt crystallisation inside the stone causes flaking (spalling) on coastal buildings. Past repairs with cement-based mortars or impermeable sealers accelerate damage because they trap moisture in the stone.',
-      'Proper restoration is a combination of gentle cleaning, consolidation of weakened stone, replacement of stone beyond saving, and breathable protective finishes. Done well, weathered sandstone can be brought back to good structural condition and kept there for decades.',
-    ],
-    signs: [
-      'Stone surface flaking or powdering — small pieces coming away',
-      'Loss of carved detail on decorative elements',
-      'Pitting or hollowing in the stone face',
-      'Dark staining (black soot, biological growth, or salt bloom)',
-      'Stone turning soft or crumbly where touched',
-      'Cracks or fractures in individual stone blocks',
-      'Mortar weathering faster than the stone (a sign of correct original spec)',
-    ],
-    causes: [
-      'Normal weathering — rain, sun, wind over decades',
-      'Salt crystallisation inside the stone (coastal exposure or rising damp)',
-      'Pollution deposits (historic coal soot, modern traffic)',
-      'Cement-based pointing trapping moisture in the stone',
-      'Impermeable sealers applied in past repairs',
-      'Ground moisture rising through the stone',
-      'Freeze-thaw cycles (minor in Sydney but exists)',
-    ],
-    urgency: 'medium',
-    urgencyNote:
-      'Weathering is gradual but not self-limiting — it accelerates once the protective outer surface of the stone is lost. Fine carved detail, once gone, cannot be recovered without replacing the stone block. Structural sandstone failing is more urgent than cosmetic weathering of flat surfaces. Heritage buildings benefit from catching weathering early with consolidation rather than later with replacement.',
-    howWeFixIt: [
-      {
-        step: 'Assess and clean',
-        detail:
-          'Careful cleaning with appropriate methods — never sandblasting, never harsh chemicals, never pressure washing at high pressure. Usually soft brush, low-pressure water, and occasionally poultices for stubborn staining. We document what we find as we go.',
-      },
-      {
-        step: 'Consolidate weakened stone',
-        detail:
-          'Breathable lime-based or silicate consolidants penetrate weathered stone and strengthen it without changing appearance or trapping moisture. For significantly weakened stone this can extend life by decades without replacement.',
-      },
-      {
-        step: 'Replace stone beyond saving',
-        detail:
-          'Individual stones that have lost structural integrity or critical detail are cut out and replaced with matched Sydney sandstone. Hand-carved detail restored where needed. New stone weathered to blend with surroundings.',
-      },
-      {
-        step: 'Repoint with breathable lime mortar',
-        detail:
-          'Old cement mortar removed if present — it is damaging the stone. Repoint with traditional lime mortar matched to original colour and profile. Lime mortar protects the stone while letting it breathe.',
-      },
-      {
-        step: 'Apply breathable protection',
-        detail:
-          'Where needed, a breathable silicate or mineral protective treatment. Never acrylic sealers or waterproofing coatings — they trap salt and accelerate damage. Done right, the stone is protected for decades without looking treated.',
-      },
-    ],
-    costBand:
-      'Depends heavily on scope. Cleaning and consolidation on a single facade $8,000 – $30,000. Significant replacement with carved detail $25,000 – $150,000+. Heritage projects priced per element.',
-    faqs: [
-      {
-        question: 'Can you restore carved sandstone detail that is mostly gone?',
-        answer:
-          'Yes, for detail that still has enough profile to reference. We can hand-carve replacement elements matched to surviving sections. For detail entirely lost, we work with heritage architects or conservators to document appropriate replacement — either based on historical photos or matching surviving similar elements.',
-      },
-      {
-        question: 'Should I seal my sandstone to stop weathering?',
-        answer:
-          'Not with modern waterproofing sealers — they trap moisture and salts inside the stone, accelerating damage. Breathable silicate or mineral treatments are the only appropriate option for sandstone protection. Most heritage conservators prefer no treatment at all unless actively needed.',
-      },
-      {
-        question: 'How do you match Sydney sandstone?',
-        answer:
-          'Sydney sandstone is still quarried from Hawkesbury-area quarries. We source stone matched to grain, colour and texture of the original. For visible repairs we weather-match with appropriate patina so new stone blends with aged surrounding stone.',
-      },
-      {
-        question: 'Is sandstone weathering a structural concern?',
-        answer:
-          'Usually not — it is cosmetic at first. But significant weathering of load-bearing sandstone (lintels, large structural blocks) can become structural. Part of the assessment is working out whether the damage is cosmetic or whether the stone is losing structural capacity.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Stone Masonry Repairs', href: '/services/masonry/stone-masonry-repairs' },
-      { title: 'Heritage Stone Restoration', href: '/services/heritage-restoration/heritage-stone' },
-      { title: 'Traditional Stonework', href: '/services/heritage-restoration/traditional-stonework' },
-    ],
-  },
-
-  'damaged-lintels': {
-    name: 'Damaged Lintels Above Windows & Doors',
-    slug: 'damaged-lintels',
-    metaTitle: 'Sydney Damaged Lintels | Rusting Steel & Brick Cracks | Romans',
-    metaDescription:
-      'Rust stains above your window, cracks radiating from door corners? That is a failing lintel. Learn the signs, causes and proper replacement for Sydney homes.',
-    heroTagline:
-      'The horizontal beam above your window or door. When it fails, everything above it starts cracking.',
-    quickAnswer:
-      'Lintels are the horizontal beams that support brickwork above windows and doors. When steel lintels rust they expand up to 7x their original size, cracking the bricks above and eventually failing structurally. Signs include rust stains on brickwork, cracks radiating from window or door corners, and bulging or bowing brickwork above openings. Proper repair means temporarily propping the load, cutting out the old lintel, installing a new galvanised or stainless steel lintel, and rebuilding the brickwork.',
-    whatItIs: [
-      'A lintel is the horizontal beam that carries the weight of brickwork above a window or door opening. In Australian homes built from 1900 to around 1970, lintels were almost always mild steel — painted once and then forgotten. Steel rusts when exposed to moisture, and when embedded in brickwork it rusts slowly but continuously.',
-      'When steel rusts, it expands up to seven times its original volume. That expansion cracks the bricks above the window, pushes the bricks out of line, and eventually causes structural failure. The classic signs are rust stains bleeding down the brickwork, cracks radiating from the corners of window and door openings, and bricks starting to bulge or come loose above the lintel.',
-      'Lintel failure is common on Sydney Federation, Interwar and mid-century homes. The good news: it is a contained repair, not whole-house structural work. The bad news: it has to be done properly, with temporary propping, full lintel replacement, and brickwork rebuild. Quick patch jobs always come back.',
-    ],
-    signs: [
-      'Rust stains bleeding down brickwork from above a window or door',
-      'Cracks radiating from the corners of openings (often stair-step)',
-      'Bricks loose, bulging, or bowing above windows',
-      'Window or door no longer closing properly',
-      'Visible rust on any exposed lintel ends',
-      'Internal cracks in plaster above the opening',
-      'Gaps opening between the lintel and the brickwork',
-    ],
-    causes: [
-      'Steel lintel rusting — moisture reaches the steel through cracks, bad flashing, or masonry porosity',
-      'Salt air accelerating corrosion (coastal suburbs)',
-      'Failed or missing damp-proof course allowing moisture into the lintel',
-      'Original construction without proper rust protection',
-      'Direct water ingress from failed window sills or roof flashing above',
-      'Age — 50+ year old mild steel lintels commonly fail on pre-1970 homes',
-    ],
-    urgency: 'high',
-    urgencyNote:
-      'A visibly failing lintel is a structural concern. Eventually the brickwork above the opening can fall — while you do not want to be standing under it when that happens, the more common problem is that once bricks start moving, the repair scope grows fast. Catch it when cracks first appear and the fix is contained. Leave it five years and the whole wall above the window may need rebuilding.',
-    howWeFixIt: [
-      {
-        step: 'Assess and prop',
-        detail:
-          'We confirm the lintel is failing, check the extent of brick damage, and install temporary propping to support the load above. Propping stays in place throughout the work.',
-      },
-      {
-        step: 'Remove damaged brickwork',
-        detail:
-          'Bricks above the lintel that are cracked, spalled or displaced come out carefully. We salvage what we can for reuse or replacement matching. Goal is clean access to remove the lintel.',
-      },
-      {
-        step: 'Cut out the old lintel',
-        detail:
-          'The failed steel lintel is cut out and removed. The bearing points at each end are cleaned back to sound masonry.',
-      },
-      {
-        step: 'Install new lintel',
-        detail:
-          'A new lintel — galvanised steel, stainless steel, or precast concrete depending on span and load — is installed with correct bearing at each end and proper DPC to prevent future rusting.',
-      },
-      {
-        step: 'Rebuild brickwork',
-        detail:
-          'Matched bricks and lime mortar rebuild the damaged area. Replacement bricks sourced to match colour, size and texture. Pointing matched to surrounding mortar. Done right, the repair is invisible when finished.',
-      },
-    ],
-    costBand:
-      'Single lintel replacement typically $1,500 – $4,500 depending on span, access and brick matching requirements. Full facade of multiple failing lintels can run $8,000 – $20,000+.',
-    faqs: [
-      {
-        question: 'Why is there rust running down my brickwork above the window?',
-        answer:
-          'The steel lintel above the window is rusting. Water has reached the steel — usually through a failed sill, cracked pointing, or general masonry porosity — and the rust is bleeding through to the surface. It means the lintel is deteriorating and needs attention.',
-      },
-      {
-        question: 'Can you just paint over the rust to fix it?',
-        answer:
-          'No. The rust is inside the wall, on the lintel. Painting the surface does nothing. And because the steel is expanding as it rusts, cracking bricks from inside, surface treatment is pointless. The lintel has to come out and be replaced.',
-      },
-      {
-        question: 'How long does a lintel replacement take?',
-        answer:
-          'Single lintel on a residential property: typically 2–4 days including propping, removal, installation and brick rebuild. Multiple lintels on the same facade can be done together, often 1–2 weeks.',
-      },
-      {
-        question: 'Will the repair be visible?',
-        answer:
-          'Done properly, no. Matched brick, matched mortar, matched profile — the repair blends into the surrounding wall. On heritage work we take extra care to match aged brick colour and weathering.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Structural Crack Repair', href: '/services/structural-repairs/structural-crack-repair' },
-      { title: 'Load-Bearing Wall Repairs', href: '/services/structural-repairs/load-bearing-walls' },
-      { title: 'Heritage Brick Repairs', href: '/services/heritage-restoration/heritage-brick-repairs' },
-      { title: 'Building Reinforcement', href: '/services/structural-repairs/building-reinforcement' },
-    ],
-  },
-
-  'cavity-wall-tie-failure': {
-    name: 'Cavity Wall Tie Failure',
-    slug: 'cavity-wall-tie-failure',
-    metaTitle: 'Sydney Cavity Wall Tie Failure | Repair | Romans',
-    metaDescription:
-      'Horizontal cracks at regular intervals, bowing walls? Your cavity wall ties may be failing. Romans Building Services remedies tie failure across Sydney homes.',
-    heroTagline:
-      'The hidden steel ties holding two brick walls together rust and fail — most 1960s-80s brick veneer homes are affected.',
-    quickAnswer:
-      'Cavity wall ties are steel ties embedded in the mortar between the two leaves of a cavity brick wall, holding them together. In 1960s–80s Australian brick veneer homes they often corrode as the galvanising fails, and once they corrode they stop doing their job. Signs include horizontal cracks at regular spacing, bowing walls, and cracked mortar in horizontal joints. The fix is installing new stainless steel remedial wall ties — a proven, non-destructive repair.',
-    whatItIs: [
-      'Cavity wall construction has two leaves of brick with a small gap (cavity) between them, tied together by steel ties embedded in the mortar joints. The ties stop the two leaves from separating. They were standard construction for Australian brick veneer homes from the 1940s through to around 1990.',
-      'The problem: the ties were galvanised mild steel, and the galvanising fails over decades. Once the galvanising is gone, the steel rusts — and once it rusts significantly, it stops doing its job. The two leaves of the wall are no longer held together properly. Over years, the outer leaf can start to bow outward, and the mortar joints where the ties sit crack horizontally at regular intervals.',
-      'This is a widespread issue on Sydney homes built from 1950 to 1985. Most homes of that vintage will have some tie corrosion, and many have significant enough corrosion to need remedial wall ties installed. The fix is non-destructive — new stainless steel ties are installed through small holes drilled from outside, then the holes are repointed.',
-    ],
-    signs: [
-      'Horizontal cracks in mortar joints at regular spacing (roughly 450–600mm apart)',
-      'Outer brick leaf bowing or leaning outward',
-      'Stair-step cracks radiating from window or door corners',
-      'Bricks loose or moving in sections of the wall',
-      'Rust stains at mortar joints (rare — usually hidden inside)',
-      'Visible gap between internal and external walls at junctions',
-      'Home was built between 1950 and 1985 (age bracket for affected construction)',
-    ],
-    causes: [
-      'Original galvanising wearing out over 30+ years',
-      'Moisture ingress through cracks, damp or failed flashing',
-      'Salt air (coastal homes) accelerating corrosion',
-      'Poor original construction — inadequate tie spacing or wrong tie type',
-      'Thermal expansion over decades flexing the ties and breaking galvanising',
-    ],
-    urgency: 'medium',
-    urgencyNote:
-      'Cavity wall tie failure is rarely an emergency — it progresses slowly over years. But once the outer leaf starts bowing noticeably, the repair scope gets bigger and the risk of more serious structural failure grows. Homes in coastal suburbs or with visible tie corrosion warrant action sooner. For homes showing just hairline horizontal cracking, monitoring for change is reasonable.',
-    howWeFixIt: [
-      {
-        step: 'Diagnose the failure pattern',
-        detail:
-          'We check the spacing of horizontal cracks, look for bowing with a straight edge, and sometimes open up a small section of mortar to inspect tie condition. Confirms whether the problem is tie failure or something else.',
-      },
-      {
-        step: 'Calculate new tie layout',
-        detail:
-          'New remedial ties are specified in a grid pattern across the affected walls — typically 450mm vertical spacing and 600–900mm horizontal. More ties near corners and openings where stress concentrates.',
-      },
-      {
-        step: 'Drill and install new ties',
-        detail:
-          'Small holes (10mm diameter) drilled through the outer leaf into the inner leaf, at the specified locations. Stainless steel helical remedial ties driven in to lock both leaves together. The ties bite into the masonry on both sides and do not need resin or mechanical fixings.',
-      },
-      {
-        step: 'Seal and repoint',
-        detail:
-          'Tie heads are set back below the brick face and the small drill holes are repointed with matched mortar. Done carefully, the repair is practically invisible.',
-      },
-      {
-        step: 'Monitor movement',
-        detail:
-          'For homes where the outer leaf had already bowed, we install monitors and review after 12 months to confirm movement has stopped.',
-      },
-    ],
-    costBand:
-      'Per tie: $45 – $90 installed. A typical home needs 100–300 ties. Total jobs usually $8,000 – $25,000 depending on home size, wall condition and access.',
-    faqs: [
-      {
-        question: 'How do I know my cavity wall ties have failed?',
-        answer:
-          'Horizontal cracks in mortar joints at regular spacing (450–600mm) are the classic sign. Bowing of the outer leaf when checked with a straight edge is another. Your home also has to be from the right era — 1950s to 1980s brick veneer — to have this specific problem.',
-      },
-      {
-        question: 'Is cavity wall tie failure dangerous?',
-        answer:
-          'Eventually, yes — if the outer leaf fully separates it can collapse. In practice this happens over decades of untreated decay. The reasonable approach is to fix the ties when signs appear rather than wait for catastrophic failure.',
-      },
-      {
-        question: 'Will the new ties last?',
-        answer:
-          'Stainless steel remedial ties have effectively unlimited service life in Australian conditions. 50+ year warranties are standard. They will not rust and will not need replacement during the useful life of the building.',
-      },
-      {
-        question: 'Will the repair damage my interior walls?',
-        answer:
-          'No — the repair is entirely external. Drilling is from outside only, so there is no interior work, no need to move furniture, and no internal disruption.',
-      },
-    ],
-    relatedServices: [
-      { title: 'Structural Crack Repair', href: '/services/structural-repairs/structural-crack-repair' },
-      { title: 'Load-Bearing Wall Repairs', href: '/services/structural-repairs/load-bearing-walls' },
-      { title: 'Building Reinforcement', href: '/services/structural-repairs/building-reinforcement' },
-      { title: 'Repointing & Brick Pointing', href: '/services/masonry/repointing' },
-    ],
-  },
 };
 
 export function getProblem(slug: string): ProblemPageProps | undefined {

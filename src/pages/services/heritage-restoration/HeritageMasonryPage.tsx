@@ -9,7 +9,7 @@ const HeritageMasonryPage = () => {
     <ServicePageTemplate
       title="Heritage Masonry Restoration"
       metaTitle="Sydney Heritage Masonry Restoration | Romans"
-      metaDescription="Sydney heritage masonry restoration by Minas Romanakis. Lime mortar, period brick matching and council-approved methods for Federation, Victorian and Colonial work."
+      metaDescription="Sydney heritage masonry restoration enquiries. Compatible repairs, retained original fabric, material samples and conservation planning."
       heroImage="/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
       parentService={{ title: 'Heritage Restoration', href: '/services/heritage-restoration' }}
       siblingServices={siblings}
@@ -19,131 +19,101 @@ const HeritageMasonryPage = () => {
         { label: 'Heritage Masonry Restoration', href: '' },
       ]}
       intro={[
-        'Heritage masonry needs a completely different approach to modern brickwork. The materials are softer, the joints are different, and the wall was designed to handle moisture by letting it move through the masonry rather than blocking it out. Modern cement mortar against soft heritage brick traps that moisture inside. The brick face starts blowing out, and you end up with a worse problem than what you started with.',
-        'We do heritage masonry the way it was originally done. Lime mortar mixed on site to match the original. Hand-tooled joints in whatever profile the wall had to begin with. Replacement brick sourced from yards that still stock the older sizes, or pulled from heritage demolitions. Sandstone hand-dressed on site to match the original tooling marks. Slow work, but the only way to get it right.',
-        'Romans has been doing heritage work across Sydney since the early 2000s. Federation terraces in the Inner West, Victorian shopfronts in the CBD, Colonial sandstone around the harbour, Art Deco apartments on the North Shore. Most of it came through architects and heritage consultants who saw a previous job. Minas runs the heritage scopes himself.',
+        "Heritage masonry repair begins with understanding the existing wall: its stone or brick, mortar, construction, moisture behaviour and previous alterations. Not every old wall uses the same materials, and a modern-looking patch is not enough on its own to diagnose the cause of damage.",
+        "The aim is to retain sound fabric and make necessary repairs compatible with what remains. This can involve local masonry replacement, repointing, stone repairs or conservation of decorative details. Traditional methods may be appropriate, but the method should follow the building’s needs and significance rather than a blanket rule.",
+        "Contact Romans about the masonry work you are considering. Share available reports and listing information so the assessment can identify material trials, structural input and approval checks. Contractor documents, heritage advice and formal authority consent have different roles in the project."
       ]}
       features={[
         {
           icon: Landmark,
-          title: 'Listed building experience',
-          description:
-            'Three decades of work on heritage-listed properties across Sydney. Churches, terraces, public buildings, harbour-side homes. State and local heritage listings both.',
+          title: "Condition and significance",
+          description: "Identify sound original material, defects and significant details before deciding what to remove or replace."
         },
         {
           icon: ScrollText,
-          title: 'Heritage reports prepared',
-          description:
-            'Methodology statements, scope of works, material specifications, before-and-after photos. We prepare what councils and heritage consultants need for the approval.',
+          title: "Repair documentation",
+          description: "Agree the scope, materials, methods and records required for the property and any relevant approval process."
         },
         {
           icon: Hammer,
-          title: 'Traditional materials and tools',
-          description:
-            'Hydraulic lime mortar, hand-cut stone, period-correct pointing tools. We replicate the original methods, not approximate them.',
+          title: "Compatible craft",
+          description: "Match joint profiles, tooling and bond patterns where appropriate, while selecting materials for performance as well as appearance."
         },
         {
           icon: ShieldCheck,
-          title: 'Council-approved',
-          description:
-            'Long track record with Sydney City, Woollahra, Inner West, Mosman and Ku-ring-gai heritage councils. We know what each one expects in the documentation.',
-        },
+          title: "Permission checks",
+          description: "Confirm listing controls and the required pathway with the council or relevant heritage authority before work starts."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Hydraulic lime mortar (NHL)',
-          detail:
-            'Natural hydraulic lime mixed with sharp sand to match the original mortar. NHL 2 for soft brick (pre-1900), NHL 3.5 for harder Federation brick. Cement-free. Same material the wall was built with.',
+          title: "Mortar analysis and samples",
+          detail: "Inspect existing mortar and use laboratory advice where needed. Binder and aggregate selection should respond to the wall and exposure, not only its era."
         },
         {
-          title: 'Period brick from heritage yards',
-          detail:
-            'Bowral brick, Brickworks reclaim, Marrickville brick salvage. For Federation work we usually find a near-perfect match within a few days. For colonial brick we use reclaimed stock from demolitions.',
+          title: "Matched brick",
+          detail: "New or reclaimed units need suitable dimensions, condition and physical properties. Sample approval does not guarantee supply or an invisible repair."
         },
         {
-          title: 'Hawkesbury and Gosford sandstone',
-          detail:
-            'Active quarries north of Sydney still cutting stone to colonial dimensions. We can also use reclaimed sandstone from heritage demolitions when colour matching is critical.',
+          title: "Replacement stone",
+          detail: "Assess grain, bedding, strength and moisture behaviour alongside colour and tooling. Retention or local repair may avoid unnecessary replacement."
         },
         {
-          title: 'Stainless steel for any new metal',
-          detail:
-            'Wall ties, cramps, dowels, brick reinforcement. Stainless not galvanised. Galv lasts 30 to 50 years and then rusts inside the wall. Stainless lasts the life of the building.',
+          title: "Designed metal connections",
+          detail: "Cramps, ties and reinforcement need appropriate material selection and detailing for the exposure. Stainless steel also requires suitable specification and is not a lifetime guarantee."
         },
         {
-          title: 'Tuckpointing materials for Victorian work',
-          detail:
-            'Putty lime for the fine white line. Black or red oxide-tinted lime mortar for the bed colour. Special tuck-pointing irons. Slow work but unmistakable when it is done properly.',
-        },
-        {
-          title: 'Hessian for slow lime curing',
-          detail:
-            'Lime mortar cures by carbonation, not hydration. Needs to stay damp for a week to fortnight. Hessian sheets sprayed twice daily in summer, plastic sheeting in winter.',
-        },
+          title: "Pointing and curing tools",
+          detail: "Choose preparation and finishing tools to protect retained fabric. Hydraulic lime can set through hydration as well as carbonation; curing and protection depend on the specified mix."
+        }
       ]}
       processSteps={[
         {
-          step: 'Site inspection and documentation',
-          detail:
-            'On-site inspection by Minas. We photograph the existing wall, sample the mortar (a small section sent to a lab if the engineer wants the mix analysed), identify the era of the brick, and check what previous repairs have been done.',
+          step: "Survey and record",
+          detail: "Assess condition, construction and previous work. Identify structural safety concerns and any investigation needed before a conservation scope can be set."
         },
         {
-          step: 'Heritage scope and consent',
-          detail:
-            'For listed buildings, we prepare a methodology statement that the heritage consultant and council can sign off on. Materials specified, methods documented, sample patches proposed. Approval is usually two to six weeks.',
+          step: "Define conservation requirements",
+          detail: "Check listing and approval needs, then agree the extent of repair and the responsible advisers."
         },
         {
-          step: 'Sample patches and sign-off',
-          detail:
-            'Two or three test patches go up in different mortar mixes. Cure for a week. Heritage consultant signs off on the closest match before the full job starts. This is the most important step on a heritage scope.',
+          step: "Trial materials",
+          detail: "Review sample mortar, brick or stone in context. Allow the specified trial period before deciding on wider work."
         },
         {
-          step: 'Careful removal of failed material',
-          detail:
-            'Old mortar raked out by hand to two or three times the joint width. Failed bricks cut out cleanly without damaging the surrounds. Failed stone marked for dutchman or full replacement. No power tools that could damage adjacent material.',
+          step: "Repair selectively",
+          detail: "Follow the agreed removal and support sequence. Preserve sound material and seek review where concealed conditions differ from the assessment."
         },
         {
-          step: 'Rebuilding to original spec',
-          detail:
-            'New mortar mixed in small batches because lime starts curing as soon as it is wet. Replacement brick or stone bedded into the wall. Joints tooled to the original profile. Heritage consultant photographs as we go.',
-        },
-        {
-          step: 'Slow curing and handover',
-          detail:
-            'Hessian sheeting goes on for the first week to slow the cure. We come back daily for the first week to wet it down. After two weeks the wall is solid. Full completion documentation handed over for the heritage file.',
-        },
+          step: "Protect and document",
+          detail: "Provide specified curing protection and completion records. Agree maintenance and any further monitoring with the relevant adviser."
+        }
       ]}
       faqs={[
         {
-          question: 'Do you work on heritage-listed buildings?',
-          answer:
-            'Yes, it is a large part of what we do. We work on state-listed and locally-listed buildings, and we understand the heritage approval process in most Sydney councils. References and past project examples available on request.',
+          question: "Can I enquire about a listed building?",
+          answer: "Yes. Include the listing details, photographs taken safely and any existing consultant report. The proposed scope should establish which masonry work is suitable and what specialist advice or permissions are needed before construction."
         },
         {
-          question: 'Why can you not use cement mortar on heritage buildings?',
-          answer:
-            'Cement mortar is harder than old brick and old sandstone, and it does not breathe. Heritage masonry was designed to handle moisture by moving it through the mortar joints. Cement traps that moisture inside the wall instead. After ten to fifteen years the bricks start spalling, salt deposits appear on the face, and you end up with much more damage than you started with. We see this every week.',
+          question: "Why does mortar compatibility matter?",
+          answer: "Mortar affects moisture movement and how loads and movement are accommodated. A mix that is too strong or otherwise incompatible can damage softer masonry. Assessment should establish an appropriate repair rather than impose a universal cement or lime rule."
         },
         {
-          question: 'Can you help with the heritage council application?',
-          answer:
-            'Yes. We prepare the methodology statement and scope of works that councils require. For complex listings we work alongside heritage consultants and architects. We know what Sydney City, Woollahra, Inner West, Mosman and Ku-ring-gai councils each expect in the documentation.',
+          question: "Who prepares the heritage application?",
+          answer: "Confirm the authority’s requirements and agree which documents the contractor, architect or heritage adviser will prepare. A methodology statement may support an application, but it does not itself establish approval or replace any required professional report."
         },
         {
-          question: 'What is the difference between heritage restoration and just patching old brick?',
-          answer:
-            'Patching uses whatever material is on hand. Heritage restoration replaces failed material with new material that matches the original in composition, strength and breathability. It costs more and takes longer but the building reads correctly after the work and the repair lasts decades instead of years.',
+          question: "How does conservation differ from a cosmetic patch?",
+          answer: "Conservation considers significance, retained material, causes of damage and compatibility, as well as appearance. A small local repair may be the right conservation outcome. The goal is appropriate intervention, not automatically replacing more of the wall."
         },
         {
-          question: 'How long does heritage masonry restoration take?',
-          answer:
-            'A Federation terrace facade is two to six weeks depending on scope. A heritage church or commercial building can be three to nine months. Sample patches and council approval add weeks at the front. Lime mortar curing means we cannot rush the schedule on the back end.',
+          question: "How long does heritage masonry work take?",
+          answer: "Investigation, permissions, samples, sourcing and curing affect the programme. Ask for a schedule tied to the actual repair and inspection requirements. Uncovering earlier alterations or concealed damage may require the scope to be reviewed."
         },
         {
-          question: 'What does heritage masonry restoration cost?',
-          answer:
-            'Heritage repointing is usually 200 to 400 dollars per square metre. Tuckpointing is 350 to 600 dollars per square metre. Brick replacement and dutchman stone repair are quoted per piece. A full Federation terrace facade restoration typically runs 30,000 to 100,000 dollars including engineering, materials, council scope and labour. Fixed quote after site visit.',
-        },
+          question: "How is the work priced?",
+          answer: "The quote should identify access, careful preparation, materials, repair extent and any separate specialist fees. Compare the proposed method and retained fabric as well as cost. Generic area rates cannot capture every conservation requirement."
+        }
       ]}
     />
   );

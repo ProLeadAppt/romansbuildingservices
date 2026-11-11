@@ -8,7 +8,7 @@ const BuildingReinforcementPage = () => {
     <ServicePageTemplate
       title="Building Reinforcement"
       metaTitle="Sydney Building Reinforcement | Romans"
-      metaDescription="Sydney building reinforcement by Minas Romanakis. Steel beams, carbon fibre, helibar masonry, foundation underpinning. Engineer-designed, AS 3700/AS 3600."
+      metaDescription="Sydney building reinforcement enquiries. Assessing additional loads and planning engineered steel, masonry, concrete and foundation strengthening."
       heroImage="/gallery/thumbs/romansstone_1570002705_2145660669121556728_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}
@@ -18,137 +18,106 @@ const BuildingReinforcementPage = () => {
         { label: 'Building Reinforcement', href: '' },
       ]}
       intro={[
-        'Buildings sometimes need more strength than they were originally built with. Adding a second storey to a single-storey house. Changing from residential to commercial use. Bringing an older building up to current code. Compensating for a structural defect found in a building report. Or just adapting to heavier modern loads (rooftop air conditioning units, solar panels, mezzanine floors). All of these require reinforcing the existing structure rather than starting fresh.',
-        'Reinforcement methods depend on what is being strengthened. Steel beams and columns are added where load paths need to change. Carbon fibre fabric is bonded to concrete elements that need more tensile capacity. Helical stainless steel bars reinforce masonry walls. Additional footings or underpinning strengthens foundations. Most jobs use a combination of methods designed by a structural engineer for that specific building.',
-        'We have reinforced terraces, apartments, warehouses, commercial buildings, strata blocks and heritage properties right across Sydney. Engineer scope first, council approval where needed, then the work. Romans holds a full builders licence for structural work and we work to AS 3700 for masonry and AS 3600 for concrete reinforcement.',
+        "A proposed extension, new opening, heavier equipment or change of use can alter a building’s loads. Existing defects can also reduce capacity. These are reasons to obtain structural assessment; they do not mean every building needs the same reinforcement or that strengthening is always the best option.",
+        "The engineer considers the whole load path, including connections and foundations. Options can include steel members, masonry reinforcement, concrete strengthening or additional foundation support. A local increase in strength can transfer loads elsewhere, so the design must account for the surrounding structure.",
+        "Contact Romans to discuss the building work in an assessed reinforcement scheme. Confirm the relevant licence scope, specialist installation, design responsibilities and approvals before proceeding. A particular strengthening product or engineering standard is not evidence by itself that the complete project complies."
       ]}
       features={[
         {
           icon: ShieldCheck,
-          title: 'Steel reinforcement',
-          description:
-            'Steel beams, columns, bracing, plates. Bolted or welded into the existing structure. Sized by structural engineer. Hot-dip galvanised or stainless depending on exposure.',
+          title: "Steel members and connections",
+          description: "New beams, columns or bracing can redistribute loads when designed as a system. Bearings, fixings, corrosion protection and fire requirements need consideration."
         },
         {
           icon: Layers,
-          title: 'Carbon fibre wrapping',
-          description:
-            'Carbon fibre fabric epoxy-bonded to concrete beams, columns and slabs. Adds significant tensile strength without adding weight or thickness. Common in apartment retrofits.',
+          title: "Bonded strengthening",
+          description: "Fibre-reinforced systems may suit some concrete elements. Substrate condition, anchorage, exposure and fire performance affect feasibility and the required specialist installation."
         },
         {
           icon: Wrench,
-          title: 'Helibar masonry reinforcement',
-          description:
-            'Stainless helical bars set into bed joints to reinforce existing masonry walls. Used for retrofitting load capacity, stitching cracks, and tying separated walls back together.',
+          title: "Masonry reinforcement",
+          description: "Bars, ties or other systems can form part of a designed masonry repair. They do not remove the need to investigate movement or confirm the capacity of connected walls and foundations."
         },
         {
           icon: HardHat,
-          title: 'Foundation strengthening',
-          description:
-            'Underpinning, additional footings, screw piles, ground anchors. Used when adding load to a building or when existing footings are inadequate. Excavation and concrete pours.',
+          title: "Foundation support",
+          description: "Additional loads may require foundation investigation and strengthening. Method selection depends on the ground, existing footings, access and the effect on neighbouring structures."
         },
         {
           icon: ClipboardCheck,
-          title: 'Engineered and certified',
-          description:
-            'All work designed by structural engineer. Site inspections during construction. Completion certificate. Documentation suitable for council, strata committee or insurance file.',
-        },
+          title: "Design coordination",
+          description: "The scope should identify the engineer, relevant specialist trades and required inspection records. Permissions and occupancy arrangements are considered alongside the structural design."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Hot-dip galvanised structural steel',
-          detail:
-            'New steel beams, columns and bracing. Hot-dip galvanised after fabrication. Sized to engineer drawings. Bolted into existing structure with chemical or expansion anchors.',
+          title: "Structural steel",
+          detail: "The design specifies sections, bearings and connections. Fabrication tolerances, installation access and protective finishes affect the work as much as member size."
         },
         {
-          title: 'Carbon fibre fabric and epoxy',
-          detail:
-            'Unidirectional carbon fibre fabric. Saturated with two-part epoxy and applied wet to the structural element. One layer can add 20 to 40 percent to flexural capacity. Multiple layers for higher demand.',
+          title: "Bonded fibre systems",
+          detail: "System selection and substrate preparation are critical. There is no universal percentage capacity gain per layer; the engineer must assess the particular element and failure mechanisms."
         },
         {
-          title: 'Helifix or similar helical bar',
-          detail:
-            '6mm to 10mm stainless steel helical bar for masonry reinforcement. Set into bed joints in cementitious grout. Industry standard since the 1990s. Concealed under new pointing.',
+          title: "Masonry bars and ties",
+          detail: "Reinforcement and grout must suit the masonry, loads and exposure. Confirm the installation and verification requirements rather than relying on a standard bar diameter."
         },
         {
-          title: 'Chemical anchors',
-          detail:
-            'Two-part chemical anchor for fixing new steel into existing concrete or masonry. Much stronger than expansion anchors. Hilti or Ramset systems, sized by engineer.',
+          title: "Anchors",
+          detail: "Anchor type depends on substrate, edge distances, loading and installation conditions. Chemical anchors are not inherently better for every application, and existing masonry may require investigation or testing."
         },
         {
-          title: 'Screw piles for foundation work',
-          detail:
-            'Steel screw piles for new foundation support. Driven by hydraulic torque head. No vibration, no excavation, full bearing capacity within hours. Used under residential extensions and additions.',
-        },
-        {
-          title: 'Engineer involvement throughout',
-          detail:
-            'Structural engineer designs the reinforcement, specifies materials and inspects during construction. Completion certificate issued for the property file. Council usually requires engineer sign-off.',
-        },
+          title: "Foundation systems",
+          detail: "Where underpinning or piles are proposed, confirm design, specialist responsibilities, services and installation effects. Excavation, vibration and access requirements vary with the method and site."
+        }
       ]}
       processSteps={[
         {
-          step: 'Engineer assessment',
-          detail:
-            'Structural engineer assesses the existing building and the proposed loading. Calculates what additional capacity is needed and where. Specifies the reinforcement method, materials and sizes.',
+          step: "Define the proposed change",
+          detail: "Provide drawings, intended use and loading information to the engineer. Include known defects and previous alterations that could affect the structure."
         },
         {
-          step: 'Scope and approval',
-          detail:
-            'We prepare a quote against the engineer scope. Council approval prepared where required (most reinforcement to existing buildings needs at least a Complying Development Certificate).',
+          step: "Investigate existing capacity",
+          detail: "Assess materials, connections and foundations, with testing where needed. Identify gaps in records and what must be verified before selecting a strengthening method."
         },
         {
-          step: 'Propping and protection',
-          detail:
-            'Temporary propping installed under any beam or slab being reinforced. Adjacent finishes protected. Dust control set up. Site access organised with the building owner or strata.',
+          step: "Agree design and permissions",
+          detail: "Confirm the reinforcement scheme, temporary works and required approval pathway. Define specialist installation, inspections, access and occupancy restrictions in the written scope."
         },
         {
-          step: 'Install the reinforcement',
-          detail:
-            'Method depends on the design. Steel beams craned in and bolted up. Carbon fibre laminated to concrete elements. Helical bars set into bed joints. Foundation piles driven. All to engineer drawings.',
+          step: "Install and inspect",
+          detail: "Qualified personnel follow the design and inspection hold points. Design changes or unsuitable concealed conditions require review before affected work continues."
         },
         {
-          step: 'Engineer inspection',
-          detail:
-            'Engineer inspects the reinforcement before any of it is covered up. Confirms installation matches the design. Photos and engineer report taken for the structural file.',
-        },
-        {
-          step: 'Reinstate and certify',
-          detail:
-            'Finishes reinstated. Render and paint repaired. Temporary propping removed in sequence. Completion certificate issued by engineer. Documentation handed over to the building owner or strata committee.',
-        },
+          step: "Complete the records",
+          detail: "Confirm loading and support-removal requirements and provide the agreed inspection documents. Explain maintenance, restrictions and any future changes that would require reassessment."
+        }
       ]}
       faqs={[
         {
-          question: 'When does a building need reinforcement?',
-          answer:
-            'Common triggers: adding a second storey, converting residential to commercial use, installing heavy equipment on a roof or upper floor, addressing a structural defect found in a building report, bringing an older building up to current code after renovation, compensating for a load-bearing wall being removed elsewhere in the building.',
+          question: "When should reinforcement be considered?",
+          answer: "Obtain an assessment before adding loads, removing structural elements or changing use, and when significant defects are identified. The engineer can determine whether reinforcement is needed or whether another arrangement would address the proposed change more appropriately."
         },
         {
-          question: 'What is carbon fibre reinforcement?',
-          answer:
-            'Carbon fibre fabric is epoxy-bonded to concrete structural elements. Once cured, the carbon fibre acts as additional tensile reinforcement. It is incredibly strong per unit weight (about 10 times stronger than steel by weight) and does not corrode. Most common applications are strengthening concrete beams, slabs and columns where additional capacity is needed without adding thickness.',
+          question: "What is carbon fibre strengthening?",
+          answer: "It uses a designed fibre-and-resin system bonded to suitable structural elements. Its contribution depends on the element, substrate and detailing. Ask about specialist installation, fire and environmental protection, inspection and limitations rather than assuming a thin layer gives a standard strength increase."
         },
         {
-          question: 'Do you need council approval for building reinforcement?',
-          answer:
-            'Usually yes. Internal structural reinforcement that does not change the building envelope may fall under exempt or complying development. Reinforcement that involves new beams cutting through walls, changes to the load path, or any external work usually needs full development consent. We assess on the specific job and prepare the application.',
+          question: "Does reinforcement need approval?",
+          answer: "Check the proposed work with the council or certifier, including heritage or change-of-use requirements where relevant. An internal location does not by itself establish an exemption. Agree who will obtain permissions and provide the required design and inspection documents."
         },
         {
-          question: 'How disruptive is the work?',
-          answer:
-            'Depends on the scope. Carbon fibre wrapping inside an apartment is one to three days and can usually be done with the apartment occupied. Steel beam installations are typically one to two weeks with the affected room out of use. Foundation reinforcement is two to six weeks. We plan around occupancy where we can.',
+          question: "How disruptive is the work?",
+          answer: "Disruption depends on access, temporary support, noise, dust, services and the affected rooms. Some stages may require areas to be vacated. Agree a site-specific access and occupancy plan rather than assuming the building can remain fully in use."
         },
         {
-          question: 'How long does reinforcement work last?',
-          answer:
-            'Permanent. Steel reinforcement properly galvanised and weathertight lasts the life of the building. Carbon fibre fabric is essentially indestructible once epoxy-bonded. Helical masonry reinforcement is stainless and lasts the building life. The reinforcement is a permanent structural upgrade.',
+          question: "How long will reinforcement last?",
+          answer: "Performance depends on the design, exposure, installation and maintenance, as well as future changes to the building. Request any written warranty terms and maintenance requirements. Later alterations or extra loads may need a new assessment even after strengthening is complete."
         },
         {
-          question: 'What does building reinforcement cost?',
-          answer:
-            'Highly variable. A single steel beam to support a wall removal is 8000 to 15,000 dollars. Carbon fibre reinforcement of a concrete beam is 1500 to 4000 dollars per metre of beam. Foundation underpinning is 3000 to 6000 dollars per pile location. Engineer fees add 2500 to 6000 dollars at the front. Fixed quote after engineer scope.',
-        },
+          question: "What affects cost and timing?",
+          answer: "Investigation, design, approvals, access, specialist systems and procurement all affect the project. Ask for a quote and programme based on the actual scheme, with temporary works and inspections included and any provisional allowances or excluded trades clearly identified."
+        }
       ]}
     />
   );

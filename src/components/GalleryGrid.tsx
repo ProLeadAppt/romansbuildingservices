@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { GalleryLightbox } from './GalleryLightbox';
 import type { GalleryImage, GalleryCategory } from '@/data/galleryImages';
 import { categories } from '@/data/galleryImages';
@@ -10,6 +10,7 @@ interface GalleryGridProps {
 export const GalleryGrid = ({ images }: GalleryGridProps) => {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory | 'all'>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const lightboxOpener = useRef<HTMLButtonElement | null>(null);
 
   const filtered = useMemo(() => {
     if (activeCategory === 'all') return images;
@@ -18,12 +19,14 @@ export const GalleryGrid = ({ images }: GalleryGridProps) => {
 
   return (
     <>
-      {/* Category filter tabs */}
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
+      {/* Category filters */}
+      <div role="group" aria-label="Filter project images" className="flex flex-wrap justify-center gap-2 mb-12">
         {categories.map((cat) => (
           <button
             key={cat.value}
-            onClick={() => setActiveCategory(cat.value)}
+            type="button"
+            aria-pressed={activeCategory === cat.value}
+            onClick={() => { setLightboxIndex(null); setActiveCategory(cat.value); }}
             className={`font-body text-sm px-4 py-2 rounded-md transition-colors duration-200 ${
               activeCategory === cat.value
                 ? 'bg-navy text-white'
@@ -37,10 +40,13 @@ export const GalleryGrid = ({ images }: GalleryGridProps) => {
       {/* Masonry grid */}
       <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
         {filtered.map((image, index) => (
-          <div
+          <button
             key={image.id}
-            className="break-inside-avoid mb-4 group cursor-pointer overflow-hidden rounded-lg relative"
-            onClick={() => setLightboxIndex(index)}
+            type="button"
+            aria-haspopup="dialog"
+            aria-label={`Open image ${index + 1}: ${image.alt}`}
+            className="block w-full break-inside-avoid mb-4 group cursor-pointer overflow-hidden rounded-lg relative"
+            onClick={(event) => { lightboxOpener.current = event.currentTarget; setLightboxIndex(index); }}
           >
             <img
               src={image.thumb}
@@ -48,12 +54,12 @@ export const GalleryGrid = ({ images }: GalleryGridProps) => {
               loading="lazy"
               className="w-full h-auto block transition-transform duration-200 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/40 transition-colors duration-200 flex items-end p-3">
-              <span className="font-body text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-navy/60 px-2 py-1 rounded">
+            <span className="absolute inset-0 bg-navy/0 group-hover:bg-navy/40 group-focus-visible:bg-navy/40 transition-colors duration-200 flex items-end p-3">
+              <span className="font-body text-xs text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 bg-navy/60 px-2 py-1 rounded">
                 {categories.find((c) => c.value === image.category)?.label}
               </span>
-            </div>
-          </div>
+            </span>
+          </button>
         ))}
       </div>
 
@@ -62,6 +68,7 @@ export const GalleryGrid = ({ images }: GalleryGridProps) => {
         <GalleryLightbox
           images={filtered}
           currentIndex={lightboxIndex}
+          returnFocusTo={lightboxOpener.current}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
         />

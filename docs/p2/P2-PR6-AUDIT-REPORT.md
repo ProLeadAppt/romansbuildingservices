@@ -1,3 +1,5 @@
+> Current evidence review (2026-11-11): Historical project-proof/approved-case-study statements below are superseded. The eight legacy case-study routes are reference pages pending source verification; existing copy did not establish project facts or approval.
+
 # PR #6 Audit Report — Claims, SEO, Conversion & Copy
 
 **Auditor:** Independent claims/local SEO/GEO/conversion review  

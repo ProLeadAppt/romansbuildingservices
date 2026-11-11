@@ -1,3 +1,4 @@
+import { isArchiveImageWithheld } from '@/data/projectGallery';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, ArrowRight, ChevronRight, AlertCircle, MapPin, CheckCircle2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -114,7 +115,7 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which repair path fits the job?' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Mortar failure and water entry clues' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'When masonry is part of a larger defect' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -123,7 +124,7 @@ export const ServicePageTemplate = ({
         { label: 'Heritage restoration hub', href: '/heritage', sublabel: 'Era guides, material cues and repair logic' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Common mortar failure in older walls' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Where restoration stops and remediation starts' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -132,7 +133,7 @@ export const ServicePageTemplate = ({
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Strata and apartment diagnosis guide' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Sort the repair path first' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Clues that point to broader movement' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -141,7 +142,7 @@ export const ServicePageTemplate = ({
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Why spalling starts and how to stop it' },
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Concrete repair vs broader remediation' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Look for movement, water and mortar issues' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -150,7 +151,7 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'When foundation issues affect the whole wall' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Useful if cracking links back to structural movement' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Spot the wall symptoms early' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
@@ -159,12 +160,12 @@ export const ServicePageTemplate = ({
         { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which service the job actually needs' },
         { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Common strata and balcony defects' },
         { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'A fast diagnostic check for wall failure' },
-        { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+        { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       ];
     }
 
     return [
-      { label: 'Learn hub', href: '/learn', sublabel: 'Answer-first authority hub for Sydney' },
+      { label: 'Learn hub', href: '/learn', sublabel: 'Practical guides to building repairs' },
       { label: 'Masonry vs remedial building', href: '/learn/masonry-vs-remedial-building', sublabel: 'Which service fits the job?' },
       { label: 'Signs you need repointing', href: '/learn/repointing-signs', sublabel: 'Common mortar failure signs' },
       { label: 'Concrete cancer in Sydney', href: '/learn/concrete-cancer-sydney', sublabel: 'Strata and apartment diagnosis guide' },
@@ -177,7 +178,7 @@ export const ServicePageTemplate = ({
         title={metaTitle}
         description={metaDescription}
         canonical={location.pathname}
-        ogImage={heroImage}
+        ogImage={isArchiveImageWithheld(heroImage) ? undefined : heroImage}
       />
       <ServiceSchema
         service={title}
@@ -189,14 +190,14 @@ export const ServicePageTemplate = ({
 
       {/* Breadcrumb bar */}
       {breadcrumbs.length> 0 && (
-        <div className="bg-bg-light border-b border-border">
+        <div role="navigation" aria-label="Breadcrumb" className="bg-bg-light border-b border-border pt-20">
           <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm overflow-x-auto">
             <Link to="/" className="font-body text-text-muted hover:text-navy transition-colors whitespace-nowrap">
               Home
             </Link>
             {breadcrumbs.map((crumb, i) => (
               <span key={i} className="flex items-center gap-2">
-                <ChevronRight className="w-3 h-3 text-text-muted/50 shrink-0" />
+                <ChevronRight aria-hidden="true" className="w-3 h-3 text-text-muted/50 shrink-0" />
                 {crumb.href ? (
                   <Link
                     to={crumb.href}
@@ -213,15 +214,15 @@ export const ServicePageTemplate = ({
       )}
 
       {/* Hero */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        <img
+      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-navy">
+        {!isArchiveImageWithheld(heroImage) && <img
           src={heroImage}
           alt={serviceImageMetadata[heroImage]?.alt || title}
           width={serviceImageMetadata[heroImage]?.width}
           height={serviceImageMetadata[heroImage]?.height}
           className="absolute inset-0 w-full h-full object-cover img-enhanced"
           loading="eager"
-        />
+        />}
         <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy/40" />
         <div
           className="relative z-10 text-center px-4 py-24">
@@ -263,7 +264,7 @@ export const ServicePageTemplate = ({
             </div>
             <div className="rounded-md bg-bg-light p-4">
               <dt className="font-body text-text-muted">ABN</dt>
-              <dd className="font-body font-semibold text-navy">49 641 892 677</dd>
+              <dd className="font-body font-semibold text-navy">85 004 290 080</dd>
             </div>
           </dl>
         </div>
@@ -398,14 +399,14 @@ export const ServicePageTemplate = ({
       )}
 
       {/* Gallery */}
-      {galleryImages.length> 0 && (
+      {galleryImages.some((image) => !isArchiveImageWithheld(image)) && (
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-heading text-3xl text-text-primary text-center mb-12">
-              Recent Projects
+              Photo archive
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galleryImages.map((img, i) => (
+              {galleryImages.filter((image) => !isArchiveImageWithheld(image)).map((img, i) => (
                 <div
                   key={i}
                   className="rounded-lg overflow-hidden">
@@ -424,7 +425,7 @@ export const ServicePageTemplate = ({
               <Link
                 to="/gallery"
                 className="inline-flex items-center gap-2 font-body text-navy hover:text-navy-light transition-colors link-animated">
-                See all our work <ArrowRight className="w-4 h-4" />
+                Browse the photo archive <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -517,7 +518,7 @@ export const ServicePageTemplate = ({
             Need a quote?
           </h2>
           <p className="font-body text-white/70 mb-8">
-            Call Minas directly or fill in the form. We will get back to you within 24 hours.
+            Call Minas directly or fill in the form with your suburb and repair details. Assessment timing depends on the scope, access and availability.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

@@ -15,7 +15,7 @@ export const QuoteCTAButton = forwardRef<HTMLButtonElement, Props>(
         ref={ref}
         type="button"
         onClick={(e) => {
-          open(initialService);
+          open(initialService, e.currentTarget);
           onClick?.(e);
         }}
         {...rest}>

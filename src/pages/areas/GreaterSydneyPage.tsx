@@ -55,10 +55,10 @@ const GreaterSydneyPage = () => (
             Romans Building Services focuses on Hawkesbury and Western Sydney. This existing Sydney metro guide remains available for enquiries about older brick homes, apartment blocks and retaining walls in Parramatta, Burwood, Concord, Homebush and surrounding suburbs. Include your suburb when discussing availability and scope.
           </p>
           <p className="font-body text-text-secondary mb-6">
-            Around Strathfield, Burwood and Concord, we see reactive clay movement, old lime mortar, cracked brickwork and failing retaining walls. Some jobs need structural crack stitching, some need drainage fixed first, and some need underpinning. Minas checks the cause before recommending the repair.
+            Cracked brickwork, deteriorated mortar and leaning walls can have different causes. Share the movement history, previous repairs and any drainage or engineering information. Ground conditions and the appropriate repair need property-specific assessment rather than assumptions about the suburb.
           </p>
           <p className="font-body text-text-secondary mb-10">
-            Parramatta and Homebush bring a mix of commercial facade repairs, strata concrete problems and period-home masonry. The work is still Sydney-local: real site visit, clear scope, materials matched to the building, and no promise to travel beyond the metro unless the job genuinely makes sense.
+            For strata and commercial work, identify the person coordinating access and any existing repair specification. Agree the assessment, specialist responsibilities and written scope with Romans before arranging work. Photographs should be taken from a safe position.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ const FoundationStonePage = () => {
     <ServicePageTemplate
       title="Foundation Stone Repairs"
       metaTitle="Sydney Heritage Foundation Stone Repairs | Romans"
-      metaDescription="Sydney foundation stone repair by Minas Romanakis. Sandstone replacement, brick rebuilding, lime mortar repointing, damp course. Heritage-correct methods."
+      metaDescription="Sydney stone and brick foundation repair enquiries. Compatible materials, moisture investigation and assessment-led heritage repair planning."
       heroImage="/gallery/thumbs/romansstone_1451642255_1152781246863726646_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,110 @@ const FoundationStonePage = () => {
         { label: 'Foundation Stone Repairs', href: '' },
       ]}
       intro={[
-        'Heritage Sydney buildings often have foundations made of rough-coursed sandstone, hand-made brick or random rubble masonry. These are different from modern reinforced concrete strip footings and need different repair methods. Stone foundations have specific failure modes: face erosion from rising damp, mortar joint failure from cement repointing done in the wrong era, rubble core washout where surface water has penetrated, and salt damage from groundwater in low-lying buildings.',
-        'We repair foundation stonework with matching materials and traditional methods. Eroded sandstone blocks cut out and replaced with hand-dressed new stone. Failed brick replaced with reclaimed period brick. Mortar joints raked back and repointed with lime mortar (never cement, which is the most common cause of secondary damage on heritage foundations). Damp courses retrofitted where rising damp has been an ongoing problem. Drainage improvements to stop groundwater building up against the foundation.',
-        'Most of our heritage foundation repair is on Federation and Victorian terraces, plus colonial sandstone buildings in the CBD and harbour suburbs. These foundations are typically 80 to 150 years old. Many have had cement repointing done at some point that made things worse rather than better. We undo that work and put the foundation back together with the materials it was originally built with.',
+        "Older stone and brick foundations can contain solid masonry, rubble cores or a mixture of materials and later repairs. Surface erosion, open joints and cracking need investigation in the context of the whole wall. The visible face does not establish the condition or load-bearing capacity of concealed masonry.",
+        "Repair planning should consider moisture sources, salts, drainage, ground levels and the compatibility of earlier work. Hard or poorly matched mortar can contribute to deterioration in softer masonry, but the right repair mix depends on the original materials and exposure rather than a single rule for every heritage foundation.",
+        "Contact Romans to discuss foundation masonry repairs and the assessment required. Retention of sound original material, matched replacements and careful joint repair may form part of a scope. Structural support, heritage advice and approvals must be addressed before masonry is removed or excavation takes place beside a loaded foundation."
       ]}
       features={[
         {
           icon: Landmark,
-          title: 'Sandstone block replacement',
-          description:
-            'Eroded sandstone foundation blocks cut out and replaced with hand-dressed new stone from active NSW quarries. Bedded on lime mortar. Stainless cramps where original iron has rusted.',
+          title: "Stone repair and replacement",
+          description: "Assess whether a stone can be retained or needs repair or replacement. Any replacement must suit the strength, moisture behaviour, dimensions and appearance of the existing masonry."
         },
         {
           icon: Hammer,
-          title: 'Brick foundation rebuild',
-          description:
-            'Failed sections of brick foundation rebuilt with reclaimed period brick from salvage yards. Lime mortar throughout. Matched bond pattern. New bonded into surviving original.',
+          title: "Brick foundation repairs",
+          description: "Identify the extent of deterioration and how loads are carried before removing bricks. Compatible units and mortar are selected for the building rather than by appearance alone."
         },
         {
           icon: Droplets,
-          title: 'Damp course retrofit',
-          description:
-            'For ongoing rising damp issues, chemical injection or physical damp course retrofitted into the existing foundation. Stops moisture rising into walls above.',
+          title: "Moisture investigation",
+          description: "Distinguish ground moisture, leaks, condensation and rainwater entry before selecting treatment. A damp-course product is not a universal solution for wet foundation walls."
         },
         {
           icon: Pickaxe,
-          title: 'Lime mortar repointing',
-          description:
-            'Failed cement repointing raked out and replaced with lime mortar matched to the original. Foundation breathes again, moisture moves through joints instead of being trapped in the stone.',
+          title: "Mortar compatibility",
+          description: "Assess existing mortar and masonry before agreeing a repair mix and joint preparation method. Trial areas can help check workmanship and appearance without committing the whole wall."
         },
         {
           icon: ShieldCheck,
-          title: 'Heritage compliant',
-          description:
-            'Sample patches signed off by heritage consultant before bulk work. Methodology and material documentation prepared for the heritage file. Traditional methods throughout.',
-        },
+          title: "Heritage requirements",
+          description: "Check the property’s listing, conservation controls and required approvals. Agree any conservation advice and sample approval before work; using lime mortar alone does not establish compliance."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Hand-dressed sandstone replacement blocks',
-          detail:
-            'Hawkesbury or Gosford sandstone cut to original block dimensions and hand-tooled to match the original face finish. Lead time 2 to 4 weeks from quarry.',
+          title: "Replacement stone",
+          detail: "Select stone for compatibility and the intended use, not just colour. Availability, fabrication and finish need supplier confirmation. New and weathered stone may remain visibly different."
         },
         {
-          title: 'Reclaimed period brick',
-          detail:
-            'Federation and Victorian brick from salvage yards in Marrickville and Wetherill Park. Picked to match colour, size and weathering. For older convict-era brick, salvage from heritage demolitions.',
+          title: "Replacement brick",
+          detail: "Assess dimensions, condition and physical properties of new or reclaimed units. Verify legitimate sourcing and suitability; a similar-looking salvaged brick may not perform like the original."
         },
         {
-          title: 'Hydraulic lime mortar (NHL 3.5)',
-          detail:
-            'Mixed with sharp sand to match the original mortar. Tinted with natural oxides if needed. Never cement on heritage foundations. NHL 3.5 grade for the structural strength foundations need.',
+          title: "Mortar specification",
+          detail: "The specification should address strength, permeability, aggregate and exposure. Neither a universal lime grade nor a blanket cement prohibition is a substitute for assessing the existing wall."
         },
         {
-          title: 'Stainless steel cramps and dowels',
-          detail:
-            'Where original iron cramps have rusted and split the stone, stainless replacements. Embedded with epoxy or lime grout. Lasts the life of the building.',
+          title: "Connections and reinforcement",
+          detail: "Any cramps, dowels or reinforcement need design appropriate to the masonry, loads and exposure. Fixings and their bedding materials must be compatible with the retained structure."
         },
         {
-          title: 'Chemical damp course injection',
-          detail:
-            'Silane or silicone-based damp proof course fluid injected into pre-drilled holes along the foundation. Creates a continuous water-repellent barrier. For homes with persistent rising damp.',
+          title: "Moisture treatment",
+          detail: "Injection or a physical damp course may be unsuitable for some rubble or heritage walls. Establish the moisture mechanism, material compatibility and structural implications before choosing a system."
         },
         {
-          title: 'Subsoil drainage upgrades',
-          detail:
-            'Ag pipe in gravel and geofabric installed alongside the foundation. Diverts groundwater away from the stone. Critical for low-lying or sloping sites where water collects against the wall.',
-        },
+          title: "Drainage detailing",
+          detail: "Drainage needs a safe excavation plan and a lawful discharge point. Digging beside a foundation can undermine it; ground levels and nearby services also need consideration."
+        }
       ]}
       processSteps={[
         {
-          step: 'Exposure and inspection',
-          detail:
-            'External soil excavated alongside foundation to expose the stone or brick. Internal floor opened if internal work is needed. Each defect mapped: erosion, joint failure, cracking, salt damage.',
+          step: "Assess condition and significance",
+          detail: "Record visible defects and available building history. Arrange structural and heritage advice where needed, and investigate moisture before selecting a repair."
         },
         {
-          step: 'Source matching material',
-          detail:
-            'For stone repairs, sandstone ordered from matching quarry (2-4 weeks lead time). For brick repairs, reclaimed brick sourced from salvage yards. Sample brought to site for sign-off.',
+          step: "Agree design and samples",
+          detail: "Confirm materials, trial areas, permissions and any temporary works. Replacement availability and fabrication affect the programme and should be checked before work is scheduled."
         },
         {
-          step: 'Remove failed material',
-          detail:
-            'Failed stone or brick cut out cleanly with diamond blade. Cement repointing raked out where present. Any rusted iron cramps extracted. Cavity cleaned for new material.',
+          step: "Prepare safe access",
+          detail: "Plan any excavation, floor opening or support around the loaded foundation. Removal of masonry and exposure of buried work follow the designed sequence, not a standard trench dimension."
         },
         {
-          step: 'Install replacement',
-          detail:
-            'New stone or brick bedded on fresh lime mortar. Joints kept consistent with the original wall. Stainless cramps installed where structural connection needed. Each course checked level.',
+          step: "Repair the agreed areas",
+          detail: "Carry out the specified masonry and joint repairs with inspection hold points where required. Refer unexpected voids, unstable material or concealed damage for review before continuing."
         },
         {
-          step: 'Repoint failed joints',
-          detail:
-            'Surrounding mortar joints raked back if failed. New lime mortar packed in. Joints tooled to match the original profile. Sample patches signed off by heritage consultant before bulk repointing.',
-        },
-        {
-          step: 'Drainage and backfill',
-          detail:
-            'New drainage installed where needed (ag pipe in gravel, sloped to outfall). Backfilled with clean granular fill, compacted in layers. Surface reinstated. Lime work cured under hessian for 1 to 2 weeks.',
-        },
+          step: "Protect and review",
+          detail: "Protect and cure the work to the specification and site conditions. Complete agreed moisture or drainage measures and document inspection, maintenance and any further monitoring needed."
+        }
       ]}
       faqs={[
         {
-          question: 'Why use lime mortar instead of cement on foundations?',
-          answer:
-            'Heritage foundations were built with lime mortar. The stone (sandstone, hand-made brick) is soft and porous. It was designed to move moisture through the joints rather than block it out. Modern cement mortar is too hard and impermeable. Used on heritage foundations, it traps moisture inside the stone. Within 5 to 15 years the stone face starts blowing out and the foundation deteriorates faster than it would have if it had been left alone.',
+          question: "Why does mortar compatibility matter?",
+          answer: "Mortar influences how the wall transfers load and manages moisture. An overly strong or poorly matched mix can damage softer masonry. Assess the original materials and exposure before choosing a repair mortar; age alone does not determine the correct specification."
         },
         {
-          question: 'Can eroded sandstone foundations be replaced?',
-          answer:
-            'Yes. Failed sandstone blocks are cut out and replaced with hand-dressed new sandstone from matching quarries. Bedded on lime mortar. The new block initially looks lighter than the surrounding weathered stone but matches within one to three winters as it weathers down.',
+          question: "Can eroded sandstone blocks be replaced?",
+          answer: "Replacement may be possible where assessment shows the block cannot be retained or repaired. The scope must address temporary support and compatible stone. Matching is a considered process, and neither an invisible repair nor a fixed weathering period can be promised."
         },
         {
-          question: 'How do you access foundations for repair?',
-          answer:
-            'External foundations: we excavate alongside the foundation wall (typically 1 to 1.5 metres back) to expose it for repair. Internal foundations: we open the floor above where required, or work from inside the subfloor space where there is clearance. Temporary support is installed first if the section being repaired is structural.',
+          question: "How are foundations accessed for repair?",
+          answer: "Access may involve planned external excavation or openings through floors, depending on the building. The structural risks, buried services and safe working space must be assessed first. Do not dig alongside the footing or remove stones to investigate it yourself."
         },
         {
-          question: 'What about rising damp in heritage foundations?',
-          answer:
-            'Common problem. Heritage foundations typically had no damp course or a slate damp course that has failed. Solution is either chemical damp course injection (silane fluid injected through drilled holes to form a barrier) or physical damp course retrofit (saw-cut and insert a membrane). Plus drainage improvements to stop water sitting against the foundation in the first place.',
+          question: "Will a new damp course solve the moisture problem?",
+          answer: "Only if the moisture mechanism and wall construction suit the proposed treatment. Leaks, drainage and other sources may need separate attention. Rubble-filled or salt-affected walls require particular care; request an assessment and explanation of the treatment’s limitations."
         },
         {
-          question: 'How long does heritage foundation repair take?',
-          answer:
-            'A typical heritage terrace foundation repair scope is 3 to 8 weeks. Sandstone replacement on a small section is 1 to 2 weeks. Full perimeter repair on a heritage building can be 2 to 4 months. Stone sourcing adds 2 to 4 weeks at the front. Lime curing extends the back end.',
+          question: "How long will the repair take?",
+          answer: "The programme depends on investigation, permissions, access, replacement-material availability and the specified curing and protection. Ask for a schedule based on the actual scope. Concealed deterioration can change both the extent of work and the time needed."
         },
         {
-          question: 'What does heritage foundation repair cost?',
-          answer:
-            'Sandstone block replacement is 2500 to 5500 dollars per block including matched stone, cutting, installation and mortar. Brick foundation rebuild is 800 to 1500 dollars per square metre. Heritage repointing is 250 to 450 dollars per square metre. A typical Sydney terrace heritage foundation scope runs 25,000 to 90,000 dollars depending on extent. Fixed quote after inspection.',
-        },
+          question: "How is heritage foundation repair priced?",
+          answer: "A quote should separate investigation and design, access and support, masonry repairs, materials, moisture measures and reinstatement. Cost depends on the assessed extent and conservation requirements. A price per stone or wall area alone does not capture the project."
+        }
       ]}
     />
   );

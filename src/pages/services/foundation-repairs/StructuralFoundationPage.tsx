@@ -9,7 +9,7 @@ const StructuralFoundationPage = () => {
     <ServicePageTemplate
       title="Structural Foundation Repairs"
       metaTitle="Sydney Structural Foundation Repairs | Romans"
-      metaDescription="Sydney structural foundation repairs by Minas Romanakis. Cracked footings, foundation walls, drainage, waterproofing. Engineer-designed, council-approved."
+      metaDescription="Sydney structural foundation repair enquiries. Investigating footing defects, selecting repairs and planning safe access, design and approvals."
       heroImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       parentService={{ title: 'Foundation Repairs', href: '/services/foundation-repairs' }}
       siblingServices={siblings}
@@ -19,137 +19,114 @@ const StructuralFoundationPage = () => {
         { label: 'Structural Foundation Repairs', href: '' },
       ]}
       intro={[
-        'Foundation damage is the most expensive kind of building damage to fix and the most expensive to ignore. Cracked concrete footings, eroded brick or stone foundation walls, failed slab edges, washed-out fill. Each one keeps getting worse. The wall above moves because the foundation under it has failed. By the time the cracks are obvious upstairs, the foundation below has been deteriorating for a long time.',
-        'We repair foundations rather than replace them where possible. Crack injection (epoxy or polyurethane) restores concrete continuity. Steel reinforcement bedded into existing footings adds capacity. Concrete encasement enlarges undersized footings. Drainage improvements stop water from undermining the footing. The right method depends on the foundation type, the damage type, and what is causing the damage. Engineer involvement on every significant repair.',
-        'Most of our foundation repair is on older Sydney terraces and houses with shallow rubble footings or under-spec concrete. Settlement from reactive clay, tree roots, plumbing leaks under the building, and inadequate original drainage are the typical causes. We also repair commercial slabs, retaining wall foundations and apartment block perimeter footings across Sydney.',
+        "Foundation defects can involve cracked concrete, deteriorated masonry, corrosion or inadequate support beneath a footing. Damage seen in the wall above does not establish which of these is present. Assess the structure and ground together before deciding whether to repair existing foundations, strengthen them or use another response.",
+        "Investigation may require drawings, level records, drainage checks or carefully planned exposure of buried work. Excavation beside or below a loaded footing can destabilise it. Test pits and other intrusive checks need a safe method, service checks and appropriate professional input rather than standard dimensions.",
+        "Contact Romans to discuss a foundation repair scope based on the assessment. Possible methods include local concrete or masonry repairs, designed reinforcement, strengthening and associated water-management work. Each option has limits; a sealant or crack injection does not automatically restore structural capacity or address ongoing ground movement."
       ]}
       features={[
         {
           icon: Search,
-          title: 'Foundation assessment',
-          description:
-            'Test pits dug to expose existing footings. Soil samples for analysis. Drainage and plumbing checked for leaks. Cause identified before any repair starts. Often combined with engineer borehole investigation.',
+          title: "Foundation assessment",
+          description: "Identify the material, defect, load path and bearing conditions. An engineer determines whether further structural or geotechnical investigation is needed before a repair can be specified."
         },
         {
           icon: Wrench,
-          title: 'Crack injection',
-          description:
-            'Two-part epoxy or polyurethane injection through ports drilled along the crack. Restores concrete continuity, seals against water ingress. Standard repair for stable cracks in concrete footings.',
+          title: "Crack treatment",
+          description: "The cause, movement, moisture and required performance determine whether injection or another repair is suitable. Waterproofing a crack and restoring load capacity are different objectives."
         },
         {
           icon: Columns3,
-          title: 'Foundation strengthening',
-          description:
-            'Concrete encasement of inadequate footings, steel reinforcement bedded into existing footings, mini-pile reinforcement under failed slab edges. Engineered to take design loads.',
+          title: "Designed strengthening",
+          description: "Enlarging or reinforcing a footing needs an assessed connection to the existing structure and suitable ground support. Generic reinforcement or concrete details are not a repair design."
         },
         {
           icon: ShieldCheck,
-          title: 'Drainage and waterproofing',
-          description:
-            'Subsoil drainage installed around foundations. Foundation walls waterproofed with membrane. Roof and surface water diverted away from footing line. Stops the water that caused the failure in the first place.',
+          title: "Water management",
+          description: "Assess leaks, drainage and ground levels as possible contributors. Any excavation and discharge arrangements must be designed without undermining the foundation or affecting neighbouring property."
         },
         {
           icon: FileCheck,
-          title: 'Engineer involvement',
-          description:
-            'Every significant foundation repair has structural engineer scope, design certificate, site inspections during construction and completion certificate. Council approval where required.',
-        },
+          title: "Inspections and approvals",
+          description: "Confirm the required design, permissions and inspection hold points with the relevant professionals. Completion records should identify the scope actually inspected and any remaining restrictions."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Test pit excavation',
-          detail:
-            'Hand-dug or machine-dug pits 1 to 2 metres along the foundation line. Exposes the existing footing for inspection. Soil samples taken from below the footing for bearing capacity assessment. Backfilled and compacted after inspection.',
+          title: "Planned investigation",
+          detail: "Test pits or exposed sections must be located and sequenced with regard to stability and buried services. The professionals directing the investigation determine safe access and reinstatement."
         },
         {
-          title: 'Structural epoxy injection',
-          detail:
-            'Two-part low-viscosity epoxy for hairline to medium cracks in concrete footings. Injected under pressure through ports drilled along the crack. Cures to higher strength than the surrounding concrete.',
+          title: "Injection materials",
+          detail: "Epoxy or other systems may be specified for suitable cracks after assessment. Product strength alone does not establish the capacity of the repaired foundation or suitability for a moving crack."
         },
         {
-          title: 'Flexible polyurethane grout',
-          detail:
-            'For cracks where ongoing minor movement is expected, or where waterproofing is the priority. Stays elastic after curing. Used on basement walls and footings with active water ingress.',
+          title: "Water-sealing systems",
+          detail: "Flexible grouts may be considered for some water paths. Moisture control does not replace structural repair where capacity is affected; product selection must account for conditions and compatibility."
         },
         {
-          title: 'Helibar or stainless reinforcement',
-          detail:
-            'Stainless helical bars or threaded rods set into existing footing bed joints or drilled holes. Used for tying separated footings back together or adding tensile capacity. Bonded with cementitious grout.',
+          title: "Reinforcement and connections",
+          detail: "Bars, anchors and their bonding systems require a design for the existing material and load transfer. Substrate condition, installation and inspection affect performance."
         },
         {
-          title: 'Concrete encasement materials',
-          detail:
-            'For enlarging inadequate footings. New concrete (typically 32 MPa with reinforcement) cast around or under existing footing. Bonded to original with chemical anchors or epoxy primer.',
+          title: "Concrete strengthening",
+          detail: "Concrete mix, reinforcement, connections, curing and loading requirements follow the specification. Work around or beneath existing footings needs an engineered sequence and appropriate support."
         },
         {
-          title: 'Subsoil drainage components',
-          detail:
-            'Slotted ag pipe, washed gravel, geotextile fabric. Installed below footing line and along foundation walls. Connected to stormwater outfall. Stops water building up against the footing.',
-        },
+          title: "Drainage layout",
+          detail: "Drain depth, location and discharge need site-specific design. Installing a drain below a footing without assessment can compromise support; do not excavate alongside foundations as a DIY remedy."
+        }
       ]}
       processSteps={[
         {
-          step: 'Investigation',
-          detail:
-            'Site visit. Defects on the building photographed and measured. Test pits dug at suspected damage locations to expose the existing footing. Drainage system checked. Plumbing under the building inspected if any leak is suspected.',
+          step: "Inspect and investigate",
+          detail: "Record symptoms and arrange structural assessment. Any intrusive investigation is planned with access, services and foundation stability in mind."
         },
         {
-          step: 'Engineer scope',
-          detail:
-            'Structural engineer reviews findings. Soil tests done where needed. Repair method designed: crack injection, encasement, reinforcement, drainage upgrade, or combination. Specification produced.',
+          step: "Specify the repair",
+          detail: "Select methods based on the cause, ground conditions and required performance. Confirm structural design and any specialist investigation before agreeing the construction scope."
         },
         {
-          step: 'Council approval (where needed)',
-          detail:
-            'Foundation repair typically requires at least a Complying Development Certificate. Major works need full development approval. We prepare the application. Engineer drawings, construction certificate, environmental documentation.',
+          step: "Confirm permission and responsibilities",
+          detail: "Ask the council or certifier which approval pathway applies. Agree who provides applications, designs, inspections and specialist trades; no single approval route applies to every foundation repair."
         },
         {
-          step: 'Address the cause first',
-          detail:
-            'Tree removal or root barriers, plumbing leak repair, drainage improvement. Before any structural repair the cause is dealt with so the new repair is not undermined.',
+          step: "Address contributing conditions",
+          detail: "Include relevant drainage or plumbing measures in the plan. Tree or root changes require engineering and arboricultural advice plus any required permission, not an automatic removal instruction."
         },
         {
-          step: 'Execute the repair',
-          detail:
-            'Crack injection through ports. Reinforcement bedded in. Concrete encasement poured. Each step inspected by engineer before next starts. Drainage installed before backfilling.',
+          step: "Repair and inspect",
+          detail: "Qualified personnel follow the specification, temporary works plan and inspection hold points. Unexpected ground or material conditions must be reviewed before affected work continues."
         },
         {
-          step: 'Reinstate and monitor',
-          detail:
-            'Backfill compacted in layers. Surface reinstated (paving, garden, internal floor). Crack monitors installed across any wall cracks above. Reviewed at 3 and 6 months to confirm movement has stopped before final cosmetic repair.',
-        },
+          step: "Reinstate and review",
+          detail: "Reinstate disturbed areas as agreed and provide completion records. Any movement monitoring and timing of cosmetic repairs should follow professional advice rather than a fixed calendar interval."
+        }
       ]}
       faqs={[
         {
-          question: 'What causes foundation damage?',
-          answer:
-            'Reactive clay soils that shrink in dry summers and swell in wet winters. Tree roots within 5 to 10 metres of the building (large eucalypts, paperbarks). Plumbing leaks under the building washing out soil. Poor surface drainage delivering rainwater straight to the footing line. Original construction with inadequate footing depth or strength. Most jobs involve a combination.',
+          question: "What causes foundation damage?",
+          answer: "Possible contributors include inadequate bearing, ground movement, moisture changes, leaks, erosion and material deterioration. More than one factor can be involved. An investigation should distinguish these rather than assuming a nearby tree or a visible crack explains the cause."
         },
         {
-          question: 'Can cracked foundations be repaired?',
-          answer:
-            'Almost always, yes. Crack injection restores concrete continuity. Reinforcement adds capacity where corrosion has weakened the original. Encasement enlarges inadequate footings. Full foundation replacement is rare and only used when the entire footing is failing structurally. Repair is significantly cheaper than replacement.',
+          question: "Can a cracked foundation be repaired?",
+          answer: "Repair may be feasible, but the method depends on the crack’s cause, the remaining material and the foundation’s required capacity. Injection alone is not suitable for every defect. The assessment should explain when strengthening, underpinning or replacement is needed instead."
         },
         {
-          question: 'Do you handle council approvals?',
-          answer:
-            'Yes. We prepare the development application or Complying Development Certificate with engineer drawings and supporting documentation. Sydney councils generally require approval for any foundation work. Approval timelines vary, typically 4 to 12 weeks.',
+          question: "Who handles approvals?",
+          answer: "Confirm the applicable pathway with the council or certifier, then agree who will prepare and lodge any documents. The quote should identify these responsibilities and fees. Neither approval requirements nor processing times can be established from the service name alone."
         },
         {
-          question: 'How is foundation repair different to underpinning?',
-          answer:
-            'Underpinning deepens or extends the foundation to reach more stable ground (used when the existing footing is sitting on soil that has moved). Foundation repair fixes the existing footing in place (used when the footing itself is damaged but the soil under it is fine). The two are often combined on the same job.',
+          question: "How does this differ from underpinning?",
+          answer: "Repair addresses defects in the existing foundation, while underpinning extends or strengthens its support. Some projects require both. The boundary depends on the design, so compare the assessed scope and intended load transfer rather than relying on the label."
         },
         {
-          question: 'How long does foundation repair take?',
-          answer:
-            'Crack injection on accessible footings is one to two weeks. Concrete encasement of failed footings is two to six weeks. Major foundation reconstruction with drainage improvements is two to six months. Council approval adds 4 to 12 weeks at the front. Engineer involvement throughout.',
+          question: "How long does foundation repair take?",
+          answer: "Access, investigation, design, approvals, the selected method and inspection or curing requirements affect timing. Concealed ground or structural conditions may change the programme. Request a project-specific schedule that identifies dependencies and explains when it will be reviewed."
         },
         {
-          question: 'What does foundation repair cost?',
-          answer:
-            'Crack injection is 400 to 800 dollars per linear metre of crack. Concrete encasement is 1500 to 4000 dollars per linear metre of footing. Engineer scope and council approval add 5,000 to 15,000 dollars at the front. Full foundation repair on a typical Sydney terrace runs 25,000 to 90,000 dollars. Fixed quote after engineer scope.',
-        },
+          question: "How much does foundation repair cost?",
+          answer: "The quote depends on the extent of damage, engineering, access, temporary works, specialist trades and reinstatement. Ask for clear inclusions, exclusions and concealed-condition allowances. A per-metre injection or concrete rate is not enough to estimate the full project."
+        }
       ]}
     />
   );

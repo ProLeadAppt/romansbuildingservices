@@ -1,3 +1,5 @@
+> Current evidence review (2026-11-11): Historical project-proof/approved-case-study statements below are superseded. The eight legacy case-study routes are reference pages pending source verification; existing copy did not establish project facts or approval.
+
 # Romans Building Services P2 Strategy
 
 ## Positioning
@@ -26,7 +28,7 @@ The site should not compete on breadth, visual spectacle or lowest price. It sho
 1. **Hero:** Sydney masonry and remedial work since 1995, with a direct quote action and project-proof action.
 2. **Proof bar:** Only ledger-approved tenure, operating model, service area and credential claims.
 3. **Problem navigator:** Route by what the visitor sees, not internal service taxonomy.
-4. **Featured proof:** Three approved projects showing problem, intervention and outcome with direct case-study links.
+4. **Repair references:** Three topic-specific planning cards linking to preserved reference pages. Project narratives and associated media remain withheld pending evidence.
 5. **Founder standard:** Minas as the accountable assessor and working specialist, supported by authentic footage.
 6. **Capabilities:** A concise three-part view of heritage, masonry and structural/remedial work. No duplicated directory grid.
 7. **Process:** One compact explanation from first contact to completed work.

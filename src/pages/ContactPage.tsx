@@ -17,12 +17,12 @@ const contactFaqs = [
   {
     question: 'Do you do small jobs or only full restorations?',
     answer:
-      'Both. Pointing a single chimney, replacing a few bricks, sealing a crack, fixing a small garden wall — same care as a full heritage facade. Romans does not have a minimum job size.'
+      'Contact us about smaller masonry repairs as well as larger restoration work. Include photographs taken from a safe place and a description of the issue so we can discuss suitability, access and availability before arranging an assessment.'
   },
   {
     question: 'Are you licenced and insured?',
     answer:
-      'Yes. Romans Building Services holds an NSW masonry contractor licence, full public liability insurance, and workers compensation. Documentation is provided with every quote for strata, body corporate and insurance work.'
+      'Ask for the current licence and insurance details relevant to your proposed work, and confirm the contracting business named on the quote. Check that the licence scope and any required specialist appointments match the repair before authorising it.'
   },
   {
     question: 'Which local areas do you service?',
@@ -32,7 +32,7 @@ const contactFaqs = [
   {
     question: 'How do I pay?',
     answer:
-      'Bank transfer, credit card or cash. For strata and commercial jobs we offer staged progress payments tied to written milestones. A small deposit secures the booking, balance on completion.'
+      'Payment methods, any deposit and progress payments should be agreed in the written quote or contract before work is booked. Ask for the amounts, payment stages and any applicable fees so you can review the full terms.'
   }
 ];
 

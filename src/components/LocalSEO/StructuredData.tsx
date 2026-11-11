@@ -1,3 +1,5 @@
+import { toCanonicalPageUrl, toAbsoluteMediaUrl } from '@/lib/seoUrls';
+
 // Business information constants for NAP consistency
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
@@ -10,7 +12,7 @@ export const BUSINESS_INFO = {
   phoneDisplay: "0414 922 276",
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
-  abn: "49 641 892 677",
+  abn: "85 004 290 080",
   areaServed: ["North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown", "Hawkesbury", "Western Sydney"],
   // Back-compat alias used by some consumers
   serviceAreas: ["Hawkesbury", "Western Sydney", "Surrounding areas by enquiry"],
@@ -68,10 +70,8 @@ const WEBSITE_ID = `${BUSINESS_INFO.website}#website`;
 type SchemaObject = Record<string, unknown>;
 
 const SchemaScript = ({ schema }: { schema: SchemaObject | SchemaObject[] }) => {
-  // JSON-LD spec requires one entity per <script type="application/ld+json">
-  // block. When callers pass an array, emit one block per entity so Google
-  // can parse each one independently. (Top-level arrays in JSON-LD are
-  // rejected by Schema.org validators.)
+  // Separate blocks keep entities easy to inspect. JSON-LD also supports
+  // top-level arrays and @graph; this is a presentation choice, not a validity rule.
   if (Array.isArray(schema)) {
     return (
       <>
@@ -101,8 +101,8 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
-  url: BUSINESS_INFO.website,
+    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
   foundingDate: BUSINESS_INFO.foundingDate,
@@ -129,15 +129,6 @@ const localBusinessSchema: SchemaObject = {
     availableLanguage: "English",
     areaServed: BUSINESS_INFO.areaServed
   },
-  hasCredential: {
-    "@type": "EducationalOccupationalCredential",
-    name: "NSW Masonry Contractor Licence",
-    credentialCategory: "Professional Licence",
-    recognizedBy: {
-      "@type": "Organization",
-      name: "NSW Fair Trading"
-    }
-  },
   // Visits are by appointment; omit clock times until actual hours are confirmed.
   knowsAbout: BUSINESS_INFO.knowsAbout,
   founder: {
@@ -146,43 +137,7 @@ const localBusinessSchema: SchemaObject = {
     jobTitle: BUSINESS_INFO.founder.jobTitle
   },
   slogan: "Masonry. Restoration. Remedial.",
-  // Real Google Business Profile reviews (current as of 2026-06-21).
-  // Pulled from https://maps.app.goo.gl/UpfsPkQJJpw5avzw6 — do not edit
-  // without re-reading GBP. Schema.org requires an aggregate rating to be
-  // paired with at least one real Review for the star snippet to render.
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: 4.9,
-    reviewCount: 38,
-    bestRating: 5,
-    worstRating: 1
-  },
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Alex K." },
-      datePublished: "2025-11-14",
-      reviewBody:
-        "Minas rebuilt the front sandstone wall on our Victorian terrace in Paddington. Matched the original stone perfectly and the lime mortar joints are spot on. Honest timeline and the price was the price.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Jenny R." },
-      datePublished: "2025-09-02",
-      reviewBody:
-        "Strata used Romans for concrete cancer repairs on our apartment block in Strathfield. Minas explained every step, kept the site clean and the result looks new. The committee was happy with how it was run.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "David M." },
-      datePublished: "2025-07-21",
-      reviewBody:
-        "Heritage repointing on our 1890s terrace in Newtown. Minas knew the original mortar type and matched it colour and profile. Forty-year repair done right. Easy to deal with throughout.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    }
-  ],
+  // Omit credentials and reviews until current source evidence is confirmed.
   // Entity linking — connects this business to known topical entities
   // Helps AI/Google associate Romans with these subjects as an authority
   about: [
@@ -204,7 +159,7 @@ const organizationSchema: SchemaObject = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: BUSINESS_INFO.name,
-  url: BUSINESS_INFO.website,
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   logo: {
     "@type": "ImageObject",
     url: BUSINESS_INFO.logo,
@@ -219,19 +174,18 @@ const organizationSchema: SchemaObject = {
   }
 };
 
-// WebSite — enables Google Sitelinks Search Box in future, and is a hub entity
+// WebSite identity and the real on-site search action.
 const websiteSchema: SchemaObject = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": WEBSITE_ID,
-  url: BUSINESS_INFO.website,
+  url: toCanonicalPageUrl(BUSINESS_INFO.website),
   name: BUSINESS_INFO.name,
   description:
     "Heritage restoration, masonry, and structural repairs across Sydney by Romans Building Services.",
   publisher: { "@id": ORG_ID },
   inLanguage: "en-AU",
-  // Sitelinks Search Box: lets Google show an internal search box for the site
-  // in SERPs. Targeting/querystring conventions follow Google's docs.
+  // Describes the available search function; it does not promise a search-result feature.
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -262,13 +216,13 @@ export const ServiceSchema = ({
     name: service,
     serviceType: service,
     ...(description ? { description } : {}),
-    ...(url ? { url } : {}),
+    ...(url ? { url: toCanonicalPageUrl(url) } : {}),
     provider: {
       "@type": "LocalBusiness",
       "@id": BUSINESS_ID,
       name: BUSINESS_INFO.name,
       telephone: BUSINESS_INFO.telephone,
-      url: BUSINESS_INFO.website
+      url: toCanonicalPageUrl(BUSINESS_INFO.website)
     },
     areaServed: BUSINESS_INFO.areaServed.map((area) => ({
       "@type": "Place",
@@ -276,7 +230,7 @@ export const ServiceSchema = ({
     })),
     availableChannel: {
       "@type": "ServiceChannel",
-      serviceUrl: url || BUSINESS_INFO.website,
+      serviceUrl: toCanonicalPageUrl(url || BUSINESS_INFO.website),
       servicePhone: BUSINESS_INFO.telephone,
       availableLanguage: "English"
     },
@@ -337,7 +291,7 @@ export const PlaceSchema = ({
     "@type": "Place",
     name,
     ...(description ? { description } : {}),
-    ...(url ? { url } : {}),
+    ...(url ? { url: toCanonicalPageUrl(url) } : {}),
     containedInPlace: {
       "@type": "City",
       name: "Sydney",
@@ -375,7 +329,7 @@ export const ContactPageSchema = () => {
     "@type": "ContactPage",
     name: `Contact ${BUSINESS_INFO.name}`,
     description: `Contact Romans Building Services. Call ${BUSINESS_INFO.phoneDisplay} or email ${BUSINESS_INFO.email} for a quote.`,
-    url: `${BUSINESS_INFO.website}/contact`,
+    url: toCanonicalPageUrl('/contact'),
     mainEntity: {
       "@id": BUSINESS_ID
     },
@@ -407,14 +361,14 @@ export const CollectionPageSchema = ({
     "@type": "CollectionPage",
     name,
     ...(description ? { description } : {}),
-    url,
+    url: toCanonicalPageUrl(url),
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: items.length,
       itemListElement: items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        url: item.url,
+        url: toCanonicalPageUrl(item.url),
         name: item.name,
         ...(item.description ? { description: item.description } : {})
       }))
@@ -434,14 +388,14 @@ export const ImageGallerySchema = ({
   const schema: SchemaObject = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    url,
-    name: `${BUSINESS_INFO.name} — Project Gallery`,
+    url: toCanonicalPageUrl(url),
+    name: `${BUSINESS_INFO.name} — Photo archive`,
     description:
-      "Real projects by Romans Building Services. Masonry, heritage restoration, and structural work across Sydney.",
+      "Visible stonework, brickwork and other subjects from the Romans photo archive. Project locations, dates and outcomes are not verified here.",
     image: images.map((img) => ({
       "@type": "ImageObject",
-      contentUrl: img.url,
-      url: img.url,
+      contentUrl: toAbsoluteMediaUrl(img.url),
+      url: toAbsoluteMediaUrl(img.url),
       ...(img.caption ? { caption: img.caption } : {}),
       ...(img.location
         ? {
@@ -459,7 +413,7 @@ export const ImageGallerySchema = ({
 
 // ---------- AggregateRating (for when reviews are wired in) ----------
 // Ready-to-use scaffold. Pass ratingValue + reviewCount when testimonials are live.
-// Google requires at least one Review alongside AggregateRating for rich results.
+// Do not infer eligibility for review rich results from this markup alone.
 export const AggregateRatingSchema = ({
   ratingValue,
   reviewCount,
@@ -485,7 +439,7 @@ export const AggregateRatingSchema = ({
     "@type": "LocalBusiness",
     "@id": BUSINESS_ID,
     name: BUSINESS_INFO.name,
-    url: BUSINESS_INFO.website,
+    url: toCanonicalPageUrl(BUSINESS_INFO.website),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue,

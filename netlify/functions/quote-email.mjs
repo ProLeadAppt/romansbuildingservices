@@ -49,6 +49,31 @@ const json = (status, body) => new Response(JSON.stringify(body), {
   },
 });
 
+// Enforce the limit while consuming the stream, before retaining extra bytes.
+// Cancellation may remain pending at the transport layer; it must not delay
+// the existing client-error response or create an unhandled rejection.
+const readBoundedBody = async (request) => {
+  if (!request.body) return '';
+  const reader = request.body.getReader();
+  const chunks = [];
+  let bytes = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > MAX_BODY_BYTES) {
+        try { void reader.cancel().catch(() => {}); } catch { /* Preserve size error. */ }
+        throw new RequestError('The quote request is too large. Please attach fewer or smaller photos.');
+      }
+      chunks.push(value);
+    }
+    return new TextDecoder().decode(Buffer.concat(chunks, bytes));
+  } finally {
+    reader.releaseLock();
+  }
+};
+
 const escapeHtml = (value) =>
   String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -226,10 +251,7 @@ export default async (request) => {
   if (request.method !== 'POST') return json(405, { ok: false, error: 'Method not allowed.' });
 
   try {
-    const body = await request.text();
-    if (Buffer.byteLength(body, 'utf8') > MAX_BODY_BYTES) {
-      throw new RequestError('The quote request is too large. Please attach fewer or smaller photos.');
-    }
+    const body = await readBoundedBody(request);
 
     let rawLead;
     try {

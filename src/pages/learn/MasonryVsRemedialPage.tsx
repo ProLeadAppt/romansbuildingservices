@@ -1,48 +1,25 @@
+import { toCanonicalPageUrl } from '@/lib/seoUrls';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/SEOHead';
 import { BreadcrumbSchema } from '@/components/LocalSEO/BreadcrumbSchema';
-import { FAQSchema } from '@/components/LocalSEO/StructuredData';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-
-const faqs = [
-  {
-    question: 'Is masonry the same as remedial building?',
-    answer:
-      'No. Masonry is the trade that builds and repairs brick, block and stone. Remedial building is the repair program when a building has defects, movement, water ingress or other failures that need a broader fix.',
-  },
-  {
-    question: 'Which one should I search for if my wall is cracked?',
-    answer:
-      'Start with the problem, not the label. A simple crack might be a masonry repair, a structural issue, or part of a remedial job depending on what is causing it.',
-  },
-  {
-    question: 'Do you need remedial building for a heritage job?',
-    answer:
-      'Often yes, because heritage jobs commonly involve multiple failures at once — masonry, moisture, concrete, structural movement and compliance issues.',
-  },
-  {
-    question: 'Why does this matter for SEO?',
-    answer:
-      'Because buyers search in different ways. Some search by trade, some by problem, and some by building type. A site that explains the difference wins more of those searches.',
-  },
-];
 
 const steps = [
   {
     title: 'Start with the visible failure',
-    body: 'Look at the thing that is actually wrong: cracked brickwork, loose mortar, water staining, spalling concrete, bulging walls or structural movement.',
+    body: 'Take photos from a safe position and record when cracks, damp or loose material appeared. Keep clear of bulging walls and falling material rather than testing them yourself.',
   },
   {
-    title: 'Decide whether it is local or system-wide',
-    body: 'If one small section is tired, it is usually masonry. If multiple materials or systems are failing, it is probably remedial.',
+    title: 'Check what still needs investigation',
+    body: 'The size of a defect does not establish its cause or urgency. A small crack near a support may need engineering advice; widespread worn mortar may still be a masonry repair.',
   },
   {
     title: 'Match the fix to the cause',
-    body: 'Good repairs solve the cause, not just the surface damage. That is the difference between a patch and a proper job.',
+    body: 'Ask which observations support the proposed repair and what remains uncertain. Movement, moisture sources and concealed damage may need investigation before the scope can be settled.',
   },
   {
     title: 'Get the right crew on site',
-    body: 'If the problem touches structure, water, concrete or heritage materials, use a team that can handle all of it in one scope.',
+    body: 'Agree who arranges engineering, heritage advice, approvals and each trade. Record the work sequence, access arrangements, inspection points and responsibility for finishing adjoining surfaces.',
   },
 ];
 
@@ -51,19 +28,19 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Masonry vs Remedial Building in Sydney | What’s the Difference?',
   description: 'Plain-English guide to the difference between masonry and remedial building in Sydney. Know which one you actually need before you call a builder.',
-  url: 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+  url: toCanonicalPageUrl('https://romansbuildingservices.com/learn/masonry-vs-remedial-building'),
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://romansbuildingservices.com/learn/masonry-vs-remedial-building',
+    '@id': toCanonicalPageUrl('https://romansbuildingservices.com/learn/masonry-vs-remedial-building'),
   },
   isPartOf: {
     '@type': 'CollectionPage',
-    '@id': 'https://romansbuildingservices.com/learn',
+    '@id': toCanonicalPageUrl('https://romansbuildingservices.com/learn'),
   },
   author: {
     '@type': 'Organization',
     name: 'Romans Building Services',
-    url: 'https://romansbuildingservices.com',
+    url: toCanonicalPageUrl('https://romansbuildingservices.com'),
   },
   publisher: {
     '@type': 'Organization',
@@ -98,7 +75,6 @@ const MasonryVsRemedialPage = () => {
         schemaJson={articleSchema}
       />
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} />
 
       <section className="bg-navy py-24 texture-grain">
         <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -109,7 +85,7 @@ const MasonryVsRemedialPage = () => {
             Masonry vs remedial building
           </h1>
           <p className="font-body text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Masonry is the craft. Remedial building is the broader repair scope. The right answer depends on whether you are fixing one wall, or solving a building problem.
+            Masonry covers brick, block and stone work. Remedial building coordinates repairs to building defects, often including masonry. The cause of the problem and the work needed matter more than the label.
           </p>
         </div>
       </section>
@@ -117,13 +93,13 @@ const MasonryVsRemedialPage = () => {
       <section className="py-16 md:py-20 bg-white px-4">
         <div className="max-w-3xl mx-auto space-y-5 font-body text-text-muted text-base md:text-lg leading-relaxed">
           <p>
-            If the job is mainly brick, block or stone, and the failure is localised, it is usually a masonry job. If the building has movement, water ingress, concrete damage, defects or multiple things failing together, it starts looking like remedial building.
+            Repointing, replacing damaged bricks and repairing stone are masonry tasks. They can be stand-alone work or part of a remedial project. A small damaged area can still involve a load-bearing element or a concealed leak, so its size is not a reliable way to choose the repair.
           </p>
           <p>
-            Sydney jobs often sit in the overlap. A heritage terrace might need repointing, crack stitching, sandstone repair and waterproofing in the one scope. That is not two separate jobs. That is one remedial problem with masonry at its core.
+            For example, staining below a window might involve a flashing repair before mortar joints are renewed. A cracked pier may need an engineer to assess its support before a mason rebuilds it. Heritage work can also require advice on compatible materials and approval conditions, even where the repair area is small.
           </p>
           <p>
-            The best websites do not blur the difference. They explain it cleanly so the customer can self-diagnose and the search engine can match the page to the right intent.
+            A useful quote separates investigation, design and approvals from the repair work. It should identify exclusions and who coordinates the interfaces between trades, such as a roofer fixing a leak before masonry and internal finishes are repaired.
           </p>
         </div>
       </section>
@@ -135,9 +111,9 @@ const MasonryVsRemedialPage = () => {
             <ul className="space-y-3 text-text-muted leading-relaxed">
               {[
                 'The issue is in brick, block, sandstone or mortar.',
-                'The damage is localised to one wall, pier, chimney or feature.',
+                'Assessment has established the work needed to the wall, pier, chimney or feature.',
                 'You need rebuilding, repointing, patching or stone replacement.',
-                'The structure is sound but the finish or surface is failing.',
+                'Any support or movement concerns have been assessed before surface work starts.',
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
@@ -153,7 +129,7 @@ const MasonryVsRemedialPage = () => {
                 'The problem involves movement, defects, concrete or water ingress.',
                 'Several building systems are failing at the same time.',
                 'You need a broader scope that coordinates structure, envelope and compliance.',
-                'A patch will not fix the underlying cause.',
+                'The repair needs several trades or specialist inspection points in an agreed sequence.',
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
@@ -186,7 +162,7 @@ const MasonryVsRemedialPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl mb-4">Need the right scope?</h2>
           <p className="text-white/80 text-lg leading-relaxed mb-8">
-            Start with the problem page, then move to the right service page. That is the cleanest path for both users and search.
+            Describe what has changed, where it is happening and any previous repairs. Bring photos and existing reports so the first assessment can identify the next investigation and the trades involved.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/services/masonry" className="inline-flex items-center gap-2 bg-white text-navy font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors">

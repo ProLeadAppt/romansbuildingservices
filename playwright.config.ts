@@ -7,6 +7,7 @@ const viewports = [
   { name: 'narrow', width: 320, height: 800 },
   { name: 'fold-cover', width: 344, height: 882 },
   { name: 'mobile', width: 390, height: 844 },
+  { name: 'tablet', width: 768, height: 1024 },
   { name: 'desktop', width: 1440, height: 900 },
 ];
 
@@ -20,7 +21,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  projects: ['chromium', 'firefox', 'webkit'].flatMap((browserName) =>
+  projects: (['chromium', 'firefox', 'webkit'] as const).flatMap((browserName) =>
     viewports.map((viewport) => ({
       name: `${browserName}-${viewport.name}`,
       use: { browserName, viewport: { width: viewport.width, height: viewport.height } },

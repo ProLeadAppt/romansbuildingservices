@@ -1,3 +1,5 @@
+> Current evidence review (2026-11-11): Historical project-proof/approved-case-study statements below are superseded. The eight legacy case-study routes are reference pages pending source verification; existing copy did not establish project facts or approval.
+
 # P2 Acceptance Criteria
 
 ## Baseline
@@ -20,7 +22,7 @@
 
 - One primary quote action and one proof action above the fold.
 - Symptom-first pathways appear before internal service categories.
-- Exactly three homepage project proofs link to real approved case-study routes.
+- Exactly three homepage repair references link to preserved case-study routes, labelled as general guidance rather than completed-project records.
 - Only one process explanation exists in the main journey.
 - Quote survey and phone path remain available on all supported viewports.
 - No new claim is published without an Approved claim-ledger entry.

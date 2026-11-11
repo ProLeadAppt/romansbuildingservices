@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   Landmark,
@@ -68,14 +68,24 @@ interface QuoteSurveyProps {
 
 export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: QuoteSurveyProps) => {
   const StepHeading = headingLevel;
+  const fieldId = useId();
   const [step, setStep] = useState<1 | 2 | 3 | 'success'>(initialService ? 2 : 1);
+  const previousStepRef = useRef(step);
+  const stepHeadingRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<QuoteData>(() => ({
     ...emptyData(),
     service: initialService ?? null,
   }));
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [readingPhotos, setReadingPhotos] = useState(false);
+  const [failedPhotoPreviews, setFailedPhotoPreviews] = useState<Set<QuotePhoto>>(() => new Set());
+  const readingPhotosRef = useRef(false);
   const photoInputRef = useRef<HTMLInputElement>(null);
+  const photoPickerRef = useRef<HTMLButtonElement>(null);
+  const photoListRef = useRef<HTMLDivElement>(null);
+  const removedPhotoFocusRef = useRef<number | null>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const phoneInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -91,6 +101,17 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
     }
   }, [step, variant]);
 
+  useEffect(() => {
+    if (previousStepRef.current === step) return;
+    previousStepRef.current = step;
+    // Preserve initial modal autofocus and focus deliberately moved elsewhere
+    // while a request was pending. Removed step controls leave focus on body.
+    const active = document.activeElement;
+    if (active === document.body || containerRef.current?.contains(active)) {
+      stepHeadingRef.current?.focus();
+    }
+  }, [step]);
+
   const selectService = (service: QuoteService) => {
     setData((d) => ({ ...d, service }));
     setStep(2);
@@ -98,6 +119,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
 
   const goNext = () => {
     if (step === 2) {
+      if (readingPhotosRef.current) return;
       if (!data.suburb.trim() || !data.urgency) return;
       setStep(3);
     }
@@ -109,22 +131,30 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
   };
 
   const handlePhotoSelect = async (files: FileList | null) => {
-    if (!files) return;
+    if (!files || readingPhotosRef.current) return;
+    readingPhotosRef.current = true;
+    setReadingPhotos(true);
+    const errors: string[] = [];
     const remaining = MAX_PHOTOS - data.photos.length;
     const newOnes = Array.from(files).slice(0, remaining);
+    if (files.length > remaining) errors.push('Please attach no more than 3 photos.');
     const next: QuotePhoto[] = [];
     let selectedBytes = data.photos.reduce((total, photo) => total + photo.size, 0);
     for (const file of newOnes) {
       if (!ALLOWED_PHOTO_TYPES.has(file.type)) {
-        setError(`${file.name} is not a supported photo. Use JPG, PNG, WebP, HEIC or HEIF.`);
+        errors.push(`${file.name} is not a supported photo. Use JPG, PNG, WebP, HEIC or HEIF.`);
+        continue;
+      }
+      if (file.size === 0) {
+        errors.push(`${file.name} is empty. Choose another photo.`);
         continue;
       }
       if (file.size > MAX_PHOTO_BYTES) {
-        setError(`${file.name} is too large. Maximum 2 MB per photo.`);
+        errors.push(`${file.name} is too large. Maximum 2 MB per photo.`);
         continue;
       }
       if (selectedBytes + file.size > MAX_TOTAL_PHOTO_BYTES) {
-        setError('Photos are too large together. Keep the total under 4 MB.');
+        errors.push('Photos are too large together. Keep the total under 4 MB.');
         continue;
       }
       try {
@@ -137,17 +167,35 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
         next.push({ filename: file.name, dataUrl, size: file.size });
         selectedBytes += file.size;
       } catch {
-        setError(`Could not read ${file.name}.`);
+        errors.push(`Could not read ${file.name}.`);
       }
     }
     if (next.length) {
-      setError(null);
       setData((d) => ({ ...d, photos: [...d.photos, ...next] }));
     }
+    setError(errors.length ? errors.join(' ') : null);
+    readingPhotosRef.current = false;
+    setReadingPhotos(false);
     if (photoInputRef.current) photoInputRef.current.value = '';
   };
 
+  useEffect(() => {
+    const index = removedPhotoFocusRef.current;
+    if (index === null) return;
+    removedPhotoFocusRef.current = null;
+    const buttons = photoListRef.current?.querySelectorAll<HTMLButtonElement>('button');
+    const target = buttons?.[Math.min(index, buttons.length - 1)] ?? photoPickerRef.current;
+    target?.focus();
+  }, [data.photos]);
+
   const removePhoto = (idx: number) => {
+    if (readingPhotosRef.current) return;
+    if (photoListRef.current?.contains(document.activeElement)) removedPhotoFocusRef.current = idx;
+    setFailedPhotoPreviews((previous) => {
+      const next = new Set(previous);
+      next.delete(data.photos[idx]);
+      return next;
+    });
     setData((d) => ({ ...d, photos: d.photos.filter((_, i) => i !== idx) }));
   };
 
@@ -189,6 +237,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
   };
 
   const reset = () => {
+    setFailedPhotoPreviews(new Set());
     setData({ ...emptyData(), service: initialService ?? null });
     setStep(initialService ? 2 : 1);
     setError(null);
@@ -200,7 +249,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
     : 'w-full max-w-2xl mx-auto';
 
   return (
-    <div className={containerClass}>
+    <div ref={containerRef} className={containerClass}>
       {/* Progress bar */}
       {step !== 'success' && (
         <div className="mb-6">
@@ -232,7 +281,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
           <div
             key="step1"
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               What needs doing?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
@@ -264,26 +313,27 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
           <div
             key="step2"
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               Where and when?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
-              We work right across Sydney. Photos help us quote faster but are optional.
+              Tell us your suburb so we can check availability. Our focus is Hawkesbury and Western Sydney. Photos are optional.
             </p>
 
             <div className="space-y-5">
               <div>
-                <label htmlFor="qs-suburb" className="block font-body text-sm font-semibold text-navy mb-2">
+                <label htmlFor={`${fieldId}-suburb`} className="block font-body text-sm font-semibold text-navy mb-2">
                   Suburb or postcode <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="qs-suburb"
+                  id={`${fieldId}-suburb`}
                   name="suburb"
                   type="text"
                   autoComplete="address-level2"
                   value={data.suburb}
                   onChange={(e) => setData((d) => ({ ...d, suburb: e.target.value }))}
-                  placeholder="e.g. Paddington or 2021"
+                  placeholder="e.g. Windsor or 2756"
+                  aria-required="true"
                   className="w-full border-2 border-stone-200 rounded-lg px-4 py-3 font-body text-navy focus:outline-none focus:border-navy"
                 />
               </div>
@@ -292,13 +342,24 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                 <p className="block font-body text-sm font-semibold text-navy mb-2">
                   How soon do you need this done? <span className="text-red-500">*</span>
                 </p>
-                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Job timeline">
+                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Job timeline" aria-required="true">
                   {URGENCY_OPTIONS.map((u) => (
                     <button
                       key={u}
                       type="button"
                       role="radio"
                       aria-checked={data.urgency === u}
+                      tabIndex={data.urgency === u || (!data.urgency && u === URGENCY_OPTIONS[0]) ? 0 : -1}
+                      onKeyDown={(event) => {
+                        const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1
+                          : ['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 0;
+                        if (!direction) return;
+                        event.preventDefault();
+                        const nextIndex = (URGENCY_OPTIONS.indexOf(u) + direction + URGENCY_OPTIONS.length) % URGENCY_OPTIONS.length;
+                        setData((d) => ({ ...d, urgency: URGENCY_OPTIONS[nextIndex] }));
+                        const radios = event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
+                        radios?.[nextIndex]?.focus();
+                      }}
                       onClick={() => setData((d) => ({ ...d, urgency: u }))}
                       className={`p-3 rounded-lg border-2 font-body text-sm transition-colors ${
                         data.urgency === u
@@ -320,34 +381,56 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                   ref={photoInputRef}
                   type="file"
                   name="photos"
+                  aria-label="Job photos"
                   accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
                   multiple
+                  disabled={readingPhotos}
                   onChange={(e) => handlePhotoSelect(e.target.files)}
                   className="hidden"
-                  id="qs-photos"
+                  id={`${fieldId}-photos`}
                 />
                 {data.photos.length < MAX_PHOTOS && (
-                  <label
-                    htmlFor="qs-photos"
-                    className="flex items-center justify-center gap-2 p-4 border-2 border-dashed border-stone-300 rounded-lg cursor-pointer hover:border-amber transition-colors text-text-muted font-body text-sm"
+                  <button
+                    type="button"
+                    disabled={readingPhotos}
+                    ref={photoPickerRef}
+                    onClick={() => photoInputRef.current?.click()}
+                    aria-describedby={`${fieldId}-photo-help`}
+                    className="w-full flex items-center justify-center gap-2 p-4 border-2 border-dashed border-stone-300 rounded-lg cursor-pointer hover:border-amber transition-colors text-text-muted font-body text-sm"
                   >
                     <Camera className="w-5 h-5" />
-                    Add photos of the job
-                  </label>
+                    {readingPhotos ? 'Reading photos…' : 'Add photos of the job'}
+                  </button>
                 )}
+                <p id={`${fieldId}-photo-help`} className="mt-2 text-sm text-text-muted">
+                  JPG, PNG, WebP, HEIC or HEIF. Up to 2 MB each, 4 MB total.
+                </p>
+                <p role="status" aria-live="polite" className="sr-only">
+                  {readingPhotos ? 'Reading photos. Please wait.' : `${data.photos.length} of 3 photos attached.`}
+                </p>
                 {data.photos.length > 0 && (
-                  <div className="mt-3 grid grid-cols-3 gap-2">
+                  <div ref={photoListRef} className="mt-3 grid grid-cols-3 gap-2">
                     {data.photos.map((photo, i) => (
-                      <div key={i} className="relative aspect-square rounded-md overflow-hidden bg-stone-100">
-                        <img
-                          src={photo.dataUrl}
-                          alt={photo.filename}
-                          className="w-full h-full object-cover"
-                        />
+                      <div key={i} className={`relative rounded-md overflow-hidden bg-stone-100 ${failedPhotoPreviews.has(photo) ? 'min-h-36' : 'aspect-square'}`}>
+                        {failedPhotoPreviews.has(photo) ? (
+                          <div role="status" className="flex h-full min-h-36 flex-col items-center justify-center gap-2 px-2 pb-3 pt-12 text-center text-xs text-navy">
+                            <Camera aria-hidden="true" className="h-6 w-6 shrink-0" />
+                            <span className="w-full break-all">{photo.filename}</span>
+                            <span>Preview unavailable; photo attached.</span>
+                          </div>
+                        ) : (
+                          <img
+                            src={photo.dataUrl}
+                            alt={photo.filename}
+                            onError={() => setFailedPhotoPreviews((previous) => new Set(previous).add(photo))}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                         <button
                           type="button"
+                          disabled={readingPhotos}
                           onClick={() => removePhoto(i)}
-                          aria-label="Remove photo"
+                          aria-label={`Remove photo ${i + 1}: ${photo.filename}`}
                           className="absolute top-1 right-1 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                         >
                           <X className="w-3 h-3" />
@@ -360,7 +443,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             </div>
 
             {error && (
-              <p id="quote-error" role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
+              <p id={`${fieldId}-error`} role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
             )}
 
             <div className="mt-8 flex items-center justify-between gap-3">
@@ -375,7 +458,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
               <button
                 type="button"
                 onClick={goNext}
-                disabled={!data.suburb.trim() || !data.urgency}
+                disabled={readingPhotos || !data.suburb.trim() || !data.urgency}
                 className="inline-flex items-center gap-1 px-6 py-3 bg-amber text-navy font-body font-semibold rounded-lg hover:bg-amber/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 Next
@@ -391,20 +474,20 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             key="step3"
             onSubmit={handleSubmit}
           >
-            <StepHeading className="font-heading text-2xl md:text-3xl text-navy mb-2">
+            <StepHeading ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-2">
               How do we reach you?
             </StepHeading>
             <p className="font-body text-text-muted mb-6">
-              Minas will call you back within 24 hours. Your details are sent straight to him.
+              Leave your contact details so Minas can follow up about the job. For urgent enquiries, call directly.
             </p>
 
             <div className="space-y-4">
               <div>
-                <label htmlFor="qs-name" className="block font-body text-sm font-semibold text-navy mb-2">
+                <label htmlFor={`${fieldId}-name`} className="block font-body text-sm font-semibold text-navy mb-2">
                   Your name <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="qs-name"
+                  id={`${fieldId}-name`}
                   ref={nameInputRef}
                   name="name"
                   type="text"
@@ -417,11 +500,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
               </div>
 
               <div>
-                <label htmlFor="qs-phone" className="block font-body text-sm font-semibold text-navy mb-2">
+                <label htmlFor={`${fieldId}-phone`} className="block font-body text-sm font-semibold text-navy mb-2">
                   Phone <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="qs-phone"
+                  id={`${fieldId}-phone`}
                   ref={phoneInputRef}
                   name="phone"
                   type="tel"
@@ -436,11 +519,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
               </div>
 
               <div>
-                <label htmlFor="qs-email" className="block font-body text-sm font-semibold text-navy mb-2">
+                <label htmlFor={`${fieldId}-email`} className="block font-body text-sm font-semibold text-navy mb-2">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="qs-email"
+                  id={`${fieldId}-email`}
                   ref={emailInputRef}
                   name="email"
                   type="email"
@@ -456,11 +539,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
               </div>
 
               <div>
-                <label htmlFor="qs-message" className="block font-body text-sm font-semibold text-navy mb-2">
+                <label htmlFor={`${fieldId}-message`} className="block font-body text-sm font-semibold text-navy mb-2">
                   Anything else we should know? <span className="font-normal text-text-muted">(optional)</span>
                 </label>
                 <textarea
-                  id="qs-message"
+                  id={`${fieldId}-message`}
                   name="message"
                   rows={3}
                   value={data.message}
@@ -470,9 +553,9 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
                 />
               </div>
               <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
-                <label htmlFor="qs-company-website">Company website</label>
+                <label htmlFor={`${fieldId}-company-website`}>Company website</label>
                 <input
-                  id="qs-company-website"
+                  id={`${fieldId}-company-website`}
                   name="companyWebsite"
                   type="url"
                   tabIndex={-1}
@@ -484,7 +567,7 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             </div>
 
             {error && (
-              <p id="quote-error" role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
+              <p id={`${fieldId}-error`} role="alert" className="mt-4 text-red-700 font-body text-sm">{error}</p>
             )}
 
             <div className="mt-8 flex items-center justify-between gap-3">
@@ -524,12 +607,11 @@ export const QuoteSurvey = ({ variant, headingLevel, onClose, initialService }: 
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/15 mb-5">
               <CheckCircle2 className="w-9 h-9 text-amber" />
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mb-3">
-              Got it. Minas will be in touch.
+            <h2 ref={stepHeadingRef} tabIndex={-1} className="font-heading text-2xl md:text-3xl text-navy mb-3">
+              Enquiry submitted.
             </h2>
             <p className="font-body text-text-muted mb-8 max-w-md mx-auto">
-              Your enquiry has been emailed to Minas with the job details. We will call you back
-              within 24 hours.
+              Your enquiry has been submitted with the job details. Please call if you need to check receipt or discuss timing.
             </p>
             <div className="bg-navy/5 rounded-lg p-5 max-w-md mx-auto">
               <p className="font-body text-sm text-text-muted mb-2">

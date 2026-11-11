@@ -21,10 +21,10 @@ try {
     }
   });
   const cases = [
-    ['/', 'Get a Sydney Quote', '1'],
+    ['/', 'Discuss your project', '1'],
     ['/case-studies/', 'Get a quote', '2'],
-    ['/case-studies/heritage-church-brick-restoration-sydney-cbd/', 'Get a quote for similar work', '2'],
-    ['/case-studies/concrete-cancer-repair-strata-north-shore/', 'Get a quote for similar work', '2'],
+    ['/case-studies/heritage-church-brick-restoration-sydney-cbd/', 'Get a quote', '2'],
+    ['/case-studies/concrete-cancer-repair-strata-north-shore/', 'Get a quote', '2'],
   ];
   for (const [route, label, expectedStep] of cases) {
     await page.goto(origin + route, { waitUntil: 'networkidle0' });

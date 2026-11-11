@@ -1,6 +1,6 @@
 import { ServicePageTemplate } from '@/components/ServicePageTemplate';
 import { getSiblingServices } from '@/data/serviceHierarchy';
-import { Columns, ShieldCheck, Ruler, HardHat, Search } from 'lucide-react';
+import { Search, HardHat, Columns, Ruler, ShieldCheck } from 'lucide-react';
 
 const LoadBearingWallsPage = () => {
   const siblings = getSiblingServices('structural-repairs', 'load-bearing-walls');
@@ -8,7 +8,7 @@ const LoadBearingWallsPage = () => {
     <ServicePageTemplate
       title="Load-Bearing Wall Repairs"
       metaTitle="Sydney Load-Bearing Wall Repairs | Romans"
-      metaDescription="Sydney load-bearing wall repairs by Minas Romanakis. Crack stitching, pier rebuilds, lintel replacement and helibar reinforcement. Engineer-certified."
+      metaDescription="Sydney load-bearing wall repair enquiries. Structural assessment, temporary support, masonry repair and engineered rebuilding scopes."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Structural Repairs', href: '/services/structural-repairs' }}
       siblingServices={siblings}
@@ -18,137 +18,106 @@ const LoadBearingWallsPage = () => {
         { label: 'Load-Bearing Wall Repairs', href: '' },
       ]}
       intro={[
-        'Load-bearing walls hold the building up. The roof, the upper floors, the things sitting on the upper floors. When a load-bearing wall cracks, leans or settles, everything above it moves with it. Doors stop closing, ceilings sag, render starts cracking the same way every winter. Catch it early and the repair is straightforward. Leave it and it gets expensive.',
-        'We repair load-bearing walls three ways depending on what is wrong. Active cracking gets stitched with stainless helical rods set into the bed joints across the crack. Bulging or leaning walls get tied back to the structure with stainless wall anchors. Walls that have crushed or collapsed get cut out and rebuilt section by section with engineered propping above.',
-        'Romans holds a full NSW builders licence for structural masonry. We coordinate with structural engineers on every load-bearing repair, and all work is signed off and to AS 3700. Minas is on site for any structural job. Most of our work is residential terraces and houses in Sydney, plus commercial buildings and strata blocks where load-bearing repair is part of remedial works.',
+        "A load-bearing wall carries weight from other parts of the building as well as its own. Its role cannot be confirmed from thickness or appearance alone. Cracking, crushing, leaning or changes around openings need assessment of the wall and the loads it supports.",
+        "Repair options can include masonry reinforcement, connection repairs, lintel work or rebuilding. The cause and remaining capacity determine the method. Active foundation movement needs its own response; installing stitching or anchors without addressing it may leave the underlying problem unresolved.",
+        "Contact Romans to discuss the assessed building work. Structural design, temporary works, specialist involvement and required inspections should be agreed before the wall is disturbed. Keep people clear of loose or unstable masonry, and do not remove bricks or install props as a homeowner check."
       ]}
       features={[
         {
           icon: Search,
-          title: 'Structural diagnosis',
-          description:
-            'On-site inspection, crack pattern analysis, identification of the underlying cause (foundation movement, lintel failure, overloading, wall tie failure). We coordinate engineer involvement for anything significant.',
-        },
-        {
-          icon: Columns,
-          title: 'Temporary propping',
-          description:
-            'Adjustable steel acrow props sized to the load above. Set up before any cutting starts. Remains in place until the new structure is taking load. No exceptions.',
+          title: "Establish the load path",
+          description: "Use available drawings and structural assessment to identify what the wall supports. Concealed beams, floor directions and previous alterations may affect the findings."
         },
         {
           icon: HardHat,
-          title: 'Section rebuild',
-          description:
-            'Failed wall sections cut out cleanly and rebuilt course by course. Bonded into the surrounding wall with stainless wall ties. Type S structural mortar to engineered strength spec.',
+          title: "Temporary support",
+          description: "A designed sequence must address how loads will be carried during the repair. Safe bearing, restraint, installation and removal are part of the temporary works, not just prop selection."
         },
         {
-          icon: ShieldCheck,
-          title: 'Helical and carbon reinforcement',
-          description:
-            'Stainless helical rod stitching for active cracks. Carbon fibre wrap for higher-load applications. Engineered stitch plates for the heavier stuff. All concealed under new pointing.',
+          icon: Columns,
+          title: "Section rebuilding",
+          description: "Rebuilding may be needed where masonry cannot be retained. The design specifies support, connections, compatible units and mortar, with inspection before concealed stages."
         },
         {
           icon: Ruler,
-          title: 'Engineer signed off',
-          description:
-            'Structural engineer scope, design certificate, site inspections during construction, and completion certificate. Paperwork stays with the property for any future buyer or insurer.',
+          title: "Reinforcement and ties",
+          description: "Stitching or anchors may suit some defects. Selection depends on the cause, wall construction and available anchorage; a leaning wall is not automatically suitable for tying back."
         },
+        {
+          icon: ShieldCheck,
+          title: "Completion requirements",
+          description: "Agree who designs, inspects and documents the work. A contractor quote does not replace any required professional design, permission or completion assessment."
+        }
       ]}
       whatWeUse={[
         {
-          title: 'Stainless helical rod (Helifix or similar)',
-          detail:
-            '6mm to 10mm stainless steel helical rod, set into bed joints in epoxy or polyester grout. Stitches across active cracks to redistribute load. Industry standard for structural masonry repair since the 1990s.',
+          title: "Compatible masonry",
+          detail: "Replacement bricks or stone should suit the retained wall’s physical properties and structural requirements. Appearance and nominal strength alone are not enough to establish compatibility."
         },
         {
-          title: 'Type S structural mortar',
-          detail:
-            'High-strength cement mortar (M3 or M4 to AS 3700 depending on engineer spec). Mixed on site in measured batches. Cube samples taken on bigger jobs for the engineer to test.',
+          title: "Mortar and grout",
+          detail: "The specification selects mortar and bonding systems for the masonry, exposure and required performance. Avoid applying a universal high-strength mix to softer existing materials."
         },
         {
-          title: 'Stainless steel wall anchors',
-          detail:
-            'For tying bulging or leaning walls back to interior structure. Drilled through the wall and anchored into floor joists or back-up masonry. Tightened to engineer-specified torque.',
+          title: "Designed anchors",
+          detail: "Tie and anchor details need suitable substrate, embedment and connections to a structure capable of taking the loads. Product ratings do not establish capacity in every existing wall."
         },
         {
-          title: 'Acrow props for temporary support',
-          detail:
-            'Adjustable steel props rated for the load above. Sized and positioned to engineer drawings. Stay in place from before cutting starts until the new structure has cured and taken load.',
+          title: "Reinforcement systems",
+          detail: "Bars, plates or other systems are selected as part of the repair design. Confirm specialist installation requirements and how the work will be checked before it is covered."
         },
         {
-          title: 'Carbon fibre fabric (where required)',
-          detail:
-            'For high-load reinforcement where helical rods alone are not enough. Epoxy-bonded carbon fibre fabric applied to the wall and covered with new render. Adds significant tensile strength.',
-        },
-        {
-          title: 'Engineered stitch plates',
-          detail:
-            'Stainless plate stitches across the most serious cracks. Engineered and signed off. Fully concealed under the next coat of mortar or render. Used where the wall has actively moved and needs to be locked together.',
-        },
+          title: "Support and protection",
+          detail: "The work plan should include temporary support, exclusion areas and protection of adjacent finishes and services. Access restrictions can remain necessary until the assessed stages are complete."
+        }
       ]}
       processSteps={[
         {
-          step: 'Inspection and engineer report',
-          detail:
-            'On-site visit. We map the crack pattern, photograph each defect, check the wall plumb with a level, and look at what is above and below. For significant cracking the engineer comes out and writes a report before we quote.',
+          step: "Assess the wall",
+          detail: "Investigate the defect, load path and surrounding structure. Identify urgent safety risks and any need for engineering or other specialist investigation."
         },
         {
-          step: 'Engineer scope and design',
-          detail:
-            'Engineer writes a repair specification. Helical rod spacing, wall anchor positions, mortar mix, any propping required. We quote to that scope. Council approval is usually needed for any work that changes the load path.',
+          step: "Design and approve",
+          detail: "Agree the repair and temporary works design and check the required approvals. Confirm the contracting scope and the relevant licence and specialist requirements."
         },
         {
-          step: 'Propping and protection',
-          detail:
-            'Acrow props installed to the engineer drawing. Adjacent rooms and finishes protected with sheeting. Dust extraction set up if we are working inside. Site secured.',
+          step: "Prepare the site",
+          detail: "Plan access, service protection and occupancy restrictions. Qualified personnel establish support under the specified sequence before disturbing loaded masonry."
         },
         {
-          step: 'Cutting and reinforcement',
-          detail:
-            'For crack stitching, bed joints are raked out to the depth specified by the engineer (usually 30 to 60mm). Helical rods set in grout. For section rebuilds, failed brick cut out, new brick laid up bonded into the surrounding wall.',
+          step: "Repair to the specification",
+          detail: "Carry out the designed reinforcement, lintel or rebuild works. Required inspections occur before covering work or transferring loads to repaired elements."
         },
         {
-          step: 'Engineer inspection',
-          detail:
-            'Before any work is covered up, the engineer inspects on site and signs off that the repair matches the design. Photos taken for the structural certificate. Without this sign-off the repair is not certifiable.',
-        },
-        {
-          step: 'Reinstate finishes and remove props',
-          detail:
-            'Mortar joints pointed to match surrounding wall. Render and paint reinstated. Acrow props removed in sequence as the new structure takes load. Completion certificate issued for the property file.',
-        },
+          step: "Complete and review",
+          detail: "Remove temporary support only under the approved sequence. Document completion and any remaining restrictions or monitoring before reinstating finishes and normal access."
+        }
       ]}
       faqs={[
         {
-          question: 'How do I know if a wall is load-bearing?',
-          answer:
-            'Walls running perpendicular to ceiling joists are usually load-bearing. Walls running underneath a beam or wall above are load-bearing. Walls that go from foundation to roof are load-bearing. Walls between rooms that only support the ceiling on one side are usually non-bearing. We always confirm with a structural assessment before any work starts, never by assumption.',
+          question: "How do I know whether a wall is load-bearing?",
+          answer: "Plans and a structural assessment can establish how loads are carried. Wall thickness, construction material or its location in the house are not reliable tests on their own. Do not cut an opening or remove masonry to find out."
         },
         {
-          question: 'Can you remove part of a load-bearing wall?',
-          answer:
-            'Yes, but it needs proper engineering. We install a steel beam or concrete lintel to take the load before cutting out the wall below. Beam size is engineered to the span and the load above. Council approval is required. Typical scope is two to three weeks including engineering, propping, beam installation and reinstatement.',
+          question: "Can a leaning wall be repaired without rebuilding?",
+          answer: "Sometimes, but the cause, condition and available support determine whether reinforcement is suitable. An engineer must assess the wall; there is no universal amount of lean that makes anchoring safe. Keep people away from a wall that appears unstable."
         },
         {
-          question: 'How long does a load-bearing wall repair take?',
-          answer:
-            'Crack stitching is one to three days depending on length and number of rods. A pier or section rebuild is one to two weeks. A wall removal with new beam is two to four weeks including engineering. Council approval (if needed) adds two to six weeks at the front.',
+          question: "Is stitching suitable for an active crack?",
+          answer: "It depends on the cause and design. Stitching alone does not stop ongoing foundation movement or restore every failed connection. The repair scope should identify the underlying problem and explain whether movement must be addressed before masonry work."
         },
         {
-          question: 'What causes load-bearing walls to crack?',
-          answer:
-            'Most common in Sydney is foundation movement on clay soils, especially after dry summers. Other causes: rusted steel lintels above doors and windows expanding and pushing brick up, failed cavity wall ties letting the outer skin sag away from the inner, overloading where additional weight has been added above the wall (new floor, heavy roof tiles, second storey). The crack pattern tells you which cause.',
+          question: "Can we occupy the building during repairs?",
+          answer: "Occupancy depends on structural risk, temporary works, services and safe access. Agree restrictions with the responsible professionals before work begins and review them if conditions change. The presence of props alone does not confirm that affected rooms are safe."
         },
         {
-          question: 'Do I need to vacate the property during repairs?',
-          answer:
-            'For minor crack stitching, no. The work is contained and we can keep dust under control. For section rebuilds or wall removals, the room is unusable for the duration but the rest of the house is fine. For commercial properties we plan around tenant access.',
+          question: "Do these repairs need approval?",
+          answer: "The answer depends on the property and proposed work. Ask the council or certifier which pathway applies, including any heritage controls. Agree responsibility for applications and inspections rather than assuming an engineer’s drawing is itself permission to proceed."
         },
         {
-          question: 'What does load-bearing wall repair cost?',
-          answer:
-            'Crack stitching is 250 to 500 dollars per linear metre of crack including helical rod and pointing. Section rebuild is 1500 to 3500 dollars per square metre depending on what comes out and what goes back. Beam installation for wall removal starts around 8000 to 15,000 dollars all up. Engineering fee is usually 1500 to 4000 dollars on top.',
-        },
+          question: "What determines cost and timing?",
+          answer: "Engineering, access, temporary support, the repair extent and compatible materials all affect the quote and programme. Concealed defects can change the scope. Ask for written inclusions, inspection requirements and reinstatement details before comparing prices or arranging occupancy."
+        }
       ]}
     />
   );
