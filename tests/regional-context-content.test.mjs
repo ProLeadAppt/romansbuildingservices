@@ -70,7 +70,8 @@ test('heritage and moisture guidance requires diagnosis and property-specific pe
   }
 });
 
-test('six regional hubs change paragraph copy without changing metadata, layout, services, links or CTAs', () => {
+// North Shore metadata baseline excludes the unsupported licence/insurance assertion.
+test('six regional hubs preserve reviewed metadata, layout, services, links and CTAs', () => {
   for (const [file, expected] of Object.entries(baseline.hubSkeletons)) {
     const source = read(file);
     const skeleton = source.replace(/(<p\b[^>]*>)[\s\S]*?(<\/p>)/g, '$1PARAGRAPH_TEXT$2');

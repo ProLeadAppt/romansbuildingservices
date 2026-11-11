@@ -70,7 +70,7 @@ test('prerender output does not serialize runtime-injected scripts or lazy modul
 
 test('direct production dependencies use patched mail and router releases', () => {
   const packageJson = JSON.parse(read('package.json'));
-  assert.equal(packageJson.dependencies.nodemailer, '^9.0.3');
+  assert.equal(packageJson.dependencies.nodemailer, '10.5.0');
   assert.equal(packageJson.dependencies['react-router-dom'], '^7.18.1');
 });
 

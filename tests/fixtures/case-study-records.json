@@ -1,114 +1,74 @@
 [
   {
     "slug": "heritage-church-brick-restoration-sydney-cbd",
-    "unchangedHash": "543c692d64755823972d6ef09b630a08ba5b898a3a37e5dcb32ec354396c17c5",
+    "unchangedHash": "aefadfb19b7149bcd1ce3c84949c909c750241b147fa7d954822dfcd3959fba3",
     "questions": [
       "How long does heritage brick repointing take on a church-sized facade?",
       "Do you handle heritage approval paperwork?",
       "What does heritage brick repointing cost per square metre?"
-    ],
-    "resultHashes": [
-      "53a819c80dcd5c9930462e5de15c0d9481cab275cddb172f8f19d5dbffcd0d5d",
-      "fbcbcc463b11cef3cd363d290be16add2fb0870ebdd5ca06b1c716b0b1262e7a",
-      "9ded0b4a8c4dca6263e36b023d69d0895d7d29d6a914e3a3754132ba3f09014e"
     ]
   },
   {
     "slug": "sandstone-seawall-restoration-mosman",
-    "unchangedHash": "b1270aad569ea9c774be541e2ff508aeb855a991676bc90685132e37a8c27f7a",
+    "unchangedHash": "bcd2ece06f2284c2b65abb5807065bf82dfe24000cafbd4fee30dc89dbeda769",
     "questions": [
       "Can a sandstone seawall be repaired, or does it have to be replaced?",
       "Do you need council approval to repair a seawall in Mosman?",
       "How long does a sandstone seawall restoration take?"
-    ],
-    "resultHashes": [
-      "b68843fc30cfa841eb19581f690e51527e848b3a7b1df9915721047eb8b22a8b",
-      "9465ba356a5bb351521ab579645333d5e824ed89cb713d66b0be37ac881e8bc4",
-      "446d956768448fdf85b31fe13b6d5bed794501aa782c6f9cdd1aaa52f74cad04"
     ]
   },
   {
     "slug": "sandstone-chimney-rebuild-eastern-suburbs",
-    "unchangedHash": "337c7f614e43b9ca28f88dcd84858d1ad2d332e0bbbae86fc5ddc7c985ca8915",
+    "unchangedHash": "91d83b045fdec48bf42f15f0ad9b69b0b779807f25932c66019e4211cdfab271",
     "questions": [
       "Can a sandstone chimney be repaired, or does it need to be completely rebuilt?",
       "How do you match the original sandstone?",
       "How long does a chimney rebuild take?"
-    ],
-    "resultHashes": [
-      "4f767fbd5595a07b03f7e5f4d8e2193bfa1098f65a2b89d7b2cb8fc971341476",
-      "5a250d9a23498fee73fd55711930775278ee643f414ff37ba7840afaacd865ce",
-      "4981d14bce5960be3a6d546351e49cc8b7acf642d03292609ac75701ef4136ac"
     ]
   },
   {
     "slug": "stone-veneer-fireplace-inner-west",
-    "unchangedHash": "9ad0ebaa01bdaf82350c0b5f4a02d5ab75e2c9f89dedbcd6f16d4c00b27733b0",
+    "unchangedHash": "21b74754066114e19ff73a1e37596f5128ec1c4f084cc4a95e2d959830f95b6b",
     "questions": [
       "Can you put sandstone veneer on a timber-framed wall?",
       "Is stone veneer real stone?",
       "How long does a stone veneer fireplace take to install?"
-    ],
-    "resultHashes": [
-      null,
-      "0dbabdbaa3d44b36e1aceff81e1c871d58c3e308cb3291428107c7e8a837197b",
-      "a31375a4d8a0055e0c51328ebff8045aeec637c1b9c9db8252a8367e42b2e683"
     ]
   },
   {
     "slug": "concrete-cancer-repair-strata-north-shore",
-    "unchangedHash": "d1c4960d02e503a9c3e05a46523334b94990b25b1c5d8eef01b4a2dc43412e1d",
+    "unchangedHash": "b54adbd3fad160b7f9b1cb7136b1b83341ccfada1a0bea7bc12702185bce1dc8",
     "questions": [
       "How do you know if concrete spalling is structural?",
       "How long does concrete cancer repair last?",
       "Can strata owners get funding help for concrete cancer repairs?"
-    ],
-    "resultHashes": [
-      null,
-      "a8669315b5d9293e20dc589afa826fca6edfdeddb30e79e6646aaa9dd1f15335",
-      "7aca04148b6f1c4860c59288aea92ee94b85257296759222d2d18cffe3ff7bef"
     ]
   },
   {
     "slug": "foundation-underpinning-heritage-terrace-inner-west",
-    "unchangedHash": "9e07a1007fa04c19046bebf848197d9ba278de47c63c6206dc93ef3b2fe304ba",
+    "unchangedHash": "e58609121dacea95e259a50ed6a8c01dd75553703f264afcf3cdfe5b7afc3111",
     "questions": [
       "How do you underpin a heritage terrace without damaging the facade?",
       "How long does underpinning take on a residential terrace?",
       "Will underpinning stop the cracks from coming back?"
-    ],
-    "resultHashes": [
-      "c74d2048f2a80454cc45bd88db5557d23996ca67d1b968a44b12cba3b7d06d95",
-      "85cc53dde50b58f95626ede9f2f25a48e1c882c69bd23b3320283366e0f73812",
-      "dbe8cbca5db0555dea4650031c94d4f0d6a8a0f589353a6dccf2f913d09b04d9"
     ]
   },
   {
     "slug": "heritage-sandstone-seawall-mosman",
-    "unchangedHash": "8b4f8c240dead139d04abfbec6e1a893a146b477b5ed8068886234138e39bd76",
+    "unchangedHash": "6aa32cf55f2d9488dec9b1d50bda0c058a080bde92878d8293cbdaa9b7783d64",
     "questions": [
       "Can a heritage seawall be repaired with modern engineering behind it?",
       "Why not use cement mortar on a seawall?",
       "How do you match replacement sandstone blocks to the existing wall?"
-    ],
-    "resultHashes": [
-      "de2aff24ef0115e79c37ed45d273bc2214435642e94a92ed4033e7e82f2c1d20",
-      "acd4b1e91556caaee5ca02726875f80925f45f21bc0bf9afe18325201f04fe75",
-      "af47d083aebd5e389fc8966b5892db07e0bb84dc6f6f51a3953194a98e2902e3"
     ]
   },
   {
     "slug": "brick-repointing-victorian-terrace-paddington",
-    "unchangedHash": "d69456e773d6e93d50b88e73514e88fcdf9050deaf4ee4d4b8f8fe25b70d189c",
+    "unchangedHash": "a01b4ad4061cc3f2e3be5f3e39dc571429b5cc474d88b9b1d538b38290a17ca1",
     "questions": [
       "How do you remove failed pointing without damaging the bricks?",
       "Why does my Victorian terrace have rising damp?",
       "How long does repointing take on a Victorian terrace?"
-    ],
-    "resultHashes": [
-      "20a78cdd9691449175428e07a2bebef6b4b970d579f6e9d983ae5653f0f3946d",
-      "8877030d74901b283360d2b748401af1f36a4284e451918daf36bdbcc6ae1291",
-      "7330eb171cdbe1ab09405d6a2586f8bbf71c2c57b1c76d725ad42654c59138b3"
     ]
   }
 ]

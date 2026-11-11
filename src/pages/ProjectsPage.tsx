@@ -12,19 +12,18 @@ const schemaImages = projectGalleryImages
   .map((img) => ({
     url: img.full.startsWith('http') ? img.full : `${SITE_URL}${img.full}`,
     caption: img.alt,
-    location: 'Sydney, NSW',
   }));
 
 const galleryFaqs = [
   {
     question: 'What does this gallery show?',
     answer:
-      'This is a selection from the Romans photo archive, showing masonry details, work in progress and completed work. Entries identified as inspiration or needing caption and provenance review are not included in this project gallery.',
+      'This selection from the Romans photo archive shows masonry details, work in progress and visible finishes. Use it to explore ideas and discuss the needs of your property; photographs do not establish a repair specification.',
   },
   {
     question: 'How old is the work shown here?',
     answer:
-      'The gallery includes earlier Sydney work and is not a dated list of current jobs. Romans has been operating since 1995. Ask about a particular project if its date or details matter to your plans.',
+      'The archive is not a dated list of current jobs. Dates and project histories have not been confirmed for these photographs. Ask about a particular image if its context matters to your plans.',
   },
   {
     question: 'Can you do work like this for me?',
@@ -48,46 +47,47 @@ const galleryFaqs = [
   },
 ];
 
+// Captions describe visible features, not verified project histories.
 const featuredProjects: Array<{ id: string; title: string; copy: string }> = [
   {
     id: 'romansstone_1572902412_2169985170382604428_2394650725',
-    title: 'Sandstone seawall, Sydney Harbour',
-    copy: 'Hand-laid sandstone seawall along the harbour. Tidal exposure makes stone condition, joint detailing and the repair specification important. Mortar selection and working arrangements need to suit the particular wall and exposure.',
+    title: 'Stonework at the waterline',
+    copy: 'Stone block walls beside the water, with a bridge in the background. For a seawall repair, the condition, exposure and structural requirements need assessment beyond what a photograph shows.',
   },
   {
     id: 'romansstone_1617135591_2541039971017938059_2394650725',
-    title: 'Sandstone chimney rebuild',
-    copy: 'Two of us on the roof rebuilding a chimney from the flashing up. Original stone where it was sound, new sandstone hand-dressed to match for the courses that had to come out.',
+    title: 'Stonework above a roof',
+    copy: 'Two people working around stone blocks above roof level. The image does not establish which materials were retained or replaced, or the repair specification.',
   },
   {
     id: 'romansstone_1610308835_2483772994075744932_2394650725',
-    title: 'Stone veneer fireplace',
-    copy: 'Stone veneer fireplace surround for a living room renovation. Stone facing brings texture to the surround. Its weight, backing, fixing system and any fireplace clearances need to be checked for the particular installation.',
+    title: 'Stone-faced fireplace surround',
+    copy: 'A textured stone face around a fireplace opening. Facing weight, backing, fixings and fireplace clearances need checking for each installation; a photograph does not confirm readiness for use.',
   },
   {
     id: 'romansstone_1466993917_1281560327394079553_2394650725',
-    title: 'Heritage church brick restoration',
-    copy: 'Brick restoration on a church facade. Old jobs like this come back to us through architects and heritage consultants. The brick was matched from a yard in Marrickville that still kiln-fires the old sizes.',
+    title: 'Stone wall detail',
+    copy: 'A stone block wall with loose blocks above it and tools nearby. The building identity, repair method and material source are not confirmed here.',
   },
   {
     id: 'romansstone_1571599727_2159057455018301350_2394650725',
-    title: 'Sandstone garden wall, Inner West',
-    copy: 'Finished sandstone garden wall with the hedge planted back in around it. Stone laid coursed at the front, rougher at the back where the soil sits against it. Capstones cut on site.',
+    title: 'Low garden wall',
+    copy: 'A low stone wall beside a hedge and lawn, with a brick building behind it. The photo shows the visible finish, not the concealed construction or drainage.',
   },
   {
     id: 'romansstone_1545465691_1939829271515579573_2394650725',
-    title: 'Sandstone steps through bushland',
-    copy: 'Steps cut from local sandstone, set into a sloped bushland garden. No two treads the same. Bedded on a sand and cement mix with weep gaps so water keeps moving through.',
+    title: 'Paved garden path',
+    copy: 'A paved path beside stone edging and a planted slope. Materials, bedding and drainage details need to be specified for the site rather than inferred from this view.',
   },
   {
     id: 'romansstone_1625099894_2607849386215395716_2394650725',
-    title: 'Sandstone bathroom',
-    copy: 'Sandstone walls in a renovated bathroom. Stone sealed with a breathable sealer so it can still let moisture out. A stone sealer is not a substitute for wet-area waterproofing. Product compatibility and moisture movement need to be considered for each installation.',
+    title: 'Stone walls in a bathroom',
+    copy: 'Textured stone walls around a bathroom basin and mirror. A stone sealer is not a substitute for wet-area waterproofing; the photograph does not identify any products used.',
   },
   {
     id: 'romansstone_1571801227_2160747763900813654_2394650725',
-    title: 'Sandstone wall, harbour view',
-    copy: 'Coursed sandstone block wall up on a property overlooking the harbour. Stone from the same quarry that supplied the original 1890s house, so the new wall reads as part of the old place.',
+    title: 'Stone wall beside the water',
+    copy: 'A close view of stone blocks and mortar joints, with water behind the wall. The stone source, building age and construction history are not confirmed here.',
   },
 ];
 
@@ -134,7 +134,7 @@ const GalleryPage = () => {
         <div className="max-w-3xl mx-auto font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
           <p>
             The gallery brings together masonry details, work in progress and completed work from
-            the Romans photo archive. The featured notes give context for selected projects;
+            the Romans photo archive. The featured notes describe visible features;
             photographs alone cannot establish the condition or repair needs of another property.
           </p>
           <p>
@@ -166,26 +166,24 @@ const GalleryPage = () => {
             <div className="bg-bg-light p-6 rounded-md">
               <h3 className="font-heading text-xl text-navy mb-2">Heritage</h3>
               <p className="leading-relaxed">
-                Restoration work on listed and period buildings. Federation brick, Victorian
-                terraces, colonial sandstone, Art Deco facades. Heritage councils sometimes ask for
-                specific materials and methods. We work with those rules and the consultants who set
-                them.
+                Masonry details associated with older buildings. A photo cannot establish a
+                heritage listing or building age. Check the property records and any conservation
+                requirements before choosing materials or methods.
               </p>
             </div>
             <div className="bg-bg-light p-6 rounded-md">
               <h3 className="font-heading text-xl text-navy mb-2">Stonework</h3>
               <p className="leading-relaxed">
-                Sandstone, bluestone, basalt, granite. Garden walls, retaining walls, harbour
-                seawalls, feature walls, steps, paving, capping. New builds and repairs. Most of the
-                stone we use is from Sydney or just outside it.
+                Stone walls, steps, paving and architectural details. Appearance alone does not
+                establish a stone type, quarry source or suitability for a repair. Compare materials
+                and their properties with the requirements of the site.
               </p>
             </div>
             <div className="bg-bg-light p-6 rounded-md">
               <h3 className="font-heading text-xl text-navy mb-2">Structural</h3>
               <p className="leading-relaxed">
-                Load-bearing brick and block. Crack stitching, lintel replacements, pier rebuilds,
-                full wall reconstructions. We work to engineers' drawings when the job calls for it
-                with{' '}
+                Brickwork, openings and support details. A photograph does not establish structural
+                capacity or compliance. Seek the relevant design and assessment, with{' '}
                 <Link to="/services/structural-repairs" className="text-navy underline underline-offset-4">
                   AS 3700 masonry standards
                 </Link>{' '}
@@ -205,8 +203,7 @@ const GalleryPage = () => {
               <p className="leading-relaxed">
                 Photos of the work happening. Hands, mallets, chisels, mortar boards. Useful if you
                 want to see how the work actually gets done rather than just the finished product.
-                Most heritage stone is still hand-dressed. The methods have not changed much in 150
-                years.
+                Tools visible in a photograph do not establish the full repair method or specification.
               </p>
             </div>
           </div>
@@ -217,10 +214,10 @@ const GalleryPage = () => {
       <section className="py-16 md:py-20 px-4 bg-navy texture-grain">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl text-white mb-3 text-center">
-            A few projects worth a closer look
+            A closer look at the photo archive
           </h2>
           <p className="font-body text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Eight jobs from the gallery with a bit of context on what we did and how.
+            Eight archive photographs with visual notes. Use them to compare finishes and details, not to infer project locations, dates, repair methods or outcomes.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProjects.map((project) => {

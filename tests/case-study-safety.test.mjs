@@ -44,15 +44,16 @@ const { QuoteModalProvider } = loadSource(path.join(root, 'src/components/quote/
 const fixture = JSON.parse(readFileSync(path.join(root, 'tests/fixtures/case-study-records.json'), 'utf8'));
 const sha = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 
-test('case FAQ review preserves exact project identities, media, attribution and historical records outside two safety corrections', () => {
+// Snapshot now covers reference-page records; historical project assertions were intentionally withheld.
+test('reference review preserves legacy URLs and reviewed general FAQs without project assertions', () => {
   assert.deepEqual(caseStudies.map(c => c.slug), fixture.map(c => c.slug));
   for (const [index, cs] of caseStudies.entries()) {
-    const { faqs, result, ...unchanged } = cs;
+    const { faqs, ...unchanged } = cs;
     const baseline = fixture[index];
     assert.equal(sha(unchanged), baseline.unchangedHash, cs.slug);
     assert.deepEqual(faqs.map(f => f.question), baseline.questions);
-    assert.equal(result.length, baseline.resultHashes.length);
-    result.forEach((text, i) => { if (baseline.resultHashes[i]) assert.equal(sha(text), baseline.resultHashes[i], `${cs.slug} result ${i}`); });
+    assert.deepEqual(Object.keys(cs).sort(), ['slug', 'metaTitle', 'metaDescription', 'primaryService', 'primaryServiceHref', 'relatedServices', 'faqs'].sort());
+    assert.ok(cs.metaDescription.length > 80);
     for (const { answer } of faqs) {
       assert.ok(answer.split(/\s+/).length >= 35);
       assert.doesNotMatch(answer, /\$\d|\b\d+\s*(?:mm|m|kg|hours|days|weeks|years)\b|typically no|almost always|will carry that|before any maintenance|standard approach|will outlast/i);
@@ -72,8 +73,6 @@ test('fireplace, concrete, underpinning, seawall and damp FAQs require the appro
   assert.match(answers('sandstone-seawall-restoration-mosman'), /does not automatically make seawall work exempt/);
   assert.match(answers('sandstone-chimney-rebuild-eastern-suburbs'), /does not certify the flue or fireplace/);
   assert.match(answers('brick-repointing-victorian-terrace-paddington'), /not a diagnosis for every terrace/);
-  assert.doesNotMatch(bySlug['stone-veneer-fireplace-inner-west'].result.join(' '), /heat from the fire had cured the mortar harder/);
-  assert.doesNotMatch(bySlug['concrete-cancer-repair-strata-north-shore'].result.join(' '), /15\+ years before any maintenance/);
 });
 
 for (const cs of caseStudies) {
@@ -88,7 +87,11 @@ for (const cs of caseStudies) {
     const faq = schemas.find(s => s['@type'] === 'FAQPage');
     assert.equal(doc.querySelectorAll('h1').length, 1);
     assert.equal(doc.querySelector('link[rel="canonical"]').href, `${production}${route}`);
-    assert.equal(schemas.find(s => s['@type'] === 'Article').mainEntityOfPage['@id'], `${production}${route}`);
+    assert.equal(schemas.find(s => s['@type'] === 'WebPage').url, `${production}${route}`);
+    assert.ok(schemas.every(s => !s.contentLocation && !s.datePublished));
+    assert.equal(doc.querySelectorAll('img').length, 0);
+    assert.match(doc.body.textContent, /not a completed-project record/);
+    assert.doesNotMatch(doc.body.textContent, /weeks on site|Completed 202|What the client got|38%|signed off the work/);
     assert.match(doc.querySelector('aside[aria-label="Project-specific repair guidance"]').textContent, /not a repair specification for another property/);
     assert.ok(doc.querySelector('a[href="tel:0414922276"]'));
     assert.equal(faq.mainEntity.length, 3);
@@ -101,3 +104,39 @@ for (const cs of caseStudies) {
     dom.window.close();
   });
 }
+
+for (const [file, name, count] of [
+  ['src/pages/case-studies/CaseStudiesIndexPage.tsx', 'default', 8],
+  ['src/components/home/HomeCaseStudiesSection.tsx', 'HomeCaseStudiesSection', 3],
+]) {
+  test(`${file} links to the neutral references without restoring project claims`, () => {
+    const Component = loadSource(path.join(root, file))[name];
+    const context = {};
+    const html = renderToStaticMarkup(createElement(HelmetProvider, { context },
+      createElement(StaticRouter, { location: '/case-studies' }, createElement(QuoteModalProvider, null, createElement(Component)))));
+    const doc = new JSDOM(html).window.document;
+    assert.equal(doc.querySelectorAll('article').length, count);
+    assert.equal(doc.querySelectorAll('article img').length, 0);
+    assert.doesNotMatch(doc.body.textContent, /Real results|Real projects|Sydney CBD|Mosman|Completed 20|no AI renders/i);
+    for (const cs of caseStudies.slice(0, count)) {
+      assert.ok(doc.querySelector(`a[href="/case-studies/${cs.slug}"]`));
+      assert.ok(doc.body.textContent.includes(cs.metaTitle));
+    }
+    for (const schema of doc.querySelectorAll('script[type="application/ld+json"]')) {
+      const data = JSON.parse(schema.textContent);
+      if (data['@type'] === 'CollectionPage') {
+        assert.deepEqual(data.mainEntity.itemListElement.map(item => item.name), caseStudies.map(cs => cs.metaTitle));
+      }
+    }
+    doc.defaultView.close();
+  });
+}
+
+test('referring guides and the release quote check use the reference-page wording', () => {
+  const read = file => readFileSync(path.join(root, file), 'utf8');
+  assert.doesNotMatch(read('src/pages/learn/RepointingSignsPage.tsx'), /Proof pages|real jobs/);
+  assert.doesNotMatch(read('src/pages/heritage/HeritageHubPage.tsx'), /existing project case study|published project account/);
+  const checks = read('scripts/verify-quote-prefills.mjs');
+  assert.doesNotMatch(checks, /Get a quote for similar work/);
+  assert.match(checks, /\['\/case-studies\/heritage-church-brick-restoration-sydney-cbd\/', 'Get a quote', '2'\]/);
+});

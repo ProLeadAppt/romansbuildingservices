@@ -232,7 +232,7 @@
   "hubSkeletons": {
     "src/pages/areas/SydneyCBDPage.tsx": "b8c5a71b327e4510cee394a16e17996c13f412d68be331149c25dda2864a6fe7",
     "src/pages/areas/EasternSuburbsPage.tsx": "4db117cc3ca29b7b742c0fa555f4ca1683607cd314e22d34a5ccf4440018cc89",
-    "src/pages/areas/NorthShorePage.tsx": "5aebb5e8361484d8355ca652f4f4f6792ad98b82eff33fa75059f2c37d132861",
+    "src/pages/areas/NorthShorePage.tsx": "6f163056f1bd792285d860656d264f3267a54836bc84742b28e00df637aabc03",
     "src/pages/areas/NorthernBeachesPage.tsx": "f00630a348cba95c6670c2daf29a53b3f09daab00e43561568af0ffad5d33ac1",
     "src/pages/areas/InnerWestPage.tsx": "f67117498a37c03b93001624e30191d4900e0785a4b7ece654a4390f1b820b4e",
     "src/pages/areas/GreaterSydneyPage.tsx": "5cbf98a5408e554ec5590fa0cb1a9535349554ff7140e855966912622e779be2"

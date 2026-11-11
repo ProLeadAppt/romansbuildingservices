@@ -101,7 +101,7 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Licenced stonemasons specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
   url: toCanonicalPageUrl(BUSINESS_INFO.website),
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
@@ -129,15 +129,6 @@ const localBusinessSchema: SchemaObject = {
     availableLanguage: "English",
     areaServed: BUSINESS_INFO.areaServed
   },
-  hasCredential: {
-    "@type": "EducationalOccupationalCredential",
-    name: "NSW Masonry Contractor Licence",
-    credentialCategory: "Professional Licence",
-    recognizedBy: {
-      "@type": "Organization",
-      name: "NSW Fair Trading"
-    }
-  },
   // Visits are by appointment; omit clock times until actual hours are confirmed.
   knowsAbout: BUSINESS_INFO.knowsAbout,
   founder: {
@@ -146,43 +137,7 @@ const localBusinessSchema: SchemaObject = {
     jobTitle: BUSINESS_INFO.founder.jobTitle
   },
   slogan: "Masonry. Restoration. Remedial.",
-  // Real Google Business Profile reviews (current as of 2026-06-21).
-  // Pulled from https://maps.app.goo.gl/UpfsPkQJJpw5avzw6 — do not edit
-  // without re-reading GBP. Markup alone does not establish eligibility
-  // for review stars or any other search-result feature.
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: 4.9,
-    reviewCount: 38,
-    bestRating: 5,
-    worstRating: 1
-  },
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Alex K." },
-      datePublished: "2025-11-14",
-      reviewBody:
-        "Minas rebuilt the front sandstone wall on our Victorian terrace in Paddington. Matched the original stone perfectly and the lime mortar joints are spot on. Honest timeline and the price was the price.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Jenny R." },
-      datePublished: "2025-09-02",
-      reviewBody:
-        "Strata used Romans for concrete cancer repairs on our apartment block in Strathfield. Minas explained every step, kept the site clean and the result looks new. The committee was happy with how it was run.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "David M." },
-      datePublished: "2025-07-21",
-      reviewBody:
-        "Heritage repointing on our 1890s terrace in Newtown. Minas knew the original mortar type and matched it colour and profile. Forty-year repair done right. Easy to deal with throughout.",
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 }
-    }
-  ],
+  // Omit credentials and reviews until current source evidence is confirmed.
   // Entity linking — connects this business to known topical entities
   // Helps AI/Google associate Romans with these subjects as an authority
   about: [

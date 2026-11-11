@@ -13,9 +13,9 @@ No claim may move from this file into new homepage prominence without Approved s
 | response-24h | Minas will call back within 24 hours. | Unverified for P2 amplification | Existing form copy is not sufficient evidence of operational consistency. | Do not promote as guarantee. |
 | start-times | Small jobs usually start in two to four weeks. | Existing page claim, not approved for amplification | Availability varies. | Keep out of hero and proof sections. |
 | price-ranges | Small repairs, chimney rebuilds and seawalls fit stated price bands. | Existing page claim, not approved for amplification | Price depends on scope and current market. | Do not repeat outside existing FAQ until confirmed. |
-| project-results | Featured case-study problem, method and result details are accurate. | Approved only by exact project record | Use only the existing approved case-study text and imagery. Do not combine facts across projects. | Featured case studies permitted. |
-| testimonial-attribution | A quoted statement can be attributed as written. | Approved only where the exact case-study record includes attribution. | Anonymous or role-only attribution must remain exact. | Case-study link, not generic homepage quote unless selected verbatim. |
-| no-stock | Homepage project imagery is Romans work rather than stock. | Approved for curated project library | Existing gallery and production statement. Exclude identified inspiration images. | Proof section permitted after image provenance check. |
+| project-results | Historical case-study narratives require source verification. | Withheld pending approved source records | Existing site text is not independent evidence. All eight legacy URLs now provide general repair references, not project proof. | Do not restore dates, locations, client identities, costs, methods or outcomes without supporting records. |
+| testimonial-attribution | Attribution requires the original statement and permission to publish. | Unverified | A quotation appearing in old site copy is not approval evidence. | Withhold until verified. |
+| no-stock | Archive images document visible subjects, not independently verified project identities. | Limited visual review only | Eight featured images reviewed against pixels; historical captions and inclusion in the gallery do not establish location, client, date, method, material origin or outcome. | Use neutral visual descriptions; do not present reference-page images as project proof. |
 
 ## Copy rules
 

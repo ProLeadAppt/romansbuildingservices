@@ -143,12 +143,12 @@ export const galleryImages: GalleryImage[] = [
     featured: false,
   },
 
-  // === Timestamp 1466993917 — Church brick restoration ===
+  // === Timestamp 1466993917 — Stone wall detail ===
   {
     id: 'romansstone_1466993917_1281560327394079553_2394650725',
     thumb: '/gallery/thumbs/romansstone_1466993917_1281560327394079553_2394650725.webp',
     full: '/gallery/full/romansstone_1466993917_1281560327394079553_2394650725.webp',
-    alt: 'Heritage church brick restoration with worker on-site',
+    alt: 'Stone block wall with loose blocks above and tools nearby',
     category: 'heritage',
     featured: true,
   },
@@ -319,12 +319,12 @@ export const galleryImages: GalleryImage[] = [
     featured: false,
   },
 
-  // === Timestamp 1545465691 — Sandstone steps bushland ===
+  // === Timestamp 1545465691 — Paved garden path ===
   {
     id: 'romansstone_1545465691_1939829271515579573_2394650725',
     thumb: '/gallery/thumbs/romansstone_1545465691_1939829271515579573_2394650725.webp',
     full: '/gallery/full/romansstone_1545465691_1939829271515579573_2394650725.webp',
-    alt: 'Rustic sandstone steps winding through bushland garden',
+    alt: 'Paved path beside stone edging and a planted slope',
     category: 'stonework',
     featured: true,
   },
@@ -710,7 +710,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1571599727_2159057455018301350_2394650725',
     thumb: '/gallery/thumbs/romansstone_1571599727_2159057455018301350_2394650725.webp',
     full: '/gallery/full/romansstone_1571599727_2159057455018301350_2394650725.webp',
-    alt: 'Finished sandstone garden wall with landscaped hedge',
+    alt: 'Low stone wall beside a hedge and lawn with a brick building behind',
     category: 'completed',
     featured: true,
   },
@@ -746,7 +746,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1571801227_2160747763900813654_2394650725',
     thumb: '/gallery/thumbs/romansstone_1571801227_2160747763900813654_2394650725.webp',
     full: '/gallery/full/romansstone_1571801227_2160747763900813654_2394650725.webp',
-    alt: 'Sandstone block wall overlooking Sydney Harbour',
+    alt: 'Close view of stone blocks and mortar joints with water behind',
     category: 'stonework',
     featured: true,
   },
@@ -920,7 +920,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1572902412_2169985170382604428_2394650725',
     thumb: '/gallery/thumbs/romansstone_1572902412_2169985170382604428_2394650725.webp',
     full: '/gallery/full/romansstone_1572902412_2169985170382604428_2394650725.webp',
-    alt: 'Heritage sandstone seawall with Sydney Harbour Bridge backdrop',
+    alt: 'Stone block walls at the waterline with a bridge in the background',
     category: 'heritage',
     featured: true,
   },
@@ -2092,7 +2092,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1610308835_2483772994075744932_2394650725',
     thumb: '/gallery/thumbs/romansstone_1610308835_2483772994075744932_2394650725.webp',
     full: '/gallery/full/romansstone_1610308835_2483772994075744932_2394650725.webp',
-    alt: 'Stunning stone veneer fireplace surround in living room',
+    alt: 'Textured stone facing around a fireplace opening',
     category: 'completed',
     featured: true,
   },
@@ -2238,7 +2238,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1617135591_2541039971017938059_2394650725',
     thumb: '/gallery/thumbs/romansstone_1617135591_2541039971017938059_2394650725.webp',
     full: '/gallery/full/romansstone_1617135591_2541039971017938059_2394650725.webp',
-    alt: 'Two stonemasons building sandstone chimney on rooftop',
+    alt: 'Two people working around stone blocks above roof level',
     category: 'on-the-tools',
     featured: true,
   },
@@ -2374,7 +2374,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'romansstone_1625099894_2607849386215395716_2394650725',
     thumb: '/gallery/thumbs/romansstone_1625099894_2607849386215395716_2394650725.webp',
     full: '/gallery/full/romansstone_1625099894_2607849386215395716_2394650725.webp',
-    alt: 'Luxury sandstone bathroom with freestanding bath and fireplace',
+    alt: 'Textured stone walls around a bathroom basin and mirror',
     category: 'completed',
     featured: true,
   },

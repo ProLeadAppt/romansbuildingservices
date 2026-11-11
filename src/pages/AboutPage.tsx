@@ -243,7 +243,7 @@ export default function AboutPage() {
           items={[
             { label: 'Services', href: '/services', sublabel: 'What we actually do on site' },
             { label: 'Repair advice', href: '/learn', sublabel: 'Understand symptoms, materials and repair options' },
-            { label: 'Case studies', href: '/case-studies', sublabel: 'Real jobs, not stock photos' },
+            { label: 'Repair references', href: '/case-studies', sublabel: 'Repair questions and related services' },
             { label: 'Our local service focus', href: '/areas/hawkesbury-western-sydney', sublabel: 'Hawkesbury and Western Sydney enquiry guidance' },
           ]}
           columns={2}

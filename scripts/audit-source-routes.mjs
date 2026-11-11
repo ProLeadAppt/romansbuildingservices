@@ -118,7 +118,7 @@ export function auditSourceRoutes(root = projectRoot) {
   for (const data of Object.values(HERITAGE_ERAS)) inspectLinks(`heritage:${data.slug}`, data);
   for (const data of getAllCaseStudies()) {
     inspectLinks(`case-study:${data.slug}`, data);
-    checkLink(`case-study:${data.slug}`, data.locationHref ?? `/suburbs/${data.suburbSlug}`);
+    // Reference pages no longer imply a verified project location.
   }
   const { serviceHierarchy } = load('src/data/serviceHierarchy.ts');
   for (const service of serviceHierarchy) {

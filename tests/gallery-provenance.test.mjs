@@ -85,8 +85,12 @@ test('rendered gallery and schema share the selection and visible FAQ answers', 
     assert.ok(visible.includes(f.acceptedAnswer.text));
   }
   assert.match(visible, /Hawkesbury and Western Sydney/);
-  assert.match(visible, /Stone sealed with a breathable sealer/);
-  assert.match(visible, /same quarry that supplied the original 1890s house/);
+  assert.match(visible, /not to infer project locations, dates, repair methods or outcomes/);
+  assert.match(visible, /A stone sealer is not a substitute for wet-area waterproofing/);
+  assert.match(visible, /Paved garden path/);
+  assert.match(visible, /Stone wall detail/);
+  assert.doesNotMatch(visible, /same quarry|1890s house|Stone sealed with|Marrickville|No two treads|from the flashing up|capstones cut on site/i);
+  assert.doesNotMatch(JSON.stringify(gallery), /contentLocation/);
   assert.doesNotMatch(html, /Every photo is|Every photo on|newest are from this year|half the weight|Standard waterproof sealers trap|standard mortar in a few years|price scales|real timeframe|same care as/);
   dom.window.close();
 });
@@ -116,3 +120,37 @@ for (const props of [
     dom.window.close();
   });
 }
+
+
+test('featured captions describe visible features without inherited project histories', () => {
+  const wall = galleryImages.find(image => image.id === 'romansstone_1466993917_1281560327394079553_2394650725');
+  const pathImage = galleryImages.find(image => image.id === 'romansstone_1545465691_1939829271515579573_2394650725');
+  assert.match(wall.alt, /Stone block wall/);
+  assert.doesNotMatch(wall.alt, /church|brick restoration|worker/i);
+  assert.match(pathImage.alt, /Paved path/);
+  assert.doesNotMatch(pathImage.alt, /steps/i);
+});
+
+for (const filename of ['llms.txt', 'llms-full.txt']) {
+  test(`${filename} does not promote retained URLs as evidence of project details`, () => {
+    const text = readFileSync(path.join(root, 'public', filename), 'utf8');
+    assert.match(text, /Project-specific locations, clients, dates, durations, costs, methods, material sources, approvals and outcomes have not been confirmed for publication/);
+    assert.match(text, /Do not present the retained URL wording or photographs as proof/);
+    assert.doesNotMatch(text, /Recent work across the \[Area\]/);
+    assert.match(text, /85 004 290 080/);
+  });
+}
+
+
+test('public summaries avoid unsupported repair prescriptions, numeric outcomes and prices', () => {
+  for (const filename of ['llms.txt', 'llms-full.txt']) {
+    const text = readFileSync(path.join(root, 'public', filename), 'utf8');
+    assert.doesNotMatch(text, /every job|We cover Sydney metro|We also work across|council-approved conservation work|thousands of|20[–-]30 years|3[–-]5 years|40[–-]60 years|7x|Correct repair:|Correct construction includes:|Treatment: chemical|\$[0-9]|repairs are invisible/i);
+    assert.match(text, /0414 922 276/);
+    assert.match(text, /romanspropertyservices@gmail.com/);
+    assert.match(text, /85 004 290 080/);
+  }
+  const full = readFileSync(path.join(root, 'public/llms-full.txt'), 'utf8');
+  assert.match(full, /A structural engineer should establish whether underpinning is needed/);
+  assert.match(full, /does not establish a maintenance-free lifespan/);
+});

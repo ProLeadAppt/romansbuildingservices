@@ -70,9 +70,9 @@ const RepointingSignsPage = () => {
       description: 'Practical guides to building defects, repair options and planning an assessment.',
     },
     {
-      name: 'Case studies index',
+      name: 'Repair references',
       url: 'https://romansbuildingservices.com/case-studies',
-      description: 'Proof pages that show how the advice plays out on real jobs.',
+      description: 'General repair planning questions and links to related services.',
     },
     {
       name: 'Masonry vs remedial building',

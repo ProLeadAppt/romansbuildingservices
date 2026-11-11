@@ -96,7 +96,7 @@ export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { vide
             North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas.
           </p>
           <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/30 pt-5 font-body text-sm text-white">
-            <span>Established 1995</span><span>Owner-led</span><span>Licenced &amp; insured</span>
+            <span>Established 1995</span><span>Owner-led</span><span>Discuss your project</span>
           </div>
         </div>
         <div ref={mediaRef} data-hero-media className="relative isolate mt-0 aspect-[1.08] overflow-hidden rounded bg-navy lg:mt-24">

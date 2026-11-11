@@ -19,7 +19,7 @@ const NorthShorePage = () => (
   <>
     <SEO
       title="North Shore Masonry and Building Services | Romans"
-      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Licenced and insured since 1995."
+      description="Masonry and heritage work across Sydney's North Shore. Mosman, Neutral Bay, Lane Cove, and Chatswood. Family business established in 1995."
       canonical="/areas/north-shore"
     />
     <PlaceSchema

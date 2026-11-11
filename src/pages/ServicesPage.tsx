@@ -113,7 +113,7 @@ export default function ServicesPage() {
     <>
       <SEO
         title="Sydney Masonry, Heritage & Structural Repairs | Romans"
-        description="Sydney masonry, heritage restoration, structural, concrete and foundation repair services by Minas Romanakis. Licenced and built for long-term results."
+        description="Sydney masonry, heritage restoration, structural, concrete and foundation repair services by Minas Romanakis. Discuss your project and repair scope."
         canonical="/services"
       />
       <CollectionPageSchema
@@ -210,7 +210,7 @@ export default function ServicesPage() {
           items={[
             { label: 'Learn hub', href: '/learn', sublabel: 'Plain-English repair guides' },
             { label: 'Areas we service', href: '/areas', sublabel: 'Sydney suburbs and regions' },
-            { label: 'Case studies', href: '/case-studies', sublabel: 'Proof from real jobs' },
+            { label: 'Repair references', href: '/case-studies', sublabel: 'General repair reference pages' },
             { label: 'Building problems', href: '/problems', sublabel: 'Warning signs and assessment guidance' },
             { label: 'Heritage hub', href: '/heritage', sublabel: 'Period materials and restoration guidance' },
             { label: 'About Romans', href: '/about', sublabel: 'The owner, the history and the crew' },

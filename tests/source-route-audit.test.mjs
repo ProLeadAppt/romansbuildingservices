@@ -50,7 +50,8 @@ test('article schemas do not attribute a review with no recorded review evidence
     assert.doesNotMatch(content, /reviewedBy/);
     assert.match(content, /toCanonicalPageUrl/);
   }
-  assert.match(read('src/components/CaseStudyTemplate.tsx'), /toAbsoluteMediaUrl\(cs\.hero\.src\)/);
+  assert.match(read('src/components/CaseStudyTemplate.tsx'), /'@type': 'WebPage'/);
+  assert.doesNotMatch(read('src/components/CaseStudyTemplate.tsx'), /contentLocation|cs\.hero|reviewedBy/);
 });
 
 test('about and service hubs avoid invented technical outcomes and unsupported mix statistics', () => {
