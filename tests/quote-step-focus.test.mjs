@@ -68,7 +68,7 @@ async function mount(variant = 'inline', initialService) {
 const button = text => Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === text);
 async function click(b) { await change(() => { b.focus(); b.click(); }); }
 async function input(id, value) {
-  const field = document.getElementById(id);
+  const field = document.querySelector(`[name="${id.replace('qs-', '')}"]`);
   await change(() => {
     Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set.call(field, value);
     field.dispatchEvent(new Event('input', { bubbles: true }));
@@ -104,9 +104,9 @@ test('Next and Back focus the new step, but ordinary typing does not steal focus
   await contact();
   assert.equal(document.activeElement.tagName, 'H3');
   assert.match(document.activeElement.textContent, /How do we reach/);
-  document.getElementById('qs-name').focus();
+  document.querySelector('[name=name]').focus();
   await input('qs-name', 'Test Person');
-  assert.equal(document.activeElement.id, 'qs-name');
+  assert.equal(document.activeElement.getAttribute('name'), 'name');
   await click(button('Back'));
   assert.equal(document.activeElement.tagName, 'H3');
   assert.match(document.activeElement.textContent, /Where/);
@@ -141,7 +141,7 @@ test('failed submission retains the current control and input values', async () 
   await ready();
   await submit();
   assert.equal(document.activeElement.type, 'submit');
-  assert.equal(document.getElementById('qs-name').value, 'Test Person');
+  assert.equal(document.querySelector('[name=name]').value, 'Test Person');
   assert.equal(document.querySelector('[role=alert]').textContent, 'Offline');
 });
 test('late success does not steal focus deliberately moved outside the survey', async () => {

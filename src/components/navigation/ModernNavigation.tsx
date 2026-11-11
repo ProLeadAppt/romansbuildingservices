@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
-import { QuoteCTAButton } from '@/components/quote';
+import { QuoteCTAButton, useQuoteModal } from '@/components/quote';
+import * as Dialog from '@radix-ui/react-dialog';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -43,6 +44,11 @@ export const ModernNavigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
   const location = useLocation();
+  const { open: openQuote } = useQuoteModal();
+  const menuTrigger = useRef<HTMLButtonElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const logoLink = useRef<HTMLAnchorElement>(null);
+  const quotePending = useRef(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close mobile menu on route change
@@ -95,13 +101,16 @@ export const ModernNavigation = () => {
   };
 
   return (
-    <nav
+    <Dialog.Root open={mobileOpen} onOpenChange={(open) => {
+      if (!open || !window.matchMedia('(min-width: 1024px)').matches) setMobileOpen(open);
+    }}>
+    <nav aria-label="Main navigation"
       className={`fixed top-0 left-0 w-full z-50 bg-navy transition-[padding] duration-200 ease-in-out ${
         scrolled ? 'py-2' : 'py-4'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="shrink-0">
+        <Link ref={logoLink} to="/" className="shrink-0">
           <img
             src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
             alt="Romans Building Services"
@@ -209,26 +218,48 @@ export const ModernNavigation = () => {
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          type="button"
-          className="lg:hidden text-white p-2 -mr-2"
-          onClick={() => {
-            if (!window.matchMedia('(min-width: 1024px)').matches) {
-              setMobileOpen((prev) => !prev);
-            }
-          }}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}>
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <Dialog.Trigger asChild>
+          <button
+            ref={menuTrigger}
+            type="button"
+            className="lg:hidden text-white p-2 -mr-2"
+            aria-label="Open menu">
+            <Menu className="w-6 h-6" />
+          </button>
+        </Dialog.Trigger>
       </div>
 
-      {/* Mobile overlay */}
-{mobileOpen && (
-<div
-            className="fixed inset-0 top-0 bg-navy z-40 flex flex-col lg:hidden">
+    </nav>
+      {/* Portal keeps the dialog outside the background navigation landmark. */}
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 bg-navy z-[80] lg:hidden" />
+        <Dialog.Content
+          aria-modal="true"
+          aria-describedby={undefined}
+          className="fixed inset-0 top-0 bg-navy z-[80] flex flex-col overflow-y-auto lg:hidden"
+          onOpenAutoFocus={(event) => {
+            event.preventDefault();
+            closeButton.current?.focus();
+          }}
+          onCloseAutoFocus={(event) => {
+            event.preventDefault();
+            // Hand off only after the menu focus scope has been removed. The
+            // menu CTA unmounts, so the persistent hamburger is the quote opener.
+            if (quotePending.current) {
+              quotePending.current = false;
+              openQuote(undefined, menuTrigger.current ?? undefined);
+              return;
+            }
+            // Preserve deliberate focus and avoid restoring on route unmount.
+            if (mobileOpen || document.activeElement !== document.body) return;
+            const target = window.matchMedia('(min-width: 1024px)').matches
+              ? logoLink.current : menuTrigger.current;
+            if (target?.isConnected) target.focus({ preventScroll: true });
+          }}>
+          <Dialog.Title className="sr-only">Main menu</Dialog.Title>
             {/* Mobile header */}
             <div className="flex items-center justify-between px-4 sm:px-6 py-4">
-              <Link to="/">
+              <Link to="/" onClick={() => setMobileOpen(false)}>
                 <img
                   src="/lovable-uploads/03e057ec-f76b-425e-99fd-289e0c734fa3.webp"
                   alt="Romans Building Services"
@@ -236,6 +267,7 @@ export const ModernNavigation = () => {
                 />
               </Link>
               <button
+                ref={closeButton}
                 type="button"
                 className="text-white p-2 -mr-2"
                 onClick={() => setMobileOpen(false)}
@@ -245,11 +277,12 @@ export const ModernNavigation = () => {
             </div>
 
             {/* Mobile nav links */}
-            <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
+            <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center px-8 gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
+                  onClick={() => setMobileOpen(false)}
                   className={`font-heading text-2xl font-semibold transition-colors ${
                     isActive(link.href) ? 'text-white font-semibold' : 'text-white hover:text-white/80'
                   }`}>
@@ -266,15 +299,18 @@ export const ModernNavigation = () => {
                 <Phone className="w-5 h-5" />
                 {PHONE_NUMBER}
               </a>
-              <QuoteCTAButton
-                onClick={() => setMobileOpen(false)}
+              <button
+                type="button"
+                onClick={() => {
+                  quotePending.current = true;
+                  setMobileOpen(false);
+                }}
                 className="bg-amber hover:bg-amber/90 text-navy font-body font-semibold text-base px-5 py-3 rounded-md transition-colors text-center w-full">
                 Get a Quote
-              </QuoteCTAButton>
+              </button>
             </div>
-          </div>
-        )}
-      
-    </nav>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 };

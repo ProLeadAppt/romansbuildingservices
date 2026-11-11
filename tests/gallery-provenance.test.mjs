@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import ts from 'typescript';
+import { createHash } from 'node:crypto';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -36,18 +37,14 @@ const { renderToStaticMarkup } = require('react-dom/server');
 const { HelmetProvider } = require('react-helmet-async');
 const { JSDOM } = require('jsdom');
 const { StaticRouter } = require('react-router-dom');
+const { QuoteModalProvider } = loadSource(path.join(root, 'src/components/quote/QuoteSurveyContext.tsx'));
 const production = 'https://romansbuildingservices.com';
 
-const { galleryImages } = loadSource(path.join(root, 'src/data/galleryImages.ts'));
-const { projectGalleryImages } = loadSource(path.join(root, 'src/data/projectGallery.ts'));
+const { galleryImages, categories } = loadSource(path.join(root, 'src/data/galleryImages.ts'));
+const { projectGalleryImages, withheldImageIds, selectArchiveImages } = loadSource(path.join(root, 'src/data/projectGallery.ts'));
 const GalleryPage = loadSource(path.join(root, 'src/pages/ProjectsPage.tsx')).default;
-const withheld = [
-  'romansstone_1452322412_1158486817214519324_2394650725',
-  'romansstone_1452669491_1161398328954149042_2394650725',
-  'romansstone_1453101503_1165022313365330508_2394650725',
-  'romansstone_1453245919_1166233759147317353_2394650725',
-  'romansstone_1572463327_2166301860074648889_2394650725',
-];
+const expected = JSON.parse(readFileSync(path.join(root, 'tests/fixtures/gallery-archive-expectations.json'), 'utf8'));
+const withheld = expected.withheld;
 
 test('disputed archive entries and their assets remain intact but outside the project selection', () => {
   assert.equal(projectGalleryImages.length, galleryImages.length - withheld.length);
@@ -74,6 +71,8 @@ test('rendered gallery and schema share the selection and visible FAQ answers', 
   const faq = schemas.find(s => s['@type'] === 'FAQPage');
   const gallery = schemas.find(s => s['@type'] === 'ImageGallery');
   assert.ok(gallery);
+  assert.match(gallery.name, /Photo archive/);
+  assert.doesNotMatch(gallery.description, /Real projects|across Sydney/);
   for (const image of projectGalleryImages.filter(i => i.featured).slice(0, 20)) assert.ok(JSON.stringify(gallery).includes(image.full));
   assert.equal(doc.querySelectorAll('article').length, 8);
   assert.equal(doc.querySelector('link[rel="canonical"]').href, `${production}/gallery/`);
@@ -153,4 +152,137 @@ test('public summaries avoid unsupported repair prescriptions, numeric outcomes 
   const full = readFileSync(path.join(root, 'public/llms-full.txt'), 'utf8');
   assert.match(full, /A structural engineer should establish whether underpinning is needed/);
   assert.match(full, /does not establish a maintenance-free lifespan/);
+});
+
+
+test('all 300 archive identities and reviewed caption/category pairs remain intact', () => {
+  assert.equal(galleryImages.length, 300);
+  assert.equal(new Set(galleryImages.map(image => image.id)).size, 300);
+  assert.deepEqual(galleryImages.map(image => image.id), expected.ids);
+  const pairs = galleryImages.map(({ id, alt, category }) => [id, alt, category]);
+  assert.equal(createHash('sha256').update(JSON.stringify(pairs)).digest('hex'), expected.captionCategoryDigest);
+  assert.deepEqual(categories.map(category => category.value), ['all', 'stonework', 'brickwork', 'concrete-structures', 'workshop-tools', 'gardens-waterfront', 'other-archive']);
+  for (const image of galleryImages) {
+    assert.ok(categories.some(category => category.value === image.category));
+    assert.equal(image.thumb, `/gallery/thumbs/${image.id}.webp`);
+    assert.equal(image.full, `/gallery/full/${image.id}.webp`);
+    assert.ok(existsSync(path.join(root, 'public', image.thumb)));
+    assert.ok(existsSync(path.join(root, 'public', image.full)));
+    assert.doesNotMatch(image.alt, /requiring restoration|Ancient stone ruins|Completed brick retaining wall|Decorative stone capital|Detailed sandstone carving work|heritage|underpinning/i);
+  }
+  assert.equal(withheld.length, 17);
+  assert.equal(projectGalleryImages.length, 283);
+  assert.deepEqual([...withheldImageIds], withheld);
+  assert.deepEqual(selectArchiveImages(withheld), []);
+});
+
+for (const file of ['Footer.tsx', 'ProjectGallerySection.tsx']) {
+  test(`${file} derives public previews from reviewed captions and display exclusions`, () => {
+    const Component = loadSource(path.join(root, 'src/components', file))[file.replace('.tsx', '')];
+    const html = renderToStaticMarkup(createElement(StaticRouter, null, createElement(QuoteModalProvider, null, createElement(Component))));
+    const dom = new JSDOM(html);
+    const images = [...dom.window.document.querySelectorAll('img')].filter(image => image.getAttribute('src').startsWith('/gallery/'));
+    assert.ok(images.length > 0);
+    for (const image of images) {
+      const source = projectGalleryImages.find(entry => entry.thumb === image.getAttribute('src'));
+      assert.ok(source);
+      assert.equal(image.alt, source.alt);
+    }
+    for (const id of withheld) assert.ok(!html.includes(id));
+    dom.window.close();
+  });
+}
+
+test('gallery metadata and headings describe an archive without location or completion claims', () => {
+  const source = readFileSync(path.join(root, 'src/pages/ProjectsPage.tsx'), 'utf8');
+  assert.match(source, /title="Photo archive/);
+  assert.doesNotMatch(source, /Real Sydney|earlier Sydney projects|stage of completion|completed work|See Our Work/);
+  assert.match(source, /Locations, ownership, dates and completion status are not/);
+});
+
+test('service metadata derives captions from the display archive without stale copies', () => {
+  const { serviceImageMetadata } = loadSource(path.join(root, 'src/data/serviceImageMetadata.ts'));
+  for (const image of projectGalleryImages) {
+    assert.equal(serviceImageMetadata[image.thumb].alt, image.alt);
+    assert.equal(serviceImageMetadata[image.full].alt, image.alt);
+  }
+  for (const image of galleryImages.filter(image => withheldImageIds.has(image.id))) {
+    assert.equal(serviceImageMetadata[image.thumb], undefined);
+    assert.equal(serviceImageMetadata[image.full], undefined);
+  }
+});
+
+test('service heroes, service galleries and About do not redisplay withheld images', () => {
+  const { ServicePageTemplate } = loadSource(path.join(root, 'src/components/ServicePageTemplate.tsx'));
+  const held = galleryImages.filter(image => withheldImageIds.has(image.id));
+  const context = {};
+  const html = renderToStaticMarkup(createElement(HelmetProvider, { context },
+    createElement(StaticRouter, { location: '/services/masonry/' },
+      createElement(QuoteModalProvider, null, createElement(ServicePageTemplate, {
+        title: 'Masonry', metaTitle: 'Masonry', metaDescription: 'Masonry details',
+        heroImage: held[0].thumb, intro: [], features: [], faqs: [],
+        galleryImages: [...held.map(image => image.thumb), projectGalleryImages[0].thumb],
+      })))));
+  for (const id of withheld) {
+    assert.ok(!html.includes(id));
+    assert.ok(!context.helmet.meta.toString().includes(id));
+  }
+  const dom = new JSDOM(html);
+  const photo = dom.window.document.querySelector(`img[src="${projectGalleryImages[0].thumb}"]`);
+  assert.equal(photo.alt, projectGalleryImages[0].alt);
+  dom.window.close();
+  const about = readFileSync(path.join(root, 'src/pages/AboutPage.tsx'), 'utf8');
+  for (const id of withheld) assert.ok(!about.includes(id));
+});
+
+test('image sitemap uses reviewed captions and exact images rendered on each canonical page', () => {
+  const xml = readFileSync(path.join(root, 'public/sitemap-images.xml'), 'utf8');
+  const dom = new JSDOM(xml, { contentType: 'text/xml' });
+  const sitemap = dom.window.document;
+  const ns = 'http://www.sitemaps.org/schemas/sitemap/0.9';
+  const imageNs = 'http://www.google.com/schemas/sitemap-image/1.1';
+  const pages = new Map([
+    ['/', 'SinglePageApp.tsx'],
+    ['/gallery/', 'ProjectsPage.tsx'],
+    ['/services/masonry/', 'services/MasonryPage.tsx'],
+    ['/services/building-restoration/', 'services/BuildingRestorationPage.tsx'],
+  ]);
+  const { Footer } = loadSource(path.join(root, 'src/components/Footer.tsx'));
+  const urls = [...sitemap.getElementsByTagNameNS(ns, 'url')];
+  assert.deepEqual(urls.map(node => node.getElementsByTagNameNS(ns, 'loc')[0].textContent), [...pages.keys()].map(route => production + route));
+  assert.equal(sitemap.getElementsByTagNameNS(imageNs, 'geo_location').length, 0);
+  assert.equal(sitemap.getElementsByTagNameNS(imageNs, 'title').length, 0);
+  let count = 0;
+  for (const node of urls) {
+    const route = new URL(node.getElementsByTagNameNS(ns, 'loc')[0].textContent).pathname;
+    const Page = loadSource(path.join(root, 'src/pages', pages.get(route))).default;
+    const html = renderToStaticMarkup(createElement(HelmetProvider, { context: {} },
+      createElement(StaticRouter, { location: route }, createElement(QuoteModalProvider, null,
+        createElement(Page), createElement(Footer)))));
+    const rendered = new JSDOM(html);
+    const displayed = new Set([...rendered.window.document.querySelectorAll('img')].map(image => image.getAttribute('src')));
+    for (const image of node.getElementsByTagNameNS(imageNs, 'image')) {
+      const loc = image.getElementsByTagNameNS(imageNs, 'loc')[0].textContent;
+      assert.equal(new URL(loc).origin, production);
+      const imagePath = new URL(loc).pathname;
+      assert.ok(displayed.has(imagePath), `${route} renders ${imagePath}`);
+      const entry = projectGalleryImages.find(image => image.thumb === imagePath || image.full === imagePath);
+      assert.ok(entry);
+      assert.equal(image.getElementsByTagNameNS(imageNs, 'caption')[0].textContent, entry.alt);
+      count++;
+    }
+    rendered.window.close();
+  }
+  assert.equal(count, 8);
+  dom.window.close();
+});
+
+test('crawler text and XML do not publish held image IDs or retired direct captions', () => {
+  const oldCaptions = ['Sydney heritage stonework project by Romans Building Services', 'Sydney sandstone seawall and heritage stone restoration work', 'Stone masonry wall work by Romans Building Services in Sydney', 'Real Sydney masonry project from the Romans Building Services gallery', 'Structural steel and masonry repair work on a Sydney building', 'Concrete cancer and remedial building repair work in Sydney', 'Tuckpointing and brick repointing work on Sydney masonry', 'Stone wall rebuild and masonry repair by Romans Building Services in Sydney', 'Building restoration project completed by Romans Building Services in Sydney'];
+  for (const file of readdirSync(path.join(root, 'public')).filter(file => /\.(txt|xml)$/.test(file))) {
+    const text = readFileSync(path.join(root, 'public', file), 'utf8');
+    for (const id of withheld) assert.ok(!text.includes(id), `${file} excludes ${id}`);
+    for (const caption of oldCaptions) assert.ok(!text.includes(caption), `${file} removes retired caption`);
+    assert.doesNotMatch(text, /image:geo_location/);
+  }
 });

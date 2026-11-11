@@ -3,7 +3,6 @@ import { GalleryGrid } from '@/components/GalleryGrid';
 import { projectGalleryImages } from '@/data/projectGallery';
 import galleryVideo from '@/assets/videos/romansstone_1704887055_3277152517439331908_2394650725.mp4';
 import { ImageGallerySchema, FAQSchema } from '@/components/LocalSEO/StructuredData';
-import { Link } from 'react-router-dom';
 
 const SITE_URL = 'https://romansbuildingservices.com';
 const schemaImages = projectGalleryImages
@@ -28,7 +27,7 @@ const galleryFaqs = [
   {
     question: 'Can you do work like this for me?',
     answer:
-      'The gallery covers sandstone, heritage repointing, structural brickwork, garden walls, chimneys, seawalls and fireplaces. If something here resembles your plans, call 0414 922 276 to discuss the location, access and scope. Suitability depends on your property and any design or approval requirements.',
+      'The archive includes stonework, brickwork, garden walls, waterfront scenes and fireplace surrounds. If something here resembles your plans, call 0414 922 276 to discuss the location, access and scope. Suitability depends on your property and any design or approval requirements.',
   },
   {
     question: 'Do you only work on big jobs?',
@@ -43,7 +42,7 @@ const galleryFaqs = [
   {
     question: 'Where do you work?',
     answer:
-      'Our current service focus is Hawkesbury and Western Sydney: North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. The gallery also preserves earlier Sydney projects.',
+      'Our current service focus is Hawkesbury and Western Sydney: North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. The photographs do not establish project locations.',
   },
 ];
 
@@ -97,8 +96,8 @@ const GalleryPage = () => {
   return (
     <>
       <SEO
-        title="Our Work | Real Sydney Masonry & Heritage Projects | Romans"
-        description="Explore sandstone, heritage and structural masonry from the Romans photo archive, including earlier Sydney projects. Now focused on Hawkesbury and Western Sydney."
+        title="Photo archive | Stonework, Brickwork & Details | Romans"
+        description="Explore visible stonework, brickwork, concrete, tools and garden details from the Romans photo archive. Project histories and locations are not verified here."
         canonical="/gallery"
         ogImage="/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp"
       />
@@ -121,10 +120,10 @@ const GalleryPage = () => {
         <div
           className="relative z-10 text-center px-4 py-24">
           <h1 className="font-heading text-4xl md:text-5xl text-white mb-4 text-shadow">
-            See Our Work
+            Photo archive
           </h1>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto">
-            Masonry details, work in progress and earlier Sydney projects from the Romans archive.
+            Stonework, brickwork and other visible subjects from the Romans photo archive.
           </p>
         </div>
       </section>
@@ -133,17 +132,17 @@ const GalleryPage = () => {
       <section className="py-16 md:py-20 px-4 bg-bg-light">
         <div className="max-w-3xl mx-auto font-body text-text-muted space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            The gallery brings together masonry details, work in progress and completed work from
+            The gallery brings together stonework, brickwork, tools and outdoor scenes from
             the Romans photo archive. The featured notes describe visible features;
             photographs alone cannot establish the condition or repair needs of another property.
           </p>
           <p>
             Browse the stone finishes, joint patterns and construction details to find examples
-            relevant to your plans. Earlier Sydney projects remain here alongside our current
-            service focus in Hawkesbury and Western Sydney.
+            relevant to your plans. Locations, ownership, dates and completion status are not
+            established by these photographs. Our current service focus is Hawkesbury and Western Sydney.
           </p>
           <p>
-            If you see a project on this page that looks like what you need, call us on{' '}
+            If you see an image on this page that looks like what you need, call us on{' '}
             <a href="tel:0414922276" className="text-navy underline underline-offset-4">
               0414 922 276
             </a>{' '}
@@ -159,52 +158,32 @@ const GalleryPage = () => {
             What you are looking at
           </h2>
           <p className="font-body text-text-muted text-center mb-12 max-w-2xl mx-auto">
-            The filters group photos by type of work and stage of completion. Use the filter on the grid below to jump to
-            whichever one matches your project.
+            The filters group photographs by visible subject, not building age, repair method or completion status.
           </p>
           <div className="grid md:grid-cols-2 gap-6 font-body text-text-muted">
             <div className="bg-bg-light p-6 rounded-md">
-              <h3 className="font-heading text-xl text-navy mb-2">Heritage</h3>
-              <p className="leading-relaxed">
-                Masonry details associated with older buildings. A photo cannot establish a
-                heritage listing or building age. Check the property records and any conservation
-                requirements before choosing materials or methods.
-              </p>
-            </div>
-            <div className="bg-bg-light p-6 rounded-md">
               <h3 className="font-heading text-xl text-navy mb-2">Stonework</h3>
-              <p className="leading-relaxed">
-                Stone walls, steps, paving and architectural details. Appearance alone does not
-                establish a stone type, quarry source or suitability for a repair. Compare materials
-                and their properties with the requirements of the site.
-              </p>
+              <p className="leading-relaxed">Stone blocks, walls, paving and architectural details. Appearance alone does not establish stone type, source or suitability for a repair.</p>
             </div>
             <div className="bg-bg-light p-6 rounded-md">
-              <h3 className="font-heading text-xl text-navy mb-2">Structural</h3>
-              <p className="leading-relaxed">
-                Brickwork, openings and support details. A photograph does not establish structural
-                capacity or compliance. Seek the relevant design and assessment, with{' '}
-                <Link to="/services/structural-repairs" className="text-navy underline underline-offset-4">
-                  AS 3700 masonry standards
-                </Link>{' '}
-                considered as part of the applicable design and specification.
-              </p>
+              <h3 className="font-heading text-xl text-navy mb-2">Brickwork</h3>
+              <p className="leading-relaxed">Brick walls, openings and joints. Visible details do not establish structural capacity, building age or compliance.</p>
             </div>
             <div className="bg-bg-light p-6 rounded-md">
-              <h3 className="font-heading text-xl text-navy mb-2">Concrete and remedial</h3>
-              <p className="leading-relaxed">
-                Concrete cancer, spalling, render replacement, waterproofing repairs. The fix-it
-                work. Staining, loose finishes or exposed reinforcement can prompt an assessment,
-                but the cause and extent of damage need to be checked before choosing a repair.
-              </p>
+              <h3 className="font-heading text-xl text-navy mb-2">Concrete and structures</h3>
+              <p className="leading-relaxed">Concrete surfaces, frames, slabs and other construction details. A photograph does not establish the cause of damage or the required repair.</p>
             </div>
-            <div className="bg-bg-light p-6 rounded-md md:col-span-2">
-              <h3 className="font-heading text-xl text-navy mb-2">On the tools</h3>
-              <p className="leading-relaxed">
-                Photos of the work happening. Hands, mallets, chisels, mortar boards. Useful if you
-                want to see how the work actually gets done rather than just the finished product.
-                Tools visible in a photograph do not establish the full repair method or specification.
-              </p>
+            <div className="bg-bg-light p-6 rounded-md">
+              <h3 className="font-heading text-xl text-navy mb-2">Workshop and tools</h3>
+              <p className="leading-relaxed">Tools, equipment, vehicles and workshop scenes. Visible equipment does not establish the full construction method.</p>
+            </div>
+            <div className="bg-bg-light p-6 rounded-md">
+              <h3 className="font-heading text-xl text-navy mb-2">Gardens and waterfront</h3>
+              <p className="leading-relaxed">Plants, paths, outdoor areas and views beside the water. These subjects provide visual context without establishing project location.</p>
+            </div>
+            <div className="bg-bg-light p-6 rounded-md">
+              <h3 className="font-heading text-xl text-navy mb-2">Other subjects</h3>
+              <p className="leading-relaxed">Other visible subjects retained in the archive. Inclusion is not verification of ownership or project history.</p>
             </div>
           </div>
         </div>
@@ -261,7 +240,7 @@ const GalleryPage = () => {
       <section className="py-16 md:py-20 px-4 bg-bg-light">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl text-navy mb-10 text-center">
-            Questions people ask about the work
+            Questions about the photo archive
           </h2>
           <div className="space-y-6">
             {galleryFaqs.map((faq) => (

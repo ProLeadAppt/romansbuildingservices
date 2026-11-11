@@ -74,10 +74,10 @@ const CaseStudiesIndexPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { label: 'Learn hub', href: '/learn', note: 'Answer-first guides for masonry, heritage and remedial intent.' },
+              { label: 'Learn hub', href: '/learn', note: 'Practical guides to masonry, heritage and building repairs.' },
               { label: 'Heritage hub', href: '/heritage', note: 'Era-led restoration pages for period homes and listed buildings.' },
               { label: 'Masonry service', href: '/services/masonry', note: 'Primary service page for brick, block, stone and repointing.' },
-              { label: 'Remedial building', href: '/services/remedial-building', note: 'Broader defect and strata remediation authority page.' },
+              { label: 'Remedial building', href: '/services/remedial-building', note: 'Information about building defects and strata repairs.' },
             ].map((page) => (
               <Link
                 key={page.href}

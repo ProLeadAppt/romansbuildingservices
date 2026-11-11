@@ -157,7 +157,8 @@ test('shared layout preserves keyboard, reduced-motion and media accessibility',
   assert.match(layout, /<main id="main-content" tabIndex=\{-1\}/);
   assert.doesNotMatch(styles, /video\s*\{\s*display:\s*none/);
   assert.doesNotMatch(footer, /alt="Project showcase"/);
-  assert.match(footer, /Structural acrow props supporting stone wall during repairs/);
+  assert.match(footer, /selectArchiveImages/);
+  assert.match(footer, /alt=\{image.alt\}/);
   assert.match(survey, /headingLevel: 'h2' \| 'h3' \| 'h4'/);
   assert.match(contactSection, /headingLevel="h4"/);
   assert.match(contactPage, /headingLevel="h2"/);

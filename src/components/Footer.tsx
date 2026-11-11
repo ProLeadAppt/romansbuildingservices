@@ -1,3 +1,4 @@
+import { selectArchiveImages } from '@/data/projectGallery';
 import { Phone, Mail, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { QuoteCTAButton } from '@/components/quote';
@@ -27,28 +28,13 @@ const popularSuburbs = [
   { label: 'Strathfield', to: '/suburbs/strathfield' },
 ];
 
-const galleryPreview = [
-  {
-    src: '/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp',
-    alt: 'Structural acrow props supporting stone wall during repairs',
-  },
-  {
-    src: '/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp',
-    alt: 'Earthworks and site preparation for stone wall construction',
-  },
-  {
-    src: '/gallery/thumbs/romansstone_1576440613_2199665757989086550_2394650725.webp',
-    alt: 'Roof level brick and structural repair on residential home',
-  },
-  {
-    src: '/gallery/thumbs/romansstone_1575057672_2188064802893944247_2394650725.webp',
-    alt: 'Sandstone heritage wall with new pointing repairs',
-  },
-  {
-    src: '/gallery/thumbs/romansstone_1700556302_3240823616257706375_2394650725.webp',
-    alt: 'Retaining wall construction with block work and drainage',
-  },
-];
+const galleryPreview = selectArchiveImages([
+  'romansstone_1574104761_2180071211265247711_2394650725',
+  'romansstone_1579724750_2227215093383768825_2394650725',
+  'romansstone_1576440613_2199665757989086550_2394650725',
+  'romansstone_1575057672_2188064802893944247_2394650725',
+  'romansstone_1700556302_3240823616257706375_2394650725',
+]);
 
 export const Footer = () => {
   return (
@@ -84,11 +70,11 @@ export const Footer = () => {
           <div className="flex gap-3 overflow-x-auto scrollbar-hide">
             {galleryPreview.map((image) => (
               <Link
-                key={image.src}
+                key={image.thumb}
                 to="/gallery"
                 className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
                 <img
-                  src={image.src}
+                  src={image.thumb}
                   alt={image.alt}
                   loading="lazy"
                   className="w-full h-full object-cover"

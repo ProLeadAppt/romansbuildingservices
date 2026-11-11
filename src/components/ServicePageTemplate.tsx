@@ -1,3 +1,4 @@
+import { isArchiveImageWithheld } from '@/data/projectGallery';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, ArrowRight, ChevronRight, AlertCircle, MapPin, CheckCircle2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -177,7 +178,7 @@ export const ServicePageTemplate = ({
         title={metaTitle}
         description={metaDescription}
         canonical={location.pathname}
-        ogImage={heroImage}
+        ogImage={isArchiveImageWithheld(heroImage) ? undefined : heroImage}
       />
       <ServiceSchema
         service={title}
@@ -214,14 +215,14 @@ export const ServicePageTemplate = ({
 
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        <img
+        {!isArchiveImageWithheld(heroImage) && <img
           src={heroImage}
           alt={serviceImageMetadata[heroImage]?.alt || title}
           width={serviceImageMetadata[heroImage]?.width}
           height={serviceImageMetadata[heroImage]?.height}
           className="absolute inset-0 w-full h-full object-cover img-enhanced"
           loading="eager"
-        />
+        />}
         <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy/40" />
         <div
           className="relative z-10 text-center px-4 py-24">
@@ -398,14 +399,14 @@ export const ServicePageTemplate = ({
       )}
 
       {/* Gallery */}
-      {galleryImages.length> 0 && (
+      {galleryImages.some((image) => !isArchiveImageWithheld(image)) && (
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-heading text-3xl text-text-primary text-center mb-12">
-              Recent Projects
+              Photo archive
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galleryImages.map((img, i) => (
+              {galleryImages.filter((image) => !isArchiveImageWithheld(image)).map((img, i) => (
                 <div
                   key={i}
                   className="rounded-lg overflow-hidden">
@@ -424,7 +425,7 @@ export const ServicePageTemplate = ({
               <Link
                 to="/gallery"
                 className="inline-flex items-center gap-2 font-body text-navy hover:text-navy-light transition-colors link-animated">
-                See all our work <ArrowRight className="w-4 h-4" />
+                Browse the photo archive <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

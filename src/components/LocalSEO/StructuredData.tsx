@@ -389,9 +389,9 @@ export const ImageGallerySchema = ({
     "@context": "https://schema.org",
     "@type": "ImageGallery",
     url: toCanonicalPageUrl(url),
-    name: `${BUSINESS_INFO.name} — Project Gallery`,
+    name: `${BUSINESS_INFO.name} — Photo archive`,
     description:
-      "Real projects by Romans Building Services. Masonry, heritage restoration, and structural work across Sydney.",
+      "Visible stonework, brickwork and other subjects from the Romans photo archive. Project locations, dates and outcomes are not verified here.",
     image: images.map((img) => ({
       "@type": "ImageObject",
       contentUrl: toAbsoluteMediaUrl(img.url),

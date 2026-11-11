@@ -60,7 +60,6 @@ export default function AboutPage() {
         title="About Romans | Minas Romanakis, Sydney Stonemason Since 1995"
         description="Meet Minas Romanakis and Romans Building Services. Masonry and heritage restoration since 1995, based in The Slopes and serving Hawkesbury, Western Sydney and beyond."
         canonical="/about"
-        ogImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       />
       <PersonSchema />
       <FAQSchema faqs={aboutFaqs} />
@@ -132,16 +131,7 @@ export default function AboutPage() {
         {/* Story Section */}
         <section className="bg-white py-16">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              {/* Left: Image */}
-              <div>
-                <img
-                  src="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
-                  alt="Minas Romanakis working on a masonry project"
-                  className="rounded-lg w-full object-cover"
-                />
-              </div>
-
+            <div className="max-w-3xl mx-auto">
               {/* Right: Story */}
               <div
                 className="space-y-6">

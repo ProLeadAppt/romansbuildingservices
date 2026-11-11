@@ -34,17 +34,16 @@ function loadSource(file) {
   if (loaded.has(file)) return loaded.get(file).exports;
   const module = { exports: {} };
   loaded.set(file, module);
-  const source = readFileSync(file, 'utf8');
+  const source = readFileSync(file, 'utf8').replaceAll('import.meta.env', '({})');
   const code = ts.transpileModule(source, { compilerOptions: {
     module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020,
     jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true,
   } }).outputText;
   const localRequire = (specifier) => {
-    if (specifier === '@/components/quote') return { QuoteCTAButton: ({children}) => React.createElement('button', null, children) };
     if (!specifier.startsWith('.') && !specifier.startsWith('@/')) return require(specifier);
     const base = specifier.startsWith('@/')
       ? path.join(directory, 'src', specifier.slice(2)) : path.resolve(path.dirname(file), specifier);
-    const resolved = ['', '.tsx', '.ts', '.js'].map(extension => base + extension).find(existsSync);
+    const resolved = ['.tsx', '.ts', '.js', '/index.ts'].map(extension => base + extension).find(existsSync);
     assert.ok(resolved, `Resolve local component import ${specifier}`);
     return loadSource(resolved);
   };
@@ -55,6 +54,7 @@ function loadSource(file) {
 
 const { ModernNavigation } = loadSource(path.join(directory, 'src/components/navigation/ModernNavigation.tsx'));
 const { MemoryRouter } = require('react-router-dom');
+const { QuoteModalProvider, QuoteSurveyModal } = loadSource(path.join(directory, 'src/components/quote/index.ts'));
 let root;
 let desktop = false;
 const listeners = new Set();
@@ -72,7 +72,7 @@ async function mount(overflow = '') {
   document.body.style.overflow = overflow;
   root = createRoot(document.getElementById('mount'));
   await change(() => root.render(React.createElement(MemoryRouter, null,
-    React.createElement(React.StrictMode, null, React.createElement(ModernNavigation)))));
+    React.createElement(React.StrictMode, null, React.createElement(QuoteModalProvider, null, React.createElement(ModernNavigation), React.createElement(QuoteSurveyModal))))));
 }
 async function open() { await change(() => document.querySelector('button[aria-label="Open menu"]').click()); }
 async function resize(value) {
@@ -132,9 +132,123 @@ test('a hidden desktop hamburger cannot activate a scroll lock', async () => {
 test('route navigation closes the mobile menu and restores overflow', async () => {
   await mount('scroll');
   await open();
-  const overlay = document.querySelector('div.fixed.inset-0');
+  const overlay = document.querySelector('[role=dialog]');
   const contact = Array.from(overlay.querySelectorAll('a')).find(a => a.getAttribute('href') === '/contact');
   await change(() => contact.click());
   assert.equal(document.body.style.overflow, 'scroll');
   assert.equal(document.querySelector('button[aria-label="Close menu"]'), null);
+});
+
+async function settle() { await act(async () => { await new Promise(resolve => setTimeout(resolve, 30)); }); }
+async function key(key, shiftKey = false) {
+  await change(() => document.activeElement.dispatchEvent(new KeyboardEvent('keydown', { key, shiftKey, bubbles: true, cancelable: true })));
+}
+for (const dismissal of ['Escape', 'Close']) {
+  test(`${dismissal} restores hamburger focus through repeated menu use`, async () => {
+    await mount();
+    const trigger = document.querySelector('button[aria-label="Open menu"]');
+    for (let attempt = 0; attempt < 3; attempt++) {
+      trigger.focus();
+      await open();
+      const dialog = document.querySelector('[role=dialog]');
+      assert.equal(document.getElementById(dialog.getAttribute('aria-labelledby')).textContent, 'Main menu');
+      assert.equal(dialog.getAttribute('aria-modal'), 'true');
+      assert.equal(dialog.querySelector('nav').getAttribute('aria-label'), 'Mobile navigation');
+      assert.equal(document.activeElement.getAttribute('aria-label'), 'Close menu');
+      assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), 'true');
+      assert.equal(trigger.getAttribute('aria-expanded'), 'true');
+      assert.equal(trigger.getAttribute('aria-controls'), dialog.id);
+      // FocusScope loops the boundary keys itself. JSDOM cannot test native
+      // browser Tab traversal between ordinary, non-boundary controls.
+      const first = dialog.querySelector('a');
+      const last = Array.from(dialog.querySelectorAll('button')).at(-1);
+      last.focus();
+      await key('Tab');
+      assert.equal(document.activeElement, first);
+      await key('Tab', true);
+      assert.equal(document.activeElement, last);
+      await change(() => trigger.focus());
+      assert.ok(dialog.contains(document.activeElement), 'focus cannot escape into background');
+      if (dismissal === 'Escape') await key('Escape');
+      else await change(() => dialog.querySelector('[aria-label="Close menu"]').click());
+      await settle();
+      assert.equal(document.querySelector('[role=dialog]'), null);
+      assert.equal(document.activeElement, trigger);
+      assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), null);
+      assert.equal(document.body.style.pointerEvents, '');
+      assert.equal(document.body.hasAttribute('data-scroll-locked'), false);
+    }
+  });
+}
+for (const dismissal of ['Escape', 'Close']) {
+  test(`menu quote handoff and ${dismissal} return to connected hamburger`, async () => {
+    await mount('auto');
+    const trigger = document.querySelector('button[aria-label="Open menu"]');
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await open();
+      const menu = document.querySelector('[role=dialog]');
+      const cta = Array.from(menu.querySelectorAll('button')).find(button => button.textContent === 'Get a Quote');
+      await change(() => { cta.focus(); cta.click(); });
+      await settle();
+      const quote = document.querySelector('[role=dialog]');
+      assert.equal(document.querySelectorAll('[role=dialog]').length, 1);
+      assert.match(quote.textContent, /What needs doing/);
+      assert.ok(quote.contains(document.activeElement));
+      assert.equal(cta.isConnected, false);
+      assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), 'true');
+      assert.ok(document.body.hasAttribute('data-scroll-locked'));
+      if (dismissal === 'Escape') await key('Escape');
+      else await change(() => Array.from(quote.querySelectorAll('button')).find(button => button.textContent === 'Close').click());
+      await settle();
+      assert.equal(document.querySelector('[role=dialog]'), null);
+      assert.equal(document.activeElement, trigger);
+      assert.equal(document.body.style.overflow, 'auto');
+      assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), null);
+      assert.equal(document.body.style.pointerEvents, '');
+      assert.equal(document.body.hasAttribute('data-scroll-locked'), false);
+    }
+  });
+}
+test('selecting the current route also closes the menu', async () => {
+  await mount();
+  await open();
+  await change(() => document.querySelector('[role=dialog] nav a[href="/"]').click());
+  await settle();
+  assert.equal(document.querySelector('[role=dialog]'), null);
+  assert.equal(document.activeElement.getAttribute('aria-label'), 'Open menu');
+});
+test('desktop resize restores focus to visible logo rather than hidden hamburger', async () => {
+  await mount();
+  await open();
+  await resize(true);
+  await settle();
+  assert.equal(document.activeElement.querySelector('img')?.alt, 'Romans Building Services');
+});
+test('delayed dismissal preserves a reopened menu and deliberate outside focus', async () => {
+  await mount();
+  await open();
+  await key('Escape');
+  await open();
+  await settle();
+  assert.ok(document.querySelector('[role=dialog]').contains(document.activeElement));
+  await key('Escape');
+  const logo = document.querySelector('nav[aria-label="Main navigation"] > div > a');
+  logo.focus();
+  await settle();
+  assert.equal(document.activeElement, logo);
+});
+test('unmount does not restore old navigation focus or retain modal restrictions', async () => {
+  await mount('clip');
+  await open();
+  await change(() => root.unmount());
+  root = undefined;
+  const outside = document.createElement('button');
+  document.body.append(outside);
+  outside.focus();
+  await settle();
+  assert.equal(document.activeElement, outside);
+  assert.equal(document.body.style.overflow, 'clip');
+  assert.equal(document.body.style.pointerEvents, '');
+  assert.equal(document.body.hasAttribute('data-scroll-locked'), false);
+  assert.equal(document.getElementById('mount').getAttribute('aria-hidden'), null);
 });

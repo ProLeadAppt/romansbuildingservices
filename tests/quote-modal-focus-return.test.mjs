@@ -78,7 +78,7 @@ async function mount() {
 }
 async function input(id, value) {
   await change(() => {
-    const field = document.getElementById(id);
+    const field = document.querySelector(`[name="${id.replace('qs-', '')}"]`);
     Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set.call(field, value);
     field.dispatchEvent(new Event('input', { bubbles: true }));
   });
@@ -105,7 +105,7 @@ for (const dismissal of ['Escape', 'Close']) {
     await click(opener);
     await contact();
     await click(button('Back'));
-    assert.equal(document.getElementById('qs-suburb').value, 'Sydney');
+    assert.equal(document.querySelector('[name=suburb]').value, 'Sydney');
     assert.equal(button('This month').getAttribute('aria-checked'), 'true');
     await click(button('Next'));
     if (dismissal === 'Escape') await escape();
@@ -124,7 +124,7 @@ test('pointer activation without browser focus returns to the actual CTA and pre
   outside.focus();
   const opener = button('Stonework quote');
   await click(opener, false);
-  assert.ok(document.getElementById('qs-suburb'));
+  assert.ok(document.querySelector('[name=suburb]'));
   assert.equal(button('Stonework or Stone Walls'), undefined);
   await escape();
   assert.ok(document.activeElement === opener, 'focus returns to the invoking CTA');

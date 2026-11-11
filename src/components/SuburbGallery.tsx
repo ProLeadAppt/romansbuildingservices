@@ -6,12 +6,12 @@ import { projectGalleryImages } from '@/data/projectGallery';
 // Category choices vary the examples; source photos are not tagged by suburb.
 // This selection is illustrative, not evidence of local jobs or current activity.
 const AREA_CATEGORIES: Record<string, GalleryCategory[]> = {
-  'sydney-cbd': ['heritage', 'stonework', 'on-the-tools'],
-  'eastern-suburbs': ['heritage', 'structural', 'stonework', 'concrete'],
-  'north-shore': ['heritage', 'structural', 'completed'],
-  'northern-beaches': ['concrete', 'structural', 'completed'],
-  'inner-west': ['heritage', 'structural', 'stonework', 'on-the-tools'],
-  'greater-sydney': ['structural', 'completed', 'stonework'],
+  'sydney-cbd': ['stonework', 'workshop-tools'],
+  'eastern-suburbs': ['stonework', 'brickwork', 'concrete-structures'],
+  'north-shore': ['stonework', 'brickwork'],
+  'northern-beaches': ['concrete-structures', 'brickwork', 'stonework'],
+  'inner-west': ['stonework', 'brickwork', 'workshop-tools'],
+  'greater-sydney': ['brickwork', 'stonework'],
 };
 
 // FNV-1a hash for a deterministic per-suburb shuffle of the area's photo
@@ -34,7 +34,7 @@ interface SuburbGalleryProps {
 }
 
 export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: SuburbGalleryProps) => {
-  const cats = AREA_CATEGORIES[areaSlug] ?? ['heritage', 'stonework'];
+  const cats = AREA_CATEGORIES[areaSlug] ?? ['stonework'];
   const pool = projectGalleryImages.filter((img) => cats.includes(img.category));
   if (pool.length === 0) return null;
 
@@ -77,7 +77,7 @@ export const SuburbGallery = ({ suburbSlug, suburbName, areaSlug, count = 6 }: S
           <Link
             to="/gallery"
             className="inline-flex items-center gap-2 font-body text-navy hover:text-amber transition-colors">
-            Explore the project gallery <ArrowRight className="w-4 h-4" />
+            Explore the photo archive <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
