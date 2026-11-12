@@ -281,9 +281,8 @@ function stripRuntimeCaptureArtifacts(html) {
     // undo the application's intended loading boundaries. Keep Vite's original
     // build-time modulepreloads, which do not carry as="script".
     .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])(?=[^>]*\bas=["']script["'])[^>]*>/gi, '')
-    // Clarity's inline bootstrap and the SearchAtlas React effect recreate
-    // their runtime tags after hydration. Serializing injected tags duplicates
-    // third-party requests on every prerendered document.
+    // Clarity's inline bootstrap recreates its runtime tag after hydration.
+    // Also discard any legacy SEO rewrite loader captured in an older build.
     .replace(/<script\b(?=[^>]*\bsrc=["']https:\/\/www\.clarity\.ms\/tag\/)[^>]*><\/script>/gi, '')
     .replace(/<script\b(?=[^>]*\bid=["']sa-dynamic-optimization-loader["'])[^>]*><\/script>/gi, '')
     // Sonner injects this stylesheet at runtime. Capturing it adds tens of

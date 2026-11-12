@@ -109,14 +109,8 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "t6v9xkgrej");
     </script>
-    <!--
-      SearchAtlas dynamic optimisation is loaded by a React effect in
-      src/main.tsx. Loading it from index.html caused Vite to duplicate
-      the script tag (data: URI gets resolved to a real URL, AND the
-      base64 loader also appends one at runtime), which redeclared a
-      global var and killed the whole JS context — leaving <div id=root>
-      empty and breaking the home page hydration.
-    -->
+    <!-- Metadata and image descriptions are maintained in the reviewed site source.
+         Do not load third-party scripts that rewrite this content at runtime. -->
   </head>
 
   <body>
