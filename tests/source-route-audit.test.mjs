@@ -7,9 +7,9 @@ const inventory = auditSourceRoutes();
 const read = (name) => fs.readFileSync(name, 'utf8');
 
 test('all declared indexable static and data-backed routes reconcile with sitemaps', () => {
-  assert.equal(inventory.totalRoutes, 167);
-  assert.equal(inventory.indexableRoutes, 166);
-  assert.equal(inventory.sitemapRoutes, 166);
+  assert.equal(inventory.totalRoutes, 172);
+  assert.equal(inventory.indexableRoutes, 171);
+  assert.equal(inventory.sitemapRoutes, 171);
   assert.deepEqual(inventory.missingFromSitemaps, []);
   assert.deepEqual(inventory.unknownSitemapRoutes, []);
   assert.deepEqual(inventory.duplicateRoutes, []);
@@ -26,8 +26,9 @@ test('literal source links and generated navigation data resolve to registered r
 test('locality expansion remains evidence-gated rather than a service by suburb matrix', () => {
   assert.equal(inventory.counts['service-area'], 10);
   assert.equal(inventory.counts['problem-area'], 30);
+  assert.equal(inventory.counts.suburb, 40); // Only the five reviewed Hawkesbury additions.
   for (const slug of ['north-richmond', 'richmond', 'kurmond', 'kurrajong', 'windsor']) {
-    assert.ok(!inventory.routes.some((route) => route.route === `/suburbs/${slug}/`));
+    assert.ok(inventory.routes.some((route) => route.route === `/suburbs/${slug}/`));
   }
   assert.match(read('src/pages/problems/ProblemAreaPage.tsx'), /if \(!areaNote\) return <NotFound \/>/);
   assert.match(read('src/pages/services/ServiceAreaPage.tsx'), /if \(!combo \|\| !service \|\| !area\) return <NotFound \/>/);

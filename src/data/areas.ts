@@ -23,7 +23,13 @@ export const AREAS: Record<string, AreaProfile> = {
     "shortName": "Hawkesbury and Western Sydney",
     "href": "/areas/hawkesbury-western-sydney",
     "housingProfile": "Repair scope depends on the individual building, material, access, drainage and any heritage or engineering requirements. Share photographs and existing reports before an assessment.",
-    "suburbs": [],
+    "suburbs": [
+      "north-richmond",
+      "richmond",
+      "kurmond",
+      "kurrajong",
+      "windsor"
+    ],
     "topProblems": [],
     "problemNotes": {}
   },

@@ -45,6 +45,8 @@ export interface SuburbPageProps {
   services: string[];
   faqs: SuburbFAQ[];
   nearbySuburbs: NearbySuburb[];
+  placeLabel?: string;
+  localResources?: Array<{ title: string; description: string; url: string }>;
 }
 
 const SITE_URL = 'https://romansbuildingservices.com';
@@ -62,6 +64,8 @@ export const SuburbPageTemplate = ({
   services,
   faqs,
   nearbySuburbs,
+  placeLabel,
+  localResources,
 }: SuburbPageProps) => {
   const canonical = `/suburbs/${slug}`;
   const fullUrl = `${SITE_URL}${canonical}`;
@@ -74,7 +78,8 @@ export const SuburbPageTemplate = ({
         canonical={canonical}
       />
       <PlaceSchema
-        name={`${name}, Sydney`}
+        name={placeLabel ?? `${name}, Sydney`}
+        stateOnly={Boolean(placeLabel)}
         description={metaDescription}
         url={fullUrl}
       />
@@ -170,6 +175,28 @@ export const SuburbPageTemplate = ({
           </div>
         </div>
       </section>
+
+      {localResources && localResources.length > 0 && (
+        <section className="py-16 bg-white" aria-labelledby="local-resources-heading">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 id="local-resources-heading" className="font-heading text-2xl md:text-3xl text-navy mb-6">
+              Local checks before planning work in {name}
+            </h2>
+            <ul className="space-y-6">
+              {localResources.map((resource) => (
+                <li key={resource.url}>
+                  <a href={resource.url} className="font-body font-semibold text-navy underline underline-offset-4 hover:text-amber">
+                    {resource.title}
+                  </a>
+                  <p className="font-body text-text-secondary mt-2 leading-relaxed">
+                    {resource.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Recent work — photos from real projects similar to this suburb */}
       <SuburbGallery

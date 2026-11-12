@@ -1533,6 +1533,275 @@ const SUBURBS: Record<string, SuburbData> = {
     ],
     nearbySlugs: ['strathfield', 'burwood', 'concord'],
   },
+  // ===== Hawkesbury & Western Sydney area =====
+  "north-richmond": {
+    "name": "North Richmond",
+    "slug": "north-richmond",
+    "parentAreaName": "Hawkesbury & Western Sydney",
+    "parentAreaHref": "/areas/hawkesbury-western-sydney",
+    "placeLabel": "North Richmond, NSW",
+    "metaTitle": "North Richmond Masonry Repair & Restoration | Romans",
+    "metaDescription": "Plan a North Richmond masonry enquiry: useful photos, previous repair records, access details and official Hawkesbury property resources.",
+    "heroTagline": "A practical starting point for brick, stone and wall repair enquiries in North Richmond.",
+    "intro": [
+      "Start a North Richmond repair enquiry with one photograph showing the whole wall and a closer view of the affected joints or bricks, taken from a safe position. Include nearby windows, downpipes and changes in ground level in the wider view so the detail has context.",
+      "If the area has been patched, rendered, painted or repointed before, say when and include any records you already have. A repair that has opened again needs its history considered before another surface patch is specified. Tell us whether the change appeared gradually or after a particular event, without assuming that event caused it."
+    ],
+    "housingContext": "For a house, extension or freestanding wall, identify which part is affected and whether the same pattern appears elsewhere. Different stages of construction can use different materials. Photographs support an initial discussion, but they cannot establish wall stability, footing condition or the cause of movement.",
+    "services": [
+      "Brick and mortar repair enquiries",
+      "Stonework condition and repair assessment",
+      "Repointing and compatible material selection",
+      "Crack repair scope following assessment",
+      "Retaining wall repair enquiries"
+    ],
+    "faqs": [
+      {
+        "question": "What should I send about a previously repaired wall?",
+        "answer": "Send a wide view, a detail view and the date of the earlier work if known. Include invoices, specifications or reports that describe materials used, plus any dated photographs showing change. Do not remove a patch or coating just to obtain a photograph."
+      },
+      {
+        "question": "Should I wait for better access before making an enquiry?",
+        "answer": "You can describe access constraints at the enquiry stage: gates, steps, narrow side passages and the distance from parking to the wall. A visit depends on safe access and availability. During severe weather, follow official warnings and do not enter a closed road or floodwater to collect information."
+      },
+      {
+        "question": "Can photographs confirm whether a crack needs structural repair?",
+        "answer": "No. They help explain the location and visible pattern, but an assessment may need measurements, inspection and engineering advice. Keep clear of loose or leaning masonry and seek urgent professional advice if you suspect instability."
+      }
+    ],
+    "localResources": [
+      {
+        "title": "Hawkesbury Council: property information",
+        "description": "Use Council’s guide to locate lot details, zoning and relevant planning documents for the actual North Richmond property. A suburb name alone does not establish the controls for a repair.",
+        "url": "https://www.hawkesbury.nsw.gov.au/plan-and-build/find-information-on-a-property"
+      },
+      {
+        "title": "NSW SES: Hawkesbury-Nepean flood information",
+        "description": "The regional guidance explains how flooding can affect Hawkesbury roads and bridges. Use official warnings when arranging access; this resource does not establish flood exposure or damage at an individual North Richmond property.",
+        "url": "https://www.ses.nsw.gov.au/plan-and-prepare/hawkesbury-nepean-valley-area/learn-more-about-your-flood-risk-based-on-your-suburbs"
+      }
+    ],
+    "nearbySlugs": [
+      "richmond",
+      "kurmond",
+      "kurrajong"
+    ]
+  },
+  "richmond": {
+    "name": "Richmond",
+    "slug": "richmond",
+    "parentAreaName": "Hawkesbury & Western Sydney",
+    "parentAreaHref": "/areas/hawkesbury-western-sydney",
+    "placeLabel": "Richmond, NSW",
+    "metaTitle": "Richmond Masonry & Heritage Repair Guidance | Romans",
+    "metaDescription": "Richmond masonry and heritage repair enquiries: record mortar joints, check the property listing and gather earlier repair details before agreeing a scope.",
+    "heroTagline": "Plan masonry repairs with attention to existing joints, original materials and property-specific heritage checks.",
+    "intro": [
+      "For older brick or stonework in Richmond, photograph the joint shape as well as the damaged area. A close view of sound neighbouring joints can be as useful as a view of missing mortar. Note any contrasting patches, paint layers or replaced bricks without scraping or cleaning them for the enquiry.",
+      "Before discussing a visible facade change, gather the property’s listing information and any conservation advice or past approvals. Hawkesbury Council points owners to local heritage listings and the NSW heritage database. An old-looking building is not automatically listed, and the suburb does not determine the approval pathway."
+    ],
+    "housingContext": "Repair planning should distinguish worn joints from damaged brick faces and sound original fabric. Choosing mortar by colour alone can overlook strength, permeability and joint finish. Where heritage significance is involved, assessment and an agreed sample can help define a restrained repair rather than wholesale repointing.",
+    "services": [
+      "Brick and stone repointing enquiries",
+      "Heritage masonry repair scoping",
+      "Compatible mortar and finish assessment",
+      "Localised brick or stone replacement enquiries",
+      "Facade and crack repair assessment"
+    ],
+    "faqs": [
+      {
+        "question": "How do I check whether my Richmond property is heritage listed?",
+        "answer": "Start with Hawkesbury Council’s heritage guidance, which links to Schedule 5 of the local environmental plan and the NSW heritage database. Check the particular property and any conservation-area coverage. Council and State heritage requirements need separate consideration."
+      },
+      {
+        "question": "Should all hard mortar be removed from an older wall?",
+        "answer": "Not automatically. Removal can damage brick or stone edges, especially where joints are narrow or the masonry is fragile. An assessment should identify incompatible repairs, the risks of removal and whether a small trial is appropriate."
+      },
+      {
+        "question": "Does a heritage advice appointment approve the repair?",
+        "answer": "No. Council offers heritage advice for eligible properties, but advice is not permission to begin work. Confirm the proposed scope and the applicable approval or exemption requirements before starting."
+      }
+    ],
+    "localResources": [
+      {
+        "title": "Hawkesbury Council: heritage checks and advice",
+        "description": "Council identifies local and State heritage records and offers advice for listed properties and properties in conservation areas. Gather these records before deciding how much existing masonry to disturb.",
+        "url": "https://www.hawkesbury.nsw.gov.au/plan-and-build/heritage/heritage-in-the-hawkesbury"
+      },
+      {
+        "title": "NSW SES: Richmond and Windsor flood information",
+        "description": "The Richmond and Windsor section explains potential disruption to bridges and roads. Check current conditions when planning a visit; a regional flood guide is not a diagnosis of dampness or cracking in a wall.",
+        "url": "https://www.ses.nsw.gov.au/plan-and-prepare/hawkesbury-nepean-valley-area/learn-more-about-your-flood-risk-based-on-your-suburbs"
+      }
+    ],
+    "nearbySlugs": [
+      "north-richmond",
+      "windsor",
+      "kurmond"
+    ]
+  },
+  "kurmond": {
+    "name": "Kurmond",
+    "slug": "kurmond",
+    "parentAreaName": "Hawkesbury & Western Sydney",
+    "parentAreaHref": "/areas/hawkesbury-western-sydney",
+    "placeLabel": "Kurmond, NSW",
+    "metaTitle": "Kurmond Masonry & Retaining Wall Enquiries | Romans",
+    "metaDescription": "Prepare a Kurmond wall repair enquiry with the wall purpose, ground levels, safe photos, access details and Hawkesbury Council planning resources.",
+    "heroTagline": "Describe what the wall supports before deciding how it should be repaired.",
+    "intro": [
+      "For a wall repair in Kurmond, first explain its job: is it part of the house, a freestanding boundary wall, or a structure holding back soil? If it retains ground, describe what is above it, such as a driveway, garden or building. These distinctions matter more to the initial enquiry than the visible finish alone.",
+      "Take photographs only from stable ground at a safe distance. Show the full length, visible changes in level and any accessible drainage outlets without climbing the wall or digging behind it. Include existing drawings or survey information if available, especially where the wall is close to a boundary.",
+      "Access details help make the discussion practical: note gate width if already known, steps, turning space, where materials could be unloaded and whether a neighbouring property would need to be entered. Do not arrange excavation or remove supporting soil before the wall and proposed work have been assessed."
+    ],
+    "housingContext": "A retaining wall and a dividing fence are not interchangeable structures. For a Kurmond enquiry, record whether the wall supports a fence and whether the ground levels differ across it. Boundary position, drainage and loads need property-specific investigation; photographs cannot settle ownership, cost-sharing or approval requirements.",
+    "services": [
+      "Masonry and retaining wall repair assessment",
+      "Brick and stone joint repair enquiries",
+      "Wall rebuilding scope following assessment",
+      "Cracking and movement investigation enquiries",
+      "Material matching for localised wall repairs"
+    ],
+    "faqs": [
+      {
+        "question": "What if I do not know whether the wall is retaining soil?",
+        "answer": "Describe the visible ground levels on each side from places you can safely access, and send any plans you already hold. Do not excavate or enter a neighbouring property to check. The wall’s construction and support function need confirmation before a repair is selected."
+      },
+      {
+        "question": "Is replacing a Kurmond retaining wall automatically exempt work?",
+        "answer": "No. Council’s retaining-wall factsheet explains that exemption depends on meeting the relevant standards. The actual land and proposal need checking; a small-looking wall or a like-for-like intention does not establish the approval pathway."
+      },
+      {
+        "question": "Which documents help with a wall near a boundary?",
+        "answer": "An existing survey, approved plans, engineering details and records of earlier work are useful starting points. Identify what is known and what is uncertain. A repair enquiry does not determine boundary ownership or oblige a neighbour to contribute."
+      }
+    ],
+    "localResources": [
+      {
+        "title": "Hawkesbury Council: retaining-wall factsheet (PDF)",
+        "description": "This local factsheet distinguishes the retaining function from fencing and outlines approval pathways. Use it to frame questions about the wall’s purpose and proposed work, not as confirmation that a specific repair is exempt.",
+        "url": "https://www.hawkesbury.nsw.gov.au/_resources/documents/plan-and-build/factsheets/Website-Factsheet-Retaining-Wall.pdf"
+      },
+      {
+        "title": "Hawkesbury Council: find information on a property",
+        "description": "Council explains how to find lot and plan details, zoning and planning controls, and how to seek preliminary planning advice. For a Kurmond wall near a boundary, gather the actual property records rather than relying on village-wide assumptions.",
+        "url": "https://www.hawkesbury.nsw.gov.au/plan-and-build/find-information-on-a-property"
+      }
+    ],
+    "nearbySlugs": [
+      "kurrajong",
+      "north-richmond",
+      "richmond"
+    ]
+  },
+  "kurrajong": {
+    "name": "Kurrajong",
+    "slug": "kurrajong",
+    "parentAreaName": "Hawkesbury & Western Sydney",
+    "parentAreaHref": "/areas/hawkesbury-western-sydney",
+    "placeLabel": "Kurrajong, NSW",
+    "metaTitle": "Kurrajong Masonry & Stone Repair Guidance | Romans",
+    "metaDescription": "Kurrajong masonry enquiries: record access, materials worth retaining and nearby vegetation, with links to Hawkesbury Council tree and property guidance.",
+    "heroTagline": "Plan access and material retention before disturbing stonework, walls or surrounding vegetation.",
+    "intro": [
+      "For a Kurrajong stone or masonry enquiry, show the route to the work as well as the wall itself. Steps, changes in level, narrow gates and limited unloading space can affect the repair method. Mention these where they exist at your property rather than assuming access from the street is straightforward.",
+      "Identify sound stone or brick you would like retained, and include close photographs of its texture and joint finish. If loose pieces have already fallen, leave unsafe areas alone; do not dismantle more material to find a match. Repair planning should establish what can remain before considering replacement.",
+      "If trees or vegetation are close to the work, include them in the wider view and flag any proposed excavation or access route near roots. Hawkesbury Council names Kurrajong specifically in its protected-tree guidance, so do not assume a general residential exemption applies."
+    ],
+    "housingContext": "Stone walls, brickwork and later repairs need their own condition assessment. A nearby tree is useful context but does not prove the cause of cracking. Coordinate any proposed work affecting roots or vegetation with the appropriate advice and checks before choosing equipment access or excavation methods.",
+    "services": [
+      "Stone wall repair and material retention enquiries",
+      "Brick and mortar repair assessment",
+      "Repointing and joint finish matching",
+      "Retaining wall repair scoping",
+      "Structural masonry repair enquiries"
+    ],
+    "faqs": [
+      {
+        "question": "Can trees be trimmed or removed to make room for repairs?",
+        "answer": "Check first. Council’s protected-tree guidance specifically addresses Kurrajong and excludes it from the general residential exemption described on that page. Protection also depends on other property and vegetation criteria. Confirm requirements with Council before pruning, clearing or planning work that may affect roots."
+      },
+      {
+        "question": "Can existing stone be reused instead of replaced?",
+        "answer": "Potentially, depending on its condition, the wall’s function and the repair design. Send photographs of the stone in place and any records of earlier work. Suitability and safe handling need assessment; keeping the original appearance does not mean every piece can be retained."
+      },
+      {
+        "question": "What access measurements are useful at the enquiry stage?",
+        "answer": "Share gate width, steps and turning restrictions if you can record them safely, plus photographs of the route from unloading to the wall. Do not clear vegetation or move heavy materials just to improve access before the scope and necessary checks are agreed."
+      }
+    ],
+    "localResources": [
+      {
+        "title": "Hawkesbury Council: protected trees and vegetation",
+        "description": "Council lists Kurrajong-specific tree protections and other criteria affecting clearing. Check the property and proposed activity before making space for wall repairs; this is not permission to prune or remove a tree.",
+        "url": "https://www.hawkesbury.nsw.gov.au/your-spaces/tree-requests/tree-removal-on-private-property/protected-trees-or-vegetation"
+      },
+      {
+        "title": "Hawkesbury Council: property information and planning advice",
+        "description": "Find the property’s zoning and applicable planning documents through Council’s guide. Bring relevant records to the enquiry where access, vegetation or a proposed wall change may need further checks.",
+        "url": "https://www.hawkesbury.nsw.gov.au/plan-and-build/find-information-on-a-property"
+      }
+    ],
+    "nearbySlugs": [
+      "kurmond",
+      "north-richmond",
+      "richmond"
+    ]
+  },
+  "windsor": {
+    "name": "Windsor",
+    "slug": "windsor",
+    "parentAreaName": "Hawkesbury & Western Sydney",
+    "parentAreaHref": "/areas/hawkesbury-western-sydney",
+    "placeLabel": "Windsor, NSW",
+    "metaTitle": "Windsor Masonry & Heritage Restoration Enquiries | Romans",
+    "metaDescription": "Prepare a Windsor masonry restoration enquiry with original-fabric photos, existing reports, heritage records and practical access information.",
+    "heroTagline": "Bring the building’s records and original fabric into the repair conversation.",
+    "intro": [
+      "For a Windsor restoration enquiry, start with the documents already available: conservation advice, engineer’s reports, past approvals and earlier repair specifications. Note their dates and what work followed. An old report can provide context, but it may not describe the building’s present condition.",
+      "Photograph original details and later alterations separately where you can safely identify them. Mortar profiles, stone edges, brick patterns and repaired openings can help explain what you want preserved. Avoid trial cleaning, stripping coatings or removing joints before the material and any heritage requirements have been assessed.",
+      "For an occupied property, explain how entrances and adjoining spaces are used. Access restrictions, public-facing walls and areas that must stay clear should be discussed before a work programme is agreed. Include known moisture events or changes over time, without treating them as a diagnosis."
+    ],
+    "housingContext": "A Windsor address does not establish heritage status, construction type or flood exposure. Assessment should separate sound original material from deteriorated areas and later repairs. Existing reports and listing records can inform a careful scope, but current observations and any necessary specialist advice still matter.",
+    "services": [
+      "Heritage masonry repair enquiries",
+      "Original brick and stone retention assessment",
+      "Mortar repointing and finish matching",
+      "Facade restoration scope development",
+      "Crack and moisture-related repair assessment"
+    ],
+    "faqs": [
+      {
+        "question": "Should I send an old engineer’s or conservation report?",
+        "answer": "Yes, if you have it and can share it. Include its date, any limitations it states and which recommendations were carried out. It can help explain the history, but the proposed repair should be based on current conditions and any updated advice needed."
+      },
+      {
+        "question": "Can a Windsor facade be cleaned before it is assessed?",
+        "answer": "Discuss the material and its condition first. Cleaning can alter surfaces or remove evidence of previous finishes. For significant fabric, a suitable method and small trial may need agreement, along with any relevant heritage checks, before broader treatment."
+      },
+      {
+        "question": "Does previous flooding explain the damage to my wall?",
+        "answer": "Not by itself. Provide dates, photographs and any relevant inspection reports, but moisture, salts, cracking and movement require their own assessment. Follow official safety advice and do not enter an unsafe building to document damage."
+      }
+    ],
+    "localResources": [
+      {
+        "title": "Hawkesbury Council: heritage records and advisory service",
+        "description": "Check local listing and conservation-area records and any State heritage entry for the Windsor property. Council’s advisory service can inform an enquiry; advice is not work approval.",
+        "url": "https://www.hawkesbury.nsw.gov.au/plan-and-build/heritage/heritage-in-the-hawkesbury"
+      },
+      {
+        "title": "NSW SES: Richmond and Windsor flood guidance",
+        "description": "Use the regional information to understand potential road and bridge disruption and prepare for flooding. It does not determine the flood history, safety or repair needs of an individual Windsor building.",
+        "url": "https://www.ses.nsw.gov.au/plan-and-prepare/hawkesbury-nepean-valley-area/learn-more-about-your-flood-risk-based-on-your-suburbs"
+      }
+    ],
+    "nearbySlugs": [
+      "richmond",
+      "north-richmond",
+      "kurmond"
+    ]
+  },
 };
 
 export function getSuburb(slug: string): SuburbPageProps | undefined {
