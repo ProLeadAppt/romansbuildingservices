@@ -183,23 +183,24 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-body text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Romans Building Services. All rights reserved.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end">
-            <p className="font-body text-xs text-white/30">
-              ABN: 85 004 290 080
-            </p>
-            <span className="text-white/15">|</span>
-            <a
-              href="https://munyal.com.au"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center text-center font-body text-xs text-white/25 hover:text-white/40 transition-colors">
-              Built by Munyal · Personally crafted by Tyson Kaye
-            </a>
+        <div className="max-w-7xl mx-auto px-6 py-7 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div className="space-y-2 font-body text-xs leading-relaxed text-white/65">
+            <p>&copy; {new Date().getFullYear()} Romans Building Services. All rights reserved.</p>
+            <p className="text-white/55">ABN: 85 004 290 080</p>
           </div>
+          <a
+            href="https://munyal.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Built by Munyal · Personally crafted by Tyson Kaye"
+            className="group inline-flex min-h-11 max-w-full items-center border-l-2 border-amber/70 py-1 pl-4 font-body text-left transition-colors hover:border-amber focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber focus-visible:outline-offset-4"
+          >
+            <span className="min-w-0">
+              <span className="block text-sm leading-6 text-white/75">Built by <span className="font-heading text-lg font-semibold tracking-wide text-amber group-hover:underline underline-offset-4">Munyal</span></span>
+              <span className="sr-only"> · </span>
+              <span className="block text-xs leading-5 text-white/70">Personally crafted by <span className="text-white/90">Tyson Kaye</span></span>
+            </span>
+          </a>
         </div>
       </div>
     </footer>
