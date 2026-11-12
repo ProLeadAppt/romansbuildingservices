@@ -187,7 +187,7 @@ export const Footer = () => {
           <p className="font-body text-xs text-white/30">
             &copy; {new Date().getFullYear()} Romans Building Services. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end">
             <p className="font-body text-xs text-white/30">
               ABN: 85 004 290 080
             </p>
@@ -196,8 +196,8 @@ export const Footer = () => {
               href="https://munyal.com.au"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-xs text-white/25 hover:text-white/40 transition-colors">
-              Built by Munyal
+              className="inline-flex min-h-11 items-center text-center font-body text-xs text-white/25 hover:text-white/40 transition-colors">
+              Built by Munyal · Personally crafted by Tyson Kaye
             </a>
           </div>
         </div>
@@ -205,3 +205,4 @@ export const Footer = () => {
     </footer>
   );
 };
+
