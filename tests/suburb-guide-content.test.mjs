@@ -12,11 +12,14 @@ const module = { exports: {} };
 new Function('module', 'exports', compiled)(module, module.exports);
 const { SUBURBS, getSuburb, SUBURB_SLUGS } = module.exports;
 const records = Object.values(SUBURBS);
+const newSlugs = ['north-richmond', 'richmond', 'kurmond', 'kurrajong', 'windsor'];
+const legacyRecords = records.filter(record => !newSlugs.includes(record.slug));
 
 test('suburb review preserves all 35 identities, parents, services and nearby relations', () => {
-  assert.equal(records.length, 35);
+  assert.equal(records.length, 40);
+  assert.equal(legacyRecords.length, 35);
   // Snapshot of these immutable fields from base dbb2ceacb37396784763ab2cb5ddd48b56a14fdf.
-  const immutable = records.map(({ name, slug, parentAreaName, parentAreaHref, services, nearbySlugs }) =>
+  const immutable = legacyRecords.map(({ name, slug, parentAreaName, parentAreaHref, services, nearbySlugs }) =>
     ({ name, slug, parentAreaName, parentAreaHref, services, nearbySlugs }));
   assert.equal(crypto.createHash('sha256').update(JSON.stringify(immutable)).digest('hex'),
     'ab4963c645a2972f175cb7a3c623e69407f0d8f6a6a75ed06f799f0d964765ed');
@@ -34,8 +37,8 @@ test('suburb guides avoid unverified job history, fixed prices and repair-life p
 });
 
 test('all guides retain distinct practical introductions and complete FAQ answers', () => {
-  assert.equal(new Set(records.map((r) => r.intro.join(' '))).size, 35);
-  assert.equal(new Set(records.map((r) => r.housingContext)).size, 35);
+  assert.equal(new Set(records.map((r) => r.intro.join(' '))).size, 40);
+  assert.equal(new Set(records.map((r) => r.housingContext)).size, 40);
   for (const record of records) {
     assert.ok(record.intro.length >= 2, record.slug);
     assert.ok(record.housingContext.length > 100, record.slug);

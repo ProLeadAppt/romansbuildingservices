@@ -31,8 +31,11 @@ test('regional edits preserve every area identity, route relationship and Hawkes
     assert.ok(housingProfile);
     return [key, { ...identity, problemKeys: Object.keys(problemNotes) }];
   }));
-  assert.deepEqual(identities, baseline.areas);
-  assert.deepEqual(AREAS['hawkesbury-western-sydney'], baseline.hawkesbury);
+  const reviewedLocalities = ['north-richmond', 'richmond', 'kurmond', 'kurrajong', 'windsor'];
+  const expectedAreas = structuredClone(baseline.areas);
+  expectedAreas['hawkesbury-western-sydney'].suburbs = reviewedLocalities;
+  assert.deepEqual(identities, expectedAreas);
+  assert.deepEqual(AREAS['hawkesbury-western-sydney'], { ...baseline.hawkesbury, suburbs: reviewedLocalities });
   assert.deepEqual(SERVICE_AREA_COMBOS.map((combo) => [combo.serviceSlug, combo.areaSlug]), baseline.servicePairs);
   assert.equal(PROBLEM_AREA_COMBOS().length, 30);
   assert.equal(SERVICE_AREA_ROUTES().length, 10);

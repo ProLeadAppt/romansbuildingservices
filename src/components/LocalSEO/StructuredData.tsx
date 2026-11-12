@@ -280,11 +280,13 @@ export const FAQSchema = ({
 export const PlaceSchema = ({
   name,
   description,
-  url
+  url,
+  stateOnly = false
 }: {
   name: string;
   description?: string;
   url?: string;
+  stateOnly?: boolean;
 }) => {
   const schema: SchemaObject = {
     "@context": "https://schema.org",
@@ -292,7 +294,14 @@ export const PlaceSchema = ({
     name,
     ...(description ? { description } : {}),
     ...(url ? { url: toCanonicalPageUrl(url) } : {}),
-    containedInPlace: {
+    containedInPlace: stateOnly ? {
+      "@type": "State",
+      name: "New South Wales",
+      containedInPlace: {
+        "@type": "Country",
+        name: "Australia"
+      }
+    } : {
       "@type": "City",
       name: "Sydney",
       containedInPlace: {
