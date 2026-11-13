@@ -1,0 +1,4 @@
+# Owner review only — do not merge
+This branch publishes a static snapshot only in Netlify deploy-preview context. All other contexts fail before output is generated. It cannot build production. The snapshot has no executable JavaScript or active forms/contact actions; menus are visual only. No street address or precise home coordinates are included. All responses and HTML are noindex/nofollow. This is public, shareable review content, not confidential access control.
+
+The source candidate is preserved at d7332f19519059fbe65dedf05b18b722baafcadf. The review snapshot includes the unapproved quote guide for owner inspection. It is not approved for live publication. For a future production branch, start from that candidate, apply exclude-unapproved-article.patch unless approved, rebuild and rerun checks. Never merge/promote this review branch or snapshot. PR16 is unrelated and untouched.

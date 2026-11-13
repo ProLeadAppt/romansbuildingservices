@@ -1,0 +1,4 @@
+/*
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: script-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
+  X-Content-Type-Options: nosniff

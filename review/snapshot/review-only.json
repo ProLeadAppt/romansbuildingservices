@@ -1,0 +1,9 @@
+{
+  "purpose": "OWNER_REVIEW_ONLY_DO_NOT_PROMOTE",
+  "candidate_commit": "d7332f19519059fbe65dedf05b18b722baafcadf",
+  "site_id": "f9bfacde-e273-4e83-bb68-4364c5df9f51",
+  "html_pages": 167,
+  "executable_javascript": false,
+  "forms_enabled": false,
+  "production_deploy_allowed": false
+}
