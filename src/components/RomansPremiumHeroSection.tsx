@@ -77,7 +77,7 @@ export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { vide
     <section data-p2-section="hero" aria-labelledby="hero-heading" className="bg-navy text-white">
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 pb-10 lg:grid-cols-[1fr_1.15fr]">
         <div data-hero-copy className="relative z-10 flex flex-col justify-center bg-navy pb-4 pt-28 lg:pb-12 lg:pt-32">
-          <p className="mb-5 font-body text-sm font-semibold uppercase tracking-[0.16em] text-amber">Hawkesbury &amp; Western Sydney</p>
+          <p className="mb-5 font-body text-sm font-semibold uppercase tracking-[0.16em] text-amber">Sydney and the Hawkesbury</p>
           <h1 id="hero-heading" className="max-w-xl font-heading text-[2.5rem] leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-[3.6rem]">
             Skilled stonework. Careful restoration.
           </h1>
@@ -93,7 +93,7 @@ export const RomansPremiumHeroSection = ({ videoSrc = REVIEW_HERO_LOOP }: { vide
             </a>
           </div>
           <p className="mt-6 max-w-md font-body text-sm leading-6 text-white">
-            North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas.
+            Working across Sydney and the Hawkesbury, including heritage restoration in the city and Balmain.
           </p>
           <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/30 pt-5 font-body text-sm text-white">
             <span>Established 1995</span><span>Owner-led</span><span>Discuss your project</span>
