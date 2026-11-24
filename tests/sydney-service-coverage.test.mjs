@@ -13,9 +13,9 @@ test('home leads with the Sydney CBD, keeps Sydney-wide scope and does not name 
   assert.doesNotMatch(doc.body.textContent, /Enfield/i);
   assert.match(doc.body.textContent, /across Sydney/i);
   assert.doesNotMatch(doc.body.textContent + doc.title + (doc.querySelector('meta[name="description"]')?.content ?? ''), /Hawkesbury/i);
-  assert.ok(doc.querySelector('a[href="/areas"]'));
-  assert.ok(doc.querySelector('a[href="/areas/sydney-cbd"]'));
-  assert.ok(doc.querySelector('a[href="/suburbs/balmain"]'));
+  assert.ok(doc.querySelector('a[href="/areas/"]'));
+  assert.ok(doc.querySelector('a[href="/areas/sydney-cbd/"]'));
+  assert.ok(doc.querySelector('a[href="/suburbs/balmain/"]'));
   const business = [...doc.querySelectorAll('script[type="application/ld+json"]')].flatMap(script => JSON.parse(script.textContent)).find(s => [].concat(s['@type']).includes('LocalBusiness'));
   assert.ok(business);
   for (const area of ['Sydney CBD', 'Balmain', 'Inner West', 'Sydney']) {
