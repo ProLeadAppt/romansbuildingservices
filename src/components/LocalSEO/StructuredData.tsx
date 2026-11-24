@@ -13,7 +13,7 @@ export const BUSINESS_INFO = {
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
   abn: "85 004 290 080",
-  areaServed: ["Enfield", "Inner West", "Sydney", "Sydney CBD", "Balmain", "Western Sydney"],
+  areaServed: ["Enfield", "Inner West", "Sydney", "Sydney CBD", "Balmain", "Western Sydney", "North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown"],
   // Back-compat alias used by some consumers
   serviceAreas: ["Enfield", "Inner West", "Sydney", "Western Sydney"],
   services: [

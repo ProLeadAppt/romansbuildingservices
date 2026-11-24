@@ -18,8 +18,8 @@ const services = [
 const InnerWestPage = () => (
   <>
     <SEO
-      title="Inner West Masonry and Brick Repairs | Romans"
-      description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Enfield, Balmain and nearby suburbs."
+      title="Inner West Masonry and Building Services | Romans"
+      description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Newtown, Balmain, and Strathfield."
       canonical="/areas/inner-west"
     />
     <PlaceSchema
