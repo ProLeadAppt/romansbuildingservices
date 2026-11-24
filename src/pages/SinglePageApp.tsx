@@ -14,8 +14,8 @@ const ModernContactSection = lazy(() =>
 const SinglePageApp = () => (
   <>
     <SEO
-      title="Sydney & Hawkesbury Masonry | Romans Building Services"
-      description="Masonry, heritage restoration and structural repairs across Sydney and the Hawkesbury. Speak directly with Minas Romanakis."
+      title="Sydney CBD & Inner West Masonry | Romans Building Services"
+      description="Masonry, heritage restoration and structural repairs in the Sydney CBD, Balmain, the Inner West and across Sydney. Speak directly with Minas Romanakis."
       canonical="/"
       ogImage="/og-image.png"
       preloadHero="/gallery/full/romansstone_1572378831_2165593056404182319_2394650725.webp"

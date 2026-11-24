@@ -52,7 +52,7 @@ const SydneyCBDPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            For a Sydney CBD masonry enquiry, include the building type, the affected element and any existing engineering or heritage reports. A street-facing facade, warehouse conversion and commercial tenancy can involve different access and protection needs.
+            For a Sydney CBD heritage masonry or facade repair enquiry, include the building type, the affected element and any existing engineering or heritage reports. A street-facing facade, warehouse conversion and commercial tenancy can involve different access and protection needs.
           </p>
           <p className="font-body text-text-secondary mb-6">
             Stone profiles, mortar joints and earlier repairs help establish what can be retained and what needs attention. Check the property’s heritage status and relevant permissions before cleaning, repointing or replacing original fabric. A careful assessment should guide the material and finish.

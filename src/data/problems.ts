@@ -865,7 +865,7 @@ export const PROBLEMS: Record<string, ProblemPageProps> = {
     "name": "Tuckpointing Restoration",
     "slug": "tuckpointing-restoration",
     "metaTitle": "Sydney Tuckpointing Restoration | Repointing & Lime Mortar | Romans",
-    "metaDescription": "Plan tuckpointing repairs around surviving detail, compatible mortar and a sample panel, with heritage requirements checked before work.",
+    "metaDescription": "Repair decorative tuckpointing on Sydney terraces and older brickwork. Start with surviving line detail, a compatible mortar and a sample panel.",
     "heroTagline": "The fine decorative lines deserve the same care as the brickwork behind them.",
     "quickAnswer": "Tuckpointing creates fine contrasting lines against a coloured mortar background. Restoration should follow evidence of the original detail and the condition of the joints, rather than applying a standard pattern to every older facade. A sample panel helps agree colour, line and profile.",
     "whatItIs": [
