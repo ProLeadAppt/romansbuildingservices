@@ -164,7 +164,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 font-body text-sm text-white/40">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                Serving Enfield, the Inner West and across Sydney.
+                Serving the Sydney CBD, the Inner West and greater Sydney.
               </li>
               <li>
                 <a

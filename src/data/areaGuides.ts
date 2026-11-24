@@ -34,7 +34,7 @@ export const areaGuides = [
     short: 'Older brickwork, mortar and heritage materials.',
     description: 'Guidance for terrace masonry, period brickwork and repointing. Check the original materials, previous repairs and property-specific heritage requirements before changing the wall.',
     href: '/areas/inner-west',
-    places: ['Newtown', 'Leichhardt', 'Balmain', 'Rozelle', 'Glebe', 'Strathfield', 'Enfield'],
+    places: ['Newtown', 'Leichhardt', 'Balmain', 'Rozelle', 'Glebe', 'Strathfield'],
   },
   {
     name: 'Sydney Metro',

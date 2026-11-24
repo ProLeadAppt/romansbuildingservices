@@ -40,8 +40,8 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Romans | Enfield, Inner West & Sydney"
-        description="Call Minas on 0414 922 276 for a masonry repair enquiry. Romans handles masonry, heritage, structural and remedial work in Enfield, the Inner West and across Sydney."
+        title="Contact Romans | Sydney CBD, Inner West & Greater Sydney"
+        description="Call Minas on 0414 922 276 for a masonry repair enquiry. Romans handles masonry, heritage, structural and remedial work in the Sydney CBD, the Inner West and across Sydney."
         canonical="/contact"
       />
       <ContactPageSchema />
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       Service Area
                     </span>
                   </div>
-                  <p className="text-text-primary font-semibold">Enfield, the Inner West and across Sydney</p>
+                  <p className="text-text-primary font-semibold">Sydney CBD, the Inner West and across Sydney</p>
                 </div>
 
                 <div className="bg-bg-light rounded-lg p-6">

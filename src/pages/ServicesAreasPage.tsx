@@ -9,7 +9,7 @@ import { areaGuides } from '@/data/areaGuides';
 const areasFaqs = [
   {
     question: 'Where do you work?',
-    answer: 'We work in Enfield and across Sydney, including the Inner West, Sydney CBD and Hawkesbury. Much of our heritage restoration work is in the city and Balmain. Contact Minas to discuss your suburb, repair and availability.',
+    answer: 'We work across Sydney, including the Sydney CBD, the Inner West and Hawkesbury. Much of our heritage restoration work is in the city and Balmain. Contact Minas to discuss your suburb, repair and availability.',
   },
   {
     question: 'My suburb does not have its own page. Can I still enquire?',
@@ -50,7 +50,7 @@ const ServicesAreasPage = () => (
       <div className="craft-container max-w-4xl">
         <p className="text-amber text-sm font-semibold mb-4">Sydney service areas</p>
         <h1 className="text-white mb-6">A practical starting point for your local repair</h1>
-        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">We work in Enfield, the Inner West and across Sydney. Much of our heritage restoration work is in the city and Balmain. Talk to Minas about your property, access and the work you need.</p>
+        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">We work in the Sydney CBD, the Inner West and across Sydney. Much of our heritage restoration work is in the city and Balmain. Talk to Minas about your property, access and the work you need.</p>
         <a href="#area-guides-heading" className="mt-7 inline-flex min-h-12 items-center gap-3 rounded bg-amber px-6 py-3 font-semibold text-navy">Browse the area guides <ArrowRight aria-hidden="true" className="h-5 w-5" /></a>
       </div>
     </section>

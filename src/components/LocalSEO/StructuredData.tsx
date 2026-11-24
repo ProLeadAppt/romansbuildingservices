@@ -13,9 +13,9 @@ export const BUSINESS_INFO = {
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
   abn: "85 004 290 080",
-  areaServed: ["Enfield", "Inner West", "Sydney", "Sydney CBD", "Balmain", "Western Sydney", "North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown"],
+  areaServed: ["Sydney CBD", "Balmain", "Inner West", "Sydney", "Western Sydney", "North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown"],
   // Back-compat alias used by some consumers
-  serviceAreas: ["Enfield", "Inner West", "Sydney", "Western Sydney"],
+  serviceAreas: ["Sydney CBD", "Balmain", "Inner West", "Sydney", "Western Sydney"],
   services: [
     "Masonry Services",
     "Building Restoration",
@@ -101,7 +101,7 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Enfield, the Inner West and across Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+    "Professional stonework, masonry restoration and structural repair services in the Sydney CBD, Balmain, the Inner West and across Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
   url: toCanonicalPageUrl(BUSINESS_INFO.website),
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,
