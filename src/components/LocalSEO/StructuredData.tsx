@@ -4,7 +4,7 @@ import { toCanonicalPageUrl, toAbsoluteMediaUrl } from '@/lib/seoUrls';
 export const BUSINESS_INFO = {
   name: "Romans Building Services",
   legalName: "Romans Building Services",
-  serviceLocality: "The Slopes, NSW",
+  serviceLocality: "Sydney, NSW",
   // E.164 form for schema.org. The display form is 0414 922 276.
   // Assembled at runtime to keep source readable for code review.
   telephone: ["+", "61", "414", "922", "276"].join(""),
@@ -13,9 +13,9 @@ export const BUSINESS_INFO = {
   email: "romanspropertyservices@gmail.com",
   website: "https://romansbuildingservices.com",
   abn: "85 004 290 080",
-  areaServed: ["North Richmond", "Richmond", "Kurmond", "Kurrajong", "Penrith", "Windsor", "Blacktown", "Hawkesbury", "Western Sydney"],
+  areaServed: ["Enfield", "Inner West", "Sydney", "Sydney CBD", "Balmain", "Western Sydney"],
   // Back-compat alias used by some consumers
-  serviceAreas: ["Hawkesbury", "Western Sydney", "Surrounding areas by enquiry"],
+  serviceAreas: ["Enfield", "Inner West", "Sydney", "Western Sydney"],
   services: [
     "Masonry Services",
     "Building Restoration",
@@ -101,7 +101,7 @@ const localBusinessSchema: SchemaObject = {
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description:
-    "Professional stonework, masonry restoration and structural repair services in Hawkesbury and Western Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
+    "Professional stonework, masonry restoration and structural repair services in Enfield, the Inner West and across Sydney. Specialising in heritage stone restoration, masonry repairs, and structural stonework with 30+ years experience.",
   url: toCanonicalPageUrl(BUSINESS_INFO.website),
   telephone: BUSINESS_INFO.telephone,
   email: BUSINESS_INFO.email,

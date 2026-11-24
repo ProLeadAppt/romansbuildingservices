@@ -664,9 +664,9 @@ const SUBURBS: Record<string, SuburbData> = {
     slug: 'balmain',
     parentAreaName: 'Inner West',
     parentAreaHref: '/areas/inner-west',
-    metaTitle: 'Balmain Heritage Masonry & Sandstone Restoration | Romans',
+    metaTitle: 'Balmain Terrace Brick Repairs & Tuckpointing | Romans',
     metaDescription:
-      'Balmain masonry repair guidance. Discuss property condition, materials, access and assessment with Romans Building Services.',
+      'Brick repairs and decorative tuckpointing for Balmain terraces. Discuss existing mortar, period details, access and the next step with Minas.',
     heroTagline:
       'Heritage terrace masonry, sandstone work and brick restoration across Balmain and Rozelle.',
     intro: [

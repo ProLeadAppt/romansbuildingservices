@@ -2,13 +2,6 @@
 // Keep nearby places searchable through a useful existing guide until a distinct page is ready.
 export const areaGuides = [
   {
-    name: 'Hawkesbury & Western Sydney',
-    short: 'Our current service focus.',
-    description: 'Masonry and restoration enquiries in North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Share your suburb, photographs and repair details to discuss availability.',
-    href: '/areas/hawkesbury-western-sydney',
-    places: ['The Slopes', 'North Richmond', 'Richmond', 'Kurmond', 'Kurrajong', 'Penrith', 'Windsor', 'Blacktown'],
-  },
-  {
     name: 'Sydney CBD',
     short: 'City masonry, sandstone and heritage buildings.',
     description: 'Guidance for city sandstone, brickwork and commercial facades. Include the building’s heritage status, pedestrian access and any site-management requirements with your enquiry.',
@@ -41,7 +34,7 @@ export const areaGuides = [
     short: 'Older brickwork, mortar and heritage materials.',
     description: 'Guidance for terrace masonry, period brickwork and repointing. Check the original materials, previous repairs and property-specific heritage requirements before changing the wall.',
     href: '/areas/inner-west',
-    places: ['Newtown', 'Leichhardt', 'Balmain', 'Rozelle', 'Glebe', 'Strathfield'],
+    places: ['Newtown', 'Leichhardt', 'Balmain', 'Rozelle', 'Glebe', 'Strathfield', 'Enfield'],
   },
   {
     name: 'Sydney Metro',
@@ -49,5 +42,12 @@ export const areaGuides = [
     description: 'For a property outside the other guides, send the suburb and a short description. Location, access, repair scope and current availability determine the practical next step.',
     href: '/areas/greater-sydney',
     places: ['Parramatta', 'Hornsby', 'Sutherland', 'Blacktown', 'Liverpool', 'Penrith', 'Hills'],
+  },
+  {
+    name: 'Hawkesbury & Western Sydney',
+    short: 'Regional masonry and restoration guidance.',
+    description: 'Masonry and restoration enquiries in North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Share your suburb, photographs and repair details to discuss availability.',
+    href: '/areas/hawkesbury-western-sydney',
+    places: ['The Slopes', 'North Richmond', 'Richmond', 'Kurmond', 'Kurrajong', 'Penrith', 'Windsor', 'Blacktown'],
   },
 ];

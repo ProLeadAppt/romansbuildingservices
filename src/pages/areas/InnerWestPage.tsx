@@ -18,8 +18,8 @@ const services = [
 const InnerWestPage = () => (
   <>
     <SEO
-      title="Inner West Masonry and Building Services | Romans"
-      description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Newtown, Balmain, and Strathfield."
+      title="Inner West Masonry and Brick Repairs | Romans"
+      description="Masonry and restoration in Sydney's Inner West. Terrace houses, brick heritage, and retaining walls across Enfield, Balmain and nearby suburbs."
       canonical="/areas/inner-west"
     />
     <PlaceSchema
@@ -52,7 +52,7 @@ const InnerWestPage = () => (
       <div className="container mx-auto px-4 max-w-3xl">
         <div>
           <p className="font-body text-text-secondary mb-6">
-            This existing Inner West guide remains available for enquiries about terraces, cottages, shopfronts and other masonry buildings. Include your suburb, photographs and a short description of the work when discussing scope and availability with Romans.
+            We work on terraces, cottages, shopfronts and other masonry buildings in Enfield and across Sydney’s Inner West. Include your suburb, photographs and a short description of the work when discussing scope and availability with Romans.
           </p>
           <p className="font-body text-text-secondary mb-6">
             On older brickwork, the existing material and joint condition guide repointing and restoration. Later paint, render and repairs can affect the options. Retain sound fabric where appropriate and agree any trial work, material match and finish before extending the repair.

@@ -8,11 +8,11 @@ const RepointingPage = () => {
   return (
     <ServicePageTemplate
       title="Repointing & Brick Pointing"
-      metaTitle="Sydney Repointing & Brick Pointing | Romans"
-      metaDescription="Repointing and tuckpointing across Sydney. Mortar repairs with compatible materials, colour and joint profiles for older and modern masonry."
+      metaTitle="Brick Repointing Sydney | Romans Building Services"
+      metaDescription="Brick and stone repointing across Sydney. Assess failed mortar and match the joint profile, colour and materials to suit your wall."
       heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
       parentService={{ title: 'Stonemasonry & Masonry', href: '/services/masonry' }}
-      siblingServices={[...siblings, { title: 'Heritage Restoration', href: '/services/heritage-restoration' }]}
+      siblingServices={[...siblings, { title: 'Heritage Restoration', href: '/services/heritage-restoration' }, { title: 'Decorative tuckpointing', href: '/problems/tuckpointing-restoration' }]}
       breadcrumbs={[
         { label: 'Services', href: '/services' },
         { label: 'Stonemasonry & Masonry', href: '/services/masonry' },

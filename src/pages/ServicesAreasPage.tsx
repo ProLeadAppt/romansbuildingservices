@@ -9,7 +9,7 @@ import { areaGuides } from '@/data/areaGuides';
 const areasFaqs = [
   {
     question: 'Where do you work?',
-    answer: 'We work across Sydney and the Hawkesbury, including heritage restoration in the city and Balmain. Contact Minas to discuss your suburb, repair and availability.',
+    answer: 'We work in Enfield and across Sydney, including the Inner West, Sydney CBD and Hawkesbury. Much of our heritage restoration work is in the city and Balmain. Contact Minas to discuss your suburb, repair and availability.',
   },
   {
     question: 'My suburb does not have its own page. Can I still enquire?',
@@ -30,14 +30,14 @@ const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'Service areas', hre
 const ServicesAreasPage = () => (
   <>
     <SEO
-      title="Hawkesbury & Sydney Service Areas | Romans"
-      description="Explore our service areas across Sydney and the Hawkesbury, including heritage restoration in the city and Balmain."
+      title="Sydney Masonry Service Areas | Romans"
+      description="Explore our masonry and heritage service areas across Sydney."
       canonical="/areas"
     />
     <BreadcrumbSchema items={breadcrumbs} />
     <CollectionPageSchema
       name="Masonry and restoration area guides"
-      description="Explore our Sydney and Hawkesbury masonry, heritage and remedial work area guides."
+      description="Explore our Sydney masonry, heritage and remedial work area guides."
       url="https://romansbuildingservices.com/areas"
       items={areaGuides.map((area) => ({ name: area.name, url: `https://romansbuildingservices.com${area.href}`, description: area.short }))}
     />
@@ -48,10 +48,10 @@ const ServicesAreasPage = () => (
     </nav>
     <section className="bg-navy craft-section">
       <div className="craft-container max-w-4xl">
-        <p className="text-amber text-sm font-semibold mb-4">Sydney and the Hawkesbury</p>
+        <p className="text-amber text-sm font-semibold mb-4">Sydney service areas</p>
         <h1 className="text-white mb-6">A practical starting point for your local repair</h1>
-        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">Romans Building Services is based in The Slopes, NSW, and works across Sydney and the Hawkesbury. Much of our heritage restoration work is in the city and Balmain. Talk to Minas about your property, access and the work you need.</p>
-        <Link to="/areas/hawkesbury-western-sydney" className="mt-7 inline-flex min-h-12 items-center gap-3 rounded bg-amber px-6 py-3 font-semibold text-navy">Explore the Hawkesbury and Western Sydney guide <ArrowRight aria-hidden="true" className="h-5 w-5" /></Link>
+        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">We work in Enfield, the Inner West and across Sydney. Much of our heritage restoration work is in the city and Balmain. Talk to Minas about your property, access and the work you need.</p>
+        <a href="#area-guides-heading" className="mt-7 inline-flex min-h-12 items-center gap-3 rounded bg-amber px-6 py-3 font-semibold text-navy">Browse the area guides <ArrowRight aria-hidden="true" className="h-5 w-5" /></a>
       </div>
     </section>
 

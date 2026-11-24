@@ -18,8 +18,8 @@ const services = [
 const SydneyCBDPage = () => (
   <>
     <SEO
-      title="Sydney CBD Masonry and Building Services | Romans"
-      description="Masonry and heritage restoration in Sydney CBD. Romans Building Services handles stone, brick, and structural work across the inner city. Call Minas."
+      title="Sydney CBD Heritage Masonry and Facade Repairs | Romans"
+      description="Heritage masonry and facade repairs in the Sydney CBD. Discuss sandstone, brickwork, site access and existing reports with Minas."
       canonical="/areas/sydney-cbd"
     />
     <PlaceSchema
@@ -38,7 +38,7 @@ const SydneyCBDPage = () => (
       <div className="container mx-auto px-4 text-center">
         <h1
           className="font-heading text-4xl md:text-5xl text-white mb-4">
-          Sydney CBD
+          Heritage masonry in the Sydney CBD
         </h1>
         <p
           className="font-body text-white/70 max-w-xl mx-auto text-lg">

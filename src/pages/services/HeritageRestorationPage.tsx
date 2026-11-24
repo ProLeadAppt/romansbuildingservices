@@ -8,11 +8,11 @@ const HeritageRestorationPage = () => {
   return (
   <ServicePageTemplate
     title="Heritage Restoration"
-    metaTitle="Sydney Heritage Restoration | Romans"
+    metaTitle="Heritage Restoration Sydney | Romans Building Services"
     metaDescription="Heritage masonry, sandstone, brick and lime mortar restoration across Sydney by Minas Romanakis, using period-correct methods that suit the building."
     heroImage="/gallery/thumbs/romansstone_1579724750_2227215093383768825_2394650725.webp"
     intro={[
-      "Heritage restoration repairs existing brick, stone, mortar and decorative details while retaining as much sound original fabric as possible. Romans works on heritage masonry in the Hawkesbury, Western Sydney and wider Sydney, including sandstone, early brickwork and period facades.",
+      "Heritage restoration repairs existing brick, stone, mortar and decorative details while retaining as much sound original fabric as possible. Romans works on heritage masonry across Sydney, with much of our heritage work in the Sydney CBD and Balmain. We work with sandstone, early brickwork and period facades.",
       "Romans has been operating since 1995. Minas and the team assess the condition of the masonry and previous repairs, then work with heritage architects or advisers where the building and proposed work require their input.",
       "Compatible materials matter as much as the finished appearance. Before removing render, replacing stone or repointing joints, the scope should establish what can be retained, how repairs will be matched and which approvals or conservation requirements apply."
     ]}
