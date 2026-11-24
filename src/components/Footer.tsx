@@ -164,7 +164,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 font-body text-sm text-white/40">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                The Slopes, NSW — serving Hawkesbury and Western Sydney
+                Based in The Slopes, NSW. Serving Sydney and the Hawkesbury.
               </li>
               <li>
                 <a

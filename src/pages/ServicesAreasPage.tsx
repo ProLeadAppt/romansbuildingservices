@@ -8,8 +8,8 @@ import { areaGuides } from '@/data/areaGuides';
 
 const areasFaqs = [
   {
-    question: 'Where is your current service focus?',
-    answer: 'Our focus is Hawkesbury and Western Sydney, including North Richmond, Richmond, Kurmond, Kurrajong, Penrith, Windsor, Blacktown and surrounding areas. Existing Sydney area guides remain available. Contact Minas to discuss your suburb, repair and availability.',
+    question: 'Where do you work?',
+    answer: 'We work across Sydney and the Hawkesbury, including heritage restoration in the city and Balmain. Contact Minas to discuss your suburb, repair and availability.',
   },
   {
     question: 'My suburb does not have its own page. Can I still enquire?',
@@ -31,13 +31,13 @@ const ServicesAreasPage = () => (
   <>
     <SEO
       title="Hawkesbury & Sydney Service Areas | Romans"
-      description="Explore Romans’ Hawkesbury and Western Sydney service focus, local enquiry guidance and existing Sydney masonry and restoration area guides."
+      description="Explore our service areas across Sydney and the Hawkesbury, including heritage restoration in the city and Balmain."
       canonical="/areas"
     />
     <BreadcrumbSchema items={breadcrumbs} />
     <CollectionPageSchema
       name="Masonry and restoration area guides"
-      description="Explore our Hawkesbury and Western Sydney service focus and existing Sydney masonry, heritage and remedial guides."
+      description="Explore our Sydney and Hawkesbury masonry, heritage and remedial work area guides."
       url="https://romansbuildingservices.com/areas"
       items={areaGuides.map((area) => ({ name: area.name, url: `https://romansbuildingservices.com${area.href}`, description: area.short }))}
     />
@@ -48,10 +48,10 @@ const ServicesAreasPage = () => (
     </nav>
     <section className="bg-navy craft-section">
       <div className="craft-container max-w-4xl">
-        <p className="text-amber text-sm font-semibold mb-4">Hawkesbury · Western Sydney · Sydney area guides</p>
+        <p className="text-amber text-sm font-semibold mb-4">Sydney and the Hawkesbury</p>
         <h1 className="text-white mb-6">A practical starting point for your local repair</h1>
-        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">Romans Building Services is based in The Slopes, NSW. Our current focus is Hawkesbury and Western Sydney. Start with your area, then discuss the property, access and repair with Minas.</p>
-        <Link to="/areas/hawkesbury-western-sydney" className="mt-7 inline-flex min-h-12 items-center gap-3 rounded bg-amber px-6 py-3 font-semibold text-navy">Explore our local service area <ArrowRight aria-hidden="true" className="h-5 w-5" /></Link>
+        <p className="text-white/85 text-lg max-w-3xl leading-relaxed">Romans Building Services is based in The Slopes, NSW, and works across Sydney and the Hawkesbury. Much of our heritage restoration work is in the city and Balmain. Talk to Minas about your property, access and the work you need.</p>
+        <Link to="/areas/hawkesbury-western-sydney" className="mt-7 inline-flex min-h-12 items-center gap-3 rounded bg-amber px-6 py-3 font-semibold text-navy">Explore the Hawkesbury and Western Sydney guide <ArrowRight aria-hidden="true" className="h-5 w-5" /></Link>
       </div>
     </section>
 
@@ -60,7 +60,7 @@ const ServicesAreasPage = () => (
         <div className="max-w-3xl mb-10">
           <p className="craft-label">Find your area</p>
           <h2 id="area-guides-heading" className="text-navy mb-5">Local guidance, with the property in mind</h2>
-          <p className="text-text-secondary text-lg leading-relaxed">A suburb does not establish why a wall has cracked or which repair it needs. These guides help you prepare an enquiry and understand relevant materials, access and approval questions. Wider Sydney enquiries can still be discussed case by case.</p>
+          <p className="text-text-secondary text-lg leading-relaxed">A suburb does not establish why a wall has cracked or which repair it needs. These guides help you prepare an enquiry and understand relevant materials, access and approval questions. If your suburb is not listed, you can still discuss your project with Minas.</p>
         </div>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {areaGuides.map((area) => (
