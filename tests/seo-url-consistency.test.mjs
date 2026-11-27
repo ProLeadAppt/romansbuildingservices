@@ -93,6 +93,13 @@ test('structured page and collection URLs share the canonical policy', () => {
   assert.equal(service.url, `${production}/services/`);
   assert.equal(service.availableChannel.serviceUrl, service.url);
   assert.equal(service.provider.url, `${production}/`);
+  assert.equal(service.availableChannel.servicePhone['@type'], 'ContactPoint');
+  assert.equal(service.availableChannel.servicePhone.telephone, service.provider.telephone);
+  assert.equal(service.hasOfferCatalog.itemListElement[0].availability, undefined);
+  const business = renderSchema(schemas.LocalBusinessSchema).find(entry => [].concat(entry['@type']).includes('LocalBusiness'));
+  for (const field of ['address', 'geo', 'about', 'serviceType']) assert.equal(business[field], undefined);
+  assert.ok(business.knowsAbout.includes('Heritage restoration'));
+  assert.ok(business.knowsAbout.some(entry => entry.name === 'Stonemasonry'));
   const [fallback] = renderSchema(schemas.ServiceSchema, { service: 'Masonry' });
   assert.equal(fallback.availableChannel.serviceUrl, `${production}/`);
   const [place] = renderSchema(schemas.PlaceSchema, { name: 'Area', url: input });
@@ -188,6 +195,10 @@ test('all area and heritage template schemas use canonical URLs and visible FAQ 
     assert.ok(faq, `${route}: missing FAQ schema`);
     assert.equal(doc.querySelector('link[rel="canonical"]').href, `${production}${route}`);
     assert.equal(doc.querySelectorAll('h1').length, 1, route);
+    if (route.startsWith('/problems/') || route === '/heritage/art-deco-building-restoration/') {
+      const description = doc.querySelector('meta[name="description"]').content;
+      assert.ok(description.length >= 100 && description.length <= 155, `${route}: ${description.length}`);
+    }
     for (const schema of structured) {
       if (schema.url) assert.equal(schema.url, `${production}${route}`, route);
       assert.equal(schema.reviewedBy, undefined, 'Do not infer editorial review from a template');

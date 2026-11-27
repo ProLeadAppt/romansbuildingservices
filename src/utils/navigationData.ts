@@ -53,7 +53,7 @@ export const mainNavigation: NavigationItem[] = [
   {
     id: 'projects',
     label: 'Projects',
-    href: '/projects'
+    href: '/gallery'
   },
   {
     id: 'contact',

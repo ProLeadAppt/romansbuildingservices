@@ -53,7 +53,7 @@ export const CaseStudyTemplate = ({ cs }: { cs: CaseStudy }) => {
       <section className="py-16 bg-bg-light">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-heading text-3xl font-bold text-navy mb-8">Related services and reading</h2>
-          <div className="grid sm:grid-cols-2 gap-4">{[...cs.relatedServices, { label: 'Repair guides', href: '/learn' }, { label: 'Photo archive', href: '/projects' }, { label: 'All repair references', href: '/case-studies' }].map(link => (
+          <div className="grid sm:grid-cols-2 gap-4">{[...cs.relatedServices, { label: 'Repair guides', href: '/learn' }, { label: 'Photo archive', href: '/gallery' }, { label: 'All repair references', href: '/case-studies' }].map(link => (
             <Link key={link.href} to={link.href} className="bg-white border border-border rounded-lg p-5 font-semibold text-navy hover:underline">{link.label}</Link>
           ))}</div>
         </div>

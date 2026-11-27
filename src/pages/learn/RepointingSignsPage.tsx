@@ -27,7 +27,7 @@ const steps = [
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Signs You Need Repointing in Sydney | Crumbling Mortar, Gaps and Water Entry',
+  headline: 'Signs You Need Repointing in Sydney | Romans',
   description: 'How to spot failed mortar before the wall gets worse. A plain-English guide to the signs you need repointing on Sydney brick and stone walls.',
   url: toCanonicalPageUrl('https://romansbuildingservices.com/learn/repointing-signs'),
   mainEntityOfPage: {
@@ -94,7 +94,7 @@ const RepointingSignsPage = () => {
   return (
     <>
       <SEOHead
-        title="Signs You Need Repointing in Sydney | Crumbling Mortar, Gaps and Water Entry"
+        title="Signs You Need Repointing in Sydney | Romans"
         description="How to spot failed mortar before the wall gets worse. A plain-English guide to the signs you need repointing on Sydney brick and stone walls."
         canonical="/learn/repointing-signs"
         ogType="article"

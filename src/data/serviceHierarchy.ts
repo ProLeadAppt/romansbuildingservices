@@ -105,7 +105,7 @@ export const serviceHierarchy: ServiceCategory[] = [
     slug: 'remedial-building',
     route: '/services/remedial-building',
     metaTitle: 'Sydney Remedial Building | Romans',
-    metaDescription: 'Strata defects, compliance upgrades, emergency make-safe work and remedial repairs across Sydney by Minas Romanakis. Defined scopes with relevant engineer or consultant input.',
+    metaDescription: 'Sydney remedial building, strata repairs and make-safe work. Discuss repair scope and any engineering or consultant input required with Minas.',
     subServices: [
       { title: 'Strata Building Repairs', slug: 'strata-repairs', metaTitle: 'Strata Building Repairs Sydney | Romans', metaDescription: 'Sydney strata building repair enquiries. Clear scopes, access planning, resident communication and documentation for masonry and concrete repairs.' },
       { title: 'Structural Defect Repair', slug: 'structural-defect', metaTitle: 'Structural Defect Repairs Sydney | Romans', metaDescription: 'Sydney structural defect repair enquiries. Engineer-defined repair scopes, safe access, documentation and coordination of required specialist work.' },

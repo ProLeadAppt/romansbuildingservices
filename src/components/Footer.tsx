@@ -189,7 +189,7 @@ export const Footer = () => {
             <p className="text-white/55">ABN: 85 004 290 080</p>
           </div>
           <a
-            href="https://munyal.com.au"
+            href="https://www.munyal.com.au/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Built by Munyal · Personally crafted by Tyson Kaye"

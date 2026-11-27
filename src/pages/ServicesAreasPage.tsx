@@ -31,7 +31,7 @@ const ServicesAreasPage = () => (
   <>
     <SEO
       title="Sydney Masonry Service Areas | Romans"
-      description="Explore our masonry and heritage service areas across Sydney."
+      description="Explore masonry, heritage and remedial building service areas across Sydney, including the CBD and Inner West. Discuss your suburb with Minas."
       canonical="/areas"
     />
     <BreadcrumbSchema items={breadcrumbs} />
