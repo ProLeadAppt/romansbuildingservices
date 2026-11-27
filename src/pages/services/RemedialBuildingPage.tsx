@@ -9,7 +9,7 @@ const RemedialBuildingPage = () => {
     <ServicePageTemplate
       title="Remedial Building"
       metaTitle="Sydney Remedial Building | Romans"
-      metaDescription="Strata defects, compliance upgrades, emergency make-safe work and remedial repairs across Sydney by Minas Romanakis. Defined scopes with relevant engineer or consultant input."
+      metaDescription="Sydney remedial building, strata repairs and make-safe work. Discuss repair scope and any engineering or consultant input required with Minas."
       heroImage="/gallery/thumbs/romansstone_1574104761_2180071211265247711_2394650725.webp"
       parentService={{ title: 'Services', href: '/services' }}
       siblingServices={[

@@ -116,7 +116,6 @@ const localBusinessSchema: SchemaObject = {
       name: "New South Wales"
     }
   })),
-  serviceType: BUSINESS_INFO.services.join(", "),
   currenciesAccepted: "AUD",
   paymentAccepted: "Cash, Credit Card, Bank Transfer",
   image: [BUSINESS_INFO.images.main, BUSINESS_INFO.images.masonry, BUSINESS_INFO.images.heritage],
@@ -130,7 +129,6 @@ const localBusinessSchema: SchemaObject = {
     areaServed: BUSINESS_INFO.areaServed
   },
   // Visits are by appointment; omit clock times until actual hours are confirmed.
-  knowsAbout: BUSINESS_INFO.knowsAbout,
   founder: {
     "@type": "Person",
     name: BUSINESS_INFO.founder.name,
@@ -138,9 +136,10 @@ const localBusinessSchema: SchemaObject = {
   },
   slogan: "Masonry. Restoration. Remedial.",
   // Omit credentials and reviews until current source evidence is confirmed.
-  // Entity linking — connects this business to known topical entities
-  // Helps AI/Google associate Romans with these subjects as an authority
-  about: [
+  // knowsAbout is defined for Organization; about is defined for CreativeWork.
+  // Preserve the existing topical entity links without claiming additional qualifications.
+  knowsAbout: [
+    ...BUSINESS_INFO.knowsAbout,
     { "@type": "Thing", name: "Stonemasonry", sameAs: "https://en.wikipedia.org/wiki/Stonemasonry" },
     { "@type": "Thing", name: "Masonry", sameAs: "https://en.wikipedia.org/wiki/Masonry" },
     { "@type": "Thing", name: "Heritage conservation", sameAs: "https://en.wikipedia.org/wiki/Historic_preservation" },
@@ -231,8 +230,12 @@ export const ServiceSchema = ({
     availableChannel: {
       "@type": "ServiceChannel",
       serviceUrl: toCanonicalPageUrl(url || BUSINESS_INFO.website),
-      servicePhone: BUSINESS_INFO.telephone,
-      availableLanguage: "English"
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: BUSINESS_INFO.telephone,
+        availableLanguage: "en-AU"
+      },
+      availableLanguage: "en-AU"
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -243,9 +246,7 @@ export const ServiceSchema = ({
           itemOffered: {
             "@type": "Service",
             name: service
-          },
-          priceCurrency: "AUD",
-          availability: "https://schema.org/InStock"
+          }
         }
       ]
     }

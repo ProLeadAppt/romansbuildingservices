@@ -32,7 +32,7 @@ test('homepage follows the approved grounded decision sequence', async ({ page }
   ]);
   const workmanship = page.locator('section[aria-labelledby="craft-work"]');
   await expect(workmanship.locator('figure')).toHaveCount(2);
-  await expect(workmanship.getByRole('link', { name: 'Explore the project gallery' })).toHaveAttribute('href', '/projects');
+  await expect(workmanship.getByRole('link', { name: 'Explore the project gallery' })).toHaveAttribute('href', '/gallery');
   await expect(workmanship.getByRole('link', { name: 'Read the case studies' })).toHaveAttribute('href', '/case-studies');
   await expect(page.locator('section[aria-labelledby="craft-services"] article')).toHaveCount(7);
   expect(await page.locator('section[aria-labelledby="craft-services"] h3 a').evaluateAll(links => links.map(link => link.getAttribute('href')))).toEqual([

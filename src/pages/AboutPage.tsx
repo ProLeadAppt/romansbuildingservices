@@ -58,7 +58,7 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Romans | Minas Romanakis, Sydney Stonemason Since 1995"
-        description="Meet Minas Romanakis and Romans Building Services. Masonry and heritage restoration since 1995, based in The Slopes and serving Hawkesbury, Western Sydney and beyond."
+        description="Meet Minas Romanakis of Romans Building Services. Masonry and heritage restoration since 1995 across the Sydney CBD, Inner West and wider Sydney."
         canonical="/about"
       />
       <PersonSchema />
@@ -105,11 +105,11 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center">
                   <dt className="font-body text-xs text-text-muted uppercase tracking-wider mb-1">
-                    Based in
+                    Service area
                   </dt>
-                  <dd className="font-heading text-base text-navy leading-tight">The Slopes, NSW</dd>
+                  <dd className="font-heading text-base text-navy leading-tight">Sydney, NSW</dd>
                   <p className="font-body text-xs text-text-muted mt-1">
-                    Hawkesbury, Western Sydney and wider enquiries
+                    CBD, Inner West and wider Sydney enquiries
                   </p>
                 </div>
                 <div className="text-center">

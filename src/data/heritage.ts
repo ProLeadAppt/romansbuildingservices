@@ -288,7 +288,7 @@ export const HERITAGE_ERAS: Record<string, HeritageEraData> = {
     "name": "Art Deco Building Restoration",
     "era": "1925 – 1945",
     "metaTitle": "Art Deco Building Restoration Sydney | Romans Building Services",
-    "metaDescription": "Art Deco building restoration in Sydney. Render and masonry repair on the Inter-war apartments, cinemas and commercial buildings that define Sydney's 1930s architecture.",
+    "metaDescription": "Art Deco building restoration in Sydney. Learn about render and masonry repairs for inter-war apartments, cinemas and commercial buildings.",
     "heroTagline": "Careful assessment helps preserve Art Deco geometry, finishes and structural fabric.",
     "intro": [
       "Sydney Art Deco buildings include apartments, shopfronts and cinemas, with examples in Potts Point, Elizabeth Bay and Bondi. Stepped forms, curved corners and geometric decoration give many their character. The style overlaps with other inter-war architecture and does not imply a single construction system.",

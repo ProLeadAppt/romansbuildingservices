@@ -24,7 +24,7 @@ const urgencyBadge = {
 export const ProblemAreaPageTemplate = ({ problem, area, areaNote }: ProblemAreaPageProps) => {
   const canonicalUrl = toCanonicalPageUrl(`/problems/${problem.slug}/${area.slug}`);
   const metaTitle = `${problem.name} in ${area.name} | Romans`;
-  const metaDescription = `${problem.name} in ${area.name}: warning signs, repair considerations and information to prepare for a property-specific assessment with Romans.`;
+  const metaDescription = `${problem.name} in ${area.name}: warning signs, repair considerations and how to prepare for an assessment with Romans.`;
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },

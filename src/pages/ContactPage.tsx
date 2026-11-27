@@ -41,7 +41,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Contact Romans | Sydney CBD, Inner West & Greater Sydney"
-        description="Call Minas on 0414 922 276 for a masonry repair enquiry. Romans handles masonry, heritage, structural and remedial work in the Sydney CBD, the Inner West and across Sydney."
+        description="Call Minas on 0414 922 276 to discuss masonry repairs, heritage restoration or remedial work in the Sydney CBD, Inner West and across Sydney."
         canonical="/contact"
       />
       <ContactPageSchema />
